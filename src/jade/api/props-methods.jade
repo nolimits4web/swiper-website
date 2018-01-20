@@ -1,0 +1,207 @@
+h2#methods Slider Methods & Properties
+p After we initialize Slider we have its initialized instance in variable (like <code>mySwiper</code> variable in example above) with helpful methods and properties:
+table.methods-table
+  tbody
+    tr
+      th(colspan="2") Properties
+    tr
+      td mySwiper.params
+      td Object with passed initialization parameters
+    tr
+      td mySwiper.$el
+      td Dom7 element with slider container HTML element. To get vanilla HTMLElement use <code>mySwiper.el</code>
+    tr
+      td mySwiper.$wrapperEl
+      td Dom7 element with slider wrapper HTML element. To get vanilla HTMLElement use <code>mySwiper.wrapperEl</code>
+    tr
+      td mySwiper.slides
+      td Dom7 array-like collection of slides HTML elements. To get specific slide HTMLElement use <code>mySwiper.slides[1]</code>
+    tr
+      td mySwiper.width
+      td Width of container
+    tr
+      td mySwiper.height
+      td Height of container
+    tr
+      td mySwiper.translate
+      td Current value of wrapper translate
+    tr
+      td mySwiper.progress
+      td Current progress of wrapper translate (from 0 to 1)
+    tr
+      td mySwiper.activeIndex
+      td 
+        p Index number of currently active slide
+        p.important-note Note, that in loop mode active index value will be always shifted on a number of looped/duplicated slides
+    tr
+      td mySwiper.realIndex
+      td 
+        p Index number of currently active slide considering duplicated slides in loop mode
+    tr
+      td mySwiper.previousIndex
+      td Index number of previously active slide
+    tr
+      td mySwiper.isBeginning
+      td <b>true</b> if slider on most "left"/"top" position
+    tr
+      td mySwiper.isEnd
+      td <b>true</b> if slider on most "right"/"bottom" position
+    tr
+      td mySwiper.animating
+      td <b>true</b> if swiper is in transition
+    tr
+      td mySwiper.touches
+      td Object with the following touch event properties:
+        ul
+          li mySwiper.touches.startX
+          li mySwiper.touches.startY
+          li mySwiper.touches.currentX
+          li mySwiper.touches.currentY
+          li mySwiper.touches.diff
+    tr
+      td mySwiper.clickedIndex
+      td Index number of last clicked slide
+    tr
+      td mySwiper.clickedSlide
+      td Link to last clicked slide (<i>HTMLElement</i>)
+    tr
+      td mySwiper.allowSlideNext
+      td Disable / enable ability to slide to the next slides by assigning <code>false</code>/<code>true</code> to this property
+    tr
+      td mySwiper.allowSlidePrev
+      td Disable / enable ability to slide to the previous slides by assigning <code>false</code>/<code>true</code> to this property
+    tr
+      td mySwiper.allowTouchMove
+      td Disable / enable ability move slider by grabbing it with mouse or by touching it with finger (on touch screens) by assigning <code>false</code>/<code>true</code> to this property
+    tr
+      th(colspan="2") Methods
+    tr
+      td mySwiper.slideNext(<span>speed</span>, <span>runCallbacks</span>);
+      td 
+        | Run transition to next slide<br>
+        ul.method-parameters
+          li
+            span.parameter speed
+            |  - <span class="parameter-type">number</span> - transition duration (in ms). <em>Optional</em>
+          li
+            span.parameter runCallbacks
+            |  - <span class="parameter-type">boolean</span> - Set it to <code>false</code> (by default it is <code>true</code>) and transition will not produce transition events. <em>Optional</em>
+    tr
+      td mySwiper.slidePrev(<span>speed</span>, <span>runCallbacks</span>);
+      td 
+        | Run transition to previous slide<br>
+        ul.method-parameters
+          li
+            span.parameter speed
+            |  - <span class="parameter-type">number</span> - transition duration (in ms). <em>Optional</em>
+          li
+            span.parameter runCallbacks
+            |  - <span class="parameter-type">boolean</span> - Set it to <code>false</code> (by default it is <code>true</code>) and transition will not produce  transition events. <em>Optional</em>
+    tr
+      td mySwiper.slideTo(<span>index</span>, <span>speed</span>, <span>runCallbacks</span>);
+      td 
+        | Run transition to the slide with index number equal to 'index' parameter for the duration equal to 'speed' parameter.<br>
+        ul.method-parameters
+          li
+            span.parameter index
+            |  - <span class="parameter-type">number</span> - index number of slide
+          li
+            span.parameter speed
+            |  - <span class="parameter-type">number</span> - transition duration (in ms). <em>Optional</em>
+          li
+            span.parameter runCallbacks
+            |  - <span class="parameter-type">boolean</span> - Set it to <code>false</code> (by default it is <code>true</code>) and transition will not produce  transition events. <em>Optional</em>
+    tr
+      td mySwiper.update();
+      td 
+        p You should call it after you add/remove slides manually, or after you hide/show it, or do any custom DOM modifications with Swiper
+        p This method also includes subcall of the following methods which you can use separately:
+        ul
+          li mySwiper.updateSize() - recalculate size of swiper container
+          li mySwiper.updateSlides() - recalculate number of slides and their offsets. Useful after you add/remove slides with JavaScript
+          li mySwiper.updateProgress() - recalculate swiper progress
+          li mySwiper.updateSlidesClasses() - update active/prev/next classes on slides and bullets
+    tr
+      td mySwiper.detachEvents();
+      td Detach all events listeners
+    tr
+      td mySwiper.attachEvents();
+      td Atach all events listeners again
+    tr
+      td mySwiper.destroy(<span>deleteInstance</span>, <span>cleanStyles</span>);
+      td 
+        | Destroy slider instance and detach all events listeners, where<br>
+        ul.method-parameters
+          li
+            span.parameter deleteInstance
+            |  - <span class="parameter-type">boolean</span> - Set it to <code>false</code> (by default it is <code>true</code>) to not to delete Swiper instance
+          li
+            span.parameter cleanStyles
+            |  - <span class="parameter-type">boolean</span> - Set it to <code>true</code> (by default it is <code>true</code>) and all custom styles will be removed from slides, wrapper and container. Useful if you need to destroy Swiper and to init again with new options or in different direction
+    tr
+      td mySwiper.appendSlide(<span>slides</span>);
+      td Add new slides to the end. <code>slides</code> could be HTMLElement or HTML string with new slide or array with such slides, for example:
+        pre
+          code
+            | mySwiper.appendSlide('&lt;div class="swiper-slide"&gt;Slide 10"&lt;/div&gt;')
+            | mySwiper.appendSlide([
+            |    '&lt;div class="swiper-slide"&gt;Slide 10"&lt;/div&gt;', 
+            |    '&lt;div class="swiper-slide"&gt;Slide 11"&lt;/div&gt;'
+            | ]);
+    tr
+      td mySwiper.prependSlide(<span>slides</span>);
+      td Add new slides to the beginning. <code>slides</code> could be HTMLElement or HTML string with new slide or array with such slides, for example:
+        pre
+          code
+            | mySwiper.prependSlide('&lt;div class="swiper-slide"&gt;Slide 0"&lt;/div&gt;')
+            | mySwiper.prependSlide([
+            |    '&lt;div class="swiper-slide"&gt;Slide 1"&lt;/div&gt;', 
+            |    '&lt;div class="swiper-slide"&gt;Slide 2"&lt;/div&gt;'
+            | ]);
+    tr
+      td mySwiper.removeSlide(<span>slideIndex</span>);
+      td Remove selected slides. <code>slideIndex</code> could be a number with slide index to remove or array with indexes, for example:
+        pre
+          code.js
+            | mySwiper.removeSlide(0); //remove first slide
+            | mySwiper.removeSlide([0, 1]); //remove first and second slides
+    tr
+      td mySwiper.removeAllSlides();
+      td Remove all slides
+    tr
+      td mySwiper.setTranslate(<span>translate</span>);
+      td Set custom css3 transform's translate value for swiper wrapper
+    tr
+      td mySwiper.getTranslate();
+      td Get current value of swiper wrapper css3 transform translate
+    tr
+      td mySwiper.on(<span>event</span>, <span>handler</span>)
+      td Add event listener
+    tr
+      td mySwiper.once(<span>event</span>, <span>handler</span>)
+      td Add event listener that will be executed only once
+    tr
+      td mySwiper.off(<span>event</span>, <span>handler</span>)
+      td Remove event listener for specified event 
+    tr
+      td mySwiper.off(<span>event</span>)
+      td Remove all listeners for specified event 
+    
+    tr
+      td mySwiper.disableMousewheelControl();
+      td Disable mousewheel control
+    tr
+      td mySwiper.enableMousewheelControl();
+      td Enable mousewheel control
+    tr
+      td mySwiper.disableKeyboardControl();
+      td Disable keyboard control
+    tr
+      td mySwiper.enableKeyboardControl();
+      td Enable keyboard control
+    tr
+      td mySwiper.unsetGrabCursor();
+      td Unset grab cursor
+    tr
+      td mySwiper.setGrabCursor();
+      td Set grab cursor

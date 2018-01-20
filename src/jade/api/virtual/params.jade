@@ -1,0 +1,52 @@
+h4#virtual-parameters Virtaul Slides Parameters
+table.params-table
+  thead
+    tr
+      th Parameter
+      th Type
+      th Default
+      th Description
+  tbody
+    tr
+      td virtual
+      td object/boolean
+      td
+      td
+        p Enables virtual slides functionality. Object with virtual slides parameters or boolean <b>true</b> to enable with default settings. For example:
+          pre
+            code
+              :code
+                var mySwiper = new Swiper('.swiper-container', {
+                  virtual: {
+                    slides: ['Slide 1', 'Slide 2', 'Slide 3', 'Slide 4', 'Slide 5'],
+                  },
+                });
+    tr.subparam-open-row
+      td(colspan="4") {
+    tr.subparam-row
+      td slides
+      td array
+      td []
+      td Array with slides
+    tr.subparam-row
+      td cache
+      td boolean
+      td true
+      td Enables DOM cache of rendering slides html elements. Once they are rendered they will be saved to cache and resued from it.
+    tr.subparam-row
+      td renderSlide
+      td function(<span>slide</span>, <span>index</span>)
+      td null
+      td Function to render slide. As an argument it accepts current slide item for <code>slides</code> array and index number of the current slide. Function must return an outter HTML of the swiper slide.
+    tr.subparam-row
+      td renderExternal
+      td function(data)
+      td null
+      td Function for external rendering (e.g. using some other library to handle DOM manipulations and state like React or Vue.js). As an argument it accepts data object with the following properties:
+        ul
+          li <code>offset</code> - slides left/top offset in px
+          li <code>from</code> - index of first slide required to be rendered
+          li <code>to</code> - index of last slide required to be rendered
+          li <code>slides</code> - array with slide items to be rendered
+    tr.subparam-close-row
+      td(colspan="4") }

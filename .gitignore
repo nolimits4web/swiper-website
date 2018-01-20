@@ -57,3 +57,11 @@ typings/
 # dotenv environment variables file
 .env
 
+# Build Files
+/index.html
+api/index.html
+get-started/index.html
+demos/index.html
+css/main.css
+js/main.js
+

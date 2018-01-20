@@ -1,0 +1,485 @@
+h2#parameters Swiper Parameters
+p Let's look on list of all available parameters:
+table.params-table
+  thead
+    tr
+      th Parameter
+      th Type
+      th Default
+      th Description
+  tbody
+    tr
+      td init
+      td boolean
+      td true
+      td Whether Swiper should be initialised automatically when you create an instance. If disabled, then you need to init it manually by calling <code>mySwiper.init()</code>
+    tr
+      td initialSlide
+      td number
+      td 0
+      td Index number of initial slide.
+    tr
+      td direction
+      td string
+      td 'horizontal'
+      td Could be 'horizontal' or 'vertical' (for vertical slider).
+    tr
+      td speed
+      td number
+      td 300
+      td Duration of transition between slides (in ms)
+    tr
+      td setWrapperSize
+      td boolean
+      td false
+      td Enabled this option and plugin will set width/height on swiper wrapper equal to total size of all slides. Mostly should be used as compatibility fallback option for browser that don't support flexbox layout well
+    tr
+      td virtualTranslate
+      td boolean
+      td false
+      td Enabled this option and swiper will be operated as usual except it will not move, real translate values on wrapper will not be set. Useful when you may need to create custom slide transition
+    tr
+      td width
+      td number
+      td 
+      td Swiper width (in px). Parameter allows to force Swiper width. Useful <b>only</b> if you initialize Swiper when it is hidden.
+        .important-note Setting this parameter will make Swiper not responsive
+    tr
+      td height
+      td number
+      td 
+      td Swiper height (in px). Parameter allows to force Swiper height. Useful <b>only</b> if you initialize Swiper when it is hidden.
+        .important-note Setting this parameter will make Swiper not responsive
+    tr
+      td autoHeight
+      td boolean
+      td false
+      td Set to <b>true</b> and slider wrapper will adopt its height to the height of the currently active slide
+    tr
+      td roundLengths
+      td boolean
+      td false
+      td Set to <b>true</b> to round values of slides width and height to prevent blurry texts on usual resolution screens (if you have such)
+    tr
+      td nested
+      td boolean
+      td false
+      td Set to <b>true</b> on nested Swiper for correct touch events interception. Use only on nested swipers that use same direction as the parent one
+    tr
+      td uniqueNavElements
+      td boolean
+      td true
+      td If enabled (by default) and navigation elements' parameters passed as a string (like <code>".pagination"</code>) then Swiper will look for such elements through child elements first. Applies for pagination, prev/next buttons and scrollbar elements
+    tr
+      td effect
+      td string
+      td 'slide'
+      td Tranisition effect. Could be "slide", "fade", "cube", "coverflow" or "flip"
+    tr
+      td runCallbacksOnInit
+      td boolean
+      td true
+      td Fire [Transition/SlideChange][Start/End] events on swiper initialization. Such events will be fired on initialization in case of your initialSlide is not 0, or you use loop mode
+    tr
+      td watchOverflow
+      td boolean
+      td false
+      td When enabled Swiper will be disabled and hide navigation buttons on case there are not enough slides for sliding
+    tr
+      td on
+      td object
+      td
+      td Register event handlers
+    tr
+      th(colspan="4") Slides grid
+    tr
+      td spaceBetween
+      td number
+      td 0
+      td Distance between slides in px.
+    tr
+      td slidesPerView
+      td number or 'auto'
+      td 1
+      td 
+        p Number of slides per view (slides visible at the same time on slider's container).
+        p.important-note If you use it with "auto" value and along with <b>loop: true</b> then you need to specify <b>loopedSlides</b> parameter with amount of slides to loop (duplicate)
+        p.important-note <b>slidesPerView: 'auto'</b> is currently not compatible with multirow mode, when <b>slidesPerColumn</b> > 1 
+    tr
+      td slidesPerColumn
+      td number
+      td 1
+      td Number of slides per column, for multirow layout
+    tr
+      td slidesPerColumnFill
+      td string
+      td 'column'
+      td Could be 'column' or 'row'. Defines how slides should fill rows, by column or by row
+    tr
+      td slidesPerGroup
+      td number
+      td 1
+      td Set numbers of slides to define and enable group sliding. Useful to use with slidesPerView &gt; 1
+    tr
+      td centeredSlides
+      td boolean
+      td false
+      td If true, then active slide will be centered, not always on the left side.
+    tr
+      td slidesOffsetBefore
+      td number
+      td 0
+      td Add (in px) additional slide offset in the beginning of the container (before all slides)
+    tr
+      td slidesOffsetAfter
+      td number
+      td 0
+      td Add (in px) additional slide offset in the end of the container (after all slides)
+    tr
+      td normalizeSlideIndex
+      td boolean
+      td true
+      td Normalize slide index. See <a href="https://github.com/nolimits4web/Swiper/pull/1766" target="_blank">#1766</a>
+    tr
+      th(colspan="4") Grab Cursor
+    tr
+      td grabCursor
+      td boolean
+      td false
+      td This option may a little improve desktop usability. If <b>true</b>, user will see the "grab" cursor when hover on Swiper
+
+    tr
+      th(colspan="4") Touches
+    tr
+      td touchEventsTarget
+      td string
+      td 'container'
+      td Target element to listen touch events on. Can be <b>'container'</b> (to listen for touch events on swiper-container) or <b>'wrapper'</b> (to listen for touch events on swiper-wrapper)
+    tr
+      td touchRatio
+      td number
+      td 1
+      td Touch ration
+    tr
+      td touchAngle
+      td number
+      td 45
+      td Allowable angle (in degrees) to trigger touch move
+    tr
+      td simulateTouch
+      td boolean
+      td true
+      td If true, Swiper will accept mouse events like touch events (click and drag to change slides)
+    tr
+      td shortSwipes
+      td boolean
+      td true
+      td Set to <b>false</b> if you want to disable short swipes
+    tr
+      td longSwipes
+      td boolean
+      td true
+      td Set to <b>false</b> if you want to disable long swipes
+    tr
+      td longSwipesRatio
+      td number
+      td 0.5
+      td Ratio to trigger swipe to next/previous slide during long swipes
+    tr
+      td longSwipesMs
+      td number
+      td 300
+      td Minimal duration (in ms) to trigger swipe to next/previous slide during long swipes
+    tr
+      td followFinger
+      td boolean
+      td true
+      td If disabled, then slider will be animated only when you release it, it will not move while you hold your finger on it
+    tr
+      td allowTouchMove
+      td boolean
+      td true
+      td If false, then the only way to switch the slide is use of external API functions like <code>slidePrev</code> or <code>slideNext</code>
+    tr
+      td threshold
+      td number
+      td 0
+      td Threshold value in px. If "touch distance" will be lower than this value then swiper will not move
+    tr
+      td touchMoveStopPropagation
+      td boolean
+      td true
+      td If enabled, then propagation of "touchmove" will be stopped
+    tr
+      td iOSEdgeSwipeDetection
+      td boolean
+      td false
+      td Enable to release Swiper events for swipe-to-go-back work in iOS UIWebView
+    tr
+      td iOSEdgeSwipeThreshold
+      td number
+      td 20
+      td Area (in px) from left edge of the screen to release touch events for swipe-to-go-back in iOS UIWebView
+    tr
+      td touchReleaseOnEdges
+      td boolean
+      td false
+      td Enable to release touch events on slider edge position (beginning, end) to allow for further page scrolling
+    tr
+      td passiveListeners
+      td boolean
+      td true
+      td Passive event listeners will be used by default where possible to improve scrolling performance on mobile devices. But if you need to use `e.preventDefault` and you have conflict with it, then you should disable this parameter
+    tr
+      th(colspan="4") Touch Resistance
+    tr
+      td resistance
+      td boolean
+      td true
+      td Set to <b>false</b> if you want to disable resistant bounds
+    tr
+      td resistanceRatio
+      td number
+      td 0.85
+      td This option allows you to control resistance ratio
+    tr
+      th(colspan="4") Swiping / No swiping
+    tr
+      td allowSlidePrev
+      td boolean
+      td true
+      td Set to <b>false</b> to disable swiping to previous slide direction (to left or top)
+    tr
+      td allowSlideNext
+      td boolean
+      td true
+      td Set to <b>false</b> to disable swiping to next slide direction (to right or bottom)
+    tr
+      td noSwiping
+      td boolean
+      td true
+      td Will disable swiping on elements matched to class specified in <code>noSwipingClass</code>
+    tr
+      td noSwipingClass
+      td string
+      td 'swiper-no-swiping'
+      td If <b>true</b>, then you can add <code>noSwipingClass</code> class to swiper's slide to prevent/disable swiping on this element
+    tr
+      td swipeHandler
+      td string / HTMLElement
+      td null
+      td String with CSS selector or HTML element of the container with pagination that will work as only available handler for swiping
+    tr
+      th(colspan="4") Clicks
+    tr
+      td preventClicks
+      td boolean
+      td true
+      td Set to <b>true</b> to prevent accidental unwanted clicks on links during swiping
+    tr
+      td preventClicksPropagation
+      td boolean
+      td true
+      td Set to <b>true</b> to stop clicks event propagation on links during swiping
+    tr
+      td slideToClickedSlide
+      td boolean
+      td false
+      td Set to <b>true</b> and click on any slide will produce transition to this slide
+    tr
+      th(colspan="4") Freemode
+    tr
+      td freeMode
+      td boolean
+      td false
+      td If <b>true</b> then slides will not have fixed positions
+    tr
+      td freeModeMomentum
+      td boolean
+      td true
+      td If <b>true</b>, then slide will keep moving for a while after you release it
+    tr
+      td freeModeMomentumRatio
+      td number
+      td 1
+      td Higher value produces larger momentum distance after you release slider
+    tr
+      td freeModeMomentumVelocityRatio
+      td number
+      td 1
+      td Higher value produces larger momentum velocity after you release slider
+    tr
+      td freeModeMomentumBounce
+      td boolean
+      td true
+      td Set to <b>false</b> if you want to disable momentum bounce in free mode
+    tr
+      td freeModeMomentumBounceRatio
+      td number
+      td 1
+      td Higher value produces larger momentum bounce effect
+    tr
+      td freeModeMinimumVelocity
+      td number
+      td 0.02
+      td Minimum touchmove-velocity required to trigger free mode momentum
+    tr
+      td freeModeSticky
+      td boolean
+      td false
+      td Set to <b>true</b> to enable snap to slides positions in free mode
+    tr
+      th(colspan="4") Progress
+    tr
+      td watchSlidesProgress
+      td boolean
+      td false
+      td Enable this feature to calculate each slides progress
+    tr
+      td watchSlidesVisibility
+      td boolean
+      td false
+      td <code>watchSlidesProgress</code> should be enabled. Enable this option and slides that are in viewport will have additional visible class
+    tr
+      th(colspan="4") Images
+    tr
+      td preloadImages
+      td boolean
+      td true
+      td When enabled Swiper will force to load all images
+    tr
+      td updateOnImagesReady
+      td boolean
+      td true
+      td When enabled Swiper will be reinitialized after all inner images (&lt;img&gt; tags) are loaded. Required <code>preloadImages: true</code>
+    tr
+      th(colspan="4") Loop
+    tr
+      td loop
+      td boolean
+      td false
+      td 
+        p Set to <b>true</b> to enable continuous loop mode
+        p.important-note If you use it along with <code>slidesPerView: 'auto'</code> then you need to specify <code>loopedSlides</code> parameter with amount of slides to loop (duplicate)
+        p Also, because of nature of how the loop mode works, it will add duplicated slides. Such duplicated classes will have additional classes:
+        ul
+          <li><code>swiper-slide-duplicate</code> - represents duplicated slide
+          <li><code>swiper-slide-duplicate-active</code> - represents slide duplicated to the currently active slide
+          <li><code>swiper-slide-duplicate-next</code> - represents slide duplicated to the slide next to active
+          <li><code>swiper-slide-duplicate-prev</code> - represents slide duplicated to the slide previous to active
+    tr
+      td loopAdditionalSlides
+      td number
+      td 0
+      td Addition number of slides that will be cloned after creating of loop
+    tr
+      td loopedSlides
+      td number
+      td null
+      td If you use <code>slidesPerView:'auto'</code> with loop mode you should tell to Swiper how many slides it should loop (duplicate) using this parameter
+    tr
+      td loopFillGroupWithBlank
+      td boolean
+      td false
+      td Enable and loop mode will fill groups with insufficient number of slides with blank slides. Good to be used with <code>slidesPerGroup</code> parameter
+    tr
+      th(colspan="4") Breakpoints
+    tr
+      td breakpoints
+      td object
+      td 
+      td Allows to set different parameter for different responsive breakpoints (screen sizes). Not all parameters can be changed in breakpoints, only those which are not required different layout and logic, like <code>slidesPerView</code>, <code>slidesPerGroup</code>, <code>spaceBetween</code>. Such parameters like <code>slidesPerColumn</code>, <code>loop</code>, <code>direction</code>, <code>effect</code> won't work. For example:
+        pre
+          code.js
+            | var swiper = new Swiper('.swiper-container', {
+            |   // Default parameters
+            |   slidesPerView: 4,
+            |   spaceBetween: 40,
+            |   // Responsive breakpoints
+            |   breakpoints: {
+            |     // when window width is &lt;= 320px
+            |     320: {
+            |       slidesPerView: 1,
+            |       spaceBetween: 10
+            |     },
+            |     // when window width is &lt;= 480px
+            |     480: {
+            |       slidesPerView: 2,
+            |       spaceBetween: 20
+            |     },
+            |     // when window width is &lt;= 640px
+            |     640: {
+            |       slidesPerView: 3,
+            |       spaceBetween: 30
+            |     }
+            |   }
+            | })
+    tr
+      th(colspan="4") Observer
+    tr
+      td observer
+      td boolean
+      td false
+      td Set to <b>true</b> to enable Mutation Observer on Swiper and its elements. In this case Swiper will be updated (reinitialized) each time if you change its style (like hide/show) or modify its child elements (like adding/removing slides)
+    tr
+      td observeParents
+      td boolean
+      td false
+      td Set to <b>true</b> if you also need to watch Mutations for Swiper parent elements
+    tr
+      th(colspan="4") Namespace
+    tr
+      td containerModifierClass
+      td string
+      td 'swiper-container-'
+      td The beginning of the modifier CSS class that can be added to swiper container depending on different parameters
+    tr
+      td slideClass
+      td string
+      td 'swiper-slide'
+      td CSS class name of slide
+    tr
+      td slideActiveClass
+      td string
+      td 'swiper-slide-active'
+      td CSS class name of currently active slide
+    tr
+      td slideDuplicatedActiveClass
+      td string
+      td 'swiper-slide-duplicate-active'
+      td CSS class name of duplicated slide which represents the currently active slide
+    tr
+      td slideVisibleClass
+      td string
+      td 'swiper-slide-visible'
+      td CSS class name of currently visible slide
+    tr
+      td slideDuplicateClass
+      td string
+      td 'swiper-slide-duplicate'
+      td CSS class name of slide duplicated by loop mode
+    tr
+      td slideNextClass
+      td string
+      td 'swiper-slide-next'
+      td CSS class name of slide which is right after currently active slide
+    tr
+      td slideDuplicatedNextClass
+      td string
+      td 'swiper-slide-duplicate-next'
+      td CSS class name of duplicated slide which represents the slide next to active slide
+    tr
+      td slidePrevClass
+      td string
+      td 'swiper-slide-prev'
+      td CSS class name of slide which is right before currently active slide
+    tr
+      td slideDuplicatedPrevClass
+      td string
+      td 'swiper-slide-duplicate-prev'
+      td CSS class name of duplicated slide which represents the slide previous to active slide
+    tr
+      td wrapperClass
+      td string
+      td 'swiper-wrapper'
+      td CSS class name of slides' wrapper

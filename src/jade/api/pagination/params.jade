@@ -1,0 +1,157 @@
+h4#pagination-parameters Pagination Parameters
+table.params-table
+  thead
+    tr
+      th Parameter
+      th Type
+      th Default
+      th Description
+  tbody
+    tr
+      td pagination
+      td object
+      td 
+      td
+        p Object with navigation parameters. For example:
+          pre
+            code
+              :code
+                var mySwiper = new Swiper('.swiper-container', {
+                  pagination: {
+                    el: '.swiper-pagination',
+                    type: 'bullets',
+                  },
+                });
+    tr.subparam-open-row
+      td(colspan="4") {
+    tr.subparam-row
+      td el
+      td string
+      td null
+      td String with CSS selector or HTML element of the container with pagination
+    tr.subparam-row
+      td type
+      td string
+      td 'bullets'
+      td String with type of pagination. Can be "bullets", "fraction", "progressbar" or "custom"
+    tr.subparam-row
+      td bulletElement
+      td string
+      td 'span'
+      td Defines which HTML tag will be use to represent single pagination bullet. Only for <b>bullets</b> pagination type.
+    tr.subparam-row
+      td dynamicBullets
+      td boolean
+      td false
+      td Good to enable if you use bullets pagination with a lot of slides. So it will keep only few bullets visible at the same time.
+    tr.subparam-row
+      td hideOnClick
+      td boolean
+      td true
+      td Toggle (hide/true) pagination container visibility after click on Slider's container
+    tr.subparam-row
+      td clickable
+      td boolean
+      td false
+      td If <b>true</b> then clicking on pagination button will cause transition to appropriate slide. Only for <b>bullets</b> pagination type
+    tr.subparam-row
+      td renderBullet
+      td function(index, className)
+      td null
+      td This parameter allows totally customize pagination bullets, you need to pass here a function that accepts <b>index</b> number of pagination bullet and required element class name (<b>className</b>). Only for <b>bullets</b> pagination type
+        p For example, with this code, we can add slide number into pagination bullet:
+        pre
+          code.js
+            :code
+              var swiper = new Swiper('.swiper-container', {
+                //...
+                renderBullet: function (index, className) {
+                  return '&lt;span class="' + className + '"&gt;' + (index + 1) + '&lt;/span&gt;';
+                }
+              });
+    tr.subparam-row
+      td renderFraction
+      td function(currentClass, totalClass)
+      td null
+      td This parameter allows to customize "fraction" pagination html. Only for <b>fraction</b> pagination type
+        p For example:
+        pre
+          code.js
+            | var swiper = new Swiper('.swiper-container', {
+            |   //...
+            |   renderFraction: function (currentClass, totalClass) {
+            |       return '&lt;span class="' + currentClass + '"&gt;&lt;/span&gt;' +
+            |              ' of ' +
+            |              '&lt;span class="' + totalClass + '"&gt;&lt;/span&gt;';
+            |   }
+            | });
+    tr.subparam-row
+      td renderProgressbar
+      td function(progressbarFillClass)
+      td null
+      td This parameter allows to customize "progress" pagination. Only for <b>progress</b> pagination type
+        p For example:
+        pre
+          code.js
+            | var swiper = new Swiper('.swiper-container', {
+            |   //...
+            |   renderProgressbar: function (progressbarFillClass) {
+            |       return '&lt;span class="' + progressbarFillClass + '"&gt;&lt;/span&gt;';
+            |   }
+            | });
+    tr.subparam-row
+      td renderCustom
+      td function(swiper, current, total)
+      td null
+      td This parameter is required for <b>custom</b> pagination type where you have to specify how it should be rendered
+        p For example:
+        pre
+          code.js
+            | var swiper = new Swiper('.swiper-container', {
+            |   //...
+            |   renderCustom: function (swiper, current, total) {
+            |       return current + ' of ' + total;
+            |   }
+            | });
+    tr.subparam-row
+      td bulletClass
+      td string
+      td 'swiper-pagination-bullet'
+      td CSS class name of single pagination bullet
+    tr.subparam-row
+      td bulletActiveClass
+      td string
+      td 'swiper-pagination-bullet-active'
+      td CSS class name of currently active pagination bullet
+    tr.subparam-row
+      td modifierClass
+      td string
+      td 'swiper-pagination-'
+      td The beginning of the modifier CSS class name that will be added to pagination depending on parameters
+    tr.subparam-row
+      td currentClass
+      td string
+      td 'swiper-pagination-current'
+      td CSS class name of the element with currently active index in "fraction" pagination
+    tr.subparam-row
+      td totalClass
+      td string
+      td 'swiper-pagination-total'
+      td CSS class name of the element with total number of "snaps" in "fraction" pagination
+    tr.subparam-row
+      td hiddenClass
+      td string
+      td 'swiper-pagination-hidden'
+      td CSS class name of pagination when it becomes inactive
+    tr.subparam-row
+      td progressbarFillClass
+      td string
+      td 'swiper-pagination-progressbar-fill'
+      td CSS class name of pagination progressbar fill element
+    tr.subparam-row
+      td clickableClass
+      td string
+      td 'swiper-pagination-clickable'
+      td CSS class name set to pagination when it is clickable
+    tr.subparam-close-row
+      td(colspan="4") }

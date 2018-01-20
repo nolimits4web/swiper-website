@@ -1,0 +1,291 @@
+extends ../_internal-template
+
+block vars
+  - var activeLink = 'demos';
+  - var title = 'Swiper Demos';
+
+block content
+  h1 Swiper Demos
+  p You can download all these demos and hook into the code from GitHub <a target="_blank" href="https://github.com/nolimits4web/Swiper/tree/master/demos/">here</a>
+  - var linkWindowText = 'Open in new window';
+  - var linkSourceText = 'Source code';
+  .demo
+    h3 Default Setup
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", target="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="010-default.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Navigation
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", target="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="020-navigation.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Pagination
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", target="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="030-pagination.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Pagination / Dynamic Bullets
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", target="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="040-pagination-dynamic.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Progress Pagination
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", target="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="050-pagination-progress.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Fraction Pagination
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", target="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="060-pagination-fraction.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Custom Pagination
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", target="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="070-pagination-custom.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Scrollbar
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="080-scrollbar.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Vertical Slider
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="090-vertical.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Space Between Slides
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="100-space-between.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Multiple Slides Per View
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="110-slides-per-view.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Auto Slides Per View / Carousel Mode
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="120-slides-per-view-auto.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Centered Slides
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="130-centered.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Centered Slides + Auto Slides Per View
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="140-centered-auto.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Free Mode / No Fixed Positions
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="150-freemode.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Scroll Container
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="160-scroll-container.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Multi Row Slides Layout
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="170-slides-per-column.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Nested Swipers
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="180-nested.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Grab Cursor
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="190-grab-cursor.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Loop Mode / Infinite Loop
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="200-infinite-loop.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Loop Mode with Multiple Slides Per Group
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="210-infinite-loop-with-slides-per-group.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Fade Effect
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="220-effect-fade.html", scrolling="no", frameborder="0")
+  .demo
+    h3 3D Cube Effect
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="230-effect-cube.html", scrolling="no", frameborder="0")
+  .demo
+    h3 3D Coverflow Effect
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="240-effect-coverflow.html", scrolling="no", frameborder="0")
+  .demo
+    h3 3D Flip Effect
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="250-effect-flip.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Keyboard Control (Open in new window)
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="260-keyboard-control.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Mousewheel Control
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="270-mousewheel-control.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Autoplay
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="280-autoplay.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Dynamic Slides
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="290-dynamic-slides.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Thumbs Gallery With Two-way Control
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="300-thumbs-gallery.html", scrolling="no", frameborder="0", style="height: 600px")
+  .demo
+    h3 Hash Navigation (Open in new window)
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="330-hash-navigation.html", scrolling="no", frameborder="0")
+  .demo
+    h3 History API (Open in new window)
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="340-history.html", scrolling="no", frameborder="0")
+  .demo
+    h3 RTL Layout
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="350-rtl.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Parallax
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="360-parallax.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Lazy Loading Images
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="370-lazy-load-images.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Responsive Breakpoints (Open in new window)
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="380-responsive-breakpoints.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Auto Height
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="390-autoheight.html", scrolling="no", frameborder="0", style="height: 500px")
+  .demo
+    h3 Zoom
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="400-zoom.html", scrolling="no", frameborder="0")
+  .demo
+    h3 Virtual Slides
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="410-virtual-slides.html", scrolling="no", frameborder="0", style="height: 400px")
+  .demo
+    h3 Slideable Navigation Drawer
+    .demo-links
+      a(href="", target="_blank").demo-link-new-window #{linkWindowText}
+      a(href="", traget="_blank").demo-link-source #{linkSourceText}
+    .demo-iframe
+      iframe(data-src="430-slideable-menu.html", scrolling="no", frameborder="0")

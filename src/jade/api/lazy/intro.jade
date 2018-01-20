@@ -1,0 +1,57 @@
+p To enable lazy loading, first of all we need special layout for images or elements with backround in slides:
+  pre
+    code
+      :code
+        &lt;div class="swiper-container"&gt;
+            &lt;div class="swiper-wrapper"&gt;
+
+                &lt;!-- Lazy image --&gt;
+                &lt;div class="swiper-slide"&gt;
+                    &lt;img data-src="path/to/picture-1.jpg" class="swiper-lazy"&gt;
+                    &lt;div class="swiper-lazy-preloader"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Lazy image with srscet--&gt;
+                &lt;div class="swiper-slide"&gt;
+                    &lt;img data-src="path/to/logo-small.png" data-srcset="path/logo/logo-large.png 2x" class="swiper-lazy"&gt;
+                    &lt;div class="swiper-lazy-preloader"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Element with lazy background image --&gt;
+                &lt;div class="swiper-slide"&gt;
+                    &lt;div data-background="path/to/picture-2.jpg" class="swiper-lazy"&gt;
+                        &lt;div class="swiper-lazy-preloader"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Lazy background image on slide itself --&gt;
+                &lt;div data-background="path/to/picture-3.jpg" class="swiper-slide swiper-lazy"&gt;
+                    &lt;div class="swiper-lazy-preloader"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+  p As you see:
+  ul
+    li Each lazy loaded image/element should have additional "swiper-lazy" class
+    li Lazy image source for &lt;img&gt; element should be specified in "data-src" attribute instead of "src"
+    li Lazy image source set for &lt;img&gt; element should be specified in "data-srcset" attribute instead of "srcset"
+    li Lazy background image source should be specified in "data-background" attribute
+  p You may also add animated preloader spinner to slide which will be removed automatically after image loaded:
+  pre
+    code
+      | &lt;div class="swiper-lazy-preloader"&gt;&lt;/div&gt;
+  p Or white-one for dark layout:
+  pre
+    code
+      | &lt;div class="swiper-lazy-preloader swiper-lazy-preloader-white"&gt;&lt;/div&gt;
+  p After that we need to enable lazy loading on Swiper initialization:
+  pre
+    code
+      | var swiper = new Swiper('.swiper-container', {
+      |     // Disable preloading of all images
+      |     preloadImages: false,
+      |     // Enable lazy loading
+      |     lazy: true
+      | });
+  .important-note
+    p If you use slidesPerView "auto" or slidesPerView &gt; 1, then you should also enable <b>watchSlidesVisibility</b> and Swiper will load images in currently visible slides

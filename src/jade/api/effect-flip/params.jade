@@ -1,0 +1,38 @@
+h4#flip-effect-parameters Flip Effect Parameters
+table.params-table
+  thead
+    tr
+      th Parameter
+      th Type
+      th Default
+      th Description
+  tbody
+    tr
+      td flipEffect
+      td object
+      td
+      td
+        p Object with Flip-effect parameters. For example:
+          pre
+            code
+              :code
+                var mySwiper = new Swiper('.swiper-container', {
+                  flipEffect: {
+                    rotate: 30,
+                    slideShadows: false,
+                  },
+                });
+    tr.subparam-open-row
+      td(colspan="4") {
+    tr.subparam-row
+      td slideShadows
+      td boolean
+      td true
+      td Enables slides shadows
+    tr.subparam-row
+      td limitRotation
+      td boolean
+      td true
+      td Limit edge slides rotation
+    tr.subparam-close-row
+      td(colspan="4") }

@@ -1,0 +1,38 @@
+h4#keyboard-parameters Keyboard Control Parameters
+table.params-table
+  thead
+    tr
+      th Parameter
+      th Type
+      th Default
+      th Description
+  tbody
+    tr
+      td keyboard
+      td object/boolean
+      td false
+      td
+        p Enables navigation through slides using keyboard. Object with keyboard parameters or boolean <b>true</b> to enable with default settings. For example:
+          pre
+            code
+              :code
+                var mySwiper = new Swiper('.swiper-container', {
+                  keyboard: {
+                    enabled: true,
+                    onlyInViewport: false,
+                  },
+                });
+    tr.subparam-open-row
+      td(colspan="4") {
+    tr.subparam-row
+      td enabled
+      td boolean
+      td false
+      td Set to <b>true</b> to enable keyboard control
+    tr.subparam-row
+      td onlyInViewport
+      td boolean
+      td true
+      td When enabled it will control sliders that are currently in viewport
+    tr.subparam-close-row
+      td(colspan="4") }

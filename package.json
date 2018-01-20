@@ -1,0 +1,33 @@
+{
+  "name": "swiper-website",
+  "version": "1.0.0",
+  "description": "Swiper Website",
+  "keywords": [],
+  "author": "Vladimir Kharlampidi",
+  "license": "",
+  "homepage": "http://www.idangero.us/swiper/",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nolimits4web/swiper-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nolimits4web/swiper-website/issues"
+  },
+  "devDependencies": {
+    "gulp": "~3.9.0",
+    "gulp-connect": "~2.3.1",
+    "gulp-jade": "~1.1.0",
+    "gulp-jshint": "~2.0.0",
+    "gulp-less": "~3.0.5",
+    "gulp-open": "~1.0.0",
+    "jade": "^1.11.0",
+    "jshint": "~2.8.0",
+    "jshint-stylish": "~2.1.0"
+  },
+  "scripts": {
+    "test": "gulp test"
+  }
+}

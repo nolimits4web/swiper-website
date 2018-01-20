@@ -1,0 +1,289 @@
+extends ../_internal-template
+
+block vars
+  - var activeLink = 'api';
+  - var title = 'Swiper API';
+  - var noCenterContent = true;
+  - var withLeftNav = true;
+
+block content
+  .api-nav
+    ul
+      li
+        a(href="#layout") Layout
+      li
+        a(href="#initialize") Initialize
+      li
+        a(href="#parameters") Parameters
+      li
+        a(href="#methods") Methods & Properties
+      li
+        a(href="#events") Events
+      li
+        a(href="#components") Components
+        ul
+          li
+            a(href="#navigation") Navigation
+          li
+            a(href="#pagination") Pagination
+          li
+            a(href="#scrollbar") Scrollbar
+          li
+            a(href="#autoplay") Autoplay
+          li
+            a(href="#parallax") Parallax
+          li
+            a(href="#lazy") Lazy Loading
+          li
+            a(href="#fade-effect") Fade Effect
+          li
+            a(href="#coverflow-effect") Coverflow Effect
+          li
+            a(href="#flip-effect") Flip Effect
+          li
+            a(href="#cube-effect") Cube Effect
+          li
+            a(href="#zoom") Zoom
+          li
+            a(href="#keyboard") Keyboard Control
+          li
+            a(href="#mousewheel") Mousewheel Control
+          li
+            a(href="#virtual") Virtual Slides
+          li
+            a(href="#hash-navigation") Hash Navigation
+          li
+            a(href="#history-navigation") History Navigation
+          li
+            a(href="#controller") Controller
+          li
+            a(href="#a11y") Accessibility
+      li
+        a(href="#custom-build") Custom Build
+  .api-content
+    h1 Swiper API
+    h2#layout Swiper Full HTML Layout
+    pre
+      code
+        | &lt;!-- Slider main container --&gt;
+        | &lt;div class="swiper-container"&gt;
+        |     &lt;!-- Additional required wrapper --&gt;
+        |     &lt;div class="swiper-wrapper"&gt;
+        |         &lt;!-- Slides --&gt;
+        |         &lt;div class="swiper-slide"&gt;Slide 1&lt;/div&gt;
+        |         &lt;div class="swiper-slide"&gt;Slide 2&lt;/div&gt;
+        |         &lt;div class="swiper-slide"&gt;Slide 3&lt;/div&gt;
+        |         ...
+        |     &lt;/div&gt;
+        |     &lt;!-- If we need pagination --&gt;
+        |     &lt;div class="swiper-pagination"&gt;&lt;/div&gt;
+        |     
+        |     &lt;!-- If we need navigation buttons --&gt;
+        |     &lt;div class="swiper-button-prev"&gt;&lt;/div&gt;
+        |     &lt;div class="swiper-button-next"&gt;&lt;/div&gt;
+        |     
+        |     &lt;!-- If we need scrollbar --&gt;
+        |     &lt;div class="swiper-scrollbar"&gt;&lt;/div&gt;
+        | &lt;/div&gt;
+    h2#initialize Initialize Swiper
+    p Now, when we have Swiper's HTML, we need to initialize it using the following function:
+    .method-wrap
+      p
+        span.method new Swiper(<span>swiperContainer</span>, <span>parameters</span>) 
+        span - initialize swiper with options
+      ul.method-parameters
+        li
+          span.parameter swiperContainer
+          |  - <span class="parameter-type">HTMLElement</span> or <span class="parameter-type">string</span> (with CSS Selector) of swiper container HTML element. Required.
+        li
+          span.parameter parameters
+          |  - <span class="parameter-type">object</span> - object with Swiper parameters. Optional.
+        li.method-returns <strong>Method returns initialized Swiper instance</strong>
+    p For example:
+    pre
+      code
+        | var mySwiper = new Swiper('.swiper-container', {
+        |     speed: 400,
+        |     spaceBetween: 100
+        | });
+
+    p <b>After</b> you initialize Swiper it is possible to access to Swiper's instance on its HTMLElement. It is <code>swiper</code> property of Swiper's HTML container element:
+    pre
+      code.js
+        | var mySwiper = document.querySelector('.swiper-container').swiper
+        | 
+        | // Now you can use all slider methods like
+        | mySwiper.slideNext();
+
+    include params.jade
+    include props-methods.jade
+    include events.jade
+
+    h2#components Components
+
+    h3#navigation Navigation
+    include navigation/params.jade
+    include navigation/methods.jade
+
+    h3#pagination Pagination
+    include pagination/params.jade
+    include pagination/methods.jade
+
+    h3#scrollbar Scrollbar
+    include scrollbar/params.jade
+    include scrollbar/methods.jade
+
+    h3#autoplay Autoplay
+    include autoplay/params.jade
+    include autoplay/methods.jade
+    include autoplay/events.jade
+
+    h3#parallax Parallax
+    include parallax/intro.jade
+    include parallax/params.jade
+
+    h3#lazy Lazy Loading
+    include lazy/intro.jade
+    include lazy/params.jade
+    include lazy/methods.jade
+    include lazy/events.jade
+
+    h3#fade-effect Fade Effect
+    include effect-fade/params.jade
+
+    h3#coverflow-effect Coverflow Effect
+    include effect-coverflow/params.jade
+
+    h3#flip-effect Flip Effect
+    include effect-flip/params.jade
+
+    h3#cube-effect Cube Effect
+    include effect-cube/params.jade
+
+    h3#zoom Zoom
+    include zoom/intro.jade
+    include zoom/params.jade
+    include zoom/methods.jade
+
+    h3#keyboard Keyboard Control
+    include keyboard/params.jade
+    include keyboard/methods.jade
+
+    h3#mousewheel Mousewheel Control
+    include mousewheel/params.jade
+    include mousewheel/methods.jade
+
+    h3#virtual Virtual Slides
+    include virtual/intro.jade
+    include virtual/params.jade
+    include virtual/methods.jade
+
+    h3#hash-navigation Hash Navigation
+    include hash-navigation/intro.jade
+    include hash-navigation/params.jade
+
+    h3#history-navigation History Navigation
+    include history/params.jade
+
+    h3#controller Controller
+    include controller/params.jade
+
+    h3#a11y Accessibility (a11y)
+    include a11y/params.jade
+
+    h2#custom-build Custom Build
+    p You have two options of making custom version of Swiper.
+    h3 1. Using ES-module
+    p If you use bundler with ES-modules support in your project you can import only the modules you need:
+    pre
+      code
+        :code
+          // Import Swiper and modules
+          import { Swiper, Navigation, Pagination, Scrollbar } from 'swiper/dist/js/swiper.esm.js';
+
+          // Install modules
+          Swiper.use([Navigation, Pagination, Scrollbar]);
+
+          // Now you can use Swiper
+          var swiper = new Swiper('.swiper-container', {
+            speed: 500,
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+            // ...
+          });
+    p The following modules are exported from <code>swiper.esm.js</code>:
+    ul
+      li <code>Swiper</code> - core library
+      li <code>Virtual</code> - Virtual Slides module
+      li <code>Keyboard</code> - Keyboard Control module
+      li <code>Mousewheel</code> - Mousewheel Control module
+      li <code>Navigation</code> - Navigation module
+      li <code>Pagination</code> - Pagination module
+      li <code>Scrollbar</code> - Scrollbar module
+      li <code>Parallax</code> - Parallax module
+      li <code>Zoom</code> - Zoom module
+      li <code>Lazy</code> - Lazy module
+      li <code>Controller</code> - Controller module
+      li <code>A11y</code> - Accessibility module
+      li <code>History</code> - History Navigation module
+      li <code>HashNavigation</code> - Hash Navigation module
+      li <code>Autoplay</code> - Autoplay module
+      li <code>EffectFade</code> - Fade Effect module
+      li <code>EffectCube</code> - Cube Effect module
+      li <code>EffectFlip</code> - Flip Effect module
+      li <code>EffectCoverflow</code> - Coverflow Effect module
+
+    h3 2. Using Build Script
+    p Swiper comes with gulp builder that allows to build custom library version where you may include only required modules. We need the following:
+    ol
+      li Download and unzip Swiper GitHub repository to local folder
+      li Install Node.js (if not installed)
+
+      li Install Gulp (if not installed) by executing the following command in terminal:
+        pre
+          code $ npm install --global gulp
+      li Now, we need to install required dependencies. Go to the folder with downloaded and unzipped Swiper repository and execute in terminal:
+        pre
+          code $ npm install
+      li Open <code>scripts/build-config.js</code> file:
+        pre
+          code.js
+            :code
+              module.exports = {
+                // remove components you don't need
+                components: [
+                  'virtual',
+                  'keyboard',
+                  'mousewheel',
+                  'navigation',
+                  'pagination',
+                  'scrollbar',
+                  'parallax',
+                  'zoom',
+                  'lazy',
+                  'controller',
+                  'a11y',
+                  'history',
+                  'hash-navigation',
+                  'autoplay',
+                  'effect-fade',
+                  'effect-cube',
+                  'effect-flip',
+                  'effect-coverflow',
+                ],
+                // target device, can be "desktop" or "universal"
+                target: 'universal',
+                // default color of navigation elements
+                themeColor: '#007aff',
+                // additional color to be included
+                colors: {
+                  white: '#ffffff',
+                  black: '#000000',
+                },
+              };
+      li Now, we are ready to build custom version of Swiper:
+        pre
+          code $ npm run build:prod
+      li That is all. Generated CSS and JS files and their minified versions will be available in <code>dist/</code> folder.
