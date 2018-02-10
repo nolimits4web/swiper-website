@@ -112,6 +112,20 @@ table.methods-table
             span.parameter runCallbacks
             |  - <span class="parameter-type">boolean</span> - Set it to <code>false</code> (by default it is <code>true</code>) and transition will not produce  transition events. <em>Optional</em>
     tr
+      td mySwiper.slideToLoop(<span>index</span>, <span>speed</span>, <span>runCallbacks</span>);
+      td 
+        | Does the same as .slideTo but for the case when used with enabled <code>loop</code>. So this method will slide to slides with <code>realIndex</code> matching to passed <code>index</code><br>
+        ul.method-parameters
+          li
+            span.parameter index
+            |  - <span class="parameter-type">number</span> - index number of original slide
+          li
+            span.parameter speed
+            |  - <span class="parameter-type">number</span> - transition duration (in ms). <em>Optional</em>
+          li
+            span.parameter runCallbacks
+            |  - <span class="parameter-type">boolean</span> - Set it to <code>false</code> (by default it is <code>true</code>) and transition will not produce  transition events. <em>Optional</em>
+    tr
       td mySwiper.update();
       td 
         p You should call it after you add/remove slides manually, or after you hide/show it, or do any custom DOM modifications with Swiper

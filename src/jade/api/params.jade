@@ -245,6 +245,11 @@ table.params-table
     tr
       th(colspan="4") Swiping / No swiping
     tr
+      td preventIntercationOnTransition
+      td boolean
+      td false
+      td When enabled it won't allow to change slides by swiping or navigation/pagination buttons during transition
+    tr
       td allowSlidePrev
       td boolean
       td true
@@ -258,12 +263,17 @@ table.params-table
       td noSwiping
       td boolean
       td true
-      td Will disable swiping on elements matched to class specified in <code>noSwipingClass</code>
+      td Enable/disable swiping on elements matched to class specified in <code>noSwipingClass</code>
     tr
       td noSwipingClass
       td string
       td 'swiper-no-swiping'
-      td If <b>true</b>, then you can add <code>noSwipingClass</code> class to swiper's slide to prevent/disable swiping on this element
+      td Specify <code>noSwiping</code>'s' element css class
+    tr
+      td noSwipingSelector
+      td string
+      td 
+      td Can be used instead of <code>noSwipingClass</code> to specify elements to disable swiping on. For example <code>'input'</code> will disable swiping on all inputs
     tr
       td swipeHandler
       td string / HTMLElement
