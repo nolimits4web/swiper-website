@@ -1,7 +1,8 @@
-mixin edit-link(file)
+mixin edit-link(file, edit)
   - var file = file;
   - var website_repo = 'https://github.com/nolimits4web/swiper-website'
-  a.edit-link(href='#{website_repo}/tree/master/src/jade/#{file}') Improve this Doc
+  - var sub = edit ? 'edit' : 'tree'
+  a.edit-link(href='#{website_repo}/#{sub}/master/src/jade/#{file}', target="_blank") Improve this Doc
 block vars
 doctype
 html

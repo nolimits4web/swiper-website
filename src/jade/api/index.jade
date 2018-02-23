@@ -62,6 +62,7 @@ block content
         a(href="#custom-build") Custom Build
   .api-content
     h1 Swiper API
+    +edit-link('api/index.jade', true)
     h2#layout Swiper Full HTML Layout
     pre
       code
@@ -122,77 +123,95 @@ block content
     h2#components Components
 
     h3#navigation Navigation
+    +edit-link('api/navigation/')
     include navigation/params.jade
     include navigation/methods.jade
 
     h3#pagination Pagination
+    +edit-link('api/pagination/')
     include pagination/params.jade
     include pagination/methods.jade
 
     h3#scrollbar Scrollbar
+    +edit-link('api/scrollbar/')
     include scrollbar/params.jade
     include scrollbar/methods.jade
 
     h3#autoplay Autoplay
+    +edit-link('api/autoplay/')
     include autoplay/params.jade
     include autoplay/methods.jade
     include autoplay/events.jade
 
     h3#parallax Parallax
+    +edit-link('api/parallax/')
     include parallax/intro.jade
     include parallax/params.jade
 
     h3#lazy Lazy Loading
+    +edit-link('api/lazy/')
     include lazy/intro.jade
     include lazy/params.jade
     include lazy/methods.jade
     include lazy/events.jade
 
     h3#fade-effect Fade Effect
+    +edit-link('api/effect-fade/')
     include effect-fade/params.jade
 
     h3#coverflow-effect Coverflow Effect
+    +edit-link('api/effect-coverflow/')
     include effect-coverflow/params.jade
 
     h3#flip-effect Flip Effect
+    +edit-link('api/effect-flip/')
     include effect-flip/params.jade
 
     h3#cube-effect Cube Effect
+    +edit-link('api/effect-cube/')
     include effect-cube/params.jade
 
     h3#zoom Zoom
+    +edit-link('api/zoom/')
     include zoom/intro.jade
     include zoom/params.jade
     include zoom/methods.jade
 
     h3#keyboard Keyboard Control
+    +edit-link('api/keyboard/')
     include keyboard/params.jade
     include keyboard/methods.jade
 
     h3#mousewheel Mousewheel Control
+    +edit-link('api/mousewheel/')
     include mousewheel/params.jade
     include mousewheel/methods.jade
 
     h3#virtual Virtual Slides
+    +edit-link('api/virtual/')
     include virtual/intro.jade
     include virtual/params.jade
     include virtual/methods.jade
 
     h3#hash-navigation Hash Navigation
+    +edit-link('api/hash-navigation/')
     include hash-navigation/intro.jade
     include hash-navigation/params.jade
 
     h3#history-navigation History Navigation
+    +edit-link('api/history/')
     include history/params.jade
 
     h3#controller Controller
+    +edit-link('api/controller/')
     include controller/params.jade
 
     h3#a11y Accessibility (a11y)
-    +edit-link('api/a11y/params.jade')
+    +edit-link('api/a11y/')
     include a11y/params.jade
 
     h2#custom-build Custom Build
+    +edit-link('api/index.jade')
     p You have two options of making custom version of Swiper.
     h3 1. Using ES-module
     p If you use bundler with ES-modules support in your project you can import only the modules you need:
