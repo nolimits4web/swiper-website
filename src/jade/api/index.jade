@@ -78,11 +78,11 @@ block content
         |     &lt;/div&gt;
         |     &lt;!-- If we need pagination --&gt;
         |     &lt;div class="swiper-pagination"&gt;&lt;/div&gt;
-        |     
+        |
         |     &lt;!-- If we need navigation buttons --&gt;
         |     &lt;div class="swiper-button-prev"&gt;&lt;/div&gt;
         |     &lt;div class="swiper-button-next"&gt;&lt;/div&gt;
-        |     
+        |
         |     &lt;!-- If we need scrollbar --&gt;
         |     &lt;div class="swiper-scrollbar"&gt;&lt;/div&gt;
         | &lt;/div&gt;
@@ -90,7 +90,7 @@ block content
     p Now, when we have Swiper's HTML, we need to initialize it using the following function:
     .method-wrap
       p
-        span.method new Swiper(<span>swiperContainer</span>, <span>parameters</span>) 
+        span.method new Swiper(<span>swiperContainer</span>, <span>parameters</span>)
         span - initialize swiper with options
       ul.method-parameters
         li
@@ -112,7 +112,7 @@ block content
     pre
       code.js
         | var mySwiper = document.querySelector('.swiper-container').swiper
-        | 
+        |
         | // Now you can use all slider methods like
         | mySwiper.slideNext();
 
@@ -131,6 +131,7 @@ block content
     +edit-link('api/pagination/')
     include pagination/params.jade
     include pagination/methods.jade
+    include pagination/events.jade
 
     h3#scrollbar Scrollbar
     +edit-link('api/scrollbar/')
