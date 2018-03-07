@@ -66,26 +66,28 @@ block content
     h2#layout Swiper Full HTML Layout
     pre
       code
-        | &lt;!-- Slider main container --&gt;
-        | &lt;div class="swiper-container"&gt;
-        |     &lt;!-- Additional required wrapper --&gt;
-        |     &lt;div class="swiper-wrapper"&gt;
-        |         &lt;!-- Slides --&gt;
-        |         &lt;div class="swiper-slide"&gt;Slide 1&lt;/div&gt;
-        |         &lt;div class="swiper-slide"&gt;Slide 2&lt;/div&gt;
-        |         &lt;div class="swiper-slide"&gt;Slide 3&lt;/div&gt;
-        |         ...
-        |     &lt;/div&gt;
-        |     &lt;!-- If we need pagination --&gt;
-        |     &lt;div class="swiper-pagination"&gt;&lt;/div&gt;
-        |
-        |     &lt;!-- If we need navigation buttons --&gt;
-        |     &lt;div class="swiper-button-prev"&gt;&lt;/div&gt;
-        |     &lt;div class="swiper-button-next"&gt;&lt;/div&gt;
-        |
-        |     &lt;!-- If we need scrollbar --&gt;
-        |     &lt;div class="swiper-scrollbar"&gt;&lt;/div&gt;
-        | &lt;/div&gt;
+        :code
+          <!-- Slider main container -->
+          <div class="swiper-container">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide">Slide 1</div>
+                  <div class="swiper-slide">Slide 2</div>
+                  <div class="swiper-slide">Slide 3</div>
+                  ...
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+
+              <!-- If we need scrollbar -->
+              <div class="swiper-scrollbar"></div>
+          </div>
+
     h2#initialize Initialize Swiper
     p Now, when we have Swiper's HTML, we need to initialize it using the following function:
     .method-wrap
@@ -111,10 +113,11 @@ block content
     p <b>After</b> you initialize Swiper it is possible to access to Swiper's instance on its HTMLElement. It is <code>swiper</code> property of Swiper's HTML container element:
     pre
       code.js
-        | var mySwiper = document.querySelector('.swiper-container').swiper
-        |
-        | // Now you can use all slider methods like
-        | mySwiper.slideNext();
+        :code
+          var mySwiper = document.querySelector('.swiper-container').swiper
+
+          // Now you can use all slider methods like
+          mySwiper.slideNext();
 
     include params.jade
     include props-methods.jade
