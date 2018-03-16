@@ -30,12 +30,12 @@ table.methods-table
       td Current progress of wrapper translate (from 0 to 1)
     tr
       td mySwiper.activeIndex
-      td 
+      td
         p Index number of currently active slide
         p.important-note Note, that in loop mode active index value will be always shifted on a number of looped/duplicated slides
     tr
       td mySwiper.realIndex
-      td 
+      td
         p Index number of currently active slide considering duplicated slides in loop mode
     tr
       td mySwiper.previousIndex
@@ -77,7 +77,7 @@ table.methods-table
       th(colspan="2") Methods
     tr
       td mySwiper.slideNext(<span>speed</span>, <span>runCallbacks</span>);
-      td 
+      td
         | Run transition to next slide<br>
         ul.method-parameters
           li
@@ -88,7 +88,7 @@ table.methods-table
             |  - <span class="parameter-type">boolean</span> - Set it to <code>false</code> (by default it is <code>true</code>) and transition will not produce transition events. <em>Optional</em>
     tr
       td mySwiper.slidePrev(<span>speed</span>, <span>runCallbacks</span>);
-      td 
+      td
         | Run transition to previous slide<br>
         ul.method-parameters
           li
@@ -99,7 +99,7 @@ table.methods-table
             |  - <span class="parameter-type">boolean</span> - Set it to <code>false</code> (by default it is <code>true</code>) and transition will not produce  transition events. <em>Optional</em>
     tr
       td mySwiper.slideTo(<span>index</span>, <span>speed</span>, <span>runCallbacks</span>);
-      td 
+      td
         | Run transition to the slide with index number equal to 'index' parameter for the duration equal to 'speed' parameter.<br>
         ul.method-parameters
           li
@@ -113,7 +113,7 @@ table.methods-table
             |  - <span class="parameter-type">boolean</span> - Set it to <code>false</code> (by default it is <code>true</code>) and transition will not produce  transition events. <em>Optional</em>
     tr
       td mySwiper.slideToLoop(<span>index</span>, <span>speed</span>, <span>runCallbacks</span>);
-      td 
+      td
         | Does the same as .slideTo but for the case when used with enabled <code>loop</code>. So this method will slide to slides with <code>realIndex</code> matching to passed <code>index</code><br>
         ul.method-parameters
           li
@@ -126,8 +126,41 @@ table.methods-table
             span.parameter runCallbacks
             |  - <span class="parameter-type">boolean</span> - Set it to <code>false</code> (by default it is <code>true</code>) and transition will not produce  transition events. <em>Optional</em>
     tr
+      td mySwiper.slideReset(<span>speed</span>, <span>runCallbacks</span>);
+      td
+        | Reset swiper position to currently active slide for the duration equal to 'speed' parameter.<br>
+        ul.method-parameters
+          li
+            span.parameter speed
+            |  - <span class="parameter-type">number</span> - transition duration (in ms). <em>Optional</em>
+          li
+            span.parameter runCallbacks
+            |  - <span class="parameter-type">boolean</span> - Set it to <code>false</code> (by default it is <code>true</code>) and transition will not produce  transition events. <em>Optional</em>
+    tr
+      td mySwiper.slideToClosest(<span>speed</span>, <span>runCallbacks</span>);
+      td
+        | Reset swiper position to closest slide/snap point for the duration equal to 'speed' parameter.<br>
+        ul.method-parameters
+          li
+            span.parameter speed
+            |  - <span class="parameter-type">number</span> - transition duration (in ms). <em>Optional</em>
+          li
+            span.parameter runCallbacks
+            |  - <span class="parameter-type">boolean</span> - Set it to <code>false</code> (by default it is <code>true</code>) and transition will not produce  transition events. <em>Optional</em>
+    tr
+      td mySwiper.updateAutoHeight(<span>speed</span>);
+      td
+        | Force swiper to update its height (when autoHeight enabled) for the duration eqaul to 'speed' parameter<br>
+        ul.method-parameters
+          li
+            span.parameter speed
+            |  - <span class="parameter-type">number</span> - transition duration (in ms). <em>Optional</em>
+          li
+            span.parameter runCallbacks
+            |  - <span class="parameter-type">boolean</span> - Set it to <code>false</code> (by default it is <code>true</code>) and transition will not produce  transition events. <em>Optional</em>
+    tr
       td mySwiper.update();
-      td 
+      td
         p You should call it after you add/remove slides manually, or after you hide/show it, or do any custom DOM modifications with Swiper
         p This method also includes subcall of the following methods which you can use separately:
         ul
@@ -143,7 +176,7 @@ table.methods-table
       td Atach all events listeners again
     tr
       td mySwiper.destroy(<span>deleteInstance</span>, <span>cleanStyles</span>);
-      td 
+      td
         | Destroy slider instance and detach all events listeners, where<br>
         ul.method-parameters
           li
@@ -159,7 +192,7 @@ table.methods-table
           code
             | mySwiper.appendSlide('&lt;div class="swiper-slide"&gt;Slide 10"&lt;/div&gt;')
             | mySwiper.appendSlide([
-            |    '&lt;div class="swiper-slide"&gt;Slide 10"&lt;/div&gt;', 
+            |    '&lt;div class="swiper-slide"&gt;Slide 10"&lt;/div&gt;',
             |    '&lt;div class="swiper-slide"&gt;Slide 11"&lt;/div&gt;'
             | ]);
     tr
@@ -169,7 +202,7 @@ table.methods-table
           code
             | mySwiper.prependSlide('&lt;div class="swiper-slide"&gt;Slide 0"&lt;/div&gt;')
             | mySwiper.prependSlide([
-            |    '&lt;div class="swiper-slide"&gt;Slide 1"&lt;/div&gt;', 
+            |    '&lt;div class="swiper-slide"&gt;Slide 1"&lt;/div&gt;',
             |    '&lt;div class="swiper-slide"&gt;Slide 2"&lt;/div&gt;'
             | ]);
     tr
@@ -196,11 +229,11 @@ table.methods-table
       td Add event listener that will be executed only once
     tr
       td mySwiper.off(<span>event</span>, <span>handler</span>)
-      td Remove event listener for specified event 
+      td Remove event listener for specified event
     tr
       td mySwiper.off(<span>event</span>)
-      td Remove all listeners for specified event 
-    
+      td Remove all listeners for specified event
+
     tr
       td mySwiper.disableMousewheelControl();
       td Disable mousewheel control
