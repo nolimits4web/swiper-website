@@ -29,7 +29,7 @@ block content
     code
       | &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.x.x/css/swiper.css"&gt;
       | &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.x.x/css/swiper.min.css"&gt;
-      | 
+      |
       | &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.x.x/js/swiper.js"&gt;&lt;/script&gt;
       | &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.x.x/js/swiper.min.js"&gt;&lt;/script&gt;
       | &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.x.x/js/swiper.esm.js"&gt;&lt;/script&gt;
@@ -66,11 +66,11 @@ block content
       |     &lt;/div&gt;
       |     &lt;!-- If we need pagination --&gt;
       |     &lt;div class="swiper-pagination"&gt;&lt;/div&gt;
-      | 
+      |
       |     &lt;!-- If we need navigation buttons --&gt;
       |     &lt;div class="swiper-button-prev"&gt;&lt;/div&gt;
       |     &lt;div class="swiper-button-next"&gt;&lt;/div&gt;
-      | 
+      |
       |     &lt;!-- If we need scrollbar --&gt;
       |     &lt;div class="swiper-scrollbar"&gt;&lt;/div&gt;
       | &lt;/div&gt;
@@ -161,7 +161,7 @@ block content
     p In case you use it as an ES module make sure:
     ul
      li you have enabled <a href="https://babeljs.io/" target="_blank">Babel</a> or <a href="https://buble.surge.sh/" target="_blank">Buble</a> to transpile it to ES5 syntax,
-     li you have enabled node modules resolving for Swiper as it uses <a href="https://github.com/nolimits4web/Dom7" target="_blank">Dom7</a> as a dependency.
+     li you have enabled node modules resolving for Swiper as it uses <a href="https://github.com/nolimits4web/Dom7" target="_blank">Dom7</a> and SSR Window packages as dependencies.
   p Example of Webpack cofiguration for <code>babel-loader</code> with Swiper and Dom7:
   pre
     code.js
@@ -170,7 +170,7 @@ block content
           rules: [
             {
               test: /\.js$/, // Check for all js files
-              exclude: /node_modules\/(?!(dom7|swiper)\/).*/,
+              exclude: /node_modules\/(?!(dom7|ssr-window|swiper)\/).*/,
               loader: 'babel-loader'
             }
           ]
