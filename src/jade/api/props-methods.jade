@@ -206,6 +206,16 @@ table.methods-table
             |    '&lt;div class="swiper-slide"&gt;Slide 2"&lt;/div&gt;'
             | ]);
     tr
+      td mySwiper.addSlide(<span>index</span>, <span>slides</span>);
+      td Add new slides to the required index. <code>slides</code> could be HTMLElement or HTML string with new slide or array with such slides, for example:
+        pre
+          code
+            | mySwiper.addSlide(1, '&lt;div class="swiper-slide"&gt;Slide 10"&lt;/div&gt;')
+            | mySwiper.addSlide(1, [
+            |    '&lt;div class="swiper-slide"&gt;Slide 10"&lt;/div&gt;',
+            |    '&lt;div class="swiper-slide"&gt;Slide 11"&lt;/div&gt;'
+            | ]);
+    tr
       td mySwiper.removeSlide(<span>slideIndex</span>);
       td Remove selected slides. <code>slideIndex</code> could be a number with slide index to remove or array with indexes, for example:
         pre

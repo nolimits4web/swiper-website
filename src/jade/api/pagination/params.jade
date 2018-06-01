@@ -65,6 +65,16 @@ table.params-table
       td false
       td Makes pagination progressbar opposite to Swiper's `direction` parameter, means vertical progressbar for horizontal swiper direction and horizontal progressbar for vertical swiper direction
     tr.subparam-row
+      td formatFractionCurrent
+      td function(number)
+      td number =&gt; number
+      td Custom format fraction pagination current number. Function receives current number, and you need to return formatted value
+    tr.subparam-row
+      td formatFractionTotal
+      td function(number)
+      td number =&gt; number
+      td Custom format fraction pagination total number. Function receives total number, and you need to return formatted value
+    tr.subparam-row
       td renderBullet
       td function(index, className)
       td null
