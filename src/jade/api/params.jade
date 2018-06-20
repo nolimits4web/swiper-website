@@ -41,13 +41,13 @@ table.params-table
     tr
       td width
       td number
-      td 
+      td
       td Swiper width (in px). Parameter allows to force Swiper width. Useful <b>only</b> if you initialize Swiper when it is hidden.
         .important-note Setting this parameter will make Swiper not responsive
     tr
       td height
       td number
-      td 
+      td
       td Swiper height (in px). Parameter allows to force Swiper height. Useful <b>only</b> if you initialize Swiper when it is hidden.
         .important-note Setting this parameter will make Swiper not responsive
     tr
@@ -101,10 +101,10 @@ table.params-table
       td slidesPerView
       td number or 'auto'
       td 1
-      td 
+      td
         p Number of slides per view (slides visible at the same time on slider's container).
         p.important-note If you use it with "auto" value and along with <b>loop: true</b> then you need to specify <b>loopedSlides</b> parameter with amount of slides to loop (duplicate)
-        p.important-note <b>slidesPerView: 'auto'</b> is currently not compatible with multirow mode, when <b>slidesPerColumn</b> > 1 
+        p.important-note <b>slidesPerView: 'auto'</b> is currently not compatible with multirow mode, when <b>slidesPerColumn</b> > 1
     tr
       td slidesPerColumn
       td number
@@ -272,7 +272,7 @@ table.params-table
     tr
       td noSwipingSelector
       td string
-      td 
+      td
       td Can be used instead of <code>noSwipingClass</code> to specify elements to disable swiping on. For example <code>'input'</code> will disable swiping on all inputs
     tr
       td swipeHandler
@@ -368,7 +368,7 @@ table.params-table
       td loop
       td boolean
       td false
-      td 
+      td
         p Set to <b>true</b> to enable continuous loop mode
         p.important-note If you use it along with <code>slidesPerView: 'auto'</code> then you need to specify <code>loopedSlides</code> parameter with amount of slides to loop (duplicate)
         p Also, because of nature of how the loop mode works, it will add duplicated slides. Such duplicated classes will have additional classes:
@@ -397,7 +397,7 @@ table.params-table
     tr
       td breakpoints
       td object
-      td 
+      td
       td Allows to set different parameter for different responsive breakpoints (screen sizes). Not all parameters can be changed in breakpoints, only those which are not required different layout and logic, like <code>slidesPerView</code>, <code>slidesPerGroup</code>, <code>spaceBetween</code>. Such parameters like <code>slidesPerColumn</code>, <code>loop</code>, <code>direction</code>, <code>effect</code> won't work. For example:
         pre
           code.js
@@ -454,7 +454,7 @@ table.params-table
       td 'swiper-slide-active'
       td CSS class name of currently active slide
     tr
-      td slideDuplicatedActiveClass
+      td slideDuplicateActiveClass
       td string
       td 'swiper-slide-duplicate-active'
       td CSS class name of duplicated slide which represents the currently active slide
@@ -474,7 +474,7 @@ table.params-table
       td 'swiper-slide-next'
       td CSS class name of slide which is right after currently active slide
     tr
-      td slideDuplicatedNextClass
+      td slideDuplicateNextClass
       td string
       td 'swiper-slide-duplicate-next'
       td CSS class name of duplicated slide which represents the slide next to active slide
@@ -484,7 +484,7 @@ table.params-table
       td 'swiper-slide-prev'
       td CSS class name of slide which is right before currently active slide
     tr
-      td slideDuplicatedPrevClass
+      td slideDuplicatePrevClass
       td string
       td 'swiper-slide-duplicate-prev'
       td CSS class name of duplicated slide which represents the slide previous to active slide
