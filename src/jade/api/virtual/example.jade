@@ -40,19 +40,17 @@ pre
             }
           },
           mounted() {
+            const self = this;
             const swiper = new Swiper('.swiper-container', {
               // ...
               virtual: {
-                slides: this.slides,
-                renderExternal: this.renderExternal,
+                slides: self.slides,
+                renderExternal(data) {
+                  // assign virtual slides data
+                  self.virtualData = data;
+                },
               },
             });
-          },
-          methods: {
-            renderExternal(data) {
-              // assign virtual slides data
-              this.virtualData = data;
-            }
           },
         };
       </script>
@@ -81,18 +79,18 @@ pre
           }
         }
         componentDidMount() {
+          const self = this;
           const swiper = new Swiper('.swiper-container', {
             // ...
             virtual: {
-              slides: this.state.slides,
-              renderExternal: this.renderExternal.bind(this),
+              slides: self.state.slides,
+              renderExternal(data) {
+                // assign virtual slides data
+                self.setState({
+                  virtualData: data,
+                });
+              }
             },
-          });
-        }
-        renderExternal(data) {
-          // assign virtual slides data
-          this.setState({
-            virtualData: data,
           });
         }
         render() {
