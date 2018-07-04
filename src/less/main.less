@@ -1,11 +1,11 @@
 .gradR(@f,@t) {
-    background: @f; 
-    background: -moz-radial-gradient(center, ellipse cover, @f 0%, @t 100%); 
+    background: @f;
+    background: -moz-radial-gradient(center, ellipse cover, @f 0%, @t 100%);
     background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,@f), color-stop(100%,@t));
-    background: -webkit-radial-gradient(center, circle cover, @f,@t); 
-    background: -o-radial-gradient(center, circle cover, @f,@t); 
+    background: -webkit-radial-gradient(center, circle cover, @f,@t);
+    background: -o-radial-gradient(center, circle cover, @f,@t);
     background: -ms-radial-gradient(center, circle cover, @f,@t);
-    background: radial-gradient(circle at center, @f,@t); 
+    background: radial-gradient(circle at center, @f,@t);
 }
 .flexbox() {
     display: -webkit-box;
@@ -142,7 +142,7 @@
 }
 body {
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     color: #333;
     margin: 0;
     padding: 0;
@@ -171,8 +171,7 @@ li {
 
 // Headings
 h1, h2, h3, h4 {
-    .myriad();
-    font-weight: 400;
+    font-weight: 500;
     color: @dark;
 }
 h1 {
@@ -184,26 +183,19 @@ h1:first-child {
     margin-top: 0;
 }
 h2 {
-    font-size: 37px;
+    font-size: 32px;
     line-height: 1.3;
 }
 h3 {
-    font-size: 31px;
+    font-size: 26px;
     line-height: 1.4;
 }
 h2,h3 {
     margin: 15px 0;
 }
 h4 {
-    font-size: 21px;
-    margin: 10px 0;
-    color: #333;
-}
-h3,h4 {
-    color:@dark;
-}
-h4 {
-  color: #333;
+    font-size: 20px;
+    margin: 15px 0;
 }
 // Highlighting
 .monospace() {
@@ -301,6 +293,9 @@ header {
         font-weight: 300;
         line-height: 1;
         margin-top: 10px;
+    }
+    .title, .subtitle {
+        .myriad();
     }
     .titles {
         margin-left: 220px;
@@ -854,11 +849,11 @@ table.events-table {
         width: 100%;
         border: none;
         margin: 0;
-        box-sizing: border-box; 
+        box-sizing: border-box;
         height: 400px;
         width: 1px;
         min-width: 100%;
-        
+
     }
     h3 {
         margin-bottom: 0;
@@ -871,7 +866,7 @@ table.events-table {
             color:@red;
             padding-right: 15px;
             &:after {
-                content: ''; 
+                content: '';
                 position: absolute;
                 width: 10px;
                 height: 10px;
