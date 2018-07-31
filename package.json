@@ -23,6 +23,7 @@
     "gulp-jshint": "~2.0.0",
     "gulp-less": "~3.0.5",
     "gulp-open": "~1.0.0",
+    "hoek": "^5.0.3",
     "jade": "^1.11.0",
     "jshint": "~2.8.0",
     "jshint-stylish": "~2.1.0"
