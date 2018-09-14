@@ -142,6 +142,11 @@ table.params-table
       td true
       td Normalize slide index. See <a href="https://github.com/nolimits4web/Swiper/pull/1766" target="_blank">#1766</a>
     tr
+      td centerInsufficientSlides
+      td boolean
+      td false
+      td When enabled it center slides if the amount of slides less than `slidesPerView`. Not intended to be used <code>loop</code> mode and <code>slidesPerColumn</code>
+    tr
       th(colspan="4") Grab Cursor
     tr
       td grabCursor
@@ -422,6 +427,37 @@ table.params-table
             |     640: {
             |       slidesPerView: 3,
             |       spaceBetween: 30
+            |     }
+            |   }
+            | })
+    tr
+      td breakpointsInverse
+      td boolean
+      td false
+      td If enabled then it will count breakpoints in reversed direction, e.g. will override parameters if window width is more than specified breakpoint:
+        pre
+          code.js
+            | var swiper = new Swiper('.swiper-container', {
+            |   // Default parameters for smallest screen
+            |   slidesPerView: 1,
+            |   spaceBetween: 10,
+            |   // Responsive breakpoints
+            |   breakpointsInverse: true,
+            |   breakpoints: {
+            |     // when window width is &gt;= 320px
+            |     320: {
+            |       slidesPerView: 2,
+            |       spaceBetween: 20
+            |     },
+            |     // when window width is &gt;= 480px
+            |     480: {
+            |       slidesPerView: 3,
+            |       spaceBetween: 30
+            |     },
+            |     // when window width is &gt;= 640px
+            |     640: {
+            |       slidesPerView: 4,
+            |       spaceBetween: 40
             |     }
             |   }
             | })

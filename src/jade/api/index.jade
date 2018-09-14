@@ -43,6 +43,8 @@ block content
           li
             a(href="#cube-effect") Cube Effect
           li
+            a(href="#thumbs") Thumbs
+          li
             a(href="#zoom") Zoom
           li
             a(href="#keyboard") Keyboard Control
@@ -174,6 +176,12 @@ block content
     h3#cube-effect Cube Effect
     +edit-link('api/effect-cube/')
     include effect-cube/params.jade
+
+    h3#thumbs Thumbs
+    +edit-link('api/thumbs/')
+    include thumbs/intro.jade
+    include thumbs/params.jade
+    include thumbs/methods.jade
 
     h3#zoom Zoom
     +edit-link('api/zoom/')

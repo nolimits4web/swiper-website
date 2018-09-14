@@ -1,0 +1,70 @@
+h4#thumbs-parameters Thumbs Parameters
+table.params-table
+  thead
+    tr
+      th Parameter
+      th Type
+      th Default
+      th Description
+  tbody
+    tr
+      td thumbs
+      td object
+      td
+      td
+        p Object with thumbs component parameters. For example:
+          pre
+            code
+              :code
+                var mySwiper = new Swiper('.swiper-container', {
+                  ...
+                  thumbs: {
+                    swiper: thumbsSwiper
+                  }
+                });
+    tr.subparam-open-row
+      td(colspan="4") {
+    tr.subparam-row
+      td swiper
+      td object<br>Swiper
+      td
+      td Swiper instance of swiper used as thumbs or object with Swiper parameters to initialize thumbs swiper. For example:
+        pre
+          code
+            :code
+              var thumbsSwiper = new Swiper('.swiper-container-thumbs', {
+                slidesPerView: 5,
+              });
+
+              var mySwiper = new Swiper('.swiper-container', {
+                ...
+                thumbs: {
+                  swiper: thumbsSwiper
+                }
+              });
+        p or
+        pre
+          code
+            :code
+              var mySwiper = new Swiper('.swiper-container', {
+                ...
+                thumbs: {
+                  swiper: {
+                    el: '.swiper-container-thumbs',
+                    slidesPerView: 5,
+                    ...
+                  }
+                }
+              });
+    tr.subparam-row
+      td slideThumbActiveClass
+      td string
+      td 'swiper-slide-thumb-active'
+      td Additional class that will be added to activated thumbs swiper slide
+    tr.subparam-row
+      td thumbsContainerClass
+      td string
+      td 'swiper-container-thumbs'
+      td Additional class that will be added to thumbs swiper-container
+    tr.subparam-close-row
+      td(colspan="4") }
