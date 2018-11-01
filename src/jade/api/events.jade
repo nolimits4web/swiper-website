@@ -38,7 +38,7 @@ table.methods-table
       th Description
     tr
       td init
-      td 
+      td
       td
         p Event will be fired right after Swiper initialization. Note that with <code>swiper.on('init')</code> syntax it will work only in case you set <code>init: false</code> parameter:
         pre
@@ -65,43 +65,43 @@ table.methods-table
               });
     tr
       td beforeDestroy
-      td 
+      td
       td Event will be fired right before Swiper destroyed
     tr
       td slideChange
-      td 
+      td
       td Event will be fired when currently active slide is changed
     tr
       td slideChangeTransitionStart
-      td 
+      td
       td Event will be fired in the beginning of animation to other slide (next or previous).
     tr
       td slideChangeTransitionEnd
-      td 
+      td
       td Event will be fired after animation to other slide (next or previous).
     tr
       td slideNextTransitionStart
-      td 
+      td
       td Same as "slideChangeTransitionStart" but for "forward" direction only
     tr
       td slideNextTransitionEnd
-      td 
+      td
       td Same as "slideChangeTransitionEnd" but for "forward" direction only
     tr
       td slidePrevTransitionStart
-      td 
+      td
       td Same as "slideChangeTransitionStart" but for "backward" direction only
     tr
       td slidePrevTransitionEnd
-      td 
+      td
       td Same as "slideChangeTransitionEnd" but for "backward" direction only
     tr
       td transitionStart
-      td 
+      td
       td Event will be fired in the beginning of transition.
     tr
       td transitionEnd
-      td 
+      td
       td Event will be fired after transition.
     tr
       td touchStart
@@ -137,7 +137,7 @@ table.methods-table
       td Event will be fired when user double tap on Swiper's container. Receives 'touchend' event as an arguments
     tr
       td imagesReady
-      td 
+      td
       td Event will be fired right after all inner images are loaded. <code>updateOnImagesReady</code> should be also enabled
     tr
       td progress
@@ -165,5 +165,9 @@ table.methods-table
       td Event will be fired everytime when swiper starts animation. Receives current transition duration (in ms) as an arguments
     tr
       td resize
-      td 
+      td
       td Event will be fired on window resize right before swiper's onresize manipulation
+    tr
+      td observerUpdate
+      td
+      td Event will be fired if observer is enabled and it detects DOM mutations
