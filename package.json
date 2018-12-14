@@ -26,7 +26,8 @@
     "hoek": "^5.0.3",
     "jade": "^1.11.0",
     "jshint": "~2.8.0",
-    "jshint-stylish": "~2.1.0"
+    "jshint-stylish": "~2.1.0",
+    "natives": "^1.1.6"
   },
   "scripts": {
     "test": "gulp test"
