@@ -161,20 +161,7 @@ block content
     p In case you use it as an ES module make sure:
     ul
      li you have enabled <a href="https://babeljs.io/" target="_blank">Babel</a> or <a href="https://buble.surge.sh/" target="_blank">Buble</a> to transpile it to ES5 syntax,
-     li you have enabled node modules resolving for Swiper as it uses <a href="https://github.com/nolimits4web/Dom7" target="_blank">Dom7</a> and <b>ssr-window</b> packages as dependencies.
-  p Example of Webpack cofiguration for <code>babel-loader</code> with Swiper and Dom7:
-  pre
-    code.js
-      :code
-        module: {
-          rules: [
-            {
-              test: /\.js$/, // Check for all js files
-              exclude: /node_modules\/(?!(dom7|ssr-window|swiper)\/).*/,
-              loader: 'babel-loader'
-            }
-          ]
-        }
+     li you have enabled node modules resolving and babel transpiling for Swiper as it uses <a href="https://github.com/nolimits4web/Dom7" target="_blank">Dom7</a> and <b>ssr-window</b> packages as dependencies.
 
   h2 What next?
   p As you see it is really easy to integrate Swiper into your website or app. So here are your next steps:
