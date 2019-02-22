@@ -169,6 +169,14 @@ table.methods-table
           li mySwiper.updateProgress() - recalculate swiper progress
           li mySwiper.updateSlidesClasses() - update active/prev/next classes on slides and bullets
     tr
+      td mySwiper.changeDirection(<span>direction</span>);
+      td
+        p Changes slider direction from horizontal to vertical and back.
+        ul.method-parameters
+          li
+            span.parameter direction
+            |  - <span class="parameter-type">string</span> - new direction, e.g. <code>horizontal</code> or <code>vertical</code>. <em>Optional</em>. If not specified, then will automatically changed to opposite direction
+    tr
       td mySwiper.detachEvents();
       td Detach all events listeners
     tr

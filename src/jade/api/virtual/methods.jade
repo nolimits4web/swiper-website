@@ -18,11 +18,17 @@ table.methods-table
     tr
       th(colspan="2") Methods
     tr
-      td mySwiper.virtual.appendSlide(<span>slide</span>);
-      td Append slide
+      td mySwiper.virtual.appendSlide(<span>slides</span>);
+      td Append slide. <code>slides</code> can be a single slide item or array with such slides.
     tr
-      td mySwiper.virtual.prependSlide(<span>slide</span>);
-      td Prepend slide
+      td mySwiper.virtual.prependSlide(<span>slides</span>);
+      td Prepend slide. <code>slides</code> can be a single slide item or array with such slides.
+    tr
+      td mySwiper.virtual.removeSlide(<span>slideIndexes</span>);
+      td Remove specific slide or slides. <code>slideIndexes</code> can be a number with slide index to remove or array with indexes.
+    tr
+      td mySwiper.virtual.removeAllSlides();
+      td Remove all slides.
     tr
       td mySwiper.virtual.update();
-      td Update virutal slides state
+      td Update virutal slides state.
