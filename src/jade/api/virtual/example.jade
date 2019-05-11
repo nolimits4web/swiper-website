@@ -40,14 +40,13 @@ pre
             }
           },
           mounted() {
-            const self = this;
             const swiper = new Swiper('.swiper-container', {
               // ...
               virtual: {
-                slides: self.slides,
-                renderExternal(data) {
+                slides: this.slides,
+                renderExternal: (data) => {
                   // assign virtual slides data
-                  self.virtualData = data;
+                  this.virtualData = data
                 },
               },
             });
