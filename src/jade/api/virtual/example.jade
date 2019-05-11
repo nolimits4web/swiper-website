@@ -79,17 +79,14 @@ pre
           }
         }
         componentDidMount() {
-          const self = this;
           const swiper = new Swiper('.swiper-container', {
             // ...
             virtual: {
-              slides: self.state.slides,
-              renderExternal(data) {
+              slides: this.state.slides,
+              renderExternal: (data) => {
                 // assign virtual slides data
-                self.setState({
-                  virtualData: data,
-                });
-              }
+                this.virtualData = data
+              },
             },
           });
         }
