@@ -78,12 +78,12 @@ html
                 .slide-title.demo-iframe-title Build Complex Touch Galleries
                 .swiper-wrapper
                   - for (var i = 1; i <= 5; i++)
-                    .swiper-slide.swiper-lazy(data-background="http://lorempixel.com/1200/600/nature/#{i}")
+                    .swiper-slide.swiper-lazy(data-background="./demos/images/nature-#{i}.jpg")
                       .swiper-lazy-preloader.swiper-lazy-preloader-white
               .swiper-container.swiper-gallery-thumbs
                 .swiper-wrapper
                   - for (var i = 1; i <= 5; i++)
-                    .swiper-slide(style="background-image:url(http://lorempixel.com/300/200/nature/#{i})")
+                    .swiper-slide(style="background-image:url(./demos/images/nature-#{i}.jpg)")
             .swiper-slide.last-centered-slide
                 .slide-title Start Using It Now
                 .slide-subtitle Swiper is completely free and open-source
