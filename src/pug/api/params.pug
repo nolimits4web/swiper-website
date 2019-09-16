@@ -1,4 +1,3 @@
-h2#parameters Swiper Parameters
 p Let's look on list of all available parameters:
 table.params-table
   thead
@@ -419,29 +418,30 @@ table.params-table
       td Allows to set different parameter for different responsive breakpoints (screen sizes). Not all parameters can be changed in breakpoints, only those which are not required different layout and logic, like <code>slidesPerView</code>, <code>slidesPerGroup</code>, <code>spaceBetween</code>. Such parameters like <code>slidesPerColumn</code>, <code>loop</code>, <code>direction</code>, <code>effect</code> won't work. For example:
         pre
           code.js
-            | var swiper = new Swiper('.swiper-container', {
-            |   // Default parameters
-            |   slidesPerView: 4,
-            |   spaceBetween: 40,
-            |   // Responsive breakpoints
-            |   breakpoints: {
-            |     // when window width is &lt;= 320px
-            |     320: {
-            |       slidesPerView: 1,
-            |       spaceBetween: 10
-            |     },
-            |     // when window width is &lt;= 480px
-            |     480: {
-            |       slidesPerView: 2,
-            |       spaceBetween: 20
-            |     },
-            |     // when window width is &lt;= 640px
-            |     640: {
-            |       slidesPerView: 3,
-            |       spaceBetween: 30
-            |     }
-            |   }
-            | })
+            :code(lang="js")
+              var swiper = new Swiper('.swiper-container', {
+                // Default parameters
+                slidesPerView: 4,
+                spaceBetween: 40,
+                // Responsive breakpoints
+                breakpoints: {
+                  // when window width is &lt;= 320px
+                  320: {
+                    slidesPerView: 1,
+                    spaceBetween: 10
+                  },
+                  // when window width is &lt;= 480px
+                  480: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                  },
+                  // when window width is &lt;= 640px
+                  640: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                  }
+                }
+              })
     tr
       td breakpointsInverse
       td boolean
@@ -449,30 +449,31 @@ table.params-table
       td If enabled then it will count breakpoints in reversed direction, e.g. will override parameters if window width is more than specified breakpoint:
         pre
           code.js
-            | var swiper = new Swiper('.swiper-container', {
-            |   // Default parameters for smallest screen
-            |   slidesPerView: 1,
-            |   spaceBetween: 10,
-            |   // Responsive breakpoints
-            |   breakpointsInverse: true,
-            |   breakpoints: {
-            |     // when window width is &gt;= 320px
-            |     320: {
-            |       slidesPerView: 2,
-            |       spaceBetween: 20
-            |     },
-            |     // when window width is &gt;= 480px
-            |     480: {
-            |       slidesPerView: 3,
-            |       spaceBetween: 30
-            |     },
-            |     // when window width is &gt;= 640px
-            |     640: {
-            |       slidesPerView: 4,
-            |       spaceBetween: 40
-            |     }
-            |   }
-            | })
+            :code(lang="js")
+              var swiper = new Swiper('.swiper-container', {
+                // Default parameters for smallest screen
+                slidesPerView: 1,
+                spaceBetween: 10,
+                // Responsive breakpoints
+                breakpointsInverse: true,
+                breakpoints: {
+                  // when window width is &gt;= 320px
+                  320: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                  },
+                  // when window width is &gt;= 480px
+                  480: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                  },
+                  // when window width is &gt;= 640px
+                  640: {
+                    slidesPerView: 4,
+                    spaceBetween: 40
+                  }
+                }
+              })
     tr
       th(colspan="4") Observer
     tr

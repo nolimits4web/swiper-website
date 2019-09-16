@@ -65,10 +65,10 @@ block content
   .api-content
     h1 Swiper API
     +edit-link('api/index.pug', true)
-    h2#layout Swiper Full HTML Layout
+    h2#layout.no-border Swiper Full HTML Layout
     pre
       code
-        :code
+        :code(lang="html")
           <!-- Slider main container -->
           <div class="swiper-container">
               <!-- Additional required wrapper -->
@@ -90,7 +90,7 @@ block content
               <div class="swiper-scrollbar"></div>
           </div>
 
-    h2#initialize Initialize Swiper
+    h2#initialize.no-border Initialize Swiper
     p Now, when we have Swiper's HTML, we need to initialize it using the following function:
     .method-wrap
       p
@@ -105,29 +105,30 @@ block content
           |  - <span class="parameter-type">object</span> - object with Swiper parameters. Optional.
         li.method-returns <strong>Method returns initialized Swiper instance</strong>
     p For example:
-    pre
-      code
-        | var mySwiper = new Swiper('.swiper-container', {
-        |     speed: 400,
-        |     spaceBetween: 100
-        | });
+    :code(lang="js")
+      var mySwiper = new Swiper('.swiper-container', {
+          speed: 400,
+          spaceBetween: 100
+      });
 
     p <b>After</b> you initialize Swiper it is possible to access to Swiper's instance on its HTMLElement. It is <code>swiper</code> property of Swiper's HTML container element:
     pre
       code.js
-        :code
+        :code(lang="js")
           var mySwiper = document.querySelector('.swiper-container').swiper
 
           // Now you can use all slider methods like
           mySwiper.slideNext();
-
+    h2#parameters Swiper Parameters
     include params.pug
+    h2#methods Slider Methods & Properties
     include props-methods.pug
+    h2#events Events
     include events.pug
 
     h2#components Components
 
-    h3#navigation Navigation
+    h3#navigation.no-border Navigation
     +edit-link('api/navigation/')
     include navigation/params.pug
     include navigation/methods.pug
@@ -232,7 +233,7 @@ block content
     p If you use bundler with ES-modules support in your project you can import only the modules you need:
     pre
       code
-        :code
+        :code(lang="js")
           // Import Swiper and modules
           import { Swiper, Navigation, Pagination, Scrollbar } from 'swiper/dist/js/swiper.esm.js';
 
@@ -285,7 +286,7 @@ block content
       li Open <code>scripts/build-config.js</code> file:
         pre
           code.js
-            :code
+            :code(lang="js")
               module.exports = {
                 // remove components you don't need
                 components: [

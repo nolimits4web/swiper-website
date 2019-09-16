@@ -1,4 +1,3 @@
-h2#methods Slider Methods & Properties
 p After we initialize Slider we have its initialized instance in variable (like <code>mySwiper</code> variable in example above) with helpful methods and properties:
 table.methods-table
   tbody
@@ -198,38 +197,42 @@ table.methods-table
       td Add new slides to the end. <code>slides</code> could be HTMLElement or HTML string with new slide or array with such slides, for example:
         pre
           code
-            | mySwiper.appendSlide('&lt;div class="swiper-slide"&gt;Slide 10"&lt;/div&gt;')
-            | mySwiper.appendSlide([
-            |    '&lt;div class="swiper-slide"&gt;Slide 10"&lt;/div&gt;',
-            |    '&lt;div class="swiper-slide"&gt;Slide 11"&lt;/div&gt;'
-            | ]);
+            :code(lang="js")
+              mySwiper.appendSlide('&lt;div class="swiper-slide"&gt;Slide 10"&lt;/div&gt;')
+              mySwiper.appendSlide([
+                 '&lt;div class="swiper-slide"&gt;Slide 10"&lt;/div&gt;',
+                 '&lt;div class="swiper-slide"&gt;Slide 11"&lt;/div&gt;'
+              ]);
     tr
       td mySwiper.prependSlide(<span>slides</span>);
       td Add new slides to the beginning. <code>slides</code> could be HTMLElement or HTML string with new slide or array with such slides, for example:
         pre
           code
-            | mySwiper.prependSlide('&lt;div class="swiper-slide"&gt;Slide 0"&lt;/div&gt;')
-            | mySwiper.prependSlide([
-            |    '&lt;div class="swiper-slide"&gt;Slide 1"&lt;/div&gt;',
-            |    '&lt;div class="swiper-slide"&gt;Slide 2"&lt;/div&gt;'
-            | ]);
+            :code(lang="js")
+              mySwiper.prependSlide('&lt;div class="swiper-slide"&gt;Slide 0"&lt;/div&gt;')
+              mySwiper.prependSlide([
+                 '&lt;div class="swiper-slide"&gt;Slide 1"&lt;/div&gt;',
+                 '&lt;div class="swiper-slide"&gt;Slide 2"&lt;/div&gt;'
+              ]);
     tr
       td mySwiper.addSlide(<span>index</span>, <span>slides</span>);
       td Add new slides to the required index. <code>slides</code> could be HTMLElement or HTML string with new slide or array with such slides, for example:
         pre
           code
-            | mySwiper.addSlide(1, '&lt;div class="swiper-slide"&gt;Slide 10"&lt;/div&gt;')
-            | mySwiper.addSlide(1, [
-            |    '&lt;div class="swiper-slide"&gt;Slide 10"&lt;/div&gt;',
-            |    '&lt;div class="swiper-slide"&gt;Slide 11"&lt;/div&gt;'
-            | ]);
+            :code(lang="js")
+              mySwiper.addSlide(1, '&lt;div class="swiper-slide"&gt;Slide 10"&lt;/div&gt;')
+              mySwiper.addSlide(1, [
+                 '&lt;div class="swiper-slide"&gt;Slide 10"&lt;/div&gt;',
+                 '&lt;div class="swiper-slide"&gt;Slide 11"&lt;/div&gt;'
+              ]);
     tr
       td mySwiper.removeSlide(<span>slideIndex</span>);
       td Remove selected slides. <code>slideIndex</code> could be a number with slide index to remove or array with indexes, for example:
         pre
           code.js
-            | mySwiper.removeSlide(0); //remove first slide
-            | mySwiper.removeSlide([0, 1]); //remove first and second slides
+            :code(lang="js")
+              mySwiper.removeSlide(0); //remove first slide
+              mySwiper.removeSlide([0, 1]); //remove first and second slides
     tr
       td mySwiper.removeAllSlides();
       td Remove all slides

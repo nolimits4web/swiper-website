@@ -1,4 +1,3 @@
-h2#events Events
 p Swiper comes with a bunch of useful events you can listen. Events can be assigned in two ways:
 ol
   li
@@ -6,7 +5,7 @@ ol
     p
       pre
         code
-          :code
+          :code(lang="js")
             var mySwiper = new Swiper('.swiper-container', {
               // ...
               on: {
@@ -20,7 +19,7 @@ ol
     p
       pre
         code
-          :code
+          :code(lang="js")
             var mySwiper = new Swiper('.swiper-container', {
               // ...
             };
@@ -30,12 +29,13 @@ ol
 .important-note
   p Please note, that <code>this</code> keyword within event handler always points to Swiper instance
 br
-table.methods-table
-  tbody
+table.events-table
+  thead
     tr
       th Event name
       th Arguments
       th Description
+  tbody
     tr
       td init
       td
@@ -43,7 +43,7 @@ table.methods-table
         p Event will be fired right after Swiper initialization. Note that with <code>swiper.on('init')</code> syntax it will work only in case you set <code>init: false</code> parameter:
         pre
           code
-            :code
+            :code(lang="js")
               var swiper = new Swiper('.swiper-container', {
                 init: false,
                 // other parameters
@@ -54,7 +54,7 @@ table.methods-table
         p Otherwise use it as the parameter:
         pre
           code
-            :code
+            :code(lang="js")
               var swiper = new Swiper('.swiper-container', {
                 // other parameters
                 on: {

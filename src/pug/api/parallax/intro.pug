@@ -4,7 +4,7 @@ ul
   li Slides child elements. Parallax effect for such elements will depend on slide progress
 p To enable parallax effects you need to init Swiper with passed <code>parallax:true</code> parameter and add one of the following (or mix) attributes to required elements:
 ul
-  li <code>data-swiper-parallax</code> - enable transform-translate parallax transition. This attribute may accept: 
+  li <code>data-swiper-parallax</code> - enable transform-translate parallax transition. This attribute may accept:
     ul
       li <b>number</b> - value in px (as for title, subtitle in example above) to move element depending on progress. In this case such element will be moved on ± this value in px depending on slide position (next or previous)
       li <b>percentage</b> - (as for "parallax-bg") to move element depending on progress and on its size. In this case such element will be moved on ± this percentage of its size (width in horizontal direction, and height in vertical direction) depending on slide position (next or previous). So if element has 400px width and you specified data-swiper-parallax="50%" then it will be moved on ± 200px
@@ -15,29 +15,26 @@ ul
   li <code>data-swiper-parallax-duration</code> - custom transition duration for parallax elements
 pre
   code
-    :code
-      &lt;div class="swiper-container"&gt;
-          &lt;!-- Parallax background element --&gt;
-          &lt;div
-              class="parallax-bg"
-              style="background-image:url(path/to/image.jpg)"
-              data-swiper-parallax="-23%"&gt;
-          &lt;/div&gt;
-          &lt;div class="swiper-wrapper"&gt;
-              &lt;div class="swiper-slide"&gt;
-                  &lt;!-- Each slide has parallax title --&gt;
-                  &lt;div class="title" data-swiper-parallax="-100"&gt;Slide 1&lt;/div&gt;
-                  &lt;!-- Parallax subtitle --&gt;
-                  &lt;div class="subtitle" data-swiper-parallax="-200"&gt;Subtitle&lt;/div&gt;
-                  &lt;!-- And parallax text with custom transition duration --&gt;
-                  &lt;div class="text" data-swiper-parallax="-300" data-swiper-parallax-duration="600"&gt;
-                    &lt;p&gt;Lorem ipsum dolor sit amet, ...&lt;/p&gt;
-                  &lt;/div&gt;
-                  &lt;!-- Opacity parallax --&gt;
-                  &lt;div data-swiper-parallax-opacity="0.5" &gt;I will change opacity&lt;/div&gt;
-                  &lt;!-- Scale parallax --&gt;
-                  &lt;div data-swiper-parallax-scale="0.15" &gt;I will change scale&lt;/div&gt;
-              &lt;/div&gt;
-              ...
-          &lt;/div&gt;
-      &lt;/div&gt;
+    :code(lang="html")
+      <div class="swiper-container">
+        <!-- Parallax background element -->
+        <div class="parallax-bg" style="background-image:url(path/to/image.jpg)" data-swiper-parallax="-23%">
+        </div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <!-- Each slide has parallax title -->
+            <div class="title" data-swiper-parallax="-100">Slide 1</div>
+            <!-- Parallax subtitle -->
+            <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+            <!-- And parallax text with custom transition duration -->
+            <div class="text" data-swiper-parallax="-300" data-swiper-parallax-duration="600">
+              <p>Lorem ipsum dolor sit amet, ...</p>
+            </div>
+            <!-- Opacity parallax -->
+            <div data-swiper-parallax-opacity="0.5">I will change opacity</div>
+            <!-- Scale parallax -->
+            <div data-swiper-parallax-scale="0.15">I will change scale</div>
+          </div>
+          ...
+        </div>
+      </div>

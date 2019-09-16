@@ -15,7 +15,7 @@ table.params-table
         p Object with navigation parameters. For example:
           pre
             code
-              :code
+              :code(lang="js")
                 var mySwiper = new Swiper('.swiper-container', {
                   pagination: {
                     el: '.swiper-pagination',
@@ -82,7 +82,7 @@ table.params-table
         p For example, with this code, we can add slide number into pagination bullet:
         pre
           code.js
-            :code
+            :code(lang="js")
               var swiper = new Swiper('.swiper-container', {
                 //...
                 renderBullet: function (index, className) {
@@ -97,14 +97,15 @@ table.params-table
         p For example:
         pre
           code.js
-            | var swiper = new Swiper('.swiper-container', {
-            |   //...
-            |   renderFraction: function (currentClass, totalClass) {
-            |       return '&lt;span class="' + currentClass + '"&gt;&lt;/span&gt;' +
-            |              ' of ' +
-            |              '&lt;span class="' + totalClass + '"&gt;&lt;/span&gt;';
-            |   }
-            | });
+            :code(lang="js")
+              var swiper = new Swiper('.swiper-container', {
+                //...
+                renderFraction: function (currentClass, totalClass) {
+                    return '&lt;span class="' + currentClass + '"&gt;&lt;/span&gt;' +
+                            ' of ' +
+                            '&lt;span class="' + totalClass + '"&gt;&lt;/span&gt;';
+                }
+              });
     tr.subparam-row
       td renderProgressbar
       td function(progressbarFillClass)
@@ -113,12 +114,13 @@ table.params-table
         p For example:
         pre
           code.js
-            | var swiper = new Swiper('.swiper-container', {
-            |   //...
-            |   renderProgressbar: function (progressbarFillClass) {
-            |       return '&lt;span class="' + progressbarFillClass + '"&gt;&lt;/span&gt;';
-            |   }
-            | });
+            :code(lang="js")
+              var swiper = new Swiper('.swiper-container', {
+                //...
+                renderProgressbar: function (progressbarFillClass) {
+                    return '&lt;span class="' + progressbarFillClass + '"&gt;&lt;/span&gt;';
+                }
+              });
     tr.subparam-row
       td renderCustom
       td function(swiper, current, total)
@@ -127,12 +129,13 @@ table.params-table
         p For example:
         pre
           code.js
-            | var swiper = new Swiper('.swiper-container', {
-            |   //...
-            |   renderCustom: function (swiper, current, total) {
-            |       return current + ' of ' + total;
-            |   }
-            | });
+            :code(lang="js")
+              var swiper = new Swiper('.swiper-container', {
+                //...
+                renderCustom: function (swiper, current, total) {
+                    return current + ' of ' + total;
+                }
+              });
     tr.subparam-row
       td bulletClass
       td string

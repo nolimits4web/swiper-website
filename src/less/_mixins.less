@@ -1,0 +1,18 @@
+@themeColor: #6332F6;
+@red: #b72f20;
+@redColor: #EE350F;
+@docsCodeRed: #b72f20;
+@docsCodeGreen: #006700;
+.monospace() {
+  font-family: 'Roboto Mono', 'Source Code Pro', Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+  }
+  &:after {
+    clear: both;
+  }
+}

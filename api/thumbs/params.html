@@ -1,0 +1,24 @@
+<h4 id="thumbs-parameters">Thumbs Parameters</h4><table class="params-table"><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td>thumbs</td><td>object</td><td></td><td><p>Object with thumbs component parameters. For example:<pre><code><pre><code class="js"><span class="token keyword">var</span> mySwiper <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Swiper</span><span class="token punctuation">(</span><span class="token string">'.swiper-container'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+  thumbs<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    swiper<span class="token punctuation">:</span> thumbsSwiper
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></code></pre></p></td></tr><tr class="subparam-open-row"><td colspan="4">{</td></tr><tr class="subparam-row"><td>swiper</td><td>object<br>Swiper</td><td></td><td>Swiper instance of swiper used as thumbs or object with Swiper parameters to initialize thumbs swiper. For example:<pre><code><pre><code class="js"><span class="token keyword">var</span> thumbsSwiper <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Swiper</span><span class="token punctuation">(</span><span class="token string">'.swiper-container-thumbs'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  slidesPerView<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> mySwiper <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Swiper</span><span class="token punctuation">(</span><span class="token string">'.swiper-container'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+  thumbs<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    swiper<span class="token punctuation">:</span> thumbsSwiper
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></code></pre><p>or</p><pre><code><pre><code class="js"><span class="token keyword">var</span> mySwiper <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Swiper</span><span class="token punctuation">(</span><span class="token string">'.swiper-container'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+  thumbs<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    swiper<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      el<span class="token punctuation">:</span> <span class="token string">'.swiper-container-thumbs'</span><span class="token punctuation">,</span>
+      slidesPerView<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+      <span class="token operator">...</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></code></pre></td></tr><tr class="subparam-row"><td>slideThumbActiveClass</td><td>string</td><td>'swiper-slide-thumb-active'</td><td>Additional class that will be added to activated thumbs swiper slide</td></tr><tr class="subparam-row"><td>thumbsContainerClass</td><td>string</td><td>'swiper-container-thumbs'</td><td>Additional class that will be added to thumbs swiper-container</td></tr><tr class="subparam-close-row"><td colspan="4">}</td></tr></tbody></table>

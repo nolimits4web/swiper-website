@@ -1,0 +1,77 @@
+// Docs
+.api-content {
+  margin-left: 240px;
+  font-family: -apple-system, system-ui, Helvetica Neue, Helvetica, Arial, sans-serif;
+  h2[id]:not(.no-border), h3[id]:not(.no-border) {
+    padding-top: 45px;
+    position: relative;
+    &:before {
+      top: 0;
+      content: '';
+      position: absolute;
+      left: -240px;
+      height: 25px;
+      background: @themeColor;
+      width: 100vw;
+    }
+  }
+}
+.method-wrap {
+  padding: 20px;
+  margin: 1em -0px;
+  border-left: 3px solid #ccc;
+  background: #fafafa;
+  + .method-wrap {
+    margin-top: 30px;
+  }
+  p:first-child {
+    margin-top: 0;
+  }
+  p:last-child, ul:last-child {
+    margin-bottom: 0;
+  }
+  .method-parameters {
+    font-size: 14px;
+    + .method-returns {
+      margin-top: -10px;
+    }
+  }
+  .method-returns {
+    font-style: normal;
+    font-style: italic;
+    font-size: 14px;
+  }
+}
+p.method, span.method {
+  .monospace();
+  color: #000;
+  font-weight: 500;
+  span {
+    color: @docsCodeRed;
+  }
+}
+ul.method-parameters {
+  margin-top: -10px;
+  margin-bottom: 20px;
+  padding-left: 30px;
+  .parameter {
+    .monospace();
+    color: @docsCodeRed;
+    font-weight: 500;
+  }
+  .parameter-type {
+    .monospace();
+    color: @docsCodeGreen;
+    font-weight: 500;
+  }
+}
+.method-returns {
+  list-style: none;
+}
+
+@media (max-width: 600px) {
+  .method-wrap {
+    padding: 10px;
+    overflow-x: auto;
+  }
+}

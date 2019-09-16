@@ -27,7 +27,7 @@ block content
   p If you don't want to include Swiper files in your project, you may use it from <a href="http://cdnjs.com">Swiper on cdnjs</a>. The following files are available:
   pre
     code
-      :code
+      :code(lang="html")
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.x.x/css/swiper.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.x.x/css/swiper.min.css">
 
@@ -38,22 +38,23 @@ block content
   p After that we need to include Swiper's CSS and JS files to our website/app. In your html file:
   pre
     code
-      | &lt;!DOCTYPE html&gt;
-      | &lt;html lang="en"&gt;
-      | &lt;head&gt;
-      |     ...
-      |     &lt;link rel="stylesheet" href="path/to/swiper.min.css"&gt;
-      | &lt;/head&gt;
-      | &lt;body&gt;
-      |     ...
-      |     &lt;script src="path/to/swiper.min.js"&gt;&lt;/script&gt;
-      | &lt;/body&gt;
-      | &lt;/html&gt;
+      :code(lang="html")
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            ...
+            <link rel="stylesheet" href="path/to/swiper.min.css">
+        </head>
+        <body>
+            ...
+            <script src="path/to/swiper.min.js"></script>
+        </body>
+        </html>
   h3 3. Add Swiper HTML Layout
   p Now, we need to add basic Swiper layout to our app:
   pre
     code
-      :code
+      :code(lang="html")
         <!-- Slider main container -->
         <div class="swiper-container">
             <!-- Additional required wrapper -->
@@ -78,10 +79,11 @@ block content
   p After that, we may need to set Swiper size in your CSS file:
   pre
     code
-      | .swiper-container {
-      |     width: 600px;
-      |     height: 300px;
-      | }
+      :code(lang="css")
+        .swiper-container {
+            width: 600px;
+            height: 300px;
+        }
 
   h3 5. Initialize Swiper
   p Finally, we need to initialize Swiper in JS. There are few options/places to do that:
@@ -90,7 +92,7 @@ block content
       p The best option will be in inline script or in script file that is included in the very end of body (right before closing <code>&lt;/body&gt;</code> tag):
       pre(style="width:100%")
         code.js
-          :code
+          :code(lang="html")
             <body>
               ...
               <script>
@@ -145,7 +147,7 @@ block content
   p Swiper is fully compatible with CommonJs modules and can be used in Node.js-like environment:
   pre
     code
-      :code
+      :code(lang="js")
         var Swiper = require('swiper');
 
         var mySwiper = new Swiper('.swiper-container', { /* ... */ });
@@ -153,7 +155,7 @@ block content
   p Swiper package comes with ES module version which can be used where supported or with bundlers like Webpack or Rollup:
   pre
     code
-      :code
+      :code(lang="js")
         import Swiper from 'swiper';
 
         var mySwiper = new Swiper('.swiper-container', { /* ... */ });

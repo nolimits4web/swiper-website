@@ -1,26 +1,25 @@
 p Swiper supports zoom images functionality (similar to what you see on iOS when browsing single photo) where you can zoom-in image by pinch gesture and or by zoom-in/out by double tap on it. In this case, additional layout is required:
-pre
-  code
-    | &lt;div class="swiper-container"&gt;
-    |     &lt;div class="swiper-wrapper"&gt;
-    |         &lt;div class="swiper-slide"&gt;
-    |             &lt;div class="swiper-zoom-container"&gt;
-    |                 &lt;img src="path/to/image1.jpg"&gt;
-    |             &lt;/div&gt;
-    |         &lt;/div&gt;
-    |         &lt;div class="swiper-slide"&gt;
-    |             &lt;div class="swiper-zoom-container"&gt;
-    |                 &lt;img src="path/to/image2.jpg"&gt;
-    |             &lt;/div&gt;
-    |         &lt;/div&gt;
-    |         &lt;div class="swiper-slide"&gt;Plain slide with text&lt;/div&gt;
-    |         &lt;div class="swiper-slide"&gt;
-    |             &lt;!-- Override maxRatio parameter --&gt;
-    |             &lt;div class="swiper-zoom-container" data-swiper-zoom="5"&gt;
-    |                 &lt;img src="path/to/image1.jpg"&gt;
-    |             &lt;/div&gt;
-    |         &lt;/div&gt;
-    |     &lt;/div&gt;
-    | &lt;/div&gt;
+:code(lang="html")
+  &lt;div class="swiper-container"&gt;
+      &lt;div class="swiper-wrapper"&gt;
+          &lt;div class="swiper-slide"&gt;
+              &lt;div class="swiper-zoom-container"&gt;
+                  &lt;img src="path/to/image1.jpg"&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="swiper-slide"&gt;
+              &lt;div class="swiper-zoom-container"&gt;
+                  &lt;img src="path/to/image2.jpg"&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="swiper-slide"&gt;Plain slide with text&lt;/div&gt;
+          &lt;div class="swiper-slide"&gt;
+              &lt;!-- Override maxRatio parameter --&gt;
+              &lt;div class="swiper-zoom-container" data-swiper-zoom="5"&gt;
+                  &lt;img src="path/to/image1.jpg"&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
 p All "zoomable" images should be wrapped with the div with <code>swiper-zoom-container</code> class. Note, it doesn't support to zoom anything else except single image.
 p You can override <code>maxRatio</code> parameter for specific slides by using <code>data-swiper-zoom</code> attribute on zoom container.
