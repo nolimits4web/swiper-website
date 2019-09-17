@@ -19,6 +19,12 @@
   .swiper-pagination {
     bottom: 40px;
   }
+  .swiper-button-prev {
+    left: 30px;
+  }
+  .swiper-button-next {
+    right: 30px;
+  }
 
   .swiper-slide {
     background: #fff;
@@ -31,6 +37,7 @@
     width: 800px;
     margin-left: auto;
     margin-right: auto;
+    height: 100%;
   }
   .slide-title,
   .slide-subtitle {
@@ -49,30 +56,13 @@
     margin-left: 220px;
     text-align: left;
   }
-  .demo-iframe-title {
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 10px;
-    margin: 0;
-    z-index: 100;
-    font-weight: 300;
-    font-size: 31px;
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    -ms-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
   .slide-features-list {
     list-style: none;
     margin: 0;
     padding: 0;
     font-size: 18px;
     font-weight: 500;
+    padding-left: 30px;
     li {
       float: left;
       width: 50%;
@@ -91,11 +81,12 @@
       }
     }
   }
-  .swiper-slide.swiper-slide-gallery {
-    padding: 0;
-    border: none;
+  .swiper-slide-gallery {
+    background: #333;
+    color: #fff;
   }
-  .swiper-gallery-top, .swiper-gallery-thumbs {
+  .swiper-gallery-top,
+  .swiper-gallery-thumbs {
     .swiper-slide {
       -webkit-background-size: cover;
       background-size: cover;
@@ -106,20 +97,27 @@
     }
   }
   .swiper-gallery-top {
-    height: 79%;
+    height: 65%;
     margin-bottom: 1%;
     position: relative;
     left: 0;
     top: 0;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.25);
+    .swiper-slide {
+      background-color: #000;
+    }
   }
   .swiper-gallery-thumbs {
     height: 20%;
     position: relative;
     left: 0;
     top: 0;
+    z-index: 100;
     .swiper-slide {
       opacity: 0.5;
       cursor: pointer;
+      border-radius: 5px;
     }
     .swiper-slide-active {
       opacity: 1;

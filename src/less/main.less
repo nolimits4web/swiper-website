@@ -73,11 +73,8 @@ header {
   box-sizing: border-box;
   position: relative;
   color:#000;
-  height: 500px;
-
-  .github-buttons {
-    text-align: center;
-  }
+  height: 600px;
+  --swiper-theme-color: @themeColor;
   .logo {
     background: url(../i/logo.svg) no-repeat center;
     width: 180px;
@@ -115,6 +112,7 @@ header {
     height: auto;
     padding: 30px 0;
     overflow: hidden;
+    border-bottom: 10px solid @themeColor;
     .logo {
       height: 150px;
       width: 150px;
@@ -193,14 +191,34 @@ header {
 
 // Github buttons
 .github-buttons {
-  iframe {
-    border: none;
-  }
-  .flattr-button {
+  font-size: 0;
+  line-height: 18px;
+  color: rgba(0, 0 ,0, 0.7);
+  i {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    vertical-align: baseline;
+    background-size: contain !important;
     display: inline-block;
-    + iframe {
-      margin-left: 5px;
+  }
+  a {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+    vertical-align: middle;
+    font-size: 12px;
+    margin-left: 4px;
+    span {
+      font-size: 15px;
+      font-weight: 500;
     }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  a:first-child {
+    margin-left: 0px;
   }
 }
 
@@ -211,64 +229,11 @@ header {
   .center {
     padding: 0 40px;
   }
-  .github-buttons {
-    float: right;
-  }
-  .share {
-    white-space: nowrap;
-    text-align: center;
-  }
-  .share-button {
-    float: left;
-    margin-right: 5px;
-  }
 }
-.inner-header + .share-line, .content + .share-line, .share-line-home {
-  .share {
-    white-space: nowrap;
-    float: left;
-    width: 590px;
-  }
-  .addthis_toolbox {
-    display: block;
-  }
-  .flattr-button {
-    float: right;
-    margin-left: 0;
-  }
-}
+
 .share-line-home {
   height: 150px;
   box-sizing: border-box;
-  .addthis_toolbox {
-    margin-top: 20px;
-  }
-  .share {
-    position: absolute;
-    right: 50%;
-    width: 300px;
-    margin-right: 20px;
-    overflow: hidden;
-    text-align: right;
-    white-space: normal;
-    .share-button {
-      float: none !important;
-      display: block;
-      margin-right: 9px;
-      margin-bottom: 10px;
-      height: 21px;
-    }
-  }
-}
-.inner-header + .share-line, .content + .share-line {
-  .center {
-    padding: 0 30px;
-  }
-  .flattr-button {
-    height: 24px;
-    float: left;
-    position: relative;
-  }
 }
 
 // Footer
@@ -278,13 +243,8 @@ footer {
   padding-bottom: 20px;
   border-top: 10px solid @themeColor;
   a {
-    // color: rgba(255,255,255,0.7);
     text-decoration: none;
-    // border-bottom: 1px solid rgba(255,255,255,0.2);
   }
-  // a:hover {
-  //   color:#fff;
-  // }
   .links a {
     margin: 0 10px;
   }
@@ -443,7 +403,6 @@ footer {
       position: relative;
       margin-right: 20px;
       text-decoration: none;
-      color:@red;
       padding-right: 15px;
       &:after {
         content: '';
@@ -451,7 +410,7 @@ footer {
         width: 10px;
         height: 10px;
         border-radius: 2px;
-        border: 1px solid @red;
+        border: 1px solid;
         right: 0;
         top: 50%;
         margin-top: -5px;
@@ -459,8 +418,8 @@ footer {
       &:before {
         width: 4px;
         height: 4px;
-        border-right: 1px solid @red;
-        border-top: 1px solid @red;
+        border-right: 1px solid;
+        border-top: 1px solid;
         content: '';
         right: 3px;
         top: 50%;
@@ -473,6 +432,9 @@ footer {
     }
   }
 }
+.edit-link, .github-buttons i {
+  background: url('data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2233px%22%20height%3D%2232px%22%20viewBox%3D%220%200%2033%2032%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22M16.288%2C0%20C7.294%2C0%200%2C7.293%200%2C16.29%20C0%2C23.487%204.667%2C29.592%2011.14%2C31.746%20C11.955%2C31.896%2012.252%2C31.393%2012.252%2C30.961%20C12.252%2C30.575%2012.238%2C29.55%2012.23%2C28.191%20C7.699%2C29.175%206.743%2C26.007%206.743%2C26.007%20C6.002%2C24.125%204.934%2C23.624%204.934%2C23.624%20C3.455%2C22.614%205.046%2C22.634%205.046%2C22.634%20C6.681%2C22.749%207.541%2C24.313%207.541%2C24.313%20C8.994%2C26.802%2011.354%2C26.083%2012.282%2C25.666%20C12.43%2C24.614%2012.851%2C23.896%2013.316%2C23.489%20C9.699%2C23.078%205.896%2C21.68%205.896%2C15.438%20C5.896%2C13.66%206.531%2C12.205%207.573%2C11.067%20C7.405%2C10.655%206.846%2C8.998%207.733%2C6.756%20C7.733%2C6.756%209.1%2C6.318%2012.212%2C8.426%20C13.511%2C8.064%2014.905%2C7.884%2016.29%2C7.877%20C17.674%2C7.884%2019.067%2C8.064%2020.368%2C8.426%20C23.478%2C6.318%2024.843%2C6.756%2024.843%2C6.756%20C25.732%2C8.998%2025.173%2C10.655%2025.006%2C11.067%20C26.05%2C12.205%2026.68%2C13.66%2026.68%2C15.438%20C26.68%2C21.696%2022.871%2C23.073%2019.243%2C23.476%20C19.827%2C23.979%2020.348%2C24.973%2020.348%2C26.493%20C20.348%2C28.67%2020.328%2C30.427%2020.328%2C30.961%20C20.328%2C31.397%2020.622%2C31.904%2021.448%2C31.745%20C27.916%2C29.586%2032.579%2C23.485%2032.579%2C16.29%20C32.579%2C7.293%2025.285%2C0%2016.288%2C0%22%20id%3D%22Fill-3%22%20fill%3D%22%23151513%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E') no-repeat left center;
+}
 .edit-link {
   color: #000;
   font-size: 16px;
@@ -484,7 +446,6 @@ footer {
   transition: 200ms;
   float: right;
   padding-left: 22px;
-  background: url('data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2233px%22%20height%3D%2232px%22%20viewBox%3D%220%200%2033%2032%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22M16.288%2C0%20C7.294%2C0%200%2C7.293%200%2C16.29%20C0%2C23.487%204.667%2C29.592%2011.14%2C31.746%20C11.955%2C31.896%2012.252%2C31.393%2012.252%2C30.961%20C12.252%2C30.575%2012.238%2C29.55%2012.23%2C28.191%20C7.699%2C29.175%206.743%2C26.007%206.743%2C26.007%20C6.002%2C24.125%204.934%2C23.624%204.934%2C23.624%20C3.455%2C22.614%205.046%2C22.634%205.046%2C22.634%20C6.681%2C22.749%207.541%2C24.313%207.541%2C24.313%20C8.994%2C26.802%2011.354%2C26.083%2012.282%2C25.666%20C12.43%2C24.614%2012.851%2C23.896%2013.316%2C23.489%20C9.699%2C23.078%205.896%2C21.68%205.896%2C15.438%20C5.896%2C13.66%206.531%2C12.205%207.573%2C11.067%20C7.405%2C10.655%206.846%2C8.998%207.733%2C6.756%20C7.733%2C6.756%209.1%2C6.318%2012.212%2C8.426%20C13.511%2C8.064%2014.905%2C7.884%2016.29%2C7.877%20C17.674%2C7.884%2019.067%2C8.064%2020.368%2C8.426%20C23.478%2C6.318%2024.843%2C6.756%2024.843%2C6.756%20C25.732%2C8.998%2025.173%2C10.655%2025.006%2C11.067%20C26.05%2C12.205%2026.68%2C13.66%2026.68%2C15.438%20C26.68%2C21.696%2022.871%2C23.073%2019.243%2C23.476%20C19.827%2C23.979%2020.348%2C24.973%2020.348%2C26.493%20C20.348%2C28.67%2020.328%2C30.427%2020.328%2C30.961%20C20.328%2C31.397%2020.622%2C31.904%2021.448%2C31.745%20C27.916%2C29.586%2032.579%2C23.485%2032.579%2C16.29%20C32.579%2C7.293%2025.285%2C0%2016.288%2C0%22%20id%3D%22Fill-3%22%20fill%3D%22%23151513%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E') no-repeat left center;
   background-size: auto 18px;
   &:hover {
     opacity: 1;
@@ -538,9 +499,8 @@ footer {
   &.carbon-share {
     margin-top: 0 !important;
     float: none;
-    margin-left: 50%;
+    margin: 0 auto;
     position: relative;
-    left: 20px;
   }
   .inner-header & {
     border-color: rgba(0,0,0,0.1);
@@ -550,33 +510,11 @@ footer {
     }
   }
 }
-@media (max-width:1080px) {
-  header.inner-header {
-    .subtitle {
-      font-weight: 300;
-      font-size: 24px;
-    }
-    .carbon {
-      margin-top: 18px;
-    }
-  }
-}
 @media (max-width:1024px) {
-  .center, .content {
+  .center,
+  .content {
     padding-left: 30px;
     padding-right: 30px;
-  }
-  header.inner-header {
-    .carbon {
-      margin-top: 18px;
-    }
-    .links-row .links {
-      a {
-        width: 85px;
-        font-size: 13px;
-        font-weight: 400;
-      }
-    }
   }
 }
 

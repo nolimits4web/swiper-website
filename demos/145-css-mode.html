@@ -62,8 +62,11 @@
       <div class="swiper-slide">Slide 9</div>
       <div class="swiper-slide">Slide 10</div>
     </div>
-    <!-- Add Scrollbar -->
-    <div class="swiper-scrollbar"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
   </div>
 
   <!-- Swiper JS -->
@@ -72,10 +75,16 @@
   <!-- Initialize Swiper -->
   <script>
     var swiper = new Swiper('.swiper-container', {
-      scrollbar: {
-        el: '.swiper-scrollbar',
-        hide: true,
+      cssMode: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
+      pagination: {
+        el: '.swiper-pagination'
+      },
+      mousewheel: true,
+      keyboard: true,
     });
   </script>
 </body>

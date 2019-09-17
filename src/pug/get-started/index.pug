@@ -9,20 +9,10 @@ block content
   h3 1a. Download and install Swiper
   p First of all we need to download required Swiper files:
   ul
-    li We can download them from <a href="https://github.com/nolimits4web/Swiper/tree/master/dist" target="_blank">Swiper GitHub repository</a>
-    li Or we can install them via Bower, enter in terminal:
-      pre
-        code
-          | $ bower install swiper
-    li Or, using Atmosphere as Meteor package:
-      pre
-        code
-          | $ meteor add nolimits4web:swiper
-    li Or, using NPM
-      pre
-        code
-          | $ npm install swiper
-  p In the downloaded/installed package we need files from the <code>dist/</code> folder.
+    li We can download them from <a href="https://github.com/nolimits4web/Swiper/tree/master/package" target="_blank">Swiper GitHub repository</a>
+    li Or we can install them via NPM, enter in terminal:
+      :code
+        $ npm install swiper
   h3 1b. Use Swiper from CDN
   p If you don't want to include Swiper files in your project, you may use it from <a href="http://cdnjs.com">Swiper on cdnjs</a>. The following files are available:
   pre
@@ -123,26 +113,28 @@ block content
       p If you use jQuery/Zepto in your site, then you can initialize it in any of your JS files, but make sure that you do it within <code>document.ready</code> event:
       pre(style="width:100%")
         code.js
-          |   $(document).ready(function () {
-          |     //initialize swiper when document ready
-          |     var mySwiper = new Swiper ('.swiper-container', {
-          |       // Optional parameters
-          |       direction: 'vertical',
-          |       loop: true
-          |     })
-          |   });
+          :code(lang="js")
+            $(document).ready(function () {
+              //initialize swiper when document ready
+              var mySwiper = new Swiper ('.swiper-container', {
+                // Optional parameters
+                direction: 'vertical',
+                loop: true
+              })
+            });
     li
       p Otherwise (but not recommended), you can initialize it within window.onload event:
       pre(style="width:100%")
         code.js
-          |   window.onload = function () {
-          |     //initialize swiper when document ready
-          |     var mySwiper = new Swiper ('.swiper-container', {
-          |       // Optional parameters
-          |       direction: 'vertical',
-          |       loop: true
-          |     })
-          |   };
+          :code(lang="js")
+            window.onload = function () {
+              //initialize swiper when document ready
+              var mySwiper = new Swiper ('.swiper-container', {
+                // Optional parameters
+                direction: 'vertical',
+                loop: true
+              })
+            };
   h3 As a CommonJs module
   p Swiper is fully compatible with CommonJs modules and can be used in Node.js-like environment:
   pre
@@ -170,5 +162,5 @@ block content
   ul
     li Go to <a href="../api/">API Documentation</a> to learn more about all Swiper API and how to control it.
     li Look at available <a href="../demos/" target="_blank">Demos</a>.
-    li If you have questions about Swiper don't hesitate to ask them in our <a href="../forum/">Forum</a>. If you prefer <a href="http://stackoverflow.com" target="_blank">StackOverflow</a> then don't forget to tag your question with <a href="http://stackoverflow.com/questions/tagged/swiper" target="_blank"><code>swiper</code></a> tag.
+    li If you have questions about Swiper ask them in <a href="http://stackoverflow.com" target="_blank">StackOverflow</a> and don't forget to tag your question with <a href="http://stackoverflow.com/questions/tagged/swiper" target="_blank"><code>swiper</code></a> tag.
     li Create issue on <a href="https://github.com/nolimits4web/swiper/" target="_blank">GitHub</a> if you found a bug.

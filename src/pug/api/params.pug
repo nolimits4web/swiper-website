@@ -90,6 +90,29 @@ table.params-table
       td
       td Register event handlers
     tr
+      th(colspan="4") CSS Scroll Snap
+    tr
+      td cssMode
+      td boolean
+      td false
+      td
+        p When enabled it will use modern CSS Scroll Snap API. It doesn't support all of Swiper's features, but potentially should bring a much better performance in simple configurations.
+        p This is what is not supported when it is enabled:
+        ul
+          li All effects (Fade, Coverflow, Flip, Cube)
+          li Zoom
+          li Virtual Slides
+          li <code>speed</code> parameter will have no effect
+          li All transition start/end related events (use <code>slideChange</code> instead)
+          li <code>slidesPerGroup</code> has limited support
+          li <code>centeredSlides</code> is not supported
+          li Changing slides with with anything except touch/swipe and mousewheel will happen without transition in browsers without <code>scrollTo.behaviour = 'smooth'</code> support (e.g. in desktop and iOS Safari)
+          li <code>simulateTouch</code> doesn't have effect and "dragging" with mouse doesn't work
+          li <code>resistance</code> doesn't have any effect
+          li <code>allowSlidePrev/Next</code>
+          li <code>swipeHandler</code>
+          li <code>freeMode</code> and all relevant features
+    tr
       th(colspan="4") Slides grid
     tr
       td spaceBetween
@@ -116,7 +139,7 @@ table.params-table
       td slidesPerColumnFill
       td string
       td 'column'
-      td Could be 'column' or 'row'. Defines how slides should fill rows, by column or by row
+      td Could be 'column' or 'row'. Defines how slides should fill rows, by column or by row. When 'column' it uses `flex-direction: column` layout which requires specified height on swiper-container.
     tr
       td slidesPerGroup
       td number
@@ -160,7 +183,7 @@ table.params-table
     tr
       td touchEventsTarget
       td string
-      td 'container'
+      td 'wrapper'
       td Target element to listen touch events on. Can be <b>'container'</b> (to listen for touch events on swiper-container) or <b>'wrapper'</b> (to listen for touch events on swiper-wrapper)
     tr
       td touchRatio
@@ -225,7 +248,7 @@ table.params-table
     tr
       td touchMoveStopPropagation
       td boolean
-      td true
+      td false
       td If enabled, then propagation of "touchmove" will be stopped
     tr
       td iOSEdgeSwipeDetection
@@ -415,47 +438,15 @@ table.params-table
       td breakpoints
       td object
       td
-      td Allows to set different parameter for different responsive breakpoints (screen sizes). Not all parameters can be changed in breakpoints, only those which are not required different layout and logic, like <code>slidesPerView</code>, <code>slidesPerGroup</code>, <code>spaceBetween</code>. Such parameters like <code>slidesPerColumn</code>, <code>loop</code>, <code>direction</code>, <code>effect</code> won't work. For example:
+      td Allows to set different parameter for different responsive breakpoints (screen sizes). Not all parameters can be changed in breakpoints, only those which are not required different layout and logic, like <code>slidesPerView</code>, <code>slidesPerGroup</code>, <code>spaceBetween</code>, <code>slidesPerColumn</code>. Such parameters like <code>loop</code> and <code>effect</code> won't work. For example:
         pre
           code.js
             :code(lang="js")
               var swiper = new Swiper('.swiper-container', {
                 // Default parameters
-                slidesPerView: 4,
-                spaceBetween: 40,
-                // Responsive breakpoints
-                breakpoints: {
-                  // when window width is &lt;= 320px
-                  320: {
-                    slidesPerView: 1,
-                    spaceBetween: 10
-                  },
-                  // when window width is &lt;= 480px
-                  480: {
-                    slidesPerView: 2,
-                    spaceBetween: 20
-                  },
-                  // when window width is &lt;= 640px
-                  640: {
-                    slidesPerView: 3,
-                    spaceBetween: 30
-                  }
-                }
-              })
-    tr
-      td breakpointsInverse
-      td boolean
-      td false
-      td If enabled then it will count breakpoints in reversed direction, e.g. will override parameters if window width is more than specified breakpoint:
-        pre
-          code.js
-            :code(lang="js")
-              var swiper = new Swiper('.swiper-container', {
-                // Default parameters for smallest screen
                 slidesPerView: 1,
                 spaceBetween: 10,
                 // Responsive breakpoints
-                breakpointsInverse: true,
                 breakpoints: {
                   // when window width is &gt;= 320px
                   320: {

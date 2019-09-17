@@ -4,10 +4,9 @@ html
     meta(charset="utf-8")
     title Swiper - Most Modern Mobile Touch Slider
     meta(property="og:image", content="//idangero.us/swiper/i/swiper-banner.jpg")
-    link(rel="stylesheet", href="dist/css/swiper.min.css")
-    link(rel="stylesheet", href="css/main.css")
-    link(rel="shortcut icon" href="favicon.png")
-    script(src="js/vendor/modernizr-2.7.1.min.js")
+    link(rel="stylesheet", href="/package/css/swiper.min.css")
+    link(rel="stylesheet", href="/css/main.css")
+    link(rel="shortcut icon" href="/favicon.png")
   body
     script.
       (function(){
@@ -33,14 +32,21 @@ html
                   .clearfix
                 .links
                   a(href="https://github.com/nolimits4web/swiper/releases") Download
-                  a(href="./get-started/") Get Started
-                  a(href="./api/") API
-                  a(href="./demos/") Demos
-                .release-info MIT Licensed, v4.5.1 released on September 13, 2019 |&nbps;
+                  a(href="/get-started/") Get Started
+                  a(href="/api/") API
+                  a(href="/demos/") Demos
+                .release-info MIT Licensed, v5.0.0 released on September 17, 2019 |
+                  <span> </span>
                   a(href="https://github.com/nolimits4web/swiper/blob/master/CHANGELOG.md", target="_blank") Changelog
                 .github-buttons
-                  | <iframe class="github-btn" src="//ghbtns.com/github-btn.html?user=nolimits4web&repo=swiper&type=watch&count=true" width="100" height="20"></iframe>
-                  | <iframe class="github-btn" src="//ghbtns.com/github-btn.html?user=nolimits4web&repo=swiper&type=fork&count=true" width="100" height="20"></iframe>
+                  a(href="https://github.com/nolimits4web/swiper", target="_blank")
+                    i
+                  a(href="https://github.com/nolimits4web/swiper", target="_blank").gh-stars
+                    span
+                    |  stars
+                  a(href="https://github.com/nolimits4web/swiper", target="_blank").gh-forks
+                    span
+                    |  forks
             .swiper-slide
               .slide-center
                 .slide-title Top Notch Features
@@ -61,27 +67,22 @@ html
                   li And many more ...
             .swiper-slide.swiper-slide-gallery
               .slide-center
+                .slide-title Build Complex Touch Galleries
                 .swiper-container.swiper-gallery-top
-                  .slide-title.demo-iframe-title Build Complex Touch Galleries
                   .swiper-wrapper
                     - for (var i = 1; i <= 5; i++)
-                      .swiper-slide.swiper-lazy(data-background="./demos/images/nature-#{i}.jpg")
+                      .swiper-slide.swiper-lazy(data-background=`./demos/images/nature-${i}.jpg`)
                         .swiper-lazy-preloader
                 .swiper-container.swiper-gallery-thumbs
                   .swiper-wrapper
                     - for (var i = 1; i <= 5; i++)
-                      .swiper-slide(style="background-image:url(./demos/images/nature-#{i}.jpg)")
+                      .swiper-slide(style=`background-image:url(./demos/images/nature-${i}.jpg)`)
             .swiper-slide.last-centered-slide
               .slide-center
                 .slide-title Start Using It Now
                 .slide-subtitle Swiper is completely free and open-source
     .share-line.share-line-home
       .center
-        .share
-          .share-button
-            a(href="https://www.patreon.com/vladimirkharlampidi", target="_blank")
-              img(src="//cdn.framework7.io/i/support-badge.png", style="height:20px")
-          .clearfix
         .carbon.carbon-share
           <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=idangerousswiper" id="_carbonads_js"></script>
         .clearfix
@@ -182,14 +183,13 @@ html
         .sponsors
           div(id="bsap_1306029", class="bsarocks bsap_e6fd620d82f1992c9d89ddb5878f795b")
         .links
-          a(href="./") Swiper
-          a(href="./get-started/") Get Started
-          a(href="./api/") API
-          a(href="./demos/") Demos
+          a(href="/") Swiper
+          a(href="/get-started/") Get Started
+          a(href="/api/") API
+          a(href="/demos/") Demos
         .copy #{new Date().getFullYear()} © Swiper by <a href="https://twitter.com/nolimits4web">Vladimir Kharlampidi</a>
-    script(src="js/vendor/jquery-1.11.0.min.js")
-    script(src="dist/js/swiper.min.js")
-    script(src="js/main.js")
+    script(src="/package/js/swiper.min.js")
+    script(src="/js/main.js")
     script.
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

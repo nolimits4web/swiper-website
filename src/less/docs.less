@@ -3,16 +3,16 @@
   margin-left: 240px;
   font-family: -apple-system, system-ui, Helvetica Neue, Helvetica, Arial, sans-serif;
   h2[id]:not(.no-border), h3[id]:not(.no-border) {
-    padding-top: 45px;
+    padding-top: 25px;
     position: relative;
     &:before {
       top: 0;
       content: '';
       position: absolute;
       left: -240px;
-      height: 25px;
+      height: 10px;
       background: @themeColor;
-      width: 100vw;
+      width: calc(100% + 240px + 30px);
     }
   }
 }
@@ -69,9 +69,4 @@ ul.method-parameters {
   list-style: none;
 }
 
-@media (max-width: 600px) {
-  .method-wrap {
-    padding: 10px;
-    overflow-x: auto;
-  }
-}
+
