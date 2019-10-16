@@ -243,6 +243,22 @@ table.methods-table
       td mySwiper.getTranslate();
       td Get current value of swiper wrapper css3 transform translate
     tr
+      td mySwiper.translateTo(<span>translate</span>, <span>speed</span>, <span>runCallbacks</span>, <span>translateBounds</span>);
+      td Animate custom css3 transform's translate value for swiper wrapper
+        ul.method-parameters
+          li
+            span.parameter translate
+            |  - <span class="parameter-type">number</span> - translate value (in px).
+          li
+            span.parameter speed
+            |  - <span class="parameter-type">number</span> - transition duration (in ms).
+          li
+            span.parameter runCallbacks
+            |  - <span class="parameter-type">boolean</span> - Set it to <code>false</code> (by default it is <code>true</code>) and transition will not produce  transition events. <em>Optional</em>
+          li
+            span.parameter translateBounds
+            |  - <span class="parameter-type">boolean</span> - Set it to <code>false</code> (by default it is <code>true</code>) and transition value can extend beyond min and max translate. <em>Optional</em>
+    tr
       td mySwiper.on(<span>event</span>, <span>handler</span>)
       td Add event listener
     tr
