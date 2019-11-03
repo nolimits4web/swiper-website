@@ -7,9 +7,9 @@ const buildStyles = require('./build/build-styles');
 const buildScript = require('./build/build-script');
 
 const paths = {
-  root: './',
-  css: './css',
-  js: './js',
+  root: './public',
+  css: './public/css',
+  js: './public/js',
   src: './src',
   pug: './src/pug',
   less: './src/less',
@@ -43,7 +43,7 @@ gulp.task('connect', function () {
   });
 });
 gulp.task('open', function () {
-  return gulp.src('./index.html').pipe(open({ uri: 'http://localhost:3000/index.html'}));
+  return gulp.src('./public/index.html').pipe(open({ uri: 'http://localhost:3000/index.html'}));
 });
 
 gulp.task('server', gulp.parallel([ 'watch', 'connect', 'open' ]));

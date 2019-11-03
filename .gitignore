@@ -58,9 +58,11 @@ typings/
 .env
 
 # Build Files
-/index.html
-api/index.html
-get-started/index.html
-demos/index.html
-css/main.css
+public/index.html
+public/api/index.html
+public/get-started/index.html
+public/demos/index.html
+public/css/main.css
+public/js/main.js
+public/js/main.js.map
 
