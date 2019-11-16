@@ -321,11 +321,11 @@ footer {
   height: 100%;
   background: #f1f1f1;
   box-sizing: border-box;
-  padding: 10px 10px 10px 20px;
   line-height: 1.4;
   z-index: 100;
   font-size: 14px;
-  > ul {
+  .api-nav-content {
+    padding: 10px 15px 10px 15px;
     top: 0;
     position: -moz-sticky;
     position: -webkit-sticky;
@@ -334,6 +334,19 @@ footer {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
     z-index: 200;
+    box-sizing: border-box;
+  }
+  .api-nav-sponsors {
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    a {
+      display: block;
+      width: 100%;
+      font-size: 0;
+      margin-top: 10px;
+    }
   }
   ul {
     list-style: none;
