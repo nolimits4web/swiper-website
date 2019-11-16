@@ -1,5 +1,22 @@
 import $ from 'dom7';
 
+function trackSponsorClick(url) {
+  if (!window.gtag || !url) return;
+  if (!url) return;
+  gtag('event', 'click', {
+    'event_category': 'outbound',
+    'event_label': url,
+    'transport_type': 'beacon',
+    'event_callback': function() {
+      // nothing
+    }
+  });
+}
+$('.custom-sponsors a, .api-nav-sponsors a, .netlify a, .sponsors-links a').on('click', function (e) {
+  const url = this.href;
+  trackSponsorClick(url);
+});
+
 if ($('.header-swiper-front').length) {
   var swiperFront = new Swiper('.header-swiper-front', {
     slidesPerView: 'auto',
