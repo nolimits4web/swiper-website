@@ -151,6 +151,13 @@ table.params-table
       td 1
       td Set numbers of slides to define and enable group sliding. Useful to use with slidesPerView &gt; 1
     tr
+      td slidesPerGroupSkip
+      td number
+      td 0
+      td The parameter works in the following way:
+        p If <code>slidesPerGroupSkip</code> equals <code>0</code> (default), no slides are excluded from grouping, and the resulting behaviour is the same as without this change.
+        p If <code>slidesPerGroupSkip</code> is equal or greater than <code>1</code> the first X slides are treated as single groups, whereas all following slides are grouped by the <code>slidesPerGroup</code> value.
+    tr
       td centeredSlides
       td boolean
       td false
@@ -448,7 +455,8 @@ table.params-table
       td breakpoints
       td object
       td
-      td Allows to set different parameter for different responsive breakpoints (screen sizes). Not all parameters can be changed in breakpoints, only those which are not required different layout and logic, like <code>slidesPerView</code>, <code>slidesPerGroup</code>, <code>spaceBetween</code>, <code>slidesPerColumn</code>. Such parameters like <code>loop</code> and <code>effect</code> won't work. For example:
+      td
+        p Allows to set different parameter for different responsive breakpoints (screen sizes). Not all parameters can be changed in breakpoints, only those which are not required different layout and logic, like <code>slidesPerView</code>, <code>slidesPerGroup</code>, <code>spaceBetween</code>, <code>slidesPerColumn</code>. Such parameters like <code>loop</code> and <code>effect</code> won't work. For example:
         pre
           code.js
             :code(lang="js")
@@ -475,6 +483,28 @@ table.params-table
                   }
                 }
               })
+        p Since version 5.3.0 it also supports "ratio" (width/height) breakpoints:
+        pre
+          code.js
+            :code(lang="js")
+              var swiper = new Swiper('.swiper-container', {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                breakpoints: {
+                  '@0.75': {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                  },
+                  '@1.00': {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                  },
+                  '@1.50': {
+                    slidesPerView: 4,
+                    spaceBetween: 50,
+                  },
+                }
+              });
     tr
       th(colspan="4") Observer
     tr
