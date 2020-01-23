@@ -2,19 +2,19 @@
 
 Swiper's website to use these docs offline
 
-http://idangero.us/swiper/
+https://swiperjs.com/
 
 ## Gulp
 
 Run `npm install` under root dir to install npm packages.
-And then, you can use gulp to compile less and jade files, read more about [Gulp](http://gulpjs.com/).
+Then, you can use [Gulp](https://gulpjs.com/) to compile Less and Pug files.
 
 gulp tasks list
 
-- `gulp server`: run website on local server
-- `gulp jade`: build jade files to html
-- `gulp less`: build less files to css
-- `gulp build`: build both jade and less files
+- `gulp server`: run the website on a local web server
+- `gulp pug`: compile Pug files to HTML
+- `gulp less`: compile Less files to CSS
+- `gulp build`: compile both Pug and LESS files
 
 
 ## Contributing
