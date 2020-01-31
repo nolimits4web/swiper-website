@@ -4,6 +4,7 @@ const open = require('gulp-open');
 
 const buildPages = require('./build/build-pages');
 const buildStyles = require('./build/build-styles');
+const buildSCSS = require('./build/build-scss');
 const buildScript = require('./build/build-script');
 
 const paths = {
@@ -13,16 +14,18 @@ const paths = {
   src: './src',
   pug: './src/pug',
   less: './src/less',
+  scss: './src/scss',
 };
 
 /* ==================================================================
 Build
 ================================================================== */
 gulp.task('less', buildStyles);
+gulp.task('scss', buildStyles);
 gulp.task('pug', buildPages);
 gulp.task('js', buildScript);
 
-gulp.task('build', gulp.series('pug', 'less', 'js'), function (cb) {
+gulp.task('build', gulp.series('pug', 'scss', 'js'), function (cb) {
   cb();
 });
 
@@ -30,7 +33,7 @@ gulp.task('build', gulp.series('pug', 'less', 'js'), function (cb) {
 Watch
 ================================= */
 gulp.task('watch', function () {
-  gulp.watch(paths.less + '**/*.*', gulp.series([ 'less' ]));
+  gulp.watch(paths.scss + '**/*.*', gulp.series([ 'scss' ]));
   gulp.watch('./src/pug/**/*.pug', gulp.series([ 'pug' ]));
   gulp.watch('./src/js/*.js', gulp.series([ 'js' ]));
 });
