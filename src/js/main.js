@@ -12,7 +12,7 @@ function trackSponsorClick(url) {
     }
   });
 }
-$('.custom-sponsors a, .api-nav-sponsors a, .netlify a, .sponsors-links a').on('click', function (e) {
+$('.custom-sponsors a, .side-nav-sponsors a, .netlify a, .sponsors-links a').on('click', function (e) {
   const url = this.href;
   trackSponsorClick(url);
 });
