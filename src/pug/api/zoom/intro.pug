@@ -21,5 +21,20 @@ p Swiper supports zoom images functionality (similar to what you see on iOS when
           &lt;/div&gt;
       &lt;/div&gt;
   &lt;/div&gt;
-p All "zoomable" images should be wrapped with the div with <code>swiper-zoom-container</code> class. Note, it doesn't support to zoom anything else except single image.
-p You can override <code>maxRatio</code> parameter for specific slides by using <code>data-swiper-zoom</code> attribute on zoom container.
+ul
+  li
+    p All "zoomable" images should be wrapped with the div with <code>swiper-zoom-container</code> class.
+  li
+    p By default it expects to zoom one of the <code>img</code>, <code>picture</code> or <code>canvas</code> element. If you want to make zoom on some other custom element, then just add <code>swiper-zoom-target</code> class to this element. For example:
+    :code(lang="html")
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="swiper-zoom-container">
+              <!-- custom zoomable element -->
+              <div class="swiper-zoom-target" style="background-image: url(...)"></div>
+            </div>
+          </div>
+      </div>
+  li
+    p You can override <code>maxRatio</code> parameter for specific slides by using <code>data-swiper-zoom</code> attribute on zoom container.
