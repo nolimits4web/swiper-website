@@ -156,6 +156,15 @@ block content
      li you have enabled <a href="https://babeljs.io/" target="_blank">Babel</a> or <a href="https://buble.surge.sh/" target="_blank">Buble</a> to transpile it to ES5 syntax,
      li you have enabled node modules resolving and babel transpiling for Swiper as it uses <a href="https://github.com/nolimits4web/Dom7" target="_blank">Dom7</a> and <b>ssr-window</b> packages as dependencies.
 
+  h3 As browser ES module
+  p There is also browser-compatible ES module if you target modern browsers and use ES modules directly:
+  :code(lang="html")
+    <script type="module">
+      import Swiper from 'https://unpkg.com/swiper/js/swiper.esm.browser.bundle.min.js';
+
+      const swiper = new Swiper(/* ... */)
+    </script>
+
   h2 What next?
   p As you see it is really easy to integrate Swiper into your website or app. So here are your next steps:
   ul
