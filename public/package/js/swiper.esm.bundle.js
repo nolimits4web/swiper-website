@@ -1,5 +1,5 @@
 /**
- * Swiper 5.4.1
+ * Swiper 5.4.3
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * http://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: May 20, 2020
+ * Released on: June 13, 2020
  */
 
 import { $, addClass, removeClass, hasClass, toggleClass, attr, removeAttr, data, transform, transition as transition$1, on, off, trigger, transitionEnd as transitionEnd$1, outerWidth, outerHeight, offset, css, each, html, text, is, index, eq, append, prepend, next, nextAll, prev, prevAll, parent, parents, closest, find, children, filter, remove, add, styles } from 'dom7/dist/dom7.modular';
@@ -1933,7 +1933,7 @@ function onTouchStart (event) {
   const startX = touches.currentX;
   const startY = touches.currentY;
 
-  // Do NOT start if iOS edge swipe is detected. Otherwise iOS app (UIWebView) cannot swipe-to-go-back anymore
+  // Do NOT start if iOS edge swipe is detected. Otherwise iOS app cannot swipe-to-go-back anymore
 
   const edgeSwipeDetection = params.edgeSwipeDetection || params.iOSEdgeSwipeDetection;
   const edgeSwipeThreshold = params.edgeSwipeThreshold || params.iOSEdgeSwipeThreshold;
@@ -2498,7 +2498,7 @@ function onResize () {
   swiper.updateSlides();
 
   swiper.updateSlidesClasses();
-  if ((params.slidesPerView === 'auto' || params.slidesPerView > 1) && swiper.isEnd && !swiper.params.centeredSlides) {
+  if ((params.slidesPerView === 'auto' || params.slidesPerView > 1) && swiper.isEnd && !swiper.isBeginning && !swiper.params.centeredSlides) {
     swiper.slideTo(swiper.slides.length - 1, 0, false, true);
   } else {
     swiper.slideTo(swiper.activeIndex, 0, false, true);
@@ -2910,7 +2910,7 @@ var defaults = {
   //
   preventInteractionOnTransition: false,
 
-  // To support iOS's swipe-to-go-back gesture (when being used in-app, with UIWebView).
+  // To support iOS's swipe-to-go-back gesture (when being used in-app).
   edgeSwipeDetection: false,
   edgeSwipeThreshold: 20,
 
@@ -3530,7 +3530,7 @@ const Browser = (function Browser() {
   return {
     isEdge: !!window.navigator.userAgent.match(/Edge/g),
     isSafari: isSafari(),
-    isUiWebView: /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(window.navigator.userAgent),
+    isWebView: /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(window.navigator.userAgent),
   };
 }());
 
@@ -4156,9 +4156,9 @@ const Mousewheel = {
 
     if (params.forceToAxis) {
       if (swiper.isHorizontal()) {
-        if (Math.abs(data.pixelX) > Math.abs(data.pixelY)) delta = data.pixelX * rtlFactor;
+        if (Math.abs(data.pixelX) > Math.abs(data.pixelY)) delta = -data.pixelX * rtlFactor;
         else return true;
-      } else if (Math.abs(data.pixelY) > Math.abs(data.pixelX)) delta = data.pixelY;
+      } else if (Math.abs(data.pixelY) > Math.abs(data.pixelX)) delta = -data.pixelY;
       else return true;
     } else {
       delta = Math.abs(data.pixelX) > Math.abs(data.pixelY) ? -data.pixelX * rtlFactor : -data.pixelY;
@@ -4819,7 +4819,6 @@ const Pagination = {
       swiper.params.uniqueNavElements
       && typeof params.el === 'string'
       && $el.length > 1
-      && swiper.$el.find(params.el).length === 1
     ) {
       $el = swiper.$el.find(params.el);
     }
@@ -7197,7 +7196,7 @@ const Cube = {
         $cubeShadowEl.transform(`scale3d(${scale1}, 1, ${scale2}) translate3d(0px, ${(swiperHeight / 2) + offset}px, ${-swiperHeight / 2 / scale2}px) rotateX(-90deg)`);
       }
     }
-    const zFactor = (Browser.isSafari || Browser.isUiWebView) ? (-swiperSize / 2) : 0;
+    const zFactor = (Browser.isSafari || Browser.isWebView) ? (-swiperSize / 2) : 0;
     $wrapperEl
       .transform(`translate3d(0px,0,${zFactor}px) rotateX(${swiper.isHorizontal() ? 0 : wrapperRotate}deg) rotateY(${swiper.isHorizontal() ? -wrapperRotate : 0}deg)`);
   },
@@ -7415,14 +7414,17 @@ const Coverflow = {
       let translateY = isHorizontal ? 0 : stretch * (offsetMultiplier);
       let translateX = isHorizontal ? stretch * (offsetMultiplier) : 0;
 
+      let scale = 1 - (1 - params.scale) * Math.abs(offsetMultiplier);
+
       // Fix for ultra small values
       if (Math.abs(translateX) < 0.001) translateX = 0;
       if (Math.abs(translateY) < 0.001) translateY = 0;
       if (Math.abs(translateZ) < 0.001) translateZ = 0;
       if (Math.abs(rotateY) < 0.001) rotateY = 0;
       if (Math.abs(rotateX) < 0.001) rotateX = 0;
+      if (Math.abs(scale) < 0.001) scale = 0;
 
-      const slideTransform = `translate3d(${translateX}px,${translateY}px,${translateZ}px)  rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      const slideTransform = `translate3d(${translateX}px,${translateY}px,${translateZ}px)  rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(${scale})`;
 
       $slideEl.transform(slideTransform);
       $slideEl[0].style.zIndex = -Math.abs(Math.round(offsetMultiplier)) + 1;
@@ -7465,6 +7467,7 @@ var EffectCoverflow = {
       rotate: 50,
       stretch: 0,
       depth: 100,
+      scale: 1,
       modifier: 1,
       slideShadows: true,
     },
