@@ -1,10 +1,12 @@
 {
   "name": "swiper",
-  "version": "5.4.5",
+  "version": "6.0.0-alpha.12",
   "description": "Most modern mobile touch slider and framework with hardware accelerated transitions",
-  "main": "js/swiper.js",
-  "jsnext:main": "js/swiper.esm.bundle.js",
-  "module": "js/swiper.esm.bundle.js",
+  "main": "swiper.cjs.js",
+  "jsnext:main": "swiper.esm.js",
+  "module": "swiper.esm.js",
+  "typings": "swiper.d.ts",
+  "sideEffects": false,
   "scripts": {
     "postinstall": "echo \"\u001b[35m\u001b[1mLove Swiper? Support Vladimir's work by donating or pledging on patreon:\u001b[22m\u001b[39m\n > \u001b[32mhttps://patreon.com/vladimirkharlampidi\u001b[0m\n\""
   },
@@ -26,12 +28,14 @@
     "framework7",
     "carousel",
     "gallery",
-    "plugin"
+    "plugin",
+    "react",
+    "slideshow"
   ],
   "author": "Vladimir Kharlampidi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nolimits4web/Swiper/issues"
+    "url": "https://github.com/nolimits4web/swiper/issues"
   },
   "homepage": "https://swiperjs.com",
   "funding": {
@@ -41,16 +45,8 @@
   "engines": {
     "node": ">= 4.7.0"
   },
-  "browserslist": [
-    "Android >= 7",
-    "IOS >= 11",
-    "Safari >= 11",
-    "Chrome >= 49",
-    "Firefox >= 31",
-    "Samsung >= 5"
-  ],
   "dependencies": {
-    "dom7": "^2.1.5",
-    "ssr-window": "^2.0.0"
+    "dom7": "^3.0.0-alpha.4",
+    "ssr-window": "^3.0.0-alpha.4"
   }
 }

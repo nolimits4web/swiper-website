@@ -1,0 +1,73 @@
+"use strict";
+
+exports.__esModule = true;
+exports.calcLoopedSlides = calcLoopedSlides;
+exports.renderLoop = renderLoop;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function calcLoopedSlides(slides, swiperParams) {
+  var loopedSlides = Math.ceil(parseFloat(swiperParams.loopedSlides || swiperParams.slidesPerView, 10));
+  loopedSlides += swiperParams.loopAdditionalSlides;
+
+  if (loopedSlides > slides.length) {
+    loopedSlides = slides.length;
+  }
+
+  return loopedSlides;
+}
+
+function renderLoop(swiper, slides, swiperParams) {
+  var modifiedSlides = slides.map(function (child, index) {
+    return _react.default.cloneElement(child, {
+      swiper: swiper,
+      'data-swiper-slide-index': index
+    });
+  });
+
+  function duplicateSlide(child, index, position) {
+    return _react.default.cloneElement(child, {
+      key: child.key + "-duplicate-" + index + "-" + position,
+      className: (child.props.className || '') + " " + swiperParams.slideDuplicateClass
+    });
+  }
+
+  if (swiperParams.loopFillGroupWithBlank) {
+    var blankSlidesNum = swiperParams.slidesPerGroup - modifiedSlides.length % swiperParams.slidesPerGroup;
+
+    if (blankSlidesNum !== swiperParams.slidesPerGroup) {
+      for (var i = 0; i < blankSlidesNum; i += 1) {
+        var blankSlide = /*#__PURE__*/_react.default.createElement("div", {
+          className: swiperParams.slideClass + " " + swiperParams.slideBlankClass
+        });
+
+        modifiedSlides.push(blankSlide);
+      }
+    }
+  }
+
+  if (swiperParams.slidesPerView === 'auto' && !swiperParams.loopedSlides) {
+    swiperParams.loopedSlides = modifiedSlides.length;
+  }
+
+  var loopedSlides = calcLoopedSlides(modifiedSlides, swiperParams);
+  var prependSlides = [];
+  var appendSlides = [];
+  modifiedSlides.forEach(function (child, index) {
+    if (index < loopedSlides) {
+      appendSlides.push(duplicateSlide(child, index, 'prepend'));
+    }
+
+    if (index < modifiedSlides.length && index >= modifiedSlides.length - loopedSlides) {
+      prependSlides.push(duplicateSlide(child, index, 'append'));
+    }
+  });
+
+  if (swiper) {
+    swiper.loopedSlides = loopedSlides;
+  }
+
+  return [].concat(prependSlides, modifiedSlides, appendSlides);
+}
