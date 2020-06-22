@@ -1,5 +1,5 @@
 /**
- * Swiper 6.0.0-alpha.12
+ * Swiper 6.0.0-alpha.15
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * http://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: June 19, 2020
+ * Released on: June 22, 2020
  */
 
 'use strict';
@@ -7379,7 +7379,7 @@ var Autoplay = {
   onTransitionEnd: function onTransitionEnd(e) {
     var swiper = this;
     if (!swiper || swiper.destroyed || !swiper.$wrapperEl) return;
-    if (e.target !== this) return;
+    if (e.target !== swiper.$wrapperEl[0]) return;
     swiper.$wrapperEl[0].removeEventListener('transitionend', swiper.autoplay.onTransitionEnd);
     swiper.$wrapperEl[0].removeEventListener('webkitTransitionEnd', swiper.autoplay.onTransitionEnd);
     swiper.autoplay.paused = false;

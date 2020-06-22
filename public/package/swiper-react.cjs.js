@@ -1,5 +1,5 @@
 /**
- * Swiper React 6.0.0-alpha.12
+ * Swiper React 6.0.0-alpha.15
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * http://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: June 19, 2020
+ * Released on: June 22, 2020
  */
 
 "use strict";

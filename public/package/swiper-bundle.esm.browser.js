@@ -1,5 +1,5 @@
 /**
- * Swiper 6.0.0-alpha.12
+ * Swiper 6.0.0-alpha.15
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * http://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: June 19, 2020
+ * Released on: June 22, 2020
  */
 
 function _defineProperties(target, props) {
@@ -199,7 +199,7 @@ function getWindow() {
 }
 
 /**
- * Dom7 3.0.0-alpha.4
+ * Dom7 3.0.0-alpha.5
  * Minimalistic JavaScript library for DOM manipulation, with a jQuery-compatible API
  * https://framework7.io/docs/dom7.html
  *
@@ -207,7 +207,7 @@ function getWindow() {
  *
  * Licensed under MIT
  *
- * Released on: May 20, 2020
+ * Released on: June 22, 2020
  */
 
 function _inheritsLoose(subClass, superClass) {
@@ -788,7 +788,10 @@ function css(props, value) {
 }
 
 function each(callback) {
-  this.forEach(callback);
+  if (!callback) return this;
+  this.forEach(function (el, index) {
+    callback.apply(el, [el, index]);
+  });
   return this;
 }
 
@@ -8438,7 +8441,7 @@ var Autoplay = {
   onTransitionEnd: function onTransitionEnd(e) {
     var swiper = this;
     if (!swiper || swiper.destroyed || !swiper.$wrapperEl) return;
-    if (e.target !== this) return;
+    if (e.target !== swiper.$wrapperEl[0]) return;
     swiper.$wrapperEl[0].removeEventListener('transitionend', swiper.autoplay.onTransitionEnd);
     swiper.$wrapperEl[0].removeEventListener('webkitTransitionEnd', swiper.autoplay.onTransitionEnd);
     swiper.autoplay.paused = false;
