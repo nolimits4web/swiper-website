@@ -49,6 +49,11 @@ table.params-table
           li <code>to</code> - index of last slide required to be rendered
           li <code>slides</code> - array with slide items to be rendered
     tr.subparam-row
+      td renderExternalUpdate
+      td boolean
+      td true
+      td When enabled (by default) it will update Swiper layout right after renderExternal called. Useful to disable and update swiper manually when used with render libraries that renders asynchronously
+    tr.subparam-row
       td addSlidesBefore
       td number
       td 0

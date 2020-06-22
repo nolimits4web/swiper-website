@@ -47,13 +47,13 @@ table.params-table
       td number
       td
       td Swiper width (in px). Parameter allows to force Swiper width. Useful <b>only</b> if you initialize Swiper when it is hidden.
-        .important-note Setting this parameter will make Swiper not responsive
+        .important-note Setting this parameter will make Swiper not responsive. But can be useful when running under Node.js (e.g. for testing with libs like Jest, and for SSR)
     tr
       td height
       td number
       td
       td Swiper height (in px). Parameter allows to force Swiper height. Useful <b>only</b> if you initialize Swiper when it is hidden.
-        .important-note Setting this parameter will make Swiper not responsive
+        .important-note Setting this parameter will make Swiper not responsive. But can be useful when running under Node.js (e.g. for testing with libs like Jest, and for SSR)
     tr
       td autoHeight
       td boolean
@@ -89,6 +89,16 @@ table.params-table
       td boolean
       td false
       td When enabled Swiper will be disabled and hide navigation buttons on case there are not enough slides for sliding
+    tr
+      td userAgent
+      td string
+      td
+      td userAgent string. Required for browser/device detection when rendered on server-side (for SSR)
+    tr
+      td url
+      td string
+      td
+      td Required for active slide detection when rendered on server-side (SSR) and enabled history
     tr
       td on
       td object
@@ -574,6 +584,11 @@ table.params-table
       td string
       td 'swiper-slide-duplicate-prev'
       td CSS class name of duplicated slide which represents the slide previous to active slide
+    tr
+      td slideBlankClass
+      td string
+      td 'swiper-slide-invisible-blank'
+      td CSS class name of blank slide append to fill groups in loop mode when `loopFillGroupWithBlank` is also enabled
     tr
       td wrapperClass
       td string

@@ -14,7 +14,6 @@ if (!pug.filter && !pug.filters.code) {
 }
 
 function buildPages(cb, { src = ['**/index.pug'], dest = './public/' } = {}) {
-  const cdn = process.argv.slice(3) ? process.argv.slice(3).toString().replace('-', '') !== 'local' : true;
   const time = Date.now();
 
   const name = src[0] === '**/*.pug' ? 'all' : src.join(', ');
