@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const connect = require('gulp-connect');
 const open = require('gulp-open');
+const exec = require('exec-sh');
 
 const buildPages = require('./build/build-pages');
 const buildStyles = require('./build/build-styles');
@@ -21,8 +22,12 @@ Build
 gulp.task('less', buildStyles);
 gulp.task('pug', buildPages);
 gulp.task('js', buildScript);
+gulp.task('types', async (cb) => {
+  await exec.promise('npx typedoc --out ./public/types ./public/package --includeDeclarations --excludeExternals');
+  cb();
+});
 
-gulp.task('build', gulp.series('pug', 'less', 'js'), function (cb) {
+gulp.task('build', gulp.series('pug', 'less', 'js', 'types'), function (cb) {
   cb();
 });
 

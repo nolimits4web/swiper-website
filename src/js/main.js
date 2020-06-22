@@ -1,4 +1,9 @@
-import $ from 'dom7';
+import $, { on, each, find, hasClass, offset, height, html, index, show, hide, attr, css, addClass } from 'dom7';
+
+const dom7Methods = { on, each, find, hasClass, offset, height, html, index, show, hide, attr, css, addClass };
+Object.keys(dom7Methods).forEach((key) => {
+  $.fn[key] = dom7Methods[key];
+})
 
 function trackSponsorClick(url) {
   if (!window.gtag || !url) return;
@@ -38,8 +43,7 @@ if ($('.header-swiper-front').length) {
     keyboard: true,
     a11y: true,
     on: {
-      slideChange: function () {
-        var s = this;
+      slideChange: function (s) {
         if (s.activeIndex === $('.swiper-slide-gallery').index()) {
           $(s.el).find('.swiper-pagination').hide();
         }
@@ -74,8 +78,8 @@ if ($('.header-swiper-front').length) {
 // Demos
 var iframeTimeout;
 function lazyLoadDemos() {
-  $('.demo').each(function (index) {
-    var frameHolder = $(this).find('.demo-iframe');
+  $('.demo').each(function (el) {
+    var frameHolder = $(el).find('.demo-iframe');
     if (frameHolder.hasClass('loaded')) return;
     var frame = frameHolder.find('iframe');
     var src = frame.attr('data-src');
@@ -90,8 +94,8 @@ function lazyLoadDemos() {
   });
 }
 if ($('.demo').length > 0) {
-  $('.demo').each(function () {
-    var t = $(this);
+  $('.demo').each(function (el) {
+    var t = $(el);
     var demoFile = t.find('iframe').attr('data-src');
     t.find('.demo-link-new-window').attr('href', demoFile);
     t.find('.demo-link-source').attr('href', 'https://github.com/nolimits4web/Swiper/blob/master/demos/' + demoFile);

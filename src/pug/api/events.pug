@@ -3,29 +3,25 @@ ol
   li
     p Using <code>on</code> parameter on swiper initialization:
     p
-      pre
-        code
-          :code(lang="js")
-            var mySwiper = new Swiper('.swiper-container', {
-              // ...
-              on: {
-                init: function () {
-                  console.log('swiper initialized');
-                },
-              },
-            };
+      :code(lang="js")
+        var mySwiper = new Swiper('.swiper-container', {
+          // ...
+          on: {
+            init: function () {
+              console.log('swiper initialized');
+            },
+          },
+        };
   li
     p Using <code>on</code> method after swiper initialization.
     p
-      pre
-        code
-          :code(lang="js")
-            var mySwiper = new Swiper('.swiper-container', {
-              // ...
-            };
-            mySwiper.on('slideChange', function () {
-              console.log('slide changed');
-            });
+      :code(lang="js")
+        var mySwiper = new Swiper('.swiper-container', {
+          // ...
+        };
+        mySwiper.on('slideChange', function () {
+          console.log('slide changed');
+        });
 .important-note
   p Please note, that <code>this</code> keyword within event handler always points to Swiper instance
 br
@@ -106,35 +102,35 @@ table.events-table
     tr
       td touchStart
       td (swiper, event)
-      td Event will be fired when user touch Swiper. Receives 'touchstart' event as an arguments.
+      td Event will be fired when user touch Swiper. Receives `touchstart` event as an arguments.
     tr
       td touchMove(event)
       td (swiper, event)
-      td Event will be fired when user touch and move finger over Swiper. Receives 'touchmove' event as an arguments.
+      td Event will be fired when user touch and move finger over Swiper. Receives `touchmove` event as an arguments.
     tr
       td touchMoveOpposite
       td (swiper, event)
-      td Event will be fired when user touch and move finger over Swiper in direction opposite to <code>direction</code> parameter. Receives 'touchmove' event as an arguments.
+      td Event will be fired when user touch and move finger over Swiper in direction opposite to `direction` parameter. Receives `touchmove` event as an arguments.
     tr
       td sliderMove
       td (swiper, event)
-      td Event will be fired when user touch and move finger over Swiper and move it. Receives 'touchmove' event as an arguments.
+      td Event will be fired when user touch and move finger over Swiper and move it. Receives `touchmove` event as an arguments.
     tr
       td touchEnd
       td (swiper, event)
-      td Event will be fired when user release Swiper. Receives 'touchend' event as an arguments.
+      td Event will be fired when user release Swiper. Receives `touchend` event as an arguments.
     tr
       td click
       td (swiper, event)
-      td Event will be fired when user click/tap on Swiper. Receives 'touchend' event as an arguments.
+      td Event will be fired when user click/tap on Swiper. Receives `touchend` event as an arguments.
     tr
       td tap
       td (swiper, event)
-      td Event will be fired when user click/tap on Swiper. Receives 'touchend' event as an arguments.
+      td Event will be fired when user click/tap on Swiper. Receives `touchend` event as an arguments.
     tr
       td doubleTap
       td (swiper, event)
-      td Event will be fired when user double tap on Swiper's container. Receives 'touchend' event as an arguments
+      td Event will be fired when user double tap on Swiper's container. Receives `touchend` event as an arguments
     tr
       td imagesReady
       td (swiper)
