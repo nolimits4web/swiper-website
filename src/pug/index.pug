@@ -40,11 +40,11 @@ html
                   h2.subtitle The Most Modern Mobile Touch Slider
                   .clearfix
                 .links
-                  a(href="https://github.com/nolimits4web/swiper/releases") Download
                   a(href="/get-started/") Get Started
                   a(href="/api/") API
                   a(href="/demos/") Demos
-                .release-info MIT Licensed, v5.4.5 released on June 16, 2020 |
+                  a(href="/react/") React
+                .release-info MIT Licensed, v#{release.version} released on #{release.date} |
                   <span> </span>
                   a(href="https://github.com/nolimits4web/swiper/blob/master/CHANGELOG.md", target="_blank") Changelog
                 .github-buttons
@@ -89,7 +89,6 @@ html
             .swiper-slide.last-centered-slide
               .slide-center
                 .slide-title Start Using It Now
-                .slide-subtitle Swiper is completely free and open-source
     .share-line.share-line-home
       .center
         .carbon.carbon-share
@@ -146,10 +145,10 @@ html
             p Swiper Lazy Loading delays loading of images in inactive/invisible slides until the user swipes to them. Such feature could make the page load faster and improve Swiper performance
           li
             h3 Virtual Slides
-            p Swiper 4 comes with new Virtual Slides features which is great when you have a lot of slides or content-heavy/image-heavy slides so it will keep just the required amount of slides in DOM
+            p Swiper comes with Virtual Slides feature that is great when you have a lot of slides or content-heavy/image-heavy slides so it will keep just the required amount of slides in DOM
           li
             h3 And many more ...
-            p All Swiper 2 well-known features are also here: Responsive, Scroll prevention, Resistant bounds, Autoplay, Loop mode, Nested Swipers
+            p All Swiper well-known features are also here: Responsive, Scroll prevention, Resistant bounds, Autoplay, Loop mode, Nested Swipers
       .home-block.home-logos
         h2 Used By Thousands
         .logos
@@ -178,39 +177,12 @@ html
         h2 And It Is Free
         p Swiper is completely free and open-source (MIT Licensed)
         p
-          a(href="https://github.com/nolimits4web/swiper/releases") Download
           a(href="./get-started/") Get Started
           a(href="./api/") API
           a(href="./demos/") Demos
+          a(href="./react/") React
 
-    footer
-      .center
-        .sponsors-links
-          span Supported by:
-          a(href="https://www.colognewebdesign.de" target="_blank" title="COLOGNE WEBDESIGN") COLOGNE WEBDESIGN
-        .sponsors
-          .custom-sponsors
-            a(href="https://codersrank.io/?utm_source=partner&utm_medium=referral&utm_campaign=vladimir", title="CodersRank - Ultimate Profile for Coders", target="_blank")
-              img(src="/i/sponsors/codersrank.svg")
-            a(href="https://leaderboard.tech", title="Developers Leaderboard", target="_blank")
-              img(src="/i/sponsors/developers-leaderboard.svg")
-          div(id="bsap_1308868", class="bsarocks bsap_ea6be2338ac7876c60d55b6dc14597fe")
-        p.netlify
-          <a href="https://www.netlify.com" target="_blank">
-            <img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg"/>
-          </a>
-        .links
-          a(href="/") Swiper
-          a(href="/get-started/") Get Started
-          a(href="/api/") API
-          a(href="/demos/") Demos
-        .copy #{new Date().getFullYear()} © Swiper by <a href="https://github.com/nolimits4web">Vladimir Kharlampidi</a>
-    script(src="/package/swiper-bundle.min.js")
-    script(src="/js/main.js")
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149857145-1"></script>
-    script.
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-149857145-1');
+    include _footer
+
+
 

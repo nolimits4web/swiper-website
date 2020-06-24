@@ -9,6 +9,8 @@ const codeInlineFilter = require('./utils/code-inline-filter');
 const createInlineCodeTags = require('./utils/create-inline-code-tags');
 const createCodeFilter = require('./utils/create-code-filter');
 
+const pkg = require('../package.json');
+
 if (!pug.filter && !pug.filters.code) {
   pug.filters = {
     code: codeFilter,
@@ -36,6 +38,12 @@ function buildPages(cb, { src = ['**/index.pug'], dest = './public/' } = {}) {
     .pipe(gulpPug({
       pug,
       pretty: false,
+      locals: {
+        release: {
+          version: pkg.releaseVersion,
+          date: pkg.releaseDate,
+        },
+      },
     }))
     .pipe(through2.obj((file, _, cbInternal) => {
       if (file.isBuffer()) {

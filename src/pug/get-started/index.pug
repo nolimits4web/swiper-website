@@ -1,45 +1,65 @@
 extends ../_internal-template
 
 block vars
-  - var activeLink = 'get-started';
   - var title = 'Getting Started With Swiper';
 
 block content
   h1 Getting Started With Swiper
-  h3 1a. Download and install Swiper
-  p First of all we need to download required Swiper files:
-  ul
-    li We can download them from <a href="https://github.com/nolimits4web/Swiper/tree/master/package" target="_blank">Swiper GitHub repository</a>
-    li Or we can install them via NPM, enter in terminal:
-      :code
-        $ npm install swiper
-  h3 1b. Use Swiper from CDN
+  h2 Installation
+  p There are few options on how to include/import Swiper into your project:
+  h4 a. Use Swiper from CDN
   p If you don't want to include Swiper files in your project, you may use it from CDN. The following files are available:
-  pre
-    code
-      :code(lang="html")
-        <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
-        <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+  ```html
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
-        <script src="https://unpkg.com/swiper/js/swiper.js"></script>
-        <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
-  h3 2. Include Swiper Files To Website/App
-  p After that we need to include Swiper's CSS and JS files to our website/app. In your html file:
-  pre
-    code
-      :code(lang="html")
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            ...
-            <link rel="stylesheet" href="path/to/swiper.min.css">
-        </head>
-        <body>
-            ...
-            <script src="path/to/swiper.min.js"></script>
-        </body>
-        </html>
-  h3 3. Add Swiper HTML Layout
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  ```
+  p If you use ES modules in browser, there is a CDN version for that too:
+  ```html
+    <script type="module">
+      import Swiper from 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js'
+
+      const swiper = new Swiper(...)
+    </script>
+  ```
+  h4 b. Download assets
+  p If you want to use Swiper assets locally, you can directly download them from <a href="https://unpkg.com/swiper/" target="_blank">https://unpkg.com/swiper/</a>
+  h4 c. Install from NPM
+  p We can install Swiper from NPM:
+  ```
+    $ npm install swiper
+  ```
+  ```js
+    // import Swiper JS
+    import Swiper from 'swiper';
+    // import Swiper styles
+    import 'swiper/swiper-bundle.css';
+
+    const swiper = new Swiper(...);
+  ```
+  p By default Swiper exports only core version without additional modules (like Navigaion, Pagination, etc.). So you need to import and configure them too:
+  ```js
+    // core version + navigation, pagination modules:
+    import Swiper, { Navigaion, Pagination } from 'swiper';
+
+    // configure Swiper to use modules
+    Swiper.use([Navigaion, Pagination]);
+
+    // init Swiper:
+    const swiper = new Swiper(...);
+  ```
+  p If you want to import Swiper with all modules (bundle) then it should be imported from `swiper/bundle`:
+  ```js
+    // import Swiper bundle with all modules installed
+    import swiper from 'swiper/bundle';
+
+    // init Swiper:
+    const swiper = new Swiper(...);
+  ```
+
+  h3 Add Swiper HTML Layout
   p Now, we need to add basic Swiper layout to our app:
   pre
     code
@@ -64,106 +84,41 @@ block content
             <!-- If we need scrollbar -->
             <div class="swiper-scrollbar"></div>
         </div>
-  h3 4. Swiper CSS Styles/Size
+  h3 Swiper CSS Styles/Size
   p After that, we may need to set Swiper size in your CSS file:
-  pre
-    code
-      :code(lang="css")
-        .swiper-container {
-            width: 600px;
-            height: 300px;
-        }
+  ```css
+    .swiper-container {
+        width: 600px;
+        height: 300px;
+    }
+  ```
 
-  h3 5. Initialize Swiper
-  p Finally, we need to initialize Swiper in JS. There are few options/places to do that:
-  ul
-    li
-      p The best option will be in inline script or in script file that is included in the very end of body (right before closing <code>&lt;/body&gt;</code> tag):
-      pre(style="width:100%")
-        code.js
-          :code(lang="html")
-            <body>
-              ...
-              <script>
-              var mySwiper = new Swiper ('.swiper-container', {
-                // Optional parameters
-                direction: 'vertical',
-                loop: true,
-
-                // If we need pagination
-                pagination: {
-                  el: '.swiper-pagination',
-                },
-
-                // Navigation arrows
-                navigation: {
-                  nextEl: '.swiper-button-next',
-                  prevEl: '.swiper-button-prev',
-                },
-
-                // And if we need scrollbar
-                scrollbar: {
-                  el: '.swiper-scrollbar',
-                },
-              })
-              </script>
-            </body>
-    li
-      p If you use jQuery/Zepto in your site, then you can initialize it in any of your JS files, but make sure that you do it within <code>document.ready</code> event:
-      pre(style="width:100%")
-        code.js
-          :code(lang="js")
-            $(document).ready(function () {
-              //initialize swiper when document ready
-              var mySwiper = new Swiper ('.swiper-container', {
-                // Optional parameters
-                direction: 'vertical',
-                loop: true
-              })
-            });
-    li
-      p Otherwise (but not recommended), you can initialize it within window.onload event:
-      pre(style="width:100%")
-        code.js
-          :code(lang="js")
-            window.onload = function () {
-              //initialize swiper when document ready
-              var mySwiper = new Swiper ('.swiper-container', {
-                // Optional parameters
-                direction: 'vertical',
-                loop: true
-              })
-            };
-  h3 As a CommonJs module
-  p Swiper is fully compatible with CommonJs modules and can be used in Node.js-like environment:
-  pre
-    code
+  h3 Initialize Swiper
+  p Finally, we need to initialize Swiper in JS:
+  pre(style="width:100%")
+    code.js
       :code(lang="js")
-        var Swiper = require('swiper');
+        var mySwiper = new Swiper('.swiper-container', {
+          // Optional parameters
+          direction: 'vertical',
+          loop: true,
 
-        var mySwiper = new Swiper('.swiper-container', { /* ... */ });
-  h3 As an ES module
-  p Swiper package comes with ES module version which can be used where supported or with bundlers like Webpack or Rollup:
-  pre
-    code
-      :code(lang="js")
-        import Swiper from 'swiper';
+          // If we need pagination
+          pagination: {
+            el: '.swiper-pagination',
+          },
 
-        var mySwiper = new Swiper('.swiper-container', { /* ... */ });
-  .important-note
-    p In case you use it as an ES module make sure:
-    ul
-     li you have enabled <a href="https://babeljs.io/" target="_blank">Babel</a> or <a href="https://buble.surge.sh/" target="_blank">Buble</a> to transpile it to ES5 syntax,
-     li you have enabled node modules resolving and babel transpiling for Swiper as it uses <a href="https://github.com/nolimits4web/Dom7" target="_blank">Dom7</a> and <b>ssr-window</b> packages as dependencies.
+          // Navigation arrows
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
 
-  h3 As browser ES module
-  p There is also browser-compatible ES module if you target modern browsers and use ES modules directly:
-  :code(lang="html")
-    <script type="module">
-      import Swiper from 'https://unpkg.com/swiper/js/swiper.esm.browser.bundle.min.js';
-
-      const swiper = new Swiper(/* ... */)
-    </script>
+          // And if we need scrollbar
+          scrollbar: {
+            el: '.swiper-scrollbar',
+          },
+        })
 
   h2 What next?
   p As you see it is really easy to integrate Swiper into your website or app. So here are your next steps:

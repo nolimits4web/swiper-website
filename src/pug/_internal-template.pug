@@ -37,23 +37,14 @@ html
         a(href="/").logo
         .title-links
           .title Swiper
+            <span>v#{release.version}</span>
           .subtitle Most Modern Mobile Touch Slider
           .links-row
             .links
-              - if (activeLink == 'get-started')
-                a(href="/get-started/").active Get Started
-              - else
                 a(href="/get-started/") Get Started
-
-              - if (activeLink == 'api')
-                a(href="/api/").active API
-              - else
                 a(href="/api/") API
-
-              - if (activeLink == 'demos')
-                a(href="/demos/").active Demos
-              - else
                 a(href="/demos/") Demos
+                a(href="/react/") React
           .github-buttons
             a(href="https://github.com/nolimits4web/swiper", target="_blank")
               i
@@ -68,34 +59,5 @@ html
     .content(class=noCenterContent ? '' : 'center', class=withLeftNav ? 'with-left-nav' : '')
       block content
 
-    footer
-      .center
-        .sponsors-links
-          span Supported by:
-          a(href="https://www.colognewebdesign.de" target="_blank" title="COLOGNE WEBDESIGN") COLOGNE WEBDESIGN
-        .sponsors
-          .custom-sponsors
-            a(href="https://codersrank.io/?utm_source=partner&utm_medium=referral&utm_campaign=vladimir", title="CodersRank - Ultimate Profile for Coders")
-              img(src="/i/sponsors/codersrank.svg")
-            a(href="https://leaderboard.tech", title="Developers Leaderboard", target="_blank")
-              img(src="/i/sponsors/developers-leaderboard.svg")
-          div(id="bsap_1308868", class="bsarocks bsap_ea6be2338ac7876c60d55b6dc14597fe")
-        p.netlify
-          <a href="https://www.netlify.com" target="_blank">
-            <img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg"/>
-          </a>
-        .links
-          a(href="/") Swiper
-          a(href="/get-started/") Get Started
-          a(href="/api/") API
-          a(href="/demos/") Demos
-        .copy #{new Date().getFullYear()} © Swiper by <a href="https://github.com/nolimits4web">Vladimir Kharlampidi</a>
+    include _footer
 
-    script(src="/package/swiper-bundle.min.js")
-    script(src="/js/main.js")
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149857145-1"></script>
-    script.
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-149857145-1');
