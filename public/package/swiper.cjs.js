@@ -1,5 +1,5 @@
 /**
- * Swiper 6.0.0-alpha.15
+ * Swiper 6.0.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * http://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: June 22, 2020
+ * Released on: July 3, 2020
  */
 
 'use strict';
@@ -1380,7 +1380,7 @@ function slideNext(speed, runCallbacks, internal) {
   var increment = swiper.activeIndex < params.slidesPerGroupSkip ? 1 : params.slidesPerGroup;
 
   if (params.loop) {
-    if (animating) return false;
+    if (animating && params.loopPreventsSlide) return false;
     swiper.loopFix(); // eslint-disable-next-line
 
     swiper._clientLeft = swiper.$wrapperEl[0].clientLeft;
@@ -1407,7 +1407,7 @@ function slidePrev(speed, runCallbacks, internal) {
       rtlTranslate = swiper.rtlTranslate;
 
   if (params.loop) {
-    if (animating) return false;
+    if (animating && params.loopPreventsSlide) return false;
     swiper.loopFix(); // eslint-disable-next-line
 
     swiper._clientLeft = swiper.$wrapperEl[0].clientLeft;
@@ -1422,9 +1422,6 @@ function slidePrev(speed, runCallbacks, internal) {
 
   var normalizedTranslate = normalize(translate);
   var normalizedSnapGrid = snapGrid.map(function (val) {
-    return normalize(val);
-  });
-  var normalizedSlidesGrid = slidesGrid.map(function (val) {
     return normalize(val);
   });
   var currentSnap = snapGrid[normalizedSnapGrid.indexOf(normalizedTranslate)];
@@ -3076,6 +3073,7 @@ var defaults = {
   loopAdditionalSlides: 0,
   loopedSlides: null,
   loopFillGroupWithBlank: false,
+  loopPreventsSlide: true,
   // Swiping/no swiping
   allowSlidePrev: true,
   allowSlideNext: true,

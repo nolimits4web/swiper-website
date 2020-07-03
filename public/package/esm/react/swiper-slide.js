@@ -2,10 +2,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, forwardRef } from 'react';
 import { uniqueClasses } from './utils';
-
-var SwiperSlide = function SwiperSlide(_temp) {
+var SwiperSlide = forwardRef(function (_temp, externalRef) {
   var _ref = _temp === void 0 ? {} : _temp,
       _ref$tag = _ref.tag,
       Tag = _ref$tag === void 0 ? 'div' : _ref$tag,
@@ -29,6 +28,10 @@ var SwiperSlide = function SwiperSlide(_temp) {
   }
 
   useEffect(function () {
+    if (externalRef) {
+      externalRef.current = slideElRef.current;
+    }
+
     if (!slideElRef.current || !swiper) return;
 
     if (swiper.destroyed) {
@@ -53,7 +56,6 @@ var SwiperSlide = function SwiperSlide(_temp) {
     className: "swiper-zoom-container",
     "data-swiper-zoom": typeof zoom === 'number' ? zoom : undefined
   }, children) : children);
-};
-
+});
 SwiperSlide.displayName = 'SwiperSlide';
 export { SwiperSlide };

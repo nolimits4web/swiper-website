@@ -31,7 +31,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var Swiper = function Swiper(_temp) {
+var Swiper = (0, _react.forwardRef)(function (_temp, externalElRef) {
   var _ref = _temp === void 0 ? {} : _temp,
       className = _ref.className,
       _ref$tag = _ref.tag,
@@ -114,6 +114,10 @@ var Swiper = function Swiper(_temp) {
   }, [virtualData]); // init swiper
 
   (0, _useIsomorphicLayoutEffect.useIsomorphicLayoutEffect)(function () {
+    if (externalElRef) {
+      externalElRef.current = swiperElRef.current;
+    }
+
     if (!swiperElRef.current) return;
     (0, _initSwiper.initSwiper)({
       el: swiperElRef.current,
@@ -165,7 +169,6 @@ var Swiper = function Swiper(_temp) {
   }), /*#__PURE__*/_react.default.createElement(WrapperTag, {
     className: "swiper-wrapper"
   }, slots['wrapper-start'], renderSlides(), slots['wrapper-end']), slots['container-end']);
-};
-
+});
 exports.Swiper = Swiper;
 Swiper.displayName = 'Swiper';

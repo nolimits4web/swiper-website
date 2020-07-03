@@ -7,7 +7,7 @@
   "license": "",
   "homepage": "http://www.idangero.us/swiper/",
   "releaseVersion": "6.0.0",
-  "releaseDate": "July 1, 2020",
+  "releaseDate": "July 3, 2020",
   "engines": {
     "node": ">= 0.10.0"
   },

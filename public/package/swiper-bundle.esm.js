@@ -1,5 +1,5 @@
 /**
- * Swiper 6.0.0-alpha.15
+ * Swiper 6.0.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * http://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: June 22, 2020
+ * Released on: July 3, 2020
  */
 
 import { $, addClass, removeClass, hasClass, toggleClass, attr, removeAttr, transform, transition as transition$1, on, off, trigger, transitionEnd as transitionEnd$1, outerWidth, outerHeight, styles, offset, css, each, html, text, is, index, eq, append, prepend, next, nextAll, prev, prevAll, parent, parents, closest, find, children, filter, remove } from 'dom7';
@@ -1638,7 +1638,7 @@ function slideNext(speed, runCallbacks, internal) {
   var increment = swiper.activeIndex < params.slidesPerGroupSkip ? 1 : params.slidesPerGroup;
 
   if (params.loop) {
-    if (animating) return false;
+    if (animating && params.loopPreventsSlide) return false;
     swiper.loopFix(); // eslint-disable-next-line
 
     swiper._clientLeft = swiper.$wrapperEl[0].clientLeft;
@@ -1665,7 +1665,7 @@ function slidePrev(speed, runCallbacks, internal) {
       rtlTranslate = swiper.rtlTranslate;
 
   if (params.loop) {
-    if (animating) return false;
+    if (animating && params.loopPreventsSlide) return false;
     swiper.loopFix(); // eslint-disable-next-line
 
     swiper._clientLeft = swiper.$wrapperEl[0].clientLeft;
@@ -1680,9 +1680,6 @@ function slidePrev(speed, runCallbacks, internal) {
 
   var normalizedTranslate = normalize(translate);
   var normalizedSnapGrid = snapGrid.map(function (val) {
-    return normalize(val);
-  });
-  var normalizedSlidesGrid = slidesGrid.map(function (val) {
     return normalize(val);
   });
   var currentSnap = snapGrid[normalizedSnapGrid.indexOf(normalizedTranslate)];
@@ -3334,6 +3331,7 @@ var defaults = {
   loopAdditionalSlides: 0,
   loopedSlides: null,
   loopFillGroupWithBlank: false,
+  loopPreventsSlide: true,
   // Swiping/no swiping
   allowSlidePrev: true,
   allowSlideNext: true,
@@ -5882,7 +5880,10 @@ var Zoom = {
       gesture.scaleMove = Zoom.getDistanceBetweenTouches(e);
     }
 
-    if (!gesture.$imageEl || gesture.$imageEl.length === 0) return;
+    if (!gesture.$imageEl || gesture.$imageEl.length === 0) {
+      if (e.type === 'gesturechange') zoom.onGestureStart(e);
+      return;
+    }
 
     if (support.gestures) {
       zoom.scale = e.scale * zoom.currentScale;
@@ -6216,6 +6217,25 @@ var Zoom = {
     gesture.$slideEl.removeClass("" + params.zoomedSlideClass);
     gesture.$slideEl = undefined;
   },
+  toggleGestures: function toggleGestures(method) {
+    var swiper = this;
+    var zoom = swiper.zoom;
+    var selector = zoom.slideSelector,
+        passive = zoom.passiveListener;
+    swiper.$wrapperEl[method]('gesturestart', selector, zoom.onGestureStart, passive);
+    swiper.$wrapperEl[method]('gesturechange', selector, zoom.onGestureChange, passive);
+    swiper.$wrapperEl[method]('gestureend', selector, zoom.onGestureEnd, passive);
+  },
+  enableGestures: function enableGestures() {
+    if (this.zoom.gesturesEnabled) return;
+    this.zoom.gesturesEnabled = true;
+    this.zoom.toggleGestures('on');
+  },
+  disableGestures: function disableGestures() {
+    if (!this.zoom.gesturesEnabled) return;
+    this.zoom.gesturesEnabled = false;
+    this.zoom.toggleGestures('off');
+  },
   // Attach/Detach Events
   enable: function enable() {
     var swiper = this;
@@ -6231,12 +6251,13 @@ var Zoom = {
       passive: false,
       capture: true
     } : true;
-    var slideSelector = "." + swiper.params.slideClass; // Scale image
+    var slideSelector = "." + swiper.params.slideClass;
+    swiper.zoom.passiveListener = passiveListener;
+    swiper.zoom.slideSelector = slideSelector; // Scale image
 
     if (support.gestures) {
-      swiper.$wrapperEl.on('gesturestart', slideSelector, zoom.onGestureStart, passiveListener);
-      swiper.$wrapperEl.on('gesturechange', slideSelector, zoom.onGestureChange, passiveListener);
-      swiper.$wrapperEl.on('gestureend', slideSelector, zoom.onGestureEnd, passiveListener);
+      swiper.$wrapperEl.on(swiper.touchEvents.start, swiper.zoom.enableGestures, passiveListener);
+      swiper.$wrapperEl.on(swiper.touchEvents.end, swiper.zoom.disableGestures, passiveListener);
     } else if (swiper.touchEvents.start === 'touchstart') {
       swiper.$wrapperEl.on(swiper.touchEvents.start, slideSelector, zoom.onGestureStart, passiveListener);
       swiper.$wrapperEl.on(swiper.touchEvents.move, slideSelector, zoom.onGestureChange, activeListenerWithCapture);
@@ -6267,9 +6288,8 @@ var Zoom = {
     var slideSelector = "." + swiper.params.slideClass; // Scale image
 
     if (support.gestures) {
-      swiper.$wrapperEl.off('gesturestart', slideSelector, zoom.onGestureStart, passiveListener);
-      swiper.$wrapperEl.off('gesturechange', slideSelector, zoom.onGestureChange, passiveListener);
-      swiper.$wrapperEl.off('gestureend', slideSelector, zoom.onGestureEnd, passiveListener);
+      swiper.$wrapperEl.off(swiper.touchEvents.start, swiper.zoom.enableGestures, passiveListener);
+      swiper.$wrapperEl.off(swiper.touchEvents.end, swiper.zoom.disableGestures, passiveListener);
     } else if (swiper.touchEvents.start === 'touchstart') {
       swiper.$wrapperEl.off(swiper.touchEvents.start, slideSelector, zoom.onGestureStart, passiveListener);
       swiper.$wrapperEl.off(swiper.touchEvents.move, slideSelector, zoom.onGestureChange, activeListenerWithCapture);

@@ -2,7 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, forwardRef } from 'react';
 import { getParams } from './get-params';
 import { initSwiper } from './init-swiper';
 import { needsScrollbar, needsNavigation, needsPagination, uniqueClasses } from './utils';
@@ -12,8 +12,7 @@ import { getChildren } from './get-children';
 import { updateSwiper } from './update-swiper';
 import { renderVirtual, updateOnVirtualData } from './virtual';
 import { useIsomorphicLayoutEffect } from './use-isomorphic-layout-effect';
-
-var Swiper = function Swiper(_temp) {
+var Swiper = forwardRef(function (_temp, externalElRef) {
   var _ref = _temp === void 0 ? {} : _temp,
       className = _ref.className,
       _ref$tag = _ref.tag,
@@ -96,6 +95,10 @@ var Swiper = function Swiper(_temp) {
   }, [virtualData]); // init swiper
 
   useIsomorphicLayoutEffect(function () {
+    if (externalElRef) {
+      externalElRef.current = swiperElRef.current;
+    }
+
     if (!swiperElRef.current) return;
     initSwiper({
       el: swiperElRef.current,
@@ -147,7 +150,6 @@ var Swiper = function Swiper(_temp) {
   }), /*#__PURE__*/React.createElement(WrapperTag, {
     className: "swiper-wrapper"
   }, slots['wrapper-start'], renderSlides(), slots['wrapper-end']), slots['container-end']);
-};
-
+});
 Swiper.displayName = 'Swiper';
 export { Swiper };
