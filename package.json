@@ -6,8 +6,8 @@
   "author": "Vladimir Kharlampidi",
   "license": "",
   "homepage": "http://www.idangero.us/swiper/",
-  "releaseVersion": "6.0.0",
-  "releaseDate": "July 3, 2020",
+  "releaseVersion": "6.0.1",
+  "releaseDate": "July 7, 2020",
   "engines": {
     "node": ">= 0.10.0"
   },
