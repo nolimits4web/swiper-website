@@ -17,7 +17,7 @@ function needsNavigation(params) {
     params = {};
   }
 
-  return params.navigation && !params.navigation.nextEl && !params.navigation.prevEl;
+  return params.navigation && typeof params.navigation.nextEl === 'undefined' && typeof params.navigation.prevEl === 'undefined';
 }
 
 function needsPagination(params) {
@@ -25,7 +25,7 @@ function needsPagination(params) {
     params = {};
   }
 
-  return params.pagination && !params.pagination.el && !params.pagination.el;
+  return params.pagination && typeof params.pagination.el === 'undefined';
 }
 
 function needsScrollbar(params) {
@@ -33,7 +33,7 @@ function needsScrollbar(params) {
     params = {};
   }
 
-  return params.scrollbar && !params.scrollbar.el && !params.scrollbar.el;
+  return params.scrollbar && typeof params.scrollbar.el === 'undefined';
 }
 
 function uniqueClasses(classNames) {
