@@ -1,5 +1,5 @@
 /**
- * Swiper 6.0.2
+ * Swiper 6.0.3
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * http://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: July 9, 2020
+ * Released on: July 14, 2020
  */
 
 function _defineProperties(target, props) {
@@ -199,7 +199,7 @@ function getWindow() {
 }
 
 /**
- * Dom7 3.0.0-alpha.5
+ * Dom7 3.0.0-alpha.7
  * Minimalistic JavaScript library for DOM manipulation, with a jQuery-compatible API
  * https://framework7.io/docs/dom7.html
  *
@@ -207,7 +207,7 @@ function getWindow() {
  *
  * Licensed under MIT
  *
- * Released on: June 22, 2020
+ * Released on: July 14, 2020
  */
 
 function _inheritsLoose(subClass, superClass) {
@@ -300,11 +300,37 @@ function _wrapNativeSuper(Class) {
   return _wrapNativeSuper(Class);
 }
 
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+/* eslint-disable no-proto */
+
+
+function makeReactive(obj) {
+  var proto = obj.__proto__;
+  Object.defineProperty(obj, '__proto__', {
+    get: function get() {
+      return proto;
+    },
+    set: function set(value) {
+      proto.__proto__ = value;
+    }
+  });
+}
+
 var Dom7 = /*#__PURE__*/function (_Array) {
   _inheritsLoose(Dom7, _Array);
 
   function Dom7(items) {
-    return _Array.call.apply(_Array, [this].concat(items)) || this;
+    var _this;
+
+    _this = _Array.call.apply(_Array, [this].concat(items)) || this;
+    makeReactive(_assertThisInitialized(_this));
+    return _this;
   }
 
   return Dom7;
