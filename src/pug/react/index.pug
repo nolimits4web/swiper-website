@@ -254,7 +254,11 @@ block content
     p Virtual Slides rendering here is fully handled by React and not required anything except setting `virtual:true` property:
 
     :code(lang="jsx")
+      import { SwiperCore, Virtual } from 'swiper';
       import { Swiper, SwiperSlide } from 'swiper/react';
+
+      // install Virtual module
+      SwiperCore.use([Virtual]);
 
       export default () => {
         // Create array with 1000 slides
