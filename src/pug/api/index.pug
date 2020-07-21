@@ -331,6 +331,7 @@ block content
       li <code>EffectCube</code> - Cube Effect module
       li <code>EffectFlip</code> - Flip Effect module
       li <code>EffectCoverflow</code> - Coverflow Effect module
+      li <code>Thumbs</code> - Thumbs module
 
     h3 2. Using Build Script
     p Swiper comes with gulp builder that allows to build custom library version where you may include only required modules. We need the following:
@@ -365,6 +366,7 @@ block content
                   'effect-cube',
                   'effect-flip',
                   'effect-coverflow',
+                  'thumbs',
                 ],
                 // default color of navigation elements
                 themeColor: '#007aff',
@@ -389,6 +391,6 @@ block content
         spaceBetween: 50,
       };
 
-      const swiper = new Swiper(swiperParams);
+      const swiper = new Swiper('.swiper-container', swiperParams);
     ```
     p You can also check auto generated <a href="/types" target="_blank">TypeScript definitions explorer</a> for all the types, options, properties and methods.
