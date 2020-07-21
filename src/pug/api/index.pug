@@ -290,13 +290,13 @@ block content
     h2#custom-build Custom Build
     +edit-link('api/index.pug')
     p You have two options of making custom version of Swiper.
-    h3 1. Using ES-module
-    p If you use bundler with ES-modules support in your project you can import only the modules you need:
+    h3 1. Using JS Modules
+    p If you use bundler with JS modules support in your project you can import only the modules you need:
     pre
       code
         :code(lang="js")
           // Import Swiper and modules
-          import { Swiper, Navigation, Pagination, Scrollbar } from 'swiper/swiper.esm.js';
+          import { Swiper, Navigation, Pagination, Scrollbar } from 'swiper';
 
           // Install modules
           Swiper.use([Navigation, Pagination, Scrollbar]);
@@ -310,7 +310,7 @@ block content
             },
             // ...
           });
-    p The following modules are exported from <code>swiper.esm.js</code>:
+    p The following modules are exported:
     ul
       li <code>Swiper</code> - core library
       li <code>Virtual</code> - Virtual Slides module
