@@ -290,13 +290,13 @@ block content
     h2#custom-build Custom Build
     +edit-link('api/index.pug')
     p You have two options of making custom version of Swiper.
-    h3 1. Using ES-module
-    p If you use bundler with ES-modules support in your project you can import only the modules you need:
+    h3 1. Using JS Modules
+    p If you use bundler with JS modules support in your project you can import only the modules you need:
     pre
       code
         :code(lang="js")
           // Import Swiper and modules
-          import { Swiper, Navigation, Pagination, Scrollbar } from 'swiper/js/swiper.esm.js';
+          import { Swiper, Navigation, Pagination, Scrollbar } from 'swiper';
 
           // Install modules
           Swiper.use([Navigation, Pagination, Scrollbar]);
@@ -310,7 +310,7 @@ block content
             },
             // ...
           });
-    p The following modules are exported from <code>swiper.esm.js</code>:
+    p The following modules are exported:
     ul
       li <code>Swiper</code> - core library
       li <code>Virtual</code> - Virtual Slides module
@@ -331,6 +331,7 @@ block content
       li <code>EffectCube</code> - Cube Effect module
       li <code>EffectFlip</code> - Flip Effect module
       li <code>EffectCoverflow</code> - Coverflow Effect module
+      li <code>Thumbs</code> - Thumbs module
 
     h3 2. Using Build Script
     p Swiper comes with gulp builder that allows to build custom library version where you may include only required modules. We need the following:
@@ -365,6 +366,7 @@ block content
                   'effect-cube',
                   'effect-flip',
                   'effect-coverflow',
+                  'thumbs',
                 ],
                 // default color of navigation elements
                 themeColor: '#007aff',
@@ -389,6 +391,6 @@ block content
         spaceBetween: 50,
       };
 
-      const swiper = new Swiper(swiperParams);
+      const swiper = new Swiper('.swiper-container', swiperParams);
     ```
     p You can also check auto generated <a href="/types" target="_blank">TypeScript definitions explorer</a> for all the types, options, properties and methods.
