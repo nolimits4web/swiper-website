@@ -366,6 +366,47 @@ block content
       }
     ```
 
+    h2.no-border#effects Effects
+
+    p The following effects are available:
+      ul
+        li Fade
+        li Cube
+        li Overflow
+        li Flip
+
+    p To use effects you have to import and install them first (as all other modules) (Fade example):
+
+    ```jsx
+      import SwiperCore, {EffectFade} from 'swiper';
+      SwiperCore.use([EffectFade]);
+    ```
+
+    p You can find running <a href="https://swiperjs.com/demos/#fade_effect">effect demos here</a>.
+
+    h3 Full Fade Effect Example
+
+    ```jsx
+      import React from 'react';
+      import { Swiper, SwiperSlide } from 'swiper/react';
+      import SwiperCore, {EffectFade} from 'swiper';
+      
+      import 'swiper/swiper.scss';
+      import 'swiper/components/effect-fade/effect-fade.scss';
+
+      SwiperCore.use([EffectFade]);
+
+      export default () => {
+        return (
+          <Swiper effect="fade">
+            {[1, 2, 3].map((i, el) => {
+              return <SwiperSlide>Slide {el}</SwiperSlide>;
+            })}
+          </Swiper>
+        );
+      };
+    ```
+
     h2.no-border#video Getting Started Video
 
     p For a more comprehensive hands-on tutorial have a look at this 15-min getting-started video
