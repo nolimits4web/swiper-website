@@ -1,5 +1,5 @@
 /**
- * Swiper 6.1.0
+ * Swiper 6.1.1
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * http://swiperjs.com
  *
