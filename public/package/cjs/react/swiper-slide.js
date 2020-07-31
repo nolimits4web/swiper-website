@@ -38,7 +38,7 @@ var SwiperSlide = (0, _react.forwardRef)(function (_temp, externalRef) {
     }
   }
 
-  (0, _react.useEffect)(function () {
+  (0, _react.useLayoutEffect)(function () {
     if (externalRef) {
       externalRef.current = slideElRef.current;
     }
@@ -60,13 +60,29 @@ var SwiperSlide = (0, _react.forwardRef)(function (_temp, externalRef) {
       swiper.off('_slideClass', updateClasses);
     };
   });
+  var slideData;
+
+  if (typeof children === 'function') {
+    slideData = {
+      isActive: slideClasses.indexOf('swiper-slide-active') >= 0 || slideClasses.indexOf('swiper-slide-duplicate-active') >= 0,
+      isVisible: slideClasses.indexOf('swiper-slide-visible') >= 0,
+      isDuplicate: slideClasses.indexOf('swiper-slide-duplicate') >= 0,
+      isPrev: slideClasses.indexOf('swiper-slide-prev') >= 0 || slideClasses.indexOf('swiper-slide-duplicate-prev') >= 0,
+      isNext: slideClasses.indexOf('swiper-slide-next') >= 0 || slideClasses.indexOf('swiper-slide-duplicate next') >= 0
+    };
+  }
+
+  var renderChildren = function renderChildren() {
+    return typeof children === 'function' ? children(slideData) : children;
+  };
+
   return /*#__PURE__*/_react.default.createElement(Tag, _extends({
     ref: slideElRef,
     className: (0, _utils.uniqueClasses)("" + slideClasses + (className ? " " + className : ''))
   }, rest), zoom ? /*#__PURE__*/_react.default.createElement("div", {
     className: "swiper-zoom-container",
     "data-swiper-zoom": typeof zoom === 'number' ? zoom : undefined
-  }, children) : children);
+  }, renderChildren()) : renderChildren());
 });
 exports.SwiperSlide = SwiperSlide;
 SwiperSlide.displayName = 'SwiperSlide';

@@ -9,12 +9,12 @@ function getParams(obj) {
   }
 
   var params = {
-    _emitClasses: true,
     on: {}
   };
   var passedParams = {};
   extend(params, Swiper.defaults);
   extend(params, Swiper.extendedDefaults);
+  params._emitClasses = true;
   var rest = {};
   var allowedParams = paramsList.map(function (key) {
     return key.replace(/_/, '');

@@ -21,6 +21,8 @@ block content
         li
           a(href="#swiperslide-props") <span style="font-weight: 500">SwiperSlide</span> props
         li
+          a(href="#swiperslide-render-function") <span style="font-weight: 500">SwiperSlide</span> render function
+        li
           a(href="#slots") Slots
         li
           a(href="#virtual-slides") Virtual Slides
@@ -28,6 +30,10 @@ block content
           a(href="#controller") Controller
         li
           a(href="#thumbs") Thumbs
+        li
+          a(href="#effects") Effects
+        li
+          a(href="#getting-started-video") Getting Started Video
 
   .api-content
     h1 Swiper React
@@ -66,7 +72,29 @@ block content
         );
       };
     ```
-    p By default Swiper React uses core version of Swiper (without any additional components). If you want to use Navitation, Pagination and <a href="/api/#custom-build">other components</a>, you have to install them first:
+    .important-note
+      p By default Swiper React uses core version of Swiper (without any additional components). If you want to use Navitation, Pagination and <a href="/api/#custom-build">other components</a>, you have to install them first.
+    p Here is the list of additional modules imports:
+    ul
+      li <code>Virtual</code> - Virtual Slides module
+      li <code>Keyboard</code> - Keyboard Control module
+      li <code>Mousewheel</code> - Mousewheel Control module
+      li <code>Navigation</code> - Navigation module
+      li <code>Pagination</code> - Pagination module
+      li <code>Scrollbar</code> - Scrollbar module
+      li <code>Parallax</code> - Parallax module
+      li <code>Zoom</code> - Zoom module
+      li <code>Lazy</code> - Lazy module
+      li <code>Controller</code> - Controller module
+      li <code>A11y</code> - Accessibility module
+      li <code>History</code> - History Navigation module
+      li <code>HashNavigation</code> - Hash Navigation module
+      li <code>Autoplay</code> - Autoplay module
+      li <code>EffectFade</code> - Fade Effect module
+      li <code>EffectCube</code> - Cube Effect module
+      li <code>EffectFlip</code> - Flip Effect module
+      li <code>EffectCoverflow</code> - Coverflow Effect module
+      li <code>Thumbs</code> - Thumbs module
     ```jsx
       // import Swiper core and required components
       import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
@@ -211,6 +239,25 @@ block content
           td boolean
           td false
           td Enables additional wrapper required for zoom mode
+
+    h2.no-border#swiperslide-render-function `SwiperSlide` render function
+    p `SwiperSlide` component can accept render function that receives an object with the following properties:
+    ul
+      li `isActive` - true when current slide is active
+      li `isPrev` - true when current slide is the previous from active
+      li `isNext` - true when current slide is the next from active
+      li `isVisible` - true when current slide is visible (`watchSlidesVisibility` Swiper parameter must be enabled)
+      li `isDuplicate` - true when current slide is a duplicate slide (when `loop` mode enabled)
+    p For example:
+    ```jsx
+      <Swiper>
+        <SwiperSlide>
+          {({isActive}) => (
+            <div>Current slide is {isActive ? 'active' : 'not active'}</div>
+          )}
+        </SwiperSlide>
+      </Swiper>
+    ```
 
     h2.no-border#slots Slots
 
@@ -390,7 +437,7 @@ block content
       import React from 'react';
       import { Swiper, SwiperSlide } from 'swiper/react';
       import SwiperCore, {EffectFade} from 'swiper';
-      
+
       import 'swiper/swiper.scss';
       import 'swiper/components/effect-fade/effect-fade.scss';
 
@@ -407,7 +454,7 @@ block content
       };
     ```
 
-    h2.no-border#video Getting Started Video
+    h2.no-border#getting-started-video Getting Started Video
 
     p For a more comprehensive hands-on tutorial have a look at this 15-min getting-started video
 

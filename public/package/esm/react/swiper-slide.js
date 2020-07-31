@@ -2,7 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { useRef, useEffect, useState, forwardRef } from 'react';
+import React, { useRef, useLayoutEffect, useState, forwardRef } from 'react';
 import { uniqueClasses } from './utils';
 var SwiperSlide = forwardRef(function (_temp, externalRef) {
   var _ref = _temp === void 0 ? {} : _temp,
@@ -27,7 +27,7 @@ var SwiperSlide = forwardRef(function (_temp, externalRef) {
     }
   }
 
-  useEffect(function () {
+  useLayoutEffect(function () {
     if (externalRef) {
       externalRef.current = slideElRef.current;
     }
@@ -49,13 +49,29 @@ var SwiperSlide = forwardRef(function (_temp, externalRef) {
       swiper.off('_slideClass', updateClasses);
     };
   });
+  var slideData;
+
+  if (typeof children === 'function') {
+    slideData = {
+      isActive: slideClasses.indexOf('swiper-slide-active') >= 0 || slideClasses.indexOf('swiper-slide-duplicate-active') >= 0,
+      isVisible: slideClasses.indexOf('swiper-slide-visible') >= 0,
+      isDuplicate: slideClasses.indexOf('swiper-slide-duplicate') >= 0,
+      isPrev: slideClasses.indexOf('swiper-slide-prev') >= 0 || slideClasses.indexOf('swiper-slide-duplicate-prev') >= 0,
+      isNext: slideClasses.indexOf('swiper-slide-next') >= 0 || slideClasses.indexOf('swiper-slide-duplicate next') >= 0
+    };
+  }
+
+  var renderChildren = function renderChildren() {
+    return typeof children === 'function' ? children(slideData) : children;
+  };
+
   return /*#__PURE__*/React.createElement(Tag, _extends({
     ref: slideElRef,
     className: uniqueClasses("" + slideClasses + (className ? " " + className : ''))
   }, rest), zoom ? /*#__PURE__*/React.createElement("div", {
     className: "swiper-zoom-container",
     "data-swiper-zoom": typeof zoom === 'number' ? zoom : undefined
-  }, children) : children);
+  }, renderChildren()) : renderChildren());
 });
 SwiperSlide.displayName = 'SwiperSlide';
 export { SwiperSlide };

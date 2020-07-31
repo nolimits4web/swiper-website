@@ -300,9 +300,20 @@ var Mousewheel = {
   },
   animateSlider: function animateSlider(newEvent) {
     var swiper = this;
-    var window = getWindow(); // If the movement is NOT big enough and
+    var window = getWindow();
+
+    if (this.params.mousewheel.thresholdDelta && newEvent.delta < this.params.mousewheel.thresholdDelta) {
+      // Prevent if delta of wheel scroll delta is below configured threshold
+      return false;
+    }
+
+    if (this.params.mousewheel.thresholdTime && now() - swiper.mousewheel.lastScrollTime < this.params.mousewheel.thresholdTime) {
+      // Prevent if time between scrolls is below configured threshold
+      return false;
+    } // If the movement is NOT big enough and
     // if the last time the user scrolled was too close to the current one (avoid continuously triggering the slider):
     //   Don't go any further (avoid insignificant scroll movement).
+
 
     if (newEvent.delta >= 6 && now() - swiper.mousewheel.lastScrollTime < 60) {
       // Return false as a default
@@ -406,7 +417,9 @@ export default {
       invert: false,
       forceToAxis: false,
       sensitivity: 1,
-      eventsTarget: 'container'
+      eventsTarget: 'container',
+      thresholdDelta: null,
+      thresholdTime: null
     }
   },
   create: function create() {

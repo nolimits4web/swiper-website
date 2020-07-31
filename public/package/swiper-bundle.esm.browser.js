@@ -1,5 +1,5 @@
 /**
- * Swiper 6.0.4
+ * Swiper 6.1.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * http://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: July 15, 2020
+ * Released on: July 31, 2020
  */
 
 function _defineProperties(target, props) {
@@ -1425,6 +1425,129 @@ function getBrowser() {
 
   return browser;
 }
+
+var Resize = {
+  name: 'resize',
+  create: function create() {
+    var swiper = this;
+    extend$1(swiper, {
+      resize: {
+        resizeHandler: function resizeHandler() {
+          if (!swiper || swiper.destroyed || !swiper.initialized) return;
+          swiper.emit('beforeResize');
+          swiper.emit('resize');
+        },
+        orientationChangeHandler: function orientationChangeHandler() {
+          if (!swiper || swiper.destroyed || !swiper.initialized) return;
+          swiper.emit('orientationchange');
+        }
+      }
+    });
+  },
+  on: {
+    init: function init(swiper) {
+      var window = getWindow(); // Emit resize
+
+      window.addEventListener('resize', swiper.resize.resizeHandler); // Emit orientationchange
+
+      window.addEventListener('orientationchange', swiper.resize.orientationChangeHandler);
+    },
+    destroy: function destroy(swiper) {
+      var window = getWindow();
+      window.removeEventListener('resize', swiper.resize.resizeHandler);
+      window.removeEventListener('orientationchange', swiper.resize.orientationChangeHandler);
+    }
+  }
+};
+
+var Observer = {
+  attach: function attach(target, options) {
+    if (options === void 0) {
+      options = {};
+    }
+
+    var window = getWindow();
+    var swiper = this;
+    var ObserverFunc = window.MutationObserver || window.WebkitMutationObserver;
+    var observer = new ObserverFunc(function (mutations) {
+      // The observerUpdate event should only be triggered
+      // once despite the number of mutations.  Additional
+      // triggers are redundant and are very costly
+      if (mutations.length === 1) {
+        swiper.emit('observerUpdate', mutations[0]);
+        return;
+      }
+
+      var observerUpdate = function observerUpdate() {
+        swiper.emit('observerUpdate', mutations[0]);
+      };
+
+      if (window.requestAnimationFrame) {
+        window.requestAnimationFrame(observerUpdate);
+      } else {
+        window.setTimeout(observerUpdate, 0);
+      }
+    });
+    observer.observe(target, {
+      attributes: typeof options.attributes === 'undefined' ? true : options.attributes,
+      childList: typeof options.childList === 'undefined' ? true : options.childList,
+      characterData: typeof options.characterData === 'undefined' ? true : options.characterData
+    });
+    swiper.observer.observers.push(observer);
+  },
+  init: function init() {
+    var swiper = this;
+    if (!swiper.support.observer || !swiper.params.observer) return;
+
+    if (swiper.params.observeParents) {
+      var containerParents = swiper.$el.parents();
+
+      for (var i = 0; i < containerParents.length; i += 1) {
+        swiper.observer.attach(containerParents[i]);
+      }
+    } // Observe container
+
+
+    swiper.observer.attach(swiper.$el[0], {
+      childList: swiper.params.observeSlideChildren
+    }); // Observe wrapper
+
+    swiper.observer.attach(swiper.$wrapperEl[0], {
+      attributes: false
+    });
+  },
+  destroy: function destroy() {
+    var swiper = this;
+    swiper.observer.observers.forEach(function (observer) {
+      observer.disconnect();
+    });
+    swiper.observer.observers = [];
+  }
+};
+var Observer$1 = {
+  name: 'observer',
+  params: {
+    observer: false,
+    observeParents: false,
+    observeSlideChildren: false
+  },
+  create: function create() {
+    var swiper = this;
+    bindModuleMethods(swiper, {
+      observer: _extends(_extends({}, Observer), {}, {
+        observers: []
+      })
+    });
+  },
+  on: {
+    init: function init(swiper) {
+      swiper.observer.init();
+    },
+    destroy: function destroy(swiper) {
+      swiper.observer.destroy();
+    }
+  }
+};
 
 var modular = {
   useParams: function useParams(instanceParams) {
@@ -4977,128 +5100,7 @@ var Swiper = /*#__PURE__*/function () {
   return Swiper;
 }();
 
-var Resize = {
-  name: 'resize',
-  create: function create() {
-    var swiper = this;
-    extend$1(swiper, {
-      resize: {
-        resizeHandler: function resizeHandler() {
-          if (!swiper || swiper.destroyed || !swiper.initialized) return;
-          swiper.emit('beforeResize');
-          swiper.emit('resize');
-        },
-        orientationChangeHandler: function orientationChangeHandler() {
-          if (!swiper || swiper.destroyed || !swiper.initialized) return;
-          swiper.emit('orientationchange');
-        }
-      }
-    });
-  },
-  on: {
-    init: function init(swiper) {
-      var window = getWindow(); // Emit resize
-
-      window.addEventListener('resize', swiper.resize.resizeHandler); // Emit orientationchange
-
-      window.addEventListener('orientationchange', swiper.resize.orientationChangeHandler);
-    },
-    destroy: function destroy(swiper) {
-      var window = getWindow();
-      window.removeEventListener('resize', swiper.resize.resizeHandler);
-      window.removeEventListener('orientationchange', swiper.resize.orientationChangeHandler);
-    }
-  }
-};
-
-var Observer = {
-  attach: function attach(target, options) {
-    if (options === void 0) {
-      options = {};
-    }
-
-    var window = getWindow();
-    var swiper = this;
-    var ObserverFunc = window.MutationObserver || window.WebkitMutationObserver;
-    var observer = new ObserverFunc(function (mutations) {
-      // The observerUpdate event should only be triggered
-      // once despite the number of mutations.  Additional
-      // triggers are redundant and are very costly
-      if (mutations.length === 1) {
-        swiper.emit('observerUpdate', mutations[0]);
-        return;
-      }
-
-      var observerUpdate = function observerUpdate() {
-        swiper.emit('observerUpdate', mutations[0]);
-      };
-
-      if (window.requestAnimationFrame) {
-        window.requestAnimationFrame(observerUpdate);
-      } else {
-        window.setTimeout(observerUpdate, 0);
-      }
-    });
-    observer.observe(target, {
-      attributes: typeof options.attributes === 'undefined' ? true : options.attributes,
-      childList: typeof options.childList === 'undefined' ? true : options.childList,
-      characterData: typeof options.characterData === 'undefined' ? true : options.characterData
-    });
-    swiper.observer.observers.push(observer);
-  },
-  init: function init() {
-    var swiper = this;
-    if (!swiper.support.observer || !swiper.params.observer) return;
-
-    if (swiper.params.observeParents) {
-      var containerParents = swiper.$el.parents();
-
-      for (var i = 0; i < containerParents.length; i += 1) {
-        swiper.observer.attach(containerParents[i]);
-      }
-    } // Observe container
-
-
-    swiper.observer.attach(swiper.$el[0], {
-      childList: swiper.params.observeSlideChildren
-    }); // Observe wrapper
-
-    swiper.observer.attach(swiper.$wrapperEl[0], {
-      attributes: false
-    });
-  },
-  destroy: function destroy() {
-    var swiper = this;
-    swiper.observer.observers.forEach(function (observer) {
-      observer.disconnect();
-    });
-    swiper.observer.observers = [];
-  }
-};
-var Observer$1 = {
-  name: 'observer',
-  params: {
-    observer: false,
-    observeParents: false,
-    observeSlideChildren: false
-  },
-  create: function create() {
-    var swiper = this;
-    bindModuleMethods(swiper, {
-      observer: _extends(_extends({}, Observer), {}, {
-        observers: []
-      })
-    });
-  },
-  on: {
-    init: function init(swiper) {
-      swiper.observer.init();
-    },
-    destroy: function destroy(swiper) {
-      swiper.observer.destroy();
-    }
-  }
-};
+Swiper.use([Resize, Observer$1]);
 
 var Virtual = {
   update: function update(force) {
@@ -5788,9 +5790,20 @@ var Mousewheel = {
   },
   animateSlider: function animateSlider(newEvent) {
     var swiper = this;
-    var window = getWindow(); // If the movement is NOT big enough and
+    var window = getWindow();
+
+    if (this.params.mousewheel.thresholdDelta && newEvent.delta < this.params.mousewheel.thresholdDelta) {
+      // Prevent if delta of wheel scroll delta is below configured threshold
+      return false;
+    }
+
+    if (this.params.mousewheel.thresholdTime && now() - swiper.mousewheel.lastScrollTime < this.params.mousewheel.thresholdTime) {
+      // Prevent if time between scrolls is below configured threshold
+      return false;
+    } // If the movement is NOT big enough and
     // if the last time the user scrolled was too close to the current one (avoid continuously triggering the slider):
     //   Don't go any further (avoid insignificant scroll movement).
+
 
     if (newEvent.delta >= 6 && now() - swiper.mousewheel.lastScrollTime < 60) {
       // Return false as a default
@@ -5894,7 +5907,9 @@ var Mousewheel$1 = {
       invert: false,
       forceToAxis: false,
       sensitivity: 1,
-      eventsTarget: 'container'
+      eventsTarget: 'container',
+      thresholdDelta: null,
+      thresholdTime: null
     }
   },
   create: function create() {
@@ -9262,7 +9277,7 @@ var Thumbs$1 = {
 };
 
 // Swiper Class
-var components = [Resize, Observer$1, Virtual$1, Keyboard$1, Mousewheel$1, Navigation$1, Pagination$1, Scrollbar$1, Parallax$1, Zoom$1, Lazy$1, Controller$1, A11y$1, History$1, HashNavigation$1, Autoplay$1, EffectFade, EffectCube, EffectFlip, EffectCoverflow, Thumbs$1];
+var components = [Virtual$1, Keyboard$1, Mousewheel$1, Navigation$1, Pagination$1, Scrollbar$1, Parallax$1, Zoom$1, Lazy$1, Controller$1, A11y$1, History$1, HashNavigation$1, Autoplay$1, EffectFade, EffectCube, EffectFlip, EffectCoverflow, Thumbs$1];
 Swiper.use(components);
 
 export default Swiper;

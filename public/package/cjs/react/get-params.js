@@ -18,12 +18,12 @@ function getParams(obj) {
   }
 
   var params = {
-    _emitClasses: true,
     on: {}
   };
   var passedParams = {};
   (0, _utils.extend)(params, _core.default.defaults);
   (0, _utils.extend)(params, _core.default.extendedDefaults);
+  params._emitClasses = true;
   var rest = {};
 
   var allowedParams = _paramsList.paramsList.map(function (key) {
