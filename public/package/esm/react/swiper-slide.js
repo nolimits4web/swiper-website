@@ -2,8 +2,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { useRef, useLayoutEffect, useState, forwardRef } from 'react';
+import React, { useRef, useState, forwardRef } from 'react';
 import { uniqueClasses } from './utils';
+import { useIsomorphicLayoutEffect } from './use-isomorphic-layout-effect';
 var SwiperSlide = forwardRef(function (_temp, externalRef) {
   var _ref = _temp === void 0 ? {} : _temp,
       _ref$tag = _ref.tag,
@@ -27,7 +28,7 @@ var SwiperSlide = forwardRef(function (_temp, externalRef) {
     }
   }
 
-  useLayoutEffect(function () {
+  useIsomorphicLayoutEffect(function () {
     if (externalRef) {
       externalRef.current = slideElRef.current;
     }

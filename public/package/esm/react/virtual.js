@@ -12,10 +12,10 @@ function updateOnVirtualData(swiper) {
 }
 
 function renderVirtual(swiper, slides, virtualData) {
+  var _ref;
+
   if (!virtualData) return null;
-  var style = swiper.isHorizontal() ? {
-    left: virtualData.offset + "px"
-  } : {
+  var style = swiper.isHorizontal() ? (_ref = {}, _ref[swiper.rtlTranslate ? 'right' : 'left'] = virtualData.offset + "px", _ref) : {
     top: virtualData.offset + "px"
   };
   return slides.filter(function (child, index) {
