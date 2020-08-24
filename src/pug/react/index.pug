@@ -152,7 +152,7 @@ block content
     ul
       li `swiper.less` - only core Swiper styles
       li `components/a11y/a11y.less` - styles required for A11y component
-      li `components/controller/controller.less` - styles required for A11y component
+      li `components/controller/controller.less` - styles required for Controller component
       li `components/effect-coverflow/effect-coverflow.less` - styles required for Coveflow Effect component
       li `components/effect-cube/effect-cube.less` - styles required for Cube Effect component
       li `components/effect-fade/effect-fade.less` - styles required for Fade Effect component
@@ -171,7 +171,7 @@ block content
     ul
       li `swiper.scss` - only core Swiper styles
       li `components/a11y/a11y.scss` - styles required for A11y component
-      li `components/controller/controller.scss` - styles required for A11y component
+      li `components/controller/controller.scss` - styles required for Controller component
       li `components/effect-coverflow/effect-coverflow.scss` - styles required for Coveflow Effect component
       li `components/effect-cube/effect-cube.scss` - styles required for Cube Effect component
       li `components/effect-fade/effect-fade.scss` - styles required for Fade Effect component
@@ -301,7 +301,7 @@ block content
     p Virtual Slides rendering here is fully handled by React and not required anything except setting `virtual:true` property:
 
     :code(lang="jsx")
-      import { SwiperCore, Virtual } from 'swiper';
+      import SwiperCore, { Virtual } from 'swiper';
       import { Swiper, SwiperSlide } from 'swiper/react';
 
       // install Virtual module
