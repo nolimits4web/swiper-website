@@ -61,6 +61,7 @@ export default function setBreakpoint() {
       allowSlidePrev: swiper.params.allowSlidePrev
     });
     swiper.currentBreakpoint = breakpoint;
+    swiper.emit('_beforeBreakpoint', breakpointParams);
 
     if (needsReLoop && initialized) {
       swiper.loopDestroy();

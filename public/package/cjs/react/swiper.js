@@ -50,6 +50,10 @@ var Swiper = (0, _react.forwardRef)(function (_temp, externalElRef) {
       virtualData = _useState2[0],
       setVirtualData = _useState2[1];
 
+  var _useState3 = (0, _react.useState)(false),
+      breakpointChanged = _useState3[0],
+      setBreakpointChanged = _useState3[1];
+
   var initializedRef = (0, _react.useRef)(false);
   var swiperElRef = (0, _react.useRef)(null);
   var swiperRef = (0, _react.useRef)(null);
@@ -72,6 +76,11 @@ var Swiper = (0, _react.forwardRef)(function (_temp, externalElRef) {
   var changedParams = (0, _getChangedParams.getChangedParams)(passedParams, oldPassedParamsRef.current, slides, oldSlides.current);
   oldPassedParamsRef.current = passedParams;
   oldSlides.current = slides;
+
+  var onBeforeBreakpoint = function onBeforeBreakpoint() {
+    setBreakpointChanged(!breakpointChanged);
+  };
+
   Object.assign(swiperParams.on, {
     _containerClasses: function _containerClasses(swiper, classes) {
       setContainerClasses(classes);
@@ -94,6 +103,16 @@ var Swiper = (0, _react.forwardRef)(function (_temp, externalElRef) {
         swiper.params.virtual.renderExternalUpdate = false;
       }
     }
+  });
+
+  if (swiperRef.current) {
+    swiperRef.current.on('_beforeBreakpoint', onBeforeBreakpoint);
+  }
+
+  (0, _react.useEffect)(function () {
+    return function () {
+      if (swiperRef.current) swiperRef.current.off('_beforeBreakpoint', onBeforeBreakpoint);
+    };
   }); // set initialized flag
 
   (0, _react.useEffect)(function () {

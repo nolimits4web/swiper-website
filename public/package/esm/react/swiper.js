@@ -31,6 +31,10 @@ var Swiper = forwardRef(function (_temp, externalElRef) {
       virtualData = _useState2[0],
       setVirtualData = _useState2[1];
 
+  var _useState3 = useState(false),
+      breakpointChanged = _useState3[0],
+      setBreakpointChanged = _useState3[1];
+
   var initializedRef = useRef(false);
   var swiperElRef = useRef(null);
   var swiperRef = useRef(null);
@@ -53,6 +57,11 @@ var Swiper = forwardRef(function (_temp, externalElRef) {
   var changedParams = getChangedParams(passedParams, oldPassedParamsRef.current, slides, oldSlides.current);
   oldPassedParamsRef.current = passedParams;
   oldSlides.current = slides;
+
+  var onBeforeBreakpoint = function onBeforeBreakpoint() {
+    setBreakpointChanged(!breakpointChanged);
+  };
+
   Object.assign(swiperParams.on, {
     _containerClasses: function _containerClasses(swiper, classes) {
       setContainerClasses(classes);
@@ -75,6 +84,16 @@ var Swiper = forwardRef(function (_temp, externalElRef) {
         swiper.params.virtual.renderExternalUpdate = false;
       }
     }
+  });
+
+  if (swiperRef.current) {
+    swiperRef.current.on('_beforeBreakpoint', onBeforeBreakpoint);
+  }
+
+  useEffect(function () {
+    return function () {
+      if (swiperRef.current) swiperRef.current.off('_beforeBreakpoint', onBeforeBreakpoint);
+    };
   }); // set initialized flag
 
   useEffect(function () {

@@ -120,7 +120,7 @@ export interface SwiperOptions {
   uniqueNavElements?: boolean;
 
   /**
-   * Tranisition effect. Could be "slide", "fade", "cube", "coverflow" or "flip"
+   * Transition effect. Could be "slide", "fade", "cube", "coverflow" or "flip"
    *
    * @default 'slide'
    */
@@ -529,7 +529,7 @@ export interface SwiperOptions {
    */
   loopFillGroupWithBlank?: boolean;
   /**
-   * When enabled it prevents Swiper slide prev/next transitions when transitions is already in progress (has efect when `loop` enabled)
+   * When enabled it prevents Swiper slide prev/next transitions when transitions is already in progress (has effect when `loop` enabled)
    *
    * @default true
    */

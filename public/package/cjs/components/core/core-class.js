@@ -99,13 +99,6 @@ var Swiper = /*#__PURE__*/function () {
     swiper.browser = (0, _getBrowser.getBrowser)();
     swiper.eventsListeners = {};
     swiper.eventsAnyListeners = [];
-    Object.keys(prototypes).forEach(function (prototypeGroup) {
-      Object.keys(prototypes[prototypeGroup]).forEach(function (protoMethod) {
-        if (!Swiper.prototype[protoMethod]) {
-          Swiper.prototype[protoMethod] = prototypes[prototypeGroup][protoMethod];
-        }
-      });
-    });
 
     if (typeof swiper.modules === 'undefined') {
       swiper.modules = {};
@@ -576,6 +569,11 @@ var Swiper = /*#__PURE__*/function () {
   return Swiper;
 }();
 
+Object.keys(prototypes).forEach(function (prototypeGroup) {
+  Object.keys(prototypes[prototypeGroup]).forEach(function (protoMethod) {
+    Swiper.prototype[protoMethod] = prototypes[prototypeGroup][protoMethod];
+  });
+});
 Swiper.use([_resize.default, _observer.default]);
 var _default = Swiper;
 exports.default = _default;

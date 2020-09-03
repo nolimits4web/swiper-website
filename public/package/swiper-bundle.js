@@ -1,5 +1,5 @@
 /**
- * Swiper 6.1.2
+ * Swiper 6.1.3
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * http://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: August 17, 2020
+ * Released on: September 3, 2020
  */
 
 (function (global, factory) {
@@ -4252,6 +4252,7 @@
         allowSlidePrev: swiper.params.allowSlidePrev
       });
       swiper.currentBreakpoint = breakpoint;
+      swiper.emit('_beforeBreakpoint', breakpointParams);
 
       if (needsReLoop && initialized) {
         swiper.loopDestroy();
@@ -4629,13 +4630,6 @@
       swiper.browser = getBrowser();
       swiper.eventsListeners = {};
       swiper.eventsAnyListeners = [];
-      Object.keys(prototypes).forEach(function (prototypeGroup) {
-        Object.keys(prototypes[prototypeGroup]).forEach(function (protoMethod) {
-          if (!Swiper.prototype[protoMethod]) {
-            Swiper.prototype[protoMethod] = prototypes[prototypeGroup][protoMethod];
-          }
-        });
-      });
 
       if (typeof swiper.modules === 'undefined') {
         swiper.modules = {};
@@ -5106,6 +5100,11 @@
     return Swiper;
   }();
 
+  Object.keys(prototypes).forEach(function (prototypeGroup) {
+    Object.keys(prototypes[prototypeGroup]).forEach(function (protoMethod) {
+      Swiper.prototype[protoMethod] = prototypes[prototypeGroup][protoMethod];
+    });
+  });
   Swiper.use([Resize, Observer$1]);
 
   var Virtual = {
@@ -8040,8 +8039,11 @@
         swiper.pagination.bullets.each(function (bulletEl) {
           var $bulletEl = $(bulletEl);
           swiper.a11y.makeElFocusable($bulletEl);
-          swiper.a11y.addElRole($bulletEl, 'button');
-          swiper.a11y.addElLabel($bulletEl, params.paginationBulletMessage.replace(/\{\{index\}\}/, $bulletEl.index() + 1));
+
+          if (!swiper.params.pagination.renderBullet) {
+            swiper.a11y.addElRole($bulletEl, 'button');
+            swiper.a11y.addElLabel($bulletEl, params.paginationBulletMessage.replace(/\{\{index\}\}/, $bulletEl.index() + 1));
+          }
         });
       }
     },

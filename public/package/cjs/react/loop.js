@@ -6,10 +6,25 @@ exports.renderLoop = renderLoop;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _core = _interopRequireDefault(require("../../core"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// eslint-disable-next-line
 function calcLoopedSlides(slides, swiperParams) {
-  var loopedSlides = Math.ceil(parseFloat(swiperParams.loopedSlides || swiperParams.slidesPerView, 10));
+  var slidesPerViewParams = swiperParams.slidesPerView;
+
+  if (swiperParams.breakpoints) {
+    var breakpoint = _core.default.prototype.getBreakpoint(swiperParams.breakpoints);
+
+    var breakpointOnlyParams = breakpoint in swiperParams.breakpoints ? swiperParams.breakpoints[breakpoint] : undefined;
+
+    if (breakpointOnlyParams && breakpointOnlyParams.slidesPerView) {
+      slidesPerViewParams = breakpointOnlyParams.slidesPerView;
+    }
+  }
+
+  var loopedSlides = Math.ceil(parseFloat(swiperParams.loopedSlides || slidesPerViewParams, 10));
   loopedSlides += swiperParams.loopAdditionalSlides;
 
   if (loopedSlides > slides.length) {
