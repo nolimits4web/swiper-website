@@ -1,5 +1,5 @@
 /**
- * Swiper 6.1.3
+ * Swiper 6.2.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * http://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: September 3, 2020
+ * Released on: September 4, 2020
  */
 
 (function (global, factory) {
@@ -1687,6 +1687,12 @@
       data.unshift(context);
       var eventsArray = Array.isArray(events) ? events : events.split(' ');
       eventsArray.forEach(function (event) {
+        if (self.eventsAnyListeners && self.eventsAnyListeners.length) {
+          self.eventsAnyListeners.forEach(function (eventHandler) {
+            eventHandler.apply(context, [event].concat(data));
+          });
+        }
+
         if (self.eventsListeners && self.eventsListeners[event]) {
           var handlers = [];
           self.eventsListeners[event].forEach(function (eventHandler) {
@@ -4671,6 +4677,10 @@
         Object.keys(swiper.params.on).forEach(function (eventName) {
           swiper.on(eventName, swiper.params.on[eventName]);
         });
+      }
+
+      if (swiper.params && swiper.params.onAny) {
+        swiper.onAny(swiper.params.onAny);
       } // Save Dom lib
 
 

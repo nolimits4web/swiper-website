@@ -1,5 +1,5 @@
 /**
- * Swiper React 6.2.0
+ * Swiper Vue 6.2.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * http://swiperjs.com
  *
@@ -14,10 +14,10 @@
 
 exports.__esModule = true;
 
-var _swiper = require("./cjs/react/swiper");
+var _swiper = require("./cjs/vue/swiper");
 
 exports.Swiper = _swiper.Swiper;
 
-var _swiperSlide = require("./cjs/react/swiper-slide");
+var _swiperSlide = require("./cjs/vue/swiper-slide");
 
 exports.SwiperSlide = _swiperSlide.SwiperSlide;

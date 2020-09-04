@@ -140,6 +140,10 @@ var Swiper = /*#__PURE__*/function () {
       Object.keys(swiper.params.on).forEach(function (eventName) {
         swiper.on(eventName, swiper.params.on[eventName]);
       });
+    }
+
+    if (swiper.params && swiper.params.onAny) {
+      swiper.onAny(swiper.params.onAny);
     } // Save Dom lib
 
 

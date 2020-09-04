@@ -93,6 +93,12 @@ export default {
     data.unshift(context);
     var eventsArray = Array.isArray(events) ? events : events.split(' ');
     eventsArray.forEach(function (event) {
+      if (self.eventsAnyListeners && self.eventsAnyListeners.length) {
+        self.eventsAnyListeners.forEach(function (eventHandler) {
+          eventHandler.apply(context, [event].concat(data));
+        });
+      }
+
       if (self.eventsListeners && self.eventsListeners[event]) {
         var handlers = [];
         self.eventsListeners[event].forEach(function (eventHandler) {
