@@ -19,6 +19,8 @@ block content
         li
           a(href="#swiper-props") <span style="font-weight: 500">Swiper</span> props
         li
+          a(href="#swiper-events") <span style="font-weight: 500">Swiper</span> events
+        li
           a(href="#swiperslide-props") <span style="font-weight: 500">SwiperSlide</span> props
         li
           a(href="#swiperslide-slot-props") <span style="font-weight: 500">SwiperSlide</span> slot props
@@ -38,7 +40,7 @@ block content
 
     .important-note
       p
-        b Swiper Vue.js plugin compatible only with new Vue.js version 3
+        b Swiper Vue.js components are compatible only with new Vue.js version 3
 
     h2.no-border#installation Installation
 
@@ -237,11 +239,13 @@ block content
           td 'div'
           td Swiper wrapper HTML element tag
 
-    p Also it supports all <a href="/api/#events">Swiper events</a> in `@{eventName}` format. For example:
+
+    h2.no-border#swiper-events `Swiper` events
+    p Swiper component supports all <a href="/api/#events">Swiper events</a>, including additional `swiper` event that returns swiper instance as soon as posible. For example:
 
     ```html
       <swiper
-        @init="..."
+        @swiper="..."
         @slideChange="..."
         @reachEnd="..."
         ...
