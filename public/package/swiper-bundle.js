@@ -1,5 +1,5 @@
 /**
- * Swiper 6.3.0
+ * Swiper 6.3.1
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * http://swiperjs.com
  *
@@ -5016,6 +5016,7 @@
       swiper.initialized = true; // Emit
 
       swiper.emit('init');
+      swiper.emit('afterInit');
     };
 
     _proto.destroy = function destroy(deleteInstance, cleanStyles) {
@@ -8134,7 +8135,7 @@
         $prevEl = swiper.navigation.$prevEl;
       }
 
-      if ($nextEl) {
+      if ($nextEl && $nextEl.length) {
         swiper.a11y.makeElFocusable($nextEl);
 
         if ($nextEl[0].tagName !== 'BUTTON') {
@@ -8146,7 +8147,7 @@
         swiper.a11y.addElControls($nextEl, wrapperId);
       }
 
-      if ($prevEl) {
+      if ($prevEl && $prevEl.length) {
         swiper.a11y.makeElFocusable($prevEl);
 
         if ($prevEl[0].tagName !== 'BUTTON') {
@@ -8216,7 +8217,7 @@
       });
     },
     on: {
-      init: function init(swiper) {
+      afterInit: function afterInit(swiper) {
         if (!swiper.params.a11y.enabled) return;
         swiper.a11y.init();
         swiper.a11y.updateNavigation();

@@ -188,7 +188,7 @@ var A11y = {
       $prevEl = swiper.navigation.$prevEl;
     }
 
-    if ($nextEl) {
+    if ($nextEl && $nextEl.length) {
       swiper.a11y.makeElFocusable($nextEl);
 
       if ($nextEl[0].tagName !== 'BUTTON') {
@@ -200,7 +200,7 @@ var A11y = {
       swiper.a11y.addElControls($nextEl, wrapperId);
     }
 
-    if ($prevEl) {
+    if ($prevEl && $prevEl.length) {
       swiper.a11y.makeElFocusable($prevEl);
 
       if ($prevEl[0].tagName !== 'BUTTON') {
@@ -270,7 +270,7 @@ export default {
     });
   },
   on: {
-    init: function init(swiper) {
+    afterInit: function afterInit(swiper) {
       if (!swiper.params.a11y.enabled) return;
       swiper.a11y.init();
       swiper.a11y.updateNavigation();

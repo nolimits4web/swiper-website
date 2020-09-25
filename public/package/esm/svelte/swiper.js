@@ -54,7 +54,7 @@ const get_wrapper_start_slot_context = ctx => ({ virtualData: /*virtualData*/ ct
 const get_content_start_slot_changes = dirty => ({ virtualData: dirty & /*virtualData*/ 512 });
 const get_content_start_slot_context = ctx => ({ virtualData: /*virtualData*/ ctx[9] });
 
-// (144:2) {#if needsNavigation(swiperParams)}
+// (142:2) {#if needsNavigation(swiperParams)}
 function create_if_block_2(ctx) {
 	let div0;
 	let t;
@@ -70,23 +70,23 @@ function create_if_block_2(ctx) {
 		},
 		m(target, anchor) {
 			insert(target, div0, anchor);
-			/*div0_binding*/ ctx[14](div0);
+			/*div0_binding*/ ctx[13](div0);
 			insert(target, t, anchor);
 			insert(target, div1, anchor);
-			/*div1_binding*/ ctx[15](div1);
+			/*div1_binding*/ ctx[14](div1);
 		},
 		p: noop,
 		d(detaching) {
 			if (detaching) detach(div0);
-			/*div0_binding*/ ctx[14](null);
+			/*div0_binding*/ ctx[13](null);
 			if (detaching) detach(t);
 			if (detaching) detach(div1);
-			/*div1_binding*/ ctx[15](null);
+			/*div1_binding*/ ctx[14](null);
 		}
 	};
 }
 
-// (148:2) {#if needsScrollbar(swiperParams)}
+// (146:2) {#if needsScrollbar(swiperParams)}
 function create_if_block_1(ctx) {
 	let div;
 
@@ -97,17 +97,17 @@ function create_if_block_1(ctx) {
 		},
 		m(target, anchor) {
 			insert(target, div, anchor);
-			/*div_binding*/ ctx[16](div);
+			/*div_binding*/ ctx[15](div);
 		},
 		p: noop,
 		d(detaching) {
 			if (detaching) detach(div);
-			/*div_binding*/ ctx[16](null);
+			/*div_binding*/ ctx[15](null);
 		}
 	};
 }
 
-// (151:2) {#if needsPagination(swiperParams)}
+// (149:2) {#if needsPagination(swiperParams)}
 function create_if_block(ctx) {
 	let div;
 
@@ -118,12 +118,12 @@ function create_if_block(ctx) {
 		},
 		m(target, anchor) {
 			insert(target, div, anchor);
-			/*div_binding_1*/ ctx[17](div);
+			/*div_binding_1*/ ctx[16](div);
 		},
 		p: noop,
 		d(detaching) {
 			if (detaching) detach(div);
-			/*div_binding_1*/ ctx[17](null);
+			/*div_binding_1*/ ctx[16](null);
 		}
 	};
 }
@@ -143,19 +143,19 @@ function create_fragment(ctx) {
 	let t6;
 	let div1_class_value;
 	let current;
-	const content_start_slot_template = /*$$slots*/ ctx[13]["content-start"];
-	const content_start_slot = create_slot(content_start_slot_template, ctx, /*$$scope*/ ctx[12], get_content_start_slot_context);
+	const content_start_slot_template = /*$$slots*/ ctx[12]["content-start"];
+	const content_start_slot = create_slot(content_start_slot_template, ctx, /*$$scope*/ ctx[11], get_content_start_slot_context);
 	let if_block0 = show_if_2 && create_if_block_2(ctx);
 	let if_block1 = show_if_1 && create_if_block_1(ctx);
 	let if_block2 = show_if && create_if_block(ctx);
-	const wrapper_start_slot_template = /*$$slots*/ ctx[13]["wrapper-start"];
-	const wrapper_start_slot = create_slot(wrapper_start_slot_template, ctx, /*$$scope*/ ctx[12], get_wrapper_start_slot_context);
-	const default_slot_template = /*$$slots*/ ctx[13].default;
-	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[12], get_default_slot_context);
-	const wrapper_end_slot_template = /*$$slots*/ ctx[13]["wrapper-end"];
-	const wrapper_end_slot = create_slot(wrapper_end_slot_template, ctx, /*$$scope*/ ctx[12], get_wrapper_end_slot_context);
-	const content_end_slot_template = /*$$slots*/ ctx[13]["content-end"];
-	const content_end_slot = create_slot(content_end_slot_template, ctx, /*$$scope*/ ctx[12], get_content_end_slot_context);
+	const wrapper_start_slot_template = /*$$slots*/ ctx[12]["wrapper-start"];
+	const wrapper_start_slot = create_slot(wrapper_start_slot_template, ctx, /*$$scope*/ ctx[11], get_wrapper_start_slot_context);
+	const default_slot_template = /*$$slots*/ ctx[12].default;
+	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[11], get_default_slot_context);
+	const wrapper_end_slot_template = /*$$slots*/ ctx[12]["wrapper-end"];
+	const wrapper_end_slot = create_slot(wrapper_end_slot_template, ctx, /*$$scope*/ ctx[11], get_wrapper_end_slot_context);
+	const content_end_slot_template = /*$$slots*/ ctx[12]["content-end"];
+	const content_end_slot = create_slot(content_end_slot_template, ctx, /*$$scope*/ ctx[11], get_content_end_slot_context);
 
 	let div1_levels = [
 		{
@@ -230,13 +230,13 @@ function create_fragment(ctx) {
 				content_end_slot.m(div1, null);
 			}
 
-			/*div1_binding_1*/ ctx[18](div1);
+			/*div1_binding_1*/ ctx[17](div1);
 			current = true;
 		},
 		p(ctx, [dirty]) {
 			if (content_start_slot) {
-				if (content_start_slot.p && dirty & /*$$scope, virtualData*/ 4608) {
-					update_slot(content_start_slot, content_start_slot_template, ctx, /*$$scope*/ ctx[12], dirty, get_content_start_slot_changes, get_content_start_slot_context);
+				if (content_start_slot.p && dirty & /*$$scope, virtualData*/ 2560) {
+					update_slot(content_start_slot, content_start_slot_template, ctx, /*$$scope*/ ctx[11], dirty, get_content_start_slot_changes, get_content_start_slot_context);
 				}
 			}
 
@@ -286,26 +286,26 @@ function create_fragment(ctx) {
 			}
 
 			if (wrapper_start_slot) {
-				if (wrapper_start_slot.p && dirty & /*$$scope, virtualData*/ 4608) {
-					update_slot(wrapper_start_slot, wrapper_start_slot_template, ctx, /*$$scope*/ ctx[12], dirty, get_wrapper_start_slot_changes, get_wrapper_start_slot_context);
+				if (wrapper_start_slot.p && dirty & /*$$scope, virtualData*/ 2560) {
+					update_slot(wrapper_start_slot, wrapper_start_slot_template, ctx, /*$$scope*/ ctx[11], dirty, get_wrapper_start_slot_changes, get_wrapper_start_slot_context);
 				}
 			}
 
 			if (default_slot) {
-				if (default_slot.p && dirty & /*$$scope, virtualData*/ 4608) {
-					update_slot(default_slot, default_slot_template, ctx, /*$$scope*/ ctx[12], dirty, get_default_slot_changes, get_default_slot_context);
+				if (default_slot.p && dirty & /*$$scope, virtualData*/ 2560) {
+					update_slot(default_slot, default_slot_template, ctx, /*$$scope*/ ctx[11], dirty, get_default_slot_changes, get_default_slot_context);
 				}
 			}
 
 			if (wrapper_end_slot) {
-				if (wrapper_end_slot.p && dirty & /*$$scope, virtualData*/ 4608) {
-					update_slot(wrapper_end_slot, wrapper_end_slot_template, ctx, /*$$scope*/ ctx[12], dirty, get_wrapper_end_slot_changes, get_wrapper_end_slot_context);
+				if (wrapper_end_slot.p && dirty & /*$$scope, virtualData*/ 2560) {
+					update_slot(wrapper_end_slot, wrapper_end_slot_template, ctx, /*$$scope*/ ctx[11], dirty, get_wrapper_end_slot_changes, get_wrapper_end_slot_context);
 				}
 			}
 
 			if (content_end_slot) {
-				if (content_end_slot.p && dirty & /*$$scope, virtualData*/ 4608) {
-					update_slot(content_end_slot, content_end_slot_template, ctx, /*$$scope*/ ctx[12], dirty, get_content_end_slot_changes, get_content_end_slot_context);
+				if (content_end_slot.p && dirty & /*$$scope, virtualData*/ 2560) {
+					update_slot(content_end_slot, content_end_slot_template, ctx, /*$$scope*/ ctx[11], dirty, get_content_end_slot_changes, get_content_end_slot_context);
 				}
 			}
 
@@ -341,17 +341,16 @@ function create_fragment(ctx) {
 			if (default_slot) default_slot.d(detaching);
 			if (wrapper_end_slot) wrapper_end_slot.d(detaching);
 			if (content_end_slot) content_end_slot.d(detaching);
-			/*div1_binding_1*/ ctx[18](null);
+			/*div1_binding_1*/ ctx[17](null);
 		}
 	};
 }
 
 function instance($$self, $$props, $$invalidate) {
-	const omit_props_names = ["class","thumbs","swiper"];
+	const omit_props_names = ["class","swiper"];
 	let $$restProps = compute_rest_props($$props, omit_props_names);
 	const dispatch = createEventDispatcher();
 	let { class: className = undefined } = $$props;
-	let { thumbs = undefined } = $$props;
 	let containerClasses = "swiper-container";
 	let breakpointChanged = false;
 	let swiperInstance = null;
@@ -390,7 +389,7 @@ function instance($$self, $$props, $$invalidate) {
 	};
 
 	const calcParams = () => {
-		paramsData = getParams({ ...$$restProps, thumbs });
+		paramsData = getParams($$restProps);
 		$$invalidate(2, swiperParams = paramsData.params);
 		passedParams = paramsData.passedParams;
 		$$invalidate(3, restProps = paramsData.rest);
@@ -511,10 +510,9 @@ function instance($$self, $$props, $$invalidate) {
 
 	$$self.$$set = $$new_props => {
 		$$props = assign(assign({}, $$props), exclude_internal_props($$new_props));
-		$$invalidate(28, $$restProps = compute_rest_props($$props, omit_props_names));
+		$$invalidate(27, $$restProps = compute_rest_props($$props, omit_props_names));
 		if ("class" in $$new_props) $$invalidate(0, className = $$new_props.class);
-		if ("thumbs" in $$new_props) $$invalidate(10, thumbs = $$new_props.thumbs);
-		if ("$$scope" in $$new_props) $$invalidate(12, $$scope = $$new_props.$$scope);
+		if ("$$scope" in $$new_props) $$invalidate(11, $$scope = $$new_props.$$scope);
 	};
 
 	return [
@@ -528,7 +526,6 @@ function instance($$self, $$props, $$invalidate) {
 		scrollbarEl,
 		paginationEl,
 		virtualData,
-		thumbs,
 		swiper,
 		$$scope,
 		$$slots,
@@ -543,11 +540,11 @@ function instance($$self, $$props, $$invalidate) {
 class Swiper extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, instance, create_fragment, safe_not_equal, { class: 0, thumbs: 10, swiper: 11 });
+		init(this, options, instance, create_fragment, safe_not_equal, { class: 0, swiper: 10 });
 	}
 
 	get swiper() {
-		return this.$$.ctx[11];
+		return this.$$.ctx[10];
 	}
 }
 

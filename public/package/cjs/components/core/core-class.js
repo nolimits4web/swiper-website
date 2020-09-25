@@ -479,6 +479,7 @@ var Swiper = /*#__PURE__*/function () {
     swiper.initialized = true; // Emit
 
     swiper.emit('init');
+    swiper.emit('afterInit');
   };
 
   _proto.destroy = function destroy(deleteInstance, cleanStyles) {
