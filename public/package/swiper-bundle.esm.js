@@ -1,5 +1,5 @@
 /**
- * Swiper 6.2.0
+ * Swiper 6.3.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * http://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: September 4, 2020
+ * Released on: September 25, 2020
  */
 
 import Swiper from './esm/components/core/core-class';

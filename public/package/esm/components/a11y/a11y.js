@@ -3,6 +3,17 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import $ from '../../utils/dom';
 import { bindModuleMethods } from '../../utils/utils';
 var A11y = {
+  getRandomNumber: function getRandomNumber(size) {
+    if (size === void 0) {
+      size = 16;
+    }
+
+    var randomChar = function randomChar() {
+      return Math.round(16 * Math.random()).toString(16);
+    };
+
+    return 'x'.repeat(size).replace(/x/g, randomChar);
+  },
   makeElFocusable: function makeElFocusable($el) {
     $el.attr('tabIndex', '0');
     return $el;
@@ -15,8 +26,24 @@ var A11y = {
     $el.attr('role', role);
     return $el;
   },
+  addElRoleDescription: function addElRoleDescription($el, description) {
+    $el.attr('aria-role-description', description);
+    return $el;
+  },
+  addElControls: function addElControls($el, controls) {
+    $el.attr('aria-controls', controls);
+    return $el;
+  },
   addElLabel: function addElLabel($el, label) {
     $el.attr('aria-label', label);
+    return $el;
+  },
+  addElId: function addElId($el, id) {
+    $el.attr('id', id);
+    return $el;
+  },
+  addElLive: function addElLive($el, live) {
+    $el.attr('aria-live', live);
     return $el;
   },
   disableEl: function disableEl($el) {
@@ -113,9 +140,43 @@ var A11y = {
   },
   init: function init() {
     var swiper = this;
-    swiper.$el.append(swiper.a11y.liveRegion); // Navigation
-
     var params = swiper.params.a11y;
+    swiper.$el.append(swiper.a11y.liveRegion); // Container
+
+    var $containerEl = swiper.$el;
+
+    if (params.containerRoleDescriptionMessage) {
+      swiper.a11y.addElRoleDescription($containerEl, params.containerRoleDescriptionMessage);
+    }
+
+    if (params.containerMessage) {
+      swiper.a11y.addElLabel($containerEl, params.containerMessage);
+    } // Wrapper
+
+
+    var $wrapperEl = swiper.$wrapperEl;
+    var wrapperId = $wrapperEl.attr('id') || "swiper-wrapper-" + swiper.a11y.getRandomNumber(16);
+    var live;
+    swiper.a11y.addElId($wrapperEl, wrapperId);
+
+    if (swiper.params.autoplay && swiper.params.autoplay.enabled) {
+      live = 'off';
+    } else {
+      live = 'polite';
+    }
+
+    swiper.a11y.addElLive($wrapperEl, live); // Slide
+
+    if (params.itemRoleDescriptionMessage) {
+      swiper.a11y.addElRoleDescription($(swiper.slides), params.itemRoleDescriptionMessage);
+    }
+
+    swiper.a11y.addElRole($(swiper.slides), 'group');
+    swiper.slides.each(function (slideEl) {
+      var $slideEl = $(slideEl);
+      swiper.a11y.addElLabel($slideEl, $slideEl.index() + 1 + " / " + swiper.slides.length);
+    }); // Navigation
+
     var $nextEl;
     var $prevEl;
 
@@ -129,16 +190,26 @@ var A11y = {
 
     if ($nextEl) {
       swiper.a11y.makeElFocusable($nextEl);
-      swiper.a11y.addElRole($nextEl, 'button');
+
+      if ($nextEl[0].tagName !== 'BUTTON') {
+        swiper.a11y.addElRole($nextEl, 'button');
+        $nextEl.on('keydown', swiper.a11y.onEnterKey);
+      }
+
       swiper.a11y.addElLabel($nextEl, params.nextSlideMessage);
-      $nextEl.on('keydown', swiper.a11y.onEnterKey);
+      swiper.a11y.addElControls($nextEl, wrapperId);
     }
 
     if ($prevEl) {
       swiper.a11y.makeElFocusable($prevEl);
-      swiper.a11y.addElRole($prevEl, 'button');
+
+      if ($prevEl[0].tagName !== 'BUTTON') {
+        swiper.a11y.addElRole($prevEl, 'button');
+        $prevEl.on('keydown', swiper.a11y.onEnterKey);
+      }
+
       swiper.a11y.addElLabel($prevEl, params.prevSlideMessage);
-      $prevEl.on('keydown', swiper.a11y.onEnterKey);
+      swiper.a11y.addElControls($prevEl, wrapperId);
     } // Pagination
 
 
@@ -184,7 +255,10 @@ export default {
       nextSlideMessage: 'Next slide',
       firstSlideMessage: 'This is the first slide',
       lastSlideMessage: 'This is the last slide',
-      paginationBulletMessage: 'Go to slide {{index}}'
+      paginationBulletMessage: 'Go to slide {{index}}',
+      containerMessage: null,
+      containerRoleDescriptionMessage: null,
+      itemRoleDescriptionMessage: null
     }
   },
   create: function create() {

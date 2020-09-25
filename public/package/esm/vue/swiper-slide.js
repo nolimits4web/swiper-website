@@ -1,4 +1,4 @@
-import { h, ref, onUpdated, onBeforeUpdate } from 'vue';
+import { h, ref, onMounted, onUpdated, onBeforeUpdate, computed, onBeforeUnmount } from 'vue';
 import { uniqueClasses } from './utils';
 var SwiperSlide = {
   name: 'SwiperSlide',
@@ -11,15 +11,16 @@ var SwiperSlide = {
     zoom: {
       type: Boolean,
       default: undefined
+    },
+    virtualIndex: {
+      type: [String, Number],
+      default: undefined
     }
   },
   setup: function setup(props, _ref) {
     var slots = _ref.slots;
-    var Tag = props.tag,
-        _props$class = props.class,
-        className = _props$class === void 0 ? '' : _props$class,
-        swiperRef = props.swiperRef,
-        zoom = props.zoom;
+    var eventAttached = false;
+    var swiperRef = props.swiperRef;
     var slideElRef = ref(null);
     var slideClasses = ref('swiper-slide');
 
@@ -29,25 +30,30 @@ var SwiperSlide = {
       }
     }
 
+    onMounted(function () {
+      if (!swiperRef.value) return;
+      swiperRef.value.on('_slideClass', updateClasses);
+      eventAttached = true;
+    });
+    onBeforeUpdate(function () {
+      if (eventAttached || !swiperRef || !swiperRef.value) return;
+      swiperRef.value.on('_slideClass', updateClasses);
+      eventAttached = true;
+    });
     onUpdated(function () {
-      if (!slideElRef.value || !swiperRef.value) return;
+      if (!slideElRef.value || !swiperRef || !swiperRef.value) return;
 
       if (swiperRef.value.destroyed) {
         if (slideClasses.value !== 'swiper-slide') {
           slideClasses.value = 'swiper-slide';
         }
-
-        return;
       }
-
-      swiperRef.value.on('_slideClass', updateClasses);
     });
-    onBeforeUpdate(function () {
-      if (!swiperRef.value) return;
+    onBeforeUnmount(function () {
+      if (!swiperRef || !swiperRef.value) return;
       swiperRef.value.off('_slideClass', updateClasses);
     });
-
-    var slideData = function slideData() {
+    var slideData = computed(function () {
       return {
         isActive: slideClasses.value.indexOf('swiper-slide-active') >= 0 || slideClasses.value.indexOf('swiper-slide-duplicate-active') >= 0,
         isVisible: slideClasses.value.indexOf('swiper-slide-visible') >= 0,
@@ -55,16 +61,16 @@ var SwiperSlide = {
         isPrev: slideClasses.value.indexOf('swiper-slide-prev') >= 0 || slideClasses.value.indexOf('swiper-slide-duplicate-prev') >= 0,
         isNext: slideClasses.value.indexOf('swiper-slide-next') >= 0 || slideClasses.value.indexOf('swiper-slide-duplicate next') >= 0
       };
-    };
-
+    });
     return function () {
-      return h(Tag, {
-        class: uniqueClasses("" + slideClasses.value + (className ? " " + className : '')),
-        ref: slideElRef
-      }, zoom ? h('div', {
+      return h(props.tag, {
+        class: uniqueClasses("" + slideClasses.value),
+        ref: slideElRef,
+        'data-swiper-slide-index': props.virtualIndex
+      }, props.zoom ? h('div', {
         class: 'swiper-zoom-container',
-        'data-swiper-zoom': typeof zoom === 'number' ? zoom : undefined
-      }, slots.default(slideData())) : slots.default(slideData()));
+        'data-swiper-zoom': typeof props.zoom === 'number' ? props.zoom : undefined
+      }, slots.default && slots.default(slideData.value)) : slots.default && slots.default(slideData.value));
     };
   }
 };

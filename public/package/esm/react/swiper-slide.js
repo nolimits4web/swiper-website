@@ -14,7 +14,8 @@ var SwiperSlide = forwardRef(function (_temp, externalRef) {
       className = _ref$className === void 0 ? '' : _ref$className,
       swiper = _ref.swiper,
       zoom = _ref.zoom,
-      rest = _objectWithoutPropertiesLoose(_ref, ["tag", "children", "className", "swiper", "zoom"]);
+      virtualIndex = _ref.virtualIndex,
+      rest = _objectWithoutPropertiesLoose(_ref, ["tag", "children", "className", "swiper", "zoom", "virtualIndex"]);
 
   var slideElRef = useRef(null);
 
@@ -68,7 +69,8 @@ var SwiperSlide = forwardRef(function (_temp, externalRef) {
 
   return /*#__PURE__*/React.createElement(Tag, _extends({
     ref: slideElRef,
-    className: uniqueClasses("" + slideClasses + (className ? " " + className : ''))
+    className: uniqueClasses("" + slideClasses + (className ? " " + className : '')),
+    "data-swiper-slide-index": virtualIndex
   }, rest), zoom ? /*#__PURE__*/React.createElement("div", {
     className: "swiper-zoom-container",
     "data-swiper-zoom": typeof zoom === 'number' ? zoom : undefined

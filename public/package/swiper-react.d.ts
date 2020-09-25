@@ -291,6 +291,13 @@ interface SwiperSlide {
    * @default false
    */
   zoom?: boolean;
+
+  /**
+   * Slide's index in slides array/collection
+   *
+   * @default false
+   */
+  virtualIndex?: number;
 }
 
 interface Swiper

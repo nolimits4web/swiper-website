@@ -272,6 +272,11 @@ block content
           td boolean
           td false
           td Enables additional wrapper required for zoom mode
+        tr
+          td virtualIndex
+          td number
+          td
+          td Actual swiper slide index. Required to be set for virtual slides
 
     h2.no-border#swiperslide-slot-props `SwiperSlide` slot props
     p `SwiperSlide` component has the following slot props:
@@ -329,7 +334,7 @@ block content
 
     h2.no-border#virtual-slides Virtual Slides
 
-    p Virtual Slides rendering here is fully handled by Vue.js and not required anything except setting `:virtual="true"` property:
+    p Virtual Slides rendering here is fully handled by Vue.js and not required anything except setting `:virtual="true"` property and setting `virtualIndex` on slides:
 
     :code(lang="html")
       <template>
@@ -339,8 +344,9 @@ block content
           virtual
         >
           <swiper-slide
-            v-for="slideContent in slides"
+            v-for="(slideContent, index) in slides"
             :key="slide"
+            :virtualIndex="index"
           >{slideContent}</swiper-slide>
         </swiper>
       </template>
@@ -457,12 +463,21 @@ block content
     ```html
       <template>
         <!-- Main Swiper -> pass thumbs swiper instance -->
-        <swiper :thumbs="{ swiper: thumbsSwiper }" ...>
+        <swiper
+          :thumbs="{ swiper: thumbsSwiper }"
+          ...
+        >
           ...
         </swiper>
 
         <!-- Thumbs Swiper -> store swiper instance -->
-        <swiper @swiper="setThumbsSwiper" ...>
+        <!-- It is also required to set watchSlidesVisibility and watchSlidesProgress props -->
+        <swiper
+          @swiper="setThumbsSwiper"
+          watch-slides-visibility
+          watch-slides-progress
+          ...
+        >
           ...
         </swiper>
       </template>

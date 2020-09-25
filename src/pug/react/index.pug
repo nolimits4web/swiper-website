@@ -239,6 +239,11 @@ block content
           td boolean
           td false
           td Enables additional wrapper required for zoom mode
+        tr
+          td virtualIndex
+          td number
+          td
+          td Actual swiper slide index. Required to be set for virtual slides
 
     h2.no-border#swiperslide-render-function `SwiperSlide` render function
     p `SwiperSlide` component can accept render function that receives an object with the following properties:
@@ -298,7 +303,7 @@ block content
 
     h2.no-border#virtual-slides Virtual Slides
 
-    p Virtual Slides rendering here is fully handled by React and not required anything except setting `virtual:true` property:
+    p Virtual Slides rendering here is fully handled by React and not required anything except setting `virtual:true` property and setting `virtualIndex` on slides:
 
     :code(lang="jsx")
       import SwiperCore, { Virtual } from 'swiper';
@@ -313,8 +318,8 @@ block content
 
         return (
           <Swiper spaceBetween={50} slidesPerView={3} virtual>
-            {slides.map((slideContent) => {
-              <SwiperSlide key={slideContent}>{slideContent}</SwiperSlide>;
+            {slides.map((slideContent, index) => {
+              <SwiperSlide key={slideContent} virtualIndex={index}>{slideContent}</SwiperSlide>;
             })}
           </Swiper>
         );
@@ -405,7 +410,13 @@ block content
             </Swiper>
 
             {/* Thumbs Swiper -> store swiper instance */}
-            <Swiper onSwiper={setThumbsSwiper} ...>
+            {/* It is also required to set watchSlidesVisibility and watchSlidesProgress props */ }
+            <Swiper
+              onSwiper={setThumbsSwiper}
+              watchSlidesVisibility
+              watchSlidesProgress
+              ...
+            >
               {/* ... */}
             </Swiper>
           </main>

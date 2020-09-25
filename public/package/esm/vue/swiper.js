@@ -131,7 +131,7 @@ var Swiper = {
       default: undefined
     },
     slidesPerView: {
-      type: Number,
+      type: [Number, String],
       default: undefined
     },
     slidesPerColumn: {
