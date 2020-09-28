@@ -364,7 +364,7 @@ function instance($$self, $$props, $$invalidate) {
 	oldPassedParams = passedParams;
 
 	const onBeforeBreakpoint = () => {
-		breakpointChanged.value = true;
+		breakpointChanged = true;
 	};
 
 	swiperParams.onAny = (event, ...args) => {
