@@ -1,5 +1,5 @@
 /**
- * Swiper 6.3.2
+ * Swiper 6.3.3
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * http://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: September 28, 2020
+ * Released on: October 9, 2020
  */
 
 'use strict';

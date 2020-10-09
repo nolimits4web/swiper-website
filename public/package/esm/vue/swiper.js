@@ -46,6 +46,10 @@ var Swiper = {
       type: Boolean,
       default: undefined
     },
+    nested: {
+      type: Boolean,
+      default: undefined
+    },
     width: {
       type: Number,
       default: undefined
@@ -459,6 +463,7 @@ var Swiper = {
       default: undefined
     }
   },
+  emits: ['_beforeBreakpoint', '_containerClasses', '_slideClass', '_swiper', 'activeIndexChange', 'afterInit', 'autoplay', 'autoplayStart', 'autoplayStop', 'beforeDestroy', 'beforeInit', 'beforeLoopFix', 'beforeResize', 'beforeSlideChangeStart', 'beforeTransitionStart', 'breakpoint', 'changeDirection', 'click', 'doubleTap', 'doubleClick', 'destroy', 'fromEdge', 'hashChange', 'hashSet', 'imagesReady', 'init', 'keyPress', 'lazyImageLoad', 'lazyImageReady', 'loopFix', 'momentumBounce', 'navigationHide', 'navigationShow', 'observerUpdate', 'orientationchange', 'paginationHide', 'paginationRender', 'paginationShow', 'paginationUpdate', 'progress', 'reachBeginning', 'reachEnd', 'realIndexChange', 'resize', 'scroll', 'scrollbarDragEnd', 'scrollbarDragMove', 'scrollbarDragStart', 'setTransition', 'setTranslate', 'slideChange', 'slideChangeTransitionEnd', 'slideChangeTransitionStart', 'slideNextTransitionEnd', 'slideNextTransitionStart', 'slidePrevTransitionEnd', 'slidePrevTransitionStart', 'slideResetTransitionStart', 'slideResetTransitionEnd', 'sliderMove', 'sliderFirstMove', 'slidesLengthChange', 'slidesGridLengthChange', 'snapGridLengthChange', 'snapIndexChange', 'swiper', 'tap', 'toEdge', 'touchEnd', 'touchMove', 'touchMoveOpposite', 'touchStart', 'transitionEnd', 'transitionStart', 'update', 'zoomChange'],
   setup: function setup(props, _ref) {
     var originalSlots = _ref.slots,
         emit = _ref.emit;

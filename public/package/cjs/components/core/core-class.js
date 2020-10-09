@@ -300,14 +300,19 @@ var Swiper = /*#__PURE__*/function () {
     swiper.emit('_containerClasses', classes.join(' '));
   };
 
+  _proto.getSlideClasses = function getSlideClasses(slideEl) {
+    var swiper = this;
+    return slideEl.className.split(' ').filter(function (className) {
+      return className.indexOf('swiper-slide') === 0 || className.indexOf(swiper.params.slideClass) === 0;
+    }).join(' ');
+  };
+
   _proto.emitSlidesClasses = function emitSlidesClasses() {
     var swiper = this;
     if (!swiper.params._emitClasses || !swiper.el) return;
     swiper.slides.each(function (slideEl) {
-      var classes = slideEl.className.split(' ').filter(function (className) {
-        return className.indexOf('swiper-slide') === 0 || className.indexOf(swiper.params.slideClass) === 0;
-      });
-      swiper.emit('_slideClass', slideEl, classes.join(' '));
+      var classNames = swiper.getSlideClasses(slideEl);
+      swiper.emit('_slideClass', slideEl, classNames);
     });
   };
 

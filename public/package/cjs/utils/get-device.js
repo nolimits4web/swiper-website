@@ -31,7 +31,7 @@ function calcDevice(_temp) {
   var windows = platform === 'Win32';
   var macos = platform === 'MacIntel'; // iPadOs 13 fix
 
-  var iPadScreens = ['1024x1366', '1366x1024', '834x1194', '1194x834', '834x1112', '1112x834', '768x1024', '1024x768'];
+  var iPadScreens = ['1024x1366', '1366x1024', '834x1194', '1194x834', '834x1112', '1112x834', '768x1024', '1024x768', '820x1180', '1180x820', '810x1080', '1080x810'];
 
   if (!ipad && macos && support.touch && iPadScreens.indexOf(screenWidth + "x" + screenHeight) >= 0) {
     ipad = ua.match(/(Version)\/([\d.]+)/);

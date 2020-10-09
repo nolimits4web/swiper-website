@@ -46,7 +46,9 @@ var SwiperSlide = (0, _react.forwardRef)(function (_temp, externalRef) {
       externalRef.current = slideElRef.current;
     }
 
-    if (!slideElRef.current || !swiper) return;
+    if (!slideElRef.current || !swiper) {
+      return;
+    }
 
     if (swiper.destroyed) {
       if (slideClasses !== 'swiper-slide') {
@@ -63,6 +65,11 @@ var SwiperSlide = (0, _react.forwardRef)(function (_temp, externalRef) {
       swiper.off('_slideClass', updateClasses);
     };
   });
+  (0, _useIsomorphicLayoutEffect.useIsomorphicLayoutEffect)(function () {
+    if (swiper && slideElRef.current) {
+      setSlideClasses(swiper.getSlideClasses(slideElRef.current));
+    }
+  }, [swiper]);
   var slideData;
 
   if (typeof children === 'function') {
