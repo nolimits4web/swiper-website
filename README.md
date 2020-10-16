@@ -20,3 +20,6 @@ gulp tasks list
 ## Contributing
 
 All HTML and CSS changes should be commited to `src/` files only!
+
+Thank You 
+Keep learning keep supporting
