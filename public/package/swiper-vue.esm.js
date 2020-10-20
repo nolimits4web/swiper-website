@@ -1,13 +1,13 @@
 /**
- * Swiper Vue 6.3.3
+ * Swiper Vue 6.3.4
  * Most modern mobile touch slider and framework with hardware accelerated transitions
- * http://swiperjs.com
+ * https://swiperjs.com
  *
  * Copyright 2014-2020 Vladimir Kharlampidi
  *
  * Released under the MIT License
  *
- * Released on: October 9, 2020
+ * Released on: October 20, 2020
  */
 
 import { Swiper } from './esm/vue/swiper';

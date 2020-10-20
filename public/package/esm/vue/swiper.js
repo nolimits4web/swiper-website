@@ -476,8 +476,12 @@ var Swiper = {
     var swiperElRef = ref(null);
     var swiperRef = ref(null);
     var oldPassedParamsRef = ref(null);
-    var slidesRef = ref([]);
-    var oldSlidesRef = ref([]);
+    var slidesRef = {
+      value: []
+    };
+    var oldSlidesRef = {
+      value: []
+    };
     var nextElRef = ref(null);
     var prevElRef = ref(null);
     var paginationElRef = ref(null);

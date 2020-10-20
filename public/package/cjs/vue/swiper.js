@@ -490,8 +490,12 @@ var Swiper = {
     var swiperElRef = (0, _vue.ref)(null);
     var swiperRef = (0, _vue.ref)(null);
     var oldPassedParamsRef = (0, _vue.ref)(null);
-    var slidesRef = (0, _vue.ref)([]);
-    var oldSlidesRef = (0, _vue.ref)([]);
+    var slidesRef = {
+      value: []
+    };
+    var oldSlidesRef = {
+      value: []
+    };
     var nextElRef = (0, _vue.ref)(null);
     var prevElRef = (0, _vue.ref)(null);
     var paginationElRef = (0, _vue.ref)(null);

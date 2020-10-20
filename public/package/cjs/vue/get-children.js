@@ -17,6 +17,10 @@ function getChildren(originalSlots, slidesRef, oldSlidesRef) {
   };
 
   var getSlidesFromElements = function getSlidesFromElements(els, slotName) {
+    if (!Array.isArray(els)) {
+      return;
+    }
+
     els.forEach(function (vnode) {
       var isFragment = typeof vnode.type === 'symbol';
       if (slotName === 'default') slotName = 'container-end';
