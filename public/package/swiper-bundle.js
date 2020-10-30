@@ -1,5 +1,5 @@
 /**
- * Swiper 6.3.4
+ * Swiper 6.3.5
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: October 20, 2020
+ * Released on: October 30, 2020
  */
 
 (function (global, factory) {
@@ -2699,6 +2699,33 @@
       runCallbacks = true;
     }
 
+    if (typeof index !== 'number' && typeof index !== 'string') {
+      throw new Error("The 'index' argument cannot have type other than 'number' or 'string'. [" + typeof index + "] given.");
+    }
+
+    if (typeof index === 'string') {
+      /**
+       * The `index` argument converted from `string` to `number`.
+       * @type {number}
+       */
+      var indexAsNumber = parseInt(index, 10);
+      /**
+       * Determines whether the `index` argument is a valid `number`
+       * after being converted from the `string` type.
+       * @type {boolean}
+       */
+
+      var isValidNumber = isFinite(indexAsNumber);
+
+      if (!isValidNumber) {
+        throw new Error("The passed-in 'index' (string) couldn't be converted to 'number'. [" + index + "] given.");
+      } // Knowing that the converted `index` is a valid number,
+      // we can update the original argument's value.
+
+
+      index = indexAsNumber;
+    }
+
     var swiper = this;
     var slideIndex = index;
     if (slideIndex < 0) slideIndex = 0;
@@ -3385,7 +3412,13 @@
     data.isTouchEvent = e.type === 'touchstart';
     if (!data.isTouchEvent && 'which' in e && e.which === 3) return;
     if (!data.isTouchEvent && 'button' in e && e.button > 0) return;
-    if (data.isTouched && data.isMoved) return;
+    if (data.isTouched && data.isMoved) return; // change target el for shadow root componenet
+
+    var swipingClassHasValue = !!params.noSwipingClass && params.noSwipingClass !== '';
+
+    if (swipingClassHasValue && e.target && e.target.shadowRoot && event.path && event.path[0]) {
+      $targetEl = $(event.path[0]);
+    }
 
     if (params.noSwiping && $targetEl.closest(params.noSwipingSelector ? params.noSwipingSelector : "." + params.noSwipingClass)[0]) {
       swiper.allowClick = true;
