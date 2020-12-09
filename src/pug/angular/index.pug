@@ -47,121 +47,19 @@ block content
 
     h2.no-border#usage Usage
 
-    p `swiper/angular` exports 2 components: `Swiper` and `SwiperSlide`:
+    p Import `SwiperModule` to your module
 
-    ```html
-      <template>
-        <swiper
-          :slides-per-view="3"
-          :space-between="50"
-          @swiper="onSwiper"
-          @slideChange="onSlideChange"
-        >
-          <swiper-slide>Slide 1</swiper-slide>
-          <swiper-slide>Slide 2</swiper-slide>
-          <swiper-slide>Slide 3</swiper-slide>
-          ...
-        </swiper>
-      </template>
-      <script>
-        // Import Swiper Vue.js components
-        import { Swiper, SwiperSlide } from 'swiper/vue';
+    ```js
+    import { SwiperModule } from 'src/angular/src/public-api';
 
-        // Import Swiper styles
-        export default {
-          components: {
-            Swiper,
-            SwiperSlide,
-          },
-          methods: {
-            onSwiper(swiper) {
-              console.log(swiper)
-            },
-            onSlideChange() {
-              console.log('slide change')
-            },
-          },
-        };
-      </script>
+    @NgModule({
+      declarations: [AppComponent],
+      imports: [BrowserModule, SwiperModule],
+      providers: [],
+      bootstrap: [AppComponent],
+    })
+    export class AppModule {}
     ```
-
-    .important-note
-      p By default Swiper Vue.js uses core version of Swiper (without any additional components). If you want to use Navigation, Pagination and <a href="/api/#custom-build">other components</a>, you have to install them first.
-    p Here is the list of additional modules imports:
-    ul
-      li <code>Virtual</code> - Virtual Slides module
-      li <code>Keyboard</code> - Keyboard Control module
-      li <code>Mousewheel</code> - Mousewheel Control module
-      li <code>Navigation</code> - Navigation module
-      li <code>Pagination</code> - Pagination module
-      li <code>Scrollbar</code> - Scrollbar module
-      li <code>Parallax</code> - Parallax module
-      li <code>Zoom</code> - Zoom module
-      li <code>Lazy</code> - Lazy module
-      li <code>Controller</code> - Controller module
-      li <code>A11y</code> - Accessibility module
-      li <code>History</code> - History Navigation module
-      li <code>HashNavigation</code> - Hash Navigation module
-      li <code>Autoplay</code> - Autoplay module
-      li <code>EffectFade</code> - Fade Effect module
-      li <code>EffectCube</code> - Cube Effect module
-      li <code>EffectFlip</code> - Flip Effect module
-      li <code>EffectCoverflow</code> - Coverflow Effect module
-      li <code>Thumbs</code> - Thumbs module
-
-    ```html
-      <template>
-        <swiper
-          :slides-per-view="3"
-          :space-between="50"
-          navigation
-          :pagination="{ clickable: true }"
-          :scrollbar="{ draggable: true }"
-          @swiper="onSwiper"
-          @slideChange="onSlideChange"
-        >
-          <swiper-slide>Slide 1</swiper-slide>
-          <swiper-slide>Slide 2</swiper-slide>
-          <swiper-slide>Slide 3</swiper-slide>
-          ...
-        </swiper>
-      </template>
-      <script>
-        // import Swiper core and required components
-        import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-
-        // Import Swiper Vue.js components
-        import { Swiper, SwiperSlide } from 'swiper/vue';
-
-        // Import Swiper styles
-        import 'swiper/swiper.scss';
-        import 'swiper/components/navigation/navigation.scss';
-        import 'swiper/components/pagination/pagination.scss';
-        import 'swiper/components/scrollbar/scrollbar.scss';
-
-        // install Swiper components
-        SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
-
-        // Import Swiper styles
-        export default {
-          components: {
-            Swiper,
-            SwiperSlide,
-          },
-          methods: {
-            onSwiper(swiper) {
-              console.log(swiper)
-            },
-            onSlideChange() {
-              console.log('slide change')
-            },
-          },
-        };
-      </script>
-    ```
-
-    .important-note
-      p Note, Swiper Vue.js component will create required elements for Navigation, Pagination and Scrollbar if you pass these params without specifying its elements (e.g. without `navigation.nextEl`, `pagination.el`, etc.)
 
     h2.no-border#styles Styles
 
