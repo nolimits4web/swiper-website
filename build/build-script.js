@@ -20,10 +20,10 @@ function build(cb) {
       sourcemap: true,
       sourcemapFile: './public/js/main.js.map',
     });
-  }).then((bundle) => {
+  }).then(async(bundle) => {
     const result = bundle.output[0];
 
-    const minified = Terser.minify(result.code, {
+    const minified = await Terser.minify(result.code, {
       sourceMap: {
         content: result.map,
         url: 'main.js.map',
