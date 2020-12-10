@@ -11,61 +11,56 @@ block content
       include ../_sidebar-sponsors.pug
       ul
         li
-          a(href="#installation") Installation
-        li
-          a(href="#usage") Usage
+          a(href="#getting-started") Getting started
         li
           a(href="#styles") Styles
         li
-          a(href="#swiper-props") <span style="font-weight: 500">Swiper</span> props
+          a(href="#swiper-props") <span style="font-weight: 500">SwiperComponent</span> props
         li
-          a(href="#swiper-events") <span style="font-weight: 500">Swiper</span> events
+          a(href="#swiper-events") <span style="font-weight: 500">SwiperComponent</span> events
         li
-          a(href="#swiperslide-props") <span style="font-weight: 500">SwiperSlide</span> props
+          a(href="#swiperslide-props") <span style="font-weight: 500">SwiperSlideDirective</span> props
         li
-          a(href="#swiperslide-slot-props") <span style="font-weight: 500">SwiperSlide</span> slot props
+          a(href="#swiperslide-variables") <span style="font-weight: 500">SwiperSlideDirective</span> variables
         li
           a(href="#slots") Slots
         li
           a(href="#virtual-slides") Virtual Slides
-        li
-          a(href="#controller") Controller
-        li
-          a(href="#thumbs") Thumbs
         li
           a(href="#effects") Effects
 
   .api-content
     h1 Swiper Angular Components
 
-    h2.no-border#installation Installation
+    h2.no-border#getting-started Getting started
+
+    h3 Step 1: Install Swiper
 
     p Swiper Angular plugin is available only via NPM as a part of the main Swiper library:
     ```
       npm i swiper
     ```
 
-    h2.no-border#usage Usage
-
-    p Import `SwiperModule` to your module
+    h3 Step 2: Import `SwiperModule` module:
 
     ```js
       import { SwiperModule } from 'src/angular/src/public-api';
 
       @NgModule({
-        declarations: [AppComponent],
-        imports: [BrowserModule, SwiperModule],
-        providers: [],
-        bootstrap: [AppComponent],
+        imports: [SwiperModule],
       })
-      export class AppModule {}
+      export class YourAppModule {}
     ```
 
-    h2.no-border#styles Styles
+    h3 Step 3: Add styles:
 
-    p Swiper package contains different sets of CSS, Less and SCSS styles:
+    p Import Swipers CSS in `styles.scss`
+    ```css
+      @import "~swiper/swiper-bundle";
+    ```
+    p Or you can import only components that you need<br>Swiper package contains different sets of CSS, Less and SCSS styles:
 
-    h4 CSS Styles
+    h4#styles CSS Styles
 
     p CSS styles available only for bundle version:
 
@@ -111,42 +106,23 @@ block content
       li `components/thumbs/thumbs.scss` - styles required for Thumbs component
       li `components/zoom/zoom.scss` - styles required for Zoom component
 
-    h2.no-border#swiper-props `Swiper` props
+    h2.no-border#swiper-props `SwiperComponent` props
 
-    p `Swiper` Vue.js component receive all <a href="/api/#parameters">Swiper parameters</a> as component props, plus some extra props:
-    table.params-table
-      thead
-        tr
-          th Prop
-          th Type
-          th Default
-          th Description
-      tbody
-        tr
-          td tag
-          td string
-          td 'div'
-          td Main Swiper container HTML element tag
-        tr
-          td wrapperTag
-          td string
-          td 'div'
-          td Swiper wrapper HTML element tag
+    p `Swiper` Angular component receive all <a href="/api/#parameters">Swiper parameters</a> as component props
 
-
-    h2.no-border#swiper-events `Swiper` events
+    h2.no-border#swiper-events `SwiperComponent` events
     p Swiper component supports all <a href="/api/#events">Swiper events</a>, including additional `swiper` event that returns swiper instance as soon as posible. For example:
 
     ```html
       <swiper
-        @swiper="..."
-        @slideChange="..."
-        @reachEnd="..."
+        (swiper)="..."
+        (slideChange)="..."
+        (reachEnd)="..."
         ...
       >
     ```
 
-    h2.no-border#swiperslide-props `SwiperSlide` props
+    h2.no-border#swiperslide-props `SwiperSlideDirective` props
 
     table.params-table
       thead
@@ -155,25 +131,31 @@ block content
           th Type
           th Default
           th Description
-      tbody
-        tr
-          td tag
-          td string
-          td 'div'
-          td Swiper Slide HTML element tag
-        tr
-          td zoom
-          td boolean
-          td false
-          td Enables additional wrapper required for zoom mode
         tr
           td virtualIndex
           td number
           td
           td Actual swiper slide index. Required to be set for virtual slides
 
-    h2.no-border#swiperslide-slot-props `SwiperSlide` slot props
-    p `SwiperSlide` component has the following slot props:
+    .important-note
+      p
+        b Swiper Angular forces the use of `ng-template` in favor of supporting full featured loop mode.
+    ```html
+      <swiper>
+        <ng-template swiperSlide>
+          <div>Slide</div>
+        </ng-template>
+
+        <ng-container *ngFor="slide of slides">
+          <ng-template swiperSlide>
+            <div>Slide</div>
+          </ng-template>
+        </ng-container>
+      </swiper>
+    ```
+
+    h2.no-border#swiperslide-variables `SwiperSlideDirective` variables
+    p `SwiperSlideDirective` exports the following variables:
     ul
       li `isActive` - true when current slide is active
       li `isPrev` - true when current slide is the previous from active
@@ -181,17 +163,18 @@ block content
       li `isVisible` - true when current slide is visible (`watchSlidesVisibility` Swiper parameter must be enabled)
       li `isDuplicate` - true when current slide is a duplicate slide (when `loop` mode enabled)
     p For example:
+
     ```html
       <swiper>
-        <swiper-slide v-slot="{ isActive }">
-          <div>Current slide is {{ isActive ? 'active' : 'not active' }}</div>
-        </swiper-slide>
+        <ng-template swiperSlide let-data>
+          <div>Current slide is {{ data.isActive ? 'active' : 'not active' }}</div>
+        </ng-template>
       </swiper>
     ```
 
     h2.no-border#slots Slots
 
-    p Swiper Vue.js component uses "slots" for content distribution. There are 4 slots available
+    p Swiper Angular component uses "slots" for content distribution. There are 4 slots available
     ul
       li `container-start` - element will be added to the beginning of swiper-container
       li `container-end` (default) - element will be added to the end of swiper-container
@@ -202,8 +185,8 @@ block content
 
     ```html
       <swiper>
-        <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 2</swiper-slide>
+        <ng-template swiperSlide>Slide 1</ng-template>
+        <ng-template swiperSlide>Slide 2</ng-template>
         <span slot="container-start">Container Start</span>
         <span slot="container-end">Container End</span>
         <span slot="wrapper-start">Wrapper Start</span>
@@ -228,178 +211,30 @@ block content
 
     h2.no-border#virtual-slides Virtual Slides
 
-    p Virtual Slides rendering here is fully handled by Vue.js and not required anything except setting `:virtual="true"` property and setting `virtualIndex` on slides:
+    p Virtual Slides rendering here is fully handled by Angular and not required anything except setting `[virtual]="true"`:
 
-    :code(lang="html")
-      <template>
-        <swiper
-          :slides-per-view="3"
-          :space-between="50"
-          virtual
-        >
-          <swiper-slide
-            v-for="(slideContent, index) in slides"
-            :key="slide"
-            :virtualIndex="index"
-          >{slideContent}</swiper-slide>
-        </swiper>
-      </template>
-      <script>
-        import SwiperCore, { Virtual } from 'swiper';
-        import { Swiper, SwiperSlide } from 'swiper/vue';
+    :code(lang="js")
+      import { Component } from '@angular/core';
+      import SwiperCore, { Virtual } from '../../../build/core';
+      SwiperCore.use([Virtual]);
 
-        // install Virtual module
-        SwiperCore.use([Virtual]);
+      @Component({
+        selector: 'app-swiper-virtual-example',
+        template: ` <swiper [slidesPerView]="3" [spaceBetween]="50" [virtual]="true">
+          <ng-container *ngFor="let slide of slides; index as i">
+            <ng-template swiperSlide>Slide {{ slide }}</ng-template>
+          </ng-container>
+        </swiper>`,
+      })
+      export class AppComponent {
+        constructor() {}
+        ngOnInit() {}
 
-        export default {
-          components: {
-            Swiper,
-            SwiperSlide,
-          },
+        // Create array with 1000 slides
+        slides = Array.from({ length: 600 }).map((el, index) => `Slide ${index + 1}`);
+      }
 
-          data() {
-            // Create array with 1000 slides
-            const slides = Array.from({ length: 1000 }).map((el, index) => `Slide ${index + 1}`);
-            return {
-              slides,
-            };
-          },
-        };
-      </script>
-
-    h2.no-border#controller Controller
-
-    p Controller requires to pass one Swiper instance to another:
-
-    ```html
-      <template>
-        <!-- Main Swiper -> pass controlled swiper instance -->
-        <swiper :controller="{ control: controlledSwiper }" ...>
-          ...
-        </swiper>
-
-        <!-- Controlled Swiper -> store swiper instance -->
-        <swiper @swiper="setControlledSwiper" ...>
-          ...
-        </swiper>
-      </template>
-      <script>
-        import SwiperCore, { Controller } from 'swiper';
-        import { Swiper, SwiperSlide } from 'swiper/vue';
-
-        // install Swiper's Controller component
-        SwiperCore.use([Controller]);
-
-        export default {
-          components: {
-            Swiper,
-            SwiperSlide,
-          },
-          data() {
-            return {
-              controlledSwiper: null,
-            };
-          },
-          methods: {
-            setControlledSwiper(swiper) {
-              this.controlledSwiper = swiper;
-            },
-          }
-        };
-      </script>
-    ```
-
-    p For two-way control (when both Swipers control each other) it should be like this:
-
-    ```html
-      <template>
-        <swiper @swiper="setFirstSwiper" :controller="{ control: secondSwiper }" ...>
-          ...
-        </swiper>
-        <swiper @swiper="setSecondSwiper" :controller="{ control: firstSwiper }" ...>
-          ...
-        </swiper>
-      </template>
-      <script>
-        import SwiperCore, { Controller } from 'swiper';
-        import { Swiper, SwiperSlide } from 'swiper/vue';
-
-        // install Swiper's Controller component
-        SwiperCore.use([Controller]);
-
-        export default {
-          components: {
-            Swiper,
-            SwiperSlide,
-          },
-          data() {
-            return {
-              firstSwiper: null,
-              secondSwiper: null,
-            };
-          },
-          methods: {
-            setFirstSwiper(swiper) {
-              this.firstSwiper = swiper;
-            },
-            setSecondSwiper(swiper) {
-              this.secondSwiper = swiper;
-            },
-          }
-        };
-      </script>
-    ```
-
-    h2.no-border#thumbs Thumbs
-
-    p Same as with controller we need to store thumbs instance and pass it to main gallery:
-
-    ```html
-      <template>
-        <!-- Main Swiper -> pass thumbs swiper instance -->
-        <swiper
-          :thumbs="{ swiper: thumbsSwiper }"
-          ...
-        >
-          ...
-        </swiper>
-
-        <!-- Thumbs Swiper -> store swiper instance -->
-        <!-- It is also required to set watchSlidesVisibility and watchSlidesProgress props -->
-        <swiper
-          @swiper="setThumbsSwiper"
-          watch-slides-visibility
-          watch-slides-progress
-          ...
-        >
-          ...
-        </swiper>
-      </template>
-      <script>
-        import SwiperCore, { Thumbs } from 'swiper';
-        import { Swiper, SwiperSlide } from 'swiper/vue';
-
-        // install Swiper's Thumbs component
-        SwiperCore.use([Thumbs]);
-
-        export default {
-          components: {
-            Swiper,
-            SwiperSlide,
-          },
-          data() {
-            return {
-              thumbsSwiper: null,
-            };
-          },
-          methods: {
-            setThumbsSwiper(swiper) {
-              this.thumbsSwiper = swiper;
-            },
-          }
-        };
-      </script>
-    ```
+    p <a href="https://stackblitz.com/edit/swiper-angular-virtual?file=src%2Fapp%2Fapp.component.ts">Edit on Stackblitz</a>
 
     h2.no-border#effects Effects
 
@@ -421,29 +256,24 @@ block content
     p You can find running <a href="https://swiperjs.com/demos/#fade_effect">effect demos here</a>.
 
     h3 Full Fade Effect Example
-    ```
-      <template>
-        <swiper effect="fade">
-          <swiper-slide>Slide 1</swiper-slide>
-          <swiper-slide>Slide 2</swiper-slide>
-          <swiper-slide>Slide 3</swiper-slide>
-          ...
-        </swiper>
-      </template>
-      <script>
-        import SwiperCore, { EffectFade } from 'swiper';
-        import { Swiper, SwiperSlide } from 'swiper/vue';
+    :code(lang="js")
+      import { Component } from "@angular/core";
+      import SwiperCore, { EffectFade, Swiper } from "swiper/core";
+      SwiperCore.use([EffectFade]);
 
-        import 'swiper/swiper.scss';
-        import 'swiper/components/effect-fade/effect-fade.scss';
-
-        SwiperCore.use([EffectFade]);
-
-        export default {
-          components: {
-            Swiper,
-            SwiperSlide,
-          },
-        };
-      </script>
-    ```
+      @Component({
+        selector: "app-swiper-virtual-example",
+        template: `
+          <swiper effect="fade">
+            <ng-template swiperSlide>Slide 1</ng-template>
+            <ng-template swiperSlide>Slide 2</ng-template>
+            <ng-template swiperSlide>Slide 3</ng-template>
+          </swiper>
+        `
+      })
+      export class AppComponent {
+        constructor() {}
+        ngOnInit() {}
+        // Create array with 1000 slides
+        slides = Array.from({ length: 10 }).map((el, index) => `Slide ${index + 1}`);
+      }
