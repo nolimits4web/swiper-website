@@ -15,6 +15,8 @@ block content
         li
           a(href="#styles") Styles
         li
+          a(href="#usage") Usage
+        li
           a(href="#swiper-props") <span style="font-weight: 500">SwiperComponent</span> props
         li
           a(href="#swiper-events") <span style="font-weight: 500">SwiperComponent</span> events
@@ -105,6 +107,90 @@ block content
       li `components/scrollbar/scrollbar.scss` - styles required for Scrollbar component
       li `components/thumbs/thumbs.scss` - styles required for Thumbs component
       li `components/zoom/zoom.scss` - styles required for Zoom component
+
+    h2.no-border#usage Usage
+
+    :code(lang="js")
+      import { Component } from "@angular/core";
+
+      // import Swiper core and required components
+      import SwiperCore from "swiper/core";
+
+      @Component({
+        selector: "app-swiper-example",
+        template: `
+          <swiper [slidesPerView]="3" [spaceBetween]="50" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+            <ng-template swiperSlide>Slide 1</ng-template>
+            <ng-template swiperSlide>Slide 2</ng-template>
+            <ng-template swiperSlide>Slide 3</ng-template>
+          </swiper>
+        `
+      })
+      export class AppComponent {
+        onSwiper(swiper) {
+          console.log(swiper)
+        }
+        onSlideChange() {
+          console.log('slide change')
+        }
+      }
+
+
+    .important-note
+      p By default Swiper Angular uses core version of Swiper (without any additional components). If you want to use Navigation, Pagination and <a href="/api/#custom-build">other components</a>, you have to install them first.
+    p Here is the list of additional modules imports:
+    ul
+      li <code>Virtual</code> - Virtual Slides module
+      li <code>Keyboard</code> - Keyboard Control module
+      li <code>Mousewheel</code> - Mousewheel Control module
+      li <code>Navigation</code> - Navigation module
+      li <code>Pagination</code> - Pagination module
+      li <code>Scrollbar</code> - Scrollbar module
+      li <code>Parallax</code> - Parallax module
+      li <code>Zoom</code> - Zoom module
+      li <code>Lazy</code> - Lazy module
+      li <code>Controller</code> - Controller module
+      li <code>A11y</code> - Accessibility module
+      li <code>History</code> - History Navigation module
+      li <code>HashNavigation</code> - Hash Navigation module
+      li <code>Autoplay</code> - Autoplay module
+      li <code>EffectFade</code> - Fade Effect module
+      li <code>EffectCube</code> - Cube Effect module
+      li <code>EffectFlip</code> - Flip Effect module
+      li <code>EffectCoverflow</code> - Coverflow Effect module
+      li <code>Thumbs</code> - Thumbs module
+
+    :code(lang="js")
+      import { Component } from "@angular/core";
+
+      // import Swiper core and required components
+      import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper/core';
+
+      // install Swiper components
+      SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+
+      @Component({
+        selector: "app-swiper-example",
+        template: `
+          <swiper [slidesPerView]="3" [spaceBetween]="50" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()" [navigation]="true" [pagination]="{ clickable: true }" [scrollbar]="{ draggable: true }">
+            <ng-template swiperSlide>Slide 1</ng-template>
+            <ng-template swiperSlide>Slide 2</ng-template>
+            <ng-template swiperSlide>Slide 3</ng-template>
+            <ng-template swiperSlide>Slide 4</ng-template>
+            <ng-template swiperSlide>Slide 5</ng-template>
+            <ng-template swiperSlide>Slide 6</ng-template>
+          </swiper>
+        `
+      })
+      export class AppComponent {
+        onSwiper(swiper) {
+          console.log(swiper)
+        }
+        onSlideChange() {
+          console.log('slide change')
+        }
+      }
+    p <a href="https://stackblitz.com/edit/swiper-angular-example?file=src/app/app.component.ts">Edit on Stackblitz</a>
 
     h2.no-border#swiper-props `SwiperComponent` props
 
@@ -215,7 +301,11 @@ block content
 
     :code(lang="js")
       import { Component } from '@angular/core';
-      import SwiperCore, { Virtual } from '../../../build/core';
+
+      // import Swiper core and required components
+      import SwiperCore, { Virtual } from 'swiper/core';
+
+      // install Swiper components
       SwiperCore.use([Virtual]);
 
       @Component({
@@ -227,9 +317,6 @@ block content
         </swiper>`,
       })
       export class AppComponent {
-        constructor() {}
-        ngOnInit() {}
-
         // Create array with 1000 slides
         slides = Array.from({ length: 600 }).map((el, index) => `Slide ${index + 1}`);
       }
@@ -258,11 +345,15 @@ block content
     h3 Full Fade Effect Example
     :code(lang="js")
       import { Component } from "@angular/core";
+
+      // import Swiper core and required components
       import SwiperCore, { EffectFade, Swiper } from "swiper/core";
+
+      // install Swiper components
       SwiperCore.use([EffectFade]);
 
       @Component({
-        selector: "app-swiper-virtual-example",
+        selector: "app-swiper-fade-example",
         template: `
           <swiper effect="fade">
             <ng-template swiperSlide>Slide 1</ng-template>
@@ -271,10 +362,5 @@ block content
           </swiper>
         `
       })
-      export class AppComponent {
-        constructor() {}
-        ngOnInit() {}
-        // Create array with 1000 slides
-        slides = Array.from({ length: 10 }).map((el, index) => `Slide ${index + 1}`);
-      }
+      export class AppComponent {}
     p <a href="https://stackblitz.com/edit/swiper-angular-fade?file=src/app/app.component.ts">Edit on Stackblitz</a>
