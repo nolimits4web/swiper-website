@@ -4,7 +4,7 @@ const buble = require('rollup-plugin-buble');
 const resolve = require('rollup-plugin-node-resolve');
 const Terser = require('terser');
 
-module.exports = (cb) =>  {
+module.exports = async(cb) =>  {
   try{
     const bundle = await rollup.rollup({
       input: './src/js/main.js',
