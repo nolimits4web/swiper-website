@@ -105,11 +105,7 @@ var _default = {
       }
 
       if (self.eventsListeners && self.eventsListeners[event]) {
-        var handlers = [];
         self.eventsListeners[event].forEach(function (eventHandler) {
-          handlers.push(eventHandler);
-        });
-        handlers.forEach(function (eventHandler) {
           eventHandler.apply(context, data);
         });
       }

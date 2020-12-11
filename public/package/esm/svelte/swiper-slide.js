@@ -312,7 +312,7 @@ function instance($$self, $$props, $$invalidate) {
 				isVisible: slideClasses.indexOf("swiper-slide-visible") >= 0,
 				isDuplicate: slideClasses.indexOf("swiper-slide-duplicate") >= 0,
 				isPrev: slideClasses.indexOf("swiper-slide-prev") >= 0 || slideClasses.indexOf("swiper-slide-duplicate-prev") >= 0,
-				isNext: slideClasses.indexOf("swiper-slide-next") >= 0 || slideClasses.indexOf("swiper-slide-duplicate next") >= 0
+				isNext: slideClasses.indexOf("swiper-slide-next") >= 0 || slideClasses.indexOf("swiper-slide-duplicate-next") >= 0
 			});
 		}
 	};
