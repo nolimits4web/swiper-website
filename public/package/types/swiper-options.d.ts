@@ -76,7 +76,7 @@ export interface SwiperOptions {
    * @note Setting this parameter will make Swiper not responsive
    * @default null
    */
-  width?: number;
+  width?: number | null;
 
   /**
    * Swiper height (in px). Parameter allows to force Swiper height.
@@ -85,10 +85,10 @@ export interface SwiperOptions {
    * @note Setting this parameter will make Swiper not responsive
    * @default null
    */
-  height?: number;
+  height?: number | null;
 
   /**
-   * Set to true and slider wrapper will adopt its height to the height of the currently active slide
+   * Set to true and slider wrapper will adapt its height to the height of the currently active slide
    *
    * @default false
    */
@@ -388,7 +388,7 @@ export interface SwiperOptions {
    *
    * @default null
    */
-  swipeHandler?: CSSSelector | HTMLElement;
+  swipeHandler?: CSSSelector | HTMLElement | null;
 
   // Clicks
   /**
@@ -520,7 +520,7 @@ export interface SwiperOptions {
    *
    * @default null
    */
-  loopedSlides?: number;
+  loopedSlides?: number | null;
 
   /**
    * Enable and loop mode will fill groups with insufficient number of slides with blank slides. Good to be used with slidesPerGroup parameter
@@ -581,13 +581,13 @@ export interface SwiperOptions {
    *
    * @default null
    */
-  userAgent?: string;
+  userAgent?: string | null;
   /**
    * Required for active slide detection when rendered on server-side and enabled history
    *
    * @default null
    */
-  url?: string;
+  url?: string | null;
 
   a11y?: A11yOptions;
   autoplay?: AutoplayOptions | boolean;
@@ -608,4 +608,12 @@ export interface SwiperOptions {
   thumbs?: ThumbsOptions;
   virtual?: VirtualOptions | boolean;
   zoom?: ZoomOptions | boolean;
+  /**
+   * !INTERNAL When enabled will emit "_containerClasses" and "_slideClasses" events
+   */
+  _emitClasses?: boolean;
+  /**
+   * Add event listener that will be fired on all events
+   */
+  onAny?(handler: (eventName: string, ...args: any[]) => void): void;
 }

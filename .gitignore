@@ -61,7 +61,9 @@ typings/
 public/index.html
 public/api/index.html
 public/react/index.html
+public/svelte/index.html
 public/vue/index.html
+public/angular/index.html
 public/get-started/index.html
 public/demos/index.html
 public/css/main.css

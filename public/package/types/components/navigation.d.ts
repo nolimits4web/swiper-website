@@ -16,6 +16,16 @@ export interface NavigationMethods {
    * Update navigation buttons state (enabled/disabled)
    */
   update(): void;
+
+  /**
+   * Initialize navigation
+   */
+  init(): void;
+
+  /**
+   * Destroy navigation
+   */
+  destroy(): void;
 }
 
 export interface NavigationEvents {
@@ -36,7 +46,7 @@ export interface NavigationOptions {
    *
    * @default null
    */
-  nextEl?: CSSSelector | HTMLElement;
+  nextEl?: CSSSelector | HTMLElement | null;
 
   /**
    * String with CSS selector or HTML element of the element that will work
@@ -44,7 +54,7 @@ export interface NavigationOptions {
    *
    * @default null
    */
-  prevEl?: CSSSelector | HTMLElement;
+  prevEl?: CSSSelector | HTMLElement | null;
 
   /**
    * Toggle navigation buttons visibility after click on Slider's container
