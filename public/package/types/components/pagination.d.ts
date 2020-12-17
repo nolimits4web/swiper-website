@@ -24,6 +24,16 @@ export interface PaginationMethods {
    * Update pagination state (enabled/disabled/active)
    */
   update(): void;
+
+  /**
+   * Initialize pagination
+   */
+  init(): void;
+
+  /**
+   * Destroy pagination
+   */
+  destroy(): void;
 }
 
 export interface PaginationEvents {
@@ -60,7 +70,7 @@ export interface PaginationOptions {
   type?: 'bullets' | 'fraction' | 'progressbar' | 'custom';
 
   /**
-   * Defines which HTML tag will be use to represent single pagination bullet. Only for bullets pagination type.
+   * Defines which HTML tag will be used to represent single pagination bullet. Only for bullets pagination type.
    */
   bulletElement?: string;
 

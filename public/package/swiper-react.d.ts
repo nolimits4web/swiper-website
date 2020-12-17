@@ -207,6 +207,103 @@ interface Swiper extends SwiperOptions {
    * Event will be fired on breakpoint change
    */
   onBreakpoint?: (swiper: SwiperClass, breakpointParams: SwiperOptions) => void;
+
+  /**
+   * !INTERNAL: Event will fired right before breakpoint change
+   */
+  _beforeBreakpoint?: (swiper: SwiperClass, breakpointParams: SwiperOptions) => void;
+  /**
+   * !INTERNAL: Event will fired after setting CSS classes on swiper container element
+   */
+  _containerClasses?: (swiper: SwiperClass, classNames: string) => void;
+  /**
+   * INTERNAL: Event will fired after setting CSS classes on swiper slide element
+   */
+  _slideClass?: (swiper: SwiperClass, el: HTMLElement, classNames: string) => void;
+  /**
+   * INTERNAL: Event will fired as soon as swiper instance available (before init)
+   */
+  _swiper?: (swiper: SwiperClass) => void;
+  /**
+   * Event will fired on active index change
+   */
+  onActiveIndexChange?: (swiper: SwiperClass) => void;
+  /**
+   * Event will fired on snap index change
+   */
+  onSnapIndexChange?: (swiper: SwiperClass) => void;
+  /**
+   * Event will fired on real index change
+   */
+  onRealIndexChange?: (swiper: SwiperClass) => void;
+  /**
+   * Event will fired right after initialization
+   */
+  onAfterInit?: (swiper: SwiperClass) => void;
+  /**
+   * Event will fired right before initialization
+   */
+  onBeforeInit?: (swiper: SwiperClass) => void;
+  /**
+   * Event will fired before resize handler
+   */
+  onBeforeResize?: (swiper: SwiperClass) => void;
+  /**
+   * Event will fired before slide change transition start
+   */
+  onBeforeSlideChangeStart?: (swiper: SwiperClass) => void;
+  /**
+   * Event will fired before transition start
+   */
+  onBeforeTransitionStart?: (swiper: SwiperClass, speed: number, internal: any) => void; // what is internal?
+  /**
+   * Event will fired on direction change
+   */
+  onChangeDirection?: (swiper: SwiperClass) => void;
+  /**
+   * Event will be fired when user double click/tap on Swiper
+   */
+  onDoubleClick?: (swiper: SwiperClass, event: MouseEvent | TouchEvent | PointerEvent) => void;
+  /**
+   * Event will be fired on swiper destroy
+   */
+  onDestroy?: (swiper: SwiperClass) => void;
+  /**
+   * Event will be fired on momentum bounce
+   */
+  onMomentumBounce?: (swiper: SwiperClass) => void;
+  /**
+   * Event will be fired on orientation change (e.g. landscape -> portrait)
+   */
+  onOrientationchange?: (swiper: SwiperClass) => void;
+  /**
+   * Event will be fired in the beginning of animation of resetting slide to current one
+   */
+  onSlideResetTransitionStart?: (swiper: SwiperClass) => void;
+  /**
+   * Event will be fired in the end of animation of resetting slide to current one
+   */
+  onSlideResetTransitionEnd?: (swiper: SwiperClass) => void;
+  /**
+   * Event will be fired with first touch/drag move
+   */
+  onSliderFirstMove?: (swiper: SwiperClass, event: TouchEvent) => void;
+  /**
+   * Event will be fired when number of slides has changed
+   */
+  onSlidesLengthChange?: (swiper: SwiperClass) => void;
+  /**
+   * Event will be fired when slides grid has changed
+   */
+  onSlidesGridLengthChange?: (swiper: SwiperClass) => void;
+  /**
+   * Event will be fired when snap grid has changed
+   */
+  onSnapGridLengthChange?: (swiper: SwiperClass) => void;
+  /**
+   * Event will be fired after swiper.update() call
+   */
+  onUpdate?: (swiper: SwiperClass) => void;
   
   /**
    * Event will be fired in when autoplay started
@@ -227,6 +324,9 @@ interface Swiper extends SwiperOptions {
    * Event will be fired when swiper updates the hash
    */
   onHashSet?: (swiper: SwiperClass) => void;/**
+   * Event will be fired on key press
+   */
+  onKeyPress?: (swiper: SwiperClass, keyCode: string) => void;/**
    * Event will be fired in the beginning of lazy loading of image
    */
   onLazyImageLoad?: (swiper: SwiperClass, slideEl: HTMLElement, imageEl: HTMLElement) => void;
@@ -234,6 +334,9 @@ interface Swiper extends SwiperOptions {
    * Event will be fired when lazy loading image will be loaded
    */
   onLazyImageReady?: (swiper: SwiperClass, slideEl: HTMLElement, imageEl: HTMLElement) => void;/**
+   * Event will be fired on mousewheel scroll
+   */
+  onScroll?: (swiper: SwiperClass, event: WheelEvent) => void;/**
    * Event will be fired on navigation hide
    */
   onNavigationHide?: (swiper: SwiperClass) => void;

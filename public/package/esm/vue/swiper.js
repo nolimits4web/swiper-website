@@ -574,7 +574,7 @@ var Swiper = {
     });
     onBeforeUnmount(function () {
       if (swiperRef.value && !swiperRef.value.destroyed) {
-        swiperRef.value.destroy();
+        swiperRef.value.destroy(true, false);
       }
     }); // bypass swiper instance to slides
 

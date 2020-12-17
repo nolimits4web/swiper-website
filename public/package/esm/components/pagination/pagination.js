@@ -177,7 +177,7 @@ var Pagination = {
       }
 
       $el.html(paginationHTML);
-      swiper.pagination.bullets = $el.find("." + params.bulletClass);
+      swiper.pagination.bullets = $el.find("." + params.bulletClass.replace(/ /g, '.'));
     }
 
     if (params.type === 'fraction') {
@@ -235,7 +235,7 @@ var Pagination = {
     }
 
     if (params.clickable) {
-      $el.on('click', "." + params.bulletClass, function onClick(e) {
+      $el.on('click', "." + params.bulletClass.replace(/ /g, '.'), function onClick(e) {
         e.preventDefault();
         var index = $(this).index() * swiper.params.slidesPerGroup;
         if (swiper.params.loop) index += swiper.loopedSlides;
@@ -258,7 +258,7 @@ var Pagination = {
     if (swiper.pagination.bullets) swiper.pagination.bullets.removeClass(params.bulletActiveClass);
 
     if (params.clickable) {
-      $el.off('click', "." + params.bulletClass);
+      $el.off('click', "." + params.bulletClass.replace(/ /g, '.'));
     }
   }
 };
