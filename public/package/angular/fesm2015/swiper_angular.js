@@ -1,4 +1,4 @@
-import { Directive, TemplateRef, Input, EventEmitter, Component, ChangeDetectionStrategy, ViewEncapsulation, ElementRef, ChangeDetectorRef, Output, ViewChild, ContentChildren, HostBinding, NgModule } from '@angular/core';
+import { Directive, TemplateRef, Input, EventEmitter, Component, ChangeDetectionStrategy, ViewEncapsulation, NgZone, ElementRef, ChangeDetectorRef, Output, ViewChild, ContentChildren, HostBinding, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import Swiper from 'swiper/core';
 import { Subject, of } from 'rxjs';
@@ -245,7 +245,8 @@ SwiperSlideDirective.propDecorators = {
 };
 
 class SwiperComponent {
-    constructor(elementRef, _changeDetectorRef) {
+    constructor(zone, elementRef, _changeDetectorRef) {
+        this.zone = zone;
         this.elementRef = elementRef;
         this._changeDetectorRef = _changeDetectorRef;
         this.init = true;
@@ -403,6 +404,7 @@ class SwiperComponent {
         this.s_zoomChange = new EventEmitter();
         // prettier-ignore
         this.s_swiper = new EventEmitter();
+        this.indexChange = new EventEmitter();
         this._activeSlides = new Subject();
         this.containerClasses = 'swiper-container';
         this.style = null;
@@ -437,6 +439,14 @@ class SwiperComponent {
     }
     get virtual() {
         return this._virtual;
+    }
+    set index(index) {
+        this.setIndex(index);
+    }
+    set config(val) {
+        this.updateSwiper(val);
+        const { params } = getParams(val);
+        Object.assign(this, params);
     }
     set prevElRef(el) {
         this._setElement(el, this.navigation, 'navigation', 'prevEl');
@@ -504,6 +514,9 @@ class SwiperComponent {
             }
         };
         Object.assign(swiperParams.on, {
+            slideChange: () => {
+                this.indexChange.emit(this.swiperRef.realIndex);
+            },
             _containerClasses(swiper, classes) {
                 this.containerClasses = classes;
             },
@@ -543,6 +556,7 @@ class SwiperComponent {
         new Swiper(this.elementRef.nativeElement, swiperParams);
     }
     updateVirtualSlides(virtualData) {
+        // TODO: type virtualData
         if (!this.swiperRef ||
             (this.currentVirtualData &&
                 this.currentVirtualData.from === virtualData.from &&
@@ -579,7 +593,11 @@ class SwiperComponent {
         }
         const { params: currentParams, pagination, navigation, scrollbar, virtual, thumbs, } = this.swiperRef;
         if (changedParams.pagination) {
-            if (this.pagination && this.pagination.el && pagination && !pagination.el) {
+            if (this.pagination &&
+                typeof this.pagination !== 'boolean' &&
+                this.pagination.el &&
+                pagination &&
+                !pagination.el) {
                 this.updateParameter('pagination', this.pagination);
                 pagination.init();
                 pagination.render();
@@ -591,7 +609,11 @@ class SwiperComponent {
             }
         }
         if (changedParams.scrollbar) {
-            if (this.scrollbar && this.scrollbar.el && scrollbar && !scrollbar.el) {
+            if (this.scrollbar &&
+                typeof this.scrollbar !== 'boolean' &&
+                this.scrollbar.el &&
+                scrollbar &&
+                !scrollbar.el) {
                 this.updateParameter('scrollbar', this.scrollbar);
                 scrollbar.init();
                 scrollbar.updateSize();
@@ -604,6 +626,7 @@ class SwiperComponent {
         }
         if (changedParams.navigation) {
             if (this.navigation &&
+                typeof this.navigation !== 'boolean' &&
                 this.navigation.prevEl &&
                 this.navigation.nextEl &&
                 navigation &&
@@ -631,6 +654,10 @@ class SwiperComponent {
         this.swiperRef.update();
     }
     updateSwiper(changedParams) {
+        var _a, _b;
+        if (changedParams.config) {
+            return;
+        }
         if (!(changedParams && this.swiperRef && !this.swiperRef.destroyed)) {
             return;
         }
@@ -638,7 +665,8 @@ class SwiperComponent {
             if (ignoreNgOnChanges.indexOf(key) >= 0) {
                 continue;
             }
-            this.updateParameter(key, changedParams[key].currentValue);
+            const newValue = (_b = (_a = changedParams[key]) === null || _a === void 0 ? void 0 : _a.currentValue) !== null && _b !== void 0 ? _b : changedParams[key];
+            this.updateParameter(key, newValue);
         }
         if (changedParams.allowSlideNext) {
             this.swiperRef.allowSlideNext = this.allowSlideNext;
@@ -697,6 +725,23 @@ class SwiperComponent {
             this.swiperRef.params[_key] = value;
         }
     }
+    setIndex(index, speed, silent) {
+        if (!this.swiperRef) {
+            this.initialSlide = index;
+            return;
+        }
+        if (index === this.swiperRef.realIndex) {
+            return;
+        }
+        this.zone.runOutsideAngular(() => {
+            if (this.loop) {
+                this.swiperRef.slideToLoop(index, speed, !silent);
+            }
+            else {
+                this.swiperRef.slideTo(index, speed, !silent);
+            }
+        });
+    }
     ngOnDestroy() {
         this.swiperRef.destroy();
     }
@@ -704,7 +749,7 @@ class SwiperComponent {
 SwiperComponent.decorators = [
     { type: Component, args: [{
                 selector: 'swiper, [swiper]',
-                template: "<ng-content select=\"[slot=container-start]\"></ng-content>\n<ng-container *ngIf=\"navigation\">\n  <div class=\"swiper-button-prev\" #prevElRef></div>\n  <div class=\"swiper-button-next\" #nextElRef></div>\n</ng-container>\n<div *ngIf=\"scrollbar\" class=\"swiper-scrollbar\" #scrollbarElRef></div>\n<div *ngIf=\"pagination\" class=\"swiper-pagination\" #paginationElRef></div>\n<div [ngClass]=\"wrapperClass\">\n  <ng-content select=\"[slot=wrapper-start]\"></ng-content>\n  <ng-template\n    *ngTemplateOutlet=\"\n      slidesTemplate;\n      context: {\n        loopSlides: prependSlides,\n        key: 'prepend'\n      }\n    \"\n  ></ng-template>\n  <ng-template\n    *ngTemplateOutlet=\"\n      slidesTemplate;\n      context: {\n        loopSlides: activeSlides,\n        key: ''\n      }\n    \"\n  ></ng-template>\n  <ng-template\n    *ngTemplateOutlet=\"\n      slidesTemplate;\n      context: {\n        loopSlides: appendSlides,\n        key: 'append'\n      }\n    \"\n  ></ng-template>\n  <ng-content select=\"[slot=wrapper-end]\"></ng-content>\n</div>\n<ng-content select=\"[slow=container-end]\"></ng-content>\n\n<ng-template #slidesTemplate let-loopSlides=\"loopSlides\" let-slideKey=\"key\">\n  <div\n    *ngFor=\"let slide of loopSlides | async\"\n    [ngClass]=\"slide.classNames + ' ' + (slideKey !== '' ? slideDuplicateClass : '')\"\n    [attr.data-swiper-slide-index]=\"slide.virtualIndex ? slide.virtualIndex : slide.slideIndex\"\n    [style]=\"style\"\n  >\n    <ng-template\n      [ngTemplateOutlet]=\"slide.template\"\n      [ngTemplateOutletContext]=\"{\n        $implicit: slide.slideData\n      }\"\n    ></ng-template>\n  </div>\n</ng-template>\n",
+                template: "<ng-content select=\"[slot=container-start]\"></ng-content>\n<ng-container *ngIf=\"navigation\">\n  <div class=\"swiper-button-prev\" #prevElRef></div>\n  <div class=\"swiper-button-next\" #nextElRef></div>\n</ng-container>\n<div *ngIf=\"scrollbar\" class=\"swiper-scrollbar\" #scrollbarElRef></div>\n<div *ngIf=\"pagination\" class=\"swiper-pagination\" #paginationElRef></div>\n<div [ngClass]=\"wrapperClass\">\n  <ng-content select=\"[slot=wrapper-start]\"></ng-content>\n  <ng-template\n    *ngTemplateOutlet=\"\n      slidesTemplate;\n      context: {\n        loopSlides: prependSlides,\n        key: 'prepend'\n      }\n    \"\n  ></ng-template>\n  <ng-template\n    *ngTemplateOutlet=\"\n      slidesTemplate;\n      context: {\n        loopSlides: activeSlides,\n        key: ''\n      }\n    \"\n  ></ng-template>\n  <ng-template\n    *ngTemplateOutlet=\"\n      slidesTemplate;\n      context: {\n        loopSlides: appendSlides,\n        key: 'append'\n      }\n    \"\n  ></ng-template>\n  <ng-content select=\"[slot=wrapper-end]\"></ng-content>\n</div>\n<ng-content select=\"[slot=container-end]\"></ng-content>\n\n<ng-template #slidesTemplate let-loopSlides=\"loopSlides\" let-slideKey=\"key\">\n  <div\n    *ngFor=\"let slide of loopSlides | async\"\n    [ngClass]=\"slide.classNames + ' ' + (slideKey !== '' ? slideDuplicateClass : '')\"\n    [attr.data-swiper-slide-index]=\"slide.virtualIndex ? slide.virtualIndex : slide.slideIndex\"\n    [style]=\"style\"\n  >\n    <ng-template\n      [ngTemplateOutlet]=\"slide.template\"\n      [ngTemplateOutletContext]=\"{\n        $implicit: slide.slideData\n      }\"\n    ></ng-template>\n  </div>\n</ng-template>\n",
                 changeDetection: ChangeDetectionStrategy.OnPush,
                 encapsulation: ViewEncapsulation.None,
                 styles: [`
@@ -715,6 +760,7 @@ SwiperComponent.decorators = [
             },] }
 ];
 SwiperComponent.ctorParameters = () => [
+    { type: NgZone },
     { type: ElementRef },
     { type: ChangeDetectorRef }
 ];
@@ -823,13 +869,15 @@ SwiperComponent.propDecorators = {
     keyboard: [{ type: Input }],
     lazy: [{ type: Input }],
     mousewheel: [{ type: Input }],
-    navigation: [{ type: Input }],
-    pagination: [{ type: Input }],
     parallax: [{ type: Input }],
-    scrollbar: [{ type: Input }],
-    virtual: [{ type: Input }],
     thumbs: [{ type: Input }],
     zoom: [{ type: Input }],
+    navigation: [{ type: Input }],
+    pagination: [{ type: Input }],
+    scrollbar: [{ type: Input }],
+    virtual: [{ type: Input }],
+    index: [{ type: Input }],
+    config: [{ type: Input }],
     s__beforeBreakpoint: [{ type: Output, args: ['_beforeBreakpoint',] }],
     s__containerClasses: [{ type: Output, args: ['_containerClasses',] }],
     s__slideClass: [{ type: Output, args: ['_slideClass',] }],
@@ -906,6 +954,7 @@ SwiperComponent.propDecorators = {
     s_update: [{ type: Output, args: ['update',] }],
     s_zoomChange: [{ type: Output, args: ['zoomChange',] }],
     s_swiper: [{ type: Output, args: ['swiper',] }],
+    indexChange: [{ type: Output }],
     prevElRef: [{ type: ViewChild, args: ['prevElRef', { static: false },] }],
     nextElRef: [{ type: ViewChild, args: ['nextElRef', { static: false },] }],
     scrollbarElRef: [{ type: ViewChild, args: ['scrollbarElRef', { static: false },] }],
@@ -933,4 +982,4 @@ SwiperModule.decorators = [
  */
 
 export { SwiperComponent, SwiperModule, SwiperSlideDirective };
-//# sourceMappingURL=angular.js.map
+//# sourceMappingURL=swiper_angular.js.map

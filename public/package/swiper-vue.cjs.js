@@ -1,5 +1,5 @@
 /**
- * Swiper Vue 6.4.1
+ * Swiper Vue 6.4.3
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: December 9, 2020
+ * Released on: December 18, 2020
  */
 
 "use strict";

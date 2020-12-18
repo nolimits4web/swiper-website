@@ -1,5 +1,5 @@
 /**
- * Swiper 6.4.1
+ * Swiper 6.4.3
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: December 9, 2020
+ * Released on: December 18, 2020
  */
 
 function _defineProperties(target, props) {
@@ -1534,7 +1534,7 @@ var Observer$1 = {
   create: function create() {
     var swiper = this;
     bindModuleMethods(swiper, {
-      observer: _extends(_extends({}, Observer), {}, {
+      observer: _extends({}, Observer, {
         observers: []
       })
     });
@@ -1770,7 +1770,7 @@ function updateSlides() {
   }
 
   var previousSnapGridLength = swiper.snapGrid.length;
-  var previousSlidesGridLength = swiper.snapGrid.length;
+  var previousSlidesGridLength = swiper.slidesGrid.length;
   var spaceBetween = params.spaceBetween;
   var slidePosition = -offsetBefore;
   var prevSlideSize = 0;
@@ -5393,7 +5393,7 @@ var Virtual$1 = {
   create: function create() {
     var swiper = this;
     bindModuleMethods(swiper, {
-      virtual: _extends(_extends({}, Virtual), {}, {
+      virtual: _extends({}, Virtual, {
         slides: swiper.params.virtual.slides,
         cache: {}
       })
@@ -8300,7 +8300,7 @@ var A11y$1 = {
   create: function create() {
     var swiper = this;
     bindModuleMethods(swiper, {
-      a11y: _extends(_extends({}, A11y), {}, {
+      a11y: _extends({}, A11y, {
         liveRegion: $("<span class=\"" + swiper.params.a11y.notificationClass + "\" aria-live=\"assertive\" aria-atomic=\"true\"></span>")
       })
     });
@@ -8715,7 +8715,7 @@ var Autoplay$1 = {
   create: function create() {
     var swiper = this;
     bindModuleMethods(swiper, {
-      autoplay: _extends(_extends({}, Autoplay), {}, {
+      autoplay: _extends({}, Autoplay, {
         running: false,
         paused: false
       })

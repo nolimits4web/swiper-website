@@ -76,7 +76,7 @@ export default {
   create: function create() {
     var swiper = this;
     bindModuleMethods(swiper, {
-      observer: _extends(_extends({}, Observer), {}, {
+      observer: _extends({}, Observer, {
         observers: []
       })
     });

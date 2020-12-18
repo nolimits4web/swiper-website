@@ -251,7 +251,7 @@ var _default = {
   create: function create() {
     var swiper = this;
     (0, _utils.bindModuleMethods)(swiper, {
-      virtual: _extends(_extends({}, Virtual), {}, {
+      virtual: _extends({}, Virtual, {
         slides: swiper.params.virtual.slides,
         cache: {}
       })

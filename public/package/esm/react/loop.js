@@ -26,14 +26,14 @@ function calcLoopedSlides(slides, swiperParams) {
 
 function renderLoop(swiper, slides, swiperParams) {
   var modifiedSlides = slides.map(function (child, index) {
-    return React.cloneElement(child, {
+    return /*#__PURE__*/React.cloneElement(child, {
       swiper: swiper,
       'data-swiper-slide-index': index
     });
   });
 
   function duplicateSlide(child, index, position) {
-    return React.cloneElement(child, {
+    return /*#__PURE__*/React.cloneElement(child, {
       key: child.key + "-duplicate-" + index + "-" + position,
       className: (child.props.className || '') + " " + swiperParams.slideDuplicateClass
     });

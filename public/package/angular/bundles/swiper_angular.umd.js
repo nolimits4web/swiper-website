@@ -1,10 +1,12 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common'), require('swiper/core'), require('rxjs')) :
-    typeof define === 'function' && define.amd ? define('angular', ['exports', '@angular/core', '@angular/common', 'swiper/core', 'rxjs'], factory) :
-    (global = global || self, factory(global.angular = {}, global.ng.core, global.ng.common, global.Swiper, global.rxjs));
+    typeof define === 'function' && define.amd ? define('swiper_angular', ['exports', '@angular/core', '@angular/common', 'swiper/core', 'rxjs'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.swiper_angular = {}, global.ng.core, global.ng.common, global.Swiper, global.rxjs));
 }(this, (function (exports, core, common, Swiper, rxjs) { 'use strict';
 
-    Swiper = Swiper && Object.prototype.hasOwnProperty.call(Swiper, 'default') ? Swiper['default'] : Swiper;
+    function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+    var Swiper__default = /*#__PURE__*/_interopDefaultLegacy(Swiper);
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation.
@@ -481,8 +483,8 @@
             on: {},
         };
         var passedParams = {};
-        extend(params, Swiper.defaults);
-        extend(params, Swiper.extendedDefaults);
+        extend(params, Swiper__default['default'].defaults);
+        extend(params, Swiper__default['default'].extendedDefaults);
         params._emitClasses = true;
         var rest = {};
         Object.keys(obj).forEach(function (key) {
@@ -558,7 +560,8 @@
     };
 
     var SwiperComponent = /** @class */ (function () {
-        function SwiperComponent(elementRef, _changeDetectorRef) {
+        function SwiperComponent(zone, elementRef, _changeDetectorRef) {
+            this.zone = zone;
             this.elementRef = elementRef;
             this._changeDetectorRef = _changeDetectorRef;
             this.init = true;
@@ -716,6 +719,7 @@
             this.s_zoomChange = new core.EventEmitter();
             // prettier-ignore
             this.s_swiper = new core.EventEmitter();
+            this.indexChange = new core.EventEmitter();
             this._activeSlides = new rxjs.Subject();
             this.containerClasses = 'swiper-container';
             this.style = null;
@@ -763,6 +767,22 @@
             },
             set: function (val) {
                 this._virtual = setProperty(val);
+            },
+            enumerable: false,
+            configurable: true
+        });
+        Object.defineProperty(SwiperComponent.prototype, "index", {
+            set: function (index) {
+                this.setIndex(index);
+            },
+            enumerable: false,
+            configurable: true
+        });
+        Object.defineProperty(SwiperComponent.prototype, "config", {
+            set: function (val) {
+                this.updateSwiper(val);
+                var params = getParams(val).params;
+                Object.assign(this, params);
             },
             enumerable: false,
             configurable: true
@@ -851,7 +871,7 @@
         };
         SwiperComponent.prototype.initSwiper = function () {
             var _this = this;
-            var _a = getParams(this), swiperParams = _a.params, passedParams = _a.passedParams;
+            var _c = getParams(this), swiperParams = _c.params, passedParams = _c.passedParams;
             Object.assign(this, swiperParams);
             swiperParams.onAny = function (event) {
                 var args = [];
@@ -864,6 +884,9 @@
                 }
             };
             Object.assign(swiperParams.on, {
+                slideChange: function () {
+                    _this.indexChange.emit(_this.swiperRef.realIndex);
+                },
                 _containerClasses: function (swiper, classes) {
                     this.containerClasses = classes;
                 },
@@ -900,10 +923,11 @@
                     _this._changeDetectorRef.detectChanges();
                 },
             });
-            new Swiper(this.elementRef.nativeElement, swiperParams);
+            new Swiper__default['default'](this.elementRef.nativeElement, swiperParams);
         };
         SwiperComponent.prototype.updateVirtualSlides = function (virtualData) {
-            var _a;
+            var _c;
+            // TODO: type virtualData
             if (!this.swiperRef ||
                 (this.currentVirtualData &&
                     this.currentVirtualData.from === virtualData.from &&
@@ -912,9 +936,9 @@
                 return;
             }
             this.style = this.swiperRef.isHorizontal()
-                ? (_a = {},
-                    _a[this.swiperRef.rtlTranslate ? 'right' : 'left'] = virtualData.offset + "px",
-                    _a) : {
+                ? (_c = {},
+                    _c[this.swiperRef.rtlTranslate ? 'right' : 'left'] = virtualData.offset + "px",
+                    _c) : {
                 top: virtualData.offset + "px",
             };
             this.currentVirtualData = virtualData;
@@ -937,9 +961,13 @@
             if (!(changedParams && this.swiperRef && !this.swiperRef.destroyed)) {
                 return;
             }
-            var _a = this.swiperRef, currentParams = _a.params, pagination = _a.pagination, navigation = _a.navigation, scrollbar = _a.scrollbar, virtual = _a.virtual, thumbs = _a.thumbs;
+            var _c = this.swiperRef, currentParams = _c.params, pagination = _c.pagination, navigation = _c.navigation, scrollbar = _c.scrollbar, virtual = _c.virtual, thumbs = _c.thumbs;
             if (changedParams.pagination) {
-                if (this.pagination && this.pagination.el && pagination && !pagination.el) {
+                if (this.pagination &&
+                    typeof this.pagination !== 'boolean' &&
+                    this.pagination.el &&
+                    pagination &&
+                    !pagination.el) {
                     this.updateParameter('pagination', this.pagination);
                     pagination.init();
                     pagination.render();
@@ -951,7 +979,11 @@
                 }
             }
             if (changedParams.scrollbar) {
-                if (this.scrollbar && this.scrollbar.el && scrollbar && !scrollbar.el) {
+                if (this.scrollbar &&
+                    typeof this.scrollbar !== 'boolean' &&
+                    this.scrollbar.el &&
+                    scrollbar &&
+                    !scrollbar.el) {
                     this.updateParameter('scrollbar', this.scrollbar);
                     scrollbar.init();
                     scrollbar.updateSize();
@@ -964,6 +996,7 @@
             }
             if (changedParams.navigation) {
                 if (this.navigation &&
+                    typeof this.navigation !== 'boolean' &&
                     this.navigation.prevEl &&
                     this.navigation.nextEl &&
                     navigation &&
@@ -991,6 +1024,10 @@
             this.swiperRef.update();
         };
         SwiperComponent.prototype.updateSwiper = function (changedParams) {
+            var _a, _b;
+            if (changedParams.config) {
+                return;
+            }
             if (!(changedParams && this.swiperRef && !this.swiperRef.destroyed)) {
                 return;
             }
@@ -998,7 +1035,8 @@
                 if (ignoreNgOnChanges.indexOf(key) >= 0) {
                     continue;
                 }
-                this.updateParameter(key, changedParams[key].currentValue);
+                var newValue = (_b = (_a = changedParams[key]) === null || _a === void 0 ? void 0 : _a.currentValue) !== null && _b !== void 0 ? _b : changedParams[key];
+                this.updateParameter(key, newValue);
             }
             if (changedParams.allowSlideNext) {
                 this.swiperRef.allowSlideNext = this.allowSlideNext;
@@ -1024,7 +1062,7 @@
             }
             var slidesPerViewParams = this.slidesPerView;
             if (this.breakpoints) {
-                var breakpoint = Swiper.prototype.getBreakpoint(this.breakpoints);
+                var breakpoint = Swiper__default['default'].prototype.getBreakpoint(this.breakpoints);
                 var breakpointOnlyParams = breakpoint in this.breakpoints ? this.breakpoints[breakpoint] : undefined;
                 if (breakpointOnlyParams && breakpointOnlyParams.slidesPerView) {
                     slidesPerViewParams = breakpointOnlyParams.slidesPerView;
@@ -1057,6 +1095,24 @@
                 this.swiperRef.params[_key] = value;
             }
         };
+        SwiperComponent.prototype.setIndex = function (index, speed, silent) {
+            var _this = this;
+            if (!this.swiperRef) {
+                this.initialSlide = index;
+                return;
+            }
+            if (index === this.swiperRef.realIndex) {
+                return;
+            }
+            this.zone.runOutsideAngular(function () {
+                if (_this.loop) {
+                    _this.swiperRef.slideToLoop(index, speed, !silent);
+                }
+                else {
+                    _this.swiperRef.slideTo(index, speed, !silent);
+                }
+            });
+        };
         SwiperComponent.prototype.ngOnDestroy = function () {
             this.swiperRef.destroy();
         };
@@ -1065,13 +1121,14 @@
     SwiperComponent.decorators = [
         { type: core.Component, args: [{
                     selector: 'swiper, [swiper]',
-                    template: "<ng-content select=\"[slot=container-start]\"></ng-content>\n<ng-container *ngIf=\"navigation\">\n  <div class=\"swiper-button-prev\" #prevElRef></div>\n  <div class=\"swiper-button-next\" #nextElRef></div>\n</ng-container>\n<div *ngIf=\"scrollbar\" class=\"swiper-scrollbar\" #scrollbarElRef></div>\n<div *ngIf=\"pagination\" class=\"swiper-pagination\" #paginationElRef></div>\n<div [ngClass]=\"wrapperClass\">\n  <ng-content select=\"[slot=wrapper-start]\"></ng-content>\n  <ng-template\n    *ngTemplateOutlet=\"\n      slidesTemplate;\n      context: {\n        loopSlides: prependSlides,\n        key: 'prepend'\n      }\n    \"\n  ></ng-template>\n  <ng-template\n    *ngTemplateOutlet=\"\n      slidesTemplate;\n      context: {\n        loopSlides: activeSlides,\n        key: ''\n      }\n    \"\n  ></ng-template>\n  <ng-template\n    *ngTemplateOutlet=\"\n      slidesTemplate;\n      context: {\n        loopSlides: appendSlides,\n        key: 'append'\n      }\n    \"\n  ></ng-template>\n  <ng-content select=\"[slot=wrapper-end]\"></ng-content>\n</div>\n<ng-content select=\"[slow=container-end]\"></ng-content>\n\n<ng-template #slidesTemplate let-loopSlides=\"loopSlides\" let-slideKey=\"key\">\n  <div\n    *ngFor=\"let slide of loopSlides | async\"\n    [ngClass]=\"slide.classNames + ' ' + (slideKey !== '' ? slideDuplicateClass : '')\"\n    [attr.data-swiper-slide-index]=\"slide.virtualIndex ? slide.virtualIndex : slide.slideIndex\"\n    [style]=\"style\"\n  >\n    <ng-template\n      [ngTemplateOutlet]=\"slide.template\"\n      [ngTemplateOutletContext]=\"{\n        $implicit: slide.slideData\n      }\"\n    ></ng-template>\n  </div>\n</ng-template>\n",
+                    template: "<ng-content select=\"[slot=container-start]\"></ng-content>\n<ng-container *ngIf=\"navigation\">\n  <div class=\"swiper-button-prev\" #prevElRef></div>\n  <div class=\"swiper-button-next\" #nextElRef></div>\n</ng-container>\n<div *ngIf=\"scrollbar\" class=\"swiper-scrollbar\" #scrollbarElRef></div>\n<div *ngIf=\"pagination\" class=\"swiper-pagination\" #paginationElRef></div>\n<div [ngClass]=\"wrapperClass\">\n  <ng-content select=\"[slot=wrapper-start]\"></ng-content>\n  <ng-template\n    *ngTemplateOutlet=\"\n      slidesTemplate;\n      context: {\n        loopSlides: prependSlides,\n        key: 'prepend'\n      }\n    \"\n  ></ng-template>\n  <ng-template\n    *ngTemplateOutlet=\"\n      slidesTemplate;\n      context: {\n        loopSlides: activeSlides,\n        key: ''\n      }\n    \"\n  ></ng-template>\n  <ng-template\n    *ngTemplateOutlet=\"\n      slidesTemplate;\n      context: {\n        loopSlides: appendSlides,\n        key: 'append'\n      }\n    \"\n  ></ng-template>\n  <ng-content select=\"[slot=wrapper-end]\"></ng-content>\n</div>\n<ng-content select=\"[slot=container-end]\"></ng-content>\n\n<ng-template #slidesTemplate let-loopSlides=\"loopSlides\" let-slideKey=\"key\">\n  <div\n    *ngFor=\"let slide of loopSlides | async\"\n    [ngClass]=\"slide.classNames + ' ' + (slideKey !== '' ? slideDuplicateClass : '')\"\n    [attr.data-swiper-slide-index]=\"slide.virtualIndex ? slide.virtualIndex : slide.slideIndex\"\n    [style]=\"style\"\n  >\n    <ng-template\n      [ngTemplateOutlet]=\"slide.template\"\n      [ngTemplateOutletContext]=\"{\n        $implicit: slide.slideData\n      }\"\n    ></ng-template>\n  </div>\n</ng-template>\n",
                     changeDetection: core.ChangeDetectionStrategy.OnPush,
                     encapsulation: core.ViewEncapsulation.None,
                     styles: ["\n      swiper {\n        display: block;\n      }\n    "]
                 },] }
     ];
     SwiperComponent.ctorParameters = function () { return [
+        { type: core.NgZone },
         { type: core.ElementRef },
         { type: core.ChangeDetectorRef }
     ]; };
@@ -1180,13 +1237,15 @@
         keyboard: [{ type: core.Input }],
         lazy: [{ type: core.Input }],
         mousewheel: [{ type: core.Input }],
-        navigation: [{ type: core.Input }],
-        pagination: [{ type: core.Input }],
         parallax: [{ type: core.Input }],
-        scrollbar: [{ type: core.Input }],
-        virtual: [{ type: core.Input }],
         thumbs: [{ type: core.Input }],
         zoom: [{ type: core.Input }],
+        navigation: [{ type: core.Input }],
+        pagination: [{ type: core.Input }],
+        scrollbar: [{ type: core.Input }],
+        virtual: [{ type: core.Input }],
+        index: [{ type: core.Input }],
+        config: [{ type: core.Input }],
         s__beforeBreakpoint: [{ type: core.Output, args: ['_beforeBreakpoint',] }],
         s__containerClasses: [{ type: core.Output, args: ['_containerClasses',] }],
         s__slideClass: [{ type: core.Output, args: ['_slideClass',] }],
@@ -1263,6 +1322,7 @@
         s_update: [{ type: core.Output, args: ['update',] }],
         s_zoomChange: [{ type: core.Output, args: ['zoomChange',] }],
         s_swiper: [{ type: core.Output, args: ['swiper',] }],
+        indexChange: [{ type: core.Output }],
         prevElRef: [{ type: core.ViewChild, args: ['prevElRef', { static: false },] }],
         nextElRef: [{ type: core.ViewChild, args: ['nextElRef', { static: false },] }],
         scrollbarElRef: [{ type: core.ViewChild, args: ['scrollbarElRef', { static: false },] }],
@@ -1299,4 +1359,4 @@
     Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
-//# sourceMappingURL=angular.umd.js.map
+//# sourceMappingURL=swiper_angular.umd.js.map

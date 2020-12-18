@@ -46,7 +46,7 @@ function updateSlides() {
   }
 
   var previousSnapGridLength = swiper.snapGrid.length;
-  var previousSlidesGridLength = swiper.snapGrid.length;
+  var previousSlidesGridLength = swiper.slidesGrid.length;
   var spaceBetween = params.spaceBetween;
   var slidePosition = -offsetBefore;
   var prevSlideSize = 0;

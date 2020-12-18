@@ -83,7 +83,7 @@ var _default = {
   create: function create() {
     var swiper = this;
     (0, _utils.bindModuleMethods)(swiper, {
-      observer: _extends(_extends({}, Observer), {}, {
+      observer: _extends({}, Observer, {
         observers: []
       })
     });

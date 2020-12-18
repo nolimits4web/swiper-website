@@ -5,7 +5,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { useRef, useState, forwardRef } from 'react';
 import { uniqueClasses } from './utils';
 import { useIsomorphicLayoutEffect } from './use-isomorphic-layout-effect';
-var SwiperSlide = forwardRef(function (_temp, externalRef) {
+var SwiperSlide = /*#__PURE__*/forwardRef(function (_temp, externalRef) {
   var _ref = _temp === void 0 ? {} : _temp,
       _ref$tag = _ref.tag,
       Tag = _ref$tag === void 0 ? 'div' : _ref$tag,

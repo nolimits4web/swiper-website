@@ -242,7 +242,7 @@ export default {
   create: function create() {
     var swiper = this;
     bindModuleMethods(swiper, {
-      virtual: _extends(_extends({}, Virtual), {}, {
+      virtual: _extends({}, Virtual, {
         slides: swiper.params.virtual.slides,
         cache: {}
       })

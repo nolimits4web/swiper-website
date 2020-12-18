@@ -264,7 +264,7 @@ export default {
   create: function create() {
     var swiper = this;
     bindModuleMethods(swiper, {
-      a11y: _extends(_extends({}, A11y), {}, {
+      a11y: _extends({}, A11y, {
         liveRegion: $("<span class=\"" + swiper.params.a11y.notificationClass + "\" aria-live=\"assertive\" aria-atomic=\"true\"></span>")
       })
     });

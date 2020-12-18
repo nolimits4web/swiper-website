@@ -36,7 +36,7 @@ function renderLoop(swiperRef, slides, swiperParams) {
 
   function duplicateSlide(child, index, position) {
     if (!child.props) child.props = {};
-    return h(child.type, _extends(_extends({}, child.props), {}, {
+    return h(child.type, _extends({}, child.props, {
       key: child.key + "-duplicate-" + index + "-" + position,
       class: (child.props.className || '') + " " + swiperParams.slideDuplicateClass + " " + (child.props.class || '')
     }), child.children);

@@ -273,7 +273,7 @@ var _default = {
   create: function create() {
     var swiper = this;
     (0, _utils.bindModuleMethods)(swiper, {
-      a11y: _extends(_extends({}, A11y), {}, {
+      a11y: _extends({}, A11y, {
         liveRegion: (0, _dom.default)("<span class=\"" + swiper.params.a11y.notificationClass + "\" aria-live=\"assertive\" aria-atomic=\"true\"></span>")
       })
     });

@@ -21,7 +21,7 @@ function renderVirtual(swiper, slides, virtualData) {
   return slides.filter(function (child, index) {
     return index >= virtualData.from && index <= virtualData.to;
   }).map(function (child) {
-    return React.cloneElement(child, {
+    return /*#__PURE__*/React.cloneElement(child, {
       swiper: swiper,
       style: style
     });

@@ -131,7 +131,7 @@ export default {
   create: function create() {
     var swiper = this;
     bindModuleMethods(swiper, {
-      autoplay: _extends(_extends({}, Autoplay), {}, {
+      autoplay: _extends({}, Autoplay, {
         running: false,
         paused: false
       })
