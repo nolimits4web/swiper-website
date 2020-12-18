@@ -6,7 +6,7 @@
   "author": "Vladimir Kharlampidi",
   "license": "",
   "homepage": "https://swiperjs.com",
-  "releaseVersion": "6.4.3",
+  "releaseVersion": "6.4.4",
   "releaseDate": "December 18, 2020",
   "engines": {
     "node": ">= 0.10.0"

@@ -1,5 +1,5 @@
 /**
- * Swiper Svelte 6.4.3
+ * Swiper Svelte 6.4.4
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
