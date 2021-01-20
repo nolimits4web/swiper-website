@@ -38,7 +38,8 @@ import {
 	needsScrollbar,
 	needsNavigation,
 	needsPagination,
-	uniqueClasses
+	uniqueClasses,
+	extend
 } from "./utils";
 
 import { getChangedParams } from "./get-changed-params";
@@ -54,7 +55,7 @@ const get_wrapper_start_slot_context = ctx => ({ virtualData: /*virtualData*/ ct
 const get_content_start_slot_changes = dirty => ({ virtualData: dirty & /*virtualData*/ 512 });
 const get_content_start_slot_context = ctx => ({ virtualData: /*virtualData*/ ctx[9] });
 
-// (142:2) {#if needsNavigation(swiperParams)}
+// (146:2) {#if needsNavigation(swiperParams)}
 function create_if_block_2(ctx) {
 	let div0;
 	let t;
@@ -86,7 +87,7 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (146:2) {#if needsScrollbar(swiperParams)}
+// (150:2) {#if needsScrollbar(swiperParams)}
 function create_if_block_1(ctx) {
 	let div;
 
@@ -107,7 +108,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (149:2) {#if needsPagination(swiperParams)}
+// (153:2) {#if needsPagination(swiperParams)}
 function create_if_block(ctx) {
 	let div;
 
@@ -415,16 +416,20 @@ function instance($$self, $$props, $$invalidate) {
 			swiperInstance = _swiper;
 
 			if (_swiper.virtual && _swiper.params.virtual.enabled) {
-				_swiper.params.virtual.cache = false;
-				_swiper.params.virtual.renderExternalUpdate = false;
+				const extendWith = {
+					cache: false,
+					renderExternal: data => {
+						setVirtualData(data);
 
-				_swiper.params.virtual.renderExternal = data => {
-					setVirtualData(data);
-
-					if (swiperParams.virtual && swiperParams.virtual.renderExternal) {
-						swiperParams.virtual.renderExternal(data);
-					}
+						if (swiperParams.virtual && swiperParams.virtual.renderExternal) {
+							swiperParams.virtual.renderExternal(data);
+						}
+					},
+					renderExternalUpdate: false
 				};
+
+				extend(_swiper.params.virtual, extendWith);
+				extend(_swiper.originalParams.virtual, extendWith);
 			}
 
 			dispatch("swiper", [_swiper]);

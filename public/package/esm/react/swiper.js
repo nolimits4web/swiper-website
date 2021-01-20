@@ -5,7 +5,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { useRef, useState, useEffect, forwardRef } from 'react';
 import { getParams } from './get-params';
 import { initSwiper } from './init-swiper';
-import { needsScrollbar, needsNavigation, needsPagination, uniqueClasses } from './utils';
+import { needsScrollbar, needsNavigation, needsPagination, uniqueClasses, extend } from './utils';
 import { renderLoop, calcLoopedSlides } from './loop';
 import { getChangedParams } from './get-changed-params';
 import { getChildren } from './get-children';
@@ -79,9 +79,13 @@ var Swiper = /*#__PURE__*/forwardRef(function (_temp, externalElRef) {
 
       if (swiper.virtual && swiper.params.virtual.enabled) {
         swiper.virtual.slides = slides;
-        swiper.params.virtual.cache = false;
-        swiper.params.virtual.renderExternal = setVirtualData;
-        swiper.params.virtual.renderExternalUpdate = false;
+        var extendWith = {
+          cache: false,
+          renderExternal: setVirtualData,
+          renderExternalUpdate: false
+        };
+        extend(swiper.params.virtual, extendWith);
+        extend(swiper.originalParams.virtual, extendWith);
       }
     }
   });

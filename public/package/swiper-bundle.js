@@ -1,13 +1,13 @@
 /**
- * Swiper 6.4.5
+ * Swiper 6.4.6
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
- * Copyright 2014-2020 Vladimir Kharlampidi
+ * Copyright 2014-2021 Vladimir Kharlampidi
  *
  * Released under the MIT License
  *
- * Released on: December 18, 2020
+ * Released on: January 20, 2021
  */
 
 (function (global, factory) {
@@ -2751,7 +2751,17 @@
 
     if (params.normalizeSlideIndex) {
       for (var i = 0; i < slidesGrid.length; i += 1) {
-        if (-Math.floor(translate * 100) >= Math.floor(slidesGrid[i] * 100)) {
+        var normalizedTranslate = -Math.floor(translate * 100);
+        var normalizedGird = Math.floor(slidesGrid[i] * 100);
+        var normalizedGridNext = Math.floor(slidesGrid[i + 1] * 100);
+
+        if (typeof slidesGrid[i + 1] !== 'undefined') {
+          if (normalizedTranslate >= normalizedGird && normalizedTranslate < normalizedGridNext - (normalizedGridNext - normalizedGird) / 2) {
+            slideIndex = i;
+          } else if (normalizedTranslate >= normalizedGird && normalizedTranslate < normalizedGridNext) {
+            slideIndex = i + 1;
+          }
+        } else if (normalizedTranslate >= normalizedGird) {
           slideIndex = i;
         }
       }
@@ -3434,7 +3444,11 @@
     var edgeSwipeThreshold = params.edgeSwipeThreshold || params.iOSEdgeSwipeThreshold;
 
     if (edgeSwipeDetection && (startX <= edgeSwipeThreshold || startX >= window.innerWidth - edgeSwipeThreshold)) {
-      return;
+      if (edgeSwipeDetection === 'prevent') {
+        event.preventDefault();
+      } else {
+        return;
+      }
     }
 
     extend$1(data, {

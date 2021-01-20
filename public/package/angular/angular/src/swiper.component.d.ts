@@ -20,7 +20,7 @@ export declare class SwiperComponent implements OnInit {
     preventInteractionOnTransition: SwiperOptions['preventInteractionOnTransition'];
     userAgent: SwiperOptions['userAgent'];
     url: SwiperOptions['url'];
-    edgeSwipeDetection: boolean;
+    edgeSwipeDetection: boolean | string;
     edgeSwipeThreshold: number;
     freeMode: SwiperOptions['freeMode'];
     freeModeMomentum: SwiperOptions['freeModeMomentum'];

@@ -900,11 +900,15 @@
                     }
                     if (swiper.virtual && swiper.params.virtual.enabled) {
                         swiper.virtual.slides = _this.slides;
-                        swiper.params.virtual.cache = false;
-                        swiper.params.virtual.renderExternal = function (data) {
-                            _this.updateVirtualSlides(data);
+                        var extendWith = {
+                            cache: false,
+                            renderExternal: function (data) {
+                                _this.updateVirtualSlides(data);
+                            },
+                            renderExternalUpdate: false,
                         };
-                        swiper.params.virtual.renderExternalUpdate = false;
+                        extend(swiper.params.virtual, extendWith);
+                        extend(swiper.originalParams.virtual, extendWith);
                     }
                     _this._changeDetectorRef.detectChanges();
                 },

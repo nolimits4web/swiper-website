@@ -98,9 +98,13 @@ var Swiper = /*#__PURE__*/(0, _react.forwardRef)(function (_temp, externalElRef)
 
       if (swiper.virtual && swiper.params.virtual.enabled) {
         swiper.virtual.slides = slides;
-        swiper.params.virtual.cache = false;
-        swiper.params.virtual.renderExternal = setVirtualData;
-        swiper.params.virtual.renderExternalUpdate = false;
+        var extendWith = {
+          cache: false,
+          renderExternal: setVirtualData,
+          renderExternalUpdate: false
+        };
+        (0, _utils.extend)(swiper.params.virtual, extendWith);
+        (0, _utils.extend)(swiper.originalParams.virtual, extendWith);
       }
     }
   });

@@ -278,12 +278,12 @@ table.params-table
       td false
       td If enabled, then propagation of "touchmove" will be stopped
     tr
-      td iOSEdgeSwipeDetection
-      td boolean
+      td edgeSwipeDetection
+      td boolean<br>string
       td false
-      td Enable to release Swiper events for swipe-to-go-back work in iOS UIWebView
+      td Enable to release Swiper events for swipe-to-go-back work in iOS UIWebView. When set to <code>'prevent'</code>, it will prevent system swipe-back navigation instead.
     tr
-      td iOSEdgeSwipeThreshold
+      td edgeSwipeThreshold
       td number
       td 20
       td Area (in px) from left edge of the screen to release touch events for swipe-to-go-back in iOS UIWebView

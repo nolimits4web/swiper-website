@@ -85,7 +85,7 @@ var Swiper = {
       default: undefined
     },
     edgeSwipeDetection: {
-      type: Boolean,
+      type: [Boolean, String],
       default: undefined
     },
     edgeSwipeThreshold: {
@@ -540,13 +540,15 @@ var Swiper = {
 
         if (swiper.virtual && swiper.params.virtual.enabled) {
           swiper.virtual.slides = slidesRef.value;
-          swiper.params.virtual.cache = false;
-
-          swiper.params.virtual.renderExternal = function (data) {
-            virtualData.value = data;
+          var extendWith = {
+            cache: false,
+            renderExternal: function renderExternal(data) {
+              virtualData.value = data;
+            },
+            renderExternalUpdate: false
           };
-
-          swiper.params.virtual.renderExternalUpdate = false;
+          (0, _utils.extend)(swiper.params.virtual, extendWith);
+          (0, _utils.extend)(swiper.originalParams.virtual, extendWith);
         }
       }
     });
