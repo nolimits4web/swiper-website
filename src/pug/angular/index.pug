@@ -239,21 +239,16 @@ block content
           td
           td Actual swiper slide index. Required to be set for virtual slides
 
-    .important-note
-      p
-        b Swiper Angular forces the use of `ng-template` in favor of supporting full featured loop mode.
     ```html
       <swiper>
         <ng-template swiperSlide>
           <div>Slide</div>
         </ng-template>
 
-        <ng-container *ngFor="slide of slides">
-          <ng-template swiperSlide>
-            <div>Slide</div>
-          </ng-template>
-        </ng-container>
-      </swiper>
+        <ng-template swiperSlide *ngFor="slide of slides">
+          <div>Slide</div>
+        </ng-template>
+    </swiper>
     ```
 
     h2.no-border#swiperslide-variables `SwiperSlideDirective` variables
@@ -327,9 +322,7 @@ block content
       @Component({
         selector: 'app-swiper-virtual-example',
         template: ` <swiper [slidesPerView]="3" [spaceBetween]="50" [virtual]="true">
-          <ng-container *ngFor="let slide of slides; index as i">
-            <ng-template swiperSlide>Slide {{ slide }}</ng-template>
-          </ng-container>
+          <ng-template swiperSlide *ngFor="let slide of slides; index as i">Slide {{ slide }}</ng-template>
         </swiper>`,
       })
       export class AppComponent {
