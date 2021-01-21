@@ -212,6 +212,12 @@ class SwiperSlideDirective {
             isDuplicate: false,
         };
     }
+    set zoom(val) {
+        this._zoom = coerceBooleanProperty(val);
+    }
+    get zoom() {
+        return this._zoom;
+    }
     get classNames() {
         return this._classNames;
     }
@@ -234,14 +240,15 @@ class SwiperSlideDirective {
 }
 SwiperSlideDirective.decorators = [
     { type: Directive, args: [{
-                selector: '[swiperSlide]',
+                selector: 'ng-template[swiperSlide]',
             },] }
 ];
 SwiperSlideDirective.ctorParameters = () => [
     { type: TemplateRef }
 ];
 SwiperSlideDirective.propDecorators = {
-    virtualIndex: [{ type: Input }]
+    virtualIndex: [{ type: Input }],
+    zoom: [{ type: Input }]
 };
 
 class SwiperComponent {
@@ -252,6 +259,9 @@ class SwiperComponent {
         this.init = true;
         this.slideClass = 'swiper-slide';
         this.wrapperClass = 'swiper-wrapper';
+        this.showNavigation = true;
+        this.showPagination = true;
+        this.showScrollbar = true;
         // prettier-ignore
         this.s__beforeBreakpoint = new EventEmitter();
         // prettier-ignore
@@ -410,26 +420,43 @@ class SwiperComponent {
         this.style = null;
     }
     set navigation(val) {
+        var _a, _b, _c, _d;
+        const currentNext = typeof this._navigation !== 'boolean' ? (_a = this._navigation) === null || _a === void 0 ? void 0 : _a.nextEl : null;
+        const currentPrev = typeof this._navigation !== 'boolean' ? (_b = this._navigation) === null || _b === void 0 ? void 0 : _b.prevEl : null;
         this._navigation = setProperty(val, {
-            nextEl: null,
-            prevEl: null,
+            nextEl: currentNext || null,
+            prevEl: currentPrev || null,
         });
+        if (typeof this._navigation !== 'boolean' &&
+            (typeof ((_c = this._navigation) === null || _c === void 0 ? void 0 : _c.nextEl) === 'string' || typeof ((_d = this._navigation) === null || _d === void 0 ? void 0 : _d.prevEl) === 'string')) {
+            this.showNavigation = false;
+        }
     }
     get navigation() {
         return this._navigation;
     }
     set pagination(val) {
+        var _a, _b;
+        const current = typeof this._pagination !== 'boolean' ? (_a = this._pagination) === null || _a === void 0 ? void 0 : _a.el : null;
         this._pagination = setProperty(val, {
-            el: null,
+            el: current || null,
         });
+        if (typeof this._pagination !== 'boolean' && typeof ((_b = this._pagination) === null || _b === void 0 ? void 0 : _b.el) === 'string') {
+            this.showPagination = false;
+        }
     }
     get pagination() {
         return this._pagination;
     }
     set scrollbar(val) {
+        var _a, _b;
+        const current = typeof this._scrollbar !== 'boolean' ? (_a = this._scrollbar) === null || _a === void 0 ? void 0 : _a.el : null;
         this._scrollbar = setProperty(val, {
-            el: null,
+            el: current || null,
         });
+        if (typeof this._scrollbar !== 'boolean' && typeof ((_b = this._scrollbar) === null || _b === void 0 ? void 0 : _b.el) === 'string') {
+            this.showScrollbar = false;
+        }
     }
     get scrollbar() {
         return this._scrollbar;
@@ -461,6 +488,7 @@ class SwiperComponent {
         this._setElement(el, this.pagination, 'pagination');
     }
     set slidesEl(val) {
+        var _a;
         this.slides = val.map((slide, index) => {
             slide.slideIndex = index;
             slide.classNames = this.slideClass;
@@ -473,6 +501,11 @@ class SwiperComponent {
             this.prependSlides = of(this.slides.slice(this.slides.length - this.loopedSlides));
             this.appendSlides = of(this.slides.slice(0, this.loopedSlides));
         }
+        if (this.swiperRef) {
+            (_a = this.swiperRef) === null || _a === void 0 ? void 0 : _a.destroy();
+            this.initSwiper();
+        }
+        this._changeDetectorRef.markForCheck();
     }
     get activeSlides() {
         if (this.virtual) {
@@ -481,10 +514,10 @@ class SwiperComponent {
         return of(this.slides);
     }
     _setElement(el, ref, update, key = 'el') {
-        if (!el && !ref) {
+        if (!el || !ref) {
             return;
         }
-        if (ref) {
+        if (ref && el.nativeElement) {
             if (ref[key] === el.nativeElement) {
                 return;
             }
@@ -543,7 +576,7 @@ class SwiperComponent {
                 this._changeDetectorRef.detectChanges();
             },
             _slideClass: (_, el, classNames) => {
-                const slideIndex = parseInt(el.dataset.swiperSlideIndex);
+                const slideIndex = parseInt(el.getAttribute('data-swiper-slide-index'));
                 if (this.virtual) {
                     const virtualSlide = this.slides.find((item) => {
                         return item.virtualIndex && item.virtualIndex === slideIndex;
@@ -747,13 +780,14 @@ class SwiperComponent {
         });
     }
     ngOnDestroy() {
-        this.swiperRef.destroy();
+        var _a;
+        (_a = this.swiperRef) === null || _a === void 0 ? void 0 : _a.destroy();
     }
 }
 SwiperComponent.decorators = [
     { type: Component, args: [{
                 selector: 'swiper, [swiper]',
-                template: "<ng-content select=\"[slot=container-start]\"></ng-content>\n<ng-container *ngIf=\"navigation\">\n  <div class=\"swiper-button-prev\" #prevElRef></div>\n  <div class=\"swiper-button-next\" #nextElRef></div>\n</ng-container>\n<div *ngIf=\"scrollbar\" class=\"swiper-scrollbar\" #scrollbarElRef></div>\n<div *ngIf=\"pagination\" class=\"swiper-pagination\" #paginationElRef></div>\n<div [ngClass]=\"wrapperClass\">\n  <ng-content select=\"[slot=wrapper-start]\"></ng-content>\n  <ng-template\n    *ngTemplateOutlet=\"\n      slidesTemplate;\n      context: {\n        loopSlides: prependSlides,\n        key: 'prepend'\n      }\n    \"\n  ></ng-template>\n  <ng-template\n    *ngTemplateOutlet=\"\n      slidesTemplate;\n      context: {\n        loopSlides: activeSlides,\n        key: ''\n      }\n    \"\n  ></ng-template>\n  <ng-template\n    *ngTemplateOutlet=\"\n      slidesTemplate;\n      context: {\n        loopSlides: appendSlides,\n        key: 'append'\n      }\n    \"\n  ></ng-template>\n  <ng-content select=\"[slot=wrapper-end]\"></ng-content>\n</div>\n<ng-content select=\"[slot=container-end]\"></ng-content>\n\n<ng-template #slidesTemplate let-loopSlides=\"loopSlides\" let-slideKey=\"key\">\n  <div\n    *ngFor=\"let slide of loopSlides | async\"\n    [ngClass]=\"slide.classNames + ' ' + (slideKey !== '' ? slideDuplicateClass : '')\"\n    [attr.data-swiper-slide-index]=\"slide.virtualIndex ? slide.virtualIndex : slide.slideIndex\"\n    [style]=\"style\"\n  >\n    <ng-template\n      [ngTemplateOutlet]=\"slide.template\"\n      [ngTemplateOutletContext]=\"{\n        $implicit: slide.slideData\n      }\"\n    ></ng-template>\n  </div>\n</ng-template>\n",
+                template: "<ng-content select=\"[slot=container-start]\"></ng-content>\n<ng-container *ngIf=\"navigation && showNavigation\">\n  <div class=\"swiper-button-prev\" #prevElRef></div>\n  <div class=\"swiper-button-next\" #nextElRef></div>\n</ng-container>\n<div *ngIf=\"scrollbar && showScrollbar\" class=\"swiper-scrollbar\" #scrollbarElRef></div>\n<div *ngIf=\"pagination && showPagination\" class=\"swiper-pagination\" #paginationElRef></div>\n<div [ngClass]=\"wrapperClass\">\n  <ng-content select=\"[slot=wrapper-start]\"></ng-content>\n  <ng-template\n    *ngTemplateOutlet=\"\n      slidesTemplate;\n      context: {\n        loopSlides: prependSlides,\n        key: 'prepend'\n      }\n    \"\n  ></ng-template>\n  <ng-template\n    *ngTemplateOutlet=\"\n      slidesTemplate;\n      context: {\n        loopSlides: activeSlides,\n        key: ''\n      }\n    \"\n  ></ng-template>\n  <ng-template\n    *ngTemplateOutlet=\"\n      slidesTemplate;\n      context: {\n        loopSlides: appendSlides,\n        key: 'append'\n      }\n    \"\n  ></ng-template>\n  <ng-content select=\"[slot=wrapper-end]\"></ng-content>\n</div>\n<ng-content select=\"[slot=container-end]\"></ng-content>\n\n<ng-template #slidesTemplate let-loopSlides=\"loopSlides\" let-slideKey=\"key\">\n  <div\n    *ngFor=\"let slide of loopSlides | async\"\n    [ngClass]=\"slide.classNames + ' ' + (slideKey !== '' ? slideDuplicateClass : '')\"\n    [attr.data-swiper-slide-index]=\"slide.virtualIndex ? slide.virtualIndex : slide.slideIndex\"\n    [style]=\"style\"\n    [ngSwitch]=\"slide.zoom\"\n  >\n    <div *ngSwitchCase=\"true\" class=\"swiper-zoom-container\">\n      <ng-template\n        [ngTemplateOutlet]=\"slide.template\"\n        [ngTemplateOutletContext]=\"{\n          $implicit: slide.slideData\n        }\"\n      ></ng-template>\n    </div>\n    <ng-container *ngSwitchDefault>\n      <ng-template\n        [ngTemplateOutlet]=\"slide.template\"\n        [ngTemplateOutletContext]=\"{\n          $implicit: slide.slideData\n        }\"\n      ></ng-template>\n    </ng-container>\n  </div>\n</ng-template>\n",
                 changeDetection: ChangeDetectionStrategy.OnPush,
                 encapsulation: ViewEncapsulation.None,
                 styles: [`

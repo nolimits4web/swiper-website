@@ -117,12 +117,15 @@ export declare class SwiperComponent implements OnInit {
     set navigation(val: boolean | NavigationOptions);
     get navigation(): boolean | NavigationOptions;
     private _navigation;
+    showNavigation: boolean;
     set pagination(val: boolean | PaginationOptions);
     get pagination(): boolean | PaginationOptions;
     private _pagination;
+    showPagination: boolean;
     set scrollbar(val: boolean | ScrollbarOptions);
     get scrollbar(): boolean | ScrollbarOptions;
     private _scrollbar;
+    showScrollbar: boolean;
     set virtual(val: boolean | VirtualOptions);
     get virtual(): boolean | VirtualOptions;
     private _virtual;

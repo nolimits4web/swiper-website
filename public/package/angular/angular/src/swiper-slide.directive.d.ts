@@ -2,6 +2,9 @@ import { TemplateRef } from '@angular/core';
 export declare class SwiperSlideDirective {
     template: TemplateRef<any>;
     virtualIndex: number;
+    set zoom(val: boolean);
+    get zoom(): boolean;
+    private _zoom;
     slideIndex: number;
     get classNames(): string;
     set classNames(val: string);
