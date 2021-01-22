@@ -1,5 +1,5 @@
 /**
- * Swiper 6.4.7
+ * Swiper 6.4.8
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: January 21, 2021
+ * Released on: January 22, 2021
  */
 
 @font-face {
@@ -55,6 +55,12 @@
 .swiper-container-free-mode > .swiper-wrapper {
   transition-timing-function: ease-out;
   margin: 0 auto;
+}
+.swiper-container-pointer-events {
+  touch-action: pan-y;
+}
+.swiper-container-pointer-events.swiper-container-vertical {
+  touch-action: pan-x;
 }
 .swiper-slide {
   flex-shrink: 0;

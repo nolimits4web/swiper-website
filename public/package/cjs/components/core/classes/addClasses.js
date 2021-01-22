@@ -9,10 +9,15 @@ function addClasses() {
       params = swiper.params,
       rtl = swiper.rtl,
       $el = swiper.$el,
-      device = swiper.device;
+      device = swiper.device,
+      support = swiper.support;
   var suffixes = [];
   suffixes.push('initialized');
   suffixes.push(params.direction);
+
+  if (support.pointerEvents && !support.touch) {
+    suffixes.push('pointer-events');
+  }
 
   if (params.freeMode) {
     suffixes.push('free-mode');

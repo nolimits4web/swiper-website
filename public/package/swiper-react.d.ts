@@ -108,42 +108,42 @@ interface Swiper extends SwiperOptions {
   onTransitionEnd?: (swiper: SwiperClass) => void;
 
   /**
-   * Event will be fired when user touch Swiper. Receives 'touchstart' event as an arguments.
+   * Event will be fired when user touch Swiper. Receives `touchstart` event as an arguments.
    */
   onTouchStart?: (swiper: SwiperClass, event: MouseEvent | TouchEvent | PointerEvent) => void;
 
   /**
-   * Event will be fired when user touch and move finger over Swiper. Receives 'touchmove' event as an arguments.
+   * Event will be fired when user touch and move finger over Swiper. Receives `touchmove` event as an arguments.
    */
   onTouchMove?: (swiper: SwiperClass, event: MouseEvent | TouchEvent | PointerEvent) => void;
 
   /**
-   * Event will be fired when user touch and move finger over Swiper in direction opposite to direction parameter. Receives 'touchmove' event as an arguments.
+   * Event will be fired when user touch and move finger over Swiper in direction opposite to direction parameter. Receives `touchmove` event as an arguments.
    */
   onTouchMoveOpposite?: (swiper: SwiperClass, event: MouseEvent | TouchEvent | PointerEvent) => void;
 
   /**
-   * Event will be fired when user touch and move finger over Swiper and move it. Receives 'touchmove' event as an arguments.
+   * Event will be fired when user touch and move finger over Swiper and move it. Receives `touchmove` event as an arguments.
    */
   onSliderMove?: (swiper: SwiperClass, event: MouseEvent | TouchEvent | PointerEvent) => void;
 
   /**
-   * Event will be fired when user release Swiper. Receives 'touchend' event as an arguments.
+   * Event will be fired when user release Swiper. Receives `touchend` event as an arguments.
    */
   onTouchEnd?: (swiper: SwiperClass, event: MouseEvent | TouchEvent | PointerEvent) => void;
 
   /**
-   * Event will be fired when user click/tap on Swiper. Receives 'touchend' event as an arguments.
+   * Event will be fired when user click/tap on Swiper. Receives `touchend` event as an arguments.
    */
   onClick?: (swiper: SwiperClass, event: MouseEvent | TouchEvent | PointerEvent) => void;
 
   /**
-   * Event will be fired when user click/tap on Swiper. Receives 'touchend' event as an arguments.
+   * Event will be fired when user click/tap on Swiper. Receives `touchend` event as an arguments.
    */
   onTap?: (swiper: SwiperClass, event: MouseEvent | TouchEvent | PointerEvent) => void;
 
   /**
-   * Event will be fired when user double tap on Swiper's container. Receives 'touchend' event as an arguments
+   * Event will be fired when user double tap on Swiper's container. Receives `touchend` event as an arguments
    */
   onDoubleTap?: (swiper: SwiperClass, event: MouseEvent | TouchEvent | PointerEvent) => void;
 
@@ -381,7 +381,7 @@ interface Swiper extends SwiperOptions {
   onScrollbarDragEnd?: (swiper: SwiperClass, event: MouseEvent | TouchEvent | PointerEvent) => void;/**
    * Event will be fired on zoom change
    */
-  onZoomChange?: (swiper: SwiperClass, value: number, imageEl: HTMLElement, slideEl: HTMLElement) => void;
+  onZoomChange?: (swiper: SwiperClass, scale: number, imageEl: HTMLElement, slideEl: HTMLElement) => void;
 }
 
 interface SwiperSlide {
