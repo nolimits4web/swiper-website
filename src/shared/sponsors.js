@@ -6,11 +6,14 @@ export default [
     src: 'sponsors/codersrank.svg',
     src_h: 'sponsors/codersrank-h.svg',
     width: '200',
+    height: '85',
+    height_h: '30',
   },
   {
     href: 'https://leaderboard.tech',
     title: 'Developers Leaderboard',
     src: 'sponsors/developers-leaderboard.svg',
     width: '300',
+    height: '70',
   },
 ];
