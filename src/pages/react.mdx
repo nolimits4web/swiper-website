@@ -1,0 +1,426 @@
+---
+title: Swiper React Components
+---
+
+## Installation
+
+Swiper React is available only via NPM as a part of the main Swiper library:
+
+```
+  npm i swiper
+```
+
+## Usage
+
+`swiper/react` exports 2 components: `Swiper` and `SwiperSlide`:
+
+```jsx
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/swiper.scss';
+
+export default () => {
+  return (
+    <Swiper
+      spaceBetween={50}
+      slidesPerView={3}
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => console.log(swiper)}
+    >
+      <SwiperSlide>Slide 1</SwiperSlide>
+      <SwiperSlide>Slide 2</SwiperSlide>
+      <SwiperSlide>Slide 3</SwiperSlide>
+      <SwiperSlide>Slide 4</SwiperSlide>
+      ...
+    </Swiper>
+  );
+};
+```
+
+<div className="important-note">
+  By default Swiper React uses core version of Swiper (without any additional
+  components). If you want to use Navigation, Pagination and{' '}
+  <a href="/api/#custom-build">other components</a>, you have to install them
+  first. Here is the list of additional modules imports:
+</div>
+
+- <code>Virtual</code> - Virtual Slides module
+- <code>Keyboard</code> - Keyboard Control module
+- <code>Mousewheel</code> - Mousewheel Control module
+- <code>Navigation</code> - Navigation module
+- <code>Pagination</code> - Pagination module
+- <code>Scrollbar</code> - Scrollbar module
+- <code>Parallax</code> - Parallax module
+- <code>Zoom</code> - Zoom module
+- <code>Lazy</code> - Lazy module
+- <code>Controller</code> - Controller module
+- <code>A11y</code> - Accessibility module
+- <code>History</code> - History Navigation module
+- <code>HashNavigation</code> - Hash Navigation module
+- <code>Autoplay</code> - Autoplay module
+- <code>EffectFade</code> - Fade Effect module
+- <code>EffectCube</code> - Cube Effect module
+- <code>EffectFlip</code> - Flip Effect module
+- <code>EffectCoverflow</code> - Coverflow Effect module
+- <code>Thumbs</code> - Thumbs module
+
+```jsx
+// import Swiper core and required components
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/swiper.scss';
+import 'swiper/components/navigation/navigation.scss';
+import 'swiper/components/pagination/pagination.scss';
+import 'swiper/components/scrollbar/scrollbar.scss';
+
+// install Swiper components
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+
+export default () => {
+  return (
+    <Swiper
+      spaceBetween={50}
+      slidesPerView={3}
+      navigation
+      pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
+      onSwiper={(swiper) => console.log(swiper)}
+      onSlideChange={() => console.log('slide change')}
+    >
+      <SwiperSlide>Slide 1</SwiperSlide>
+      <SwiperSlide>Slide 2</SwiperSlide>
+      <SwiperSlide>Slide 3</SwiperSlide>
+      <SwiperSlide>Slide 4</SwiperSlide>
+      ...
+    </Swiper>
+  );
+};
+```
+
+<div className="important-note">
+  Note, Swiper React component will create required elements for Navigation,
+  Pagination and Scrollbar if you pass these params without specifying its
+  elements (e.g. without <code>navigation.nextEl</code>,{' '}
+  <code>pagination.el</code>, etc.)
+</div>
+
+## Styles
+
+Swiper package contains different sets of CSS, Less and SCSS styles:
+
+### CSS Styles
+
+CSS styles available only for bundle version:
+
+- `swiper-bundle.css` - all Swiper styles including all components styles (like Navigation, Pagination, etc.)
+- `swiper-bundle.min.css` - same as previous but minified
+
+### Less Styles
+
+Less styles are separate styles for core version and components:
+
+- `swiper.less` - only core Swiper styles
+- `components/a11y/a11y.less` - styles required for A11y component
+- `components/controller/controller.less` - styles required for Controller component
+- `components/effect-coverflow/effect-coverflow.less` - styles required for Coveflow Effect component
+- `components/effect-cube/effect-cube.less` - styles required for Cube Effect component
+- `components/effect-fade/effect-fade.less` - styles required for Fade Effect component
+- `components/effect-flip/effect-flip.less` - styles required for Flip Effect component
+- `components/lazy/lazy.less` - styles required for Lazy component
+- `components/navigation/navigation.less` - styles required for Navigation component
+- `components/pagination/pagination.less` - styles required for Pagination component
+- `components/scrollbar/scrollbar.less` - styles required for Scrollbar component
+- `components/thumbs/thumbs.less` - styles required for Thumbs component
+- `components/zoom/zoom.less` - styles required for Zoom component
+
+### SCSS Styles
+
+SCSS styles are also separate styles for core version and components:
+
+- `swiper.scss` - only core Swiper styles
+- `components/a11y/a11y.scss` - styles required for A11y component
+- `components/controller/controller.scss` - styles required for Controller component
+- `components/effect-coverflow/effect-coverflow.scss` - styles required for Coveflow Effect component
+- `components/effect-cube/effect-cube.scss` - styles required for Cube Effect component
+- `components/effect-fade/effect-fade.scss` - styles required for Fade Effect component
+- `components/effect-flip/effect-flip.scss` - styles required for Flip Effect component
+- `components/lazy/lazy.scss` - styles required for Lazy component
+- `components/navigation/navigation.scss` - styles required for Navigation component
+- `components/pagination/pagination.scss` - styles required for Pagination component
+- `components/scrollbar/scrollbar.scss` - styles required for Scrollbar component
+- `components/thumbs/thumbs.scss` - styles required for Thumbs component
+- `components/zoom/zoom.scss` - styles required for Zoom component
+
+## Swiper props
+
+`Swiper` React component receive all <a href="/api/#parameters">Swiper parameters</a> as component props, plus some extra props:
+
+| Prop         | Type               | Default | Description                            |
+| ------------ | ------------------ | ------- | -------------------------------------- |
+| `tag`        | `string`           | `'div'` | Main Swiper container HTML element tag |
+| `wrapperTag` | `string`           | `'div'` | Swiper wrapper HTML element tag        |
+| `onSwiper`   | `(swiper) => void` | `'div'` | Callback that receives Swiper instance |
+
+Also it supports all <a href="/api/#events">Swiper events</a> in `on{Eventname}` format. For example `slideChange` event becomes `onSlideChange` prop:
+
+```jsx
+  <Swiper
+    onSlideChange={() => {/*...*/}}
+    onReachEnd={() => {/*...*/}}
+    ...
+  >
+```
+
+## SwiperSlide props
+
+| Prop           | Type      | Default | Description                                                      |
+| -------------- | --------- | ------- | ---------------------------------------------------------------- |
+| `tag`          | `string`  | `'div'` | Swiper Slide HTML element tag                                    |
+| `zoom`         | `boolean` | `false` | Enables additional wrapper required for zoom mode                |
+| `virtualIndex` | `number`  |         | Actual swiper slide index. Required to be set for virtual slides |
+
+## SwiperSlide render function
+
+`SwiperSlide` component can accept render function that receives an object with the following properties:
+
+- `isActive` - true when current slide is active
+- `isPrev` - true when current slide is the previous from active
+- `isNext` - true when current slide is the next from active
+- `isVisible` - true when current slide is visible (`watchSlidesVisibility` Swiper parameter must be enabled)
+- `isDuplicate` - true when current slide is a duplicate slide (when `loop` mode enabled)
+  For example:
+
+```jsx
+<Swiper>
+  <SwiperSlide>
+    {({ isActive }) => (
+      <div>Current slide is {isActive ? 'active' : 'not active'}</div>
+    )}
+  </SwiperSlide>
+</Swiper>
+```
+
+## Slots
+
+Swiper React uses "slots" for content distribution. There are 4 slots available
+
+- `container-start` - element will be added to the beginning of swiper-container
+- `container-end` (default) - element will be added to the end of swiper-container
+- `wrapper-start` - element will be added to the beginning of swiper-wrapper
+- `wrapper-end` - element will be added to the end of swiper-wrapper
+
+For example:
+
+```jsx
+<Swiper>
+  <SwiperSlide>Slide 1</SwiperSlide>
+  <SwiperSlide>Slide 2</SwiperSlide>
+  <span slot="container-start">Container Start</span>
+  <span slot="container-end">Container End</span>
+  <span slot="wrapper-start">Wrapper Start</span>
+  <span slot="wrapper-end">Wrapper End</span>
+</Swiper>
+```
+
+Will be rendered as:
+
+```html
+<div class="swiper-container">
+  <span slot="container-start">Container Start</span>
+  <div class="swiper-wrapper">
+    <span slot="wrapper-start">Wrapper Start</span>
+    <div class="swiper-slide">Slide 1</div>
+    <div class="swiper-slide">Slide 2</div>
+    <span slot="wrapper-end">Wrapper End</span>
+  </div>
+  <span slot="container-end">Container End</span>
+</div>
+```
+
+## Virtual Slides
+
+Virtual Slides rendering here is fully handled by React and not required anything except setting `virtual:true` property and setting `virtualIndex` on slides:
+
+```jsx
+import SwiperCore, { Virtual } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// install Virtual module
+SwiperCore.use([Virtual]);
+
+export default () => {
+  // Create array with 1000 slides
+  const slides = Array.from({ length: 1000 }).map(
+    (el, index) => `Slide ${index + 1}`
+  );
+
+  return (
+    <Swiper spaceBetween={50} slidesPerView={3} virtual>
+      {slides.map((slideContent, index) => {
+        <SwiperSlide key={slideContent} virtualIndex={index}>
+          {slideContent}
+        </SwiperSlide>;
+      })}
+    </Swiper>
+  );
+};
+```
+
+## Controller
+
+Controller requires to pass one Swiper instance to another:
+
+```jsx
+  import React, { useState } from 'react';
+  import SwiperCore, { Controller } from 'swiper';
+  import { Swiper, SwiperSlide } from 'swiper/react';
+
+  // install Swiper's Controller component
+  Swiper.use([Controller]);
+
+  const App = () => {
+    // store controlled swiper instance
+    const [controlledSwiper, setControlledSwiper] = useState(null);
+
+    return (
+      <main>
+        {/* Main Swiper -> pass controlled swiper instance */}
+        <Swiper controller={{ control: controlledSwiper }} ...>
+          {/* ... */}
+        </Swiper>
+
+        {/* Controlled Swiper -> store swiper instance */}
+        <Swiper onSwiper={setControlledSwiper} ...>
+          {/* ... */}
+        </Swiper>
+      </main>
+    )
+  }
+```
+
+For two-way control (when both Swipers control each other) it should be like this:
+
+```jsx
+import React, { useState } from 'react';
+import SwiperCore, { Controller } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// install Swiper's Controller component
+Swiper.use([Controller]);
+
+const App = () => {
+  // store swiper instances
+  const [firstSwiper, setFirstSwiper] = useState(null);
+  const [secondSwiper, setSecondSwiper] = useState(null);
+
+  return (
+    <main>
+      <Swiper onSwiper={setFirstSwiper} controller={{ control: secondSwiper }}>
+        {/* ... */}
+      </Swiper>
+
+      <Swiper onSwiper={setSecondSwiper} controller={{ control: firstSwiper }}>
+        {/* ... */}
+      </Swiper>
+    </main>
+  );
+};
+```
+
+## Thumbs
+
+Same as with controller we need to store thumbs instance and pass it to main gallery:
+
+```jsx
+  import React, { useState } from 'react';
+  import SwiperCore, { Thumbs } from 'swiper';
+  import { Swiper, SwiperSlide } from 'swiper/react';
+
+  // install Swiper's Thumbs component
+  Swiper.use([Thumbs]);
+
+  const App = () => {
+    // store thumbs swiper instance
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
+    return (
+      <main>
+        {/* Main Swiper -> pass thumbs swiper instance */}
+        <Swiper thumbs={{ swiper: thumbsSwiper }} ...>
+          {/* ... */}
+        </Swiper>
+
+        {/* Thumbs Swiper -> store swiper instance */}
+        {/* It is also required to set watchSlidesVisibility and watchSlidesProgress props */ }
+        <Swiper
+          onSwiper={setThumbsSwiper}
+          watchSlidesVisibility
+          watchSlidesProgress
+          ...
+        >
+          {/* ... */}
+        </Swiper>
+      </main>
+    )
+  }
+```
+
+## Effects
+
+The following effects are available:
+
+    - Fade
+    - Cube
+    - Overflow
+    - Flip
+
+To use effects you have to import and install them first (as all other modules) (Fade example):
+
+```jsx
+import SwiperCore, { EffectFade } from 'swiper';
+SwiperCore.use([EffectFade]);
+```
+
+You can find running <a href="https://swiperjs.com/demos/#fade_effect">effect demos here</a>.
+
+### Full Fade Effect Example
+
+```jsx
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { EffectFade } from 'swiper';
+
+import 'swiper/swiper.scss';
+import 'swiper/components/effect-fade/effect-fade.scss';
+
+SwiperCore.use([EffectFade]);
+
+export default () => {
+  return (
+    <Swiper effect="fade">
+      {[1, 2, 3].map((i, el) => {
+        return <SwiperSlide>Slide {el}</SwiperSlide>;
+      })}
+    </Swiper>
+  );
+};
+```
+
+## Getting Started Video
+
+For a more comprehensive hands-on tutorial have a look at this 15-min getting-started video
+
+<iframe
+  width="560"
+  height="315"
+  frameBorder="0"
+  src="https://www.youtube.com/embed/l4kFO6VQPfA"
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen=""
+  className="block max-w-full"
+/>

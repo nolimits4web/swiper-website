@@ -1,0 +1,471 @@
+---
+title: Swiper Svelte Components
+---
+
+## Installation
+
+Swiper Svelte is available only via NPM as a part of the main Swiper library:
+
+```
+  npm i swiper
+```
+
+## Usage
+
+`swiper/svelte` exports 2 components: `Swiper` and `SwiperSlide`:
+
+```html
+  <Swiper
+    spaceBetween={50}
+    slidesPerView={3}
+    on:slideChange={() => console.log('slide change')}
+    on:swiper={(e) => console.log(e.detail[0])}
+  >
+    <SwiperSlide>Slide 1</SwiperSlide>
+    <SwiperSlide>Slide 2</SwiperSlide>
+    <SwiperSlide>Slide 3</SwiperSlide>
+    <SwiperSlide>Slide 4</SwiperSlide>
+    ...
+  </Swiper>
+  <script>
+  // Import Swiper Svelte components
+  import { Swiper, SwiperSlide } from 'swiper/svelte';
+
+  // Import Swiper styles
+  import 'swiper/swiper.scss';
+  </script>
+```
+
+<div className="important-note">
+  By default Swiper Svelte uses core version of Swiper (without any additional
+  components). If you want to use Navigation, Pagination and{' '}
+  <a href="/api/#custom-build">other components</a>, you have to install them
+  first.
+</div>
+Here is the list of additional modules imports:
+
+- <code>Virtual</code> - Virtual Slides module
+- <code>Keyboard</code> - Keyboard Control module
+- <code>Mousewheel</code> - Mousewheel Control module
+- <code>Navigation</code> - Navigation module
+- <code>Pagination</code> - Pagination module
+- <code>Scrollbar</code> - Scrollbar module
+- <code>Parallax</code> - Parallax module
+- <code>Zoom</code> - Zoom module
+- <code>Lazy</code> - Lazy module
+- <code>Controller</code> - Controller module
+- <code>A11y</code> - Accessibility module
+- <code>History</code> - History Navigation module
+- <code>HashNavigation</code> - Hash Navigation module
+- <code>Autoplay</code> - Autoplay module
+- <code>EffectFade</code> - Fade Effect module
+- <code>EffectCube</code> - Cube Effect module
+- <code>EffectFlip</code> - Flip Effect module
+- <code>EffectCoverflow</code> - Coverflow Effect module
+- <code>Thumbs</code> - Thumbs module
+
+```html
+  <Swiper
+    spaceBetween={50}
+    slidesPerView={3}
+    navigation
+    pagination={{ clickable: true }}
+    scrollbar={{ draggable: true }}
+    on:slideChange={() => console.log('slide change')}
+    on:swiper={(e) => console.log(e.detail[0])}
+  >
+    <SwiperSlide>Slide 1</SwiperSlide>
+    <SwiperSlide>Slide 2</SwiperSlide>
+    <SwiperSlide>Slide 3</SwiperSlide>
+    <SwiperSlide>Slide 4</SwiperSlide>
+    ...
+  </Swiper>
+  <script>
+  // import Swiper core and required components
+  import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+
+  import { Swiper, SwiperSlide } from 'swiper/svelte';
+
+  // Import Swiper styles
+  import 'swiper/swiper.scss';
+  import 'swiper/components/navigation/navigation.scss';
+  import 'swiper/components/pagination/pagination.scss';
+  import 'swiper/components/scrollbar/scrollbar.scss';
+
+  // install Swiper components
+  SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+
+  </script>
+```
+
+<div className="important-note">
+  Note, Swiper Svelte component will create required elements for Navigation,
+  Pagination and Scrollbar if you pass these params without specifying its
+  elements (e.g. without <code>navigation.nextEl</code>,{' '}
+  <code>pagination.el</code>, etc.)
+</div>
+
+## Styles
+
+Swiper package contains different sets of CSS, Less and SCSS styles:
+
+### CSS Styles
+
+CSS styles available only for bundle version:
+
+- `swiper-bundle.css` - all Swiper styles including all components styles (like Navigation, Pagination, etc.)
+- `swiper-bundle.min.css` - same as previous but minified
+
+### Less Styles
+
+Less styles are separate styles for core version and components:
+
+- `swiper.less` - only core Swiper styles
+- `components/a11y/a11y.less` - styles required for A11y component
+- `components/controller/controller.less` - styles required for Controller component
+- `components/effect-coverflow/effect-coverflow.less` - styles required for Coveflow Effect component
+- `components/effect-cube/effect-cube.less` - styles required for Cube Effect component
+- `components/effect-fade/effect-fade.less` - styles required for Fade Effect component
+- `components/effect-flip/effect-flip.less` - styles required for Flip Effect component
+- `components/lazy/lazy.less` - styles required for Lazy component
+- `components/navigation/navigation.less` - styles required for Navigation component
+- `components/pagination/pagination.less` - styles required for Pagination component
+- `components/scrollbar/scrollbar.less` - styles required for Scrollbar component
+- `components/thumbs/thumbs.less` - styles required for Thumbs component
+- `components/zoom/zoom.less` - styles required for Zoom component
+
+### SCSS Styles
+
+SCSS styles are also separate styles for core version and components:
+
+- `swiper.scss` - only core Swiper styles
+- `components/a11y/a11y.scss` - styles required for A11y component
+- `components/controller/controller.scss` - styles required for Controller component
+- `components/effect-coverflow/effect-coverflow.scss` - styles required for Coveflow Effect component
+- `components/effect-cube/effect-cube.scss` - styles required for Cube Effect component
+- `components/effect-fade/effect-fade.scss` - styles required for Fade Effect component
+- `components/effect-flip/effect-flip.scss` - styles required for Flip Effect component
+- `components/lazy/lazy.scss` - styles required for Lazy component
+- `components/navigation/navigation.scss` - styles required for Navigation component
+- `components/pagination/pagination.scss` - styles required for Pagination component
+- `components/scrollbar/scrollbar.scss` - styles required for Scrollbar component
+- `components/thumbs/thumbs.scss` - styles required for Thumbs component
+- `components/zoom/zoom.scss` - styles required for Zoom component
+
+## Swiper props
+
+`Swiper` Svelte component receive all <a href="/api/#parameters">Swiper parameters</a> as component props.
+
+```html
+<Swiper
+  slidesPerView="{3}"
+  spaceBetween="{50}"
+  navigation
+  pagination
+  ...
+></Swiper>
+```
+
+## Swiper events
+
+Swiper component supports all <a href="/api/#events">Swiper events</a>, including additional `swiper` event that returns swiper instance as soon as posible.
+
+<div className="important-note">
+  All event arguments will be passed as array and they are accessible in
+  <code>event.detail</code>.
+</div>
+For example:
+
+```html
+  <Swiper
+    on:swiper={onSwiper}
+    on:slideChange={() => console.log('slide change'))}
+    on:progress={onProgress}
+  >
+    ...
+  </Swiper>
+  <script>
+    import { Swiper, SwiperSlide } from 'swiper/svelte';
+
+    /* "progress" event emitted with "swiper" and "progress" argumentts */
+    const onProgress = (e) => {
+      const [swiper, progress] = e.detail;
+      console.log(progress);
+    }
+
+    /* "swiper" event emitted with "swiper" instance argument */
+    const onSwiper = (e) => {
+      const [swiper] = e.detail;
+      console.log(swiper);
+    }
+  </script>
+```
+
+## SwiperSlide props
+
+| Prop           | Type      | Default | Description                                                      |
+| -------------- | --------- | ------- | ---------------------------------------------------------------- |
+| `zoom`         | `boolean` | `false` | Enables additional wrapper required for zoom mode                |
+| `virtualIndex` | `number`  |         | Actual swiper slide index. Required to be set for virtual slides |
+
+## SwiperSlide slot data
+
+`SwiperSlide` component receives the following `data` object:
+
+- `isActive` - true when current slide is active
+- `isPrev` - true when current slide is the previous from active
+- `isNext` - true when current slide is the next from active
+- `isVisible` - true when current slide is visible (`watchSlidesVisibility` Swiper parameter must be enabled)
+- `isDuplicate` - true when current slide is a duplicate slide (when `loop` mode enabled)
+  For example:
+
+```html
+<Swiper>
+  <SwiperSlide let:data="{{" isActive }}>
+    <div>Current slide is { isActive ? 'active' : 'not active' }</div>
+  </SwiperSlide>
+</Swiper>
+```
+
+## Slots
+
+Swiper Svelte uses "slots" for content distribution. There are 4 slots available
+
+- `container-start` - element will be added to the beginning of swiper-container
+- `container-end` (default) - element will be added to the end of swiper-container
+- `wrapper-start` - element will be added to the beginning of swiper-wrapper
+- `wrapper-end` - element will be added to the end of swiper-wrapper
+
+For example:
+
+```html
+<Swiper>
+  <SwiperSlide>Slide 1</SwiperSlide>
+  <SwiperSlide>Slide 2</SwiperSlide>
+  <span slot="container-start">Container Start</span>
+  <span slot="container-end">Container End</span>
+  <span slot="wrapper-start">Wrapper Start</span>
+  <span slot="wrapper-end">Wrapper End</span>
+</Swiper>
+```
+
+Will be rendered as:
+
+```html
+<div class="swiper-container">
+  <span slot="container-start">Container Start</span>
+  <div class="swiper-wrapper">
+    <span slot="wrapper-start">Wrapper Start</span>
+    <div class="swiper-slide">Slide 1</div>
+    <div class="swiper-slide">Slide 2</div>
+    <span slot="wrapper-end">Wrapper End</span>
+  </div>
+  <span slot="container-end">Container End</span>
+</div>
+```
+
+## Virtual Slides
+
+To implement Virtual Slides we need to:
+
+- pass array with slides to Swiper's `virtual.slides` property
+- render slides based on `virtualData` slot's data. It is also mandatory to pass `virtualIndex`. `virtualData` is the object with following properties:
+
+  - `offset` - slides left/top offset in px
+  - `from` - index of first slide required to be rendered
+  - `to` - index of last slide required to be rendered
+  - `slides` - slides to render
+
+```html
+  <Swiper
+    spaceBetween={50}
+    slidesPerView={3}
+    virtual={{ slides: virtualSlides }}
+    let:virtualData={{ slides, offset, from }}
+  >
+    {#each slides as slide, index (from + index)}
+      <SwiperSlide
+        virtualIndex={from + index}
+        style={`left: ${offset}px`}
+      >{slide}</SwiperSlide>
+    {/each}
+  </Swiper>
+  <script>
+  import SwiperCore, { Virtual } from 'swiper';
+  import { Swiper, SwiperSlide } from 'swiper/svelte';
+
+  // install Virtual module
+  SwiperCore.use([Virtual]);
+
+  // Create array with 1000 slides
+  const virtualSlides = Array.from({ length: 1000 }).map((el, index) => `Slide ${index + 1}`);
+  </script>
+```
+
+## Controller
+
+Controller requires to pass one Swiper instance to another:
+
+```html
+  <!-- Main Swiper -> pass controlled swiper instance -->
+  <Swiper
+    controller={{ control: controlledSwiper }}
+    ...
+  >
+    <!-- ... -->
+  </Swiper>
+
+  <!-- Controlled Swiper -> store swiper instance -->
+  <Swiper
+    on:swiper={setControlledSwiper}
+    ...
+  >
+    <!-- ... -->
+  </Swiper>
+  <script>
+    import SwiperCore, { Controller } from '../build/core';
+    import { Swiper, SwiperSlide } from '../build/svelte';
+
+    // install Swiper's Controller component
+    SwiperCore.use([Controller]);
+
+    // store Controller swiper instance
+    let controlledSwiper = null;
+
+    const setControlledSwiper = (e) => {
+      const [swiper] = e.detail;
+      // set Controller swiper instance
+      setTimeout(() => {
+        controlledSwiper = swiper;
+      });
+    };
+  </script>
+```
+
+For two-way control (when both Swipers control each other) it should be like this:
+
+```html
+  <Swiper
+    on:swiper={setFirstSwiper}
+    controller={{ control: secondSwiper }}
+    ...
+  >
+    <!-- ... -->
+  </Swiper>
+
+  <Swiper
+    on:swiper={setSecondSwiper}
+    controller={{ control: firstSwiper }}
+    ...
+  >
+    <!-- ... -->
+  </Swiper>
+  <script>
+    import SwiperCore, { Controller } from '../build/core';
+    import { Swiper, SwiperSlide } from '../build/svelte';
+
+    // install Swiper's Controller component
+    SwiperCore.use([Controller]);
+
+    // store swiper instances
+    let firstSwiper = null;
+    let secondSwiper = null;
+
+    const setFirstSwiper = (e) => {
+      const [swiper] = e.detail;
+      setTimeout(() => {
+        firstSwiper = swiper;
+      });
+    };
+
+    const setSecondSwiper = (e) => {
+      const [swiper] = e.detail;
+      setTimeout(() => {
+        secondSwiper = swiper;
+      });
+    };
+  </script>
+```
+
+## Thumbs
+
+Same as with controller we need to store thumbs instance and pass it to main gallery:
+
+```html
+  <!-- Main Swiper -> pass thumbs swiper instance -->
+  <Swiper
+    thumbs={{ swiper: thumbsSwiper }}
+    ...
+  >
+    <!-- ... -->
+  </Swiper>
+
+  <!-- Thumbs Swiper -> store swiper instance -->
+  <!-- It is also required to set watchSlidesVisibility and watchSlidesProgress props -->
+  <Swiper
+    on:swiper={setThumbsSwiper}
+    watchSlidesVisibility
+    watchSlidesProgress
+    ...
+  >
+    <!-- ... -->
+  </Swiper>
+
+  <script>
+    import SwiperCore, { Thumbs } from 'swiper';
+    import { Swiper, SwiperSlide } from 'swiper/svelte';
+
+    // install Swiper's Thumbs component
+    Swiper.use([Thumbs]);
+
+    // store Thumbs swiper instance
+    let thumbsSwiper = null;
+
+    const setThumbsSwiper = (e) => {
+      const [swiper] = e.detail;
+      // set Thumbs swiper instance
+      setTimeout(() => {
+        thumbsSwiper = swiper;
+      });
+    };
+
+  </script>
+```
+
+## Effects
+
+The following effects are available:
+
+    - Fade
+    - Cube
+    - Overflow
+    - Flip
+
+To use effects you have to import and install them first (as all other modules) (Fade example):
+
+```js
+import SwiperCore, { EffectFade } from 'swiper';
+
+SwiperCore.use([EffectFade]);
+```
+
+You can find running <a href="https://swiperjs.com/demos/#fade_effect">effect demos here</a>.
+
+### Full Fade Effect Example
+
+```html
+<Swiper effect="fade">
+  <SwiperSlide>Slide 1</SwiperSlide>
+  <SwiperSlide>Slide 2</SwiperSlide>
+  <SwiperSlide>Slide 3</SwiperSlide>
+</Swiper>
+<script>
+  import { Swiper, SwiperSlide } from 'swiper/svelte';
+  import SwiperCore, { EffectFade } from 'swiper';
+
+  import 'swiper/swiper.scss';
+  import 'swiper/components/effect-fade/effect-fade.scss';
+
+  SwiperCore.use([EffectFade]);
+</script>
+```

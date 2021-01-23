@@ -1,0 +1,50 @@
+.carbon {
+  width: 322px;
+  min-height: 121px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #fff;
+  padding: 8px 10px 8px;
+  overflow: hidden;
+  border-radius: 3px;
+  margin-top: 0px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.02);
+  a {
+    color: #fff;
+    display: block;
+  }
+  img {
+    display: block;
+    width: 130px;
+    height: 100px;
+  }
+  .carbon-img {
+    display: block;
+    float: left;
+  }
+  .carbon-text {
+    margin-top: 3px;
+    margin-left: 140px;
+  }
+  .carbon-poweredby {
+    opacity: 0.8;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-left: 140px;
+  }
+  &.carbon-share {
+    margin-top: 0 !important;
+    float: none;
+    margin: 0 auto;
+    position: relative;
+  }
+  header & {
+    border-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.05);
+    a,
+    & {
+      color: #333;
+    }
+  }
+}

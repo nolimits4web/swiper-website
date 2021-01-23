@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "fonts";
+
+@layer base {
+  a,
+  body .prose a {
+    @apply text-primary hover:underline;
+  }
+
+  body .prose a:hover {
+    @apply hover:no-underline;
+  }
+
+  .important-note {
+    @apply border-l-4 px-5 py-4 my-3 border-red-500 bg-red-100;
+  }
+}
+
+body {
+  font-family: Inter, -apple-system, system-ui, Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+  color: #374151;
+  -webkit-font-smoothing: antialiased;
+}
+
+body .prose code:before,
+body .prose code:after {
+  display: none;
+}
+body .prose code {
+  background: #f5f5f5;
+  padding: 1px 4px;
+  border-radius: 4px;
+}
+.prose > ul > li code {
+  word-break: break-word;
+}
+body .prose pre code {
+  background: transparent;
+  border-radius: 0px;
+  padding: initial;
+}
+.after\:hash:after {
+  content: "#";
+}
+
+.swiper_logo {
+  box-shadow: 0 15px 30px 0 rgba(99, 50, 246, 0.3);
+}
+.align-super {
+  vertical-align: super;
+}
+
+@import "carbon";
+@import "demos";
+@import "prism";
+@import "docs";
