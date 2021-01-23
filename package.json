@@ -5,12 +5,13 @@
   "releaseVersion": "6.4.5",
   "releaseDate": "December 18, 2020",
   "scripts": {
-    "dev": "npm run unpkg-demos && npm run api && next dev",
-    "build": "npm run unpkg-demos && npm run types && npm run api && next build",
+    "dev": "npm run unpkg-demos && npm run build-demos && npm run build-types && npm run build-api && next dev",
+    "build": "npm run unpkg-demos && npm run build-demos && npm run build-types && npm run build-api && next build",
     "start": "next start",
+    "build-demos": "node build/build-demos.js",
     "unpkg-demos": "node build/unpkg-demos.js",
-    "api": "node build/api.js",
-    "types": "node build/build-types.js"
+    "build-api": "node build/build-api.js",
+    "build-types": "node build/build-types.js"
   },
   "dependencies": {
     "@mapbox/rehype-prism": "^0.5.0",

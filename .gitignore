@@ -35,3 +35,4 @@ public/types/**/*
 
 src/components/api/*.js
 src/types.json
+src/demos.json

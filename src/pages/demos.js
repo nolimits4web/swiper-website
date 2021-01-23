@@ -1,41 +1,13 @@
-import fs from 'fs';
-import path from 'path';
 import React from 'react';
 import sdk from '@stackblitz/sdk';
 import Heading from '@/components/Heading';
 import { WithSidebarLayout } from '@/layouts/withSidebar';
 import { useLazyDemos } from 'src/shared/use-lazy-demos';
-
-export async function getStaticProps() {
-  const demosFolder = path.resolve(process.cwd(), 'public/demos');
-  const demosFiles = fs
-    .readdirSync(demosFolder)
-    .filter((f) => f.includes('.html'));
-
-  const demos = demosFiles.map((fileName) => {
-    const slug = fileName.slice(4).replace('.html', '');
-    const title = slug
-      .replace(/-/g, ' ')
-      .split(' ')
-      .map((word) => `${word[0].toUpperCase()}${word.slice(1)}`)
-      .join(' ');
-    return {
-      slug,
-      title,
-      fileName,
-    };
-  });
-
-  return {
-    props: {
-      demos,
-    },
-  };
-}
+import demos from 'src/demos.json';
 
 let tableOfContents;
 
-export default function DemosPage({ demos }) {
+export default function DemosPage() {
   tableOfContents = demos.map(({ title, slug }) => {
     return {
       title,

@@ -17,6 +17,7 @@ const fallbackLayouts = {
 
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'mdx'],
+  target: 'serverless',
   env: {
     swiperReleaseVersion: pkg.releaseVersion,
     swiperReleaseDate: pkg.releaseDate,
