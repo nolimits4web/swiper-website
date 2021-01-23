@@ -30,7 +30,7 @@ import 'swiper/components/a11y/a11y.min.css';
 import 'swiper/components/effect-coverflow/effect-coverflow.min.css';
 import 'swiper/components/lazy/lazy.min.css';
 
-function SlideCenter({ children, className, bgColor = 'bg-white' }) {
+function SlideCenter({ children, className = '', bgColor = 'bg-white' }) {
   return (
     <div className={bgColor}>
       <div
@@ -120,9 +120,9 @@ export default function HomeSlider() {
       <div className="swiper-wrapper">
         <div className="swiper-slide">
           <SlideCenter>
-            <div className="md:inline-flex md:mx-auto">
+            <div className="md:inline-flex md:mx-auto text-center md:text-left">
               <Logo
-                className="swiper_logo rounded-full flex-shrink-0 w-16 h-16 md:w-32 md:h-32 lg:w-40 lg:h-40"
+                className="swiper_logo rounded-full flex-shrink-0 w-32 h-32 lg:w-40 lg:h-40 inline md:block"
                 alt="Swiper"
               />
 
@@ -133,7 +133,7 @@ export default function HomeSlider() {
                 <div className="text-2xl sm:text-4xl md:text-5xl my-2 font-bold text-black leading-tight md:leading-tight max-w-2xl">
                   The Most Modern Mobile Touch Slider
                 </div>
-                <nav className="mt-4 md:mt-12 font-medium flex flex-wrap">
+                <nav className="mt-4 md:mt-12 font-medium flex flex-wrap justify-center md:justify-start">
                   {menuList.map(({ name, link }) => (
                     <Link key={link} href={link}>
                       <a className="mr-4">{name}</a>
@@ -150,7 +150,9 @@ export default function HomeSlider() {
                     Changelog
                   </a>
                 </div>
-                <GithubStats />
+                <div className="flex justify-center md:justify-start">
+                  <GithubStats />
+                </div>
               </div>
             </div>
           </SlideCenter>
@@ -201,7 +203,7 @@ export default function HomeSlider() {
         </div>
         <div className="swiper-slide swiper-slide-gallery bg-black">
           <SlideCenter
-            bgColor="bg-primary bg-opacity-40"
+            bgColor="bg-primary bg-opacity-20"
             className="text-white pt-10"
           >
             <span className="text-4xl sm:text-5xl text-center font-bold mb-8">
