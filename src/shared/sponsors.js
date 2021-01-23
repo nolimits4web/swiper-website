@@ -15,5 +15,6 @@ export default [
     src: 'sponsors/developers-leaderboard.svg',
     width: '300',
     height: '70',
+    height_h: '46',
   },
 ];
