@@ -11,7 +11,7 @@ export default function Header() {
         <Link href="/">
           <a className="flex-shrink-0">
             <Logo
-              className="swiper_logo rounded-full w-16 h-16 md:w-32 md:h-32 lg:w-40 lg:h-40"
+              className="swiper_logo rounded-full w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40"
               alt="Swiper"
             />
           </a>
