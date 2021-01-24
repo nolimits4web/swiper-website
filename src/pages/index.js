@@ -72,43 +72,43 @@ const feats = [
 
 const logos = [
   {
-    src: '/images/logo-adobe.jpg',
+    src: '/images/clients/adobe.jpg',
     title: 'Adobe',
   },
   {
-    src: '/images/logo-cisco.jpg',
+    src: '/images/clients/cisco.jpg',
     title: 'Cisco',
   },
   {
-    src: '/images/logo-alexa.jpg',
+    src: '/images/clients/alexa.jpg',
     title: 'Alexa',
   },
   {
-    src: '/images/logo-bmw.jpg',
+    src: '/images/clients/bmw.jpg',
     title: 'BMW',
   },
   {
-    src: '/images/logo-disney.jpg',
+    src: '/images/clients/disney.jpg',
     title: 'Disney',
   },
   {
-    src: '/images/logo-peugeot.jpg',
+    src: '/images/clients/peugeot.jpg',
     title: 'Peugeot',
   },
   {
-    src: '/images/logo-verizon.jpg',
+    src: '/images/clients/verizon.jpg',
     title: 'Verizon',
   },
   {
-    src: '/images/logo-macrumors.jpg',
+    src: '/images/clients/macrumors.jpg',
     title: 'MacRumors',
   },
   {
-    src: '/images/logo-lacoste.jpg',
+    src: '/images/clients/lacoste.jpg',
     title: 'Lacoste',
   },
   {
-    src: '/images/logo-vodafone.jpg',
+    src: '/images/clients/vodafone.jpg',
     title: 'Vodafone',
   },
 ];
@@ -179,7 +179,7 @@ export default function Home() {
                   src={src}
                   width="205"
                   height="205"
-                  alt={title}
+                  alt={`${title} logo`}
                   title={title}
                 />
               </div>
