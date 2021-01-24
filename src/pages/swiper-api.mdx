@@ -439,7 +439,7 @@ Or white one for dark layout:
 After that we need to enable lazy loading on Swiper initialization:
 
 ```js
-var swiper = new Swiper('.swiper-container', {
+const swiper = new Swiper('.swiper-container', {
   // Disable preloading of all images
   preloadImages: false,
   // Enable lazy loading
@@ -783,7 +783,7 @@ To make it work, you need to enable it by passing `hashNavigation:true` paramete
 ```
 
 ```js
-var swiper = new Swiper('.swiper-container', {
+const swiper = new Swiper('.swiper-container', {
   //enable hash navigation
   hashNavigation: true,
 });
@@ -843,7 +843,7 @@ import { Swiper, Navigation, Pagination, Scrollbar } from 'swiper';
 Swiper.use([Navigation, Pagination, Scrollbar]);
 
 // Now you can use Swiper
-var swiper = new Swiper('.swiper-container', {
+const swiper = new Swiper('.swiper-container', {
   speed: 500,
   navigation: {
     nextEl: '.swiper-button-next',
