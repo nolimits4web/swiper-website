@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-// import Image from 'next/image';
+import Image from 'next/image';
 
 import menuList from 'src/shared/menu-list';
 import Carbon from '@/components/Carbon';
@@ -175,7 +175,7 @@ export default function Home() {
           <div className="grid grid-cols-4 sm:grid-cols-5 gap-x-6 gap-y-8">
             {logos.map(({ src, title }) => (
               <div key={title}>
-                <img
+                <Image
                   src={src}
                   width="205"
                   height="205"

@@ -1,5 +1,5 @@
 import sponsors from '../shared/sponsors';
-// import Image from 'next/image';
+import Image from 'next/image';
 
 export default function SidebarSponsors() {
   return (
@@ -13,7 +13,7 @@ export default function SidebarSponsors() {
           title={title}
           target="_blank"
         >
-          <img
+          <Image
             width={200}
             height={height_h || height}
             className="max-h-12"

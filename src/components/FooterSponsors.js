@@ -1,5 +1,5 @@
 import sponsors from '../shared/sponsors';
-// import Image from 'next/image';
+import Image from 'next/image';
 
 export default function FooterSponsors() {
   return (
@@ -13,7 +13,7 @@ export default function FooterSponsors() {
             title={title}
             target="_blank"
           >
-            <img width={width} height={height} src={`/images/${src}`} />
+            <Image width={width} height={height} src={`/images/${src}`} />
           </a>
         );
       })}
