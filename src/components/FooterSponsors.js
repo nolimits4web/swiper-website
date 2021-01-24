@@ -11,6 +11,7 @@ export default function FooterSponsors() {
             href={href}
             key={'/' + src}
             title={title}
+            rel="noopener"
             target="_blank"
           >
             <img

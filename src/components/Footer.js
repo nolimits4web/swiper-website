@@ -23,6 +23,7 @@ export default function Footer() {
           Supported by:{' '}
           <a
             href="https://www.colognewebdesign.de"
+            rel="noopener"
             target="_blank"
             title="COLOGNE WEBDESIGN"
           >
@@ -31,7 +32,7 @@ export default function Footer() {
         </div>
         <FooterSponsors />
         <div className="text-center my-8">
-          <a href="https://www.netlify.com" target="_blank">
+          <a href="https://www.netlify.com" target="_blank" rel="noopener">
             <img
               width={114}
               height={51}

@@ -151,7 +151,7 @@ export default function Home() {
             <a href="//framework7.io">Framework7</a> - a fully-featured
             framework for building iOS &amp; Android apps. Swiper is also a
             default slider component in the{' '}
-            <a href="http://ionicframework.com/" target="blank">
+            <a href="http://ionicframework.com/" target="blank" rel="noopener">
               Ionic Framework
             </a>
             .
@@ -207,7 +207,11 @@ export default function Home() {
           <HomeHeading>Sponsors</HomeHeading>
           <div className="my-4">
             Support Swiper on{' '}
-            <a href="http://opencollective.com/swiper" target="_blank">
+            <a
+              href="http://opencollective.com/swiper"
+              target="_blank"
+              rel="noopener"
+            >
               Open Collective
             </a>{' '}
             and help us to make it even better!
