@@ -35,6 +35,7 @@ export default function Footer() {
             <img
               width={114}
               height={51}
+              alt="Desploys on Netlify"
               className="inline"
               src="/images/netlify-color-bg.svg"
             />
