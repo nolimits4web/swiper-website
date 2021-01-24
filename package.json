@@ -6,7 +6,7 @@
   "releaseDate": "January 22, 2021",
   "scripts": {
     "dev": "npm run unpkg-demos && npm run build-demos && npm run build-types && npm run build-api && next dev",
-    "build": "npm run unpkg-demos && npm run build-demos && npm run build-types && npm run build-api && next build --optimizeFonts",
+    "build": "npm run unpkg-demos && npm run build-demos && npm run build-types && npm run build-api && next build",
     "start": "next start",
     "build-demos": "node build/build-demos.js",
     "unpkg-demos": "node build/unpkg-demos.js",
