@@ -1,5 +1,6 @@
 import React from 'react';
 import sdk from '@stackblitz/sdk';
+import { ReactComponent as StackblitzLogo } from '@/img/stackblitz.svg';
 import Heading from '@/components/Heading';
 import { WithSidebarLayout } from '@/layouts/withSidebar';
 import { useLazyDemos } from 'src/shared/use-lazy-demos';
@@ -74,15 +75,11 @@ export default function DemosPage() {
               Source code
             </a>
             <a
-              className="no-underline"
+              className="no-underline ml-2"
               href="#"
               onClick={(e) => createStackBlitz(e, title, fileName)}
             >
-              <img
-                className="h-3 inline"
-                style={{ margin: 0 }}
-                src="images/stackblitz-icon.svg"
-              />
+              <StackblitzLogo className="inline" width="19" height="14" />
               <span>Edit in StackBlitz</span>
             </a>
           </div>
