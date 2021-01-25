@@ -53,6 +53,7 @@ export default function GithubStats() {
           key={label}
           className="mx-1 text-xs text-gray-700 hover:text-primary hover:no-underline"
           href="https://github.com/nolimits4web/swiper"
+          rel="noopener"
           target="_blank"
         >
           <span className="text-base font-medium">{value}</span>{' '}
