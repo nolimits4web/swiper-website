@@ -374,6 +374,52 @@ To enable parallax effects you need to init Swiper with passed `parallax:true` p
 
 #### Parallax Parameters
 
+<table className="table-fixed params-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr className="border-t">
+      <td className="w-1/6 text-red-700 font-mono font-semibold">parallax</td>
+      <td className="w-1/6 text-green-700 font-mono font-semibold">
+        ParallaxOptions{' | '}boolean
+      </td>
+      <td className="w-1/6 text-red-700 font-mono font-semibold"></td>
+      <td className="w-3/6 space-y-2">
+        <p>Object with parallax parameters</p>
+        {/* prettier-ignore */}
+        <pre className="language-js"><code className="language-js"><span className="token keyword">const</span>{' '}swiper{' '}<span className="token operator">=</span>{' '}<span className="token keyword">new</span>{' '}<span className="token class-name">Swiper</span><span className="token punctuation">(</span><span className="token string">'.swiper-container'</span><span className="token punctuation">,</span>{' '}<span className="token punctuation">{'{'}</span>{`
+`}{'  '}parallax<span className="token operator">:</span>{' '}<span className="token boolean">true</span><span className="token punctuation">,</span>{`
+`}<span className="token punctuation">{'}'}</span><span className="token punctuation">)</span><span className="token punctuation">;</span>{`
+`}</code></pre>
+      </td>
+    </tr>
+    <tr className="params-table-nested-open">
+      <td colSpan="4" className="font-semibold">
+        {'{'}
+      </td>
+    </tr>
+    <tr className="border-t params-table-nested-row">
+      <td className="w-1/6 text-red-700 font-mono font-semibold">enabled</td>
+      <td className="w-1/6 text-green-700 font-mono font-semibold">boolean</td>
+      <td className="w-1/6 text-red-700 font-mono font-semibold">false</td>
+      <td className="w-3/6 space-y-2">
+        <p>Enable, if you want to use "parallaxed" elements inside of slider</p>
+      </td>
+    </tr>
+    <tr className="params-table-nested-close">
+      <td colSpan="4" className="font-semibold">
+        {'}'}
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 <ApiDivider />
 
 ### Lazy Loading
