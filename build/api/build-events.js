@@ -26,11 +26,14 @@ const buildEvents = async (typesName, typesData, ignoreEvents = []) => {
   };
 
   const args = (item) => {
-    if (item.type && item.type.declaration && item.type.signatures) {
+    if (
+      item.type &&
+      item.type.declaration &&
+      item.type.declaration.signatures
+    ) {
       const params = (item.type.declaration.signatures[0].parameters || []).map(
         (param) => param.name
       );
-
       if (!params.length) return '';
       return `(${params.join(', ')})`;
     }
@@ -65,7 +68,7 @@ export const ${typesName} = () => {
         `
           )
           .join('')}
-        
+
       </tbody>
     </table>
   )
