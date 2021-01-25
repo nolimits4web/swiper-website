@@ -27,6 +27,7 @@ export default function SponsorsPage() {
             <a
               href="http://opencollective.com/swiper"
               target="_blank"
+              rel="noopener"
               className="bg-primary font-bold rounded-full text-white shadow-lg hover:no-underline hover:bg-opacity-95 duration-200 inline-block w-96 px-4 py-6 my-2 max-w-full text-xl"
             >
               Become a sponsor
