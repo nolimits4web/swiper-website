@@ -181,6 +181,7 @@ export default function Home() {
                   height="205"
                   alt={`${title} logo`}
                   title={title}
+                  loading="lazy"
                 />
               </div>
             ))}
