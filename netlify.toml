@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/api*"
+  to = "/swiper-api"
+  status = 301
