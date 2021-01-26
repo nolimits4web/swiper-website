@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "fonts";
-
 @layer base {
   a,
   body .prose a {
@@ -44,7 +42,7 @@ body .prose pre code {
   padding: initial;
 }
 .after\:hash:after {
-  content: "#";
+  content: '#';
 }
 
 .swiper_logo {
@@ -53,8 +51,3 @@ body .prose pre code {
 .align-super {
   vertical-align: super;
 }
-
-@import "carbon";
-@import "demos";
-@import "prism";
-@import "docs";
