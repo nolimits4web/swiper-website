@@ -171,7 +171,7 @@ SCSS styles are also separate styles for core version and components:
 Swiper component supports all <a href="/api/#events">Swiper events</a>, including additional `swiper` event that returns swiper instance as soon as posible.
 
 <div className="important-note">
-  All event arguments will be passed as array and they are accessible in
+  All event arguments will be passed as array and they are accessible in{' '}
   <code>event.detail</code>.
 </div>
 For example:
@@ -179,9 +179,9 @@ For example:
 ```html
   <Swiper
     on:swiper={onSwiper}
-    on:slideChange={() => console.log('slide change'))}
+    on:slideChange={() => console.log('slide change')}
     on:progress={onProgress}
-  >
+    >
     ...
   </Swiper>
   <script>
@@ -221,7 +221,7 @@ For example:
 
 ```html
 <Swiper>
-  <SwiperSlide let:data="{{" isActive }}>
+  <SwiperSlide let:data="{{ isActive }}">
     <div>Current slide is { isActive ? 'active' : 'not active' }</div>
   </SwiperSlide>
 </Swiper>
@@ -232,7 +232,7 @@ For example:
 Swiper Svelte uses "slots" for content distribution. There are 4 slots available
 
 - `container-start` - element will be added to the beginning of swiper-container
-- `container-end` (default) - element will be added to the end of swiper-container
+- `container-end` - element will be added to the end of swiper-container
 - `wrapper-start` - element will be added to the beginning of swiper-wrapper
 - `wrapper-end` - element will be added to the end of swiper-wrapper
 
@@ -323,8 +323,8 @@ Controller requires to pass one Swiper instance to another:
     <!-- ... -->
   </Swiper>
   <script>
-    import SwiperCore, { Controller } from '../build/core';
-    import { Swiper, SwiperSlide } from '../build/svelte';
+    import SwiperCore, { Controller } from 'swiper/core';
+    import { Swiper, SwiperSlide } from 'swiper/svelte';
 
     // install Swiper's Controller component
     SwiperCore.use([Controller]);
@@ -361,8 +361,8 @@ For two-way control (when both Swipers control each other) it should be like thi
     <!-- ... -->
   </Swiper>
   <script>
-    import SwiperCore, { Controller } from '../build/core';
-    import { Swiper, SwiperSlide } from '../build/svelte';
+    import SwiperCore, { Controller } from 'swiper/core';
+    import { Swiper, SwiperSlide } from 'swiper/svelte';
 
     // install Swiper's Controller component
     SwiperCore.use([Controller]);
