@@ -186,7 +186,7 @@ new Swiper(swiperContainer, parameters)\- initialize swiper with options
 For example:
 
 ```js
-var mySwiper = new Swiper('.swiper-container', {
+const swiper = new Swiper('.swiper-container', {
   speed: 400,
   spaceBetween: 100,
 });
@@ -195,10 +195,10 @@ var mySwiper = new Swiper('.swiper-container', {
 **After** you initialize Swiper it is possible to access to Swiper's instance on its HTMLElement. It is `swiper` property of Swiper's HTML container element:
 
 ```js
-var mySwiper = document.querySelector('.swiper-container').swiper;
+const swiper = document.querySelector('.swiper-container').swiper;
 
 // Now you can use all slider methods like
-mySwiper.slideNext();
+swiper.slideNext();
 ```
 
 <ApiDivider />
@@ -213,7 +213,7 @@ Let's look on list of all available parameters:
 
 ## Methods & Properties
 
-After we initialize Slider we have its initialized instance in variable (like `mySwiper` variable in example above) with helpful methods and properties:
+After we initialize Slider we have its initialized instance in variable (like `swiper` variable in example above) with helpful methods and properties:
 
 <Swiper />
 
@@ -226,7 +226,7 @@ Swiper comes with a bunch of useful events you can listen. Events can be assigne
 1.  Using `on` parameter on swiper initialization:
 
     ```js
-    var mySwiper = new Swiper('.swiper-container', {
+    const swiper = new Swiper('.swiper-container', {
         // ...
         on: {
           init: function () {
@@ -239,10 +239,10 @@ Swiper comes with a bunch of useful events you can listen. Events can be assigne
 2.  Using `on` method after swiper initialization.
 
     ```js
-    var mySwiper = new Swiper('.swiper-container', {
+    const swiper = new Swiper('.swiper-container', {
         // ...
       };
-      mySwiper.on('slideChange', function () {
+      swiper.on('slideChange', function () {
         console.log('slide changed');
       });
     ```
