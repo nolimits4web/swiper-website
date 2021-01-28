@@ -181,10 +181,12 @@ export class AppComponent {
     console.log('slide change');
   }
 }
+```
+
 <a href="https://stackblitz.com/edit/swiper-angular-example?file=src/app/app.component.ts">
   Edit on Stackblitz
-</a>;
-```
+</a>
+;
 
 ## SwiperComponent props
 
@@ -289,11 +291,12 @@ export class AppComponent {
     (el, index) => `Slide ${index + 1}`
   );
 }
+```
 
 <a href="https://stackblitz.com/edit/swiper-angular-virtual?file=src%2Fapp%2Fapp.component.ts">
   Edit on Stackblitz
-</a>;
-```
+</a>
+;
 
 ## Effects
 
@@ -307,31 +310,32 @@ import SwiperCore, { EffectFade } from 'swiper';
 SwiperCore.use([EffectFade]);
 ```
 
-You can find running <a href="https://swiperjs.com/demos/#fade_effect">effect demos here</a>.
+You can find running <a href="https://swiperjs.com/demos/#effect-fade">effect demos here</a>.
 
 ### Effect Example
 
-````js
-  import { Component } from "@angular/core";
+```js
+import { Component } from '@angular/core';
 
-  // import Swiper core and required components
-  import SwiperCore, { EffectFade, Swiper } from "swiper/core";
+// import Swiper core and required components
+import SwiperCore, { EffectFade, Swiper } from 'swiper/core';
 
-  // install Swiper components
-  SwiperCore.use([EffectFade]);
+// install Swiper components
+SwiperCore.use([EffectFade]);
 
-  @Component({
-    selector: "app-swiper-fade-example",
-    template: `
-      <swiper effect="fade">
-        <ng-template swiperSlide>Slide 1</ng-template>
-        <ng-template swiperSlide>Slide 2</ng-template>
-        <ng-template swiperSlide>Slide 3</ng-template>
-      </swiper>
-    `
-  })
-  export class AppComponent {}
-  ```
-<a href="https://stackblitz.com/edit/swiper-angular-fade?file=src/app/app.component.ts">Edit on Stackblitz</a>
+@Component({
+  selector: 'app-swiper-fade-example',
+  template: `
+    <swiper effect="fade">
+      <ng-template swiperSlide>Slide 1</ng-template>
+      <ng-template swiperSlide>Slide 2</ng-template>
+      <ng-template swiperSlide>Slide 3</ng-template>
+    </swiper>
+  `,
+})
+export class AppComponent {}
+```
 
-````
+<a href="https://stackblitz.com/edit/swiper-angular-fade?file=src/app/app.component.ts">
+  Edit on Stackblitz
+</a>
