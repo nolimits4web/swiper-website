@@ -518,6 +518,12 @@ const swiper = new Swiper('.swiper-container', {
 
 Be sure to have the `effect` param set to `'fade'` in order for this to work.
 
+<div className="important-note">
+  Note that <code>crossFade</code> should be set to <code>true</code>{' '}
+  in order to avoid seeing content behind or underneath, and{' '}
+  not set by default because it may break existing integrations
+</div>
+
 #### Fade Effect Parameters
 
 <FadeEffectOptions />
