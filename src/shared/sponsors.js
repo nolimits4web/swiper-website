@@ -11,7 +11,7 @@ export default [
     height_h: '30',
   },
   {
-    href: 'https://leaderboard.tech',
+    href: 'https://developers-leaderboard.netlify.app',
     title: 'Developers Leaderboard',
     alt: 'Developers Leaderboard logo',
     src: 'sponsors/developers-leaderboard.svg',
