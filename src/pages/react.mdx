@@ -281,7 +281,7 @@ Controller requires to pass one Swiper instance to another:
   import { Swiper, SwiperSlide } from 'swiper/react';
 
   // install Swiper's Controller component
-  Swiper.use([Controller]);
+  SwiperCore.use([Controller]);
 
   const App = () => {
     // store controlled swiper instance
@@ -311,7 +311,7 @@ import SwiperCore, { Controller } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // install Swiper's Controller component
-Swiper.use([Controller]);
+SwiperCore.use([Controller]);
 
 const App = () => {
   // store swiper instances
@@ -338,11 +338,11 @@ Same as with controller we need to store thumbs instance and pass it to main gal
 
 ```jsx
   import React, { useState } from 'react';
-  import SwiperCore, { Thumbs } from 'swiper';
   import { Swiper, SwiperSlide } from 'swiper/react';
+  import SwiperCore, { Thumbs } from 'swiper/core';
 
   // install Swiper's Thumbs component
-  Swiper.use([Thumbs]);
+  SwiperCore.use([Thumbs]);
 
   const App = () => {
     // store thumbs swiper instance
