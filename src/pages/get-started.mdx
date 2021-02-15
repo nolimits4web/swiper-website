@@ -53,10 +53,10 @@ By default Swiper exports only core version without additional modules (like Nav
 
 ```js
   // core version + navigation, pagination modules:
-  import Swiper, { Navigation, Pagination } from 'swiper';
+  import SwiperCore, { Navigation, Pagination } from 'swiper/core';
 
   // configure Swiper to use modules
-  Swiper.use([Navigation, Pagination]);
+  SwiperCore.use([Navigation, Pagination]);
 
   // init Swiper:
   const swiper = new Swiper(...);

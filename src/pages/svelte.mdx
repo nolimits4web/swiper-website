@@ -412,11 +412,11 @@ Same as with controller we need to store thumbs instance and pass it to main gal
   </Swiper>
 
   <script>
-    import SwiperCore, { Thumbs } from 'swiper';
     import { Swiper, SwiperSlide } from 'swiper/svelte';
+    import SwiperCore, { Thumbs } from 'swiper/core';
 
     // install Swiper's Thumbs component
-    Swiper.use([Thumbs]);
+    SwiperCore.use([Thumbs]);
 
     // store Thumbs swiper instance
     let thumbsSwiper = null;
