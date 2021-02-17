@@ -206,6 +206,7 @@ export default function Home() {
 
         <div className="mt-24 text-center mb-20">
           <HomeHeading>Sponsors</HomeHeading>
+          <HomeSponsors />
           <div className="my-4">
             Support Swiper on{' '}
             <a
@@ -229,8 +230,6 @@ export default function Home() {
               Become a sponsor
             </a>
           </div>
-
-          {/* <HomeSponsors /> */}
         </div>
       </div>
     </>

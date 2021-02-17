@@ -8,8 +8,10 @@ export default function SponsorsPage() {
     <>
       <div className="mx-auto max-w-6xl text-lg px-4 py-20">
         <h1 className="text-4xl text-center sm:text-5xl text-gray-900 font-extrabold mb-12">
-          Sponsors
+          Swiper Sponsors
         </h1>
+
+        <HomeSponsors showPlaceholders showTitles />
 
         <div className="text-center">
           Support Swiper on{' '}

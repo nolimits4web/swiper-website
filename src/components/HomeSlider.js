@@ -100,9 +100,9 @@ export default function HomeSlider() {
   };
 
   const destroySwipers = () => {
+    // if (galleryTopSwiper.current) galleryTopSwiper.current.destroy();
+    // if (galleryThumbsSwiper.current) galleryThumbsSwiper.current.destroy();
     if (swiperFront.current) swiperFront.current.destroy();
-    if (galleryTopSwiper.current) galleryTopSwiper.current.destroy();
-    if (galleryThumbsSwiper.current) galleryThumbsSwiper.current.destroy();
   };
 
   useEffect(() => {

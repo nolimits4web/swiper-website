@@ -1,22 +1,14 @@
 export default [
   {
-    href:
-      'https://codersrank.io/?utm_source=partner&utm_medium=referral&utm_campaign=vladimir',
-    title: 'CodersRank - Ultimate Profile for Coders',
-    alt: 'CodersRank logo',
-    src: 'sponsors/codersrank.svg',
-    src_h: 'sponsors/codersrank-h.svg',
-    width: '200',
-    height: '85',
-    height_h: '30',
-  },
-  {
-    href: 'https://developers-leaderboard.netlify.app',
-    title: 'Developers Leaderboard',
-    alt: 'Developers Leaderboard logo',
-    src: 'sponsors/developers-leaderboard.svg',
-    width: '300',
-    height: '70',
-    height_h: '46',
+    link: 'https://www.leoboost.com/buy-instagram-likes',
+    title: 'Buy real Instagram Likes - 100% Real & Instant Likes',
+    image: 'leoboost.png',
+    image_h: 'leoboost-h.png',
+    width: '405',
+    height: '247',
+    width_h: '554',
+    height_h: '162',
+    plan: 'Silver Sponsor',
+    ref: 'https://opencollective.com/leo-boost1',
   },
 ];
