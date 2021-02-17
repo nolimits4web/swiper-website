@@ -1,3 +1,4 @@
+import { trackOutbound } from 'src/shared/track-outbound';
 import sponsors from '../shared/sponsors';
 
 const PlanSection = (props) => {
@@ -36,6 +37,7 @@ const PlanSection = (props) => {
               title={title}
               rel="noopener"
               target="_blank"
+              onClick={() => trackOutbound(link)}
             >
               <img
                 className="w-auto h-auto max-h-full max-w-full"

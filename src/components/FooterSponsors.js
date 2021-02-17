@@ -1,3 +1,4 @@
+import { trackOutbound } from 'src/shared/track-outbound';
 import sponsors from '../shared/sponsors';
 
 export default function FooterSponsors() {
@@ -25,6 +26,7 @@ export default function FooterSponsors() {
                 title={title}
                 rel="noopener"
                 target="_blank"
+                onClick={() => trackOutbound(link)}
               >
                 <img
                   className="max-w-full w-auto max-h-full"

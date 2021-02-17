@@ -1,3 +1,4 @@
+import { trackOutbound } from 'src/shared/track-outbound';
 import sponsors from '../shared/sponsors';
 
 export default function SidebarSponsors() {
@@ -25,6 +26,7 @@ export default function SidebarSponsors() {
               title={title}
               rel="noopener"
               target="_blank"
+              onClick={() => trackOutbound(link)}
             >
               <img
                 width={width_h || width}

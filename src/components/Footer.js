@@ -1,6 +1,7 @@
 import menuList from '../shared/menu-list';
 import Link from 'next/link';
 import FooterSponsors from './FooterSponsors';
+import { trackOutbound } from 'src/shared/track-outbound';
 // import Image from 'next/image';
 
 const menu = [
@@ -26,13 +27,19 @@ export default function Footer() {
             rel="noopener"
             target="_blank"
             title="COLOGNE WEBDESIGN"
+            onClick={() => trackOutbound('https://www.colognewebdesign.de')}
           >
             COLOGNE WEBDESIGN
           </a>
         </div>
         <FooterSponsors />
         <div className="text-center my-8">
-          <a href="https://www.netlify.com" target="_blank" rel="noopener">
+          <a
+            href="https://www.netlify.com"
+            target="_blank"
+            rel="noopener"
+            onClick={() => trackOutbound('https://www.netlify.com')}
+          >
             <img
               width={114}
               height={51}
