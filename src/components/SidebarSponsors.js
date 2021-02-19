@@ -7,37 +7,23 @@ export default function SidebarSponsors() {
       <div className="font-semibold mb-2">Sponsors:</div>
       {sponsors
         .filter(({ plan }) => plan !== 'Sponsor')
-        .map(
-          ({
-            link,
-            title,
-            image_h,
-            image,
-            width,
-            width_h,
-            height,
-            height_h,
-            alt,
-          }) => (
-            <a
-              className="block my-3"
-              href={link}
-              key={title}
-              title={title}
-              rel="noopener"
-              target="_blank"
-              onClick={() => trackOutbound(link)}
-            >
-              <img
-                width={width_h || width}
-                height={height_h || height}
-                className="max-h-12 w-auto"
-                alt={alt || title}
-                src={`/images/sponsors/${image_h || image}`}
-              />
-            </a>
-          )
-        )}
+        .map(({ link, title, image_h, image, alt }) => (
+          <a
+            className="block my-3"
+            href={link}
+            key={title}
+            title={title}
+            rel="noopener"
+            target="_blank"
+            onClick={() => trackOutbound(link)}
+          >
+            <img
+              className="max-h-12 w-auto"
+              alt={title}
+              src={`/images/sponsors/${image_h || image}`}
+            />
+          </a>
+        ))}
     </div>
   );
 }

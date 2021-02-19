@@ -28,7 +28,7 @@ const PlanSection = (props) => {
         </h2>
       )}
       <div className="flex flex-wrap justify-center">
-        {items.map(({ link, title, image, width, height, alt }) => {
+        {items.map(({ link, title, image }) => {
           return (
             <a
               className={`flex justify-center items-center p-3 m-4 text-center duration-300 ${sizes} ${shadow}`}
@@ -41,10 +41,8 @@ const PlanSection = (props) => {
             >
               <img
                 className="w-auto h-auto max-h-full max-w-full"
-                width={width}
-                height={height}
                 src={`/images/sponsors/${image}`}
-                alt={alt || title}
+                alt={title}
               />
             </a>
           );
