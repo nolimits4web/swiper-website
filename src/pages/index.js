@@ -8,6 +8,34 @@ import Carbon from '@/components/Carbon';
 import HomeSlider from '@/components/HomeSlider';
 import HomeSponsors from '@/components/HomeSponsors';
 
+const libs = [
+  {
+    title: 'JavaScript',
+    image: 'js.svg',
+    link: '/docs',
+  },
+  {
+    title: 'Angular',
+    image: 'angular.svg',
+    link: '/angular',
+  },
+  {
+    title: 'React',
+    image: 'react.svg',
+    link: '/react',
+  },
+  {
+    title: 'Vue.js',
+    image: 'vue.svg',
+    link: '/vue',
+  },
+  {
+    title: 'Svelte',
+    image: 'svelte.svg',
+    link: '/svelte',
+  },
+];
+
 const feats = [
   {
     title: 'Library Agnostic',
@@ -116,6 +144,27 @@ export default function Home() {
           </p>
         </div>
         <div className="mt-24">
+          <HomeHeading>Available For</HomeHeading>
+          <div className="grid grid-cols-3 sm:grid-cols-5 gap-4">
+            {libs.map(({ title, image, link }) => (
+              <a
+                key={title}
+                href={link}
+                className="flex items-center justify-center"
+              >
+                <img
+                  src={`/images/libs/${image}`}
+                  width="140"
+                  height="140"
+                  alt={`${title} logo`}
+                  title={title}
+                  loading="lazy"
+                />
+              </a>
+            ))}
+          </div>
+        </div>
+        <div className="mt-24">
           <HomeHeading>Powered With Top Notch Features</HomeHeading>
           <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 text-md">
             {feats.map(({ title, descr }) => (
@@ -135,8 +184,8 @@ export default function Home() {
               <div key={title} className="flex items-center justify-center">
                 <img
                   src={`/images/clients/${image}`}
-                  width="205"
-                  height="205"
+                  width="120"
+                  height="120"
                   alt={`${title} logo`}
                   title={title}
                   loading="lazy"
