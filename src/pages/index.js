@@ -3,6 +3,7 @@ import Link from 'next/link';
 // import Image from 'next/image';
 
 import menuList from 'src/shared/menu-list';
+import clientsList from 'src/shared/clients-list';
 import Carbon from '@/components/Carbon';
 import HomeSlider from '@/components/HomeSlider';
 import HomeSponsors from '@/components/HomeSponsors';
@@ -70,49 +71,6 @@ const feats = [
   },
 ];
 
-const logos = [
-  {
-    src: '/images/clients/adobe.jpg',
-    title: 'Adobe',
-  },
-  {
-    src: '/images/clients/cisco.jpg',
-    title: 'Cisco',
-  },
-  {
-    src: '/images/clients/alexa.jpg',
-    title: 'Alexa',
-  },
-  {
-    src: '/images/clients/bmw.jpg',
-    title: 'BMW',
-  },
-  {
-    src: '/images/clients/disney.jpg',
-    title: 'Disney',
-  },
-  {
-    src: '/images/clients/peugeot.jpg',
-    title: 'Peugeot',
-  },
-  {
-    src: '/images/clients/verizon.jpg',
-    title: 'Verizon',
-  },
-  {
-    src: '/images/clients/macrumors.jpg',
-    title: 'MacRumors',
-  },
-  {
-    src: '/images/clients/lacoste.jpg',
-    title: 'Lacoste',
-  },
-  {
-    src: '/images/clients/vodafone.jpg',
-    title: 'Vodafone',
-  },
-];
-
 export function HomeHeading({ children }) {
   return (
     <h2 className="text-4xl sm:text-5xl text-gray-900 text-center font-extrabold mb-12">
@@ -172,11 +130,11 @@ export default function Home() {
         </div>
         <div className="mt-24">
           <HomeHeading>Used By Thousands</HomeHeading>
-          <div className="grid grid-cols-4 sm:grid-cols-5 gap-x-6 gap-y-8">
-            {logos.map(({ src, title }) => (
-              <div key={title}>
+          <div className="grid grid-cols-4 sm:grid-cols-8 gap-6">
+            {clientsList.map(({ image, title }) => (
+              <div key={title} className="flex items-center justify-center">
                 <img
-                  src={src}
+                  src={`/images/clients/${image}`}
                   width="205"
                   height="205"
                   alt={`${title} logo`}
