@@ -16,6 +16,14 @@ export default [
     ref: 'https://opencollective.com/leo-boost1',
   },
   {
+    link: 'https://easy-views.org',
+    title: 'easy-views.org - High Retention Youtube Views',
+    image: 'easy-views.png',
+    image_h: '',
+    plan: 'Sponsor',
+    ref: 'https://opencollective.com/alexis-foster',
+  },
+  {
     link: 'https://writersperhour.com',
     title: 'Custom Paper Writing and Editing Service | Essay Writing Help',
     image: 'writers-per-hour.png',
