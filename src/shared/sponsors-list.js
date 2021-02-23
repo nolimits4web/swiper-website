@@ -1,5 +1,13 @@
 export default [
   {
+    link: 'https://papersowl.com/pay-for-research-paper',
+    title: 'Pay Someone to Write My Research Paper',
+    image: 'papersowl.png',
+    image_h: 'papersowl-h.png',
+    plan: 'Silver Sponsor',
+    ref: 'https://opencollective.com/papersowl2',
+  },
+  {
     link: 'https://www.leoboost.com/buy-instagram-likes',
     title: 'Buy real Instagram Likes - 100% Real & Instant Likes',
     image: 'leoboost.png',
