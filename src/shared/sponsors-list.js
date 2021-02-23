@@ -16,6 +16,14 @@ export default [
     ref: 'https://opencollective.com/leo-boost1',
   },
   {
+    link: 'https://writersperhour.com',
+    title: 'Custom Paper Writing and Editing Service | Essay Writing Help',
+    image: 'writers-per-hour.png',
+    image_h: '',
+    plan: 'Sponsor',
+    ref: 'https://opencollective.com/writersperhour',
+  },
+  {
     link: 'https://socialsup.net',
     title: 'Buy 100% Cheap SMM Services - Instagram, YouTube, Twitter',
     image: 'socials-up.png',
