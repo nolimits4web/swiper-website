@@ -12,7 +12,7 @@ const libs = [
   {
     title: 'JavaScript',
     image: 'js.svg',
-    link: '/docs',
+    link: '/swiper-api',
   },
   {
     title: 'Angular',
