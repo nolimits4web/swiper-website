@@ -2,6 +2,13 @@ const fs = require('fs');
 const path = require('path');
 const fetch = require('node-fetch');
 
+const writeEmptySponsors = () => {
+  fs.writeFileSync(
+    path.resolve(__dirname, '../src/shared/sponsors-list.js'),
+    'export default [];'
+  );
+};
+
 const downloadImage = (image) => {
   const { url, fileName } = image.fields.file;
   return new Promise((resolve, reject) => {
@@ -28,6 +35,7 @@ const downloadImage = (image) => {
 
 const getSponsor = (item) => {
   return new Promise((resolve, reject) => {
+    const { createdAt } = item.sys;
     const { title, link, plan, ref, image, imageHorizontal } = item.fields;
     const downloads = [];
     if (image) downloads.push(downloadImage(image));
@@ -35,12 +43,13 @@ const getSponsor = (item) => {
     Promise.all(downloads)
       .then(() => {
         const sponsor = {
+          createdAt,
           title,
           link,
           plan,
           ref,
           image: image ? image.fields.file.fileName : '',
-          image_h: imageHorizontal ? image.fields.file.fileName : '',
+          image_h: imageHorizontal ? imageHorizontal.fields.file.fileName : '',
         };
         resolve(sponsor);
       })
@@ -69,10 +78,7 @@ const buildSponsors = async () => {
   }
 
   if (!spaceId && !accessToken) {
-    fs.writeFileSync(
-      path.resolve(__dirname, '../src/shared/sponsors-list.js'),
-      'export default [];'
-    );
+    writeEmptySponsors();
     return;
   }
 
@@ -85,7 +91,16 @@ const buildSponsors = async () => {
 
   let sponsors = [];
   if (entries.items) {
-    sponsors = await Promise.all(entries.items.map((item) => getSponsor(item)));
+    try {
+      sponsors = await Promise.all(
+        entries.items.map((item) => getSponsor(item))
+      );
+      sponsors.sort((a, b) => {
+        return new Date(a.createdAt) > new Date(b.createdAt) ? -1 : 1;
+      });
+    } catch (err) {
+      writeEmptySponsors();
+    }
   }
   const sponsorsContent = `export default ${JSON.stringify(sponsors, '', 2)};`;
   fs.writeFileSync(
