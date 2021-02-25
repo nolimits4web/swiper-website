@@ -32,9 +32,12 @@ yarn-error.log*
 
 public/types/**/*
 !public/types/.gitkeep
+public/.DS_Store
+public/images/sponsors/
+!public/images/sponsors/.gitkeep
 
 src/components/api/*.js
 src/types.json
 src/demos.json
+src/shared/sponsors-list.js
 
-.DS_Store
