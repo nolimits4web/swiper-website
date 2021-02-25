@@ -82,7 +82,7 @@ const buildSponsors = async () => {
   });
 
   const entries = await client.getEntries();
-  console.log(entries);
+
   let sponsors = [];
   if (entries.items) {
     sponsors = await Promise.all(entries.items.map((item) => getSponsor(item)));

@@ -5,8 +5,8 @@
   "releaseVersion": "6.4.15",
   "releaseDate": "February 18, 2021",
   "scripts": {
-    "dev": "npm run unpkg-demos && npm run build-demos && npm run build-types && npm run build-api && next dev",
-    "build": "npm run unpkg-sponsors && npm run unpkg-demos && npm run build-demos && npm run build-types && npm run build-api && next build",
+    "dev": "npm run build-sponsors && npm run unpkg-demos && npm run build-demos && npm run build-types && npm run build-api && next dev",
+    "build": "npm run build-sponsors && npm run unpkg-demos && npm run build-demos && npm run build-types && npm run build-api && next build",
     "start": "next start",
     "build-sponsors": "node build/build-sponsors.js",
     "build-demos": "node build/build-demos.js",
