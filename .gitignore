@@ -33,8 +33,9 @@ yarn-error.log*
 public/types/**/*
 !public/types/.gitkeep
 public/.DS_Store
-public/images/sponsors/
-!public/images/sponsors/.gitkeep
+public/images/sponsors/*.jpg
+public/images/sponsors/*.png
+public/images/sponsors/*.svg
 
 src/components/api/*.js
 src/types.json
