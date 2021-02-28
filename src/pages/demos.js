@@ -1,5 +1,5 @@
 import React from 'react';
-import sdk from '@stackblitz/sdk';
+import { getParameters } from 'codesandbox/lib/api/define';
 import { ReactComponent as StackblitzLogo } from '@/img/stackblitz.svg';
 import Heading from '@/components/Heading';
 import { WithSidebarLayout } from '@/layouts/withSidebar';
@@ -19,27 +19,39 @@ export default function DemosPage() {
 
   useLazyDemos();
 
-  const createStackBlitz = (e, title, fileName) => {
+  const openCodeSandbox = async (e, title, fileName) => {
     e.preventDefault();
-    fetch(`demos/${fileName}`)
-      .then((res) => res.text())
-      .then((html) => {
-        html = html
-          .replace(/..\/package\//g, 'https://unpkg.com/swiper/')
-          .replace(/.\/images\//g, 'https://swiperjs.com/demos/images/');
+    const res = await fetch(`demos/${fileName}`);
+    let html = await res.text();
+    html = html
+      .replace(/..\/package\//g, 'https://unpkg.com/swiper/')
+      .replace(/.\/images\//g, 'https://swiperjs.com/demos/images/');
 
-        const project = {
-          files: {
-            'index.html': html,
-            'index.js': '',
+    // https://github.com/codesandbox/codesandbox-importers/blob/master/packages/import-utils/src/create-sandbox/templates.ts#L63
+    // We cant set name & tags in static environment, as codesandbox parses it from package.json
+    // Thats why we're including parcel as dependency
+    const parameters = {
+      files: {
+        'index.html': {
+          content: html,
+        },
+        'package.json': {
+          content: {
+            name: `Swiper - ${title}`,
+            tags: ['swiper'],
+            dependencies: {
+              swiper: 'latest',
+              'parcel-bundler': '^1.6.1',
+            },
           },
-          title: `Swiper - ${title}`,
-          description: `Swiper - ${title}`,
-          template: 'javascript',
-          tags: ['swiper'],
-        };
-        sdk.openProject(project, { openFile: 'index.html' });
-      });
+        },
+      },
+    };
+
+    const codeSandBoxParams = getParameters(parameters);
+    window.open(
+      `https://codesandbox.io/api/v1/sandboxes/define?parameters=${codeSandBoxParams}`
+    );
   };
 
   return (
@@ -80,7 +92,7 @@ export default function DemosPage() {
             <a
               className="no-underline ml-2"
               href="#"
-              onClick={(e) => createStackBlitz(e, title, fileName)}
+              onClick={(e) => openCodeSandbox(e, title, fileName)}
             >
               <StackblitzLogo className="inline" width="19" height="14" />
               <span>Edit in StackBlitz</span>
