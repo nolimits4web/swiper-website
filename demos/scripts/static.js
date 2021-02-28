@@ -28,6 +28,11 @@ function render({ templateString, styles, config }) {
       prevEl: '.swiper-button-prev',
     };
   }
+  if (finalConfig.pagination === true) {
+    finalConfig.pagination = {
+      el: '.swiper-pagination',
+    };
+  }
   return `<!DOCTYPE html>
   <html lang="en">
 
@@ -79,6 +84,37 @@ function staticPostHTML(config) {
       let classNames = null;
 
       if (node.tag === 'Swiper') {
+        const _config = config[0]; // TODO: support multiple configs
+        const append = [];
+        if (_config.navigation === true) {
+          append.push(
+            {
+              tag: 'div',
+              attrs: {
+                class: 'swiper-button-next',
+              },
+              content: '',
+            },
+            {
+              tag: 'div',
+              attrs: {
+                class: 'swiper-button-prev',
+              },
+              content: '',
+            }
+          );
+        }
+
+        if (_config.pagination === true) {
+          append.push({
+            tag: 'div',
+            attrs: {
+              class: 'swiper-pagination',
+            },
+            content: '',
+          });
+        }
+
         classNames = 'swiper-container';
         node.content = [
           {
@@ -88,6 +124,7 @@ function staticPostHTML(config) {
             },
             content: [...node.content],
           },
+          ...append,
         ];
       } else if (node.tag === 'SwiperSlide') {
         classNames = 'swiper-slide';

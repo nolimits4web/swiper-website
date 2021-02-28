@@ -1,5 +1,5 @@
 module.exports = (mode = 'core') => ({
-  title: 'default',
+  title: 'navigation',
   styles: `
   html,
   body {
