@@ -61,8 +61,14 @@ function ngPostHTML(config) {
         const _config = config[0];
         Object.keys(_config).forEach((key) => {
           // TODO: multiple configs
-          const value = _config[key].toString(); // TODO: string & types
-          node.attrs[`[${key}]`] = value;
+          let value = '';
+          if (typeof _config[key] === 'object') {
+            value = JSON.stringify(_config[key]);
+          }
+          if (!value) {
+            value = _config[key];
+          }
+          node.attrs[`[${key}]`] = value.toString();
         });
       } else if (node.tag === 'SwiperSlide') {
         node.tag = 'ng-template';

@@ -22,15 +22,17 @@ module.exports = async (dir, filePath) => {
 
 function render({ templateString, styles, config }) {
   const finalConfig = config[0]; // TODO: support multiple configs
-  if (finalConfig.navigation === true) {
+  if (finalConfig.navigation) {
     finalConfig.navigation = {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
+      ...finalConfig.navigation,
     };
   }
-  if (finalConfig.pagination === true) {
+  if (finalConfig.pagination) {
     finalConfig.pagination = {
       el: '.swiper-pagination',
+      ...finalConfig.pagination,
     };
   }
   return `<!DOCTYPE html>
@@ -86,7 +88,7 @@ function staticPostHTML(config) {
       if (node.tag === 'Swiper') {
         const _config = config[0]; // TODO: support multiple configs
         const append = [];
-        if (_config.navigation === true) {
+        if (_config.navigation) {
           append.push(
             {
               tag: 'div',
@@ -105,7 +107,7 @@ function staticPostHTML(config) {
           );
         }
 
-        if (_config.pagination === true) {
+        if (_config.pagination) {
           append.push({
             tag: 'div',
             attrs: {

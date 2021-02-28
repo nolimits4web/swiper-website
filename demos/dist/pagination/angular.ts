@@ -1,5 +1,8 @@
 import { Component } from "@angular/core";
 
+// import Swiper core and required modules
+import SwiperCore from "swiper/core";
+
 @Component({
   selector: "app-swiper-example",
   template: `<swiper [pagination]="true">

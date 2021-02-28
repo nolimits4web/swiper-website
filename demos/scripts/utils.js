@@ -24,6 +24,17 @@ module.exports.addClass = (node, classNames) => {
 
 module.exports.extractConfig = (filePath, mode = 'core') => {
   const demoConfig = require(filePath)('core');
-  const modules = null;
-  return { ...demoConfig, modules };
+  const modules = [];
+  demoConfig.config.forEach((config) => {
+    Object.keys(config).forEach((key) => {
+      if (
+        ['pagination', 'navigation'].includes(key) &&
+        !modules.includes(key)
+      ) {
+        modules.push(key);
+      }
+    });
+  });
+  if (demoConfig)
+    return { ...demoConfig, modules: modules.length > 0 ? modules : null };
 };

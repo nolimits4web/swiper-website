@@ -5,7 +5,7 @@ import SwiperCore from "swiper/core";
 
 @Component({
   selector: "app-swiper-example",
-  template: `<swiper [navigation]="true">
+  template: `<swiper [pagination]="{ dynamicBullets: true }">
     <ng-template swiperSlide>Slide 1</ng-template>
     <ng-template swiperSlide>Slide 2</ng-template>
     <ng-template swiperSlide>Slide 3</ng-template>
