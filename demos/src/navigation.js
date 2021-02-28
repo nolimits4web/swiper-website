@@ -53,5 +53,9 @@ module.exports = (mode = 'core') => ({
     <SwiperSlide>Slide 9</SwiperSlide>
     <SwiperSlide>Slide 10</SwiperSlide>
   </Swiper>`,
-  config: [{}],
+  config: [
+    {
+      navigation: true,
+    },
+  ],
 });

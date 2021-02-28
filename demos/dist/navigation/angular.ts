@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: "app-swiper-example",
-  template: `<swiper>
+  template: `<swiper [navigation]="true">
     <ng-template swiperSlide>Slide 1</ng-template>
     <ng-template swiperSlide>Slide 2</ng-template>
     <ng-template swiperSlide>Slide 3</ng-template>

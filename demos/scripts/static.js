@@ -11,13 +11,23 @@ module.exports = async (dir, filePath) => {
     staticPostHTML(config),
   ]).process(content);
 
-  const finalContent = prettier.format(render({ templateString, styles }), {
-    parser: 'html',
-  });
+  const finalContent = prettier.format(
+    render({ templateString, styles, config }),
+    {
+      parser: 'html',
+    }
+  );
   await fs.writeFile(path.join(dir, 'static.html'), finalContent);
 };
 
-function render({ templateString, styles }) {
+function render({ templateString, styles, config }) {
+  const finalConfig = config[0]; // TODO: support multiple configs
+  if (finalConfig.navigation === true) {
+    finalConfig.navigation = {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    };
+  }
   return `<!DOCTYPE html>
   <html lang="en">
 
@@ -47,7 +57,9 @@ function render({ templateString, styles }) {
 
     <!-- Initialize Swiper -->
     <script>
-      var swiper = new Swiper('.swiper-container');
+      var swiper = new Swiper('.swiper-container'${
+        finalConfig ? `, ${JSON.stringify(finalConfig, null, 2)}` : ''
+      });
     </script>
   </body>
 

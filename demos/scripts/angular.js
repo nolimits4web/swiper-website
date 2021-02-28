@@ -55,11 +55,17 @@ function ngPostHTML(config) {
       ) {
         return node;
       }
+      node.attrs = node.attrs || {};
       if (node.tag === 'Swiper') {
         node.tag = 'swiper';
+        const _config = config[0];
+        Object.keys(_config).forEach((key) => {
+          // TODO: multiple configs
+          const value = _config[key].toString(); // TODO: string & types
+          node.attrs[`[${key}]`] = value;
+        });
       } else if (node.tag === 'SwiperSlide') {
         node.tag = 'ng-template';
-        node.attrs = node.attrs || {};
         node.attrs.swiperSlide = true;
       }
 
