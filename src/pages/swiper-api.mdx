@@ -233,7 +233,7 @@ Swiper comes with a bunch of useful events you can listen. Events can be assigne
             console.log('swiper initialized');
           },
         },
-      };
+      });
     ```
 
 2.  Using `on` method after swiper initialization.
@@ -241,7 +241,7 @@ Swiper comes with a bunch of useful events you can listen. Events can be assigne
     ```js
     const swiper = new Swiper('.swiper-container', {
         // ...
-      };
+      });
       swiper.on('slideChange', function () {
         console.log('slide changed');
       });
