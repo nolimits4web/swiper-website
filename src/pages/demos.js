@@ -1,6 +1,6 @@
 import React from 'react';
 import { getParameters } from 'codesandbox/lib/api/define';
-import { ReactComponent as StackblitzLogo } from '@/img/stackblitz.svg';
+import { ReactComponent as CodeSandBoxLogo } from '@/img/codesandbox.svg';
 import Heading from '@/components/Heading';
 import { WithSidebarLayout } from '@/layouts/withSidebar';
 import { useLazyDemos } from 'src/shared/use-lazy-demos';
@@ -94,8 +94,8 @@ export default function DemosPage() {
               href="#"
               onClick={(e) => openCodeSandbox(e, title, fileName)}
             >
-              <StackblitzLogo className="inline" width="19" height="14" />
-              <span>Edit in StackBlitz</span>
+              <CodeSandBoxLogo className="inline" width="19" height="14" />
+              <span>Edit in CodeSandbox</span>
             </a>
           </div>
           <div className="my-4 bg-gray-100 shadow demo">
