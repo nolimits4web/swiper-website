@@ -1,0 +1,70 @@
+const posthtml = require('posthtml');
+const fs = require('fs-extra');
+const path = require('path');
+const prettier = require('prettier');
+const { extractConfig } = require('./utils');
+
+module.exports = async (dir, filePath) => {
+  const demoConfig = extractConfig(filePath, 'angular');
+  const { content, config, styles, title, modules } = demoConfig;
+  const { html: templateString } = await posthtml([ngPostHTML(config)]).process(
+    content
+  );
+  const finalContent = prettier.format(
+    render({ templateString, styles, modules }),
+    {
+      parser: 'typescript',
+    }
+  );
+  await fs.writeFile(path.join(dir, 'angular.ts'), finalContent);
+};
+
+function render({ templateString, styles, modules }) {
+  return `
+import { Component } from '@angular/core';
+
+${
+  modules
+    ? `// import Swiper core and required modules
+import SwiperCore from 'swiper/core';`
+    : ''
+}
+
+@Component({
+  selector: 'app-swiper-example',
+  template: \`${templateString}\`,
+  styles: [\`${styles}\`]
+})
+export class AppComponent {
+  onSwiper(swiper) {
+    console.log(swiper);
+  }
+  onSlideChange() {
+    console.log('slide change');
+  }
+}
+
+  `;
+}
+function ngPostHTML(config) {
+  return (tree) => {
+    tree.walk((node) => {
+      if (
+        !node.tag ||
+        ['Swiper', 'SwiperSlide'].indexOf(node.tag.toLowerCase()) !== -1
+      ) {
+        return node;
+      }
+      if (node.tag === 'Swiper') {
+        node.tag = 'swiper';
+      } else if (node.tag === 'SwiperSlide') {
+        node.tag = 'ng-template';
+        node.attrs = node.attrs || {};
+        node.attrs.swiperSlide = true;
+      }
+
+      return node;
+    });
+    return tree;
+  };
+}
