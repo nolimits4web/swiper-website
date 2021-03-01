@@ -82,6 +82,6 @@ module.exports.formatFn = (value) => {
   // }
   return value
     .replace(/('|")(\s+)?(function|\(\))/g, '$2$3')
-    .replace(/('|")(\s+)?\}/g, '$2}')
+    .replace(/(function.*\})(\s+)?('|")/g, '$1$2')
     .replace(/\\n/g, '\n');
 };
