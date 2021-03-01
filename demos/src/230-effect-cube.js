@@ -2,11 +2,16 @@ const default_settings = require('./default_settings');
 
 module.exports = (mode = 'static') => ({
   ...default_settings,
-  title: 'Effect fade',
+  title: 'Effect cube',
   styles: `
   .swiper-container {
-    width: 100%;
-    height: 100%;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -150px;
   }
 
   .swiper-slide {
@@ -31,10 +36,15 @@ module.exports = (mode = 'static') => ({
   </Swiper>`,
   config: [
     {
-      spaceBetween: 30,
-      effect: 'fade',
-      navigation: true,
-      pagination: { clickable: true },
+      effect: 'cube',
+      grabCursor: true,
+      cubeEffect: {
+        shadow: true,
+        slideShadows: true,
+        shadowOffset: 20,
+        shadowScale: 0.94,
+      },
+      pagination: true,
     },
   ],
 });
