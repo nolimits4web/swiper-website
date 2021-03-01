@@ -3,27 +3,38 @@ import sponsors from '../shared/sponsors-list';
 
 export default function SidebarSponsors() {
   return (
-    <div className="border-b-2 border-gray-200 mb-4">
-      <div className="font-semibold mb-2">Sponsors:</div>
-      {sponsors
-        .filter(({ plan }) => plan !== 'Sponsor')
-        .map(({ link, title, image_h, image, alt }) => (
-          <a
-            className="block my-3"
-            href={link}
-            key={title}
-            title={title}
-            rel="noopener"
-            target="_blank"
-            onClick={() => trackOutbound(link)}
-          >
-            <img
-              className="max-h-12 w-auto"
-              alt={title}
-              src={`/images/sponsors/${image_h || image}`}
-            />
-          </a>
-        ))}
+    <div className="mb-4">
+      <div className="font-semibold mb-2 flex justify-between items-center">
+        <span>Sponsors</span>
+        <a
+          href="https://opencollective.com/swiper"
+          target="_blank"
+          className="py-1 px-2 bg-primary text-white font-medium text-xs rounded-full no-underline hover:bg-opacity-90 duration-200 hover:no-underline"
+        >
+          Become a sponsor
+        </a>
+      </div>
+      <div className="-mx-2 p-2 bg-white space-y-2 rounded shadow">
+        {sponsors
+          .filter(({ plan }) => plan !== 'Sponsor')
+          .map(({ link, title, image_h, image, alt }) => (
+            <a
+              className="block hover:opacity-80"
+              href={link}
+              key={title}
+              title={title}
+              rel="noopener"
+              target="_blank"
+              onClick={() => trackOutbound(link)}
+            >
+              <img
+                className="max-h-12 w-auto"
+                alt={title}
+                src={`/images/sponsors/${image_h || image}`}
+              />
+            </a>
+          ))}
+      </div>
     </div>
   );
 }
