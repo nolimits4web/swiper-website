@@ -68,7 +68,7 @@
         <div class="swiper-slide">Slide 9</div>
         <div class="swiper-slide">Slide 10</div>
       </div>
-      <div class="swiper-scrollbar"></div>
+      <div class="swiper-pagination"></div>
     </div>
 
     <!-- Swiper JS -->
@@ -77,9 +77,12 @@
     <!-- Initialize Swiper -->
     <script>
       var swiper = new Swiper(".swiper-container", {
-        scrollbar: {
-          el: ".swiper-scrollbar",
-          hide: true,
+        slidesPerView: 3,
+        spaceBetween: 30,
+        freeMode: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
         },
       });
     </script>

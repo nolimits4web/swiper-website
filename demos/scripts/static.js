@@ -35,7 +35,7 @@ function render({ templateString, styles, config }) {
   }
   if (finalConfig.scrollbar) {
     finalConfig.scrollbar = {
-      el: '.swiper-pagination',
+      el: '.swiper-scrollbar',
       ...finalConfig.scrollbar,
     };
   }
