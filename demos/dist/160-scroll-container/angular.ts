@@ -9,8 +9,8 @@ SwiperCore.use([Scrollbar, Mousewheel]);
 @Component({
   selector: "app-swiper-example",
   template: `<swiper
-    [direction]="vertical"
-    [slidesPerView]="auto"
+    [direction]="'vertical'"
+    [slidesPerView]="'auto'"
     [freeMode]="true"
     [scrollbar]="true"
     [mousewheel]="true"

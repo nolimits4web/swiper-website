@@ -116,7 +116,18 @@ function ngPostHTML(config) {
         node.tag = 'swiper';
         const _config = config.parsed[swiperIndex];
         Object.keys(_config).forEach((key) => {
-          node.attrs[`[${key}]`] = _config[key];
+          let value = _config[key];
+          if (
+            !(
+              /[\{\}]/g.test(value) ||
+              value === 'true' ||
+              value === 'false' ||
+              !isNaN(value)
+            )
+          ) {
+            value = `'${_config[key]}'`;
+          }
+          node.attrs[`[${key}]`] = value;
         });
         swiperIndex++;
       } else if (node.tag === 'SwiperSlide') {

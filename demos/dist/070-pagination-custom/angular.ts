@@ -8,7 +8,7 @@ SwiperCore.use([Pagination]);
 
 @Component({
   selector: "app-swiper-example",
-  template: `<swiper [pagination]="pagination">
+  template: `<swiper [pagination]="'pagination'">
     <ng-template swiperSlide>Slide 1</ng-template>
     <ng-template swiperSlide>Slide 2</ng-template>
     <ng-template swiperSlide>Slide 3</ng-template>

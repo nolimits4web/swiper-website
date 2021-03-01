@@ -22,14 +22,24 @@ module.exports.addClass = (node, classNames) => {
   return node;
 };
 
+function formatName(name) {
+  return (name.charAt(0).toUpperCase() + name.slice(1))
+    .replace(/\-[a-z]/g, (match) => match.toUpperCase())
+    .replace('-', '');
+}
+
 module.exports.extractConfig = (filePath, mode = 'static') => {
   const demoConfig = require(filePath)(mode);
   const modules = [];
   demoConfig.config.forEach((config) => {
     Object.keys(config).forEach((name) => {
-      const nameFormatted = (name.charAt(0).toUpperCase() + name.slice(1))
-        .replace(/\-[a-z]/g, (match) => match.toUpperCase())
-        .replace('-', '');
+      if (name === 'effect') {
+        const effectModuleName = formatName(`${name}-${config[name]}`);
+        if (!modules.includes(effectModuleName)) {
+          modules.push(effectModuleName);
+        }
+      }
+      const nameFormatted = formatName(name);
       if (
         [
           'virtual',
@@ -46,10 +56,6 @@ module.exports.extractConfig = (filePath, mode = 'static') => {
           'history',
           'hash-navigation',
           'autoplay',
-          'effect-fade',
-          'effect-cube',
-          'effect-flip',
-          'effect-coverflow',
           'thumbs',
         ].includes(name.toLowerCase()) &&
         !modules.includes(nameFormatted)

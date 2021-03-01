@@ -19,7 +19,7 @@ SwiperCore.use([Pagination]);
     <ng-template swiperSlide>
       <swiper
         class="swiper-container-v"
-        [direction]="vertical"
+        [direction]="'vertical'"
         [spaceBetween]="50"
         [pagination]="{
           clickable: true

@@ -9,7 +9,7 @@ SwiperCore.use([Pagination]);
 @Component({
   selector: "app-swiper-example",
   template: `<swiper
-    [slidesPerView]="auto"
+    [slidesPerView]="'auto'"
     [spaceBetween]="30"
     [pagination]="{
       clickable: true

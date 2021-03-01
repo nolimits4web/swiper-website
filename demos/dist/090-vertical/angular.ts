@@ -9,7 +9,7 @@ SwiperCore.use([Pagination]);
 @Component({
   selector: "app-swiper-example",
   template: `<swiper
-    [direction]="vertical"
+    [direction]="'vertical'"
     [pagination]="{
       clickable: true
     }"
