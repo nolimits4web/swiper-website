@@ -12,7 +12,7 @@ const {
 
 module.exports = async (dir, filePath) => {
   try {
-    const demoConfig = extractConfig(filePath, 'core');
+    const demoConfig = extractConfig(filePath, 'static');
     if (!demoConfig) return;
     const {
       content,

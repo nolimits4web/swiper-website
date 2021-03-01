@@ -2,7 +2,8 @@ const default_settings = require('./default_settings');
 
 module.exports = (mode = 'static') => ({
   ...default_settings,
-  title: 'Autoplay',
+  title: 'Custom plugin',
+  skip: mode !== 'static',
   config: [
     {
       direction: 'vertical',

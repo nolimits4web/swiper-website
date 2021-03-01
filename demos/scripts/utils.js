@@ -35,6 +35,10 @@ module.exports.extractConfig = (filePath, mode = 'static') => {
   } catch (err) {
     return null;
   }
+  if (demoConfig.skip) {
+    console.log(`Skipping: ${demoConfig.title} ${mode}.. `);
+    return null;
+  }
   const modules = [];
   demoConfig.config.forEach((config) => {
     Object.keys(config).forEach((name) => {
