@@ -16,7 +16,9 @@ const buildAngular = require('./angular');
     const filePath = path.join(__dirname, '../', item);
 
     await fs.ensureDir(dir);
-    buildStatic(dir, filePath);
-    buildAngular(dir, filePath);
+    await Promise.all([
+      buildStatic(dir, filePath),
+      buildAngular(dir, filePath),
+    ]).catch(console.error);
   });
 })();

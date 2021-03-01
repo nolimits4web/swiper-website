@@ -1,7 +1,10 @@
-import { Component } from "@angular/core";
+import { Component, ViewEncapsulation } from "@angular/core";
 
 // import Swiper core and required modules
-import SwiperCore from "swiper/core";
+import SwiperCore, { Navigation } from "swiper/core";
+
+// install Swiper modules
+SwiperCore.use([Navigation]);
 
 @Component({
   selector: "app-swiper-example",
@@ -60,12 +63,6 @@ import SwiperCore from "swiper/core";
       }
     `,
   ],
+  encapsulation: ViewEncapsulation.None,
 })
-export class AppComponent {
-  onSwiper(swiper) {
-    console.log(swiper);
-  }
-  onSlideChange() {
-    console.log("slide change");
-  }
-}
+export class AppComponent {}

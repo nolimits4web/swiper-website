@@ -1,14 +1,19 @@
 import { Component, ViewEncapsulation } from "@angular/core";
 
 // import Swiper core and required modules
-import SwiperCore, { Pagination } from "swiper/core";
+import SwiperCore, { Pagination, Navigation } from "swiper/core";
 
 // install Swiper modules
-SwiperCore.use([Pagination]);
+SwiperCore.use([Pagination, Navigation]);
 
 @Component({
   selector: "app-swiper-example",
-  template: `<swiper [pagination]="true">
+  template: `<swiper
+    [pagination]="{
+      type: 'progressbar'
+    }"
+    [navigation]="true"
+  >
     <ng-template swiperSlide>Slide 1</ng-template>
     <ng-template swiperSlide>Slide 2</ng-template>
     <ng-template swiperSlide>Slide 3</ng-template>

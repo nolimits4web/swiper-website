@@ -2,22 +2,26 @@ const posthtml = require('posthtml');
 const fs = require('fs-extra');
 const path = require('path');
 const prettier = require('prettier');
-const { addClass, extractConfig } = require('./utils');
+const { addClass, extractConfig, parseJSON, formatFn } = require('./utils');
 
 module.exports = async (dir, filePath) => {
-  const demoConfig = extractConfig(filePath, 'core');
-  const { content, config, styles, title } = demoConfig;
-  const { html: templateString } = await posthtml([
-    staticPostHTML(config),
-  ]).process(content);
+  try {
+    const demoConfig = extractConfig(filePath, 'core');
+    const { content, config, styles, title } = demoConfig;
+    const { html: templateString } = await posthtml([
+      staticPostHTML(config),
+    ]).process(content);
 
-  const finalContent = prettier.format(
-    render({ templateString, styles, config }),
-    {
-      parser: 'html',
-    }
-  );
-  await fs.writeFile(path.join(dir, 'static.html'), finalContent);
+    const finalContent = prettier.format(
+      render({ templateString, styles, config }),
+      {
+        parser: 'html',
+      }
+    );
+    await fs.writeFile(path.join(dir, 'static.html'), finalContent);
+  } catch (err) {
+    throw new Error('Static: ' + err);
+  }
 };
 
 function render({ templateString, styles, config }) {
@@ -65,7 +69,7 @@ function render({ templateString, styles, config }) {
     <!-- Initialize Swiper -->
     <script>
       var swiper = new Swiper('.swiper-container'${
-        finalConfig ? `, ${JSON.stringify(finalConfig, null, 2)}` : ''
+        finalConfig ? `, ${formatFn(parseJSON(finalConfig))}` : ''
       });
     </script>
   </body>

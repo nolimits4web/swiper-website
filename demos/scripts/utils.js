@@ -22,19 +22,41 @@ module.exports.addClass = (node, classNames) => {
   return node;
 };
 
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.toLowerCase().slice(1);
+}
+
 module.exports.extractConfig = (filePath, mode = 'core') => {
   const demoConfig = require(filePath)('core');
   const modules = [];
   demoConfig.config.forEach((config) => {
     Object.keys(config).forEach((key) => {
+      const _key = capitalizeFirstLetter(key);
       if (
-        ['pagination', 'navigation'].includes(key) &&
-        !modules.includes(key)
+        ['pagination', 'navigation'].includes(_key.toLowerCase()) &&
+        !modules.includes(_key)
       ) {
-        modules.push(key);
+        modules.push(_key);
       }
     });
   });
   if (demoConfig)
     return { ...demoConfig, modules: modules.length > 0 ? modules : null };
+};
+
+module.exports.parseJSON = (value) => {
+  return JSON.stringify(
+    value,
+    (key, val) => {
+      return typeof val === 'function' ? val.toString() : val;
+    },
+    2
+  );
+};
+
+module.exports.formatFn = (value) => {
+  return value
+    .replace(/('|")(\s+)?(function|\(\))/g, '$2$3')
+    .replace(/('|")(\s+)?\}/g, '$2}')
+    .replace(/\\n/g, '\n');
 };

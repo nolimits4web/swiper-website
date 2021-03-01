@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ViewEncapsulation } from "@angular/core";
 
 @Component({
   selector: "app-swiper-example",
@@ -57,12 +57,6 @@ import { Component } from "@angular/core";
       }
     `,
   ],
+  encapsulation: ViewEncapsulation.None,
 })
-export class AppComponent {
-  onSwiper(swiper) {
-    console.log(swiper);
-  }
-  onSlideChange() {
-    console.log("slide change");
-  }
-}
+export class AppComponent {}

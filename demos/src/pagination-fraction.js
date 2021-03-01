@@ -1,5 +1,5 @@
 module.exports = (mode = 'core') => ({
-  title: 'pagination dynamic',
+  title: 'pagination fraction',
   styles: `
   html,
   body {
@@ -56,8 +56,9 @@ module.exports = (mode = 'core') => ({
   config: [
     {
       pagination: {
-        dynamicBullets: true,
+        type: 'fraction',
       },
+      navigation: true,
     },
   ],
 });

@@ -2,50 +2,90 @@ const posthtml = require('posthtml');
 const fs = require('fs-extra');
 const path = require('path');
 const prettier = require('prettier');
-const { extractConfig } = require('./utils');
+const { extractConfig, parseJSON, formatFn } = require('./utils');
 
 module.exports = async (dir, filePath) => {
-  const demoConfig = extractConfig(filePath, 'angular');
-  const { content, config, styles, title, modules } = demoConfig;
-  const { html: templateString } = await posthtml([ngPostHTML(config)]).process(
-    content
-  );
-  const finalContent = prettier.format(
-    render({ templateString, styles, modules }),
-    {
-      parser: 'typescript',
-    }
-  );
-  await fs.writeFile(path.join(dir, 'angular.ts'), finalContent);
+  try {
+    const demoConfig = extractConfig(filePath, 'angular');
+    const { content, config, styles, title, modules } = demoConfig;
+    const { configs: parsedConfig, vars } = parseConfig(config);
+    config.parsed = parsedConfig;
+    const { html: templateString } = await posthtml([
+      ngPostHTML(config),
+    ]).process(content);
+    const finalContent = prettier.format(
+      render({ templateString, styles, modules, vars }),
+      {
+        parser: 'typescript',
+      }
+    );
+    await fs.writeFile(path.join(dir, 'angular.ts'), finalContent);
+  } catch (err) {
+    throw new Error('Angular: ' + err);
+  }
 };
 
-function render({ templateString, styles, modules }) {
-  return `
-import { Component } from '@angular/core';
+function parseConfig(configs) {
+  const vars = [];
+  const _configs = configs.map((config) => {
+    Object.keys(config).forEach((key) => {
+      let value = config[key].toString();
+      if (typeof config[key] === 'object') {
+        value = parseJSON(config[key]);
+      }
+      if (value && (value.includes('function') || value.includes('=>'))) {
+        vars.push({
+          key,
+          value,
+        });
+        value = key;
+      }
+      config[key] = value.toString();
+    });
+    return config;
+  });
+  return { configs: _configs, vars };
+}
 
+function render({ templateString, styles, modules, vars }) {
+  const _modules = modules ? modules.join(',') : '';
+  const varsTemplate = vars
+    ? vars
+        .map(({ key, value }) => {
+          const _value = formatFn(value);
+          return `${key} = ${_value}`;
+        })
+        .join('\n')
+    : '';
+  return `
+import { Component, ViewEncapsulation } from '@angular/core';
 ${
   modules
-    ? `// import Swiper core and required modules
-import SwiperCore from 'swiper/core';`
+    ? `
+// import Swiper core and required modules
+import SwiperCore, {
+  ${_modules}
+} from 'swiper/core';
+
+// install Swiper modules
+SwiperCore.use([${_modules}]);
+`
     : ''
 }
 
 @Component({
   selector: 'app-swiper-example',
   template: \`${templateString}\`,
-  styles: [\`${styles}\`]
+  styles: [\`${styles}\`],
+	encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
-  onSwiper(swiper) {
-    console.log(swiper);
-  }
-  onSlideChange() {
-    console.log('slide change');
-  }
+  ${varsTemplate}
 }
 
   `;
 }
+
 function ngPostHTML(config) {
   return (tree) => {
     tree.walk((node) => {
@@ -58,17 +98,10 @@ function ngPostHTML(config) {
       node.attrs = node.attrs || {};
       if (node.tag === 'Swiper') {
         node.tag = 'swiper';
-        const _config = config[0];
+        // TODO: multiple configs
+        const _config = config.parsed[0];
         Object.keys(_config).forEach((key) => {
-          // TODO: multiple configs
-          let value = '';
-          if (typeof _config[key] === 'object') {
-            value = JSON.stringify(_config[key]);
-          }
-          if (!value) {
-            value = _config[key];
-          }
-          node.attrs[`[${key}]`] = value.toString();
+          node.attrs[`[${key}]`] = _config[key];
         });
       } else if (node.tag === 'SwiperSlide') {
         node.tag = 'ng-template';

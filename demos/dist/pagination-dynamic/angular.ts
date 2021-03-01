@@ -1,11 +1,18 @@
-import { Component } from "@angular/core";
+import { Component, ViewEncapsulation } from "@angular/core";
 
 // import Swiper core and required modules
-import SwiperCore from "swiper/core";
+import SwiperCore, { Pagination } from "swiper/core";
+
+// install Swiper modules
+SwiperCore.use([Pagination]);
 
 @Component({
   selector: "app-swiper-example",
-  template: `<swiper [pagination]="{ dynamicBullets: true }">
+  template: `<swiper
+    [pagination]="{
+      dynamicBullets: true
+    }"
+  >
     <ng-template swiperSlide>Slide 1</ng-template>
     <ng-template swiperSlide>Slide 2</ng-template>
     <ng-template swiperSlide>Slide 3</ng-template>
@@ -60,12 +67,6 @@ import SwiperCore from "swiper/core";
       }
     `,
   ],
+  encapsulation: ViewEncapsulation.None,
 })
-export class AppComponent {
-  onSwiper(swiper) {
-    console.log(swiper);
-  }
-  onSlideChange() {
-    console.log("slide change");
-  }
-}
+export class AppComponent {}

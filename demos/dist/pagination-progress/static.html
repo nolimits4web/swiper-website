@@ -68,6 +68,8 @@
         <div class="swiper-slide">Slide 9</div>
         <div class="swiper-slide">Slide 10</div>
       </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
       <div class="swiper-pagination"></div>
     </div>
 
@@ -78,7 +80,12 @@
     <script>
             var swiper = new Swiper('.swiper-container', {
         "pagination": {
-          "el": ".swiper-pagination
+          "el": ".swiper-pagination",
+          "type": "progressbar
+        },
+        "navigation": {
+          "nextEl": ".swiper-button-next",
+          "prevEl": ".swiper-button-prev
         }
       });
     </script>
