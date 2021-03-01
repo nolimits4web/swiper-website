@@ -13,13 +13,21 @@ const {
 module.exports = async (dir, filePath) => {
   try {
     const demoConfig = extractConfig(filePath, 'core');
-    const { content, config, styles, globalStyles, title } = demoConfig;
+    if (!demoConfig) return;
+    const {
+      content,
+      config,
+      styles,
+      globalStyles,
+      title,
+      jsStatic,
+    } = demoConfig;
     const { html: templateString } = await posthtml([
       staticPostHTML(config),
     ]).process(content);
 
     const finalContent = prettier.format(
-      render({ templateString, styles, globalStyles, config }),
+      render({ templateString, styles, globalStyles, config, jsStatic }),
       {
         parser: 'html',
       }
@@ -30,7 +38,7 @@ module.exports = async (dir, filePath) => {
   }
 };
 
-function render({ templateString, styles, globalStyles, config }) {
+function render({ templateString, styles, globalStyles, config, jsStatic }) {
   let jsCode = '';
   config.forEach((_config) => {
     const finalConfig = _config;
@@ -91,6 +99,8 @@ function render({ templateString, styles, globalStyles, config }) {
     <!-- Initialize Swiper -->
     <script>
       ${jsCode}
+
+      ${jsStatic}
     </script>
   </body>
 
@@ -122,6 +132,7 @@ function staticPostHTML(config) {
       if (node.tag === 'Swiper') {
         const _config = config[0]; // TODO: support multiple configs
         const append = [];
+        const prepend = [];
         if (_config.navigation) {
           append.push(divEl('swiper-button-next'));
           append.push(divEl('swiper-button-prev'));
@@ -134,15 +145,33 @@ function staticPostHTML(config) {
         if (_config.pagination) {
           append.push(divEl('swiper-pagination'));
         }
+        if (node.content) {
+          node.content = node.content.filter((item) => {
+            if (item.attrs && item.attrs.slot) {
+              const slot = item.attrs.slot;
+              item.attrs.slot = false;
+              if (slot.includes('container')) {
+                if (slot === 'container-start') {
+                  prepend.push(item);
+                } else {
+                  append.push(item);
+                }
+                return false;
+              }
+            }
+            return true;
+          });
+        }
 
         classNames = 'swiper-container';
         node.content = [
+          ...prepend,
           {
             tag: 'div',
             attrs: {
               class: 'swiper-wrapper',
             },
-            content: [...node.content],
+            content: node.content ? [...node.content] : [],
           },
           ...append,
         ];

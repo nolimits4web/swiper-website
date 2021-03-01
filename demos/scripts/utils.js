@@ -29,7 +29,12 @@ function formatName(name) {
 }
 
 module.exports.extractConfig = (filePath, mode = 'static') => {
-  const demoConfig = require(filePath)(mode);
+  let demoConfig;
+  try {
+    demoConfig = require(filePath)(mode);
+  } catch (err) {
+    return null;
+  }
   const modules = [];
   demoConfig.config.forEach((config) => {
     Object.keys(config).forEach((name) => {

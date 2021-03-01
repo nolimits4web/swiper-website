@@ -14,6 +14,7 @@ module.exports = async (dir, filePath) => {
   try {
     swiperIndex = 0;
     const demoConfig = extractConfig(filePath, 'angular');
+    if (!demoConfig) return;
     const {
       content,
       config,
