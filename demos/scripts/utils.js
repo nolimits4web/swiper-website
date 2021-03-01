@@ -86,7 +86,9 @@ module.exports.parseJSON = (value) => {
 module.exports.formatFn = (value) => {
   return value
     .replace(/('|")(\s+)?(function|\(\))/g, '$2$3')
+    .replace(/('|")(\s+)?(\()(function|\(\))/g, '$2$3$4')
     .replace(/(function.*\})(\s+)?('|")/g, '$1$2')
+    .replace(/}\)\(\)"/g, '})()')
     .replace(/\\n/g, '\n');
 };
 
