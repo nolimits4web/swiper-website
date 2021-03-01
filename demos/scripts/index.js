@@ -5,7 +5,7 @@ const buildStatic = require('./static');
 const buildAngular = require('./angular');
 
 (async () => {
-  const demos = await globby('src/*', {
+  const demos = await globby(['src/*', '!src/default_settings.js'], {
     cwd: path.join(__dirname, '/..'),
   });
   demos.forEach(async (item) => {

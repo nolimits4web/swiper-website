@@ -1,4 +1,7 @@
-module.exports = (mode = 'core') => ({
+const default_settings = require('./default_settings');
+
+module.exports = (mode = 'static') => ({
+  ...default_settings,
   title: 'Scroll container',
   styles: `
   html,
@@ -16,10 +19,6 @@ module.exports = (mode = 'core') => ({
     padding: 0;
   }
 
-  .swiper-container {
-    width: 100%;
-    height: 100%;
-  }
 
   .swiper-slide {
     font-size: 18px;

@@ -7,13 +7,13 @@ const { addClass, extractConfig, parseJSON, formatFn } = require('./utils');
 module.exports = async (dir, filePath) => {
   try {
     const demoConfig = extractConfig(filePath, 'core');
-    const { content, config, styles, title } = demoConfig;
+    const { content, config, styles, globalStyles, title } = demoConfig;
     const { html: templateString } = await posthtml([
       staticPostHTML(config),
     ]).process(content);
 
     const finalContent = prettier.format(
-      render({ templateString, styles, config }),
+      render({ templateString, styles, globalStyles, config }),
       {
         parser: 'html',
       }
@@ -24,7 +24,7 @@ module.exports = async (dir, filePath) => {
   }
 };
 
-function render({ templateString, styles, config }) {
+function render({ templateString, styles, globalStyles, config }) {
   const finalConfig = config[0]; // TODO: support multiple configs
   if (finalConfig.navigation) {
     finalConfig.navigation = {
@@ -55,11 +55,11 @@ function render({ templateString, styles, config }) {
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
     ${
-      styles
+      styles || globalStyles
         ? `
     <!-- Demo styles -->
     <style>
-      ${styles}
+      ${globalStyles} ${styles}
     </style>`
         : ''
     }

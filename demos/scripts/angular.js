@@ -7,14 +7,21 @@ const { extractConfig, parseJSON, formatFn } = require('./utils');
 module.exports = async (dir, filePath) => {
   try {
     const demoConfig = extractConfig(filePath, 'angular');
-    const { content, config, styles, title, modules } = demoConfig;
+    const {
+      content,
+      config,
+      styles,
+      title,
+      globalStyles,
+      modules,
+    } = demoConfig;
     const { configs: parsedConfig, vars } = parseConfig(config);
     config.parsed = parsedConfig;
     const { html: templateString } = await posthtml([
       ngPostHTML(config),
     ]).process(content);
     const finalContent = prettier.format(
-      render({ templateString, styles, modules, vars }),
+      render({ templateString, styles, modules, vars, globalStyles }),
       {
         parser: 'typescript',
       }
@@ -47,7 +54,7 @@ function parseConfig(configs) {
   return { configs: _configs, vars };
 }
 
-function render({ templateString, styles, modules, vars }) {
+function render({ templateString, globalStyles, styles, modules, vars }) {
   const _modules = modules ? modules.join(',') : '';
   const varsTemplate = vars
     ? vars
@@ -76,7 +83,7 @@ SwiperCore.use([${_modules}]);
 @Component({
   selector: 'app-swiper-example',
   template: \`${templateString}\`,
-  styles: [\`${styles}\`],
+  styles: [\`${globalStyles} ${styles}\`],
 	encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {

@@ -22,8 +22,8 @@ module.exports.addClass = (node, classNames) => {
   return node;
 };
 
-module.exports.extractConfig = (filePath, mode = 'core') => {
-  const demoConfig = require(filePath)('core');
+module.exports.extractConfig = (filePath, mode = 'static') => {
+  const demoConfig = require(filePath)(mode);
   const modules = [];
   demoConfig.config.forEach((config) => {
     Object.keys(config).forEach((name) => {
