@@ -33,6 +33,12 @@ function render({ templateString, styles, config }) {
       ...finalConfig.navigation,
     };
   }
+  if (finalConfig.scrollbar) {
+    finalConfig.scrollbar = {
+      el: '.swiper-pagination',
+      ...finalConfig.scrollbar,
+    };
+  }
   if (finalConfig.pagination) {
     finalConfig.pagination = {
       el: '.swiper-pagination',
@@ -78,6 +84,16 @@ function render({ templateString, styles, config }) {
   `;
 }
 
+function divEl(classNames) {
+  return {
+    tag: 'div',
+    attrs: {
+      class: classNames,
+    },
+    content: '',
+  };
+}
+
 function staticPostHTML(config) {
   return (tree) => {
     tree.walk((node) => {
@@ -93,32 +109,16 @@ function staticPostHTML(config) {
         const _config = config[0]; // TODO: support multiple configs
         const append = [];
         if (_config.navigation) {
-          append.push(
-            {
-              tag: 'div',
-              attrs: {
-                class: 'swiper-button-next',
-              },
-              content: '',
-            },
-            {
-              tag: 'div',
-              attrs: {
-                class: 'swiper-button-prev',
-              },
-              content: '',
-            }
-          );
+          append.push(divEl('swiper-button-next'));
+          append.push(divEl('swiper-button-prev'));
+        }
+
+        if (_config.scrollbar) {
+          append.push(divEl('swiper-scrollbar'));
         }
 
         if (_config.pagination) {
-          append.push({
-            tag: 'div',
-            attrs: {
-              class: 'swiper-pagination',
-            },
-            content: '',
-          });
+          append.push(divEl('swiper-pagination'));
         }
 
         classNames = 'swiper-container';

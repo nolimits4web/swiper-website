@@ -22,21 +22,39 @@ module.exports.addClass = (node, classNames) => {
   return node;
 };
 
-function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.toLowerCase().slice(1);
-}
-
 module.exports.extractConfig = (filePath, mode = 'core') => {
   const demoConfig = require(filePath)('core');
   const modules = [];
   demoConfig.config.forEach((config) => {
-    Object.keys(config).forEach((key) => {
-      const _key = capitalizeFirstLetter(key);
+    Object.keys(config).forEach((name) => {
+      const nameFormatted = (name.charAt(0).toUpperCase() + name.slice(1))
+        .replace(/\-[a-z]/g, (match) => match.toUpperCase())
+        .replace('-', '');
       if (
-        ['pagination', 'navigation'].includes(_key.toLowerCase()) &&
-        !modules.includes(_key)
+        [
+          'virtual',
+          'keyboard',
+          'mousewheel',
+          'navigation',
+          'pagination',
+          'scrollbar',
+          'parallax',
+          'zoom',
+          'lazy',
+          'controller',
+          'a11y',
+          'history',
+          'hash-navigation',
+          'autoplay',
+          'effect-fade',
+          'effect-cube',
+          'effect-flip',
+          'effect-coverflow',
+          'thumbs',
+        ].includes(name.toLowerCase()) &&
+        !modules.includes(nameFormatted)
       ) {
-        modules.push(_key);
+        modules.push(nameFormatted);
       }
     });
   });
