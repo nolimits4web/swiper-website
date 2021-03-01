@@ -73,15 +73,20 @@ module.exports.parseJSON = (value) => {
 };
 
 module.exports.formatFn = (value) => {
-  // if(value.includes('function') || value.includes('()') || value.includes('=>')){
-  //   const _val = JSON.parse(value);
-  //   const val = Object.keys(_val).forEach(key => {
-
-  //   });
-
-  // }
   return value
     .replace(/('|")(\s+)?(function|\(\))/g, '$2$3')
     .replace(/(function.*\})(\s+)?('|")/g, '$1$2')
     .replace(/\\n/g, '\n');
+};
+
+module.exports.cleanupConfig = (configs) => {
+  const isArray = Array.isArray(configs);
+  const _configs = !isArray ? [configs] : configs;
+  const res = _configs.map((config) => {
+    if (config.__el) {
+      delete config.__el;
+    }
+    return config;
+  });
+  return isArray ? res : res[0];
 };

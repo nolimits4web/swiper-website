@@ -2,7 +2,13 @@ const posthtml = require('posthtml');
 const fs = require('fs-extra');
 const path = require('path');
 const prettier = require('prettier');
-const { addClass, extractConfig, parseJSON, formatFn } = require('./utils');
+const {
+  addClass,
+  extractConfig,
+  parseJSON,
+  formatFn,
+  cleanupConfig,
+} = require('./utils');
 
 module.exports = async (dir, filePath) => {
   try {
@@ -20,31 +26,39 @@ module.exports = async (dir, filePath) => {
     );
     await fs.writeFile(path.join(dir, 'static.html'), finalContent);
   } catch (err) {
-    throw new Error('Static: ' + err);
+    throw new Error('Static: ' + err.stack);
   }
 };
 
 function render({ templateString, styles, globalStyles, config }) {
-  const finalConfig = config[0]; // TODO: support multiple configs
-  if (finalConfig.navigation) {
-    finalConfig.navigation = {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-      ...finalConfig.navigation,
-    };
-  }
-  if (finalConfig.scrollbar) {
-    finalConfig.scrollbar = {
-      el: '.swiper-scrollbar',
-      ...finalConfig.scrollbar,
-    };
-  }
-  if (finalConfig.pagination) {
-    finalConfig.pagination = {
-      el: '.swiper-pagination',
-      ...finalConfig.pagination,
-    };
-  }
+  let jsCode = '';
+  config.forEach((_config) => {
+    const finalConfig = _config;
+    if (finalConfig.navigation) {
+      finalConfig.navigation = {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+        ...finalConfig.navigation,
+      };
+    }
+    if (finalConfig.scrollbar) {
+      finalConfig.scrollbar = {
+        el: '.swiper-scrollbar',
+        ...finalConfig.scrollbar,
+      };
+    }
+    if (finalConfig.pagination) {
+      finalConfig.pagination = {
+        el: '.swiper-pagination',
+        ...finalConfig.pagination,
+      };
+    }
+    const el = finalConfig.__el || '.swiper-container';
+    jsCode += `\nvar swiper = new Swiper('${el}'${
+      finalConfig ? `, ${formatFn(parseJSON(cleanupConfig(finalConfig)))}` : ''
+    });`;
+  });
+
   return `<!DOCTYPE html>
   <html lang="en">
 
@@ -76,9 +90,7 @@ function render({ templateString, styles, globalStyles, config }) {
 
     <!-- Initialize Swiper -->
     <script>
-      var swiper = new Swiper('.swiper-container'${
-        finalConfig ? `, ${formatFn(parseJSON(finalConfig))}` : ''
-      });
+      ${jsCode}
     </script>
   </body>
 

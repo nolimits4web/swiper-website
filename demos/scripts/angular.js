@@ -2,10 +2,17 @@ const posthtml = require('posthtml');
 const fs = require('fs-extra');
 const path = require('path');
 const prettier = require('prettier');
-const { extractConfig, parseJSON, formatFn } = require('./utils');
+const {
+  extractConfig,
+  parseJSON,
+  formatFn,
+  cleanupConfig,
+} = require('./utils');
+let swiperIndex = 0;
 
 module.exports = async (dir, filePath) => {
   try {
+    swiperIndex = 0;
     const demoConfig = extractConfig(filePath, 'angular');
     const {
       content,
@@ -28,13 +35,13 @@ module.exports = async (dir, filePath) => {
     );
     await fs.writeFile(path.join(dir, 'angular.ts'), finalContent);
   } catch (err) {
-    throw new Error('Angular: ' + err);
+    throw new Error('Angular: ' + err.stack);
   }
 };
 
 function parseConfig(configs) {
   const vars = [];
-  const _configs = configs.map((config) => {
+  const _configs = cleanupConfig(configs).map((config) => {
     Object.keys(config).forEach((key) => {
       let value = config[key].toString();
       if (typeof config[key] === 'object') {
@@ -107,11 +114,11 @@ function ngPostHTML(config) {
       node.attrs = node.attrs || {};
       if (node.tag === 'Swiper') {
         node.tag = 'swiper';
-        // TODO: multiple configs
-        const _config = config.parsed[0];
+        const _config = config.parsed[swiperIndex];
         Object.keys(_config).forEach((key) => {
           node.attrs[`[${key}]`] = _config[key];
         });
+        swiperIndex++;
       } else if (node.tag === 'SwiperSlide') {
         node.tag = 'ng-template';
         node.attrs.swiperSlide = true;
