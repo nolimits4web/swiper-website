@@ -83,7 +83,9 @@ SwiperCore.use([${_modules}]);
 @Component({
   selector: 'app-swiper-example',
   template: \`${templateString}\`,
-  styles: [\`${globalStyles} ${styles}\`],
+  styles: [\`${globalStyles}
+
+  ${styles}\`],
 	encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {

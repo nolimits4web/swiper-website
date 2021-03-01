@@ -52,7 +52,6 @@ SwiperCore.use([Pagination]);
         text-align: center;
         font-size: 18px;
         background: #fff;
-        width: 80%;
 
         /* Center slide text vertically */
         display: -webkit-box;
@@ -67,6 +66,10 @@ SwiperCore.use([Pagination]);
         -ms-flex-align: center;
         -webkit-align-items: center;
         align-items: center;
+      }
+
+      .swiper-slide {
+        width: 80%;
       }
 
       .swiper-slide:nth-child(2n) {

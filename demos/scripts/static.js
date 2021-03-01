@@ -59,7 +59,9 @@ function render({ templateString, styles, globalStyles, config }) {
         ? `
     <!-- Demo styles -->
     <style>
-      ${globalStyles} ${styles}
+      ${globalStyles}
+
+      ${styles}
     </style>`
         : ''
     }

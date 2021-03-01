@@ -4,21 +4,10 @@ module.exports = (mode = 'static') => ({
   ...default_settings,
   title: 'Scroll container',
   styles: `
-  html,
-  body {
-    position: relative;
+  .swiper-container {
+    width: 100%;
     height: 100%;
   }
-
-  body {
-    background: #fff;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    color: #000;
-    margin: 0;
-    padding: 0;
-  }
-
 
   .swiper-slide {
     font-size: 18px;

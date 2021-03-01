@@ -4,6 +4,8 @@ module.exports = (mode = 'static') => ({
   ...default_settings,
   title: 'pagination custom',
   styles: `
+  ${default_settings.styles}
+
   .swiper-pagination-bullet {
     width: 20px;
     height: 20px;

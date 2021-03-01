@@ -67,6 +67,9 @@ SwiperCore.use([Pagination]);
         -ms-flex-align: center;
         -webkit-align-items: center;
         align-items: center;
+      }
+
+      .swiper-slide {
         width: 60%;
       }
 
