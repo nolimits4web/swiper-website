@@ -113,7 +113,7 @@ function staticPostHTML(config) {
     tree.walk((node) => {
       if (
         !node.tag ||
-        ['Swiper', 'SwiperSlide'].indexOf(node.tag.toLowerCase()) !== -1
+        !['swiper', 'swiperslide'].includes(node.tag.toLowerCase())
       ) {
         return node;
       }
@@ -149,6 +149,7 @@ function staticPostHTML(config) {
       } else if (node.tag === 'SwiperSlide') {
         classNames = 'swiper-slide';
       }
+
       node.tag = 'div';
 
       addClass(node, classNames);

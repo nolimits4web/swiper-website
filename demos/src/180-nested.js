@@ -2,7 +2,7 @@ const default_settings = require('./default_settings');
 
 module.exports = (mode = 'static') => ({
   ...default_settings,
-  title: 'Slides per column',
+  title: 'Nested',
   styles: `
   ${default_settings.styles}
 
