@@ -1,10 +1,10 @@
 import React from 'react';
-import { getParameters } from 'codesandbox/lib/api/define';
 import { ReactComponent as CodeSandBoxLogo } from '@/img/codesandbox.svg';
 import Heading from '@/components/Heading';
 import { WithSidebarLayout } from '@/layouts/withSidebar';
 import { useLazyDemos } from 'src/shared/use-lazy-demos';
 import demos from 'src/demos.json';
+import { compressToBase64 } from 'src/shared/lz-string';
 
 let tableOfContents;
 
@@ -19,9 +19,16 @@ export default function DemosPage() {
 
   useLazyDemos();
 
+  const compressParameters = (parameters) => {
+    return compressToBase64(JSON.stringify(parameters))
+      .replace(/\+/g, `-`) // Convert '+' to '-'
+      .replace(/\//g, `_`) // Convert '/' to '_'
+      .replace(/=+$/, ``); // Remove ending '='
+  };
+
   const openCodeSandbox = async (e, title, fileName) => {
     e.preventDefault();
-    const res = await fetch(`demos/${fileName}`);
+    const res = await fetch(`/demos/${fileName}`);
     let html = await res.text();
     html = html
       .replace(/..\/package\//g, 'https://unpkg.com/swiper/')
@@ -30,7 +37,7 @@ export default function DemosPage() {
     // https://github.com/codesandbox/codesandbox-importers/blob/master/packages/import-utils/src/create-sandbox/templates.ts#L63
     // We cant set name & tags in static environment, as codesandbox parses it from package.json
     // Thats why we're including parcel as dependency
-    const parameters = {
+    const parameters = compressParameters({
       files: {
         'index.html': {
           content: html,
@@ -46,11 +53,14 @@ export default function DemosPage() {
           },
         },
       },
-    };
+    });
 
-    const codeSandBoxParams = getParameters(parameters);
+    console.log(parameters);
+
+    // const codeSandBoxParams = getParameters(parameters);
     window.open(
-      `https://codesandbox.io/api/v1/sandboxes/define?parameters=${codeSandBoxParams}`
+      `https://codesandbox.io/api/v1/sandboxes/define?parameters=${parameters}`,
+      '_blank'
     );
   };
 
@@ -94,7 +104,11 @@ export default function DemosPage() {
               href="#"
               onClick={(e) => openCodeSandbox(e, title, fileName)}
             >
-              <CodeSandBoxLogo className="inline" width="19" height="14" />
+              <CodeSandBoxLogo
+                className="inline fill-current"
+                width="19"
+                height="14"
+              />
               <span>Edit in CodeSandbox</span>
             </a>
           </div>
