@@ -1,10 +1,10 @@
 import React from 'react';
-import sdk from '@stackblitz/sdk';
-import { ReactComponent as StackblitzLogo } from '@/img/stackblitz.svg';
+import { ReactComponent as CodeSandBoxLogo } from '@/img/codesandbox.svg';
 import Heading from '@/components/Heading';
 import { WithSidebarLayout } from '@/layouts/withSidebar';
 import { useLazyDemos } from 'src/shared/use-lazy-demos';
 import demos from 'src/demos.json';
+import { compressToBase64 } from 'src/shared/lz-string';
 
 let tableOfContents;
 
@@ -19,27 +19,49 @@ export default function DemosPage() {
 
   useLazyDemos();
 
-  const createStackBlitz = (e, title, fileName) => {
-    e.preventDefault();
-    fetch(`demos/${fileName}`)
-      .then((res) => res.text())
-      .then((html) => {
-        html = html
-          .replace(/..\/package\//g, 'https://unpkg.com/swiper/')
-          .replace(/.\/images\//g, 'https://swiperjs.com/demos/images/');
+  const compressParameters = (parameters) => {
+    return compressToBase64(JSON.stringify(parameters))
+      .replace(/\+/g, `-`) // Convert '+' to '-'
+      .replace(/\//g, `_`) // Convert '/' to '_'
+      .replace(/=+$/, ``); // Remove ending '='
+  };
 
-        const project = {
-          files: {
-            'index.html': html,
-            'index.js': '',
+  const openCodeSandbox = async (e, title, fileName) => {
+    e.preventDefault();
+    const res = await fetch(`/demos/${fileName}`);
+    let html = await res.text();
+    html = html
+      .replace(/..\/package\//g, 'https://unpkg.com/swiper/')
+      .replace(/.\/images\//g, 'https://swiperjs.com/demos/images/');
+
+    // https://github.com/codesandbox/codesandbox-importers/blob/master/packages/import-utils/src/create-sandbox/templates.ts#L63
+    // We cant set name & tags in static environment, as codesandbox parses it from package.json
+    // Thats why we're including parcel as dependency
+    const parameters = compressParameters({
+      files: {
+        'index.html': {
+          content: html,
+        },
+        'package.json': {
+          content: {
+            name: `Swiper - ${title}`,
+            tags: ['swiper'],
+            dependencies: {
+              swiper: 'latest',
+              'parcel-bundler': '^1.6.1',
+            },
           },
-          title: `Swiper - ${title}`,
-          description: `Swiper - ${title}`,
-          template: 'javascript',
-          tags: ['swiper'],
-        };
-        sdk.openProject(project, { openFile: 'index.html' });
-      });
+        },
+      },
+    });
+
+    console.log(parameters);
+
+    // const codeSandBoxParams = getParameters(parameters);
+    window.open(
+      `https://codesandbox.io/api/v1/sandboxes/define?parameters=${parameters}`,
+      '_blank'
+    );
   };
 
   return (
@@ -80,10 +102,14 @@ export default function DemosPage() {
             <a
               className="no-underline ml-2"
               href="#"
-              onClick={(e) => createStackBlitz(e, title, fileName)}
+              onClick={(e) => openCodeSandbox(e, title, fileName)}
             >
-              <StackblitzLogo className="inline" width="19" height="14" />
-              <span>Edit in StackBlitz</span>
+              <CodeSandBoxLogo
+                className="inline fill-current"
+                width="19"
+                height="14"
+              />
+              <span>Edit in CodeSandbox</span>
             </a>
           </div>
           <div className="my-4 bg-gray-100 shadow demo">
