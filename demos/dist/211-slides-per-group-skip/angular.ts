@@ -1,4 +1,5 @@
-import { Component, ViewEncapsulation } from "@angular/core";
+import { Component, ViewEncapsulation, ViewChild } from "@angular/core";
+import { SwiperComponent } from "swiper/angular";
 
 // import Swiper core and required modules
 import SwiperCore, {

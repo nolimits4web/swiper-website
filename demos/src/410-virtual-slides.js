@@ -1,10 +1,10 @@
-const default_settings = require('./default_settings');
+const defaultSettings = require('./default_settings');
 
 module.exports = (mode = 'static') => ({
-  ...default_settings,
+  ...defaultSettings,
   title: 'Autoplay',
   styles: `
-  ${default_settings.styles}
+  ${defaultSettings.styles}
 
   .swiper-container {
     width: 100%;
@@ -28,14 +28,28 @@ module.exports = (mode = 'static') => ({
   }
   `,
   content: `
-  <Swiper></Swiper>
+  <Swiper #swiperRef></Swiper>
 
   <p class="append-buttons">
+  ${
+    mode === 'static' &&
+    `
     <a href="#" class="prepend-2-slides">Prepend 2 Slides</a>
     <a href="#" class="slide-1">Slide 1</a>
     <a href="#" class="slide-250">Slide 250</a>
     <a href="#" class="slide-500">Slide 500</a>
-    <a href="#" class="append-slide">Append Slide</a>
+    <a href="#" class="append-slide">Append Slide</a>`
+  }
+
+  ${
+    mode === 'angular' &&
+    `
+  <a href="#" (click)="prepend()" class="prepend-2-slides">Prepend 2 Slides</a>
+  <a href="#" (click)="slideTo(1)" class="slide-1">Slide 1</a>
+  <a href="#" (click)="slideTo(250)" class="slide-250">Slide 250</a>
+  <a href="#" (click)="slideTo(500)" class="slide-500">Slide 500</a>
+  <a href="#" (click)="append()" class="append-slide">Append Slide</a>`
+  }
   </p>
   `,
   config: [
@@ -58,7 +72,8 @@ module.exports = (mode = 'static') => ({
       },
     },
   ],
-  jsStatic: `
+  script: {
+    static: `
   var appendNumber = 600;
   var prependNumber = 1;
   document.querySelector('.slide-1').addEventListener('click', function (e) {
@@ -85,4 +100,26 @@ module.exports = (mode = 'static') => ({
     swiper.virtual.appendSlide('Slide ' + (++appendNumber));
   });
   `,
+    angular: `
+  @ViewChild('sliderRef', { static: false }) sliderRef?: SwiperComponent;
+
+  appendNumber = 600;
+  prependNumber = 1;
+
+  prepend(){
+    this.sliderRef.swiperRef.virtual.prependSlide([
+      'Slide ' + (--this.prependNumber),
+      'Slide ' + (--this.prependNumber)
+    ]);
+  }
+
+  append(){
+    this.sliderRef.swiperRef.virtual.appendSlide('Slide ' + (++this.appendNumber));
+  }
+
+  slideTo(index: number){
+    this.sliderRef.swiperRef.slideTo(index - 1, 0);
+  }
+  `,
+  },
 });

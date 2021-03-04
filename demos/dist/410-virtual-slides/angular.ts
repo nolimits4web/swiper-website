@@ -1,4 +1,5 @@
-import { Component, ViewEncapsulation } from "@angular/core";
+import { Component, ViewEncapsulation, ViewChild } from "@angular/core";
+import { SwiperComponent } from "swiper/angular";
 
 // import Swiper core and required modules
 import SwiperCore, { Pagination, Navigation, Virtual } from "swiper/core";
@@ -10,6 +11,7 @@ SwiperCore.use([Pagination, Navigation, Virtual]);
   selector: "app-swiper-example",
   template: `
     <swiper
+      #swiperRef
       [slidesPerView]="3"
       [centeredSlides]="true"
       [spaceBetween]="30"
@@ -21,11 +23,15 @@ SwiperCore.use([Pagination, Navigation, Virtual]);
     ></swiper>
 
     <p class="append-buttons">
-      <a href="#" class="prepend-2-slides">Prepend 2 Slides</a>
-      <a href="#" class="slide-1">Slide 1</a>
-      <a href="#" class="slide-250">Slide 250</a>
-      <a href="#" class="slide-500">Slide 500</a>
-      <a href="#" class="append-slide">Append Slide</a>
+      false
+
+      <a href="#" (click)="prepend()" class="prepend-2-slides"
+        >Prepend 2 Slides</a
+      >
+      <a href="#" (click)="slideTo(1)" class="slide-1">Slide 1</a>
+      <a href="#" (click)="slideTo(250)" class="slide-250">Slide 250</a>
+      <a href="#" (click)="slideTo(500)" class="slide-500">Slide 500</a>
+      <a href="#" (click)="append()" class="append-slide">Append Slide</a>
     </p>
   `,
   styles: [
@@ -46,7 +52,7 @@ SwiperCore.use([Pagination, Navigation, Virtual]);
       }
 
       .swiper-container {
-        width: 100%;
+        width: 800px;
         height: 100%;
       }
 
@@ -104,4 +110,26 @@ export class AppComponent {
       return slides;
     })(),
   };
+
+  @ViewChild("sliderRef", { static: false }) sliderRef?: SwiperComponent;
+
+  appendNumber = 600;
+  prependNumber = 1;
+
+  prepend() {
+    this.sliderRef.swiperRef.virtual.prependSlide([
+      "Slide " + --this.prependNumber,
+      "Slide " + --this.prependNumber,
+    ]);
+  }
+
+  append() {
+    this.sliderRef.swiperRef.virtual.appendSlide(
+      "Slide " + ++this.appendNumber
+    );
+  }
+
+  slideTo(index: number) {
+    this.sliderRef.swiperRef.slideTo(index - 1, 0);
+  }
 }

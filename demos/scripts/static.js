@@ -14,20 +14,13 @@ module.exports = async (dir, filePath) => {
   try {
     const demoConfig = extractConfig(filePath, 'static');
     if (!demoConfig) return;
-    const {
-      content,
-      config,
-      styles,
-      globalStyles,
-      title,
-      jsStatic,
-    } = demoConfig;
+    const { content, config } = demoConfig;
     const { html: templateString } = await posthtml([
       staticPostHTML(config),
     ]).process(content);
 
     const finalContent = prettier.format(
-      render({ templateString, styles, globalStyles, config, jsStatic }),
+      render({ templateString, config }, demoConfig),
       {
         parser: 'html',
       }
@@ -38,8 +31,11 @@ module.exports = async (dir, filePath) => {
   }
 };
 
-function render({ templateString, styles, globalStyles, config, jsStatic }) {
-  let jsCode = '';
+function render(
+  { templateString, config },
+  { styles = '', globalStyles = '', script = {} }
+) {
+  let configJSCode = '';
   config.forEach((_config) => {
     const finalConfig = _config;
     if (finalConfig.navigation) {
@@ -62,7 +58,7 @@ function render({ templateString, styles, globalStyles, config, jsStatic }) {
       };
     }
     const el = finalConfig.__el || '.swiper-container';
-    jsCode += `\nvar swiper = new Swiper('${el}'${
+    configJSCode += `\nvar swiper = new Swiper('${el}'${
       finalConfig ? `, ${formatFn(parseJSON(cleanupConfig(finalConfig)))}` : ''
     });`;
   });
@@ -98,9 +94,9 @@ function render({ templateString, styles, globalStyles, config, jsStatic }) {
 
     <!-- Initialize Swiper -->
     <script>
-      ${jsCode}
+      ${configJSCode}
 
-      ${jsStatic}
+      ${script.static || ''}
     </script>
   </body>
 

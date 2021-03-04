@@ -1,7 +1,7 @@
-const default_settings = require('./default_settings');
+const defaultSettings = require('./default_settings');
 
 module.exports = (mode = 'static') => ({
-  ...default_settings,
+  ...defaultSettings,
   title: 'Effect fade',
   styles: `
   .swiper-container {

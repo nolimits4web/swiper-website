@@ -15,21 +15,14 @@ module.exports = async (dir, filePath) => {
     swiperIndex = 0;
     const demoConfig = extractConfig(filePath, 'angular');
     if (!demoConfig) return;
-    const {
-      content,
-      config,
-      styles,
-      title,
-      globalStyles,
-      modules,
-    } = demoConfig;
+    const { content, config, modules } = demoConfig;
     const { configs: parsedConfig, vars } = parseConfig(config);
     config.parsed = parsedConfig;
     const { html: templateString } = await posthtml([
       ngPostHTML(config),
     ]).process(content);
     const finalContent = prettier.format(
-      render({ templateString, styles, modules, vars, globalStyles }),
+      render({ templateString, modules, vars }, demoConfig),
       {
         parser: 'typescript',
       }
@@ -62,7 +55,10 @@ function parseConfig(configs) {
   return { configs: _configs, vars };
 }
 
-function render({ templateString, globalStyles, styles, modules, vars }) {
+function render(
+  { templateString, modules, vars },
+  { globalStyles = '', styles = '', script = {} }
+) {
   const _modules = modules ? modules.join(',') : '';
   const varsTemplate = vars
     ? vars
@@ -73,7 +69,8 @@ function render({ templateString, globalStyles, styles, modules, vars }) {
         .join('\n')
     : '';
   return `
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { SwiperComponent } from 'swiper/angular';
 ${
   modules
     ? `
@@ -98,6 +95,7 @@ SwiperCore.use([${_modules}]);
 })
 export class AppComponent {
   ${varsTemplate}
+  ${script.angular || ''}
 }
 
   `;
@@ -117,6 +115,11 @@ function ngPostHTML(config) {
         node.tag = 'swiper';
         const _config = config.parsed[swiperIndex];
         Object.keys(_config).forEach((key) => {
+          Object.keys(node.attrs).forEach((attrName) => {
+            if (attrName.startsWith('#')) {
+              node.attrs[attrName] = true;
+            }
+          });
           let value = _config[key];
           if (
             !(

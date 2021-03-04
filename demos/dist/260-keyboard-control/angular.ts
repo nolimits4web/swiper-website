@@ -1,4 +1,5 @@
-import { Component, ViewEncapsulation } from "@angular/core";
+import { Component, ViewEncapsulation, ViewChild } from "@angular/core";
+import { SwiperComponent } from "swiper/angular";
 
 // import Swiper core and required modules
 import SwiperCore, { Keyboard, Pagination, Navigation } from "swiper/core";
@@ -47,7 +48,7 @@ SwiperCore.use([Keyboard, Pagination, Navigation]);
       }
 
       .swiper-container {
-        width: 100%;
+        width: 800px;
         height: 100%;
       }
 

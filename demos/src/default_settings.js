@@ -16,7 +16,7 @@ module.exports = {
   }`,
   styles: `
     .swiper-container {
-      width: 100%;
+      width: 800px;
       height: 100%;
     }
 
@@ -40,6 +40,7 @@ module.exports = {
       align-items: center;
     }
   `,
+  script: {},
   content: `<Swiper>
   ${Array.from({ length: 9 })
     .map((el, index) => `<SwiperSlide>Slide ${index + 1}</SwiperSlide>`)

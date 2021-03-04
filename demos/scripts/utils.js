@@ -33,6 +33,7 @@ module.exports.extractConfig = (filePath, mode = 'static') => {
   try {
     demoConfig = require(filePath)(mode);
   } catch (err) {
+    console.warn(err);
     return null;
   }
   if (demoConfig.skip) {

@@ -1,10 +1,10 @@
-const default_settings = require('./default_settings');
+const defaultSettings = require('./default_settings');
 
 module.exports = (mode = 'static') => ({
-  ...default_settings,
+  ...defaultSettings,
   title: 'Slides per view auto',
   styles: `
-  ${default_settings.styles}
+  ${defaultSettings.styles}
 
   .swiper-slide {
     width: 80%;
