@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: swiperjs.com
+Token: d68abf9711f7daf402971076c0e67e39ebb4ccfc164e9b1a126b9269bb865aa2
