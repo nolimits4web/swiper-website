@@ -14,12 +14,12 @@ export default function SidebarSponsors() {
           Become a sponsor
         </a>
       </div>
-      <div className="-mx-2 p-2 bg-white space-y-2 rounded shadow">
+      <div className="-mx-2 p-2 bg-white grid grid-cols-3 gap-2 rounded shadow">
         {sponsors
           .filter(({ plan }) => plan !== 'Sponsor')
           .map(({ link, title, image_h, image, alt }) => (
             <a
-              className="block hover:opacity-80"
+              className="hover:opacity-80 flex items-center justify-center"
               href={link}
               key={title}
               title={title}
@@ -28,9 +28,9 @@ export default function SidebarSponsors() {
               onClick={() => trackOutbound(link)}
             >
               <img
-                className="max-h-12 w-auto"
+                className="max-h-16 w-auto"
                 alt={title}
-                src={`/images/sponsors/${image_h || image}`}
+                src={`/images/sponsors/${image}`}
               />
             </a>
           ))}
