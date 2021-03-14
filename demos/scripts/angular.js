@@ -27,7 +27,8 @@ module.exports = async (dir, filePath) => {
         parser: 'typescript',
       }
     );
-    await fs.writeFile(path.join(dir, 'angular.ts'), finalContent);
+    // await fs.writeFile(path.join(dir, 'angular.ts'), finalContent);
+    return finalContent;
   } catch (err) {
     throw new Error('Angular: ' + err.stack);
   }

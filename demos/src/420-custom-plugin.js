@@ -3,7 +3,8 @@ const defaultSettings = require('./default_settings');
 module.exports = (mode = 'static') => ({
   ...defaultSettings,
   title: 'Custom plugin',
-  skip: mode !== 'static',
+  // skip: mode !== 'static',
+  skip: true,
   config: [
     {
       direction: 'vertical',

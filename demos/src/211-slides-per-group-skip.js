@@ -4,8 +4,6 @@ module.exports = (mode = 'static') => ({
   ...defaultSettings,
   title: 'Slides per group skip',
   styles: `
-
-
   .swiper-container {
     width: 100%;
     height: 100%;

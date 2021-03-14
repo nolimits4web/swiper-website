@@ -3,7 +3,6 @@ const defaultSettings = require('./default_settings');
 module.exports = (mode = 'static') => ({
   ...defaultSettings,
   title: 'Watch slides visiblity',
-  skip: mode !== 'static',
   styles: `
   .swiper-slide {
     height: 300px;

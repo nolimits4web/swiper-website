@@ -35,20 +35,19 @@ module.exports = (mode = 'static') => ({
     mode === 'static' &&
     `
     <a href="#" class="prepend-2-slides">Prepend 2 Slides</a>
-    <a href="#" class="slide-1">Slide 1</a>
-    <a href="#" class="slide-250">Slide 250</a>
-    <a href="#" class="slide-500">Slide 500</a>
-    <a href="#" class="append-slide">Append Slide</a>`
+    <a href="#" class="prepend-slide">Prepend Slide</a>
+    <a href="#" class="append-slide">Append Slide</a>
+    <a href="#" class="append-2-slides">Append 2 Slides</a>
+    `
   }
 
   ${
     mode === 'angular' &&
     `
   <a href="#" (click)="prepend()" class="prepend-2-slides">Prepend 2 Slides</a>
-  <a href="#" (click)="slideTo(1)" class="slide-1">Slide 1</a>
-  <a href="#" (click)="slideTo(250)" class="slide-250">Slide 250</a>
-  <a href="#" (click)="slideTo(500)" class="slide-500">Slide 500</a>
-  <a href="#" (click)="append()" class="append-slide">Append Slide</a>`
+  <a href="#" (click)="prepend()" class="prepend-slide">Prepend Slide</a>
+  <a href="#" (click)="append()" class="append-slide">Append Slide</a>
+  <a href="#" (click)="append()" class="append-2-slides">Append 2 Slides</a>`
   }
   </p>
   `,
@@ -58,18 +57,9 @@ module.exports = (mode = 'static') => ({
       centeredSlides: true,
       spaceBetween: 30,
       pagination: {
-        type: 'fraction',
+        clickable: true,
       },
       navigation: true,
-      virtual: {
-        slides: `(function () {
-          var slides = [];
-          for (var i = 0; i < 600; i += 1) {
-            slides.push('Slide ' + (i + 1));
-          }
-          return slides;
-        })()`,
-      },
     },
   ],
   script: {
@@ -107,6 +97,10 @@ module.exports = (mode = 'static') => ({
   prependNumber = 1;
 
   prepend(){
+    this.sliderRef.swiperRef.virtual.prependSlide('Slide ' + (--this.prependNumber));
+  }
+
+  prepend2(){
     this.sliderRef.swiperRef.virtual.prependSlide([
       'Slide ' + (--this.prependNumber),
       'Slide ' + (--this.prependNumber)
@@ -117,8 +111,11 @@ module.exports = (mode = 'static') => ({
     this.sliderRef.swiperRef.virtual.appendSlide('Slide ' + (++this.appendNumber));
   }
 
-  slideTo(index: number){
-    this.sliderRef.swiperRef.slideTo(index - 1, 0);
+  append2(){
+    this.sliderRef.swiperRef.virtual.appendSlide([
+      'Slide ' + (++this.prependNumber),
+      'Slide ' + (++this.prependNumber)
+    ]);
   }
   `,
   },

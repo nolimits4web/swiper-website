@@ -25,7 +25,8 @@ module.exports = async (dir, filePath) => {
         parser: 'html',
       }
     );
-    await fs.writeFile(path.join(dir, 'static.html'), finalContent);
+    // await fs.writeFile(path.join(dir, 'static.html'), finalContent);
+    return finalContent;
   } catch (err) {
     throw new Error('Static: ' + err.stack);
   }

@@ -20,5 +20,6 @@ const buildAngular = require('./angular');
       buildStatic(dir, filePath),
       buildAngular(dir, filePath),
     ]).catch(console.error);
+    process.exit(0);
   });
 })();
