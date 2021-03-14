@@ -11,7 +11,7 @@ const buildAngular = require('./angular');
   demos.forEach(async (item) => {
     const dir = path.join(
       __dirname,
-      `../dist/${path.basename(item.replace(/\.[^/.]+$/, ''))}`
+      `../../public/codesandbox/${path.basename(item.replace(/\.[^/.]+$/, ''))}`
     );
     const filePath = path.join(__dirname, '../', item);
 
@@ -20,6 +20,5 @@ const buildAngular = require('./angular');
       buildStatic(dir, filePath),
       buildAngular(dir, filePath),
     ]).catch(console.error);
-    process.exit(0);
   });
 })();

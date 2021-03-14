@@ -94,7 +94,8 @@ module.exports.formatFn = (value) => {
     .replace(/('|")(\s+)?(\()(function|\(\))/g, '$2$3$4')
     .replace(/(function.*\})(\s+)?('|")/g, '$1$2')
     .replace(/}\)\(\)"/g, '})()')
-    .replace(/\\n/g, '\n');
+    .replace(/\\n/g, '\n')
+    .replace(/\\r/g, '\n');
 };
 
 module.exports.cleanupConfig = (configs) => {
