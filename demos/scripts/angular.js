@@ -10,10 +10,10 @@ const {
 } = require('./utils');
 let swiperIndex = 0;
 
-module.exports = async (dir, filePath) => {
+module.exports = async (dir, _config) => {
   try {
     swiperIndex = 0;
-    const demoConfig = extractConfig(filePath, 'angular');
+    const demoConfig = extractConfig(_config, 'angular');
     if (!demoConfig) return;
     const { content, config, modules } = demoConfig;
     const { configs: parsedConfig, vars } = parseConfig(config);

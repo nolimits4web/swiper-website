@@ -2,7 +2,7 @@ const defaultSettings = require('./default_settings');
 
 module.exports = (mode = 'static') => ({
   ...defaultSettings,
-  title: 'Autoplay',
+  title: 'Virtual slides',
   styles: `
   ${defaultSettings.styles}
 

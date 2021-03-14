@@ -28,10 +28,10 @@ function formatName(name) {
     .replace('-', '');
 }
 
-module.exports.extractConfig = (filePath, mode = 'static') => {
+module.exports.extractConfig = (configObj, mode = 'static') => {
   let demoConfig;
   try {
-    demoConfig = require(filePath)(mode);
+    demoConfig = configObj(mode);
   } catch (err) {
     console.warn(err);
     return null;

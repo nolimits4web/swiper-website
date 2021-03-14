@@ -10,9 +10,9 @@ const {
   cleanupConfig,
 } = require('./utils');
 
-module.exports = async (dir, filePath) => {
+module.exports = async (dir, _config) => {
   try {
-    const demoConfig = extractConfig(filePath, 'static');
+    const demoConfig = extractConfig(_config, 'static');
     if (!demoConfig) return;
     const { content, config } = demoConfig;
     const { html: templateString } = await posthtml([
