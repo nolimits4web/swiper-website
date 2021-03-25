@@ -69,7 +69,7 @@ export default function DemosPage() {
         react: 'react.js',
         svelte: 'svelte.js',
       };
-      const _mainContent = await fetch(`codesandbox/${folder}/${path[mode]}`);
+      const _mainContent = await fetch(`demos/${folder}/${path[mode]}`);
       let mainContent = await _mainContent.text();
       if (mode === 'static') {
         mainContent = mainContent
@@ -84,7 +84,7 @@ export default function DemosPage() {
     //   };
     //   const currentCSSpath = path[mode];
     //   if (currentCSSpath) {
-    //     return await fetch(`codesandbox/${folder}/${currentCSSpath}`);
+    //     return await fetch(`demos/${folder}/${currentCSSpath}`);
     //   }
     // }
 
@@ -138,7 +138,7 @@ export default function DemosPage() {
           <div className="flex flex-wrap text-sm my-4">
             <a
               className="no-underline mr-4 mb-2"
-              href={`/codesandbox/${folder}/static.html`}
+              href={`/demos/${folder}/static.html`}
               target="_blank"
               rel="noopener"
             >
@@ -171,7 +171,7 @@ export default function DemosPage() {
           </div>
           <div className="my-4 bg-gray-100 shadow demo">
             <iframe
-              data-src={`/codesandbox/${folder}/static.html`}
+              data-src={`/demos/${folder}/static.html`}
               scrolling="no"
               frameBorder="0"
               className="h-96 block w-full"

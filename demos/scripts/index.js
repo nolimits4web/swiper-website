@@ -19,10 +19,7 @@ const buildAngular = require('./angular');
         slug: _meta.slug || _meta.title,
         folder: folderName,
       });
-      const dir = path.join(
-        __dirname,
-        `../../public/codesandbox/${folderName}`
-      );
+      const dir = path.join(__dirname, `../../public/demos/${folderName}`);
 
       await fs.ensureDir(dir);
       await Promise.all([
