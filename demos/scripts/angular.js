@@ -15,7 +15,14 @@ module.exports = async (dir, _config) => {
     swiperIndex = 0;
     const demoConfig = extractConfig(_config, 'angular');
     if (!demoConfig) return;
-    const { content, config, modules } = demoConfig;
+    const {
+      content,
+      config,
+      modules,
+      cssModules,
+      globalStyles = '',
+      styles = '',
+    } = demoConfig;
     const { configs: parsedConfig, vars } = parseConfig(config);
     config.parsed = parsedConfig;
     const { html: templateString } = await posthtml([
@@ -27,17 +34,21 @@ module.exports = async (dir, _config) => {
         parser: 'typescript',
       }
     );
-    const componentCSS = modules
-      ? modules.map(
-          (m) => `@import "~swiper/${m.toLowerCase()}/${m.toLowerCase()}";`
-        )
+    const componentCSS = cssModules
+      ? cssModules.map((m) => `@import "~swiper/components/${m}/${m}";`)
       : [];
     await fs.writeFile(
       path.join(dir, 'angular.json'),
       JSON.stringify({
-        'src/app.component.ts': { content: componentContent },
-        'src/app.components.scss': {
-          content: '@import "~swiper/swiper";\n' + componentCSS.join('\n'),
+        'src/app/app.component.ts': { content: componentContent },
+        'src/app/app.components.scss': {
+          content:
+            '\n@import "~swiper/swiper";\n' +
+            componentCSS.join('\n') +
+            `\n${styles}`,
+        },
+        'src/styles.scss': {
+          content: globalStyles,
         },
       })
     );
@@ -68,10 +79,7 @@ function parseConfig(configs) {
   return { configs: _configs, vars };
 }
 
-function render(
-  { templateString, modules, vars },
-  { globalStyles = '', styles = '', script = {} }
-) {
+function render({ templateString, modules, vars }, { script = {} }) {
   const _modules = modules ? modules.join(',') : '';
   const varsTemplate = vars
     ? vars
@@ -101,9 +109,7 @@ SwiperCore.use([${_modules}]);
 @Component({
   selector: 'app-swiper-example',
   template: \`${templateString}\`,
-  styles: [\`${globalStyles}
-
-  ${styles}\`],
+  styleUrls: ['./app.components.scss'],
 	encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {

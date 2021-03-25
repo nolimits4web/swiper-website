@@ -18,9 +18,7 @@ export default function DemosPage() {
     };
   });
   const formRef = useRef();
-  const [currentCodeSandboxParams, setCurrentCodeSandboxParams] = useState(
-    null
-  );
+  const [currentCodeSandboxParams, setCurrentCodeSandboxParams] = useState('');
 
   useLazyDemos();
   const generateCodeSandboxWorkspace = (mode, contentJSON, title = '') => {

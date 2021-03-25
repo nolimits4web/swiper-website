@@ -1,3 +1,5 @@
+const prettier = require('prettier');
+
 module.exports.addClass = (node, classNames) => {
   if (!classNames) {
     return node;
@@ -41,12 +43,14 @@ module.exports.extractConfig = (configObj, mode = 'static') => {
     return null;
   }
   const modules = [];
+  const cssModules = [];
   demoConfig.config.forEach((config) => {
     Object.keys(config).forEach((name) => {
       if (name === 'effect') {
         const effectModuleName = formatName(`${name}-${config[name]}`);
         if (!modules.includes(effectModuleName)) {
           modules.push(effectModuleName);
+          cssModules.push(effectModuleName.toLowerCase());
         }
       }
       const nameFormatted = formatName(name);
@@ -71,11 +75,39 @@ module.exports.extractConfig = (configObj, mode = 'static') => {
         !modules.includes(nameFormatted)
       ) {
         modules.push(nameFormatted);
+        if (
+          ![
+            'virtual',
+            'keyboard',
+            'mousewheel',
+            'parallax',
+            'a11y',
+            'history',
+            'hash-navigation',
+            'autoplay',
+          ].includes(name.toLowerCase())
+        ) {
+          cssModules.push(name.toLowerCase());
+        }
       }
     });
   });
+  demoConfig.styles = demoConfig.styles
+    ? prettier.format(demoConfig.styles, {
+        parser: 'scss',
+      })
+    : '';
+  demoConfig.globalStyles = demoConfig.globalStyles
+    ? prettier.format(demoConfig.globalStyles, {
+        parser: 'scss',
+      })
+    : '';
   if (demoConfig)
-    return { ...demoConfig, modules: modules.length > 0 ? modules : null };
+    return {
+      ...demoConfig,
+      modules: modules.length > 0 ? modules : null,
+      cssModules: cssModules.length > 0 ? cssModules : null,
+    };
 };
 
 module.exports.parseJSON = (value) => {
