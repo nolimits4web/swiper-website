@@ -18,7 +18,9 @@ module.exports = async (dir, _config) => {
     const { content, config, globalStyles = '', styles = '' } = demoConfig;
     const { configs: parsedConfig, vars } = parseConfig(config);
     config.parsed = parsedConfig;
-    const { html } = await posthtml([ngPostHTML(config)]).process(content);
+    const { html } = await posthtml([ngPostHTML(config, vars)]).process(
+      content
+    );
     const templateString = aferPostHTML(html);
     // const componentContent = prettier.format(
     //   render({ templateString, vars }, demoConfig),
@@ -79,12 +81,12 @@ function render(
     ? vars
         .map(({ key, value }) => {
           const _value = formatFn(value);
-          return `${key} = ${_value}`;
+          return `const ${key} = ${_value}`;
         })
         .join('\n')
     : '';
   return `
-import React from "react";
+import React, { useRef } from "react";
 import "./styles.css";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -127,7 +129,7 @@ export default function App() {
 }`;
 }
 
-function ngPostHTML(config) {
+function ngPostHTML(config, vars) {
   return (tree) => {
     tree.walk((node) => {
       if (
@@ -143,16 +145,19 @@ function ngPostHTML(config) {
         Object.keys(_config).forEach((key) => {
           Object.keys(node.attrs).forEach((attrName) => {
             if (attrName.startsWith('#')) {
-              node.attrs[attrName] = true;
+              node.attrs['ref'] = `{${attrName.replace('#', '')}}`;
+              delete node.attrs[attrName];
             }
           });
           let value = _config[key];
+          const _vars = vars.map((v) => v.key);
           if (
             !(
               /[\{\}]/g.test(value) ||
               value === 'true' ||
               value === 'false' ||
-              !isNaN(value)
+              !isNaN(value) ||
+              _vars.includes(value)
             )
           ) {
             value = `'${_config[key]}'`;

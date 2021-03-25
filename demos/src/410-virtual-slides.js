@@ -44,10 +44,18 @@ module.exports = (mode = 'static') => ({
   ${
     mode === 'angular' &&
     `
-  <a href="#" (click)="prepend()" class="prepend-2-slides">Prepend 2 Slides</a>
+  <a href="#" (click)="prepend2()" class="prepend-2-slides">Prepend 2 Slides</a>
   <a href="#" (click)="prepend()" class="prepend-slide">Prepend Slide</a>
-  <a href="#" (click)="append()" class="append-slide">Append Slide</a>
+  <a href="#" (click)="append2()" class="append-slide">Append Slide</a>
   <a href="#" (click)="append()" class="append-2-slides">Append 2 Slides</a>`
+  }
+  ${
+    mode === 'react' &&
+    `
+  <a href="#" onClick="{() => prepend()}" class="prepend-2-slides">Prepend 2 Slides</a>
+  <a href="#" onClick="{() => prepend2()}" class="prepend-slide">Prepend Slide</a>
+  <a href="#" onClick="{() => append()}" class="append-slide">Append Slide</a>
+  <a href="#" onClick="{() => append2()}" class="append-2-slides">Append 2 Slides</a>`
   }
   </p>
   `,
@@ -91,7 +99,7 @@ module.exports = (mode = 'static') => ({
   });
   `,
     angular: `
-  @ViewChild('sliderRef', { static: false }) sliderRef?: SwiperComponent;
+  @ViewChild('swiperRef', { static: false }) sliderRef?: SwiperComponent;
 
   appendNumber = 600;
   prependNumber = 1;
@@ -113,6 +121,34 @@ module.exports = (mode = 'static') => ({
 
   append2(){
     this.sliderRef.swiperRef.virtual.appendSlide([
+      'Slide ' + (++this.prependNumber),
+      'Slide ' + (++this.prependNumber)
+    ]);
+  }
+  `,
+    react: `
+  const swiperRef = useRef(null);
+
+  let appendNumber = 600;
+  let prependNumber = 1;
+
+  const prepend = () => {
+    swiperRef.current.swiper.virtual.prependSlide('Slide ' + (--this.prependNumber));
+  }
+
+  const prepend2 = () => {
+    swiperRef.current.swiper.virtual.prependSlide([
+      'Slide ' + (--this.prependNumber),
+      'Slide ' + (--this.prependNumber)
+    ]);
+  }
+
+  const append = () => {
+    swiperRef.current.swiper.virtual.appendSlide('Slide ' + (++this.appendNumber));
+  }
+
+  append2(){
+    swiperRef.current.swiper.virtual.appendSlide([
       'Slide ' + (++this.prependNumber),
       'Slide ' + (++this.prependNumber)
     ]);

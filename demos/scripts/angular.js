@@ -26,7 +26,7 @@ module.exports = async (dir, _config) => {
     const { configs: parsedConfig, vars } = parseConfig(config);
     config.parsed = parsedConfig;
     const { html: templateString } = await posthtml([
-      ngPostHTML(config),
+      ngPostHTML(config, vars),
     ]).process(content);
     const componentContent = prettier.format(
       render({ templateString, modules, vars }, demoConfig),
@@ -120,7 +120,7 @@ export class AppComponent {
   `;
 }
 
-function ngPostHTML(config) {
+function ngPostHTML(config, vars) {
   return (tree) => {
     tree.walk((node) => {
       if (
@@ -140,12 +140,14 @@ function ngPostHTML(config) {
             }
           });
           let value = _config[key];
+          const _vars = vars.map((v) => v.key);
           if (
             !(
               /[\{\}]/g.test(value) ||
               value === 'true' ||
               value === 'false' ||
-              !isNaN(value)
+              !isNaN(value) ||
+              _vars.includes(value)
             )
           ) {
             value = `'${_config[key]}'`;
