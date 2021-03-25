@@ -48,13 +48,17 @@ export default function DemosPage() {
     };
     const currentFile = files[mode] ? files[mode](title) : {};
 
-    Object.keys(contentJSON).map((file) => {
-      console.log(file);
-      const cur = contentJSON[file];
-      if (!!cur.content && typeof cur.content === 'string') {
-        cur.content = cur.content.replace(/&quot;/g, '"');
-      }
-    });
+    // unescape &quot;
+    // {{ &quot;enabled&quote;: true }} => {{ "enabled": true }}
+    if (mode === 'react') {
+      Object.keys(contentJSON).map((file) => {
+        console.log(file);
+        const cur = contentJSON[file];
+        if (!!cur.content && typeof cur.content === 'string') {
+          cur.content = cur.content.replace(/&quot;/g, '"');
+        }
+      });
+    }
     return {
       files: {
         ...currentFile,
