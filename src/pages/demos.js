@@ -23,16 +23,14 @@ export default function DemosPage() {
   );
 
   useLazyDemos();
-  const generateCodeSandboxWorkspace = (mode, content, title = '') => {
+  const generateCodeSandboxWorkspace = (mode, contentJSON, title = '') => {
     // https://github.com/codesandbox/codesandbox-importers/blob/master/packages/import-utils/src/create-sandbox/templates.ts#L63
     // We cant set name & tags in static environment, as codesandbox parses it from package.json
     // Thats why we're including parcel as dependency
     if (mode === 'static') {
       return {
         files: {
-          'index.html': {
-            content,
-          },
+          ...contentJSON,
           'package.json': {
             content: {
               name: `Swiper - ${title}`,
@@ -50,55 +48,38 @@ export default function DemosPage() {
       return {
         files: {
           ...angularFiles(title),
-          'src/styles.scss': {
-            content: `@import "~swiper/swiper";`,
-          },
-          'src/app/app.component.ts': {
-            content: content,
-          },
+          ...contentJSON,
         },
       };
     }
   };
 
   async function getDemoContent(folder, mode) {
-    async function getMain() {
-      const path = {
-        angular: 'angular.ts',
-        static: 'static.html',
-        react: 'react.js',
-        svelte: 'svelte.js',
-      };
-      const _mainContent = await fetch(`demos/${folder}/${path[mode]}`);
-      let mainContent = await _mainContent.text();
-      if (mode === 'static') {
-        mainContent = mainContent
-          .replace(/..\/package\//g, 'https://unpkg.com/swiper/')
-          .replace(/.\/images\//g, 'https://swiperjs.com/demos/images/');
-      }
-      return mainContent;
-    }
-    // async function getCSS() {
-    //   const path = {
-    //     angular: 'angular_styles.css',
-    //   };
-    //   const currentCSSpath = path[mode];
-    //   if (currentCSSpath) {
-    //     return await fetch(`demos/${folder}/${currentCSSpath}`);
-    //   }
-    // }
-
-    return {
-      main: await getMain(),
-      // css: await getCSS(),
+    const path = {
+      angular: 'angular.json',
+      static: 'static.html',
+      react: 'react.js',
+      svelte: 'svelte.js',
     };
+    const _mainContent = await fetch(`demos/${folder}/${path[mode]}`);
+    if (mode === 'static') {
+      let mainContent = await _mainContent.text();
+      return {
+        'index.html': {
+          content: mainContent
+            .replace(/..\/package\//g, 'https://unpkg.com/swiper/')
+            .replace(/.\/images\//g, 'https://swiperjs.com/demos/images/'),
+        },
+      };
+    }
+    return _mainContent.json();
   }
 
   const openCodeSandbox = async (e, title, folder, mode = 'static') => {
     e.preventDefault();
-    const { main } = await getDemoContent(folder, mode);
+    const content = await getDemoContent(folder, mode);
     const codeSandBoxParams = getParameters(
-      generateCodeSandboxWorkspace(mode, main, title)
+      generateCodeSandboxWorkspace(mode, content, title)
     );
 
     setCurrentCodeSandboxParams(codeSandBoxParams);

@@ -21,6 +21,7 @@ const buildAngular = require('./angular');
       });
       const dir = path.join(__dirname, `../../public/demos/${folderName}`);
 
+      await fs.remove(dir);
       await fs.ensureDir(dir);
       await Promise.all([
         buildStatic(dir, demoConfig),

@@ -21,13 +21,26 @@ module.exports = async (dir, _config) => {
     const { html: templateString } = await posthtml([
       ngPostHTML(config),
     ]).process(content);
-    const finalContent = prettier.format(
+    const componentContent = prettier.format(
       render({ templateString, modules, vars }, demoConfig),
       {
         parser: 'typescript',
       }
     );
-    await fs.writeFile(path.join(dir, 'angular.ts'), finalContent);
+    const componentCSS = modules
+      ? modules.map(
+          (m) => `@import "~swiper/${m.toLowerCase()}/${m.toLowerCase()}";`
+        )
+      : [];
+    await fs.writeFile(
+      path.join(dir, 'angular.json'),
+      JSON.stringify({
+        'src/app.component.ts': { content: componentContent },
+        'src/app.components.scss': {
+          content: '@import "~swiper/swiper";\n' + componentCSS.join('\n'),
+        },
+      })
+    );
   } catch (err) {
     throw new Error('Angular: ' + err.stack);
   }
