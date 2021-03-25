@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { getParameters } from 'codesandbox/lib/api/define';
 import { ReactComponent as CodeSandBoxLogo } from '@/img/codesandbox.svg';
 import Heading from '@/components/Heading';
 import { WithSidebarLayout } from '@/layouts/withSidebar';
 import { useLazyDemos } from 'src/shared/use-lazy-demos';
 import demos from 'src/demos.json';
+import { angularFiles } from 'src/shared/codesandbox-files';
 
 let tableOfContents;
 
@@ -16,9 +17,12 @@ export default function DemosPage() {
       children: [],
     };
   });
+  const formRef = useRef();
+  const [currentCodeSandboxParams, setCurrentCodeSandboxParams] = useState(
+    null
+  );
 
   useLazyDemos();
-
   const generateCodeSandboxWorkspace = (mode, content, title = '') => {
     // https://github.com/codesandbox/codesandbox-importers/blob/master/packages/import-utils/src/create-sandbox/templates.ts#L63
     // We cant set name & tags in static environment, as codesandbox parses it from package.json
@@ -45,147 +49,8 @@ export default function DemosPage() {
     if (mode === 'angular') {
       return {
         files: {
-          'package.json': {
-            content: {
-              name: `Swiper - ${title}`,
-              tags: ['swiper'],
-              scripts: {
-                ng: 'ng',
-                start: 'ng serve',
-                build: 'ng build --prod',
-                test: 'ng test',
-                lint: 'ng lint',
-                e2e: 'ng e2e',
-              },
-              dependencies: {
-                '@angular/animations': '^11.2.0',
-                '@angular/common': '^11.2.0',
-                '@angular/compiler': '^11.2.0',
-                '@angular/core': '^11.2.0',
-                '@angular/forms': '^11.2.0',
-                '@angular/platform-browser': '^11.2.0',
-                '@angular/platform-browser-dynamic': '^11.2.0',
-                '@angular/router': '^11.2.0',
-                'core-js': '3.8.3',
-                rxjs: '6.6.3',
-                tslib: '2.1.0',
-                'zone.js': '0.11.3',
-                swiper: 'latest',
-              },
-              devDependencies: {
-                '@angular-devkit/build-angular': '^0.1102.0',
-                '@angular/cli': '^11.2.0',
-                '@angular/compiler-cli': '^11.2.0',
-                '@angular/language-service': '^11.2.0',
-                '@types/jasmine': '3.6.3',
-                '@types/jasminewd2': '2.0.8',
-                '@types/node': '14.14.28',
-                codelyzer: '6.0.1',
-                'jasmine-core': '3.6.0',
-                'jasmine-spec-reporter': '6.0.0',
-                karma: '6.1.1',
-                'karma-chrome-launcher': '3.1.0',
-                'karma-coverage-istanbul-reporter': '3.0.3',
-                'karma-jasmine': '4.0.1',
-                'karma-jasmine-html-reporter': '1.5.4',
-                protractor: '7.0.0',
-                'ts-node': '9.1.1',
-                tslint: '~6.1.3',
-                typescript: '4.1.5',
-              },
-            },
-          },
-          'tsconfig.json': {
-            content: {
-              compileOnSave: false,
-              compilerOptions: {
-                baseUrl: './',
-                outDir: './dist/out-tsc',
-                sourceMap: true,
-                declaration: false,
-                downlevelIteration: true,
-                experimentalDecorators: true,
-                moduleResolution: 'node',
-                importHelpers: true,
-                target: 'es2015',
-                module: 'es2020',
-                lib: ['es2018', 'dom'],
-              },
-            },
-          },
-          '.angular-cli.json': {
-            content: {
-              apps: [
-                {
-                  root: 'src',
-                  outDir: 'dist',
-                  assets: ['assets', 'favicon.ico'],
-                  index: 'index.html',
-                  main: 'main.ts',
-                  polyfills: 'polyfills.ts',
-                  prefix: 'app',
-                  styles: ['styles.css'],
-                  scripts: [],
-                  environmentSource: 'environments/environment.ts',
-                  environments: {
-                    dev: 'environments/environment.ts',
-                    prod: 'environments/environment.prod.ts',
-                  },
-                },
-              ],
-            },
-          },
-          'src/index.html': {
-            content: `<!doctype html>
-            <html lang="en">
-
-            <head>
-              <meta charset="utf-8">
-              <title>Angular</title>
-              <base href="/">
-
-              <meta name="viewport" content="width=device-width, initial-scale=1">
-              <link rel="icon" type="image/x-icon" href="favicon.ico">
-            </head>
-
-            <body>
-              <app-root></app-root>
-            </body>
-
-            </html>`,
-          },
-          'src/main.ts': {
-            content: `import { enableProdMode } from "@angular/core";
-            import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
-
-            import { AppModule } from "./app/app.module";
-            import { environment } from "./environments/environment";
-
-            if (environment.production) {
-              enableProdMode();
-            }
-
-            platformBrowserDynamic()
-              .bootstrapModule(AppModule)
-              .catch(err => console.log(err));
-            `,
-          },
+          ...angularFiles(title),
           'src/styles.css': {
-            content: ``,
-          },
-          'src/environments/environments.ts': {
-            content: `export const environment = {
-              production: false
-            };
-            `,
-          },
-          'src/environments/environments.prod.ts': {
-            content: `export const environment = {
-              production: true
-            };
-            `,
-          },
-          'src/app/app.module.ts': {
             content: ``,
           },
           'src/app/app.component.ts': {
@@ -196,24 +61,64 @@ export default function DemosPage() {
     }
   };
 
+  async function getDemoContent(folder, mode) {
+    async function getMain() {
+      const path = {
+        angular: 'angular.ts',
+        static: 'static.html',
+        react: 'react.js',
+        svelte: 'svelte.js',
+      };
+      const _mainContent = await fetch(`codesandbox/${folder}/${path[mode]}`);
+      let mainContent = await _mainContent.text();
+      if (mode === 'static') {
+        mainContent = mainContent
+          .replace(/..\/package\//g, 'https://unpkg.com/swiper/')
+          .replace(/.\/images\//g, 'https://swiperjs.com/demos/images/');
+      }
+      return mainContent;
+    }
+    // async function getCSS() {
+    //   const path = {
+    //     angular: 'angular_styles.css',
+    //   };
+    //   const currentCSSpath = path[mode];
+    //   if (currentCSSpath) {
+    //     return await fetch(`codesandbox/${folder}/${currentCSSpath}`);
+    //   }
+    // }
+
+    return {
+      main: await getMain(),
+      // css: await getCSS(),
+    };
+  }
+
   const openCodeSandbox = async (e, title, folder, mode = 'static') => {
     e.preventDefault();
-    const res = await fetch(`codesandbox/${folder}/${mode}.html`);
-    let html = await res.text();
-    html = html
-      .replace(/..\/package\//g, 'https://unpkg.com/swiper/')
-      .replace(/.\/images\//g, 'https://swiperjs.com/demos/images/');
-
+    const { main } = await getDemoContent(folder, mode);
     const codeSandBoxParams = getParameters(
-      generateCodeSandboxWorkspace(mode, html, title)
+      generateCodeSandboxWorkspace(mode, main, title)
     );
-    window.open(
-      `https://codesandbox.io/api/v1/sandboxes/define?parameters=${codeSandBoxParams}`
-    );
+
+    setCurrentCodeSandboxParams(codeSandBoxParams);
+    formRef.current.submit();
   };
 
   return (
     <WithSidebarLayout tableOfContents={tableOfContents}>
+      <form
+        ref={formRef}
+        action="https://codesandbox.io/api/v1/sandboxes/define"
+        method="POST"
+        target="_blank"
+      >
+        <input
+          type="hidden"
+          name="parameters"
+          value={currentCodeSandboxParams}
+        />
+      </form>
       <h1>Swiper Demos</h1>
       <p>
         You can download all these demos and hook into the code from GitHub{' '}
@@ -233,7 +138,7 @@ export default function DemosPage() {
           <div className="flex flex-wrap text-sm my-4">
             <a
               className="no-underline mr-4 mb-2"
-              href={`/demos/${folder}/static.html`}
+              href={`/codesandbox/${folder}/static.html`}
               target="_blank"
               rel="noopener"
             >
@@ -241,7 +146,7 @@ export default function DemosPage() {
             </a>
             <a
               className="no-underline"
-              href={`https://github.com/nolimits4web/Swiper/blob/master/demos/${folder}/static.html`}
+              href={`https://github.com/nolimits4web/Swiper/blob/master/demos/${folder}.html`}
               target="_blank"
               rel="noopener"
             >
@@ -266,7 +171,7 @@ export default function DemosPage() {
           </div>
           <div className="my-4 bg-gray-100 shadow demo">
             <iframe
-              data-src={`/demos/${folder}/static.html`}
+              data-src={`/codesandbox/${folder}/static.html`}
               scrolling="no"
               frameBorder="0"
               className="h-96 block w-full"
