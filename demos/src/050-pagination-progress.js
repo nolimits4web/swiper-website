@@ -2,7 +2,7 @@ const defaultSettings = require('./default_settings');
 
 module.exports = (mode = 'static') => ({
   ...defaultSettings,
-  title: 'pagination progress',
+  title: 'Pagination progress',
   config: [
     {
       pagination: {

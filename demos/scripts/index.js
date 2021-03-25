@@ -3,6 +3,7 @@ const path = require('path');
 const globby = require('globby');
 const buildStatic = require('./static');
 const buildAngular = require('./angular');
+const buildReact = require('./react');
 
 (async () => {
   const demos = await globby(['src/*', '!src/default_settings.js'], {
@@ -26,6 +27,7 @@ const buildAngular = require('./angular');
       await Promise.all([
         buildStatic(dir, demoConfig),
         buildAngular(dir, demoConfig),
+        buildReact(dir, demoConfig),
       ]).catch(console.error);
     } catch (err) {
       console.error(item + '\n', err);

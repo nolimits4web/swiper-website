@@ -256,3 +256,69 @@ import "zone.js/dist/zone";
     `,
   },
 });
+
+export const reactFiles = (title) => ({
+  'package.json': {
+    content: {
+      name: `Swiper - ${title}`,
+      tags: ['swiper'],
+      main: 'src/index.js',
+      dependencies: {
+        react: '17.0.1',
+        'react-dom': '17.0.1',
+        'react-scripts': '4.0.0',
+        swiper: '*',
+      },
+      devDependencies: {
+        typescript: '4.1.3',
+      },
+      scripts: {
+        start: 'react-scripts start',
+        build: 'react-scripts build',
+        test: 'react-scripts test --env=jsdom',
+        eject: 'react-scripts eject',
+      },
+      browserslist: ['>0.2%', 'not dead', 'not ie <= 11', 'not op_mini all'],
+    },
+  },
+  'src/App.js': {
+    content: '',
+  },
+  'src/styles.css': {
+    content: '',
+  },
+  'src/index.js': {
+    content: `import React, { StrictMode } from "react";
+import ReactDOM from "react-dom";
+
+import App from "./App";
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+  rootElement
+);`,
+  },
+  'public/index.html': {
+    content: `<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <title>React App</title>
+</head>
+
+<body>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <div id="root"></div>
+</body>
+
+</html>`,
+  },
+});

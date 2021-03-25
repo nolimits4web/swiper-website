@@ -2,7 +2,7 @@ const defaultSettings = require('./default_settings');
 
 module.exports = (mode = 'static') => ({
   ...defaultSettings,
-  title: 'pagination dynamic',
+  title: 'Pagination dynamic',
   config: [
     {
       pagination: {

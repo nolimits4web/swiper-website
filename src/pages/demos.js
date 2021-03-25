@@ -5,7 +5,7 @@ import Heading from '@/components/Heading';
 import { WithSidebarLayout } from '@/layouts/withSidebar';
 import { useLazyDemos } from 'src/shared/use-lazy-demos';
 import demos from 'src/demos.json';
-import { angularFiles } from 'src/shared/codesandbox-files';
+import { angularFiles, reactFiles } from 'src/shared/codesandbox-files';
 
 let tableOfContents;
 
@@ -42,21 +42,32 @@ export default function DemosPage() {
         },
       };
     }
-    if (mode === 'angular') {
-      return {
-        files: {
-          ...angularFiles(title),
-          ...contentJSON,
-        },
-      };
-    }
+    const files = {
+      angular: angularFiles,
+      react: reactFiles,
+    };
+    const currentFile = files[mode] ? files[mode](title) : {};
+
+    Object.keys(contentJSON).map((file) => {
+      console.log(file);
+      const cur = contentJSON[file];
+      if (!!cur.content && typeof cur.content === 'string') {
+        cur.content = cur.content.replace(/&quot;/g, '"');
+      }
+    });
+    return {
+      files: {
+        ...currentFile,
+        ...contentJSON,
+      },
+    };
   };
 
   async function getDemoContent(folder, mode) {
     const path = {
       angular: 'angular.json',
       static: 'static.html',
-      react: 'react.js',
+      react: 'react.json',
       svelte: 'svelte.js',
     };
     const _mainContent = await fetch(`demos/${folder}/${path[mode]}`);
@@ -146,6 +157,14 @@ export default function DemosPage() {
             >
               <CodeSandBoxLogo className="inline" width="19" height="14" />
               <span>Angular</span>
+            </a>
+            <a
+              className="no-underline ml-2"
+              href="#"
+              onClick={(e) => openCodeSandbox(e, title, folder, 'react')}
+            >
+              <CodeSandBoxLogo className="inline" width="19" height="14" />
+              <span>React</span>
             </a>
           </div>
           <div className="my-4 bg-gray-100 shadow demo">

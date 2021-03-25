@@ -2,7 +2,7 @@ const defaultSettings = require('./default_settings');
 
 module.exports = (mode = 'static') => ({
   ...defaultSettings,
-  title: 'pagination custom',
+  title: 'Pagination custom',
   styles: `
   ${defaultSettings.styles}
 
