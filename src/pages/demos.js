@@ -50,8 +50,8 @@ export default function DemosPage() {
       return {
         files: {
           ...angularFiles(title),
-          'src/styles.css': {
-            content: ``,
+          'src/styles.scss': {
+            content: `@import "~swiper/swiper";`,
           },
           'src/app/app.component.ts': {
             content: content,

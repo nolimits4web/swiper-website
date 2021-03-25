@@ -67,26 +67,112 @@ export const angularFiles = (title) => ({
       },
     },
   },
-  '.angular-cli.json': {
+  'src/tsconfig.app.json': {
     content: {
-      apps: [
-        {
-          root: 'src',
-          outDir: 'dist',
-          assets: ['assets', 'favicon.ico'],
-          index: 'index.html',
-          main: 'main.ts',
-          polyfills: 'polyfills.ts',
+      extends: '../tsconfig.json',
+      compilerOptions: {
+        outDir: '../out-tsc/app',
+        types: [],
+      },
+      exclude: ['test.ts', '**/*.spec.ts'],
+    },
+  },
+  'src/tsconfig.spec.json': {
+    content: {
+      extends: '../tsconfig.json',
+      compilerOptions: {
+        outDir: '../out-tsc/spec',
+        types: ['jasmine', 'node'],
+      },
+      files: ['test.ts', 'polyfills.ts'],
+      include: ['**/*.spec.ts', '**/*.d.ts'],
+    },
+  },
+  'angular.json': {
+    content: {
+      $schema: './node_modules/@angular/cli/lib/config/schema.json',
+      version: 1,
+      newProjectRoot: 'projects',
+      projects: {
+        demo: {
+          root: '',
+          sourceRoot: 'src',
+          projectType: 'application',
           prefix: 'app',
-          styles: ['styles.css'],
-          scripts: [],
-          environmentSource: 'environments/environment.ts',
-          environments: {
-            dev: 'environments/environment.ts',
-            prod: 'environments/environment.prod.ts',
+          schematics: {},
+          architect: {
+            build: {
+              builder: '@angular-devkit/build-angular:browser',
+              options: {
+                outputPath: 'dist/demo',
+                index: 'src/index.html',
+                main: 'src/main.ts',
+                polyfills: 'src/polyfills.ts',
+                tsConfig: 'src/tsconfig.app.json',
+                assets: ['src/favicon.ico', 'src/assets', 'src/app/samples'],
+                styles: ['src/styles.scss'],
+                scripts: [],
+              },
+              configurations: {
+                production: {
+                  fileReplacements: [
+                    {
+                      replace: 'src/environments/environment.ts',
+                      with: 'src/environments/environment.prod.ts',
+                    },
+                  ],
+                  optimization: true,
+                  outputHashing: 'all',
+                  sourceMap: false,
+                  extractCss: true,
+                  namedChunks: false,
+                  aot: true,
+                  extractLicenses: true,
+                  vendorChunk: false,
+                  buildOptimizer: true,
+                },
+              },
+            },
+            serve: {
+              builder: '@angular-devkit/build-angular:dev-server',
+              options: {
+                browserTarget: 'demo:build',
+              },
+              configurations: {
+                production: {
+                  browserTarget: 'demo:build:production',
+                },
+              },
+            },
+            'extract-i18n': {
+              builder: '@angular-devkit/build-angular:extract-i18n',
+              options: {
+                browserTarget: 'demo:build',
+              },
+            },
+            test: {
+              builder: '@angular-devkit/build-angular:karma',
+              options: {
+                main: 'src/test.ts',
+                polyfills: 'src/polyfills.ts',
+                tsConfig: 'src/tsconfig.spec.json',
+                karmaConfig: 'src/karma.conf.js',
+                styles: ['styles.scss'],
+                scripts: [],
+                assets: ['src/favicon.ico', 'src/assets'],
+              },
+            },
+            lint: {
+              builder: '@angular-devkit/build-angular:tslint',
+              options: {
+                tsConfig: ['src/tsconfig.app.json', 'src/tsconfig.spec.json'],
+                exclude: ['**/node_modules/**'],
+              },
+            },
           },
         },
-      ],
+      },
+      defaultProject: 'demo',
     },
   },
   'src/index.html': {
@@ -109,22 +195,28 @@ export const angularFiles = (title) => ({
 </html>`,
   },
   'src/main.ts': {
-    content: `import { enableProdMode } from "@angular/core";
+    content: `import "./polyfills";
+
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 
 import { AppModule } from "./app/app.module";
-import { environment } from "./environments/environment";
-
-if (environment.production) {
-  enableProdMode();
-}
 
 platformBrowserDynamic()
   .bootstrapModule(AppModule)
-  .catch(err => console.log(err));
-    `,
+  .then((ref) => {
+    // Ensure Angular destroys itself on hot reloads.
+    if (window["ngRef"]) {
+      window["ngRef"].destroy();
+    }
+    // papas fritas para todos
+    window["ngRef"] = ref;
+
+    // Otherwise, log the boot error
+  })
+  .catch((err) => console.error(err));
+`,
   },
-  'src/styles.css': {
+  'src/styles.scss': {
     content: ``,
   },
   'src/environments/environment.ts': {
