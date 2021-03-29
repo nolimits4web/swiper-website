@@ -17,7 +17,7 @@ module.exports = async (dir, _config) => {
     const { content, config } = demoConfig;
     const { html: templateString } = await posthtml([
       staticPostHTML(config),
-    ]).process(content);
+    ]).process(content.replace(/className\=/g, 'class='));
 
     const finalContent = prettier.format(
       render({ templateString, config }, demoConfig),

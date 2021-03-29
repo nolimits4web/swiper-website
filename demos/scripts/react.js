@@ -19,7 +19,8 @@ module.exports = async (dir, _config) => {
     const { configs: parsedConfig, vars } = parseConfig(config);
     config.parsed = parsedConfig;
     const { html } = await posthtml([ngPostHTML(config, vars)]).process(
-      content
+      content,
+      { closingSingleTag: 'slash' }
     );
     const templateString = aferPostHTML(html);
     // const componentContent = prettier.format(

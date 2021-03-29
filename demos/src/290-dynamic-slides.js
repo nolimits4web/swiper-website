@@ -35,7 +35,7 @@ module.exports = (mode = 'static') => ({
     <SwiperSlide>Slide 4</SwiperSlide>
   </Swiper>
 
-  <p class="append-buttons">
+  <p className="append-buttons">
   ${
     mode === 'static'
       ? `

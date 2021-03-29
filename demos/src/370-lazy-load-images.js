@@ -1,4 +1,4 @@
-const { cssVariables } = require('demos/templateUtils');
+const { inlineStyles } = require('../templateUtils');
 const defaultSettings = require('./default_settings');
 
 module.exports = (mode = 'static') => ({
@@ -33,7 +33,7 @@ module.exports = (mode = 'static') => ({
   }
   `,
   content: `
-  <Swiper ${cssVariables(mode, {
+  <Swiper ${inlineStyles(mode, {
     '--swiper-navigation-color': '#fff',
     '--swiper-pagination-color': '#fff',
   })}>
@@ -44,9 +44,9 @@ module.exports = (mode = 'static') => ({
           <!-- Required swiper-lazy class and image source specified in data-src attribute -->
           <img data-src="https://swiperjs.com/demos/images/nature-${
             index + 1
-          }.jpg" class="swiper-lazy">
+          }.jpg" className="swiper-lazy">
           <!-- Preloader image -->
-          <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+          <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
         </SwiperSlide>`
     )
     .join('')}

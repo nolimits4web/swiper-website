@@ -30,7 +30,7 @@ module.exports = (mode = 'static') => ({
       (el, index) =>
         `<SwiperSlide><img src="https://swiperjs.com/demos/images/nature-${
           index + 1
-        }.jpg"></SwiperSlide>`
+        }.jpg" /></SwiperSlide>`
     )
     .join('')}
   </Swiper>`,

@@ -11,10 +11,10 @@ module.exports = (mode = 'static') => ({
   }
   `,
   content: `
-  <Swiper class="swiper-container-h">
+  <Swiper className="swiper-container-h">
       <SwiperSlide>Horizontal Slide 1</SwiperSlide>
       <SwiperSlide>
-        <Swiper class="swiper-container-v">
+        <Swiper className="swiper-container-v">
           <SwiperSlide>Vertical Slide 1</SwiperSlide>
           <SwiperSlide>Vertical Slide 2</SwiperSlide>
           <SwiperSlide>Vertical Slide 3</SwiperSlide>

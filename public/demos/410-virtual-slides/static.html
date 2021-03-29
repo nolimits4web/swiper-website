@@ -61,7 +61,7 @@
         margin-top: 20px;
       }
 
-      .append-buttons a {
+      .append-buttons button {
         display: inline-block;
         border: 1px solid #007aff;
         color: #007aff;
@@ -85,12 +85,11 @@
     </div>
 
     <p class="append-buttons">
-      <a href="#" class="prepend-2-slides">Prepend 2 Slides</a>
-      <a href="#" class="prepend-slide">Prepend Slide</a>
-      <a href="#" class="append-slide">Append Slide</a>
-      <a href="#" class="append-2-slides">Append 2 Slides</a>
-
-      false false
+      <button class="prepend-2-slides">Prepend 2 Slides</button>
+      <button class="slide-1">Slide 1</button>
+      <button class="slide-250">Slide 250</button>
+      <button class="slide-500">Slide 500</button>
+      <button class="append-slide">Append Slide</button>
     </p>
 
     <!-- Swiper JS -->
@@ -104,11 +103,20 @@
         spaceBetween: 30,
         pagination: {
           el: ".swiper-pagination",
-          clickable: true,
+          type: "fraction",
         },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
+        },
+        virtual: {
+          slides: (function () {
+            var slides = [];
+            for (var i = 0; i < 600; i += 1) {
+              slides.push("Slide " + (i + 1));
+            }
+            return slides;
+          })(),
         },
       });
 

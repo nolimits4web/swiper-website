@@ -79,9 +79,7 @@ export default function DemosPage() {
       let mainContent = await _mainContent.text();
       return {
         'index.html': {
-          content: mainContent
-            .replace(/..\/package\//g, 'https://unpkg.com/swiper/')
-            .replace(/.\/images\//g, 'https://swiperjs.com/demos/images/'),
+          content: mainContent,
         },
       };
     }

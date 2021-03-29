@@ -1,3 +1,4 @@
+const { inlineStyles } = require('../templateUtils');
 const defaultSettings = require('./default_settings');
 
 module.exports = (mode = 'static') => ({
@@ -46,20 +47,22 @@ module.exports = (mode = 'static') => ({
   }
   `,
   content: `
-  <Swiper ${cssVariables(mode, {
+  <Swiper ${inlineStyles(mode, {
     '--swiper-navigation-color': '#fff',
     '--swiper-pagination-color': '#fff',
   })}>
-  <div slot="container-start" class="parallax-bg" style="background-image:url(https://swiperjs.com/demos/images/nature-1.jpg)" data-swiper-parallax="-23%"></div>
+  <div slot="container-start" className="parallax-bg" ${inlineStyles(mode, {
+    'background-image': 'url(https://swiperjs.com/demos/images/nature-1.jpg)',
+  })} data-swiper-parallax="-23%"></div>
   ${Array.from({ length: 3 })
     .map(
       (el, index) =>
         `<SwiperSlide>
-          <div class="title" data-swiper-parallax="-300">Slide ${
+          <div className="title" data-swiper-parallax="-300">Slide ${
             index + 1
           }</div>
-          <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
-          <div class="text" data-swiper-parallax="-100">
+          <div className="subtitle" data-swiper-parallax="-200">Subtitle</div>
+          <div className="text" data-swiper-parallax="-100">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus
               felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet
               magna nec elit suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at

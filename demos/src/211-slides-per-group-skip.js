@@ -59,15 +59,15 @@ module.exports = (mode = 'static') => ({
   }
   `,
   content: `<Swiper>
-  <SwiperSlide><img src="https://cdn.magloft.com/github/swiper/images/page-001.jpg"></SwiperSlide>
-  <SwiperSlide><img src="https://cdn.magloft.com/github/swiper/images/page-002.jpg"></SwiperSlide>
-  <SwiperSlide><img src="https://cdn.magloft.com/github/swiper/images/page-003.jpg"></SwiperSlide>
-  <SwiperSlide><img src="https://cdn.magloft.com/github/swiper/images/page-004.jpg"></SwiperSlide>
-  <SwiperSlide><img src="https://cdn.magloft.com/github/swiper/images/page-005.jpg"></SwiperSlide>
-  <SwiperSlide><img src="https://cdn.magloft.com/github/swiper/images/page-006.jpg"></SwiperSlide>
-  <SwiperSlide><img src="https://cdn.magloft.com/github/swiper/images/page-007.jpg"></SwiperSlide>
-  <SwiperSlide><img src="https://cdn.magloft.com/github/swiper/images/page-008.jpg"></SwiperSlide>
-  <SwiperSlide><img src="https://cdn.magloft.com/github/swiper/images/page-009.jpg"></SwiperSlide>
+  <SwiperSlide><img src="https://cdn.magloft.com/github/swiper/images/page-001.jpg" /></SwiperSlide>
+  <SwiperSlide><img src="https://cdn.magloft.com/github/swiper/images/page-002.jpg" /></SwiperSlide>
+  <SwiperSlide><img src="https://cdn.magloft.com/github/swiper/images/page-003.jpg" /></SwiperSlide>
+  <SwiperSlide><img src="https://cdn.magloft.com/github/swiper/images/page-004.jpg" /></SwiperSlide>
+  <SwiperSlide><img src="https://cdn.magloft.com/github/swiper/images/page-005.jpg" /></SwiperSlide>
+  <SwiperSlide><img src="https://cdn.magloft.com/github/swiper/images/page-006.jpg" /></SwiperSlide>
+  <SwiperSlide><img src="https://cdn.magloft.com/github/swiper/images/page-007.jpg" /></SwiperSlide>
+  <SwiperSlide><img src="https://cdn.magloft.com/github/swiper/images/page-008.jpg" /></SwiperSlide>
+  <SwiperSlide><img src="https://cdn.magloft.com/github/swiper/images/page-009.jpg" /></SwiperSlide>
   </Swiper>`,
   config: [
     {

@@ -16,7 +16,7 @@ module.exports = (mode = 'static') => ({
     margin-top: 20px;
   }
 
-  .append-buttons a {
+  .append-buttons button {
     display: inline-block;
     border: 1px solid #007aff;
     color: #007aff;
@@ -30,32 +30,37 @@ module.exports = (mode = 'static') => ({
   content: `
   <Swiper #swiperRef></Swiper>
 
-  <p class="append-buttons">
+  <p className="append-buttons">
   ${
-    mode === 'static' &&
-    `
-    <a href="#" class="prepend-2-slides">Prepend 2 Slides</a>
-    <a href="#" class="prepend-slide">Prepend Slide</a>
-    <a href="#" class="append-slide">Append Slide</a>
-    <a href="#" class="append-2-slides">Append 2 Slides</a>
-    `
+    mode === 'static'
+      ? `
+    <button class="prepend-2-slides">Prepend 2 Slides</button>
+    <button class="slide-1">Slide 1</button>
+    <button class="slide-250">Slide 250</button>
+    <button class="slide-500">Slide 500</button>
+    <button class="append-slide">Append Slide</button>`
+      : ''
   }
 
   ${
-    mode === 'angular' &&
-    `
-  <a href="#" (click)="prepend2()" class="prepend-2-slides">Prepend 2 Slides</a>
-  <a href="#" (click)="prepend()" class="prepend-slide">Prepend Slide</a>
-  <a href="#" (click)="append2()" class="append-slide">Append Slide</a>
-  <a href="#" (click)="append()" class="append-2-slides">Append 2 Slides</a>`
+    mode === 'angular'
+      ? `
+  <button (click)="prepend()" class="prepend-2-slides">Prepend 2 Slides</button>
+  <button (click)="slideTo(1)" class="slide-1">Slide 1</button>
+  <button (click)="slideTo(250)" class="slide-250">Slide 250</button>
+  <button (click)="slideTo(500)" class="slide-500">Slide 500</button>
+  <button (click)="append()" class="append-slide">Append Slide</button>`
+      : ''
   }
   ${
-    mode === 'react' &&
-    `
-  <a href="#" onClick="{() => prepend()}" class="prepend-2-slides">Prepend 2 Slides</a>
-  <a href="#" onClick="{() => prepend2()}" class="prepend-slide">Prepend Slide</a>
-  <a href="#" onClick="{() => append()}" class="append-slide">Append Slide</a>
-  <a href="#" onClick="{() => append2()}" class="append-2-slides">Append 2 Slides</a>`
+    mode === 'react'
+      ? `
+  <button onClick="{() => prepend()}" className="prepend-2-slides">Prepend 2 Slides</button>
+  <button onClick="{() => slideTo(1)}" className="prepend-slide">Slide 1</button>
+  <button onClick="{() => slideTo(250)}" className="slide-250">Slide 250</button>
+  <button onClick="{() => slideTo(500)}" className="slide-500">Slide 500</button>
+  <button onClick="{() => append()}" className="append-slides">Append Slide</button>`
+      : ''
   }
   </p>
   `,
@@ -65,9 +70,18 @@ module.exports = (mode = 'static') => ({
       centeredSlides: true,
       spaceBetween: 30,
       pagination: {
-        clickable: true,
+        type: 'fraction',
       },
       navigation: true,
+      virtual: {
+        slides: `(function () {
+          var slides = [];
+          for (var i = 0; i < 600; i += 1) {
+            slides.push('Slide ' + (i + 1));
+          }
+          return slides;
+        })()`,
+      },
     },
   ],
   script: {
@@ -99,60 +113,46 @@ module.exports = (mode = 'static') => ({
   });
   `,
     angular: `
-  @ViewChild('swiperRef', { static: false }) sliderRef?: SwiperComponent;
+  @ViewChild('swiperRef', { static: false }) swiperRef?: SwiperComponent;
 
   appendNumber = 600;
   prependNumber = 1;
 
   prepend(){
-    this.sliderRef.swiperRef.virtual.prependSlide('Slide ' + (--this.prependNumber));
-  }
-
-  prepend2(){
-    this.sliderRef.swiperRef.virtual.prependSlide([
+    this.swiperRef.swiperRef.virtual.prependSlide([
       'Slide ' + (--this.prependNumber),
       'Slide ' + (--this.prependNumber)
     ]);
   }
 
   append(){
-    this.sliderRef.swiperRef.virtual.appendSlide('Slide ' + (++this.appendNumber));
+    this.swiperRef.swiperRef.virtual.appendSlide('Slide ' + (++this.appendNumber));
   }
 
-  append2(){
-    this.sliderRef.swiperRef.virtual.appendSlide([
-      'Slide ' + (++this.prependNumber),
-      'Slide ' + (++this.prependNumber)
-    ]);
+  slideTo(index: number){
+    this.swiperRef.swiperRef.slideTo(index - 1, 0);
   }
   `,
     react: `
-  const swiperRef = useRef(null);
+const swiperRef = useRef(null);
 
-  let appendNumber = 600;
-  let prependNumber = 1;
+let appendNumber = 600;
+let prependNumber = 1;
 
-  const prepend = () => {
-    swiperRef.current.swiper.virtual.prependSlide('Slide ' + (--this.prependNumber));
-  }
+const prepend = () => {
+  swiperRef.current.swiper.virtual.prependSlide([
+    'Slide ' + (--prependNumber),
+    'Slide ' + (--prependNumber)
+  ]);
+}
 
-  const prepend2 = () => {
-    swiperRef.current.swiper.virtual.prependSlide([
-      'Slide ' + (--this.prependNumber),
-      'Slide ' + (--this.prependNumber)
-    ]);
-  }
+const append = () => {
+  swiperRef.current.swiper.virtual.appendSlide('Slide ' + (++appendNumber));
+}
 
-  const append = () => {
-    swiperRef.current.swiper.virtual.appendSlide('Slide ' + (++this.appendNumber));
-  }
-
-  append2(){
-    swiperRef.current.swiper.virtual.appendSlide([
-      'Slide ' + (++this.prependNumber),
-      'Slide ' + (++this.prependNumber)
-    ]);
-  }
-  `,
+const slideTo = (index) => {
+  swiperRef.current.slideTo(index - 1, 0);
+}
+`,
   },
 });

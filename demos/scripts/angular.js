@@ -27,7 +27,7 @@ module.exports = async (dir, _config) => {
     config.parsed = parsedConfig;
     const { html: templateString } = await posthtml([
       ngPostHTML(config, vars),
-    ]).process(content);
+    ]).process(content.replace(/className\=/g, 'class='));
     const componentContent = prettier.format(
       render({ templateString, modules, vars }, demoConfig),
       {

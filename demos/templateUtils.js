@@ -1,14 +1,12 @@
-export const cssVariables = (mode = 'static', vars = {}) => {
+module.exports.inlineStyles = (mode = 'static', vars = {}) => {
   // {{'--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff'}}
-  let res = '';
   if (mode === 'static' || mode === 'angular') {
-    Object.keys(vars).forEach((key) => {
-      res += `${key}: ${vars[key]};`;
-    });
-    return `style="${res}"`;
+    return `style="${Object.keys(vars)
+      .map((key) => `${key}: ${vars[key]}`)
+      .join(';')}"`;
   }
-  Object.keys(vars).forEach((key) => {
-    res += `'${key}': '${vars[key]}',`;
-  });
-  return `style={{${res}}}`;
+
+  return `style="{{${Object.keys(vars)
+    .map((key) => `'${key}': '${vars[key]}'`)
+    .join(',')}}}"`;
 };
