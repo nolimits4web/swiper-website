@@ -61,7 +61,7 @@
         margin-top: 20px;
       }
 
-      .append-buttons a {
+      .append-buttons button {
         display: inline-block;
         border: 1px solid #007aff;
         color: #007aff;
@@ -78,20 +78,22 @@
     <!-- Swiper -->
 
     <div #swiperRef="" class="swiper-container">
-      <div class="swiper-wrapper"></div>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+      </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
       <div class="swiper-pagination"></div>
     </div>
 
     <p class="append-buttons">
-      <a href="#" class="prepend-2-slides">Prepend 2 Slides</a>
-      <a href="#" class="slide-1">Slide 1</a>
-      <a href="#" class="slide-250">Slide 250</a>
-      <a href="#" class="slide-500">Slide 500</a>
-      <a href="#" class="append-slide">Append Slide</a>
-
-      false false
+      <button class="prepend-2-slides">Prepend 2 Slides</button>
+      <button class="prepend-slide">Prepend Slide</button>
+      <button class="append-slide">Append Slide</button>
+      <button class="append-2-slides">Append 2 Slides</button>
     </p>
 
     <!-- Swiper JS -->
@@ -111,51 +113,43 @@
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
-        virtual: {
-          slides: (function () {
-            var slides = [];
-            for (var i = 0; i < 600; i += 1) {
-              slides.push("Slide " + (i + 1));
-            }
-            return slides;
-          })(),
-        },
       });
 
-      var appendNumber = 600;
+      var appendNumber = 4;
       var prependNumber = 1;
-      document
-        .querySelector(".slide-1")
-        .addEventListener("click", function (e) {
-          e.preventDefault();
-          swiper.slideTo(0, 0);
-        });
-      document
-        .querySelector(".slide-250")
-        .addEventListener("click", function (e) {
-          e.preventDefault();
-          swiper.slideTo(249, 0);
-        });
-      document
-        .querySelector(".slide-500")
-        .addEventListener("click", function (e) {
-          e.preventDefault();
-          swiper.slideTo(499, 0);
-        });
       document
         .querySelector(".prepend-2-slides")
         .addEventListener("click", function (e) {
           e.preventDefault();
-          swiper.virtual.prependSlide([
-            "Slide " + --prependNumber,
-            "Slide " + --prependNumber,
+          swiper.prependSlide([
+            '<div class="swiper-slide">Slide ' + --prependNumber + "</div>",
+            '<div class="swiper-slide">Slide ' + --prependNumber + "</div>",
           ]);
+        });
+      document
+        .querySelector(".prepend-slide")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          swiper.prependSlide(
+            '<div class="swiper-slide">Slide ' + --prependNumber + "</div>"
+          );
         });
       document
         .querySelector(".append-slide")
         .addEventListener("click", function (e) {
           e.preventDefault();
-          swiper.virtual.appendSlide("Slide " + ++appendNumber);
+          swiper.appendSlide(
+            '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>"
+          );
+        });
+      document
+        .querySelector(".append-2-slides")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          swiper.appendSlide([
+            '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>",
+            '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>",
+          ]);
         });
     </script>
   </body>
