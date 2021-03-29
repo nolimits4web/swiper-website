@@ -1,3 +1,4 @@
+const { cssVariables } = require('demos/templateUtils');
 const defaultSettings = require('./default_settings');
 
 module.exports = (mode = 'static') => ({
@@ -31,7 +32,11 @@ module.exports = (mode = 'static') => ({
     top: 50%;
   }
   `,
-  content: `<Swiper style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff">
+  content: `
+  <Swiper ${cssVariables(mode, {
+    '--swiper-navigation-color': '#fff',
+    '--swiper-pagination-color': '#fff',
+  })}>
   ${Array.from({ length: 9 })
     .map(
       (el, index) =>

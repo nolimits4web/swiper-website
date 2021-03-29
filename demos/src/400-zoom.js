@@ -20,7 +20,11 @@ module.exports = (mode = 'static') => ({
     overflow: hidden;
   }
   `,
-  content: `<Swiper style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff">
+  content: `
+  <Swiper ${cssVariables(mode, {
+    '--swiper-navigation-color': '#fff',
+    '--swiper-pagination-color': '#fff',
+  })}>
   ${Array.from({ length: 9 })
     .map(
       (el, index) =>

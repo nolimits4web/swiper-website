@@ -45,7 +45,11 @@ module.exports = (mode = 'static') => ({
     line-height: 1.3;
   }
   `,
-  content: `<Swiper style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff">
+  content: `
+  <Swiper ${cssVariables(mode, {
+    '--swiper-navigation-color': '#fff',
+    '--swiper-pagination-color': '#fff',
+  })}>
   <div slot="container-start" class="parallax-bg" style="background-image:url(https://swiperjs.com/demos/images/nature-1.jpg)" data-swiper-parallax="-23%"></div>
   ${Array.from({ length: 3 })
     .map(
