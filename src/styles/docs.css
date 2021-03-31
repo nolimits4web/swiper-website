@@ -7,7 +7,7 @@
   p:last-child {
     margin-bottom: 0;
   }
-  blockquote {
+  td blockquote {
     @apply border-l-4 px-5 py-4 my-3 border-red-500 bg-red-100 font-normal not-italic font-normal appearance-none block;
     p:first-of-type::before,
     p:first-of-type::after {

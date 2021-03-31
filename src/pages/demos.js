@@ -1,11 +1,11 @@
 import React, { useRef, useState } from 'react';
-import { getParameters } from 'codesandbox/lib/api/define';
 import { ReactComponent as CodeSandBoxLogo } from '@/img/codesandbox.svg';
 import Heading from '@/components/Heading';
 import { WithSidebarLayout } from '@/layouts/withSidebar';
 import { useLazyDemos } from 'src/shared/use-lazy-demos';
 import demos from 'src/demos.json';
 import { angularFiles, reactFiles } from 'src/shared/codesandbox-files';
+import { compressToBase64 } from 'src/shared/lz-string';
 
 let tableOfContents;
 
@@ -86,10 +86,17 @@ export default function DemosPage() {
     return _mainContent.json();
   }
 
+  const compressParameters = (parameters) => {
+    return compressToBase64(JSON.stringify(parameters))
+      .replace(/\+/g, `-`) // Convert '+' to '-'
+      .replace(/\//g, `_`) // Convert '/' to '_'
+      .replace(/=+$/, ``); // Remove ending '='
+  };
+
   const openCodeSandbox = async (e, title, folder, mode = 'static') => {
     e.preventDefault();
     const content = await getDemoContent(folder, mode);
-    const codeSandBoxParams = getParameters(
+    const codeSandBoxParams = compressParameters(
       generateCodeSandboxWorkspace(mode, content, title)
     );
 
@@ -141,7 +148,7 @@ export default function DemosPage() {
               href="#"
               onClick={(e) => openCodeSandbox(e, title, folder)}
             >
-              <CodeSandBoxLogo className="inline" width="19" height="14" />
+              <CodeSandBoxLogo className="inline fill-current" width="19" height="14" />
               <span>Core</span>
             </a>
             <a
@@ -149,7 +156,7 @@ export default function DemosPage() {
               href="#"
               onClick={(e) => openCodeSandbox(e, title, folder, 'angular')}
             >
-              <CodeSandBoxLogo className="inline" width="19" height="14" />
+              <CodeSandBoxLogo className="inline fill-current" width="19" height="14" />
               <span>Angular</span>
             </a>
             <a
@@ -157,7 +164,7 @@ export default function DemosPage() {
               href="#"
               onClick={(e) => openCodeSandbox(e, title, folder, 'react')}
             >
-              <CodeSandBoxLogo className="inline" width="19" height="14" />
+              <CodeSandBoxLogo className="inline fill-current" width="19" height="14" />
               <span>React</span>
             </a>
           </div>
