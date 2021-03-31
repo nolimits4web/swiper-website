@@ -2,8 +2,8 @@
   "name": "swiper-website",
   "version": "0.1.0",
   "private": true,
-  "releaseVersion": "6.5.2",
-  "releaseDate": "March 30, 2021",
+  "releaseVersion": "6.5.3",
+  "releaseDate": "March 31, 2021",
   "scripts": {
     "dev": "npm run build-sponsors && npm run unpkg-demos && npm run build-demos && npm run build-types && npm run build-api && next dev",
     "build": "npm run build-sponsors && npm run unpkg-demos && npm run build-demos && npm run build-types && npm run build-api && next build",
@@ -55,7 +55,7 @@
     "tailwindcss": "^2.0.2",
     "typedoc": "^0.19.2",
     "typescript": "^4.0.5",
-    "swiper": "^6.5.2",
+    "swiper": "^6.5.3",
     "unified": "^9.2.0"
   }
 }
