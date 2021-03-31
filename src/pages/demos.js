@@ -137,20 +137,12 @@ export default function DemosPage() {
               Open in new window
             </a>
             <a
-              className="no-underline"
-              href={`https://github.com/nolimits4web/Swiper/blob/master/demos/${folder}.html`}
-              target="_blank"
-              rel="noopener"
-            >
-              Source code
-            </a>
-            <a
               className="no-underline ml-2"
               href="#"
               onClick={(e) => openCodeSandbox(e, title, folder)}
             >
               <CodeSandBoxLogo className="inline" width="19" height="14" />
-              <span>JS</span>
+              <span>Core</span>
             </a>
             <a
               className="no-underline ml-2"
