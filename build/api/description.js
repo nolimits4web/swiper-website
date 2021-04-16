@@ -24,7 +24,9 @@ const processDescription = (text) => {
             (spaces) => `{'${spaces}'}`
           )}<`;
         })
-        .replace(/\n/g, '{`\n`}');
+        .replace(/\n/g, '{`\n`}')
+        .replace(/&#x3C;([a-z]*) className="/g, '&#x3C;$1 class="')
+        .replace(/&#x3C;([a-z]*){' '}className="/g, `&#x3C;$1{' '}class="`);
       return `<code className="${lang}">${inner}</code>`;
     });
 };
