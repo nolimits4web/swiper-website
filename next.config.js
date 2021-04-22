@@ -16,6 +16,9 @@ const fallbackLayouts = {
 };
 
 const nextConfig = {
+  future: {
+    webpack5: true,
+  },
   pageExtensions: ['js', 'jsx', 'mdx'],
   target: 'serverless',
   env: {
