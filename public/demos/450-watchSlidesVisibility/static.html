@@ -43,7 +43,7 @@
       "swiper-slide-visible" className
     </h3>
     <br />
-    <div class="swiper-container">
+    <div class="swiper-container mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">Slide 1</div>
         <div class="swiper-slide">Slide 2</div>
@@ -62,7 +62,7 @@
 
     <!-- Initialize Swiper -->
     <script>
-      var swiper = new Swiper(".swiper-container", {
+      var swiper = new Swiper(".mySwiper", {
         watchSlidesProgress: true,
         watchSlidesVisibility: true,
         slidesPerView: 3,

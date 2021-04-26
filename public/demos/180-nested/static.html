@@ -51,6 +51,13 @@
         align-items: center;
       }
 
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
       .swiper-container-v {
         background: #eee;
       }
@@ -60,11 +67,11 @@
   <body>
     <!-- Swiper -->
 
-    <div class="swiper-container swiper-container-h">
+    <div class="swiper-container mySwiper swiper-container-h">
       <div class="swiper-wrapper">
         <div class="swiper-slide">Horizontal Slide 1</div>
         <div class="swiper-slide">
-          <div class="swiper-container swiper-container-v">
+          <div class="swiper-container mySwiper2 swiper-container-v">
             <div class="swiper-wrapper">
               <div class="swiper-slide">Vertical Slide 1</div>
               <div class="swiper-slide">Vertical Slide 2</div>
@@ -93,7 +100,7 @@
           clickable: true,
         },
       });
-      var swiper = new Swiper(".swiper-container-v", {
+      var swiper2 = new Swiper(".swiper-container-v2", {
         direction: "vertical",
         spaceBetween: 50,
         pagination: {

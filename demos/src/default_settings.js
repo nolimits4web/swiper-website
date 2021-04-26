@@ -39,6 +39,13 @@ module.exports = {
       -webkit-align-items: center;
       align-items: center;
     }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   `,
   script: {},
   content: `<Swiper>

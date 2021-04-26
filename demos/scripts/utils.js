@@ -17,6 +17,10 @@ module.exports.addClass = (node, classNames) => {
     node.attrs.class = classNames;
   }
 
+  if (node.attrs.class === classNames) {
+    return node;
+  }
+
   const classes = node.attrs.class.split(' ');
   if (classes.indexOf(classNames) === -1) {
     node.attrs.class = [classNames].concat(classes).join(' ');
@@ -120,6 +124,23 @@ module.exports.parseJSON = (value) => {
   );
 };
 
+module.exports.getStringIndex = (config, index, reverse = false) => {
+  const count = config.length - 1;
+  if (reverse) {
+    if (index === 0) {
+      return count + 1;
+    }
+    if (index === count) {
+      return '';
+    }
+    return count - index + 1;
+  }
+  if (index === 0) {
+    return '';
+  }
+  return index + 1;
+};
+
 module.exports.formatFn = (value) => {
   return value
     .replace(/('|")(\s+)?(function|\(\))/g, '$2$3')
@@ -129,6 +150,8 @@ module.exports.formatFn = (value) => {
     .replace(/\\n/g, '\n')
     .replace(/\\r/g, '\n');
 };
+
+module.exports.swiperName = 'mySwiper';
 
 module.exports.cleanupConfig = (configs) => {
   const isArray = Array.isArray(configs);

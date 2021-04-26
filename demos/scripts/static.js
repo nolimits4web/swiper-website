@@ -8,15 +8,17 @@ const {
   parseJSON,
   formatFn,
   cleanupConfig,
+  swiperName,
+  getStringIndex,
 } = require('./utils');
 
 module.exports = async (dir, _config) => {
   try {
     const demoConfig = extractConfig(_config, 'static');
     if (!demoConfig) return;
-    const { content, config } = demoConfig;
+    const { content, config, configReverseOrder } = demoConfig;
     const { html: templateString } = await posthtml([
-      staticPostHTML(config),
+      staticPostHTML(config, configReverseOrder),
     ]).process(content.replace(/className\=/g, 'class='));
 
     const finalContent = prettier.format(
@@ -36,30 +38,37 @@ function render(
   { styles = '', globalStyles = '', script = {} }
 ) {
   let configJSCode = '';
-  config.forEach((_config) => {
-    const finalConfig = _config;
-    if (finalConfig.navigation) {
-      finalConfig.navigation = {
+  config.forEach((_config, index) => {
+    const tempConfig = _config;
+    if (tempConfig.navigation) {
+      tempConfig.navigation = {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
-        ...finalConfig.navigation,
+        ...tempConfig.navigation,
       };
     }
-    if (finalConfig.scrollbar) {
-      finalConfig.scrollbar = {
+    if (tempConfig.scrollbar) {
+      tempConfig.scrollbar = {
         el: '.swiper-scrollbar',
-        ...finalConfig.scrollbar,
+        ...tempConfig.scrollbar,
       };
     }
-    if (finalConfig.pagination) {
-      finalConfig.pagination = {
+    if (tempConfig.pagination) {
+      tempConfig.pagination = {
         el: '.swiper-pagination',
-        ...finalConfig.pagination,
+        ...tempConfig.pagination,
       };
     }
-    const el = finalConfig.__el || '.swiper-container';
-    configJSCode += `\nvar swiper = new Swiper('${el}'${
-      finalConfig ? `, ${formatFn(parseJSON(cleanupConfig(finalConfig)))}` : ''
+    const el = tempConfig.__el || `.${swiperName}`;
+    const finalConfig = tempConfig
+      ? formatFn(parseJSON(cleanupConfig(tempConfig))).replace(
+          /("|')swiperVar_("|')/g,
+          'swiper'
+        )
+      : null;
+    const indexStr = index === 0 ? '' : `${index + 1}`;
+    configJSCode += `\nvar swiper${indexStr} = new Swiper('${el}${indexStr}'${
+      finalConfig ? `, ${finalConfig}` : ''
     });`;
   });
 
@@ -114,7 +123,8 @@ function divEl(classNames) {
   };
 }
 
-function staticPostHTML(config) {
+function staticPostHTML(config, reverse = false) {
+  let index = -1;
   return (tree) => {
     tree.walk((node) => {
       if (
@@ -126,7 +136,8 @@ function staticPostHTML(config) {
       let classNames = null;
 
       if (node.tag === 'Swiper') {
-        const _config = config[0]; // TODO: support multiple configs
+        index++;
+        const _config = config[reverse ? config.length - 1 - index : index];
         const append = [];
         const prepend = [];
         if (_config.navigation) {
@@ -159,7 +170,9 @@ function staticPostHTML(config) {
           });
         }
 
-        classNames = 'swiper-container';
+        const indexStr = getStringIndex(config, index, reverse);
+
+        classNames = `swiper-container ${swiperName}${indexStr}`;
         node.content = [
           ...prepend,
           {
