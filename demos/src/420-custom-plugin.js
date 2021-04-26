@@ -1,9 +1,9 @@
 const defaultSettings = require('./default_settings');
 
-module.exports = (mode = 'static') => ({
+module.exports = (mode = 'core') => ({
   ...defaultSettings,
   title: 'Custom plugin',
-  // skip: mode !== 'static',
+  // skip: mode !== 'core',
   skip: true,
   config: [
     {

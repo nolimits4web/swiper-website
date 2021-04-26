@@ -1,6 +1,6 @@
 const defaultSettings = require('./default_settings');
 
-module.exports = (mode = 'static') => ({
+module.exports = (mode = 'core') => ({
   ...defaultSettings,
   title: 'Dynamic slides',
   styles: `
@@ -37,7 +37,7 @@ module.exports = (mode = 'static') => ({
 
   <p className="append-buttons">
   ${
-    mode === 'static'
+    mode === 'core'
       ? `
     <button class="prepend-2-slides">Prepend 2 Slides</button>
     <button class="prepend-slide">Prepend Slide</button>
@@ -78,7 +78,7 @@ module.exports = (mode = 'static') => ({
     },
   ],
   script: {
-    static: `
+    core: `
     var appendNumber = 4;
     var prependNumber = 1;
     document.querySelector('.prepend-2-slides').addEventListener('click', function (e) {

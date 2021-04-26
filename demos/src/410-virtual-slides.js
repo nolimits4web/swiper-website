@@ -1,6 +1,6 @@
 const defaultSettings = require('./default_settings');
 
-module.exports = (mode = 'static') => ({
+module.exports = (mode = 'core') => ({
   ...defaultSettings,
   title: 'Virtual slides',
   styles: `
@@ -32,7 +32,7 @@ module.exports = (mode = 'static') => ({
 
   <p className="append-buttons">
   ${
-    mode === 'static'
+    mode === 'core'
       ? `
     <button class="prepend-2-slides">Prepend 2 Slides</button>
     <button class="slide-1">Slide 1</button>
@@ -85,7 +85,7 @@ module.exports = (mode = 'static') => ({
     },
   ],
   script: {
-    static: `
+    core: `
   var appendNumber = 600;
   var prependNumber = 1;
   document.querySelector('.slide-1').addEventListener('click', function (e) {

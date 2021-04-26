@@ -1,9 +1,9 @@
 const defaultSettings = require('./default_settings');
 
-module.exports = (mode = 'static') => ({
+module.exports = (mode = 'core') => ({
   ...defaultSettings,
   title: 'Change direction',
-  // skip: mode !== 'static',
+  // skip: mode !== 'core',
   skip: true,
   config: [
     {

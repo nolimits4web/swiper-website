@@ -35,7 +35,7 @@ function formatName(name) {
     .replace('-', '');
 }
 
-module.exports.extractConfig = (configObj, mode = 'static') => {
+module.exports.extractConfig = (configObj, mode = 'core') => {
   let demoConfig;
   try {
     demoConfig = configObj(mode);

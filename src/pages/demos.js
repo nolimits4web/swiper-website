@@ -29,7 +29,7 @@ export default function DemosPage() {
     // https://github.com/codesandbox/codesandbox-importers/blob/master/packages/import-utils/src/create-sandbox/templates.ts#L63
     // We cant set name & tags in static environment, as codesandbox parses it from package.json
     // Thats why we're including parcel as dependency
-    if (mode === 'static') {
+    if (mode === 'core') {
       return {
         files: {
           ...contentJSON,
@@ -75,13 +75,13 @@ export default function DemosPage() {
   async function getDemoContent(folder, mode) {
     const path = {
       angular: 'angular.json',
-      static: 'static.html',
+      static: 'core.html',
       react: 'react.json',
       svelte: 'svelte.json',
       vue: 'vue.json',
     };
     const _mainContent = await fetch(`demos/${folder}/${path[mode]}`);
-    if (mode === 'static') {
+    if (mode === 'core') {
       let mainContent = await _mainContent.text();
       return {
         'index.html': {
@@ -99,7 +99,7 @@ export default function DemosPage() {
       .replace(/=+$/, ``); // Remove ending '='
   };
 
-  const openCodeSandbox = async (e, title, folder, mode = 'static') => {
+  const openCodeSandbox = async (e, title, folder, mode = 'core') => {
     e.preventDefault();
     const content = await getDemoContent(folder, mode);
     const codeSandBoxParams = compressParameters(

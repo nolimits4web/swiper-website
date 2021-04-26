@@ -1,4 +1,4 @@
-module.exports.inlineStyles = (mode = 'static', vars = {}) => {
+module.exports.inlineStyles = (mode = 'core', vars = {}) => {
   if (mode === 'vue') {
     // {'--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff'}
     return `:style="{${Object.keys(vars)
@@ -13,7 +13,7 @@ module.exports.inlineStyles = (mode = 'static', vars = {}) => {
       .join(',')}}}"`;
   }
 
-  // if (mode === 'static' || mode === 'angular') {
+  // if (mode === 'core' || mode === 'angular') {
   return `style="${Object.keys(vars)
     .map((key) => `${key}: ${vars[key]}`)
     .join(';')}"`;

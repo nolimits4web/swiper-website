@@ -1,6 +1,6 @@
 const defaultSettings = require('./default_settings');
 
-module.exports = (mode = 'static') => ({
+module.exports = (mode = 'core') => ({
   ...defaultSettings,
   title: 'Nested',
   styles: `
@@ -30,7 +30,7 @@ module.exports = (mode = 'static') => ({
       __el: '.swiper-container-horizontal-h',
       spaceBetween: 50,
       pagination: {
-        el: mode === 'static' ? '.swiper-pagination-h' : undefined,
+        el: mode === 'core' ? '.swiper-pagination-h' : undefined,
         clickable: true,
       },
     },
@@ -39,7 +39,7 @@ module.exports = (mode = 'static') => ({
       direction: 'vertical',
       spaceBetween: 50,
       pagination: {
-        el: mode === 'static' ? '.swiper-pagination-v' : undefined,
+        el: mode === 'core' ? '.swiper-pagination-v' : undefined,
         clickable: true,
       },
     },

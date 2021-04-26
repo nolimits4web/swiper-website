@@ -14,7 +14,7 @@ const {
 
 module.exports = async (dir, _config) => {
   try {
-    const demoConfig = extractConfig(_config, 'static');
+    const demoConfig = extractConfig(_config, 'core');
     if (!demoConfig) return;
     const { content, config, configReverseOrder } = demoConfig;
     const { html: templateString } = await posthtml([
@@ -27,9 +27,9 @@ module.exports = async (dir, _config) => {
         parser: 'html',
       }
     );
-    await fs.writeFile(path.join(dir, 'static.html'), finalContent);
+    await fs.writeFile(path.join(dir, 'core.html'), finalContent);
   } catch (err) {
-    throw new Error('Static: ' + err.stack);
+    throw new Error('core: ' + err.stack);
   }
 };
 

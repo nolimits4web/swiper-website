@@ -1,7 +1,7 @@
 const { inlineStyles } = require('../templateUtils');
 const defaultSettings = require('./default_settings');
 
-module.exports = (mode = 'static') => ({
+module.exports = (mode = 'core') => ({
   ...defaultSettings,
   title: 'Parallax',
   styles: `

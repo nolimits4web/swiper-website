@@ -2,7 +2,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const globby = require('globby');
 const elapsed = require('elapsed-time-logger');
-const buildStatic = require('./static');
+const buildCore = require('./core');
 const buildAngular = require('./angular');
 const buildReact = require('./react');
 const buildVue = require('./vue');
@@ -18,7 +18,7 @@ const slugify = require('@sindresorhus/slugify');
     try {
       const folderName = path.basename(item.replace(/\.[^/.]+$/, ''));
       const demoConfig = require(path.join(__dirname, '../', item));
-      const _meta = demoConfig('static');
+      const _meta = demoConfig('core');
       if (!_meta.skip) {
         demosData.push({
           title: _meta.title,
@@ -33,7 +33,7 @@ const slugify = require('@sindresorhus/slugify');
       await fs.remove(dir);
       await fs.ensureDir(dir);
       await Promise.all([
-        buildStatic(dir, demoConfig),
+        buildCore(dir, demoConfig),
         buildAngular(dir, demoConfig),
         buildReact(dir, demoConfig),
         buildVue(dir, demoConfig),
