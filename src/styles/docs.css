@@ -57,16 +57,15 @@
       padding-bottom: 10px;
       flex-wrap: wrap;
     }
-    tbody {
-      th,
-      td,
-      th[colspan] {
-        display: block;
-        border: none;
-        padding: 0;
-        background: none;
-        width: auto;
-      }
+    tbody th,
+    tbody td,
+    tbody th[colspan] {
+      /* prettier-ignore */
+      display: block;
+      border: none;
+      padding: 0;
+      background: none;
+      width: auto;
     }
     td:not(:last-child) {
       margin-right: 20px;
