@@ -143,7 +143,7 @@ export default function DemosPage() {
           <div className="flex flex-wrap text-sm my-4">
             <a
               className="no-underline mr-4 mb-2"
-              href={`/demos/${folder}/static.html`}
+              href={`/demos/${folder}/core.html`}
               target="_blank"
               rel="noopener"
             >
@@ -151,6 +151,7 @@ export default function DemosPage() {
             </a>
             {['Core', 'React', 'Vue', 'Angular'].map((name) => (
               <a
+                key={name}
                 className="no-underline ml-2"
                 href="#"
                 onClick={(e) =>
@@ -168,7 +169,7 @@ export default function DemosPage() {
           </div>
           <div className="my-4 bg-gray-100 shadow demo">
             <iframe
-              data-src={`/demos/${folder}/static.html`}
+              data-src={`/demos/${folder}/core.html`}
               scrolling="no"
               frameBorder="0"
               className="h-96 block w-full"
