@@ -43,7 +43,6 @@ module.exports.extractConfig = (configObj, mode = 'static') => {
     return null;
   }
   if (demoConfig.skip) {
-    console.log(`Skipping: ${demoConfig.title} ${mode}.. `);
     return null;
   }
   const modules = [];

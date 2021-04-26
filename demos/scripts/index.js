@@ -5,6 +5,7 @@ const elapsed = require('elapsed-time-logger');
 const buildStatic = require('./static');
 const buildAngular = require('./angular');
 const buildReact = require('./react');
+const slugify = require('@sindresorhus/slugify');
 
 (async () => {
   elapsed.start('Demos generation');
@@ -17,11 +18,15 @@ const buildReact = require('./react');
       const folderName = path.basename(item.replace(/\.[^/.]+$/, ''));
       const demoConfig = require(path.join(__dirname, '../', item));
       const _meta = demoConfig('static');
-      demosData.push({
-        title: _meta.title,
-        slug: _meta.slug || _meta.title,
-        folder: folderName,
-      });
+      if (!_meta.skip) {
+        demosData.push({
+          title: _meta.title,
+          slug: slugify(_meta.slug || _meta.title),
+          folder: folderName,
+        });
+      } else {
+        console.log(`Skipping: ${_meta.title}`);
+      }
       const dir = path.join(__dirname, `../../public/demos/${folderName}`);
 
       await fs.remove(dir);

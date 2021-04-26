@@ -6,7 +6,7 @@ module.exports = (mode = 'static') => ({
   styles: `
   ${defaultSettings.styles}
 
-  .swiper-container {
+  .swiper-container-horizontal {
     width: 100%;
     height: 300px;
     margin: 20px auto;

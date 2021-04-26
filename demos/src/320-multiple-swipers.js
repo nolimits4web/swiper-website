@@ -3,13 +3,26 @@ const defaultSettings = require('./default_settings');
 module.exports = (mode = 'static') => ({
   ...defaultSettings,
   title: 'Multiple swipers',
-  skip: true,
+  content: `<Swiper>
+  ${Array.from({ length: 9 })
+    .map((el, index) => `<SwiperSlide>Slide ${index + 1}</SwiperSlide>`)
+    .join('')}
+  </Swiper>`.repeat(3),
   config: [
     {
-      direction: 'vertical',
-      slidesPerView: 1,
       spaceBetween: 30,
-      mousewheel: true,
+      pagination: {
+        clickable: true,
+      },
+    },
+    {
+      spaceBetween: 30,
+      pagination: {
+        clickable: true,
+      },
+    },
+    {
+      spaceBetween: 30,
       pagination: {
         clickable: true,
       },

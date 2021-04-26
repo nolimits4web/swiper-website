@@ -12,7 +12,7 @@ module.exports = (mode = 'static') => ({
   }
   `,
   styles: `
-  .swiper-container {
+  .swiper-container-horizontal {
     width: 100%;
     height: 100%;
   }

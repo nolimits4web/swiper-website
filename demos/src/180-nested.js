@@ -6,7 +6,7 @@ module.exports = (mode = 'static') => ({
   styles: `
   ${defaultSettings.styles}
 
-  .swiper-container-v {
+  .swiper-container-horizontal-v {
     background: #eee;
   }
   `,
@@ -27,7 +27,7 @@ module.exports = (mode = 'static') => ({
   </Swiper>`,
   config: [
     {
-      __el: '.swiper-container-h',
+      __el: '.swiper-container-horizontal-h',
       spaceBetween: 50,
       pagination: {
         el: mode === 'static' ? '.swiper-pagination-h' : undefined,
@@ -35,7 +35,7 @@ module.exports = (mode = 'static') => ({
       },
     },
     {
-      __el: '.swiper-container-v',
+      __el: '.swiper-container-horizontal-v',
       direction: 'vertical',
       spaceBetween: 50,
       pagination: {

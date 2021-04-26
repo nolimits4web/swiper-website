@@ -148,7 +148,11 @@ export default function DemosPage() {
               href="#"
               onClick={(e) => openCodeSandbox(e, title, folder)}
             >
-              <CodeSandBoxLogo className="inline fill-current" width="19" height="14" />
+              <CodeSandBoxLogo
+                className="inline fill-current"
+                width="19"
+                height="14"
+              />
               <span>Core</span>
             </a>
             <a
@@ -156,7 +160,11 @@ export default function DemosPage() {
               href="#"
               onClick={(e) => openCodeSandbox(e, title, folder, 'angular')}
             >
-              <CodeSandBoxLogo className="inline fill-current" width="19" height="14" />
+              <CodeSandBoxLogo
+                className="inline fill-current"
+                width="19"
+                height="14"
+              />
               <span>Angular</span>
             </a>
             <a
@@ -164,7 +172,11 @@ export default function DemosPage() {
               href="#"
               onClick={(e) => openCodeSandbox(e, title, folder, 'react')}
             >
-              <CodeSandBoxLogo className="inline fill-current" width="19" height="14" />
+              <CodeSandBoxLogo
+                className="inline fill-current"
+                width="19"
+                height="14"
+              />
               <span>React</span>
             </a>
           </div>

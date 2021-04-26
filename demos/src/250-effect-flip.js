@@ -4,7 +4,7 @@ module.exports = (mode = 'static') => ({
   ...defaultSettings,
   title: 'Effect flip',
   styles: `
-  .swiper-container {
+  .swiper-container-horizontal {
     width: 300px;
     height: 300px;
     padding: 50px;

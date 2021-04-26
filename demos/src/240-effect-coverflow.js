@@ -4,7 +4,7 @@ module.exports = (mode = 'static') => ({
   ...defaultSettings,
   title: 'Effect coverflow',
   styles: `
-  .swiper-container {
+  .swiper-container-horizontal {
     width: 100%;
     padding-top: 50px;
     padding-bottom: 50px;

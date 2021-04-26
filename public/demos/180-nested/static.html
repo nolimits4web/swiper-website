@@ -26,7 +26,7 @@
         padding: 0;
       }
 
-      .swiper-container {
+      .swiper-container-horizontal {
         width: 800px;
         height: 100%;
       }
@@ -58,7 +58,7 @@
         object-fit: cover;
       }
 
-      .swiper-container-v {
+      .swiper-container-horizontal-v {
         background: #eee;
       }
     </style>
@@ -93,14 +93,14 @@
 
     <!-- Initialize Swiper -->
     <script>
-      var swiper = new Swiper(".swiper-container-h", {
+      var swiper = new Swiper(".swiper-container-horizontal-h", {
         spaceBetween: 50,
         pagination: {
           el: ".swiper-pagination-h",
           clickable: true,
         },
       });
-      var swiper2 = new Swiper(".swiper-container-v2", {
+      var swiper2 = new Swiper(".swiper-container-horizontal-v2", {
         direction: "vertical",
         spaceBetween: 50,
         pagination: {

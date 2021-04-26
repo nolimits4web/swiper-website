@@ -6,7 +6,7 @@ module.exports = (mode = 'static') => ({
   title: 'Parallax',
   styles: `
 
-  .swiper-container {
+  .swiper-container-horizontal {
     width: 100%;
     height: 100%;
     background: #000;

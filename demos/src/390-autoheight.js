@@ -4,7 +4,7 @@ module.exports = (mode = 'static') => ({
   ...defaultSettings,
   title: 'Autoheight',
   styles: `
-  .swiper-container {
+  .swiper-container-horizontal {
     width: 100%;
     height: auto;
   }
@@ -16,12 +16,12 @@ module.exports = (mode = 'static') => ({
 
   }
 
-  .swiper-container .swiper-slide {
+  .swiper-container-horizontal .swiper-slide {
     height: 300px;
     line-height: 300px;
   }
 
-  .swiper-container .swiper-slide:nth-child(2n) {
+  .swiper-container-horizontal .swiper-slide:nth-child(2n) {
     height: 500px;
     line-height: 500px;
   }
