@@ -1,7 +1,7 @@
 module.exports.inlineStyles = (mode = 'static', vars = {}) => {
   if (mode === 'vue') {
     // {'--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff'}
-    return `style="{${Object.keys(vars)
+    return `:style="{${Object.keys(vars)
       .map((key) => `'${key}': '${vars[key]}'`)
       .join(',')}}"`;
   }
