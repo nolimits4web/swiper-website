@@ -52,10 +52,7 @@ module.exports = (mode = 'static') => ({
     object-fit: cover
   }
   `,
-  content: `${Array.from({ length: 2 })
-    .map(
-      (_) =>
-        `
+  content: `
   <Swiper ${inlineStyles(mode, {
     '--swiper-navigation-color': '#fff',
     '--swiper-pagination-color': '#fff',
@@ -68,9 +65,17 @@ module.exports = (mode = 'static') => ({
         }.jpg" /></SwiperSlide>`
     )
     .join('')}
-  </Swiper>`
+  </Swiper>
+  <Swiper thumbsSlider>
+  ${Array.from({ length: 10 })
+    .map(
+      (el, index) =>
+        `<SwiperSlide><img src="https://swiperjs.com/demos/images/nature-${
+          index + 1
+        }.jpg" /></SwiperSlide>`
     )
-    .join('')}`,
+    .join('')}
+  </Swiper>`,
   config: [
     {
       spaceBetween: 10,

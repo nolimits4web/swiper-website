@@ -18,7 +18,7 @@ module.exports = async (dir, _config) => {
     if (!demoConfig) return;
     const { content, config, configReverseOrder } = demoConfig;
     const { html: templateString } = await posthtml([
-      staticPostHTML(config, configReverseOrder),
+      renderPostHTML(config, configReverseOrder),
     ]).process(content.replace(/className\=/g, 'class='));
 
     const finalContent = prettier.format(
@@ -123,8 +123,8 @@ function divEl(classNames) {
   };
 }
 
-function staticPostHTML(config, reverse = false) {
-  let index = -1;
+function renderPostHTML(config, reverse = false) {
+  let swiperIndex = -1;
   return (tree) => {
     tree.walk((node) => {
       if (
@@ -136,8 +136,9 @@ function staticPostHTML(config, reverse = false) {
       let classNames = null;
 
       if (node.tag === 'Swiper') {
-        index++;
-        const _config = config[reverse ? config.length - 1 - index : index];
+        swiperIndex++;
+        const _config =
+          config[reverse ? config.length - 1 - swiperIndex : swiperIndex];
         const append = [];
         const prepend = [];
         if (_config.navigation) {
@@ -170,7 +171,7 @@ function staticPostHTML(config, reverse = false) {
           });
         }
 
-        const indexStr = getStringIndex(config, index, reverse);
+        const indexStr = getStringIndex(config, swiperIndex, reverse);
 
         classNames = `swiper-container ${swiperName}${indexStr}`;
         node.content = [

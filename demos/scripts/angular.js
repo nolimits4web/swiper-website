@@ -7,12 +7,13 @@ const {
   parseJSON,
   formatFn,
   cleanupConfig,
+  addClass,
+  swiperName,
+  getStringIndex,
 } = require('./utils');
-let swiperIndex = 0;
 
 module.exports = async (dir, _config) => {
   try {
-    swiperIndex = 0;
     const demoConfig = extractConfig(_config, 'angular');
     if (!demoConfig) return;
     const {
@@ -22,12 +23,17 @@ module.exports = async (dir, _config) => {
       cssModules,
       globalStyles = '',
       styles = '',
+      configReverseOrder,
     } = demoConfig;
     const { configs: parsedConfig, vars } = parseConfig(config);
     config.parsed = parsedConfig;
     const { html: templateString } = await posthtml([
-      ngPostHTML(config, vars),
-    ]).process(content.replace(/className\=/g, 'class='));
+      renderPostHTML(config, vars, configReverseOrder),
+    ]).process(
+      content
+        .replace(/className\=/g, 'class=')
+        .replace(/("|')swiperVar_("|')/g, 'swiper')
+    );
     const componentContent = prettier.format(
       render({ templateString, modules, vars }, demoConfig),
       {
@@ -89,6 +95,9 @@ function render({ templateString, modules, vars }, { script = {} }) {
         })
         .join('\n')
     : '';
+
+  const isThumbs = modules && modules.includes('Thumbs');
+
   return `
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { SwiperComponent } from 'swiper/angular';
@@ -114,13 +123,21 @@ SwiperCore.use([${_modules}]);
 })
 export class AppComponent {
   ${varsTemplate}
+  ${
+    isThumbs
+      ? `
+  thumbsSwiper: any;
+  `
+      : ''
+  }
   ${script.angular || ''}
 }
 
   `;
 }
 
-function ngPostHTML(config, vars) {
+function renderPostHTML(config, vars, reverse = false) {
+  let swiperIndex = -1;
   return (tree) => {
     tree.walk((node) => {
       if (
@@ -131,12 +148,18 @@ function ngPostHTML(config, vars) {
       }
       node.attrs = node.attrs || {};
       if (node.tag === 'Swiper') {
+        swiperIndex++;
         node.tag = 'swiper';
-        const _config = config.parsed[swiperIndex];
+        const _config =
+          config[reverse ? config.length - 1 - swiperIndex : swiperIndex];
         Object.keys(_config).forEach((key) => {
           Object.keys(node.attrs).forEach((attrName) => {
             if (attrName.startsWith('#')) {
               node.attrs[attrName] = true;
+            }
+            if (attrName === 'thumbsSlider') {
+              node.attrs[attrName] = null;
+              node.attrs['(swiper)'] = 'thumbsSwiper = $event';
             }
           });
           let value = _config[key];
@@ -152,9 +175,14 @@ function ngPostHTML(config, vars) {
           ) {
             value = `'${_config[key]}'`;
           }
-          node.attrs[`[${key}]`] = value;
+          if (key === 'thumbs') {
+            node.attrs[`[thumbs]`] = `{ swiper: thumbsSwiper }`;
+          } else {
+            node.attrs[`[${key}]`] = value;
+          }
         });
-        swiperIndex++;
+        const indexStr = getStringIndex(config, swiperIndex, reverse);
+        addClass(node, `${swiperName}${indexStr}`);
       } else if (node.tag === 'SwiperSlide') {
         node.tag = 'ng-template';
         node.attrs.swiperSlide = true;

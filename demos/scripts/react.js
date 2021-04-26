@@ -7,21 +7,29 @@ const {
   parseJSON,
   formatFn,
   cleanupConfig,
+  getStringIndex,
+  swiperName,
+  addClass,
 } = require('./utils');
-let swiperIndex = 0;
 
 module.exports = async (dir, _config) => {
   try {
-    swiperIndex = 0;
     const demoConfig = extractConfig(_config, 'react');
     if (!demoConfig) return;
-    const { content, config, globalStyles = '', styles = '' } = demoConfig;
+    const {
+      content,
+      config,
+      globalStyles = '',
+      styles = '',
+      configReverseOrder,
+    } = demoConfig;
     const { configs: parsedConfig, vars } = parseConfig(config);
     config.parsed = parsedConfig;
-    const { html } = await posthtml([ngPostHTML(config, vars)]).process(
-      content,
-      { closingSingleTag: 'slash' }
-    );
+    const { html } = await posthtml([
+      renderPostHTML(config, vars, configReverseOrder),
+    ]).process(content, {
+      closingSingleTag: 'slash',
+    });
     const templateString = aferPostHTML(html);
     // const componentContent = prettier.format(
     //   render({ templateString, vars }, demoConfig),
@@ -86,20 +94,23 @@ function render(
         })
         .join('\n')
     : '';
+
+  const isThumbs = modules && modules.includes('Thumbs');
+
   return `
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./styles.css";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import "swiper/swiper.scss";
+import "swiper/swiper.min.css";
 ${
   cssModules
     ? cssModules
         .map(
           (cssModule) =>
-            `import "swiper/components/${cssModule}/${cssModule}.scss"`
+            `import "swiper/components/${cssModule}/${cssModule}.min.css"`
         )
         .join('\n')
     : ''
@@ -121,6 +132,13 @@ SwiperCore.use([${_modules}]);
 
 export default function App() {
   ${varsTemplate}
+  ${
+    isThumbs
+      ? `
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  `
+      : ''
+  }
   ${script.react || ''}
   return (
     <>
@@ -130,7 +148,8 @@ export default function App() {
 }`;
 }
 
-function ngPostHTML(config, vars) {
+function renderPostHTML(config, vars, reverse = false) {
+  let swiperIndex = -1;
   return (tree) => {
     tree.walk((node) => {
       if (
@@ -141,13 +160,19 @@ function ngPostHTML(config, vars) {
       }
       node.attrs = node.attrs || {};
       if (node.tag === 'Swiper') {
+        swiperIndex++;
         // node.tag = 'Swiper';
-        const _config = config.parsed[swiperIndex];
+        const _config =
+          config[reverse ? config.length - 1 - swiperIndex : swiperIndex];
         Object.keys(_config).forEach((key) => {
           Object.keys(node.attrs).forEach((attrName) => {
             if (attrName.startsWith('#')) {
               node.attrs['ref'] = `{${attrName.replace('#', '')}}`;
               delete node.attrs[attrName];
+            }
+            if (attrName === 'thumbsSlider') {
+              delete node.attrs[attrName];
+              node.attrs['onSwiper'] = '{setThumbsSwiper}';
             }
           });
           let value = _config[key];
@@ -163,9 +188,14 @@ function ngPostHTML(config, vars) {
           ) {
             value = `'${_config[key]}'`;
           }
-          node.attrs[key] = `{${value}}`;
+          if (key === 'thumbs') {
+            node.attrs[`thumbs`] = `{{ swiper: thumbsSwiper }}`;
+          } else {
+            node.attrs[key] = `{${value}}`;
+          }
         });
-        swiperIndex++;
+        const indexStr = getStringIndex(config, swiperIndex, reverse);
+        addClass(node, `${swiperName}${indexStr}`);
       } else if (node.tag === 'SwiperSlide') {
         // node.tag = 'SwiperSlide';
         // node.attrs.swiperSlide = true;
