@@ -16,7 +16,6 @@ module.exports = {
   }`,
   styles: `
     .swiper-container-horizontal {
-      width: 800px;
       height: 100%;
     }
 
