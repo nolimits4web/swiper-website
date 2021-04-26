@@ -9,7 +9,7 @@
     "build": "npm run build-sponsors && npm run build-demos && npm run build-types && npm run build-api && next build",
     "start": "next start",
     "build-sponsors": "node build/build-sponsors.js",
-    "build-demos": "node demos/scripts/index.js",
+    "build-demos": "node demos/build/build-demos.js",
     "build-api": "node build/build-api.js",
     "build-types": "node build/build-types.js"
   },
