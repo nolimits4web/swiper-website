@@ -196,7 +196,7 @@ function renderPostHTML(config, vars, reverse = false) {
           }
         });
         const indexStr = getStringIndex(config, swiperIndex, reverse);
-        addClass(node, `${swiperName}${indexStr}`);
+        addClass(node, `${swiperName}${indexStr}`, true);
       } else if (node.tag === 'SwiperSlide') {
         // node.tag = 'SwiperSlide';
         // node.attrs.swiperSlide = true;

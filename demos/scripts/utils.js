@@ -1,6 +1,6 @@
 const prettier = require('prettier');
 
-module.exports.addClass = (node, classNames) => {
+module.exports.addClass = (node, classNames, jsx = false) => {
   if (!classNames) {
     return node;
   }
@@ -12,18 +12,19 @@ module.exports.addClass = (node, classNames) => {
     node.tag = node.attrs.tag;
     delete node.attrs.tag;
   }
+  const classKey = jsx ? 'className' : 'class';
 
-  if (typeof node.attrs.class !== 'string') {
-    node.attrs.class = classNames;
+  if (typeof node.attrs[classKey] !== 'string') {
+    node.attrs[classKey] = classNames;
   }
 
-  if (node.attrs.class === classNames) {
+  if (node.attrs[classKey] === classNames) {
     return node;
   }
 
-  const classes = node.attrs.class.split(' ');
+  const classes = node.attrs[classKey].split(' ');
   if (classes.indexOf(classNames) === -1) {
-    node.attrs.class = [classNames].concat(classes).join(' ');
+    node.attrs[classKey] = [classNames].concat(classes).join(' ');
   }
   return node;
 };
