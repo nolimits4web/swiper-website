@@ -4,7 +4,11 @@ import Heading from '@/components/Heading';
 import { WithSidebarLayout } from '@/layouts/withSidebar';
 import { useLazyDemos } from 'src/shared/use-lazy-demos';
 import demos from 'src/demos.json';
-import { angularFiles, reactFiles } from 'src/shared/codesandbox-files';
+import {
+  angularFiles,
+  reactFiles,
+  vueFiles,
+} from 'src/shared/codesandbox-files';
 import { compressToBase64 } from 'src/shared/lz-string';
 
 let tableOfContents;
@@ -45,6 +49,7 @@ export default function DemosPage() {
     const files = {
       angular: angularFiles,
       react: reactFiles,
+      vue: vueFiles,
     };
     const currentFile = files[mode] ? files[mode](title) : {};
 
@@ -72,7 +77,8 @@ export default function DemosPage() {
       angular: 'angular.json',
       static: 'static.html',
       react: 'react.json',
-      svelte: 'svelte.js',
+      svelte: 'svelte.json',
+      vue: 'vue.json',
     };
     const _mainContent = await fetch(`demos/${folder}/${path[mode]}`);
     if (mode === 'static') {
@@ -143,42 +149,22 @@ export default function DemosPage() {
             >
               Open in new window
             </a>
-            <a
-              className="no-underline ml-2"
-              href="#"
-              onClick={(e) => openCodeSandbox(e, title, folder)}
-            >
-              <CodeSandBoxLogo
-                className="inline fill-current"
-                width="19"
-                height="14"
-              />
-              <span>Core</span>
-            </a>
-            <a
-              className="no-underline ml-2"
-              href="#"
-              onClick={(e) => openCodeSandbox(e, title, folder, 'angular')}
-            >
-              <CodeSandBoxLogo
-                className="inline fill-current"
-                width="19"
-                height="14"
-              />
-              <span>Angular</span>
-            </a>
-            <a
-              className="no-underline ml-2"
-              href="#"
-              onClick={(e) => openCodeSandbox(e, title, folder, 'react')}
-            >
-              <CodeSandBoxLogo
-                className="inline fill-current"
-                width="19"
-                height="14"
-              />
-              <span>React</span>
-            </a>
+            {['Core', 'React', 'Vue', 'Angular'].map((name) => (
+              <a
+                className="no-underline ml-2"
+                href="#"
+                onClick={(e) =>
+                  openCodeSandbox(e, title, folder, `${name.toLowerCase()}`)
+                }
+              >
+                <CodeSandBoxLogo
+                  className="inline fill-current"
+                  width="19"
+                  height="14"
+                />
+                {name}
+              </a>
+            ))}
           </div>
           <div className="my-4 bg-gray-100 shadow demo">
             <iframe

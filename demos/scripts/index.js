@@ -5,6 +5,7 @@ const elapsed = require('elapsed-time-logger');
 const buildStatic = require('./static');
 const buildAngular = require('./angular');
 const buildReact = require('./react');
+const buildVue = require('./vue');
 const slugify = require('@sindresorhus/slugify');
 
 (async () => {
@@ -35,6 +36,7 @@ const slugify = require('@sindresorhus/slugify');
         buildStatic(dir, demoConfig),
         buildAngular(dir, demoConfig),
         buildReact(dir, demoConfig),
+        buildVue(dir, demoConfig),
       ]).catch(console.error);
     } catch (err) {
       console.error(item + '\n', err);

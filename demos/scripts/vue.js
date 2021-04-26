@@ -31,7 +31,7 @@ module.exports = async (dir, _config) => {
       closingSingleTag: 'slash',
     });
     const templateString = aferPostHTML(html);
-    // const componentContent = prettier.format(
+    // const _templateString = prettier.format(
     //   render({ templateString, vars }, demoConfig),
     //   {
     //     parser: 'babel',
@@ -41,9 +41,11 @@ module.exports = async (dir, _config) => {
     await fs.writeFile(
       path.join(dir, 'vue.json'),
       JSON.stringify({
-        'src/App.js': { content: componentContent },
-        'src/styles.css': {
-          content: `#root { height: 100% }\n${globalStyles}\n${styles}`,
+        'src/App.vue': {
+          content: componentContent,
+        },
+        'src/style.css': {
+          content: `#app { height: 100% }\n${globalStyles}\n${styles}`,
         },
       })
     );
@@ -53,10 +55,7 @@ module.exports = async (dir, _config) => {
 };
 
 function aferPostHTML(html) {
-  return html
-    .replace(/="{([^}]*)}"/g, '={$1}')
-    .replace(/="{{([^}]*)}}"/g, '={{$1}}');
-  // return html;
+  return html.replace(/&quot;/g, "'");
 }
 
 function parseConfig(configs) {
@@ -108,7 +107,6 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 // Import Swiper styles
 import 'swiper/swiper.scss';
 
-import "./styles.css";
 ${
   cssModules
     ? cssModules
@@ -119,6 +117,8 @@ ${
         .join('\n')
     : ''
 }
+
+import './style.css';
 
 ${
   modules

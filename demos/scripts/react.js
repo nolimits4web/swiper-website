@@ -99,7 +99,6 @@ function render(
 
   return `
 import React, { useRef, useState } from "react";
-import "./styles.css";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -115,6 +114,8 @@ ${
         .join('\n')
     : ''
 }
+
+import "./styles.css";
 
 ${
   modules

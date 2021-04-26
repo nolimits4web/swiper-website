@@ -322,3 +322,85 @@ ReactDOM.render(
 </html>`,
   },
 });
+
+export const vueFiles = (title) => ({
+  'package.json': {
+    content: {
+      name: `Swiper - ${title}`,
+      tags: ['swiper'],
+      scripts: {
+        serve: 'vue-cli-service serve',
+        build: 'vue-cli-service build',
+        lint: 'vue-cli-service lint',
+      },
+      dependencies: {
+        'core-js': '^3.6.5',
+        vue: '^3.0.0-0',
+        swiper: '*',
+      },
+      devDependencies: {
+        '@vue/cli-plugin-babel': '~4.5.0',
+        '@vue/cli-plugin-eslint': '~4.5.0',
+        '@vue/cli-service': '~4.5.0',
+        '@vue/compiler-sfc': '^3.0.0-0',
+        'babel-eslint': '^10.1.0',
+        eslint: '^6.7.2',
+        'eslint-plugin-vue': '^7.0.0-0',
+      },
+
+      eslintConfig: {
+        root: true,
+        env: {
+          node: true,
+        },
+        extends: ['plugin:vue/vue3-essential', 'eslint:recommended'],
+        parserOptions: {
+          parser: 'babel-eslint',
+        },
+        rules: {},
+      },
+      browserslist: ['> 1%', 'last 2 versions', 'not dead'],
+    },
+  },
+  'src/App.vue': {
+    content: '',
+  },
+  'src/main.js': {
+    content: `
+import { createApp } from 'vue'
+import App from './App.vue'
+
+createApp(App).mount('#app')
+    `,
+  },
+  'babel.config.js': {
+    content: `
+module.exports = {
+  presets: [
+    '@vue/cli-plugin-babel/preset'
+  ]
+}
+    `,
+  },
+  'public/index.html': {
+    content: `
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
+    `,
+  },
+});
