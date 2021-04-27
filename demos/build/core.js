@@ -105,7 +105,7 @@ function render(
     <script>
       ${configJSCode}
 
-      ${script.static || ''}
+      ${script.core || ''}
     </script>
   </body>
 
