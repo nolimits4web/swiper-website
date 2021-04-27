@@ -1,7 +1,7 @@
 export const angularFiles = (title) => ({
   'package.json': {
     content: {
-      name: `Swiper - ${title}`,
+      name: `Swiper Angular - ${title}`,
       tags: ['swiper'],
       scripts: {
         ng: 'ng',
@@ -260,7 +260,7 @@ import "zone.js/dist/zone";
 export const reactFiles = (title) => ({
   'package.json': {
     content: {
-      name: `Swiper - ${title}`,
+      name: `Swiper React - ${title}`,
       tags: ['swiper'],
       main: 'src/index.js',
       dependencies: {
@@ -326,7 +326,7 @@ ReactDOM.render(
 export const vueFiles = (title) => ({
   'package.json': {
     content: {
-      name: `Swiper - ${title}`,
+      name: `Swiper Vue - ${title}`,
       tags: ['swiper'],
       scripts: {
         serve: 'vue-cli-service serve',
