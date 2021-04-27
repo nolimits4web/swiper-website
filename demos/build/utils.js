@@ -154,13 +154,11 @@ module.exports.formatFn = (value) => {
 module.exports.swiperName = 'mySwiper';
 
 module.exports.cleanupConfig = (configs) => {
-  const isArray = Array.isArray(configs);
-  const _configs = !isArray ? [configs] : configs;
-  const res = _configs.map((config) => {
-    if (config.__el) {
-      delete config.__el;
-    }
-    return config;
-  });
-  return isArray ? res : res[0];
+  // const isArray = Array.isArray(configs);
+  // const _configs = !isArray ? [configs] : configs;
+  // const res = _configs.map((config) => {
+  //   return config;
+  // });
+  // return isArray ? res : res[0];
+  return configs;
 };

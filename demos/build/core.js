@@ -59,7 +59,6 @@ function render(
         ...tempConfig.pagination,
       };
     }
-    const el = tempConfig.__el || `.${swiperName}`;
     const finalConfig = tempConfig
       ? formatFn(parseJSON(cleanupConfig(tempConfig))).replace(
           /("|')swiperVar_("|')/g,
@@ -67,7 +66,8 @@ function render(
         )
       : null;
     const indexStr = index === 0 ? '' : `${index + 1}`;
-    configJSCode += `\nvar swiper${indexStr} = new Swiper('${el}${indexStr}'${
+    const el = `.${swiperName}${indexStr}`;
+    configJSCode += `\nvar swiper${indexStr} = new Swiper('${el}'${
       finalConfig ? `, ${finalConfig}` : ''
     });`;
   });

@@ -26,7 +26,8 @@
         padding: 0;
       }
 
-      .swiper-container-horizontal {
+      .swiper-container {
+        width: 100%;
         height: 100%;
       }
 
@@ -92,14 +93,14 @@
 
     <!-- Initialize Swiper -->
     <script>
-      var swiper = new Swiper(".swiper-container-horizontal-h", {
+      var swiper = new Swiper(".mySwiper", {
         spaceBetween: 50,
         pagination: {
           el: ".swiper-pagination-h",
           clickable: true,
         },
       });
-      var swiper2 = new Swiper(".swiper-container-horizontal-v2", {
+      var swiper2 = new Swiper(".mySwiper2", {
         direction: "vertical",
         spaceBetween: 50,
         pagination: {

@@ -11,10 +11,10 @@ module.exports = (mode = 'core') => ({
   }
   `,
   content: `
-  <Swiper className="swiper-container-h">
+  <Swiper class="swiper-container-h">
       <SwiperSlide>Horizontal Slide 1</SwiperSlide>
       <SwiperSlide>
-        <Swiper className="swiper-container-v">
+        <Swiper class="swiper-container-v">
           <SwiperSlide>Vertical Slide 1</SwiperSlide>
           <SwiperSlide>Vertical Slide 2</SwiperSlide>
           <SwiperSlide>Vertical Slide 3</SwiperSlide>
@@ -27,7 +27,7 @@ module.exports = (mode = 'core') => ({
   </Swiper>`,
   config: [
     {
-      __el: '.swiper-container-horizontal-h',
+      // __el: '.swiper-container-horizontal-h',
       spaceBetween: 50,
       pagination: {
         el: mode === 'core' ? '.swiper-pagination-h' : undefined,
@@ -35,7 +35,7 @@ module.exports = (mode = 'core') => ({
       },
     },
     {
-      __el: '.swiper-container-horizontal-v',
+      // __el: '.swiper-container-horizontal-v',
       direction: 'vertical',
       spaceBetween: 50,
       pagination: {

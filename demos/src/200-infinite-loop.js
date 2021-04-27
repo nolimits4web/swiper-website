@@ -6,7 +6,7 @@ module.exports = (mode = 'core') => ({
   styles: `
   ${defaultSettings.styles}
 
-  .swiper-container-horizontal {
+  .swiper-container{
     margin-left: auto;
     margin-right: auto;
   }

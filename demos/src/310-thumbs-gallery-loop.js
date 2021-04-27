@@ -12,7 +12,7 @@ module.exports = (mode = 'core') => ({
     color: #000;
   }
 
-  .swiper-container-horizontal {
+  .swiper-container{
     width: 100%;
     height: 300px;
     margin-left: auto;

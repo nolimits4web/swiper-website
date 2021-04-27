@@ -4,7 +4,7 @@ module.exports = (mode = 'core') => ({
   ...defaultSettings,
   title: 'Autoheight',
   styles: `
-  .swiper-container-horizontal {
+  .swiper-container{
     width: 100%;
     height: auto;
   }

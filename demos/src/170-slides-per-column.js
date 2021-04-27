@@ -4,7 +4,7 @@ module.exports = (mode = 'core') => ({
   ...defaultSettings,
   title: 'Slides per column',
   styles: `
-  .swiper-container-horizontal {
+  .swiper-container {
     width: 100%;
     height: 100%;
     margin-left: auto;
