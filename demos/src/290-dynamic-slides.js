@@ -123,7 +123,7 @@ module.exports = (mode = 'core') => ({
   }
 
   append(){
-    this.sliderRef.swiperRef.appendSlide('Slide ' + (++this.appendNumber));
+    this.sliderRef.swiperRef.appendSlide('<div class="swiper-slide">Slide ' + (++appendNumber) + '</div>');
   }
 
   append2(){
