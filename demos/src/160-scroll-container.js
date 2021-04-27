@@ -4,7 +4,17 @@ module.exports = (mode = 'core') => ({
   ...defaultSettings,
   title: 'Scroll container',
   styles: `
-  .swiper-container-horizontal {
+  html,
+  body {
+    position: relative;
+    height: 100%;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .swiper-container {
     width: 100%;
     height: 100%;
   }
