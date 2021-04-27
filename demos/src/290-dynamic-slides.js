@@ -18,6 +18,7 @@ module.exports = (mode = 'core') => ({
 
   .append-buttons button {
     display: inline-block;
+    cursor: pointer;
     border: 1px solid #007aff;
     color: #007aff;
     text-decoration: none;
