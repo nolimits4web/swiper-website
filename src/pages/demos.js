@@ -75,7 +75,7 @@ export default function DemosPage() {
   async function getDemoContent(folder, mode) {
     const path = {
       angular: 'angular.json',
-      static: 'core.html',
+      core: 'core.html',
       react: 'react.json',
       svelte: 'svelte.json',
       vue: 'vue.json',
