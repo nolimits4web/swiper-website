@@ -27,9 +27,14 @@ module.exports = async (dir, _config) => {
     config.parsed = parsedConfig;
     const { html } = await posthtml([
       renderPostHTML(config, vars, configReverseOrder),
-    ]).process(content, {
-      closingSingleTag: 'slash',
-    });
+    ]).process(
+      content
+        .replace(/className\=/g, 'class=')
+        .replace(/("|')swiperVar_("|')/g, 'swiper'),
+      {
+        closingSingleTag: 'slash',
+      }
+    );
     const templateString = aferPostHTML(html);
     // const _templateString = prettier.format(
     //   render({ templateString, vars }, demoConfig),
