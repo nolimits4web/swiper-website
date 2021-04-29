@@ -135,7 +135,7 @@ export default function DemosPage() {
           here
         </a>
       </p>
-      {demos.map(({ title, slug, folder }, demoIndex) => (
+      {demos.map(({ title, slug, folder, skip }, demoIndex) => (
         <React.Fragment key={title}>
           <Heading level={2} id={slug} toc={true}>
             {title}
@@ -149,23 +149,28 @@ export default function DemosPage() {
             >
               Open in new window
             </a>
-            {['Core', 'React', 'Vue', 'Angular'].map((name) => (
-              <a
-                key={name}
-                className="no-underline ml-2"
-                href="#"
-                onClick={(e) =>
-                  openCodeSandbox(e, title, folder, `${name.toLowerCase()}`)
-                }
-              >
-                <CodeSandBoxLogo
-                  className="inline fill-current"
-                  width="19"
-                  height="14"
-                />
-                {name}
-              </a>
-            ))}
+            {['Core', 'React', 'Vue', 'Angular'].map((name) => {
+              if (skip && skip.includes(name.toLowerCase())) {
+                return <></>;
+              }
+              return (
+                <a
+                  key={name}
+                  className="no-underline ml-2"
+                  href="#"
+                  onClick={(e) =>
+                    openCodeSandbox(e, title, folder, `${name.toLowerCase()}`)
+                  }
+                >
+                  <CodeSandBoxLogo
+                    className="inline fill-current"
+                    width="19"
+                    height="14"
+                  />
+                  {name}
+                </a>
+              );
+            })}
           </div>
           <div className="my-4 bg-gray-100 shadow demo">
             <iframe

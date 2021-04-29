@@ -8,11 +8,21 @@ const buildReact = require('./react');
 const buildVue = require('./vue');
 const slugify = require('@sindresorhus/slugify');
 
+const argv = process.argv.slice(2);
 const globbyOptions = {
   cwd: path.join(__dirname, '/..'),
   stats: true,
 };
 const publicDemosDir = path.join(__dirname, `../../public/demos`);
+
+function demoIsNewer(existsDemo, mtime) {
+  return (
+    existsDemo &&
+    mtime <= existsDemo.mtime &&
+    !argv.includes('--force') &&
+    !argv.includes('-f')
+  );
+}
 
 async function getDemosStats() {
   const folders = await globby(['../public/demos/*'], {
@@ -28,9 +38,10 @@ async function getDemosStats() {
 
 (async () => {
   elapsed.start('Demos generation');
-  const dynamicDemos = await globby(['src/dynamic/*'], globbyOptions);
   const demosData = [];
   const demosStats = await getDemosStats();
+  const tree = {};
+  const dynamicDemos = await globby(['src/dynamic/*'], globbyOptions);
   await Promise.all(
     dynamicDemos.map(async ({ path: item, stats }) => {
       try {
@@ -48,10 +59,7 @@ async function getDemosStats() {
         }
         const distDir = path.join(publicDemosDir, folderName);
 
-        if (
-          demosStats[folderName] &&
-          stats.mtime <= demosStats[folderName].mtime
-        ) {
+        if (demoIsNewer(demosStats[folderName], stats.mtime)) {
           return;
         }
         console.log(`> ${folderName}`);
@@ -68,9 +76,8 @@ async function getDemosStats() {
       }
     })
   );
-  const staticDemos = await globby(['src/static/**/*'], globbyOptions);
 
-  const tree = {};
+  const staticDemos = await globby(['src/static/**/*'], globbyOptions);
   await Promise.all(
     staticDemos.map(async ({ path: item, stats }) => {
       const [demoName, level2, level3] = item.split('/').slice(2);
@@ -79,7 +86,7 @@ async function getDemosStats() {
       tree[demoName] = tree[demoName] || {};
       tree[demoName][techDir] = tree[demoName][techDir] || {};
 
-      if (demosStats[demoName] && stats.mtime <= demosStats[demoName].mtime) {
+      if (demoIsNewer(demosStats[demoName], stats.mtime)) {
         tree[demoName].skip = true;
         return;
       }
@@ -94,12 +101,11 @@ async function getDemosStats() {
     Object.keys(tree).map(async (folderName) => {
       const demo = tree[folderName];
       const distDir = path.join(publicDemosDir, folderName);
-      await fs.remove(distDir);
-      await fs.ensureDir(distDir);
       const techArr = Object.keys(demo);
       const title = folderName.split('-').slice(1).join(' ');
+      const titleCapitalized = title.charAt(0).toUpperCase() + title.slice(1);
       demosData.push({
-        title,
+        title: titleCapitalized,
         slug: slugify(title),
         folder: folderName,
         skip: ['core', 'react', 'angular', 'vue', 'svelte'].filter(
@@ -107,10 +113,13 @@ async function getDemosStats() {
         ),
       });
 
-      if (demo.skip) {
-        return;
-      }
+      // if (demo.skip) {
+      //   return;
+      // }
+
       console.log(`> ${folderName}`);
+      await fs.remove(distDir);
+      await fs.ensureDir(distDir);
 
       await Promise.all(
         techArr.map(async (tech) => {
@@ -131,9 +140,9 @@ async function getDemosStats() {
       );
     })
   );
-  demosData.sort((a, b) => (a.folder > b.folder ? 1 : -1));
 
   const demosJSON_path = path.join(__dirname, `../../src/demos.json`);
+  demosData.sort((a, b) => (a.folder > b.folder ? 1 : -1));
   await fs.writeFile(demosJSON_path, JSON.stringify(demosData, null, 2));
   elapsed.end('Demos generation');
 })();
