@@ -10,7 +10,7 @@ const {
   cleanupConfig,
   swiperName,
   getStringIndex,
-} = require('./utils');
+} = require('./_utils');
 
 module.exports = async (dir, _config) => {
   try {

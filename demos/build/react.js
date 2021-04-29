@@ -10,7 +10,7 @@ const {
   getStringIndex,
   swiperName,
   addClass,
-} = require('./utils');
+} = require('./_utils');
 
 module.exports = async (dir, _config) => {
   try {
