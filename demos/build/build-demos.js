@@ -8,40 +8,130 @@ const buildReact = require('./react');
 const buildVue = require('./vue');
 const slugify = require('@sindresorhus/slugify');
 
+const globbyOptions = {
+  cwd: path.join(__dirname, '/..'),
+  stats: true,
+};
+const publicDemosDir = path.join(__dirname, `../../public/demos`);
+
+async function getDemosStats() {
+  const folders = await globby(['../public/demos/*'], {
+    ...globbyOptions,
+    onlyFiles: false,
+  });
+  const obj = {};
+  folders.forEach(({ name, stats }) => {
+    obj[name] = stats;
+  });
+  return obj;
+}
+
 (async () => {
   elapsed.start('Demos generation');
-  const demos = await globby(['src/dynamic/*'], {
-    cwd: path.join(__dirname, '/..'),
-  });
+  const dynamicDemos = await globby(['src/dynamic/*'], globbyOptions);
   const demosData = [];
-  await demos.map(async (item) => {
-    try {
-      const folderName = path.basename(item.replace(/\.[^/.]+$/, ''));
-      const demoConfig = require(path.join(__dirname, '../', item));
-      const _meta = demoConfig('core');
-      if (!_meta.skip) {
-        demosData.push({
-          title: _meta.title,
-          slug: slugify(_meta.slug || _meta.title),
-          folder: folderName,
-        });
-      } else {
-        console.log(`Skipping: ${_meta.title}`);
-      }
-      const dir = path.join(__dirname, `../../public/demos/${folderName}`);
+  const demosStats = await getDemosStats();
+  await Promise.all(
+    dynamicDemos.map(async ({ path: item, stats }) => {
+      try {
+        const folderName = path.basename(item.replace(/\.[^/.]+$/, ''));
+        const demoConfig = require(path.join(__dirname, '../', item));
+        const _meta = demoConfig('core');
+        if (!_meta.skip) {
+          demosData.push({
+            title: _meta.title,
+            slug: slugify(_meta.slug || _meta.title),
+            folder: folderName,
+          });
+        } else {
+          console.log(`Skipping: ${_meta.title}`);
+        }
+        const distDir = path.join(publicDemosDir, folderName);
 
-      await fs.remove(dir);
-      await fs.ensureDir(dir);
-      await Promise.all([
-        buildCore(dir, demoConfig),
-        buildAngular(dir, demoConfig),
-        buildReact(dir, demoConfig),
-        buildVue(dir, demoConfig),
-      ]).catch(console.error);
-    } catch (err) {
-      console.error(item + '\n', err);
-    }
-  });
+        if (
+          demosStats[folderName] &&
+          stats.mtime <= demosStats[folderName].mtime
+        ) {
+          return;
+        }
+        console.log(`> ${folderName}`);
+        await fs.remove(distDir);
+        await fs.ensureDir(distDir);
+        await Promise.all([
+          buildCore(distDir, demoConfig),
+          buildAngular(distDir, demoConfig),
+          buildReact(distDir, demoConfig),
+          buildVue(distDir, demoConfig),
+        ]).catch(console.error);
+      } catch (err) {
+        console.error(item + '\n', err);
+      }
+    })
+  );
+  const staticDemos = await globby(['src/static/**/*'], globbyOptions);
+
+  const tree = {};
+  await Promise.all(
+    staticDemos.map(async ({ path: item, stats }) => {
+      const [demoName, level2, level3] = item.split('/').slice(2);
+      const fileName = level3 || level2;
+      const techDir = level3 ? level2 : level2.split('.')[0];
+      tree[demoName] = tree[demoName] || {};
+      tree[demoName][techDir] = tree[demoName][techDir] || {};
+
+      if (demosStats[demoName] && stats.mtime <= demosStats[demoName].mtime) {
+        tree[demoName].skip = true;
+        return;
+      }
+      const content = await fs.readFile(
+        path.join(__dirname, '../', item),
+        'utf-8'
+      );
+      tree[demoName][techDir][fileName] = { content };
+    })
+  );
+  await Promise.all(
+    Object.keys(tree).map(async (folderName) => {
+      const demo = tree[folderName];
+      const distDir = path.join(publicDemosDir, folderName);
+      await fs.remove(distDir);
+      await fs.ensureDir(distDir);
+      const techArr = Object.keys(demo);
+      const title = folderName.split('-').slice(1).join(' ');
+      demosData.push({
+        title,
+        slug: slugify(title),
+        folder: folderName,
+        skip: ['core', 'react', 'angular', 'vue', 'svelte'].filter(
+          (v) => !techArr.includes(v)
+        ),
+      });
+
+      if (demo.skip) {
+        return;
+      }
+      console.log(`> ${folderName}`);
+
+      await Promise.all(
+        techArr.map(async (tech) => {
+          const item = demo[tech];
+          if (tech === 'core') {
+            await fs.writeFile(
+              `${distDir}/core.html`,
+              item['core.html'].content
+            );
+            return;
+          }
+
+          await fs.writeFile(
+            `${distDir}/${tech}.json`,
+            JSON.stringify(item, null, 2)
+          );
+        })
+      );
+    })
+  );
+  demosData.sort((a, b) => (a.folder > b.folder ? 1 : -1));
 
   const demosJSON_path = path.join(__dirname, `../../src/demos.json`);
   await fs.writeFile(demosJSON_path, JSON.stringify(demosData, null, 2));
