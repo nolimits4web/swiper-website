@@ -35,6 +35,10 @@ function formatName(name) {
     .replace('-', '');
 }
 
+function camelCaseToDash(myStr) {
+  return myStr.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+}
+
 module.exports.extractConfig = (configObj, mode = 'core') => {
   let demoConfig;
   try {
@@ -54,7 +58,7 @@ module.exports.extractConfig = (configObj, mode = 'core') => {
         const effectModuleName = formatName(`${name}-${config[name]}`);
         if (!modules.includes(effectModuleName)) {
           modules.push(effectModuleName);
-          cssModules.push(effectModuleName.toLowerCase());
+          cssModules.push(camelCaseToDash(effectModuleName));
         }
       }
       const nameFormatted = formatName(name);
@@ -91,7 +95,7 @@ module.exports.extractConfig = (configObj, mode = 'core') => {
             'autoplay',
           ].includes(name.toLowerCase())
         ) {
-          cssModules.push(name.toLowerCase());
+          cssModules.push(camelCaseToDash(nameFormatted));
         }
       }
     });
