@@ -10,7 +10,7 @@ const slugify = require('@sindresorhus/slugify');
 
 (async () => {
   elapsed.start('Demos generation');
-  const demos = await globby(['src/*', '!src/default_settings.js'], {
+  const demos = await globby(['src/dynamic/*'], {
     cwd: path.join(__dirname, '/..'),
   });
   const demosData = [];
