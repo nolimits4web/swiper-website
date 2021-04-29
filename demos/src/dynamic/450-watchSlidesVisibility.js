@@ -4,7 +4,7 @@ module.exports = (mode = 'core') => ({
   ...defaultSettings,
   title: 'Watch slides visiblity',
   styles: `
-  .swiper-container-horizontal{
+  .swiper-container{
     width: 800px;
   }
   .swiper-slide {

@@ -113,9 +113,9 @@ async function getDemosStats() {
         ),
       });
 
-      // if (demo.skip) {
-      //   return;
-      // }
+      if (demo.skip) {
+        return;
+      }
 
       console.log(`> ${folderName}`);
       await fs.remove(distDir);
@@ -125,6 +125,11 @@ async function getDemosStats() {
         techArr.map(async (tech) => {
           const item = demo[tech];
           if (tech === 'core') {
+            if (!item['core.html']) {
+              console.log(item);
+              console.log(`${folderName} no core.html`);
+              return;
+            }
             await fs.writeFile(
               `${distDir}/core.html`,
               item['core.html'].content

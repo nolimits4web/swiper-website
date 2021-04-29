@@ -6,7 +6,7 @@ module.exports = (mode = 'core') => ({
   styles: `
   ${defaultSettings.styles}
 
-  .swiper-container-horizontal-v {
+  .swiper-container-v {
     background: #eee;
   }
   `,
@@ -27,19 +27,15 @@ module.exports = (mode = 'core') => ({
   </Swiper>`,
   config: [
     {
-      // __el: '.swiper-container-horizontal-h',
       spaceBetween: 50,
       pagination: {
-        el: mode === 'core' ? '.swiper-pagination-h' : undefined,
         clickable: true,
       },
     },
     {
-      // __el: '.swiper-container-horizontal-v',
       direction: 'vertical',
       spaceBetween: 50,
       pagination: {
-        el: mode === 'core' ? '.swiper-pagination-v' : undefined,
         clickable: true,
       },
     },

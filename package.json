@@ -10,6 +10,7 @@
     "start": "next start",
     "build-sponsors": "node build/build-sponsors.js",
     "build-demos": "node demos/build/build-demos.js",
+    "build-demos:force": "node demos/build/build-demos.js --force",
     "build-api": "node build/build-api.js",
     "build-types": "node build/build-types.js"
   },

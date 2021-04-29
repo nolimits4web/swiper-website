@@ -49,11 +49,11 @@ module.exports = (mode = 'core') => ({
       z-index: 1;
     }
 
-    .swiper-container-horizontal[dir=rtl] .swiper-slide.swiper-slide-active:first-child {
+    .swiper-container[dir=rtl] .swiper-slide.swiper-slide-active:first-child {
       transform: translateX(-50%);
     }
 
-    .swiper-container-horizontal[dir=rtl] .swiper-slide.swiper-slide-next:nth-child(2) {
+    .swiper-container[dir=rtl] .swiper-slide.swiper-slide-next:nth-child(2) {
       transform: translateX(-55%);
     }
   }
