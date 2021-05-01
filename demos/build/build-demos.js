@@ -6,6 +6,7 @@ const buildCore = require('./core');
 const buildAngular = require('./angular');
 const buildReact = require('./react');
 const buildVue = require('./vue');
+const buildSvelte = require('./svelte');
 const slugify = require('@sindresorhus/slugify');
 
 const argv = process.argv.slice(2);
@@ -65,12 +66,15 @@ async function getDemosStats() {
         console.log(`> ${folderName}`);
         await fs.remove(distDir);
         await fs.ensureDir(distDir);
-        await Promise.all([
-          buildCore(distDir, demoConfig),
-          buildAngular(distDir, demoConfig),
-          buildReact(distDir, demoConfig),
-          buildVue(distDir, demoConfig),
-        ]).catch(console.error);
+        await Promise.all(
+          [
+            buildCore,
+            buildAngular,
+            buildReact,
+            buildVue,
+            buildSvelte,
+          ].map((build) => build(distDir, demoConfig))
+        ).catch(console.error);
       } catch (err) {
         console.error(item + '\n', err);
       }
