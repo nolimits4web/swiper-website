@@ -7,6 +7,7 @@ import demos from 'src/demos.json';
 import {
   angularFiles,
   reactFiles,
+  svelteFiles,
   vueFiles,
 } from 'src/shared/codesandbox-files';
 import { compressToBase64 } from 'src/shared/lz-string';
@@ -50,6 +51,7 @@ export default function DemosPage() {
       angular: angularFiles,
       react: reactFiles,
       vue: vueFiles,
+      svelte: svelteFiles,
     };
     const currentFile = files[mode] ? files[mode](title) : {};
 
@@ -149,7 +151,7 @@ export default function DemosPage() {
             >
               Open in new window
             </a>
-            {['Core', 'React', 'Vue', 'Angular'].map((name) => {
+            {['Core', 'React', 'Vue', 'Angular', 'Svelte'].map((name) => {
               if (skip && skip.includes(name.toLowerCase())) {
                 return <></>;
               }
