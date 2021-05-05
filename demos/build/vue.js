@@ -94,7 +94,7 @@ function render(
     ? vars
         .map(({ key, value }) => {
           const _value = formatFn(value);
-          return `const ${key} = ${_value}`;
+          return `${key}: ${_value}`;
         })
         .join('\n')
     : '';
