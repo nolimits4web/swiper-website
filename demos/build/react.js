@@ -55,8 +55,9 @@ module.exports = async (dir, _config) => {
 function aferPostHTML(html) {
   return html
     .replace(/="{([^}]*)}"/g, '={$1}')
-    .replace(/="{{([^}]*)}}"/g, '={{$1}}');
-  // return html;
+    .replace(/="{{([^}]*)}}"/g, '={{$1}}')
+    .replace(/="{{/g, '={{')
+    .replace(/}}"/g, '}}');
 }
 
 function parseConfig(configs) {
