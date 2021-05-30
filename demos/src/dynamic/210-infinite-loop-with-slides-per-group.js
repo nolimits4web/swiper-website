@@ -2,7 +2,7 @@ const defaultSettings = require('../default_settings');
 
 module.exports = (mode = 'core') => ({
   ...defaultSettings,
-  title: 'Inifinite loop with slides per group',
+  title: 'Infinite loop with slides per group',
   config: [
     {
       slidesPerView: 3,
