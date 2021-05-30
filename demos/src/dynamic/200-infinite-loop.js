@@ -2,7 +2,7 @@ const defaultSettings = require('../default_settings');
 
 module.exports = (mode = 'core') => ({
   ...defaultSettings,
-  title: 'Inifinite loop',
+  title: 'Infinite loop',
   styles: `
   ${defaultSettings.styles}
 
