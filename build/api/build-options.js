@@ -49,6 +49,9 @@ const buildOptions = async (
       }
       return `object`;
     }
+    if (item.name === 'onAny') {
+      return 'function';
+    }
     return typeObj.name || '';
   };
 

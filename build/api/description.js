@@ -32,7 +32,10 @@ const processDescription = (text) => {
 };
 
 module.exports = (typesItem) => {
-  const { shortText, text, tags = [] } = typesItem.comment || {};
+  const { shortText, text, tags = [] } =
+    !typesItem.comment && typesItem.signatures && typesItem.signatures[0]
+      ? typesItem.signatures[0].comment || {}
+      : typesItem.comment || {};
 
   const textContent = [shortText, text].filter((el) => !!el).join('\n\n');
 
