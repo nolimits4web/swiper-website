@@ -220,7 +220,14 @@ Swiper component supports all <a href="/api/#events">Swiper events</a>, includin
 
 ## SwiperSlideDirective variables
 
-`SwiperSlideDirective` exports the following variables: - `isActive` - true when current slide is active - `isPrev` - true when current slide is the previous from active - `isNext` - true when current slide is the next from active - `isVisible` - true when current slide is visible (`watchSlidesVisibility` Swiper parameter must be enabled) - `isDuplicate` - true when current slide is a duplicate slide (when `loop` mode enabled)
+`SwiperSlideDirective` exports the following variables:
+
+- `isActive` - true when current slide is active
+- `isPrev` - true when current slide is the previous from active
+- `isNext` - true when current slide is the next from active
+- `isVisible` - true when current slide is visible (`watchSlidesVisibility` Swiper parameter must be enabled)
+- `isDuplicate` - true when current slide is a duplicate slide (when `loop` mode enabled)
+
 For example:
 
 ```html
@@ -234,7 +241,10 @@ For example:
 ## Slots
 
 Swiper Angular component uses "slots" for content distribution. There are 4 slots available
-ul - `container-start` - element will be added to the beginning of swiper-container - `container-end` (default) - element will be added to the end of swiper-container - `wrapper-start` - element will be added to the beginning of swiper-wrapper - `wrapper-end` - element will be added to the end of swiper-wrapper
+- `container-start` - element will be added to the beginning of swiper-container
+- `container-end` (default) - element will be added to the end of swiper-container
+- `wrapper-start` - element will be added to the beginning of swiper-wrapper
+- `wrapper-end` - element will be added to the end of swiper-wrapper
 
 For example:
 
@@ -300,7 +310,11 @@ export class AppComponent {
 
 ## Effects
 
-The following effects are available: - Fade - Cube - Coverflow - Flip
+The following effects are available:
+    - Fade
+    - Cube
+    - Coverflow
+    - Flip
 
 To use effects you have to import and install them first (as all other modules) (Fade example):
 
