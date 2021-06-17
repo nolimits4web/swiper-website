@@ -7,6 +7,7 @@ import clientsList from 'src/shared/clients-list';
 import Carbon from '@/components/Carbon';
 import HomeSlider from '@/components/HomeSlider';
 import HomeSponsors from '@/components/HomeSponsors';
+import HomeProjects from '@/components/HomeProjects';
 
 const libs = [
   {
@@ -209,6 +210,11 @@ export default function Home() {
               </Link>
             ))}
           </nav>
+        </div>
+
+        <div className="mt-24 text-center mb-20">
+          <HomeHeading>More Of Our Projects</HomeHeading>
+          <HomeProjects />
         </div>
 
         <div className="mt-24 text-center mb-20">
