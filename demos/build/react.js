@@ -54,10 +54,10 @@ module.exports = async (dir, _config) => {
 
 function aferPostHTML(html) {
   return html
-    .replace(/="{([^}]*)}"/g, '={$1}')
-    .replace(/="{{([^}]*)}}"/g, '={{$1}}')
-    .replace(/="{{/g, '={{')
-    .replace(/}}"/g, '}}');
+    .replace(/=("|'){([^}]*)}("|')/g, '={$2}')
+    .replace(/=("|'){{([^}]*)}}("|')/g, '={{$2}}')
+    .replace(/=("|'){{/g, '={{')
+    .replace(/}}("|')/g, '}}');
 }
 
 function parseConfig(configs) {
