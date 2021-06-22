@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { trackOutbound } from 'src/shared/track-outbound';
 
 const createBanner = (params = {}) => {
   const {
@@ -204,6 +205,7 @@ export default function HomeProjects() {
         href="https://framework7.io"
         target="_blank"
         className="xyz project-banner project-banner-f7 mx-auto inline-block sm:block"
+        onClick={() => trackOutbound('https://framework7.io')}
       >
         <div className="xyz-scale">
           <div className="xyz-rotate">
@@ -236,6 +238,7 @@ export default function HomeProjects() {
         href="http://tailwind-mobile.com"
         target="_blank"
         className="xyz project-banner project-banner-twm mx-auto inline-block sm:block"
+        onClick={() => trackOutbound('http://tailwind-mobile.com')}
       >
         <div className="xyz-scale">
           <div className="xyz-rotate">
@@ -273,6 +276,7 @@ export default function HomeProjects() {
         href="http://skeleton-elements.dev"
         target="_blank"
         className="xyz project-banner project-banner-se mx-auto inline-block sm:block"
+        onClick={() => trackOutbound('http://skeleton-elements.dev')}
       >
         <div className="xyz-scale">
           <div className="xyz-rotate">

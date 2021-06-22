@@ -31,7 +31,7 @@ const PlanSection = (props) => {
         {items.map(({ link, title, image }) => {
           return (
             <a
-              className={`flex justify-center items-center p-3 m-4 text-center duration-300 ${sizes} ${shadow}`}
+              className={`flex justify-center items-center p-1 m-2 text-center duration-300 ${sizes} ${shadow}`}
               href={link}
               key={title}
               title={title}
