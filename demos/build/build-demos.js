@@ -67,13 +67,9 @@ async function getDemosStats() {
         await fs.remove(distDir);
         await fs.ensureDir(distDir);
         await Promise.all(
-          [
-            buildCore,
-            buildAngular,
-            buildReact,
-            buildVue,
-            buildSvelte,
-          ].map((build) => build(distDir, demoConfig))
+          [buildCore, buildAngular, buildReact, buildVue, buildSvelte].map(
+            (build) => build(distDir, demoConfig)
+          )
         ).catch(console.error);
       } catch (err) {
         console.error(item + '\n', err);
@@ -84,7 +80,9 @@ async function getDemosStats() {
   const staticDemos = await globby(['src/static/**/*'], globbyOptions);
   await Promise.all(
     staticDemos.map(async ({ path: item, stats }) => {
-      const [demoName, level2, level3] = item.split('/').slice(2);
+      const [demoName, level2, level3, ...restLevels] = item
+        .split('/')
+        .slice(2);
       const fileName = level3 || level2;
       const techDir = level3 ? level2 : level2.split('.')[0];
       tree[demoName] = tree[demoName] || {};
@@ -98,7 +96,12 @@ async function getDemosStats() {
         path.join(__dirname, '../', item),
         'utf-8'
       );
-      tree[demoName][techDir][fileName] = { content };
+      const restLevelsString = restLevels.join('/');
+      const fullPath = restLevelsString
+        ? path.join(level3, restLevelsString).replace(/\\/g, '/')
+        : fileName;
+      // console.log(fullPath);
+      tree[demoName][techDir][fullPath] = { content };
     })
   );
   await Promise.all(
