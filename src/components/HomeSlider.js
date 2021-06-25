@@ -146,7 +146,7 @@ export default function HomeSlider() {
                 'Full True RTL Support',
                 'Multi Row Slides Layout',
                 '3D Effects',
-                'Two-wayControl',
+                'Two-way Control',
                 'Full Navigation Control',
                 'Rich API',
                 'Most Flexible Slides Layout Grid',
