@@ -279,9 +279,9 @@ Virtual Slides rendering here is fully handled by Vue.js and not required anythi
   <swiper :slides-per-view="3" :space-between="50" virtual>
     <swiper-slide
       v-for="(slideContent, index) in slides"
-      :key="slide"
+      :key="index"
       :virtualIndex="index"
-      >{slideContent}</swiper-slide
+      >{{slideContent}}</swiper-slide
     >
   </swiper>
 </template>

@@ -212,7 +212,7 @@ Swiper component supports all <a href="/api/#events">Swiper events</a>, includin
     <div>Slide</div>
   </ng-template>
 
-  <ng-template swiperSlide *ngFor="slide of slides">
+  <ng-template swiperSlide *ngFor="let slide of slides">
     <div>Slide</div>
   </ng-template>
 </swiper>
@@ -241,6 +241,7 @@ For example:
 ## Slots
 
 Swiper Angular component uses "slots" for content distribution. There are 4 slots available
+
 - `container-start` - element will be added to the beginning of swiper-container
 - `container-end` (default) - element will be added to the end of swiper-container
 - `wrapper-start` - element will be added to the beginning of swiper-wrapper

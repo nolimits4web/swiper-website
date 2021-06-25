@@ -250,6 +250,9 @@ Virtual Slides rendering here is fully handled by React and not required anythin
 import SwiperCore, { Virtual } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+// Import Swiper styles
+import 'swiper/swiper.min.css';
+
 // install Virtual module
 SwiperCore.use([Virtual]);
 
@@ -261,11 +264,11 @@ export default () => {
 
   return (
     <Swiper spaceBetween={50} slidesPerView={3} virtual>
-      {slides.map((slideContent, index) => {
+      {slides.map((slideContent, index) => (
         <SwiperSlide key={slideContent} virtualIndex={index}>
           {slideContent}
-        </SwiperSlide>;
-      })}
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 };
