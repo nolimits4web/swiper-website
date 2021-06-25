@@ -23,6 +23,7 @@ const components = [
   'Mousewheel',
   'Navigation',
   'Pagination',
+  'Parallax',
   'Scrollbar',
   'Thumbs',
   'Virtual',
@@ -88,12 +89,7 @@ const components = [
     componentsOptionsList.push(`${component}Options`);
   });
 
-  await buildOptions(
-    'SwiperOptions',
-    types,
-    ['parallax'],
-    componentsOptionsList
-  );
+  await buildOptions('SwiperOptions', types, [], componentsOptionsList);
   await buildEvents('SwiperEvents', types, componentsEventsList);
   await buildMethods(
     'Swiper',
