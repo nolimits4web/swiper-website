@@ -5,7 +5,7 @@ import Link from 'next/link';
 import menuList from 'src/shared/menu-list';
 import clientsList from 'src/shared/clients-list';
 import Carbon from '@/components/Carbon';
-import HomeSlider from '@/components/HomeSlider';
+import HomeHeader from '@/components/HomeHeader';
 import HomeSponsors from '@/components/HomeSponsors';
 import HomeProjects from '@/components/HomeProjects';
 
@@ -110,7 +110,7 @@ export function HomeHeading({ children }) {
 export default function Home() {
   return (
     <>
-      <HomeSlider />
+      <HomeHeader />
       <div className="flex justify-center items-center bg-primary py-5 mb-20">
         <Carbon />
       </div>

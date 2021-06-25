@@ -8,10 +8,8 @@ import Swiper, {
   EffectCoverflow,
   Controller,
   Lazy,
+  Parallax,
 } from 'swiper';
-import menuList from 'src/shared/menu-list';
-import GithubStats from '@/components/GithubStats';
-import { ReactComponent as Logo } from '@/img/logo.svg';
 
 Swiper.use([
   Navigation,
@@ -21,6 +19,7 @@ Swiper.use([
   EffectCoverflow,
   Controller,
   Lazy,
+  Parallax,
 ]);
 
 import 'swiper/swiper.min.css';
@@ -30,15 +29,17 @@ import 'swiper/components/a11y/a11y.min.css';
 import 'swiper/components/effect-coverflow/effect-coverflow.min.css';
 import 'swiper/components/lazy/lazy.min.css';
 
-function SlideCenter({ children, className = '', bgColor = 'bg-white' }) {
+function SlideCenter({ children, className = '', style = {} }) {
   return (
-    <div className={bgColor}>
-      <div
-        className={`mx-auto max-w-6xl flex justify-center flex-col px-4 ${className}`}
-        style={{ height: 500 }}
-      >
-        {children}
-      </div>
+    <div
+      className={`mx-auto max-w-6xl flex justify-center flex-col px-4 rounded-xl text-[#3f209a] h-[500px] md:h-[400px] lg:h-[500px] ${className}`}
+      style={{
+        backgroundImage: 'linear-gradient(45deg, #6433f6, #a587ff)',
+        WebkitBoxReflect:
+          'below 5px -webkit-linear-gradient(bottom, rgba(255,255,255,0.2) 0%, transparent 5%, transparent 100%)',
+      }}
+    >
+      {children}
     </div>
   );
 }
@@ -55,8 +56,14 @@ export default function HomeSlider() {
       spaceBetween: 100,
       effect: 'coverflow',
       speed: 600,
+      observer: true,
+      observeParents: true,
+      parallax: true,
       coverflowEffect: {
-        slideShadows: true,
+        slideShadows: false,
+        rotate: -45,
+        depth: 300,
+        stretch: 100,
       },
       pagination: {
         el: '.header-swiper-front .swiper-pagination',
@@ -69,12 +76,15 @@ export default function HomeSlider() {
       keyboard: true,
       a11y: true,
       on: {
-        slideChange: function (s) {
-          if (s.activeIndex === 2) {
-            s.el.querySelector('.swiper-pagination').style.display = 'none';
-          } else {
-            s.el.querySelector('.swiper-pagination').style.display = '';
-          }
+        progress(s) {
+          s.slides.forEach((slideEl) => {
+            const opacity = Math.min(
+              Math.max(1 - Math.abs(slideEl.progress), 0),
+              1
+            );
+            slideEl.style.opacity = opacity;
+            slideEl.style.transitionProperty = 'opacity, transform';
+          });
         },
       },
     });
@@ -111,59 +121,24 @@ export default function HomeSlider() {
   });
   return (
     <div
-      className="swiper-container header-swiper-front"
-      style={{ '--swiper-theme-color': '#6332f6' }}
+      className="swiper-container header-swiper-front !overflow-visible"
+      style={{
+        '--swiper-theme-color': '#6332f6',
+      }}
     >
-      <div className="swiper-pagination" />
-      <div className="swiper-button-prev invisible md:visible" />
-      <div className="swiper-button-next invisible md:visible" />
+      <div className="swiper-pagination !-bottom-6" />
+      <div className="swiper-button-prev invisible md:visible !left-auto !right-full mr-4" />
+      <div className="swiper-button-next invisible md:visible !right-auto !left-full ml-4" />
       <div className="swiper-wrapper">
         <div className="swiper-slide">
           <SlideCenter>
-            <div className="md:inline-flex md:mx-auto text-center md:text-left">
-              <Logo
-                className="swiper_logo rounded-full flex-shrink-0 w-32 h-32 lg:w-40 lg:h-40 inline md:block"
-                alt="Swiper"
-              />
-
-              <div className="md:ml-10 mt-4 md:mt-0">
-                <div className="text-5xl md:text-6xl font-extrabold text-primary">
-                  Swiper
-                </div>
-                <div className="text-2xl sm:text-4xl md:text-5xl my-2 font-bold text-black leading-tight md:leading-tight max-w-2xl">
-                  The Most Modern Mobile Touch Slider
-                </div>
-                <nav className="mt-4 md:mt-12 font-medium flex flex-wrap justify-center md:justify-start">
-                  {menuList.map(({ name, link }) => (
-                    <Link key={link} href={link}>
-                      <a className="mr-4">{name}</a>
-                    </Link>
-                  ))}
-                </nav>
-                <div className="text-gray-700 text-sm my-5">
-                  MIT Licensed, v{process.env.swiperReleaseVersion} released on{' '}
-                  {process.env.swiperReleaseDate} |<span> </span>
-                  <a
-                    href="https://github.com/nolimits4web/swiper/blob/master/CHANGELOG.md"
-                    rel="noopener"
-                    target="_blank"
-                  >
-                    Changelog
-                  </a>
-                </div>
-                <div className="flex justify-center md:justify-start">
-                  <GithubStats />
-                </div>
-              </div>
-            </div>
-          </SlideCenter>
-        </div>
-        <div className="swiper-slide">
-          <SlideCenter>
-            <span className="text-4xl sm:text-5xl text-center font-bold mb-8 text-gray-900">
+            <span
+              className="text-4xl text-center font-bold mb-8"
+              style={{ textShadow: '0px 1px 0px #9d7dfb' }}
+            >
               Top Notch Features
             </span>
-            <ul className="flex flex-wrap text-sm sm:text-lg md:mx-auto md:max-w-screen-sm text-gray-900 font-medium">
+            <ul className="flex flex-wrap text-sm sm:text-base md:mx-auto md:max-w-screen-sm font-medium text-white">
               {[
                 'Library Agnostic',
                 'Mutation Observer',
@@ -178,11 +153,11 @@ export default function HomeSlider() {
                 'Parallax Transitions',
                 'Images Lazy Loading',
                 'Virtual Slides',
-                'And many more ...',
+                'And many more',
               ].map((text, index) => (
                 <li key={index} className="w-1/2 flex items-center my-1">
                   <svg
-                    className="text-primary mr-2 flex-shrink-0"
+                    className="text-white mr-2 flex-shrink-0"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -202,16 +177,16 @@ export default function HomeSlider() {
             </ul>
           </SlideCenter>
         </div>
-        <div className="swiper-slide swiper-slide-gallery bg-black">
-          <SlideCenter
-            bgColor="bg-primary bg-opacity-20"
-            className="text-white pt-10"
-          >
-            <span className="text-4xl sm:text-5xl text-center font-bold mb-8">
+        <div className="swiper-slide swiper-slide-gallery">
+          <SlideCenter className="pt-10">
+            <span
+              className="text-4xl text-center font-bold mb-8"
+              style={{ textShadow: '0px 1px 0px #9d7dfb' }}
+            >
               Build Complex Touch Galleries
             </span>
             <div
-              className="swiper-container swiper-gallery-top rounded-lg shadow-md"
+              className="swiper-container swiper-gallery-top rounded-lg"
               style={{ height: '64%', width: '100%' }}
             >
               <div className="swiper-wrapper">
@@ -239,7 +214,7 @@ export default function HomeSlider() {
                         index + 1
                       }.jpg)`,
                     }}
-                    className="swiper-slide rounded-md shadow bg-cover bg-center"
+                    className="swiper-slide rounded-md bg-cover bg-center"
                   />
                 ))}
               </div>
@@ -248,7 +223,10 @@ export default function HomeSlider() {
         </div>
         <div className="swiper-slide">
           <SlideCenter className="items-center">
-            <div className="text-4xl sm:text-5xl font-bold text-gray-900 w-full text-center">
+            <div
+              className="text-4xl font-bold w-full text-center"
+              style={{ textShadow: '0px 1px 0px #9d7dfb' }}
+            >
               Start Using It Now
             </div>
             <div className="mt-4">

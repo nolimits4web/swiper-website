@@ -54,7 +54,13 @@ export default function Footer() {
         </nav>
         <div className="text-gray-700">
           {new Date().getFullYear()} © Swiper by{' '}
-          <a href="https://github.com/nolimits4web">Vladimir Kharlampidi</a>
+          <a href="https://nolimits4web.com" target="_blank">
+            <img
+              src="/images/n4w-logo.svg"
+              alt="nolimits4web"
+              className="w-12 h-12 inline-block"
+            />
+          </a>
         </div>
       </div>
     </footer>
