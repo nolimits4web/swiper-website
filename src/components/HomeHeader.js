@@ -17,10 +17,10 @@ export default function HomeHeader() {
             alt="Swiper"
           />
 
-          <div className="text-5xl md:text-6xl font-extrabold text-primary mt-8">
+          <div className="text-5xl md:text-6xl font-bold text-primary mt-8">
             Swiper
           </div>
-          <div className="text-2xl sm:text-4xl md:text-4xl my-2 font-black text-black md:leading-tight max-w-2xl tracking-tight">
+          <div className="text-2xl sm:text-4xl md:text-4xl mt-4 my-2 font-bold text-black md:leading-tight max-w-2xl tracking-tight">
             The Most Modern Mobile Touch Slider
           </div>
           <nav className="mt-4 lg:mt-8 font-medium flex flex-wrap justify-center lg:justify-start">
@@ -48,8 +48,11 @@ export default function HomeHeader() {
 
         {/* Right */}
         <div
-          className="flex-shrink-[10] min-w-0 md:mx-12 xl:mx-0 mt-8 lg:mt-0"
-          style={{ perspective: '1200px' }}
+          className="flex-shrink-[10] min-w-0 md:mx-12 xl:mx-0 mt-8 lg:mt-0 home-slider-wrap"
+          style={{
+            '--swiper-theme-color': '#6332f6',
+            perspective: '1200px',
+          }}
         >
           <HomeSlider />
         </div>
