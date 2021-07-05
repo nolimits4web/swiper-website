@@ -102,6 +102,7 @@ const components = [
       'constructor',
       'isHorizontal',
       'setBreakpoint',
+      'getBreakpoint',
     ],
     [...components.map((c) => `${c}Methods`), 'ParallaxMethods']
   );
