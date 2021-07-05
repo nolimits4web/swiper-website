@@ -31,11 +31,16 @@ const processDescription = (text) => {
     });
 };
 
-module.exports = (typesItem) => {
-  const { shortText, text, tags = [] } =
-    !typesItem.comment && typesItem.signatures && typesItem.signatures[0]
+module.exports = (typesItem, isEvent) => {
+  const getProps = (item) => {
+    if (isEvent) {
+      return typesItem.type.declaration.signatures[0].comment || {};
+    }
+    return !typesItem.comment && typesItem.signatures && typesItem.signatures[0]
       ? typesItem.signatures[0].comment || {}
       : typesItem.comment || {};
+  };
+  const { shortText, text, tags = [] } = getProps(typesItem);
 
   const textContent = [shortText, text].filter((el) => !!el).join('\n\n');
 

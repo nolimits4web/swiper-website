@@ -2,13 +2,26 @@ const fs = require('fs-extra');
 const path = require('path');
 const description = require('./description');
 
+const plainDescription = (item) => {
+  if (item.comment && item.comment.shortText)
+    return item.comment.shortText || '';
+  if (
+    item.type &&
+    item.type.declaration &&
+    item.type.declaration.signatures &&
+    item.type.declaration.signatures[0] &&
+    item.type.declaration.signatures[0].comment &&
+    item.type.declaration.signatures[0].comment.shortText
+  )
+    return item.type.declaration.signatures[0].comment.shortText || '';
+  return '';
+};
+
 const buildEvents = async (typesName, typesData, ignoreEvents = []) => {
   items =
     (typesData[typesName] || [])
-      .filter((item) =>
-        item.comment && item.comment.shortText
-          ? !item.comment.shortText.toLowerCase().includes('internal')
-          : true
+      .filter(
+        (item) => !plainDescription(item).toLowerCase().includes('internal')
       )
       .filter((item) => !ignoreEvents.includes(item.name)) || [];
 
@@ -63,7 +76,7 @@ export const ${typesName} = () => {
             <td className="w-1/4 text-red-700 font-mono font-semibold">
               ${args(item)}
             </td>
-            <td className="w-1/2 space-y-2">${description(item)}</td>
+            <td className="w-1/2 space-y-2">${description(item, true)}</td>
           </tr>
         `
           )

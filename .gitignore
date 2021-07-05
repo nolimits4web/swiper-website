@@ -42,3 +42,4 @@ src/types.json
 src/demos.json
 src/shared/sponsors-list.js
 
+tsconfig.json

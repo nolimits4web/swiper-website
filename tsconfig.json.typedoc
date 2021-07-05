@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ESNEXT",
+    "module": "ESNEXT",
+    "declaration": true /* Generates corresponding '.d.ts' file. */,
+    "declarationMap": true /* Generates a sourcemap for each corresponding '.d.ts' file. */,
+    "strict": true /* Enable all strict type-checking options. */,
+    "esModuleInterop": true,
+    "skipLibCheck": true /* Skip type checking of declaration files. */,
+    "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "noEmit": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
+  },
+  "typedocOptions": {
+    "name": "Swiper",
+    "entryPoints": [
+      "node_modules/swiper/swiper.d.ts",
+      "node_modules/swiper/types/"
+    ],
+    "excludeExternals": false,
+    "includeVersion": true,
+    "out": "./public/types"
+  },
+  "include": ["node_modules/swiper/*.d.ts", "node_modules/swiper/**/*.d.ts"]
+}

@@ -32,17 +32,25 @@ const components = [
 
 (async () => {
   elapsed.start('Typedoc');
-  await exec(
-    `npx typedoc --json ./src/types.json ./node_modules/swiper/types --includeDeclarations --excludeExternals`
+  fs.writeFileSync(
+    './tsconfig.json',
+    fs.readFileSync('./tsconfig.json.typedoc', 'utf-8')
   );
+  await exec(`npx typedoc --json ./src/types.json`);
   elapsed.end('Typedoc');
   elapsed.start('Generate all types');
   const typesPath = path.join(__dirname, '../src/types.json');
   const { children } = await fs.readJSON(typesPath);
   const types = {};
+
   children.forEach(async ({ name, children, flags, originalName }) => {
     const _name = name.replace(/^\"(.*).d\"$/, '$1');
-    if (_name === 'public-api' || _name === 'shared' || !flags.isExported) {
+    if (
+      _name === 'public-api' ||
+      _name.includes('public-api') ||
+      _name === 'shared' ||
+      _name.includes('shared')
+    ) {
       return;
     }
     children.forEach((v) => {
@@ -76,8 +84,13 @@ const components = [
     });
   });
 
+  if (types.default) {
+    types.Swiper = types.default;
+  }
+
   const componentsEventsList = [];
   const componentsOptionsList = [];
+
   components.forEach((component) => {
     buildOptions(`${component}Options`, types, [], [], types.SwiperOptions);
     buildEvents(`${component}Events`, types);
@@ -110,4 +123,5 @@ const components = [
   await fs.writeFile(typesPath, `${JSON.stringify(types, null, 4)}`);
   elapsed.end('Generate all types');
   console.log(chalk.green(`Types generation finished`));
+  fs.unlinkSync('./tsconfig.json');
 })();
