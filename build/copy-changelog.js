@@ -1,6 +1,5 @@
 const fs = require('fs-extra');
-const path = require('path');
-const chalk = require('chalk');
+const fetch = require('node-fetch');
 const banner =
   `---
 title: Swiper Changelog
@@ -12,6 +11,7 @@ async function writeFile(content) {
     './src/pages/changelog.mdx',
     banner + content.replace(/\# \[/g, '## [')
   );
+  console.log('copy changelog done');
 }
 
 (async () => {
@@ -21,4 +21,10 @@ async function writeFile(content) {
     const content = await fs.readFile(localPath, 'utf-8');
     await writeFile(content);
   }
+  console.log(`local didnt find: ${localPath}. Fetching from web`);
+  const response = await fetch(
+    'https://raw.githubusercontent.com/nolimits4web/swiper/master/CHANGELOG.md'
+  );
+  const content = await response.text();
+  await writeFile(content);
 })();

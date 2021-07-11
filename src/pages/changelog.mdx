@@ -2,7 +2,6 @@
 title: Swiper Changelog
 description: Swiper changelog.
 ---
-
 # Changelog
 
 ## [6.7.5](https://github.com/nolimits4web/Swiper/compare/v6.7.1...v6.7.5) (2021-07-01)
@@ -455,9 +454,7 @@ description: Swiper changelog.
     ```jsx
     <Swiper>
       <SwiperSlide>
-        {({ isActive }) => (
-          <div>Current slide is {isActive ? 'active' : 'not active'}</div>
-        )}
+        {({ isActive }) => <div>Current slide is {isActive ? 'active' : 'not active'}</div>}
       </SwiperSlide>
       <SwiperSlide>...</SwiperSlide>
       ...
