@@ -24,9 +24,16 @@ module.exports.withTableOfContents = () => {
       if (node.type === 'heading' && [2, 3, 4].includes(node.depth)) {
         const level = node.depth;
         const title = node.children
-          .filter((n) => n.type === 'text')
-          .map((n) => n.value)
+          .filter((n) => n.type === 'text' || n.type === 'link')
+          .map((n) => {
+            if (n.value) {
+              return n.value;
+            }
+
+            return n.children.map((v) => v.value).join('');
+          })
           .join('');
+
         let slug = slugify(title);
 
         let allOtherSlugs = contents.flatMap((entry) => [
@@ -56,7 +63,10 @@ module.exports.withTableOfContents = () => {
               .join('');
         } else {
           node.value = `<${component} level={${level}} id="${slug}" toc={true}>${node.children
-            .map(({ value }) => value)
+            .map(({ value, children }) => {
+              if (value) return value;
+              return children.map((v) => v.value).join('');
+            })
             .join('')}</${component}>`;
         }
 
@@ -72,6 +82,7 @@ module.exports.withTableOfContents = () => {
         /^\s*<Heading[\s>]/.test(node.value) &&
         !/^\s*<Heading[^>]*\sid=/.test(node.value)
       ) {
+        // console.log(node.value);
         const title = node.value
           .replace(/<[^>]+>/g, '')
           .replace(/\{(["'])((?:(?=(\\?))\3.)*?)\1\}/g, '$2');
