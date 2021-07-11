@@ -27,8 +27,4 @@ export default [
     name: 'Angular',
     link: '/angular',
   },
-  {
-    name: 'Changelog',
-    link: '/changelog',
-  },
 ];
