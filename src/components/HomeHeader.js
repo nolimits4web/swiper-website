@@ -9,37 +9,33 @@ import HomeSlider from './HomeSlider';
 export default function HomeHeader() {
   return (
     <div className="relative overflow-hidden">
-      <div className="mx-auto max-w-6xl px-4 pt-8 lg:pt-16 pb-16 lg:flex">
+      <div className="max-w-6xl px-4 pt-8 pb-16 mx-auto lg:pt-16 lg:flex">
         {/* Left */}
         <div className="flex-shrink-0 relative z-10 flex flex-col items-center w-full text-center xl:mr-16 lg:text-left lg:max-w-[500px] lg:block">
           <Logo
-            className="swiper_logo rounded-full flex-shrink-0 w-32 h-32 lg:w-40 lg:h-40"
+            className="flex-shrink-0 w-32 h-32 rounded-full swiper_logo lg:w-40 lg:h-40"
             alt="Swiper"
           />
 
-          <div className="text-5xl md:text-6xl font-bold text-primary mt-8">
+          <div className="mt-8 text-5xl font-bold md:text-6xl text-primary">
             Swiper
           </div>
-          <div className="text-2xl sm:text-4xl md:text-4xl mt-4 my-2 font-bold text-black md:leading-tight max-w-2xl tracking-tight">
+          <div className="max-w-2xl my-2 mt-4 text-2xl font-bold tracking-tight text-black sm:text-4xl md:text-4xl md:leading-tight">
             The Most Modern Mobile Touch Slider
           </div>
-          <nav className="mt-4 lg:mt-8 font-medium flex flex-wrap justify-center lg:justify-start">
+          <nav className="flex flex-wrap justify-center mt-4 font-medium lg:mt-8 lg:justify-start">
             {menuList.map(({ name, link }) => (
               <Link key={link} href={link}>
                 <a className="mr-4">{name}</a>
               </Link>
             ))}
           </nav>
-          <div className="text-gray-700 text-sm my-2 lg:my-4">
+          <div className="my-2 text-sm text-gray-700 lg:my-4">
             MIT Licensed, v{process.env.swiperReleaseVersion} released on{' '}
             {process.env.swiperReleaseDate} |<span> </span>
-            <a
-              href="https://github.com/nolimits4web/swiper/blob/master/CHANGELOG.md"
-              rel="noopener"
-              target="_blank"
-            >
-              Changelog
-            </a>
+            <Link href="/changelog">
+              <a>Changelog</a>
+            </Link>
           </div>
           <div className="flex justify-center lg:justify-start">
             <GithubStats />
