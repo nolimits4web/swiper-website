@@ -35,8 +35,6 @@ function SlideCenter({ children, className = '', style = {} }) {
       className={`mx-auto max-w-6xl flex justify-center flex-col px-4 rounded-xl text-[#3f209a] h-[500px] md:h-[400px] lg:h-[500px] ${className}`}
       style={{
         backgroundImage: 'linear-gradient(45deg, #6433f6, #a587ff)',
-        WebkitBoxReflect:
-          'below 5px -webkit-linear-gradient(bottom, rgba(255,255,255,0.2) 0%, transparent 5%, transparent 100%)',
       }}
     >
       {children}

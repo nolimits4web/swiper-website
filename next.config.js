@@ -10,6 +10,7 @@ const bundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 const withPlugins = require('next-compose-plugins');
+const withTM = require('next-transpile-modules')(['atropos']);
 
 const fallbackLayouts = {
   'src/pages/**/*': ['@/layouts/withSidebar', 'WithSidebarLayout'],
@@ -142,4 +143,4 @@ const nextConfig = {
     ];
   },
 };
-module.exports = withPlugins([bundleAnalyzer], nextConfig);
+module.exports = withPlugins([bundleAnalyzer, withTM], nextConfig);
