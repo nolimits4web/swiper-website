@@ -9,7 +9,11 @@ description: Swiper changelog.
 async function writeFile(content) {
   await fs.writeFile(
     './src/pages/changelog.mdx',
-    banner + content.replace(/\# \[/g, '## [')
+    banner +
+      content
+        .replace(/\# \[/g, '## [')
+        .replace('# Changelog', '')
+        .replace(/\#\#\# \[/g, '## [')
   );
   console.log('copy changelog done');
 }
@@ -20,6 +24,7 @@ async function writeFile(content) {
   if (exists) {
     const content = await fs.readFile(localPath, 'utf-8');
     await writeFile(content);
+    return;
   }
   console.log(`local didnt find: ${localPath}. Fetching from web`);
   const response = await fetch(
