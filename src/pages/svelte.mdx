@@ -470,7 +470,7 @@ You can find running <a href="https://swiperjs.com/demos/#effect-fade">effect de
 </script>
 ```
 
-## Using with Sapper and SvelteKit
+## Using with SvelteKit
 
 Sapper (in SSR mode) requires components and the app to be compiled with the exact same compiler version. In this case we need to use Swiper's `.svelte` components directly like so:
 
@@ -482,6 +482,24 @@ Sapper (in SSR mode) requires components and the app to be compiled with the exa
 </script>
 
 <Swiper>
+  <SwiperSlide>Slide 1</SwiperSlide>
+  <SwiperSlide>Slide 2</SwiperSlide>
+  ...
+</Swiper>
+```
+
+From Swiper v.6.8.0, Swiper modules must be passed in Swiper `modules` prop:
+
+```html
+<script>
+  import SwiperCore, { Navigation, Pagination } from 'swiper';
+  /* Import Swiper and SwiperSlide components from .svelte files */
+  import Swiper from 'swiper/esm/svelte/swiper.svelte';
+  import SwiperSlide from 'swiper/esm/svelte/swiper-slide.svelte';
+</script>
+
+<!-- Pass core modules in "modules" prop -->
+<Swiper modules="{[ Navigation, Pagination ]}">
   <SwiperSlide>Slide 1</SwiperSlide>
   <SwiperSlide>Slide 2</SwiperSlide>
   ...
