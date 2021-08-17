@@ -196,6 +196,10 @@ export class AppComponent {
 
 Swiper component supports all <a href="/api/#events">Swiper events</a>, including additional `swiper` event that returns swiper instance as soon as posible. For example:
 
+<div className="important-note">
+  Note that Swiper Angular component all events emits outside of NgZone for better perfomance.
+  Dont forget to use `ngzone.run` or ChagngeDetector if you need to change view (e.g slides) in event handlers (e.g `slideChange`).
+</div>
 ```html
 <swiper (swiper)="..." (slideChange)="..." (reachEnd)="..." ...></swiper>
 ```
