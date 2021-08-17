@@ -56,7 +56,7 @@
     "simple-functional-loader": "^1.2.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
-    "swiper": "^7.0.0-alpha.32",
+    "swiper": "^7.0.0-alpha.33",
     "tailwindcss": "^2.2.4",
     "typedoc": "^0.21.2",
     "typescript": "4.3.5",
