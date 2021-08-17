@@ -6,11 +6,6 @@ const rehypePrism = require('@mapbox/rehype-prism');
 const { withTableOfContents } = require('./withTableOfContents');
 const minimatch = require('minimatch');
 const pkg = require('./package.json');
-const bundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-});
-const withPlugins = require('next-compose-plugins');
-const withTM = require('next-transpile-modules')(['atropos']);
 
 const fallbackLayouts = {
   'src/pages/**/*': ['@/layouts/withSidebar', 'WithSidebarLayout'],
@@ -18,6 +13,7 @@ const fallbackLayouts = {
 
 const nextConfig = {
   webpack5: true,
+  experimental: { esmExternals: true },
   images: {
     // https://stackoverflow.com/questions/68008498/nextjs-typeerror-unsupported-file-type-undefined-after-update-to-v-11
     disableStaticImages: true,
@@ -143,4 +139,4 @@ const nextConfig = {
     ];
   },
 };
-module.exports = withPlugins([bundleAnalyzer, withTM], nextConfig);
+module.exports = nextConfig;

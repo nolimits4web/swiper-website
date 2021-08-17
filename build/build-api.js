@@ -16,6 +16,8 @@ const components = [
   'CubeEffect',
   'FadeEffect',
   'FlipEffect',
+  'CardsEffect',
+  'CreativeEffect',
   'HashNavigation',
   'History',
   'Keyboard',
@@ -28,6 +30,9 @@ const components = [
   'Thumbs',
   'Virtual',
   'Zoom',
+  'FreeMode',
+  'Grid',
+  'Manipulation',
 ];
 
 (async () => {
@@ -108,7 +113,6 @@ const components = [
     'Swiper',
     types,
     [
-      'modules',
       'currentBreakpoint',
       'destroyed',
       'rtlTranslate',
@@ -116,6 +120,11 @@ const components = [
       'isHorizontal',
       'setBreakpoint',
       'getBreakpoint',
+      'addSlide',
+      'appendSlide',
+      'prependSlide',
+      'removeAllSlides',
+      'removeSlide',
     ],
     [...components.map((c) => `${c}Methods`), 'ParallaxMethods']
   );

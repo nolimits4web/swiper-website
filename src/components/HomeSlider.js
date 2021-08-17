@@ -5,7 +5,7 @@ import Swiper, {
   Pagination,
   A11y,
   Keyboard,
-  EffectCoverflow,
+  EffectCards,
   Controller,
   Lazy,
   Parallax,
@@ -16,18 +16,18 @@ Swiper.use([
   Pagination,
   A11y,
   Keyboard,
-  EffectCoverflow,
+  EffectCards,
   Controller,
   Lazy,
   Parallax,
 ]);
 
-import 'swiper/swiper.min.css';
-import 'swiper/components/navigation/navigation.min.css';
-import 'swiper/components/pagination/pagination.min.css';
-import 'swiper/components/a11y/a11y.min.css';
-import 'swiper/components/effect-coverflow/effect-coverflow.min.css';
-import 'swiper/components/lazy/lazy.min.css';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/a11y';
+import 'swiper/css/effect-cards';
+import 'swiper/css/lazy';
 
 function SlideCenter({ children, className = '', style = {} }) {
   return (
@@ -52,17 +52,11 @@ export default function HomeSlider() {
       slidesPerView: 'auto',
       centeredSlides: true,
       spaceBetween: 100,
-      effect: 'coverflow',
+      effect: 'cards',
       speed: 600,
       observer: true,
       observeParents: true,
       parallax: true,
-      coverflowEffect: {
-        slideShadows: false,
-        rotate: -45,
-        depth: 300,
-        stretch: 100,
-      },
       pagination: {
         el: '.header-swiper-front .swiper-pagination',
         clickable: true,
@@ -73,18 +67,6 @@ export default function HomeSlider() {
       },
       keyboard: true,
       a11y: true,
-      on: {
-        progress(s) {
-          s.slides.forEach((slideEl) => {
-            const opacity = Math.min(
-              Math.max(1 - Math.abs(slideEl.progress), 0),
-              1
-            );
-            slideEl.style.opacity = opacity;
-            slideEl.style.transitionProperty = 'opacity, transform';
-          });
-        },
-      },
     });
     galleryTopSwiper.current = new Swiper('.swiper-gallery-top', {
       slidesPerView: 1,
@@ -109,8 +91,8 @@ export default function HomeSlider() {
   };
 
   const destroySwipers = () => {
-    // if (galleryTopSwiper.current) galleryTopSwiper.current.destroy();
-    // if (galleryThumbsSwiper.current) galleryThumbsSwiper.current.destroy();
+    if (galleryTopSwiper.current) galleryTopSwiper.current.destroy();
+    if (galleryThumbsSwiper.current) galleryThumbsSwiper.current.destroy();
     if (swiperFront.current) swiperFront.current.destroy();
   };
 

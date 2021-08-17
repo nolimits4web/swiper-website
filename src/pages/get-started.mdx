@@ -18,7 +18,7 @@ We can install Swiper from NPM
   // import Swiper JS
   import Swiper from 'swiper';
   // import Swiper styles
-  import 'swiper/swiper-bundle.css';
+  import 'swiper/css';
 
   const swiper = new Swiper(...);
 ```
@@ -27,10 +27,14 @@ By default Swiper exports only core version without additional modules (like Nav
 
 ```js
   // core version + navigation, pagination modules:
-  import SwiperCore, { Navigation, Pagination } from 'swiper/core';
+  import Swiper, { Navigation, Pagination } from 'swiper';
+  // import Swiper and modules styles
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+  import 'swiper/css/pagination';
 
   // configure Swiper to use modules
-  SwiperCore.use([Navigation, Pagination]);
+  Swiper.use([Navigation, Pagination]);
 
   // init Swiper:
   const swiper = new Swiper(...);
@@ -42,6 +46,9 @@ If you want to import Swiper with all modules (bundle) then it should be importe
   // import Swiper bundle with all modules installed
   import Swiper from 'swiper/bundle';
 
+  // import styles bundle
+  import 'swiper/css/bundle';
+
   // init Swiper:
   const swiper = new Swiper(...);
 ```
@@ -51,10 +58,8 @@ If you want to import Swiper with all modules (bundle) then it should be importe
 If you don't want to include Swiper files in your project, you may use it from CDN. The following files are available:
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
-<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 ```
 
@@ -144,5 +149,5 @@ As you see it is really easy to integrate Swiper into your website or app. So he
 
 - Go to <a href="../api/">API Documentation</a> to learn more about all Swiper API and how to control it.
 - Look at available <a href="../demos/" target="_blank">Demos</a>.
-- If you have questions about Swiper ask them in <a href="http://stackoverflow.com" target="_blank">StackOverflow</a> and don't forget to tag your question with <a href="http://stackoverflow.com/questions/tagged/swiper" target="_blank"><code>swiper</code></a> tag.
+- If you have questions about Swiper ask them in <a href="http://stackoverflow.com" target="_blank">StackOverflow</a> or <a href="https://github.com/nolimits4web/swiper/discussions" target="_blank">Swiper Discussions</a>.
 - Create issue on <a href="https://github.com/nolimits4web/swiper/" target="_blank">GitHub</a> if you found a bug.
