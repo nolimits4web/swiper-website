@@ -33,7 +33,7 @@ async function fetchGitStats(local) {
 }
 
 export default function GithubStats(props) {
-  const { white } = props;
+  const { white, className, responsive } = props;
   const [data, setData] = useState([]);
   useEffect(() => {
     const gitStatsDate = localStorage.getItem('swiper-git-stats-date');
@@ -44,11 +44,18 @@ export default function GithubStats(props) {
     });
   }, []);
   return (
-    <div className="flex items-center">
-      <GithubLogo
-        className={`inline-block ${white ? 'text-white' : ''}`}
-        height="20"
-      />
+    <div className={`flex items-center ${className || ''}`}>
+      <a
+        href="https://github.com/nolimits4web/swiper"
+        rel="noopener"
+        target="_blank"
+        className="flex"
+      >
+        <GithubLogo
+          className={`inline-block ${white ? 'text-white' : ''}`}
+          height="20"
+        />
+      </a>
       {[
         [data.stars, 'stars'],
         [data.forks, 'forks'],
@@ -59,7 +66,7 @@ export default function GithubStats(props) {
             white
               ? 'text-white hover:underline'
               : 'text-gray-700 hover:text-primary hover:no-underline'
-          }`}
+          } ${responsive ? 'hidden md:block' : ''}`}
           href="https://github.com/nolimits4web/swiper"
           rel="noopener"
           target="_blank"

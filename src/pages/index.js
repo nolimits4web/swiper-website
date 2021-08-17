@@ -114,7 +114,7 @@ export default function Home() {
       <div className="flex justify-center items-center bg-primary py-5 mb-20">
         <Carbon />
       </div>
-      <div className="mx-auto max-w-[90rem] text-lg px-4">
+      <div className="mx-auto max-w-[90rem] text-lg px-4 sm:px-6 lg:px-8 xl:px-10">
         <div className="flex flex-col space-y-5 mx-auto max-w-5xl">
           <h1 className="text-4xl sm:text-5xl text-gray-900 font-extrabold mb-6 text-center">
             Swiper
@@ -167,7 +167,7 @@ export default function Home() {
         </div>
         <div className="mt-24 mx-auto max-w-6xl">
           <HomeHeading>Powered With Top Notch Features</HomeHeading>
-          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 text-md">
+          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 xl:gap-12 text-md">
             {feats.map(({ title, descr }) => (
               <li key={title}>
                 <h3 className="font-bold text-gray-900 text-2xl mb-4">

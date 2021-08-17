@@ -9,11 +9,11 @@ import HomeSlider from './HomeSlider';
 export default function HomeHeader() {
   return (
     <div className="relative overflow-hidden bg-primary">
-      <div className="max-w-[90rem] px-4 pt-8 pb-16 mx-auto lg:pt-16 lg:flex">
+      <div className="max-w-[90rem] px-4 sm:px-6 lg:px-8 xl:px-10 pt-8 pb-16 mx-auto lg:pt-16 lg:flex">
         {/* Left */}
         <div className="flex-shrink-0 relative z-10 flex flex-col items-center w-full text-center xl:mr-16 lg:text-left lg:max-w-[500px] lg:block">
           <Logo
-            className="flex-shrink-0 w-32 h-32 rounded-full swiper_logo lg:w-40 lg:h-40"
+            className="flex-shrink-0 w-32 h-32 rounded-full lg:w-40 lg:h-40"
             alt="Swiper"
           />
 

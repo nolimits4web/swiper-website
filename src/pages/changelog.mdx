@@ -1,8 +1,8 @@
 ---
 title: Swiper Changelog
 description: Swiper changelog.
+carbon: true
 ---
-
 
 ## [6.8.2](https://github.com/nolimits4web/Swiper/compare/v6.8.1...v.6.8.2) (2021-08-16)
 
@@ -484,7 +484,9 @@ description: Swiper changelog.
     ```jsx
     <Swiper>
       <SwiperSlide>
-        {({ isActive }) => <div>Current slide is {isActive ? 'active' : 'not active'}</div>}
+        {({ isActive }) => (
+          <div>Current slide is {isActive ? 'active' : 'not active'}</div>
+        )}
       </SwiperSlide>
       <SwiperSlide>...</SwiperSlide>
       ...

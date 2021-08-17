@@ -11,6 +11,7 @@ import {
   vueFiles,
 } from 'src/shared/codesandbox-files';
 import { compressToBase64 } from 'src/shared/lz-string';
+import Carbon from '@/components/Carbon';
 
 let tableOfContents;
 
@@ -126,6 +127,7 @@ export default function DemosPage() {
           value={currentCodeSandboxParams}
         />
       </form>
+      <Carbon />
       <h1>Swiper Demos</h1>
       <p>
         You can download all these demos and hook into the code from GitHub{' '}

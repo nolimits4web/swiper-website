@@ -1,43 +1,69 @@
 import menuList from '../shared/menu-list';
 import GithubStats from './GithubStats';
 import Link from 'next/link';
-import { ReactComponent as Logo } from '@/img/logo.svg';
-import Carbon from './Carbon';
+import { ReactComponent as Logo } from '@/img/logo-white.svg';
 
 export default function Header() {
+  const hideMenu = () => {
+    if (document && document.activeElement) document.activeElement.blur();
+  };
   return (
-    <header className="bg-white border-b-8 py-6 px-4 sm:px-6 border-primary">
-      <div className="max-w-[90rem] mx-auto md:flex flex-wrap lg:flex-nowrap">
+    <header className="bg-primary py-6 h-20 text-white">
+      <div className="max-w-[90rem] mx-auto flex items-center h-full px-4 sm:px-6 lg:px-8 xl:px-10">
         <Link href="/">
-          <a className="flex-shrink-0">
-            <Logo
-              className="swiper_logo rounded-full w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40"
-              alt="Swiper"
-            />
-          </a>
-        </Link>
-        <div className="md:ml-5 min-w-0">
-          <div className="text-5xl font-extrabold text-primary mt-4 lg:mt-0">
-            Swiper
-            <span className="text-xs text-black ml-2 font-medium align-super">
+          <a className="flex-shrink-0 relative flex items-center">
+            <Logo className="rounded-full w-16 h-16" alt="Swiper" />
+            <span className="min-w-0 text-xs font-medium opacity-70 absolute left-full top-0 text-white pointer-events-none -mt-1">
               v{process.env.swiperReleaseVersion}
             </span>
-          </div>
-          <div className="text-2xl md:text-3xl my-2 font-bold text-gray-900">
-            Most Modern Mobile Touch Slider
-          </div>
-          <nav className="mb-2 mt-4 flex flex-wrap">
+          </a>
+        </Link>
+        <Link href="/">
+          <a className="md:hidden ml-2 text-4xl font-medium text-white hover:no-underline">
+            Swiper
+          </a>
+        </Link>
+
+        <nav className="flex-wrap ml-4 hidden md:flex">
+          {menuList.map(({ name, link }) => (
+            <Link key={link} href={link}>
+              <a className="font-medium mr-4 text-white text-sm lg:text-base">
+                {name}
+              </a>
+            </Link>
+          ))}
+        </nav>
+        <div className="group ml-auto mr-4 relative">
+          <button className="md:hidden flex items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+          <nav className="hidden group-focus-within:block absolute overflow-hidden z-10 rounded-xl bg-white shadow-lg right-0 top-full w-60 divide-y">
             {menuList.map(({ name, link }) => (
               <Link key={link} href={link}>
-                <a className="font-medium mr-4">{name}</a>
+                <a
+                  className="font-medium mr-4 text-gray-500 hover:text-primary hover:bg-primary hover:bg-opacity-10 duration-100 block text-base py-2 px-4 w-full hover:no-underline"
+                  onClick={hideMenu}
+                >
+                  {name}
+                </a>
               </Link>
             ))}
           </nav>
-          <GithubStats />
         </div>
-        <div className="lg:ml-auto self-center mt-4 lg:mt-0 md:ml-36">
-          <Carbon />
-        </div>
+        <GithubStats white responsive className="md:ml-auto" />
       </div>
     </header>
   );
