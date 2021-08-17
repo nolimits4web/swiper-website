@@ -72,11 +72,15 @@ const buildMethods = async (
           `
             )
             .join('')}
-          
+
         </ul>
       `;
     }
     return '';
+  };
+
+  const methodId = (methodName) => {
+    return methodName.split('(')[0].replace(/\./g, '-');
   };
 
   let parentProp = '';
@@ -119,19 +123,21 @@ export const ${typesName} = () => {
           .map(
             (item) => `
           <tr className="border-t">
-            <td className="w-1/6  font-mono font-semibold">
-              ${name(item)}
+            <td className="w-1/6 text-black font-mono font-semibold">
+              <a href="#prop-${methodId(name(item))}" id="prop-${methodId(
+              name(item)
+            )}">${name(item)}</a>
             </td>
             <td className="w-1/6 text-red-700 font-mono font-semibold">
               ${type(item)}
             </td>
-            
+
             <td className="w-3/6 space-y-2">${description(item)}</td>
           </tr>
         `
           )
           .join('')}
-          
+
           ${
             methods.length
               ? `
@@ -145,10 +151,12 @@ export const ${typesName} = () => {
             .map(
               (item) => `
             <tr className="border-t">
-              <td className="w-1/6  font-mono font-semibold" colSpan="2">
-                ${name(item)}
+              <td className="w-1/6 text-black font-mono font-semibold" colSpan="2">
+                <a href="#method-${methodId(name(item))}" id="method-${methodId(
+                name(item)
+              )}">${name(item)}</a>
               </td>
-              
+
               <td className="w-3/6 space-y-2">
                 ${description(item.signatures[0])}
                 ${methodDescription(item)}
@@ -157,7 +165,7 @@ export const ${typesName} = () => {
           `
             )
             .join('')}
-          
+
       </tbody>
     </table>
   )

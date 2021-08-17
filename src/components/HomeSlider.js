@@ -32,7 +32,7 @@ import 'swiper/css/lazy';
 function SlideCenter({ children, className = '', style = {} }) {
   return (
     <div
-      className={`mx-auto max-w-6xl flex justify-center flex-col px-4 rounded-xl text-[#3f209a] h-[500px] md:h-[400px] lg:h-[500px] ${className}`}
+      className={`mx-auto max-w-[90rem] flex justify-center flex-col px-4 rounded-xl text-[#3f209a] h-[500px] md:h-[400px] lg:h-[500px] ${className}`}
       style={{
         backgroundImage: 'linear-gradient(45deg, #6433f6, #a587ff)',
       }}

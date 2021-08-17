@@ -2,7 +2,7 @@ const defaultSettings = require('../default_settings');
 
 module.exports = (mode = 'core') => ({
   ...defaultSettings,
-  title: 'Slides per column',
+  title: 'Slides Grid',
   styles: `
   .swiper-container {
     width: 100%;
@@ -35,7 +35,9 @@ module.exports = (mode = 'core') => ({
   config: [
     {
       slidesPerView: 3,
-      slidesPerColumn: 2,
+      grid: {
+        rows: 2,
+      },
       spaceBetween: 30,
       pagination: {
         clickable: true,

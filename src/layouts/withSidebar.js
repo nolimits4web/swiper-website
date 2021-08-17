@@ -23,9 +23,9 @@ export function WithSidebarLayout({
 
   return (
     <div>
-      <div id={meta.containerId} className="w-full flex">
+      <div id={meta.containerId} className="w-full mx-auto flex max-w-[90rem]">
         {toc.length > 0 && (
-          <div className="hidden text-sm lg:block flex-none w-64 bg-gray-100">
+          <div className="hidden text-sm lg:block flex-none w-64">
             <div className="overflow-y-auto overscroll-contain sticky top-0 p-4 max-h-screen">
               <SidebarSponsors />
               <TableOfContents tableOfContents={toc} />

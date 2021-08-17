@@ -18,9 +18,9 @@ export default function TableOfContents({ tableOfContents }) {
               <a
                 href={`#${section.slug}`}
                 className={clsx(
-                  'block py-1 px-2 transition-colors duration-100 text-gray-900 hover:text-primary hover:no-underline font-medium hover:bg-primary hover:bg-opacity-10 rounded',
+                  'block py-1 px-2 transition-colors duration-100 text-gray-500 hover:text-primary hover:no-underline font-medium hover:bg-primary hover:bg-opacity-10 rounded',
                   {
-                    'text-primary': sectionIsActive || childSectionIsActive,
+                    '!text-primary': sectionIsActive || childSectionIsActive,
                     'bg-primary': sectionIsActive,
                     'bg-opacity-10': sectionIsActive,
                   }
@@ -37,9 +37,9 @@ export default function TableOfContents({ tableOfContents }) {
                   <a
                     href={`#${subsection.slug}`}
                     className={clsx(
-                      'block py-1 px-2 transition-colors duration-100 text-gray-900 hover:text-primary hover:no-underline hover:bg-primary hover:bg-opacity-10 rounded',
+                      'block py-1 px-2 transition-colors duration-100 text-gray-500 hover:text-primary hover:no-underline hover:bg-primary hover:bg-opacity-10 rounded',
                       {
-                        'text-primary': subsectionIsActive,
+                        '!text-primary': subsectionIsActive,
                         'bg-primary': subsectionIsActive,
                         'bg-opacity-10': subsectionIsActive,
                       }

@@ -9,7 +9,7 @@ import HomeSlider from './HomeSlider';
 export default function HomeHeader() {
   return (
     <div className="relative overflow-hidden">
-      <div className="max-w-6xl px-4 pt-8 pb-16 mx-auto lg:pt-16 lg:flex">
+      <div className="max-w-[90rem] px-4 pt-8 pb-16 mx-auto lg:pt-16 lg:flex">
         {/* Left */}
         <div className="flex-shrink-0 relative z-10 flex flex-col items-center w-full text-center xl:mr-16 lg:text-left lg:max-w-[500px] lg:block">
           <Logo

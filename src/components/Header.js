@@ -7,7 +7,7 @@ import Carbon from './Carbon';
 export default function Header() {
   return (
     <header className="bg-white border-b-8 py-6 px-4 sm:px-6 border-primary">
-      <div className="max-w-6xl mx-auto md:flex flex-wrap lg:flex-nowrap">
+      <div className="max-w-[90rem] mx-auto md:flex flex-wrap lg:flex-nowrap">
         <Link href="/">
           <a className="flex-shrink-0">
             <Logo

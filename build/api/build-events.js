@@ -70,8 +70,10 @@ export const ${typesName} = () => {
           .map(
             (item) => `
           <tr className="border-t">
-            <td className="w-1/4 font-mono font-semibold">
-              ${item.name}
+            <td className="w-1/4 font-mono font-semibold text-black">
+              <a href="#event-${item.name}" id="event-${item.name}">${
+              item.name
+            }</a>
             </td>
             <td className="w-1/4 text-red-700 font-mono font-semibold">
               ${args(item)}

@@ -2,7 +2,7 @@ const defaultSettings = require('../default_settings');
 
 module.exports = (mode = 'core') => ({
   ...defaultSettings,
-  title: 'Dynamic slides',
+  title: 'Manipulation',
   styles: `
   ${defaultSettings.styles}
 

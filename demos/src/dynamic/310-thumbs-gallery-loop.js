@@ -82,7 +82,6 @@ module.exports = (mode = 'core') => ({
       spaceBetween: 10,
       slidesPerView: 4,
       freeMode: true,
-      watchSlidesVisibility: true,
       watchSlidesProgress: true,
     },
     {

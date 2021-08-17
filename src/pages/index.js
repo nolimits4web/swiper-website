@@ -114,7 +114,7 @@ export default function Home() {
       <div className="flex justify-center items-center bg-primary py-5 mb-20">
         <Carbon />
       </div>
-      <div className="mx-auto max-w-6xl text-lg px-4">
+      <div className="mx-auto max-w-[90rem] text-lg px-4">
         <div className="flex flex-col space-y-5">
           <h1 className="text-4xl sm:text-5xl text-gray-900 font-extrabold mb-6">
             Swiper

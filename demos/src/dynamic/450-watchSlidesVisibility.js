@@ -39,7 +39,6 @@ module.exports = (mode = 'core') => ({
   config: [
     {
       watchSlidesProgress: true,
-      watchSlidesVisibility: true,
       slidesPerView: 3,
     },
   ],
