@@ -97,7 +97,7 @@ import { ZoomMethods } from '@/components/api/ZoomMethods';
 
 ```html
 <!-- Slider main container -->
-<div class="swiper-container">
+<div class="swiper">
   <!-- Additional required wrapper -->
   <div class="swiper-wrapper">
     <!-- Slides -->
@@ -241,7 +241,7 @@ new Swiper(swiperContainer, parameters)\- initialize swiper with options
 For example:
 
 ```js
-const swiper = new Swiper('.swiper-container', {
+const swiper = new Swiper('.swiper', {
   speed: 400,
   spaceBetween: 100,
 });
@@ -250,7 +250,7 @@ const swiper = new Swiper('.swiper-container', {
 **After** you initialize Swiper it is possible to access to Swiper's instance on its HTMLElement. It is `swiper` property of Swiper's HTML container element:
 
 ```js
-const swiper = document.querySelector('.swiper-container').swiper;
+const swiper = document.querySelector('.swiper').swiper;
 
 // Now you can use all slider methods like
 swiper.slideNext();
@@ -281,7 +281,7 @@ Swiper comes with a bunch of useful events you can listen. Events can be assigne
 1.  Using `on` parameter on swiper initialization:
 
     ```js
-    const swiper = new Swiper('.swiper-container', {
+    const swiper = new Swiper('.swiper', {
       // ...
       on: {
         init: function () {
@@ -294,7 +294,7 @@ Swiper comes with a bunch of useful events you can listen. Events can be assigne
 2.  Using `on` method after swiper initialization.
 
     ```js
-    const swiper = new Swiper('.swiper-container', {
+    const swiper = new Swiper('.swiper', {
       // ...
     });
     swiper.on('slideChange', function () {
@@ -407,7 +407,7 @@ Manipulation module adds useful Swiper methods to manipulate slides. It makes se
 
 Swiper supports parallax transition effects for swiper/slides nested elements. There are two types of parallax elements supported:
 
-- Direct child elements of `swiper-container`. Parallax effect for such elements will depend on total slider progress. Useful for parallax backgrounds
+- Direct child elements of `swiper`. Parallax effect for such elements will depend on total slider progress. Useful for parallax backgrounds
 - Slides child elements. Parallax effect for such elements will depend on slide progress
 
 To enable parallax effects you need to init Swiper with passed `parallax:true` parameter and add one of the following (or mix) attributes to required elements:
@@ -422,7 +422,7 @@ To enable parallax effects you need to init Swiper with passed `parallax:true` p
 - `data-swiper-parallax-duration` - custom transition duration for parallax elements
 
 ```html
-<div class="swiper-container">
+<div class="swiper">
   <!-- Parallax background element -->
   <div
     class="parallax-bg"
@@ -464,7 +464,7 @@ To enable parallax effects you need to init Swiper with passed `parallax:true` p
 To enable lazy loading, first of all we need a special layout for images or elements with background in slides:
 
 ```html
-<div class="swiper-container">
+<div class="swiper">
   <div class="swiper-wrapper">
     <!-- Lazy image -->
     <div class="swiper-slide">
@@ -522,7 +522,7 @@ Or white one for dark layout:
 After that we need to enable lazy loading on Swiper initialization:
 
 ```js
-const swiper = new Swiper('.swiper-container', {
+const swiper = new Swiper('.swiper', {
   // Disable preloading of all images
   preloadImages: false,
   // Enable lazy loading
@@ -635,7 +635,7 @@ In addition to [Controller](#controller) component Swiper comes with Thumbs comp
 Swiper supports zoom images functionality (similar to what you see on iOS when browsing single photo) where you can zoom-in image by pinch gesture and or by zoom-in/out by double tap on it. In this case, additional layout is required:
 
 ```html
-<div class="swiper-container">
+<div class="swiper">
   <div class="swiper-wrapper">
     <div class="swiper-slide">
       <div class="swiper-zoom-container">
@@ -662,7 +662,7 @@ Swiper supports zoom images functionality (similar to what you see on iOS when b
 
 - By default it expects to zoom one of the `img`, `picture` or `canvas` element. If you want to make zoom on some other custom element, then just add `swiper-zoom-target` class to this element. For example:
   ```html
-  <div class="swiper-container">
+  <div class="swiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
         <div class="swiper-zoom-container">
@@ -751,7 +751,7 @@ Hash navigation is intended to have a link to specific slide that allows to load
 To make it work, you need to enable it by passing `hashNavigation:true` parameter and adding slides hashes in `data-hash` attribute:
 
 ```html
-<div class="swiper-container">
+<div class="swiper">
   <div class="swiper-wrapper">
     <div class="swiper-slide" data-hash="slide1">Slide 1</div>
     <div class="swiper-slide" data-hash="slide2">Slide 2</div>
@@ -764,7 +764,7 @@ To make it work, you need to enable it by passing `hashNavigation:true` paramete
 ```
 
 ```js
-const swiper = new Swiper('.swiper-container', {
+const swiper = new Swiper('.swiper', {
   //enable hash navigation
   hashNavigation: true,
 });
@@ -821,7 +821,7 @@ If you use bundler with JS modules support in your project you can import only t
 import Swiper, { Navigation, Pagination, Scrollbar } from 'swiper';
 
 // Now you can use Swiper
-const swiper = new Swiper('.swiper-container', {
+const swiper = new Swiper('.swiper', {
   // Install modules
   modules: [Navigation, Pagination, Scrollbar],
   speed: 500,
@@ -929,7 +929,7 @@ const swiperParams: SwiperOptions = {
   spaceBetween: 50,
 };
 
-const swiper = new Swiper('.swiper-container', swiperParams);
+const swiper = new Swiper('.swiper', swiperParams);
 ```
 
 You can also check auto generated <a href="/types" target="_blank">TypeScript definitions explorer</a> for all the types, options, properties and methods.

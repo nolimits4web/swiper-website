@@ -6,15 +6,15 @@ module.exports = (mode = 'core') => ({
   styles: `
   ${defaultSettings.styles}
 
-  .swiper-container-v {
+  .swiper-v {
     background: #eee;
   }
   `,
   content: `
-  <Swiper className="swiper-container-h">
+  <Swiper className="swiper-h">
       <SwiperSlide>Horizontal Slide 1</SwiperSlide>
       <SwiperSlide>
-        <Swiper className="swiper-container-v">
+        <Swiper className="swiper-v">
           <SwiperSlide>Vertical Slide 1</SwiperSlide>
           <SwiperSlide>Vertical Slide 2</SwiperSlide>
           <SwiperSlide>Vertical Slide 3</SwiperSlide>

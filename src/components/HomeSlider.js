@@ -106,7 +106,7 @@ export default function HomeSlider() {
     <>
       <div className="swiper-button-prev invisible md:visible !left-auto !right-full mr-4" />
       <div className="swiper-button-next invisible md:visible !right-auto !left-full ml-4" />
-      <div className="swiper-container header-swiper-main">
+      <div className="swiper header-swiper-main">
         <div className="swiper-pagination !-bottom-6" />
 
         <div className="swiper-wrapper">
@@ -161,7 +161,7 @@ export default function HomeSlider() {
                 Build Complex Touch Galleries
               </span>
               <div className="flex h-full justify-around min-h-0 pb-4">
-                <div className="swiper-container header-swiper-cards rounded-lg w-60 h-80 mx-auto max-h-full">
+                <div className="swiper header-swiper-cards rounded-lg w-60 h-80 mx-auto max-h-full">
                   {Array.from({ length: 5 }).map((el, index) => (
                     <div key={index} className="swiper-slide rounded-xl">
                       <img
@@ -171,7 +171,7 @@ export default function HomeSlider() {
                     </div>
                   ))}
                 </div>
-                <div className="swiper-container header-swiper-flip rounded-lg w-60 h-80 mx-auto max-h-full hidden sm:block lg:hidden xl:block">
+                <div className="swiper header-swiper-flip rounded-lg w-60 h-80 mx-auto max-h-full hidden sm:block lg:hidden xl:block">
                   {Array.from({ length: 5 }).map((el, index) => (
                     <div key={index} className="swiper-slide rounded-xl">
                       <img

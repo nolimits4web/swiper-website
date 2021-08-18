@@ -84,7 +84,7 @@ Now, we need to add basic Swiper layout to our app:
 
 ```html
 <!-- Slider main container -->
-<div class="swiper-container">
+<div class="swiper">
   <!-- Additional required wrapper -->
   <div class="swiper-wrapper">
     <!-- Slides -->
@@ -110,7 +110,7 @@ Now, we need to add basic Swiper layout to our app:
 In addition to <a href="/api/#styles" target="_blank">Swiper's CSS styles</a>, we may need to add some custom styles to set Swiper size:
 
 ```css
-.swiper-container {
+.swiper {
   width: 600px;
   height: 300px;
 }
@@ -121,7 +121,7 @@ In addition to <a href="/api/#styles" target="_blank">Swiper's CSS styles</a>, w
 Finally, we need to initialize Swiper in JS:
 
 ```js
-const swiper = new Swiper('.swiper-container', {
+const swiper = new Swiper('.swiper', {
   // Optional parameters
   direction: 'vertical',
   loop: true,

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
 
   <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7.0.0-alpha.34/swiper-bundle.min.css" />
 
   <!-- Demo styles -->
   <style>
@@ -26,7 +26,7 @@
       padding: 0;
     }
 
-    .swiper-container {
+    .swiper {
       width: 100%;
       height: 100%;
     }
@@ -55,7 +55,7 @@
 
 <body>
   <!-- Swiper -->
-  <div class="swiper-container">
+  <div class="swiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide">Slide 1</div>
       <div class="swiper-slide">Slide 2</div>
@@ -76,7 +76,7 @@
   </div>
 
   <!-- Swiper JS -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/swiper@7.0.0-alpha.34/swiper-bundle.min.js"></script>
 
   <!-- Include plugin after Swiper -->
   <script>
@@ -147,7 +147,7 @@
   <script>
 
     // Init Swiper
-    var swiper = new Swiper('.swiper-container', {
+    var swiper = new Swiper('.swiper', {
       // Install Plugin To Swiper
       modules: [myPlugin],
       pagination: {

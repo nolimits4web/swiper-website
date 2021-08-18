@@ -6,7 +6,7 @@ module.exports = (mode = 'core') => ({
   styles: `
   ${defaultSettings.styles}
 
-  .swiper-container{
+  .swiper{
     width: 100%;
     height: 300px;
     margin: 20px auto;

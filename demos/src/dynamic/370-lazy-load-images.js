@@ -6,7 +6,7 @@ module.exports = (mode = 'core') => ({
   title: 'Lazy load images',
   styles: `
 
-  .swiper-container{
+  .swiper{
     width: 100%;
     height: 100%;
   }

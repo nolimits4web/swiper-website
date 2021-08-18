@@ -4,7 +4,7 @@ module.exports = (mode = 'core') => ({
   ...defaultSettings,
   title: 'Slides Grid',
   styles: `
-  .swiper-container {
+  .swiper {
     width: 100%;
     height: 100%;
     margin-left: auto;

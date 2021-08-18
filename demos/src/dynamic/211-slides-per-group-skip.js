@@ -4,7 +4,7 @@ module.exports = (mode = 'core') => ({
   ...defaultSettings,
   title: 'Slides per group skip',
   styles: `
-  .swiper-container{
+  .swiper{
     width: 100%;
     height: 100%;
   }
@@ -49,11 +49,11 @@ module.exports = (mode = 'core') => ({
       z-index: 1;
     }
 
-    .swiper-container[dir=rtl] .swiper-slide.swiper-slide-active:first-child {
+    .swiper[dir=rtl] .swiper-slide.swiper-slide-active:first-child {
       transform: translateX(-50%);
     }
 
-    .swiper-container[dir=rtl] .swiper-slide.swiper-slide-next:nth-child(2) {
+    .swiper[dir=rtl] .swiper-slide.swiper-slide-next:nth-child(2) {
       transform: translateX(-55%);
     }
   }

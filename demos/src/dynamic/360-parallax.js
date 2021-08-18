@@ -6,7 +6,7 @@ module.exports = (mode = 'core') => ({
   title: 'Parallax',
   styles: `
 
-  .swiper-container{
+  .swiper{
     width: 100%;
     height: 100%;
     background: #000;

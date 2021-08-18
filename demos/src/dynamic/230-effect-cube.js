@@ -4,7 +4,7 @@ module.exports = (mode = 'core') => ({
   ...defaultSettings,
   title: 'Effect cube',
   styles: `
-  .swiper-container{
+  .swiper{
     width: 300px;
     height: 300px;
     position: absolute;
