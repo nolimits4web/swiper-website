@@ -106,15 +106,12 @@ function render(
 import { Swiper, SwiperSlide } from 'swiper/svelte';
 
 // Import Swiper styles
-import 'swiper/swiper.scss';
+import 'swiper/css';
 
 ${
   cssModules
     ? cssModules
-        .map(
-          (cssModule) =>
-            `import "swiper/components/${cssModule}/${cssModule}.min.css"`
-        )
+        .map((cssModule) => `import "swiper/css/${cssModule}"`)
         .join('\n')
     : ''
 }
@@ -127,7 +124,7 @@ ${
 // import Swiper core and required modules
 import SwiperCore, {
   ${_modules}
-} from 'swiper/core';
+} from 'swiper';
 
 // install Swiper modules
 SwiperCore.use([${_modules}]);

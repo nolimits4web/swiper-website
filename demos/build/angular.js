@@ -41,7 +41,7 @@ module.exports = async (dir, _config) => {
       }
     );
     const componentCSS = cssModules
-      ? cssModules.map((m) => `@import "~swiper/components/${m}/${m}";`)
+      ? cssModules.map((m) => `@import "~swiper/css/${m}";`)
       : [];
     await fs.writeFile(
       path.join(dir, 'angular.json'),
@@ -49,7 +49,7 @@ module.exports = async (dir, _config) => {
         'src/app/app.component.ts': { content: componentContent },
         'src/app/app.components.scss': {
           content:
-            '\n@import "~swiper/swiper";\n' +
+            '\n@import "~swiper/css";\n' +
             componentCSS.join('\n') +
             `\n${styles}`,
         },
@@ -107,7 +107,7 @@ ${
 // import Swiper core and required modules
 import SwiperCore, {
   ${_modules}
-} from 'swiper/core';
+} from 'swiper';
 
 // install Swiper modules
 SwiperCore.use([${_modules}]);

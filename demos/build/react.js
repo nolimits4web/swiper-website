@@ -41,9 +41,9 @@ module.exports = async (dir, _config) => {
     await fs.writeFile(
       path.join(dir, 'react.json'),
       JSON.stringify({
-        'src/App.js': { content: componentContent },
+        'src/App.jsx': { content: componentContent },
         'src/styles.css': {
-          content: `#root { height: 100% }\n${globalStyles}\n${styles}`,
+          content: `#app { height: 100% }\n${globalStyles}\n${styles}`,
         },
       })
     );
@@ -104,14 +104,11 @@ import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import "swiper/swiper.min.css";
+import "swiper/css";
 ${
   cssModules
     ? cssModules
-        .map(
-          (cssModule) =>
-            `import "swiper/components/${cssModule}/${cssModule}.min.css"`
-        )
+        .map((cssModule) => `import "swiper/css/${cssModule}"`)
         .join('\n')
     : ''
 }
@@ -124,7 +121,7 @@ ${
 // import Swiper core and required modules
 import SwiperCore, {
   ${_modules}
-} from 'swiper/core';
+} from 'swiper';
 
 // install Swiper modules
 SwiperCore.use([${_modules}]);
