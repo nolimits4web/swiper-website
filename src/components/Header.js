@@ -2,10 +2,15 @@ import menuList from '../shared/menu-list';
 import GithubStats from './GithubStats';
 import Link from 'next/link';
 import { ReactComponent as Logo } from '@/img/logo-white.svg';
+import { useRef } from 'react';
 
 export default function Header() {
+  const buttonElRef = useRef(null);
   const hideMenu = () => {
     if (document && document.activeElement) document.activeElement.blur();
+  };
+  const showMenu = () => {
+    buttonElRef.current.focus();
   };
   return (
     <header className="bg-primary py-6 h-20 text-white">
@@ -34,10 +39,14 @@ export default function Header() {
           ))}
         </nav>
         <div className="group ml-auto mr-4 relative">
-          <button className="md:hidden flex items-center">
+          <button
+            className="md:hidden flex items-center outline-none"
+            ref={buttonElRef}
+            onClick={showMenu}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
+              className="h-6 w-6 pointer-events-none"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -56,6 +65,7 @@ export default function Header() {
                 <a
                   className="font-medium mr-4 text-gray-500 hover:text-primary hover:bg-primary hover:bg-opacity-10 duration-100 block text-base py-2 px-4 w-full hover:no-underline"
                   onClick={hideMenu}
+                  onPointerDown={(e) => e.preventDefault()}
                 >
                   {name}
                 </a>
