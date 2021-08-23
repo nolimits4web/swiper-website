@@ -49,7 +49,7 @@ module.exports = async (dir, _config) => {
         'src/app/app.component.ts': { content: componentContent },
         'src/app/app.components.scss': {
           content:
-            '\n@import "~swiper/swiper";\n' +
+            '\n@import "~swiper/css";\n' +
             componentCSS.join('\n') +
             `\n${styles}`,
         },
