@@ -4,12 +4,7 @@ import Heading from '@/components/Heading';
 import { WithSidebarLayout } from '@/layouts/withSidebar';
 import { useLazyDemos } from 'src/shared/use-lazy-demos';
 import demos from 'src/demos.json';
-import {
-  angularFiles,
-  reactFiles,
-  svelteFiles,
-  vueFiles,
-} from 'src/shared/codesandbox-files';
+import codeSandboxFiles from 'src/shared/codesandbox/codesandbox-files';
 import { compressToBase64 } from 'src/shared/lz-string';
 import Carbon from '@/components/Carbon';
 
@@ -48,12 +43,7 @@ export default function DemosPage() {
         },
       };
     }
-    const files = {
-      angular: angularFiles,
-      react: reactFiles,
-      vue: vueFiles,
-      svelte: svelteFiles,
-    };
+    const files = codeSandboxFiles;
     const currentFile = files[mode] ? files[mode](title) : {};
 
     // unescape &quot;
@@ -144,9 +134,9 @@ export default function DemosPage() {
           <Heading level={2} id={slug} toc={true}>
             {title}
           </Heading>
-          <div className="flex flex-wrap text-sm my-4">
+          <div className="flex flex-wrap my-4 text-sm">
             <a
-              className="no-underline mr-4 mb-2"
+              className="mb-2 mr-4 no-underline"
               href={`/demos/${folder}/core.html`}
               target="_blank"
               rel="noopener"
@@ -160,7 +150,7 @@ export default function DemosPage() {
               return (
                 <a
                   key={name}
-                  className="no-underline ml-2"
+                  className="ml-2 no-underline"
                   href="#"
                   onClick={(e) =>
                     openCodeSandbox(e, title, folder, `${name.toLowerCase()}`)
@@ -181,7 +171,7 @@ export default function DemosPage() {
               data-src={`/demos/${folder}/core.html`}
               scrolling="no"
               frameBorder="0"
-              className="h-96 block w-full"
+              className="block w-full h-96"
             ></iframe>
           </div>
         </React.Fragment>

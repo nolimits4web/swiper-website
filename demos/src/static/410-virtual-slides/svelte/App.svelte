@@ -2,15 +2,15 @@
   import { Swiper, SwiperSlide } from "swiper/svelte";
 
   // Import Swiper styles
-  import "swiper/swiper.scss";
+  import "swiper/css";
 
-  import "swiper/components/pagination/pagination.min.css";
-  import "swiper/components/navigation/navigation.min.css";
+  import "swiper/css/pagination";
+  import "swiper/css/navigation";
 
   import "./style.css";
 
   // import Swiper core and required modules
-  import SwiperCore, { Pagination, Navigation, Virtual } from "swiper/core";
+  import SwiperCore, { Pagination, Navigation, Virtual } from "swiper";
 
   // install Swiper modules
   SwiperCore.use([Pagination, Navigation, Virtual]);

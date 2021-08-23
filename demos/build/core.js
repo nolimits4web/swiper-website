@@ -80,7 +80,7 @@ function render(
     <title>Swiper demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@next/swiper-bundle.min.css">
 
     ${
       styles || globalStyles
@@ -100,7 +100,7 @@ function render(
     ${templateString}
 
     <!-- Swiper JS -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper@next/swiper-bundle.min.js"></script>
 
     <!-- Initialize Swiper -->
     <script>
