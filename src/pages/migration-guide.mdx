@@ -1,0 +1,286 @@
+---
+title: Migration Guide to Swiper 7
+carbon: true
+---
+
+## ES2015
+
+Swiper JavaScript files are now transpiled targeting ES2015 syntax. If you need to support older syntax, then you should transpile it on your own (for example with [Babel](https://babeljs.io))
+
+## Node ES Modules
+
+Swiper package doesn't have CommonJS modules anymore (the ones with `require()` and `module.exports` syntax) and contains only native ES modules. If your bundler/tooling/environment doesn't support Node ES module, you should update it or stay on Swiper 6.
+
+## Styles Imports
+
+As Swiper 7 uses `exports` field in `package.json`, all [styles imports](/swiper-api#css-styles) are predefined and it is not allowed to import files directly.
+
+In Swiper 6:
+
+```js
+// swiper bundle styles
+import 'swiper/swiper-bundle.min.css'
+
+// swiper core styles
+import 'swiper/swiper.min.css'
+
+// modules styles
+import 'swiper/components/navigation/navigation.min.css'
+import 'swiper/components/pagination/pagination.min.css'
+...
+
+```
+
+In Swiper 7:
+
+```js
+// swiper bundle styles
+import 'swiper/css/bundle'
+
+// swiper core styles
+import 'swiper/css'
+
+// modules styles
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+...
+
+```
+
+## Svelte Package
+
+Swiper Svelte components in package now available only as uncompiled `.svelte` files for better compatability with Vite and Svelte Kit.
+
+## HTML Layout
+
+Swiper container element now should have class `swiper` instead of `swiper-container`:
+
+In Swiper 6:
+
+```html
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">Slide 1</div>
+    ...
+  </div>
+</div>
+```
+
+In Swiper 7:
+
+```html
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">Slide 1</div>
+    ...
+  </div>
+</div>
+```
+
+## Parameters Updates
+
+Some parmeters defaults have been updated in Swiper 7:
+
+- [`touchEventsTarget`](/swiper-api#param-touchEventsTarget) parameter has been changed to `'wrapper'` by default
+- [`watchOverflow`](/swiper-api#param-watchOverflow) parameter is now enabled by default
+- [`resizeObserver`](/swiper-api#param-resizeObserver) parameter is now enabled by default
+- `watchVisibleSlides` parameter has been removed and its functionality has been merged with [`watchSlidesProgress`](/swiper-api#param-watchSlidesProgress)
+
+## Modules Installation
+
+Before Swiper 7, modules had to be installed using `Swiper.use()` method on Swiper class. In version 7 it is still supported, but there is a new recommended way of installing modules using `modules` parameter:
+
+In Swiper 6:
+
+```js
+import Swiper, { Navigation, Pagination } from 'swiper';
+
+Swiper.use([Navigation, Pagination]);
+
+new Swiper('.my-swiper', {
+  // ...
+});
+```
+
+In Swiper 7:
+
+```js
+import Swiper, { Navigation, Pagination } from 'swiper';
+
+new Swiper('.my-swiper', {
+  // pass modules here
+  modules: [Navigation, Pagination],
+  // ...
+});
+```
+
+## Free Mode Module
+
+Free Mode functionality moved to separate [Free Mode module](/swiper-api#free-mode) out of the core.
+
+In Swiper 6:
+
+```js
+import Swiper from 'swiper';
+
+new Swiper('.my-swiper', {
+  freeMode: true,
+  freeModeMinimumVelocity: 0.2,
+  freeModeMomentum: false,
+});
+```
+
+In Swiper 7:
+
+```js
+// import FreeMode module if you use core version of Swiper
+import Swiper, { FreeMode } from 'swiper';
+
+new Swiper('.my-swiper', {
+  // install FreeMode module if you use core version of Swiper
+  modules: [FreeMode],
+  freeMode: {
+    enabled: true,
+    minimumVelocity: 0.2,
+    momentum: false,
+  },
+});
+```
+
+## Grid Module
+
+Grid (`slidesPerColumn`) functionality moved to separate [Grid module](/swiper-api#grid) out of the core.
+
+In Swiper 6:
+
+```js
+import Swiper from 'swiper';
+
+new Swiper('.my-swiper', {
+  slidesPerColumn: 2,
+  slidesPerColumnFill: 'row',
+});
+```
+
+In Swiper 7:
+
+```js
+// import Grid module if you use core version of Swiper
+import Swiper, { Grid } from 'swiper';
+
+new Swiper('.my-swiper', {
+  // install Grid module if you use core version of Swiper
+  modules: [Grid],
+  grid: {
+    rows: 2,
+    fill: 'row',
+  },
+});
+```
+
+## Manipulation Module
+
+Slides manipulation methods (`swiper.appendSlide()`, `swiper.prependSlide()`) functionality moved to separate [Manipulation module](/swiper-api#manipulation) out of the core.
+
+In Swiper 6:
+
+```js
+import Swiper from 'swiper';
+
+new Swiper('.my-swiper', {
+  // ...
+});
+
+swiper.appendSlide('<div class="swiper-slide">Slide 1</div>');
+```
+
+In Swiper 7:
+
+```js
+// import Manipulation module if you use core version of Swiper
+import Swiper, { Manipulation } from 'swiper';
+
+new Swiper('.my-swiper', {
+  // install Manipulation module if you use core version of Swiper
+  modules: [Manipulation],
+  // ...
+});
+
+// Now slides manipulation methods are available
+swiper.appendSlide('<div class="swiper-slide">Slide 1</div>');
+```
+
+## Custom Module (Plugin) API
+
+Swiper Pluging API was highly reworked in Swiper 7. And now it uses a function sytax instead of the object. Which means any custom plugin written for Swiper 6 will not work with Swiper 7.
+
+In Swiper 6:
+
+```js
+/**
+ * Plugin Definition
+ **/
+const MyPlugin = {
+  params: {
+    myPluginParameter: false,
+  },
+  create() {
+    const swiper = this;
+    swiper.myPlugin = {
+      doSomething() {
+        console.log('my plugin does something');
+      },
+    };
+  },
+  on: {
+    init(swiper) {
+      if (!swiper.params.myPluginParameter) return;
+      console.log('my plugin init');
+    },
+  },
+};
+
+/**
+ * Plugin Usage
+ **/
+
+Swiper.use([MyPlugin]);
+
+const swiper = new Swiper('.my-swiper', {
+  myPluginParameter: true,
+});
+
+swiper.myPlugin.doSomething();
+```
+
+In Swiper 7:
+
+```js
+/**
+ * Plugin Definition
+ **/
+function MyPlugin({ swiper, extendParams, on }) {
+  extendParams({
+    myPluginParameter: false,
+  });
+  swiper.myPlugin = {
+    doSomething() {
+      console.log('my plugin does something');
+    },
+  };
+  on('init', (_swiper) => {
+    if (!swiper.params.myPluginParameter) return;
+    console.log('my plugin init');
+  });
+}
+/**
+ * Plugin Usage
+ **/
+
+const swiper = new Swiper('.my-swiper', {
+  modules: [MyPlugin],
+  myPluginParameter: true,
+});
+
+swiper.myPlugin.doSomething();
+```
