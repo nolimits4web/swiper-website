@@ -1,4 +1,4 @@
-import { common, packageName } from './common';
+import { commonFiles, packageName } from './common';
 
 const svelteFiles = (title) => ({
   'package.json': {
@@ -57,7 +57,7 @@ export default defineConfig({
 })
   `,
   },
-  ...common,
+  ...commonFiles,
 });
 
 export default svelteFiles;

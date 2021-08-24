@@ -1,4 +1,4 @@
-import { common, packageName } from './common';
+import { commonFiles, packageName } from './common';
 
 const reactFiles = (title) => ({
   'package.json': {
@@ -56,7 +56,7 @@ ReactDOM.render(<App />, document.getElementById("app"));
     </html>
     `,
   },
-  ...common,
+  ...commonFiles,
 });
 
 export default reactFiles;

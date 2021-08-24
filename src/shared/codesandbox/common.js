@@ -2,7 +2,7 @@ const slugify = require('@sindresorhus/slugify');
 export function packageName(title, lib) {
   return slugify(`Swiper ${lib} - ${title}`);
 }
-export const common = {
+export const commonFiles = {
   'sandbox.config.json': {
     infiniteLoopProtection: true,
     hardReloadOnChange: false,
