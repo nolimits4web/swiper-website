@@ -13,7 +13,7 @@ const svelteFiles = (title) => ({
       },
       dependencies: {
         svelte: '^3.38.2',
-        swiper: 'next',
+        swiper: '^7.0.0',
       },
       devDependencies: {
         vite: '^2.5.0',

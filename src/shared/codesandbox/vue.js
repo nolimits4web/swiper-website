@@ -13,7 +13,7 @@ const vueFiles = (title) => ({
       },
       dependencies: {
         vue: '^3.0.0',
-        swiper: 'next',
+        swiper: '^7.0.0',
       },
       devDependencies: {
         vite: '^2.5.0',

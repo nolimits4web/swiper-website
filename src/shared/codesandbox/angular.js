@@ -23,7 +23,7 @@ const angularFiles = (title) => ({
         rxjs: '~6.6.0',
         tslib: '^2.1.0',
         'zone.js': '~0.11.4',
-        swiper: 'next',
+        swiper: '^7.0.0',
       },
       devDependencies: {
         '@angular-devkit/build-angular': '~12.0.5',
