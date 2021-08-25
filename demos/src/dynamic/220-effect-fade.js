@@ -4,7 +4,7 @@ module.exports = (mode = 'core') => ({
   ...defaultSettings,
   title: 'Effect fade',
   styles: `
-  .swiper-container{
+  .swiper{
     width: 100%;
     height: 100%;
   }

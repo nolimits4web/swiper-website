@@ -15,7 +15,7 @@ module.exports = {
     padding: 0;
   }`,
   styles: `
-    .swiper-container{
+    .swiper{
       width: 100%;
       height: 100%;
     }

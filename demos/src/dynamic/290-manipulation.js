@@ -2,11 +2,11 @@ const defaultSettings = require('../default_settings');
 
 module.exports = (mode = 'core') => ({
   ...defaultSettings,
-  title: 'Dynamic slides',
+  title: 'Manipulation',
   styles: `
   ${defaultSettings.styles}
 
-  .swiper-container{
+  .swiper{
     width: 100%;
     height: 300px;
     margin: 20px auto;

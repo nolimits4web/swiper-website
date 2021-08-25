@@ -33,6 +33,19 @@
   padding-left: 2rem !important;
 }
 
+.params-table,
+.events-table,
+.methods-table {
+  td:first-child > a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: inherit;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
 @media (max-width: 980px) {
   .params-table-nested-row td:first-child {
     padding-left: 0 !important;

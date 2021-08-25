@@ -30,7 +30,7 @@
         padding: 0;
       }
 
-      .swiper-container {
+      .swiper {
         width: 100%;
         height: 100%;
       }
@@ -67,7 +67,7 @@
         color: #000;
       }
 
-      .swiper-container {
+      .swiper {
         width: 100%;
         height: 300px;
         margin-left: auto;
@@ -114,7 +114,7 @@
 
     <div
       style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
-      class="swiper-container mySwiper2"
+      class="swiper mySwiper2"
     >
       <div class="swiper-wrapper">
         <div class="swiper-slide">
@@ -151,7 +151,7 @@
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
     </div>
-    <div thumbsSlider="" class="swiper-container mySwiper">
+    <div thumbsSlider="" class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
@@ -195,7 +195,6 @@
         spaceBetween: 10,
         slidesPerView: 4,
         freeMode: true,
-        watchSlidesVisibility: true,
         watchSlidesProgress: true,
       });
       var swiper2 = new Swiper(".mySwiper2", {

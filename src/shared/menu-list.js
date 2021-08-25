@@ -20,7 +20,7 @@ export default [
     link: '/svelte',
   },
   {
-    name: 'Vue.js',
+    name: 'Vue',
     link: '/vue',
   },
   {

@@ -20,10 +20,12 @@
 body {
   font-family: Inter, -apple-system, system-ui, Helvetica Neue, Helvetica, Arial,
     sans-serif;
-  color: #374151;
+  color: #404247;
   -webkit-font-smoothing: antialiased;
 }
-
+body .prose {
+  color: #5f6570;
+}
 body .prose code:before,
 body .prose code:after {
   display: none;
@@ -44,10 +46,6 @@ body .prose pre code {
 .after\:hash:after {
   content: '#';
 }
-
-.swiper_logo {
-  box-shadow: 0 15px 30px 0 rgba(99, 50, 246, 0.3);
-}
-.align-super {
-  vertical-align: super;
+body .prose pre {
+  border-radius: 0.75rem;
 }

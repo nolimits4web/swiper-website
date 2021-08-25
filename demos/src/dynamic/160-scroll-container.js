@@ -14,7 +14,7 @@ module.exports = (mode = 'core') => ({
     background: #fff;
   }
 
-  .swiper-container {
+  .swiper {
     width: 100%;
     height: 100%;
   }

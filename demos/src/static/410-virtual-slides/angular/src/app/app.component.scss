@@ -1,7 +1,8 @@
-@import '~swiper/swiper';
-@import '~swiper/components/pagination/pagination';
-@import '~swiper/components/navigation/navigation';
-.swiper-container {
+@import '~swiper/css';
+@import '~swiper/css/pagination';
+@import '~swiper/css/navigation';
+
+.swiper {
   width: 100%;
   height: 100%;
 }
@@ -33,7 +34,7 @@
   object-fit: cover;
 }
 
-.swiper-container {
+.swiper {
   width: 100%;
   height: 300px;
   margin: 20px auto;

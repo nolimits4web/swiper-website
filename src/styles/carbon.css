@@ -39,12 +39,26 @@
     margin: 0 auto;
     position: relative;
   }
-  header & {
+  header &,
+  .prose & {
     border-color: rgba(0, 0, 0, 0.1);
     background-color: rgba(0, 0, 0, 0.05);
     a,
     & {
       color: #333;
+    }
+  }
+  .prose & {
+    display: block;
+    margin-bottom: 32px;
+    img {
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+    }
+    @media (min-width: 768px) {
+      float: right;
     }
   }
 }

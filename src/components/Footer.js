@@ -18,7 +18,7 @@ const menu = [
 
 export default function Footer() {
   return (
-    <footer className="border-t-8 border-primary text-center py-10 px-4">
+    <footer className="border-t-8 border-primary text-center py-10 px-4 sm:px-6 lg:px-8 xl:px-10">
       <div className="max-w-5xl mx-auto font-medium">
         <div>
           Supported by:{' '}

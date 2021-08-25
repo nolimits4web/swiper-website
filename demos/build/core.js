@@ -174,7 +174,7 @@ function renderPostHTML(config, reverse = false) {
 
         const indexStr = getStringIndex(config, swiperIndex, reverse);
 
-        classNames = `swiper-container ${swiperName}${indexStr}`;
+        classNames = `swiper ${swiperName}${indexStr}`;
         node.content = [
           ...prepend,
           {

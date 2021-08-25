@@ -14,7 +14,7 @@ export default function SidebarSponsors() {
           Become a sponsor
         </a>
       </div>
-      <div className="-mx-2 p-2 bg-white grid grid-cols-4 gap-2 rounded shadow">
+      <div className="bg-white grid grid-cols-5 gap-2">
         {sponsors
           .filter(({ plan }) => plan !== 'Sponsor')
           .map(({ link, title, image_h, image, alt }) => (

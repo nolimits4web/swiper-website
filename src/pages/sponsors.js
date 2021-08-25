@@ -6,7 +6,7 @@ import HomeSponsors from '@/components/HomeSponsors';
 export default function SponsorsPage() {
   return (
     <>
-      <div className="mx-auto max-w-6xl text-lg px-4 py-20">
+      <div className="mx-auto max-w-[90rem] text-lg px-4 py-20">
         <h1 className="text-4xl text-center sm:text-5xl text-gray-900 font-extrabold mb-12">
           Swiper Sponsors
         </h1>

@@ -12,7 +12,7 @@ module.exports = (mode = 'core') => ({
     color: #000;
   }
 
-  .swiper-container{
+  .swiper{
     width: 100%;
     height: 300px;
     margin-left: auto;
@@ -81,7 +81,6 @@ module.exports = (mode = 'core') => ({
       spaceBetween: 10,
       slidesPerView: 4,
       freeMode: true,
-      watchSlidesVisibility: true,
       watchSlidesProgress: true,
     },
     {

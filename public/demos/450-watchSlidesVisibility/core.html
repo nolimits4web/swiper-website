@@ -30,7 +30,7 @@
         padding: 0;
       }
 
-      .swiper-container {
+      .swiper {
         width: 800px;
       }
       .swiper-slide {
@@ -68,7 +68,7 @@
       "swiper-slide-visible" className
     </h3>
     <br />
-    <div class="swiper-container mySwiper">
+    <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">Slide 1</div>
         <div class="swiper-slide">Slide 2</div>
@@ -89,7 +89,6 @@
     <script>
       var swiper = new Swiper(".mySwiper", {
         watchSlidesProgress: true,
-        watchSlidesVisibility: true,
         slidesPerView: 3,
       });
     </script>

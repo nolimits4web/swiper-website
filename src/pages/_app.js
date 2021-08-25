@@ -45,6 +45,12 @@ function App({ Component, pageProps, router }) {
           content="https://swiperjs.com/images/share-banner.png"
         />
         <link rel="shortcut icon" href="/images/favicon.png" />
+        <link
+          rel="mask-icon"
+          sizes="any"
+          href="/images/favicon.svg"
+          color="#6332F6"
+        />
       </Head>
       {router.pathname !== '/' && <Header />}
       <Component {...pageProps} />
