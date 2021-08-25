@@ -9,7 +9,9 @@ Swiper JavaScript files are now transpiled targeting ES2015 syntax. If you need 
 
 ## Node ES Modules
 
-Swiper package doesn't have CommonJS modules anymore (the ones with `require()` and `module.exports` syntax) and contains only native ES modules. If your bundler/tooling/environment doesn't support Node ES module, you should update it or stay on Swiper 6.
+Swiper NPM package is now a pure ESM package. Which means it doesn't have CommonJS modules anymore (the ones with `require()` and `module.exports` syntax) and contains only native ES modules. If your bundler/tooling/environment doesn't support Node ES module, you should update it or stay on Swiper 6.
+
+You can check [this guide](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c) about using pure ESM packages.
 
 ## Styles Imports
 
@@ -47,9 +49,13 @@ import 'swiper/css/pagination'
 
 ```
 
-## Svelte Package
+## Swiper Svelte
 
-Swiper Svelte components in package now available only as uncompiled `.svelte` files for better compatability with Vite and Svelte Kit.
+Swiper Svelte components in package are available only as uncompiled `.svelte` files for better compatibility with Vite and Svelte Kit.
+
+## Swiper Angular
+
+Swiper Angular components are now compatible only with Angular 12+
 
 ## HTML Layout
 
@@ -212,7 +218,7 @@ swiper.appendSlide('<div class="swiper-slide">Slide 1</div>');
 
 ## Custom Module (Plugin) API
 
-Swiper Pluging API was highly reworked in Swiper 7. And now it uses a function sytax instead of the object. Which means any custom plugin written for Swiper 6 will not work with Swiper 7.
+Swiper Pluging API was highly reworked in Swiper 7. And now it uses a function sytax instead of the object. Which means any custom plugin written for Swiper 6 will not work with Swiper 7 (and vice versa).
 
 In Swiper 6:
 
