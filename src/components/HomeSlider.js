@@ -52,6 +52,7 @@ export default function HomeSlider() {
       creativeEffect: {
         perspective: true,
         limitProgress: 2,
+        shadowPerProgress: true,
         prev: {
           shadow: true,
           translate: ['-10%', 0, -200],
