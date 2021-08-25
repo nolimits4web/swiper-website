@@ -2,6 +2,7 @@ import menuList from '../shared/menu-list';
 import GithubStats from './GithubStats';
 import Link from 'next/link';
 import { ReactComponent as Logo } from '@/img/logo-white.svg';
+import { ReactComponent as PatreonLogo } from '@/img/patreon-logo.svg';
 import { useRef } from 'react';
 
 export default function Header() {
@@ -28,16 +29,27 @@ export default function Header() {
             Swiper
           </a>
         </Link>
-
-        <nav className="flex-wrap ml-4 hidden md:flex">
-          {menuList.map(({ name, link }) => (
-            <Link key={link} href={link}>
-              <a className="font-medium mr-4 text-white text-sm lg:text-base">
-                {name}
-              </a>
-            </Link>
-          ))}
-        </nav>
+        <div className="ml-4 hidden md:block">
+          <nav className="flex">
+            {menuList.map(({ name, link }) => (
+              <Link key={link} href={link}>
+                <a className="font-medium mr-4 text-white text-sm lg:text-base">
+                  {name}
+                </a>
+              </Link>
+            ))}
+          </nav>
+          <div className="-mb-3">
+            <a
+              href="https://www.patreon.com/swiperjs"
+              target="_blank"
+              className="text-white inline-flex items-center text-xs font-medium opacity-60 hover:opacity-100 hover:no-underline"
+            >
+              <PatreonLogo className="w-3 h-3 mr-1" />
+              <span>Support Swiper</span>
+            </a>
+          </div>
+        </div>
         <div className="group ml-auto mr-4 relative">
           <button
             className="md:hidden flex items-center outline-none"
@@ -71,6 +83,16 @@ export default function Header() {
                 </a>
               </Link>
             ))}
+            <a
+              href="https://www.patreon.com/swiperjs"
+              target="_blank"
+              className="font-medium mr-4 text-gray-500 hover:text-primary hover:bg-primary hover:bg-opacity-10 duration-100 block text-base py-2 px-4 w-full hover:no-underline flex items-center"
+              onClick={hideMenu}
+              onPointerDown={(e) => e.preventDefault()}
+            >
+              <PatreonLogo className="w-4 h-4 mr-1 text-[#FF424D]" />
+              <span>Support Swiper</span>
+            </a>
           </nav>
         </div>
         <GithubStats white responsive className="md:ml-auto" />

@@ -9,7 +9,7 @@ export default function SidebarSponsors() {
         <a
           href="https://opencollective.com/swiper"
           target="_blank"
-          className="py-1 px-2 bg-primary text-white font-medium text-xs rounded-full no-underline hover:bg-opacity-90 duration-200 hover:no-underline"
+          className="text-primary font-medium text-xs no-underline"
         >
           Become a sponsor
         </a>
