@@ -145,7 +145,7 @@ export default function DemosPage() {
             </a>
             {['Core', 'React', 'Vue', 'Angular', 'Svelte'].map((name) => {
               if (skip && skip.includes(name.toLowerCase())) {
-                return <></>;
+                return null;
               }
               return (
                 <a

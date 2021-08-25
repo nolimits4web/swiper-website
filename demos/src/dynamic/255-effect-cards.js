@@ -19,7 +19,7 @@ module.exports = (mode = 'core') => ({
     height: 100%;
   }
 
-  ${mode === 'core' ? 'body' : '#app'} {
+  ${mode === 'core' || mode === 'angular' ? 'body' : '#app'} {
     display: flex;
     justify-content: center;
     align-items: center;

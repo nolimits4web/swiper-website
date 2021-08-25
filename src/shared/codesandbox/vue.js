@@ -1,4 +1,4 @@
-import { common, packageName } from './common';
+import { commonFiles, packageName } from './common';
 
 const vueFiles = (title) => ({
   'package.json': {
@@ -49,6 +49,6 @@ export default {
 }
   `,
   },
-  ...common,
+  ...commonFiles,
 });
 export default vueFiles;
