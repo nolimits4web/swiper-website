@@ -29,7 +29,7 @@ function App({ Component, pageProps, router }) {
         />
         <meta
           property="og:image"
-          content="https://swiperjs.com/images/share-banner.png"
+          content="https://swiperjs.com/images/share-banner-new.png"
         />
         <meta property="og:site_name" content="Swiper" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -42,7 +42,7 @@ function App({ Component, pageProps, router }) {
         />
         <meta
           name="twitter:image"
-          content="https://swiperjs.com/images/share-banner.png"
+          content="https://swiperjs.com/images/share-banner-new.png"
         />
         <link rel="shortcut icon" href="/images/favicon.png" />
         <link
