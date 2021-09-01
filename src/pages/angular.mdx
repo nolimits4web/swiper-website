@@ -82,6 +82,8 @@ import 'swiper/scss/pagination';
 
 ## Usage
 
+Params can be passed on `<swiper>` as parameters or via `[config]`
+
 ```js
 import { Component } from '@angular/core';
 
@@ -104,6 +106,48 @@ import SwiperCore from 'swiper';
   `,
 })
 export class AppComponent {
+  onSwiper(swiper) {
+    console.log(swiper);
+  }
+  onSlideChange() {
+    console.log('slide change');
+  }
+}
+```
+
+`[config]`
+
+```js
+import { Component } from '@angular/core';
+
+// import Swiper core and required modules
+import SwiperCore, { SwiperOptions } from 'swiper';
+
+@Component({
+  selector: 'app-swiper-example',
+  template: `
+    <swiper
+      [config]="config"
+      (swiper)="onSwiper($event)"
+      (slideChange)="onSlideChange()"
+    >
+      <ng-template swiperSlide>Slide 1</ng-template>
+      <ng-template swiperSlide>Slide 2</ng-template>
+      <ng-template swiperSlide>Slide 3</ng-template>
+      <ng-template swiperSlide>Slide 4</ng-template>
+      <ng-template swiperSlide>Slide 5</ng-template>
+      <ng-template swiperSlide>Slide 6</ng-template>
+    </swiper>
+  `,
+})
+export class AppComponent {
+  config: SwiperOptions = {
+    slidesPerView: 3,
+    spaceBetween: 50,
+    navigation: true,
+    pagination: { clickable: true },
+    scrollbar: { draggable: true },
+  };
   onSwiper(swiper) {
     console.log(swiper);
   }
