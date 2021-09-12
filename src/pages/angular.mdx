@@ -230,9 +230,83 @@ export class AppComponent {
 ```
 
 <a href="https://stackblitz.com/edit/swiper-angular-example?file=src/app/app.component.ts">
-  Edit on Stackblitz
+  Stackblitz playground with a lot of demos
 </a>
-;
+
+## Accessing swiper reference
+
+```js
+import { Component } from '@angular/core';
+
+// import Swiper core and required modules
+import SwiperCore, { Swiper } from 'swiper';
+
+// install Swiper modules
+SwiperCore.use([]);
+
+@Component({
+  selector: 'app-swiper-fade-example',
+  template: `
+    <swiper #swiper>
+      <ng-template swiperSlide>Slide 1</ng-template>
+      <ng-template swiperSlide>Slide 2</ng-template>
+      <ng-template swiperSlide>Slide 3</ng-template>
+      <ng-template swiperSlide>Slide 4</ng-template>
+      <ng-template swiperSlide>Slide 5</ng-template>
+      <ng-template swiperSlide>Slide 6</ng-template>
+      <ng-template swiperSlide>Slide 7</ng-template>
+    </swiper>
+    <button (click)="slideNext()">Next slide</button>
+    <button (click)="slidePrev()">Prev slide</button>
+  `,
+})
+export class AppComponent {
+  @ViewChild('swiper', { static: false }) swiper?: SwiperComponent;
+  slideNext(){
+    this.swiper.swiperRef.slideNext(100);
+  }
+  slidePrev(){
+    this.swiper.swiperRef.slidePrev(100);
+  }
+}
+```
+
+## Controlling slide index
+
+use `[(index)]` to get & set current slide index
+
+```js
+import { Component } from '@angular/core';
+
+// import Swiper core and required modules
+import SwiperCore, { Swiper } from 'swiper';
+
+// install Swiper modules
+SwiperCore.use([]);
+
+@Component({
+  selector: 'app-swiper-fade-example',
+  template: `
+    <swiper [(index)]="indexNumber">
+      <ng-template swiperSlide>Slide 1</ng-template>
+      <ng-template swiperSlide>Slide 2</ng-template>
+      <ng-template swiperSlide>Slide 3</ng-template>
+      <ng-template swiperSlide>Slide 4</ng-template>
+      <ng-template swiperSlide>Slide 5</ng-template>
+      <ng-template swiperSlide>Slide 6</ng-template>
+      <ng-template swiperSlide>Slide 7</ng-template>
+    </swiper>
+    <button (click)="indexNumber = 0">0</button>
+    <button (click)="indexNumber = 3">3</button>
+    <button (click)="indexNumber = 5">5</button>
+    <button (click)="indexNumber = 6">6</button>
+    {{ indexNumber }}
+  `,
+})
+export class AppComponent {
+  indexNumber: number;
+}
+```
 
 ## SwiperComponent props
 
@@ -356,11 +430,6 @@ export class AppComponent {
 }
 ```
 
-<a href="https://stackblitz.com/edit/swiper-angular-virtual?file=src%2Fapp%2Fapp.component.ts">
-  Edit on Stackblitz
-</a>
-;
-
 ## Effects
 
 The following effects are available:
@@ -404,10 +473,6 @@ SwiperCore.use([EffectFade]);
 export class AppComponent {}
 ```
 
-<a href="https://stackblitz.com/edit/swiper-angular-fade?file=src/app/app.component.ts">
-  Edit on Stackblitz
-</a>
-
 ## What next?
 
 As you see it is really easy to integrate Swiper into your website or app. So here are your next steps:
@@ -417,3 +482,7 @@ As you see it is really easy to integrate Swiper into your website or app. So he
 - If you have questions about Swiper ask them in <a href="http://stackoverflow.com" target="_blank">StackOverflow</a> or <a href="https://github.com/nolimits4web/swiper/discussions" target="_blank">Swiper Discussions</a>.
 - Create issue on <a href="https://github.com/nolimits4web/swiper/" target="_blank">GitHub</a> if you found a bug.
 - If you are looking for support, we have a private Discord support chat room for <a href="https://www.patreon.com/swiperjs" target="_blank">Swiper Patrons</a>.
+
+```
+
+```
