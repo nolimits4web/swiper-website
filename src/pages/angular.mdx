@@ -229,10 +229,47 @@ export class AppComponent {
 }
 ```
 
-<a href="https://stackblitz.com/edit/swiper-angular-example?file=src/app/app.component.ts">
-  Edit on Stackblitz
+<a href="https://codesandbox.io/s/swiper-angular-example-9edj9">
+  Codesandbox playground with a lot of demos
 </a>
-;
+
+## Accessing swiper reference
+
+```js
+import { Component } from '@angular/core';
+
+// import Swiper core and required modules
+import SwiperCore, { Swiper } from 'swiper';
+
+// install Swiper modules
+SwiperCore.use([]);
+
+@Component({
+  selector: 'app-swiper-fade-example',
+  template: `
+    <swiper #swiper>
+      <ng-template swiperSlide>Slide 1</ng-template>
+      <ng-template swiperSlide>Slide 2</ng-template>
+      <ng-template swiperSlide>Slide 3</ng-template>
+      <ng-template swiperSlide>Slide 4</ng-template>
+      <ng-template swiperSlide>Slide 5</ng-template>
+      <ng-template swiperSlide>Slide 6</ng-template>
+      <ng-template swiperSlide>Slide 7</ng-template>
+    </swiper>
+    <button (click)="slideNext()">Next slide</button>
+    <button (click)="slidePrev()">Prev slide</button>
+  `,
+})
+export class AppComponent {
+  @ViewChild('swiper', { static: false }) swiper?: SwiperComponent;
+  slideNext(){
+    this.swiper.swiperRef.slideNext(100);
+  }
+  slidePrev(){
+    this.swiper.swiperRef.slidePrev(100);
+  }
+}
+```
 
 ## SwiperComponent props
 
@@ -356,11 +393,6 @@ export class AppComponent {
 }
 ```
 
-<a href="https://stackblitz.com/edit/swiper-angular-virtual?file=src%2Fapp%2Fapp.component.ts">
-  Edit on Stackblitz
-</a>
-;
-
 ## Effects
 
 The following effects are available:
@@ -403,10 +435,6 @@ SwiperCore.use([EffectFade]);
 })
 export class AppComponent {}
 ```
-
-<a href="https://stackblitz.com/edit/swiper-angular-fade?file=src/app/app.component.ts">
-  Edit on Stackblitz
-</a>
 
 ## What next?
 
