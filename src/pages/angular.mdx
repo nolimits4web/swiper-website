@@ -271,43 +271,6 @@ export class AppComponent {
 }
 ```
 
-## Controlling slide index
-
-use `[(index)]` to get & set current slide index
-
-```js
-import { Component } from '@angular/core';
-
-// import Swiper core and required modules
-import SwiperCore, { Swiper } from 'swiper';
-
-// install Swiper modules
-SwiperCore.use([]);
-
-@Component({
-  selector: 'app-swiper-fade-example',
-  template: `
-    <swiper [(index)]="indexNumber">
-      <ng-template swiperSlide>Slide 1</ng-template>
-      <ng-template swiperSlide>Slide 2</ng-template>
-      <ng-template swiperSlide>Slide 3</ng-template>
-      <ng-template swiperSlide>Slide 4</ng-template>
-      <ng-template swiperSlide>Slide 5</ng-template>
-      <ng-template swiperSlide>Slide 6</ng-template>
-      <ng-template swiperSlide>Slide 7</ng-template>
-    </swiper>
-    <button (click)="indexNumber = 0">0</button>
-    <button (click)="indexNumber = 3">3</button>
-    <button (click)="indexNumber = 5">5</button>
-    <button (click)="indexNumber = 6">6</button>
-    {{ indexNumber }}
-  `,
-})
-export class AppComponent {
-  indexNumber: number;
-}
-```
-
 ## SwiperComponent props
 
 `Swiper` Angular component receive all <a href="/api/#parameters">Swiper parameters</a> as component props
