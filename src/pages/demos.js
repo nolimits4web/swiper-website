@@ -4,6 +4,7 @@ import Heading from '@/components/Heading';
 import { WithSidebarLayout } from '@/layouts/withSidebar';
 import { useLazyDemos } from 'src/shared/use-lazy-demos';
 import demos from 'src/demos.json';
+import uiinitiativeDemos from 'src/uiinitiative-demos.json';
 import codeSandboxFiles from 'src/shared/codesandbox/codesandbox-files';
 import { compressToBase64 } from 'src/shared/lz-string';
 import Carbon from '@/components/Carbon';
@@ -129,6 +130,25 @@ export default function DemosPage() {
           here
         </a>
       </p>
+      <h2>UI Initiative</h2>
+      <div className="flex my-4 overflow-auto space-x-4 pb-4">
+        {uiinitiativeDemos.map(({ cover, url, title }) => (
+          <a
+            className="flex-shrink-0 w-8/12 rounded-lg bg-black bg-opacity-10"
+            href={url}
+            target="_blank"
+            title={title}
+          >
+            <img
+              width="1200"
+              height="600"
+              className="rounded-lg block !m-0"
+              src={cover}
+              alt={title}
+            />
+          </a>
+        ))}
+      </div>
       {demos.map(({ title, slug, folder, skip }, demoIndex) => (
         <React.Fragment key={title}>
           <Heading level={2} id={slug} toc={true}>

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ReactComponent as Logo } from '@/img/logo-white.svg';
 import { ReactComponent as PatreonLogo } from '@/img/patreon-logo.svg';
 import { useRef } from 'react';
+import { trackOutbound } from 'src/shared/track-outbound';
 
 export default function Header() {
   const buttonElRef = useRef(null);
@@ -44,6 +45,7 @@ export default function Header() {
               href="https://www.patreon.com/swiperjs"
               target="_blank"
               className="text-white inline-flex items-center text-xs font-medium opacity-60 hover:opacity-100 hover:no-underline"
+              onClick={() => trackOutbound('https://www.patreon.com/swiperjs')}
             >
               <PatreonLogo className="w-3 h-3 mr-1" />
               <span>Support Swiper</span>
@@ -87,7 +89,10 @@ export default function Header() {
               href="https://www.patreon.com/swiperjs"
               target="_blank"
               className="font-medium mr-4 text-gray-500 hover:text-primary hover:bg-primary hover:bg-opacity-10 duration-100 block text-base py-2 px-4 w-full hover:no-underline flex items-center"
-              onClick={hideMenu}
+              onClick={() => {
+                trackOutbound('https://www.patreon.com/swiperjs');
+                hideMenu();
+              }}
               onPointerDown={(e) => e.preventDefault()}
             >
               <PatreonLogo className="w-4 h-4 mr-1 text-[#FF424D]" />

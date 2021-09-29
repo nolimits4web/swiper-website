@@ -10,6 +10,8 @@ export default function HomeProjects() {
         href="https://framework7.io"
         target="_blank"
         className="project-banner project-banner-f7 mx-auto inline-block sm:block"
+        innerClassName="border border-black border-opacity-10"
+        rotateTouch="scroll-y"
         onClick={() => trackOutbound('https://framework7.io')}
       >
         <img
@@ -40,6 +42,8 @@ export default function HomeProjects() {
         target="_blank"
         className="project-banner project-banner-twm mx-auto inline-block sm:block"
         onClick={() => trackOutbound('https://tailwind-mobile.com')}
+        innerClassName="border border-black border-opacity-10"
+        rotateTouch="scroll-y"
       >
         <img
           className="project-banner-spacer"
@@ -73,6 +77,8 @@ export default function HomeProjects() {
         href="https://atroposjs.com"
         target="_blank"
         className="project-banner project-banner-atropos mx-auto inline-block sm:block"
+        innerClassName="border border-black border-opacity-10"
+        rotateTouch="scroll-y"
         onClick={() => trackOutbound('https://atroposjs.com')}
       >
         <img

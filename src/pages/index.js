@@ -8,6 +8,10 @@ import Carbon from '@/components/Carbon';
 import HomeHeader from '@/components/HomeHeader';
 import HomeSponsors from '@/components/HomeSponsors';
 import HomeProjects from '@/components/HomeProjects';
+import UIInitiativeBanner from '@/components/UIInitiativeBanner';
+import { trackOutbound } from 'src/shared/track-outbound';
+import { ReactComponent as PatreonLogo } from '@/img/patreon-logo.svg';
+import { ReactComponent as OpenCollectiveLogo } from '@/img/opencollective-logo.svg';
 
 const libs = [
   {
@@ -213,6 +217,12 @@ export default function Home() {
         </div>
 
         <div className="mt-24 text-center mb-20 mx-auto max-w-6xl">
+          <HomeHeading>UI Initiative</HomeHeading>
+          <p>Premium Swiper templates & plugins for Swiper patrons</p>
+          <UIInitiativeBanner />
+        </div>
+
+        <div className="mt-24 text-center mb-20 mx-auto max-w-6xl">
           <HomeHeading>More Of Our Projects</HomeHeading>
           <HomeProjects />
         </div>
@@ -223,24 +233,46 @@ export default function Home() {
           <div className="my-4">
             Support Swiper on{' '}
             <a
-              href="http://opencollective.com/swiper"
+              href="https://opencollective.com/swiper"
               target="_blank"
               rel="noopener"
+              onClick={() => trackOutbound('https://opencollective.com/swiper')}
             >
               Open Collective
+            </a>{' '}
+            or{' '}
+            <a
+              href="https://patreon.com/swiperjs"
+              target="_blank"
+              rel="noopener"
+              onClick={() => trackOutbound('https://patreon.com/swiperjs')}
+            >
+              Patreon
             </a>{' '}
             and help us to make it even better!
             <br />
             Your support means a lot for us!
           </div>
-          <div className="my-4">
+          <div className="my-4 items-center space-y-6 flex flex-col">
             <a
-              href="http://opencollective.com/swiper"
+              href="https://opencollective.com/swiper"
               rel="noopener"
               target="_blank"
-              className="bg-primary font-bold rounded-full text-white shadow-lg hover:no-underline hover:bg-opacity-95 duration-200 inline-block w-96 px-4 py-6 my-2 max-w-full text-xl"
+              className="inline-flex text-black text-sm sm:text-lg items-center px-6 py-4 bg-white font-medium rounded-full shadow-lg hover:no-underline hover:bg-black hover:bg-opacity-5 duration-200 max-w-full"
+              onClick={() => trackOutbound('https://opencollective.com/swiper')}
             >
-              Become a sponsor
+              <OpenCollectiveLogo className="w-6 h-6 mr-4" />
+              <span>Become a sponsor on OpenCollective</span>
+            </a>
+            <a
+              href="https://patreon.com/swiperjs"
+              rel="noopener"
+              target="_blank"
+              className="inline-flex text-black text-sm sm:text-lg items-center px-6 py-4 bg-white font-medium rounded-full shadow-lg hover:no-underline hover:bg-black hover:bg-opacity-5 duration-200 max-w-full"
+              onClick={() => trackOutbound('https://patreon.com/swiperjs')}
+            >
+              <PatreonLogo className="text-[#FF424D] w-6 h-6 mr-4" />
+              <span>Support Swiper on Patreon</span>
             </a>
           </div>
         </div>

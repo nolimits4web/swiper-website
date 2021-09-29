@@ -5,23 +5,16 @@ const PlanSection = (props) => {
   const { showPlaceholder, showTitle } = props;
   const items = sponsors.filter(({ plan }) => props.plan === plan);
   const sizes = {
-    'Platinum Sponsor': 'w-40 h-40',
-    'Gold Sponsor': 'w-36 h-36',
-    'Silver Sponsor': 'w-32 h-32',
-    Sponsor: 'w-28 h-28',
-  }[props.plan];
-
-  const shadow = {
-    'Platinum Sponsor': 'shadow-xl hover:shadow-2xl',
-    'Gold Sponsor': 'shadow-lg hover:shadow-xl',
-    'Silver Sponsor': 'shadow-lg hover:shadow-xl',
-    Sponsor: '',
+    'Platinum Sponsor': 'm-2 w-40 h-40',
+    'Gold Sponsor': 'm-2 w-36 h-36',
+    'Silver Sponsor': 'm-2 sm:m-3 w-24 h-24 sm:w-32 sm:h-32',
+    Sponsor: 'm-2 w-16 h-16 sm:w-24 sm:h-24',
   }[props.plan];
 
   if (!items.length && !showPlaceholder) return null;
 
   return (
-    <div className="my-10">
+    <div className="mb-20">
       {showTitle && (
         <h2 className="text-2xl sm:text-3xl text-gray-900 text-center font-extrabold mb-4">
           {props.plan}s
@@ -31,7 +24,7 @@ const PlanSection = (props) => {
         {items.map(({ link, title, image }) => {
           return (
             <a
-              className={`flex justify-center items-center p-1 m-2 text-center duration-300 ${sizes} ${shadow}`}
+              className={`flex justify-center items-center text-center duration-300 ${sizes}`}
               href={link}
               key={title}
               title={title}
@@ -51,6 +44,7 @@ const PlanSection = (props) => {
           <a
             className={`flex justify-center items-center p-3 m-4 text-center duration-300 bg-gray-100 hover:bg-gray-200 text-sm font-semibold hover:no-underline ${sizes}`}
             href={'https://opencollective.com/swiper'}
+            onClick={() => trackOutbound('https://opencollective.com/swiper')}
             rel="noopener"
             target="_blank"
           >
