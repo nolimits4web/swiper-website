@@ -45,6 +45,7 @@ function App({ Component, pageProps, router }) {
           content="https://swiperjs.com/images/share-banner-new.png"
         />
         <link rel="shortcut icon" href="/images/favicon.png" />
+        <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
         <link
           rel="mask-icon"
           sizes="any"
