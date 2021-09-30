@@ -8,6 +8,7 @@ import uiinitiativeDemos from 'src/uiinitiative-demos.json';
 import codeSandboxFiles from 'src/shared/codesandbox/codesandbox-files';
 import { compressToBase64 } from 'src/shared/lz-string';
 import Carbon from '@/components/Carbon';
+import { trackOutbound } from 'src/shared/track-outbound';
 
 let tableOfContents;
 
@@ -138,6 +139,7 @@ export default function DemosPage() {
             href={url}
             target="_blank"
             title={title}
+            onClick={() => trackOutbound(url)}
           >
             <img
               width="1200"
