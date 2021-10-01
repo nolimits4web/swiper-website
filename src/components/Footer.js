@@ -20,18 +20,6 @@ export default function Footer() {
   return (
     <footer className="border-t-8 border-primary text-center py-10 px-4 sm:px-6 lg:px-8 xl:px-10">
       <div className="max-w-5xl mx-auto font-medium">
-        <div>
-          Supported by:{' '}
-          <a
-            href="https://www.colognewebdesign.de"
-            rel="noopener"
-            target="_blank"
-            title="COLOGNE WEBDESIGN"
-            onClick={() => trackOutbound('https://www.colognewebdesign.de')}
-          >
-            COLOGNE WEBDESIGN
-          </a>
-        </div>
         <FooterSponsors />
         <div className="text-center my-8">
           <a
