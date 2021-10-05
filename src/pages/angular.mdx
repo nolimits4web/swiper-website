@@ -237,17 +237,17 @@ export class AppComponent {
 
 ```js
 import { Component } from '@angular/core';
-
+import { SwiperComponent } from "swiper/angular";
 // import Swiper core and required modules
-import SwiperCore, { Swiper } from 'swiper';
+import SwiperCore, { Swiper, Virtual } from 'swiper';
 
 // install Swiper modules
-SwiperCore.use([]);
+SwiperCore.use([Virtual]);
 
 @Component({
   selector: 'app-swiper-fade-example',
   template: `
-    <swiper #swiper>
+    <swiper #swiper [virtual]="true">
       <ng-template swiperSlide>Slide 1</ng-template>
       <ng-template swiperSlide>Slide 2</ng-template>
       <ng-template swiperSlide>Slide 3</ng-template>
