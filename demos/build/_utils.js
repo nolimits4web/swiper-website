@@ -79,6 +79,8 @@ module.exports.extractConfig = (configObj, mode = 'core') => {
           'hash-navigation',
           'autoplay',
           'thumbs',
+          'freemode',
+          'grid',
         ].includes(name.toLowerCase()) &&
         !modules.includes(nameFormatted)
       ) {
@@ -93,6 +95,8 @@ module.exports.extractConfig = (configObj, mode = 'core') => {
             'history',
             'hash-navigation',
             'autoplay',
+            'freemode',
+            'grid',
           ].includes(name.toLowerCase())
         ) {
           cssModules.push(camelCaseToDash(nameFormatted));
