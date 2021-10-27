@@ -419,6 +419,24 @@ export default () => {
 };
 ```
 
+## Usage with Create React App
+
+Create React App doesn't support pure ESM packages yet. It is still possible to use Swiper (7.2.0+) with it.
+
+In this case we need to use direct file imports:
+
+```js
+// Core modules imports are same as usual
+import { Navigation, Pagination } from 'swiper';
+// Direct React component imports
+import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
+
+// Styles must use direct files imports
+import 'swiper/swiper.scss'; // core Swiper
+import 'swiper/modules/navigation/navigation.scss'; // Navigation module
+import 'swiper/modules/pagination/pagination.scss'; // Pagination module
+```
+
 ## What next?
 
 As you see it is really easy to integrate Swiper into your website or app. So here are your next steps:
