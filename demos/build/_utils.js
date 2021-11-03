@@ -87,7 +87,6 @@ module.exports.extractConfig = (configObj, mode = 'core') => {
         modules.push(nameFormatted);
         if (
           ![
-            'virtual',
             'keyboard',
             'mousewheel',
             'parallax',
@@ -95,8 +94,6 @@ module.exports.extractConfig = (configObj, mode = 'core') => {
             'history',
             'hash-navigation',
             'autoplay',
-            'freemode',
-            'grid',
           ].includes(name.toLowerCase())
         ) {
           cssModules.push(camelCaseToDash(nameFormatted));
