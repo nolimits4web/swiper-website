@@ -38,37 +38,37 @@ export default function HomeProjects() {
       <Atropos
         component="a"
         highlight
-        href="https://tailwind-mobile.com"
+        href="https://konstaui.com"
         target="_blank"
         className="project-banner project-banner-twm mx-auto inline-block sm:block"
-        onClick={() => trackOutbound('https://tailwind-mobile.com')}
+        onClick={() => trackOutbound('https://konstaui.com')}
         innerClassName="border border-black border-opacity-10 hover:border-opacity-0"
         rotateTouch="scroll-y"
       >
         <img
           className="project-banner-spacer"
           src="/images/projects/twm-text.svg"
-          alt="tailwind-mobile-logo"
+          alt="konsta-logo"
         />
         <img
           data-atropos-offset="0"
           src="/images/projects/twm-text.svg"
-          alt="tailwind-mobile-logo"
+          alt="konsta-logo"
         />
         <img
           data-atropos-offset="2.5"
           src="/images/projects/twm-logo-back.svg"
-          alt="tailwind-mobile-logo"
+          alt="konsta-logo"
         />
         <img
           data-atropos-offset="5"
           src="/images/projects/twm-logo-top.svg"
-          alt="tailwind-mobile-logo"
+          alt="konsta-logo"
         />
         <img
           data-atropos-offset="7.5"
           src="/images/projects/twm-logo-bottom.svg"
-          alt="tailwind-mobile-logo"
+          alt="konsta-logo"
         />
       </Atropos>
       <Atropos
