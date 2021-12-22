@@ -18,7 +18,6 @@ const nextConfig = {
     disableStaticImages: true,
   },
   pageExtensions: ['js', 'jsx', 'mdx'],
-  target: 'serverless',
   env: {
     swiperReleaseVersion: pkg.releaseVersion,
     swiperReleaseDate: pkg.releaseDate,
