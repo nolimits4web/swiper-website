@@ -83,7 +83,7 @@ const buildOptions = async (
   const content = `
 export const ${typesName} = () => {
   return (
-    <table className="table-fixed params-table">
+    <table className="params-table">
       <thead>
         <tr>
           <th>Name</th>

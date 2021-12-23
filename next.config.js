@@ -12,14 +12,12 @@ const fallbackLayouts = {
 };
 
 const nextConfig = {
-  webpack5: true,
   experimental: { esmExternals: true },
   images: {
     // https://stackoverflow.com/questions/68008498/nextjs-typeerror-unsupported-file-type-undefined-after-update-to-v-11
     disableStaticImages: true,
   },
   pageExtensions: ['js', 'jsx', 'mdx'],
-  target: 'serverless',
   env: {
     swiperReleaseVersion: pkg.releaseVersion,
     swiperReleaseDate: pkg.releaseDate,
