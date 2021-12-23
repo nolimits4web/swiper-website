@@ -108,7 +108,7 @@ const buildMethods = async (
   const content = `
 export const ${typesName} = () => {
   return (
-    <table className="table-fixed methods-table">
+    <table className="methods-table">
       <tbody>
         ${
           props.length

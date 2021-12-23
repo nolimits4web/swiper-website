@@ -57,7 +57,7 @@ const buildEvents = async (typesName, typesData, ignoreEvents = []) => {
   const content = `
 export const ${typesName} = () => {
   return (
-    <table className="table-fixed events-table">
+    <table className="events-table">
       <thead>
         <tr>
           <th>Name</th>
