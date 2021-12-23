@@ -106,7 +106,7 @@ const feats = [
 
 export function HomeHeading({ children }) {
   return (
-    <h2 className="text-4xl sm:text-5xl text-gray-900 text-center font-extrabold mb-12">
+    <h2 className="text-4xl sm:text-5xl text-gray-900 dark:text-gray-200 text-center font-extrabold mb-12">
       {children}
     </h2>
   );
@@ -120,7 +120,7 @@ export default function Home() {
       </div>
       <div className="mx-auto max-w-[90rem] text-lg px-4 sm:px-6 lg:px-8 xl:px-10">
         <div className="flex flex-col space-y-5 mx-auto max-w-5xl">
-          <h1 className="text-4xl sm:text-5xl text-gray-900 font-extrabold mb-6 text-center">
+          <h1 className="text-4xl sm:text-5xl text-gray-900 dark:text-gray-200 font-extrabold mb-6 text-center">
             Swiper
           </h1>
           <p>
@@ -174,7 +174,7 @@ export default function Home() {
           <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 xl:gap-12 text-md">
             {feats.map(({ title, descr }) => (
               <li key={title}>
-                <h3 className="font-bold text-gray-900 text-2xl mb-4">
+                <h3 className="font-bold text-gray-900 dark:text-gray-200 text-2xl mb-4">
                   {title}
                 </h3>
                 {descr}

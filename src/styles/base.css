@@ -13,14 +13,13 @@
   }
 
   .important-note {
-    @apply border-l-4 px-5 py-4 my-3 border-red-500 bg-red-100;
+    @apply border-l-4 px-5 py-4 my-3 border-red-500 dark:border-red-500 bg-red-100 dark:bg-red-800/40;
   }
 }
 
 body {
   font-family: Inter, -apple-system, system-ui, Helvetica Neue, Helvetica, Arial,
     sans-serif;
-  color: #404247;
   -webkit-font-smoothing: antialiased;
 }
 body .prose {
@@ -48,4 +47,7 @@ body .prose pre code {
 }
 body .prose pre {
   border-radius: 0.75rem;
+}
+pre code {
+  background: transparent !important;
 }

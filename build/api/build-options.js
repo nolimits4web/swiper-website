@@ -97,7 +97,7 @@ export const ${typesName} = () => {
           parentType
             ? `
           <tr className="border-t">
-            <td className="w-1/6 text-red-700 font-mono font-semibold">
+            <td className="w-1/6 text-red-700 dark:text-red-500 font-mono font-semibold">
               <a href="#param-${parentType.name}" id="param-${
                 parentType.name
               }">${parentType.name}</a>
@@ -122,17 +122,17 @@ export const ${typesName} = () => {
           <tr className="border-t ${
             parentType ? 'params-table-nested-row' : ''
           }">
-            <td className="w-1/6 text-red-700 font-mono font-semibold">
+            <td className="w-1/6 text-red-700 dark:text-red-500 font-mono font-semibold">
               <a href="#param-${parentType ? `${parentType.name}-` : ''}${
               item.name
             }" id="param-${parentType ? `${parentType.name}-` : ''}${
               item.name
             }">${item.name}</a>
             </td>
-            <td className="w-1/6 text-green-700 font-mono font-semibold">
+            <td className="w-1/6 text-green-700 dark:text-green-500 font-mono font-semibold">
               ${type(item)}
             </td>
-            <td className="w-1/6 text-yellow-700 font-mono font-semibold">
+            <td className="w-1/6 text-yellow-700 dark:text-yellow-500 font-mono font-semibold">
               ${defaultValue(item)}
             </td>
             <td className="w-3/6 space-y-2">${description(item)}</td>

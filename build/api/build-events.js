@@ -70,12 +70,12 @@ export const ${typesName} = () => {
           .map(
             (item) => `
           <tr className="border-t">
-            <td className="w-1/4 font-mono font-semibold text-black">
+            <td className="w-1/4 font-mono font-semibold text-black dark:text-white">
               <a href="#event-${item.name}" id="event-${item.name}">${
               item.name
             }</a>
             </td>
-            <td className="w-1/4 text-red-700 font-mono font-semibold">
+            <td className="w-1/4 text-red-700 dark:text-red-500 font-mono font-semibold">
               ${args(item)}
             </td>
             <td className="w-1/2 space-y-2">${description(item, true)}</td>
