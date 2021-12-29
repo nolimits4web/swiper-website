@@ -12,6 +12,9 @@ module.exports = {
         purple: colors.violet,
       },
       typography: (theme) => ({
+        DEFAULT: {
+          css: {},
+        },
         dark: {
           css: {
             color: theme('colors.gray.400'),
@@ -31,10 +34,6 @@ module.exports = {
             },
             pre: {
               boxShadow: 'inset 0 0 0 1px rgb(255 255 255 / 0.1)',
-            },
-            a: {
-              color: theme('colors.white'),
-              borderBottomColor: theme('colors.primary'),
             },
             strong: {
               color: theme('colors.gray.200'),

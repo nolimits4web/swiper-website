@@ -40,7 +40,7 @@ export default function Footer() {
         <nav className="my-8 space-x-4 flex flex-wrap justify-center">
           {menu}
         </nav>
-        <div className="text-gray-700">
+        <div className="text-gray-700 dark:text-white">
           {new Date().getFullYear()} © Swiper by{' '}
           <a href="https://nolimits4web.com" target="_blank">
             <img

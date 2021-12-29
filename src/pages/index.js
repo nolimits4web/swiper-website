@@ -13,6 +13,25 @@ import { trackOutbound } from 'src/shared/track-outbound';
 import { ReactComponent as PatreonLogo } from '@/img/patreon-logo.svg';
 import { ReactComponent as OpenCollectiveLogo } from '@/img/opencollective-logo.svg';
 
+function SponsorButton(props) {
+  const { href, className, onClick, children, ...restProps } = props;
+  return (
+    <a
+      href={href}
+      rel="noopener"
+      target="_blank"
+      {...restProps}
+      className={`inline-flex text-black text-sm sm:text-lg items-center px-6 py-4 bg-white font-medium rounded-full shadow-lg hover:no-underline hover:bg-black dark:bg-primary/80 dark:hover:bg-primary hover:bg-opacity-5 duration-200 max-w-full ${className}`}
+      onClick={(e) => {
+        onClick(e);
+        trackOutbound(href);
+      }}
+    >
+      {children}
+    </a>
+  );
+}
+
 const libs = [
   {
     title: 'JavaScript',
@@ -254,26 +273,14 @@ export default function Home() {
             Your support means a lot for us!
           </div>
           <div className="my-4 items-center space-y-6 flex flex-col">
-            <a
-              href="https://opencollective.com/swiper"
-              rel="noopener"
-              target="_blank"
-              className="inline-flex text-black text-sm sm:text-lg items-center px-6 py-4 bg-white font-medium rounded-full shadow-lg hover:no-underline hover:bg-black hover:bg-opacity-5 duration-200 max-w-full"
-              onClick={() => trackOutbound('https://opencollective.com/swiper')}
-            >
+            <SponsorButton href="https://opencollective.com/swiper">
               <OpenCollectiveLogo className="w-6 h-6 mr-4" />
               <span>Become a sponsor on OpenCollective</span>
-            </a>
-            <a
-              href="https://patreon.com/swiperjs"
-              rel="noopener"
-              target="_blank"
-              className="inline-flex text-black text-sm sm:text-lg items-center px-6 py-4 bg-white font-medium rounded-full shadow-lg hover:no-underline hover:bg-black hover:bg-opacity-5 duration-200 max-w-full"
-              onClick={() => trackOutbound('https://patreon.com/swiperjs')}
-            >
+            </SponsorButton>
+            <SponsorButton href="https://patreon.com/swiperjs">
               <PatreonLogo className="text-[#FF424D] w-6 h-6 mr-4" />
               <span>Support Swiper on Patreon</span>
-            </a>
+            </SponsorButton>
           </div>
         </div>
       </div>

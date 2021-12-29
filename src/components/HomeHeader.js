@@ -5,6 +5,7 @@ import menuList from 'src/shared/menu-list';
 import GithubStats from '@/components/GithubStats';
 import { ReactComponent as Logo } from '@/img/logo-white.svg';
 import HomeSlider from './HomeSlider';
+import { ThemeToggle } from './ThemeToggle';
 
 export default function HomeHeader() {
   return (
@@ -42,6 +43,10 @@ export default function HomeHeader() {
           </div>
           <div className="flex justify-center lg:justify-start">
             <GithubStats white />
+
+            <div className="relative ml-2">
+              <ThemeToggle />
+            </div>
           </div>
         </div>
 

@@ -14,12 +14,12 @@ export default function SidebarSponsors() {
           Become a sponsor
         </a>
       </div>
-      <div className="bg-white grid grid-cols-5 gap-2">
+      <div className="bg-white dark:bg-gray-900 grid grid-cols-5 gap-2">
         {sponsors
           .filter(({ plan }) => plan !== 'Sponsor')
           .map(({ link, title, image_h, image, alt }) => (
             <a
-              className="hover:opacity-80 flex items-center justify-center"
+              className="hover:opacity-80 flex items-center justify-center bg-white dark:rounded-sm overflow-hidden"
               href={link}
               key={title}
               title={title}

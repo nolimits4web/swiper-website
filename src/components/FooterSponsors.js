@@ -9,7 +9,7 @@ export default function FooterSponsors() {
         .map(({ link, title, image, image_h, alt }) => {
           return (
             <a
-              className="flex justify-center border p-1 items-center text-center hover:bg-gray-50 h-20"
+              className="flex justify-center border p-1 items-center text-center hover:bg-gray-50 dark:bg-white dark:hover:bg-white/90 h-20"
               href={link}
               key={title}
               title={title}
