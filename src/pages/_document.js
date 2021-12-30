@@ -11,8 +11,21 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                try {
+                  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark')
+                  } else {
+                    document.documentElement.classList.remove('dark')
+                  }
+                } catch (_) {}
+              `,
+            }}
+          />
         </Head>
-        <body>
+        <body className="bg-white dark:bg-gray-900 text-[#404247] dark:text-gray-400">
           <Main />
           <NextScript />
         </body>

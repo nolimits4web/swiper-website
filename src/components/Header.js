@@ -5,6 +5,7 @@ import { ReactComponent as Logo } from '@/img/logo-white.svg';
 import { ReactComponent as PatreonLogo } from '@/img/patreon-logo.svg';
 import { useRef } from 'react';
 import { trackOutbound } from 'src/shared/track-outbound';
+import { ThemeToggle } from './ThemeToggle';
 
 export default function Header() {
   const buttonElRef = useRef(null);
@@ -101,6 +102,9 @@ export default function Header() {
           </nav>
         </div>
         <GithubStats white responsive className="md:ml-auto" />
+        <div className="relative flex ml-4">
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );

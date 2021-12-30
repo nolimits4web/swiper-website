@@ -36,7 +36,7 @@ export function WithSidebarLayout({
             </div>
           </div>
         )}
-        <div className="max-w-none prose min-w-0 flex-auto pt-10 pb-24 lg:pb-16">
+        <div className="max-w-none prose dark:prose-dark min-w-0 flex-auto pt-10 pb-24 lg:pb-16">
           {meta.carbon && <Carbon />}
           {meta.title && (
             <PageHeader title={meta.title} description={meta.description} />

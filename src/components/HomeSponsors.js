@@ -16,7 +16,7 @@ const PlanSection = (props) => {
   return (
     <div className="mb-20">
       {showTitle && (
-        <h2 className="text-2xl sm:text-3xl text-gray-900 text-center font-extrabold mb-4">
+        <h2 className="text-2xl sm:text-3xl text-gray-900 dark:text-gray-200 text-center font-extrabold mb-4">
           {props.plan}s
         </h2>
       )}
@@ -24,7 +24,7 @@ const PlanSection = (props) => {
         {items.map(({ link, title, image }) => {
           return (
             <a
-              className={`flex justify-center items-center text-center duration-300 ${sizes}`}
+              className={`flex justify-center items-center text-center duration-300 dark:bg-white dark:p-0.5 ${sizes}`}
               href={link}
               key={title}
               title={title}

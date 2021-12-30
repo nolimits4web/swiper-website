@@ -7,7 +7,7 @@ export default function SponsorsPage() {
   return (
     <>
       <div className="mx-auto max-w-[90rem] text-lg px-4 py-20">
-        <h1 className="text-4xl text-center sm:text-5xl text-gray-900 font-extrabold mb-12">
+        <h1 className="text-4xl text-center sm:text-5xl text-gray-900 dark:text-gray-200 font-extrabold mb-12">
           Swiper Sponsors
         </h1>
 
@@ -17,6 +17,7 @@ export default function SponsorsPage() {
             href="https://opencollective.com/swiper"
             target="_blank"
             rel="noopener"
+            className="dark:text-primaryLight"
             onClick={() => trackOutbound('https://opencollective.com/swiper')}
           >
             Open Collective
@@ -26,6 +27,7 @@ export default function SponsorsPage() {
             href="https://patreon.com/swiperjs"
             target="_blank"
             rel="noopener"
+            className="dark:text-primaryLight"
             onClick={() => trackOutbound('https://patreon.com/swiperjs')}
           >
             Patreon
@@ -38,7 +40,7 @@ export default function SponsorsPage() {
               href="https://opencollective.com/swiper"
               rel="noopener"
               target="_blank"
-              className="inline-flex text-black text-sm sm:text-lg items-center px-6 py-4 bg-white font-medium rounded-full shadow-lg hover:no-underline hover:bg-black hover:bg-opacity-5 duration-200 max-w-full"
+              className="inline-flex text-black text-sm sm:text-lg items-center px-6 py-4 bg-white font-medium rounded-full shadow-lg hover:no-underline hover:bg-black hover:bg-opacity-5 duration-200 max-w-full dark:hover:bg-white dark:hover:bg-opacity-75"
               onClick={() => trackOutbound('https://opencollective.com/swiper')}
             >
               <OpenCollectiveLogo className="w-6 h-6 mr-4" />
@@ -48,7 +50,7 @@ export default function SponsorsPage() {
               href="https://patreon.com/swiperjs"
               rel="noopener"
               target="_blank"
-              className="inline-flex text-black text-sm sm:text-lg items-center px-6 py-4 bg-white font-medium rounded-full shadow-lg hover:no-underline hover:bg-black hover:bg-opacity-5 duration-200 max-w-full"
+              className="inline-flex text-black text-sm sm:text-lg items-center px-6 py-4 bg-white font-medium rounded-full shadow-lg hover:no-underline hover:bg-black hover:bg-opacity-5 duration-200 max-w-full dark:hover:bg-white dark:hover:bg-opacity-75"
               onClick={() => trackOutbound('https://patreon.com/swiperjs')}
             >
               <PatreonLogo className="text-[#FF424D] w-6 h-6 mr-4" />
