@@ -5,7 +5,7 @@
 @layer base {
   a,
   body .prose a {
-    @apply text-primary hover:underline dark:text-white;
+    @apply text-primary hover:underline;
   }
   .dark footer a {
     @apply text-primaryLight;

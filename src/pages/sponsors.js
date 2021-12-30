@@ -17,6 +17,7 @@ export default function SponsorsPage() {
             href="https://opencollective.com/swiper"
             target="_blank"
             rel="noopener"
+            className="dark:text-primaryLight"
             onClick={() => trackOutbound('https://opencollective.com/swiper')}
           >
             Open Collective
@@ -26,6 +27,7 @@ export default function SponsorsPage() {
             href="https://patreon.com/swiperjs"
             target="_blank"
             rel="noopener"
+            className="dark:text-primaryLight"
             onClick={() => trackOutbound('https://patreon.com/swiperjs')}
           >
             Patreon

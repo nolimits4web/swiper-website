@@ -21,7 +21,7 @@ function SponsorButton(props) {
       rel="noopener"
       target="_blank"
       {...restProps}
-      className={`inline-flex text-black text-sm sm:text-lg items-center px-6 py-4 bg-white font-medium rounded-full shadow-lg hover:no-underline hover:bg-black dark:bg-primary/80 dark:hover:bg-primary hover:bg-opacity-5 duration-200 max-w-full ${className}`}
+      className={`inline-flex text-black text-sm sm:text-lg items-center px-6 py-4 bg-white font-medium rounded-full shadow-lg hover:no-underline hover:bg-black dark:bg-primary/80 dark:hover:bg-primary dark:text-white hover:bg-opacity-5 duration-200 max-w-full ${className}`}
       onClick={(e) => {
         onClick(e);
         trackOutbound(href);
@@ -255,6 +255,7 @@ export default function Home() {
               href="https://opencollective.com/swiper"
               target="_blank"
               rel="noopener"
+              className="dark:text-primaryLight"
               onClick={() => trackOutbound('https://opencollective.com/swiper')}
             >
               Open Collective
@@ -264,6 +265,7 @@ export default function Home() {
               href="https://patreon.com/swiperjs"
               target="_blank"
               rel="noopener"
+              className="dark:text-primaryLight"
               onClick={() => trackOutbound('https://patreon.com/swiperjs')}
             >
               Patreon
