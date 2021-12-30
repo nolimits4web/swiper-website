@@ -15,7 +15,7 @@ module.exports = (mode = 'core') => ({
     text-align: center;
     font-size: 18px;
     background: #fff;
-    height: calc((100% - 30px) / 2);
+    height: calc((100% - 30px) / 2) !important;
 
     /* Center slide text vertically */
     display: -webkit-box;
