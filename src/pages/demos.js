@@ -120,7 +120,7 @@ export default function DemosPage() {
         />
       </form>
       <Carbon />
-      <h1>Swiper Demos</h1>
+      <h1 className="dark:text-gray-200">Swiper Demos</h1>
       <p>
         You can download all these demos and hook into the code from GitHub{' '}
         <a
@@ -132,10 +132,16 @@ export default function DemosPage() {
         </a>
       </p>
       <h2>UI Initiative</h2>
+      <p>
+        Premium Swiper templates from{' '}
+        <a href="https://uiinitiative.com" target="_blank">
+          UI Initiative
+        </a>
+      </p>
       <div className="flex my-4 overflow-auto space-x-4 pb-4">
         {uiinitiativeDemos.map(({ cover, url, title }) => (
           <a
-            className="flex-shrink-0 w-8/12 rounded-lg bg-black bg-opacity-10"
+            className="flex-shrink-0 w-8/12 rounded-lg bg-black bg-opacity-10 dark:border dark:border-white dark:border-opacity-20"
             href={url}
             target="_blank"
             title={title}

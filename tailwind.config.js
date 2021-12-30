@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       colors: {
         primary: '#6332f6',
+        primaryLight: '#ae93ff',
         green: colors.emerald,
         yellow: colors.amber,
         purple: colors.violet,
@@ -33,8 +34,8 @@ module.exports = {
               boxShadow: 'inset 0 0 0 1px rgb(255 255 255 / 0.1)',
             },
             a: {
-              color: theme('colors.white'),
-              borderBottomColor: theme('colors.primary'),
+              color: theme('colors.primaryLight'),
+              borderBottomColor: theme('colors.primaryLight'),
             },
             strong: {
               color: theme('colors.gray.200'),

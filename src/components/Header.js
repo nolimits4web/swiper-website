@@ -102,7 +102,7 @@ export default function Header() {
           </nav>
         </div>
         <GithubStats white responsive className="md:ml-auto" />
-        <div className="relative">
+        <div className="relative flex ml-4">
           <ThemeToggle />
         </div>
       </div>

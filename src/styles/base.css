@@ -7,6 +7,9 @@
   body .prose a {
     @apply text-primary hover:underline;
   }
+  .dark footer a {
+    @apply text-primaryLight;
+  }
 
   body .prose a:hover {
     @apply hover:no-underline;

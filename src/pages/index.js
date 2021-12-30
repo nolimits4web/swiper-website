@@ -258,7 +258,7 @@ export default function Home() {
               href="https://opencollective.com/swiper"
               rel="noopener"
               target="_blank"
-              className="inline-flex text-black text-sm sm:text-lg items-center px-6 py-4 bg-white font-medium rounded-full shadow-lg hover:no-underline hover:bg-black hover:bg-opacity-5 duration-200 max-w-full"
+              className="inline-flex text-black text-sm sm:text-lg items-center px-6 py-4 bg-white font-medium rounded-full shadow-lg hover:no-underline hover:bg-black hover:bg-opacity-5 duration-200 max-w-full dark:hover:bg-white dark:hover:bg-opacity-75"
               onClick={() => trackOutbound('https://opencollective.com/swiper')}
             >
               <OpenCollectiveLogo className="w-6 h-6 mr-4" />
@@ -268,7 +268,7 @@ export default function Home() {
               href="https://patreon.com/swiperjs"
               rel="noopener"
               target="_blank"
-              className="inline-flex text-black text-sm sm:text-lg items-center px-6 py-4 bg-white font-medium rounded-full shadow-lg hover:no-underline hover:bg-black hover:bg-opacity-5 duration-200 max-w-full"
+              className="inline-flex text-black text-sm sm:text-lg items-center px-6 py-4 bg-white font-medium rounded-full shadow-lg hover:no-underline hover:bg-black hover:bg-opacity-5 duration-200 max-w-full dark:hover:bg-white dark:hover:bg-opacity-75"
               onClick={() => trackOutbound('https://patreon.com/swiperjs')}
             >
               <PatreonLogo className="text-[#FF424D] w-6 h-6 mr-4" />

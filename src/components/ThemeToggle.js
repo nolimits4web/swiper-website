@@ -201,7 +201,7 @@ export function ThemeToggle({ panelClassName = 'mt-4' }) {
   return (
     <Listbox value={setting} onChange={setSetting}>
       <Listbox.Label className="sr-only">Theme</Listbox.Label>
-      <Listbox.Button type="button">
+      <Listbox.Button type="button" className="outline-none">
         <span className="dark:hidden">
           <SunIcon className="w-6 h-6" selected={setting !== 'system'} />
         </span>
@@ -211,7 +211,7 @@ export function ThemeToggle({ panelClassName = 'mt-4' }) {
       </Listbox.Button>
       <Listbox.Options
         className={clsx(
-          'absolute z-50 top-full right-0 bg-white rounded-lg ring-1 ring-gray-900/10 shadow-lg overflow-hidden w-36 py-1 text-sm text-gray-700 font-semibold dark:ring-0 dark:highlight-white/5 dark:text-gray-300',
+          'absolute z-50 top-full right-0 bg-white rounded-lg ring-1 ring-gray-900/10 shadow-lg overflow-hidden w-36 py-1 text-gray-500 font-medium dark:ring-0 dark:highlight-white/5 outline-none',
           panelClassName
         )}
       >
@@ -220,9 +220,9 @@ export function ThemeToggle({ panelClassName = 'mt-4' }) {
             {({ active, selected }) => (
               <li
                 className={clsx(
-                  'py-1 px-2 flex items-center cursor-pointer text-gray-800',
+                  'py-2 px-4 flex items-center cursor-pointer text-gray-500 outline-none',
                   selected && 'text-primary',
-                  active && 'bg-gray-50 dark:bg-gray-600/30'
+                  active && 'bg-primary bg-opacity-10'
                 )}
               >
                 <Icon selected={selected} dropdown className="w-6 h-6 mr-2" />

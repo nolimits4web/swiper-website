@@ -61,4 +61,12 @@
       float: right;
     }
   }
+  .dark .prose & {
+    color: #9ca3af;
+    border-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.05);
+    a {
+      color: inherit;
+    }
+  }
 }

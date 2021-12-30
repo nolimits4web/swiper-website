@@ -9,17 +9,17 @@ export default function SidebarSponsors() {
         <a
           href="https://opencollective.com/swiper"
           target="_blank"
-          className="text-primary font-medium text-xs no-underline"
+          className="text-primary dark:text-primaryLight font-medium text-xs no-underline"
         >
           Become a sponsor
         </a>
       </div>
-      <div className="bg-white grid grid-cols-5 gap-2">
+      <div className="grid grid-cols-5 gap-2 dark:gap-1">
         {sponsors
           .filter(({ plan }) => plan !== 'Sponsor')
           .map(({ link, title, image_h, image, alt }) => (
             <a
-              className="hover:opacity-80 flex items-center justify-center"
+              className="hover:opacity-80 flex items-center justify-center dark:bg-white dark:p-0.5"
               href={link}
               key={title}
               title={title}
@@ -28,7 +28,7 @@ export default function SidebarSponsors() {
               onClick={() => trackOutbound(link)}
             >
               <img
-                className="max-h-16 w-auto"
+                className="h-11 w-11 object-contain"
                 alt={title}
                 src={`/images/sponsors/${image}`}
               />

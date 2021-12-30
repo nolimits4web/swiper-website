@@ -8,6 +8,9 @@
   background: #fff;
   border-radius: 10px;
 }
+.dark .project-banner .atropos-inner {
+  background: #1e232b;
+}
 .project-banner img {
   position: absolute;
   left: 0;
@@ -27,11 +30,11 @@
   top: 0;
   visibility: hidden;
 }
-.project-banner-f7 .atropos-shadow {
+html:not(.dark) .project-banner-f7 .atropos-shadow {
   background-image: linear-gradient(90deg, #ff0000, #ff0099);
   filter: blur(10px);
 }
-.project-banner-f7 .atropos-highlight {
+html:not(.dark) .project-banner-f7 .atropos-highlight {
   background-image: radial-gradient(
     circle at 50%,
     rgba(255, 255, 255, 1),
@@ -39,11 +42,11 @@
     rgba(125, 0, 0, 0.15)
   );
 }
-.project-banner-twm .atropos-shadow {
+html:not(.dark) .project-banner-twm .atropos-shadow {
   background: rgb(110, 40, 0);
   filter: blur(10px);
 }
-.project-banner-twm .atropos-highlight {
+html:not(.dark) .project-banner-twm .atropos-highlight {
   background-image: radial-gradient(
     circle at 50%,
     rgba(255, 255, 255, 1),
@@ -51,11 +54,11 @@
     rgba(125, 50, 0, 0.15)
   );
 }
-.project-banner-atropos .atropos-shadow {
+html:not(.dark) .project-banner-atropos .atropos-shadow {
   background: rgb(65, 17, 104);
   filter: blur(10px);
 }
-.project-banner-atropos .atropos-highlight {
+html:not(.dark) .project-banner-atropos .atropos-highlight {
   background-image: radial-gradient(
     circle at 50%,
     rgba(255, 255, 255, 1),
