@@ -5,7 +5,7 @@
 @layer base {
   a,
   body .prose a {
-    @apply text-primary hover:underline;
+    @apply text-primary hover:underline dark:text-white;
   }
   .dark footer a {
     @apply text-primaryLight;
@@ -16,7 +16,7 @@
   }
 
   .important-note {
-    @apply border-l-4 px-5 py-4 my-3 border-red-500 dark:border-red-500 bg-red-100 dark:bg-red-800/40;
+    @apply border-l-4 px-5 py-4 my-3 border-red-500 dark:border-red-500 bg-red-100 dark:bg-red-700/40 dark:text-white;
   }
 }
 

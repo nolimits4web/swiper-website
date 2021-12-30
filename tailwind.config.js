@@ -13,6 +13,9 @@ module.exports = {
         purple: colors.violet,
       },
       typography: (theme) => ({
+        DEFAULT: {
+          css: {},
+        },
         dark: {
           css: {
             color: theme('colors.gray.400'),
