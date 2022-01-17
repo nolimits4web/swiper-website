@@ -105,6 +105,14 @@ export default function DemosPage() {
     formRef.current.submit();
   };
 
+  const uiinitiativeDemosGrouped = [];
+  uiinitiativeDemos.forEach((demo, index) => {
+    const groupIndex = Math.floor(index / 2);
+    if (!uiinitiativeDemosGrouped[groupIndex])
+      uiinitiativeDemosGrouped[groupIndex] = [];
+    uiinitiativeDemosGrouped[groupIndex].push(demo);
+  });
+
   return (
     <WithSidebarLayout tableOfContents={tableOfContents}>
       <form
@@ -133,28 +141,32 @@ export default function DemosPage() {
       </p>
       <h2>UI Initiative</h2>
       <p>
-        Premium Swiper templates from{' '}
+        Premium Swiper templates & plugins from{' '}
         <a href="https://uiinitiative.com" target="_blank">
           UI Initiative
         </a>
       </p>
-      <div className="flex my-4 overflow-auto space-x-4 pb-4">
-        {uiinitiativeDemos.map(({ cover, url, title }) => (
-          <a
-            className="flex-shrink-0 w-8/12 rounded-lg bg-black bg-opacity-10 dark:border dark:border-white dark:border-opacity-20"
-            href={url}
-            target="_blank"
-            title={title}
-            onClick={() => trackOutbound(url)}
-          >
-            <img
-              width="1200"
-              height="600"
-              className="rounded-lg block !m-0"
-              src={cover}
-              alt={title}
-            />
-          </a>
+      <div className="flex my-4 overflow-auto space-x-4 pb-6">
+        {uiinitiativeDemosGrouped.map((demos) => (
+          <div className="space-y-4 w-10/12 md:w-6/12 flex-shrink-0 ">
+            {demos.map(({ cover, url, title }) => (
+              <a
+                className="w-full rounded-lg bg-black bg-opacity-10 dark:border dark:border-white dark:border-opacity-10 block"
+                href={url}
+                target="_blank"
+                title={title}
+                onClick={() => trackOutbound(url)}
+              >
+                <img
+                  width="1200"
+                  height="600"
+                  className="rounded-lg block !m-0"
+                  src={cover}
+                  alt={title}
+                />
+              </a>
+            ))}
+          </div>
         ))}
       </div>
       {demos.map(({ title, slug, folder, skip }, demoIndex) => (
