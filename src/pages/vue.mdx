@@ -359,8 +359,7 @@ Controller requires to pass one Swiper instance to another:
     },
     setup() {
       const controlledSwiper = ref(null);
-
-      setControlledSwiper(swiper) {
+      const setControlledSwiper = (swiper) => {
         controlledSwiper.value = swiper;
       }
       return {
