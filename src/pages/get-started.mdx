@@ -39,11 +39,12 @@ By default Swiper exports only core version without additional modules (like Nav
   import 'swiper/css/navigation';
   import 'swiper/css/pagination';
 
-  // configure Swiper to use modules
-  Swiper.use([Navigation, Pagination]);
-
   // init Swiper:
-  const swiper = new Swiper(...);
+  const swiper = new Swiper('.swiper', {
+    // configure Swiper to use modules
+    modules: [Navigation, Pagination],
+    ...
+  });
 ```
 
 If you want to import Swiper with all modules (bundle) then it should be imported from `swiper/bundle`:
