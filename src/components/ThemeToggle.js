@@ -130,7 +130,7 @@ function PcIcon({ selected, dropdown, ...props }) {
         strokeLinejoin="round"
         className={
           selected
-            ? 'stroke-primary fill-primary/20'
+            ? 'fill-primary/20 stroke-primary'
             : 'stroke-gray-400 dark:stroke-gray-500'
         }
       />
@@ -203,15 +203,15 @@ export function ThemeToggle({ panelClassName = 'mt-4' }) {
       <Listbox.Label className="sr-only">Theme</Listbox.Label>
       <Listbox.Button type="button" className="outline-none">
         <span className="dark:hidden">
-          <SunIcon className="w-6 h-6" selected={setting !== 'system'} />
+          <SunIcon className="h-6 w-6" selected={setting !== 'system'} />
         </span>
         <span className="hidden dark:inline">
-          <MoonIcon className="w-6 h-6" selected={setting !== 'system'} />
+          <MoonIcon className="h-6 w-6" selected={setting !== 'system'} />
         </span>
       </Listbox.Button>
       <Listbox.Options
         className={clsx(
-          'absolute z-50 top-full right-0 bg-white rounded-lg ring-1 ring-gray-900/10 shadow-lg overflow-hidden w-36 py-1 text-gray-500 font-medium dark:ring-0 dark:highlight-white/5 outline-none',
+          'dark:highlight-white/5 absolute top-full right-0 z-50 w-36 overflow-hidden rounded-lg bg-white py-1 font-medium text-gray-500 shadow-lg outline-none ring-1 ring-gray-900/10 dark:ring-0',
           panelClassName
         )}
       >
@@ -220,12 +220,12 @@ export function ThemeToggle({ panelClassName = 'mt-4' }) {
             {({ active, selected }) => (
               <li
                 className={clsx(
-                  'py-2 px-4 flex items-center cursor-pointer text-gray-500 outline-none',
+                  'flex cursor-pointer items-center py-2 px-4 text-gray-500 outline-none',
                   selected && 'text-primary',
                   active && 'bg-primary bg-opacity-10'
                 )}
               >
-                <Icon selected={selected} dropdown className="w-6 h-6 mr-2" />
+                <Icon selected={selected} dropdown className="mr-2 h-6 w-6" />
                 {label}
               </li>
             )}
@@ -245,16 +245,16 @@ export function ThemeSelect() {
     <div className="flex items-center justify-between">
       <label
         htmlFor="theme"
-        className="text-gray-700 font-normal dark:text-gray-400"
+        className="font-normal text-gray-700 dark:text-gray-400"
       >
         Switch theme
       </label>
-      <div className="relative flex items-center ring-1 ring-gray-900/10 rounded-lg shadow-sm p-2 text-gray-700 font-semibold dark:bg-gray-600 dark:ring-0 dark:highlight-white/5 dark:text-gray-200">
-        <SunIcon className="w-6 h-6 mr-2 dark:hidden" />
+      <div className="dark:highlight-white/5 relative flex items-center rounded-lg p-2 font-semibold text-gray-700 shadow-sm ring-1 ring-gray-900/10 dark:bg-gray-600 dark:text-gray-200 dark:ring-0">
+        <SunIcon className="mr-2 h-6 w-6 dark:hidden" />
         <svg
           viewBox="0 0 24 24"
           fill="none"
-          className="w-6 h-6 mr-2 hidden dark:block"
+          className="mr-2 hidden h-6 w-6 dark:block"
         >
           <path
             fillRule="evenodd"
@@ -274,7 +274,7 @@ export function ThemeSelect() {
           />
         </svg>
         {label}
-        <svg className="w-6 h-6 ml-2 text-gray-400" fill="none">
+        <svg className="ml-2 h-6 w-6 text-gray-400" fill="none">
           <path
             d="m15 11-3 3-3-3"
             stroke="currentColor"
@@ -287,7 +287,7 @@ export function ThemeSelect() {
           id="theme"
           value={setting}
           onChange={(e) => setSetting(e.target.value)}
-          className="absolute appearance-none inset-0 w-full h-full opacity-0"
+          className="absolute inset-0 h-full w-full appearance-none opacity-0"
         >
           {settings.map(({ value, label }) => (
             <option key={value} value={value}>

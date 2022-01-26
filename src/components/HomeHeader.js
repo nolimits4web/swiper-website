@@ -9,21 +9,21 @@ import HomeSlider from './HomeSlider';
 export default function HomeHeader() {
   return (
     <div className="relative overflow-hidden bg-primary">
-      <div className="max-w-[90rem] px-4 sm:px-6 lg:px-8 xl:px-10 pt-8 pb-16 mx-auto lg:pt-16 lg:flex">
+      <div className="mx-auto max-w-[90rem] px-4 pt-8 pb-16 sm:px-6 lg:flex lg:px-8 lg:pt-16 xl:px-10">
         {/* Left */}
-        <div className="flex-shrink-0 relative z-10 flex flex-col items-center w-full text-center xl:mr-16 lg:text-left lg:max-w-[500px] lg:block">
+        <div className="relative z-10 flex w-full flex-shrink-0 flex-col items-center text-center lg:block lg:max-w-[500px] lg:text-left xl:mr-16">
           <Logo
-            className="flex-shrink-0 w-32 h-32 rounded-full lg:w-40 lg:h-40"
+            className="h-32 w-32 flex-shrink-0 rounded-full lg:h-40 lg:w-40"
             alt="Swiper"
           />
 
-          <div className="mt-8 text-5xl font-bold md:text-6xl text-white">
+          <div className="mt-8 text-5xl font-bold text-white md:text-6xl">
             Swiper
           </div>
-          <div className="max-w-2xl my-2 mt-4 text-2xl font-bold tracking-tight text-white sm:text-4xl md:text-4xl md:leading-tight">
+          <div className="my-2 mt-4 max-w-2xl text-2xl font-bold tracking-tight text-white sm:text-4xl md:text-4xl md:leading-tight">
             The Most Modern Mobile Touch Slider
           </div>
-          <nav className="flex flex-wrap justify-center mt-4 font-medium lg:mt-8 lg:justify-start">
+          <nav className="mt-4 flex flex-wrap justify-center font-medium lg:mt-8 lg:justify-start">
             {menuList.map(({ name, link }) => (
               <Link key={link} href={link}>
                 <a className="mr-4 text-white">{name}</a>
@@ -47,7 +47,7 @@ export default function HomeHeader() {
 
         {/* Right */}
         <div
-          className="flex-shrink-[10] min-w-0 md:mx-12 xl:mx-0 mt-8 lg:mt-0 home-slider-wrap"
+          className="home-slider-wrap mt-8 min-w-0 flex-shrink-[10] md:mx-12 lg:mt-0 xl:mx-0"
           style={{
             perspective: '1200px',
             '--swiper-theme-color': '#fff',

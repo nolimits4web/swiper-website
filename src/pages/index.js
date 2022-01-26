@@ -21,7 +21,7 @@ function SponsorButton(props) {
       rel="noopener"
       target="_blank"
       {...restProps}
-      className={`inline-flex text-black text-sm sm:text-lg items-center px-6 py-4 bg-white font-medium rounded-full shadow-lg hover:no-underline hover:bg-black dark:bg-primary/80 dark:hover:bg-primary dark:text-white hover:bg-opacity-5 duration-200 max-w-full ${className}`}
+      className={`inline-flex max-w-full items-center rounded-full bg-white px-6 py-4 text-sm font-medium text-black shadow-lg duration-200 hover:bg-black hover:bg-opacity-5 hover:no-underline dark:bg-primary/80 dark:text-white dark:hover:bg-primary sm:text-lg ${className}`}
       onClick={(e) => {
         onClick(e);
         trackOutbound(href);
@@ -125,7 +125,7 @@ const feats = [
 
 export function HomeHeading({ children }) {
   return (
-    <h2 className="text-4xl sm:text-5xl text-gray-900 dark:text-gray-200 text-center font-extrabold mb-12">
+    <h2 className="mb-12 text-center text-4xl font-extrabold text-gray-900 dark:text-gray-200 sm:text-5xl">
       {children}
     </h2>
   );
@@ -134,12 +134,12 @@ export default function Home() {
   return (
     <>
       <HomeHeader />
-      <div className="flex justify-center items-center bg-primary py-5 mb-20">
+      <div className="mb-20 flex items-center justify-center bg-primary py-5">
         <Carbon />
       </div>
-      <div className="mx-auto max-w-[90rem] text-lg px-4 sm:px-6 lg:px-8 xl:px-10">
-        <div className="flex flex-col space-y-5 mx-auto max-w-5xl">
-          <h1 className="text-4xl sm:text-5xl text-gray-900 dark:text-gray-200 font-extrabold mb-6 text-center">
+      <div className="mx-auto max-w-[90rem] px-4 text-lg sm:px-6 lg:px-8 xl:px-10">
+        <div className="mx-auto flex max-w-5xl flex-col space-y-5">
+          <h1 className="mb-6 text-center text-4xl font-extrabold text-gray-900 dark:text-gray-200 sm:text-5xl">
             Swiper
           </h1>
           <p>
@@ -169,7 +169,7 @@ export default function Home() {
         </div>
         <div className="mt-24">
           <HomeHeading>Available For</HomeHeading>
-          <div className="grid grid-cols-3 sm:grid-cols-5 gap-4">
+          <div className="grid grid-cols-3 gap-4 sm:grid-cols-5">
             {libs.map(({ title, image, link }) => (
               <a
                 key={title}
@@ -188,12 +188,12 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div className="mt-24 mx-auto max-w-6xl">
+        <div className="mx-auto mt-24 max-w-6xl">
           <HomeHeading>Powered With Top Notch Features</HomeHeading>
-          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 xl:gap-12 text-md">
+          <ul className="text-md grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 xl:gap-12">
             {feats.map(({ title, descr }) => (
               <li key={title}>
-                <h3 className="font-bold text-gray-900 dark:text-gray-200 text-2xl mb-4">
+                <h3 className="mb-4 text-2xl font-bold text-gray-900 dark:text-gray-200">
                   {title}
                 </h3>
                 {descr}
@@ -203,7 +203,7 @@ export default function Home() {
         </div>
         <div className="mt-24">
           <HomeHeading>Used By Thousands</HomeHeading>
-          <div className="grid grid-cols-4 sm:grid-cols-8 gap-6">
+          <div className="grid grid-cols-4 gap-6 sm:grid-cols-8">
             {clientsList.map(({ image, title }) => (
               <div key={title} className="flex items-center justify-center">
                 <img
@@ -218,7 +218,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div className="mt-24 text-center mb-20 mx-auto max-w-6xl">
+        <div className="mx-auto mt-24 mb-20 max-w-6xl text-center">
           <HomeHeading>And It Is Free</HomeHeading>
           <div className="my-4">
             Swiper is completely free and open-source (MIT Licensed)
@@ -227,7 +227,7 @@ export default function Home() {
           <nav className="space-x-2 text-lg">
             {menuList.map(({ name, link }) => (
               <Link key={link} href={link}>
-                <a className="bg-primary font-bold  rounded-3xl text-white shadow-lg hover:no-underline hover:bg-opacity-95 duration-200 inline-block w-40 sm:w-48 px-4 py-2 my-2">
+                <a className="my-2 inline-block  w-40 rounded-3xl bg-primary px-4 py-2 font-bold text-white shadow-lg duration-200 hover:bg-opacity-95 hover:no-underline sm:w-48">
                   {name}
                 </a>
               </Link>
@@ -235,18 +235,18 @@ export default function Home() {
           </nav>
         </div>
 
-        <div className="mt-24 text-center mb-20 mx-auto max-w-6xl">
+        <div className="mx-auto mt-24 mb-20 max-w-6xl text-center">
           <HomeHeading>UI Initiative</HomeHeading>
           <p>Premium Swiper templates & plugins for Swiper patrons</p>
           <UIInitiativeBanner />
         </div>
 
-        <div className="mt-24 text-center mb-20 mx-auto max-w-6xl">
+        <div className="mx-auto mt-24 mb-20 max-w-6xl text-center">
           <HomeHeading>More Of Our Projects</HomeHeading>
           <HomeProjects />
         </div>
 
-        <div className="mt-24 text-center mb-20">
+        <div className="mt-24 mb-20 text-center">
           <HomeHeading>Sponsors</HomeHeading>
           <HomeSponsors />
           <div className="my-4">
@@ -274,13 +274,13 @@ export default function Home() {
             <br />
             Your support means a lot for us!
           </div>
-          <div className="my-4 items-center space-y-6 flex flex-col">
+          <div className="my-4 flex flex-col items-center space-y-6">
             <SponsorButton href="https://opencollective.com/swiper">
-              <OpenCollectiveLogo className="w-6 h-6 mr-4" />
+              <OpenCollectiveLogo className="mr-4 h-6 w-6" />
               <span>Become a sponsor on OpenCollective</span>
             </SponsorButton>
             <SponsorButton href="https://patreon.com/swiperjs">
-              <PatreonLogo className="text-[#FF424D] w-6 h-6 mr-4" />
+              <PatreonLogo className="mr-4 h-6 w-6 text-[#FF424D]" />
               <span>Support Swiper on Patreon</span>
             </SponsorButton>
           </div>

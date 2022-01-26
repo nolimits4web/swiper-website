@@ -4,12 +4,12 @@ import sponsors from '../shared/sponsors-list';
 export default function SidebarSponsors() {
   return (
     <div className="mb-4">
-      <div className="font-semibold mb-2 flex justify-between items-center">
+      <div className="mb-2 flex items-center justify-between font-semibold">
         <span>Sponsors</span>
         <a
           href="https://opencollective.com/swiper"
           target="_blank"
-          className="text-primary dark:text-primaryLight font-medium text-xs no-underline"
+          className="text-xs font-medium text-primary no-underline dark:text-primaryLight"
         >
           Become a sponsor
         </a>
@@ -19,7 +19,7 @@ export default function SidebarSponsors() {
           .filter(({ plan }) => plan !== 'Sponsor')
           .map(({ link, title, image_h, image, alt }) => (
             <a
-              className="hover:opacity-80 flex items-center justify-center dark:bg-white dark:p-0.5"
+              className="flex items-center justify-center hover:opacity-80 dark:bg-white dark:p-0.5"
               href={link}
               key={title}
               title={title}

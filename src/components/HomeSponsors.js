@@ -16,7 +16,7 @@ const PlanSection = (props) => {
   return (
     <div className="mb-20">
       {showTitle && (
-        <h2 className="text-2xl sm:text-3xl text-gray-900 dark:text-gray-200 text-center font-extrabold mb-4">
+        <h2 className="mb-4 text-center text-2xl font-extrabold text-gray-900 dark:text-gray-200 sm:text-3xl">
           {props.plan}s
         </h2>
       )}
@@ -24,7 +24,7 @@ const PlanSection = (props) => {
         {items.map(({ link, title, image }) => {
           return (
             <a
-              className={`flex justify-center items-center text-center duration-300 dark:bg-white dark:p-0.5 ${sizes}`}
+              className={`flex items-center justify-center text-center duration-300 dark:bg-white dark:p-0.5 ${sizes}`}
               href={link}
               key={title}
               title={title}
@@ -33,7 +33,7 @@ const PlanSection = (props) => {
               onClick={() => trackOutbound(link)}
             >
               <img
-                className="w-auto h-auto max-h-full max-w-full"
+                className="h-auto max-h-full w-auto max-w-full"
                 src={`/images/sponsors/${image}`}
                 alt={title}
               />
@@ -42,7 +42,7 @@ const PlanSection = (props) => {
         })}
         {showPlaceholder && (
           <a
-            className={`flex justify-center items-center p-3 m-4 text-center duration-300 bg-gray-100 hover:bg-gray-200 text-sm font-semibold hover:no-underline ${sizes}`}
+            className={`m-4 flex items-center justify-center bg-gray-100 p-3 text-center text-sm font-semibold duration-300 hover:bg-gray-200 hover:no-underline ${sizes}`}
             href={'https://opencollective.com/swiper'}
             onClick={() => trackOutbound('https://opencollective.com/swiper')}
             rel="noopener"

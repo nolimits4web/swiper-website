@@ -26,17 +26,17 @@ export function WithSidebarLayout({
     <div>
       <div
         id={meta.containerId}
-        className="w-full mx-auto flex max-w-[90rem] px-4 sm:px-6 lg:px-8 xl:px-10"
+        className="mx-auto flex w-full max-w-[90rem] px-4 sm:px-6 lg:px-8 xl:px-10"
       >
         {toc.length > 0 && (
-          <div className="hidden text-sm lg:block flex-none w-64 mr-4 sm:mr-6 lg:mr-8 xl:mr-10">
-            <div className="overflow-y-auto overscroll-contain sticky top-0 py-10 max-h-screen">
+          <div className="mr-4 hidden w-64 flex-none text-sm sm:mr-6 lg:mr-8 lg:block xl:mr-10">
+            <div className="sticky top-0 max-h-screen overflow-y-auto overscroll-contain py-10">
               <SidebarSponsors />
               <TableOfContents tableOfContents={toc} />
             </div>
           </div>
         )}
-        <div className="max-w-none prose dark:prose-dark min-w-0 flex-auto pt-10 pb-24 lg:pb-16">
+        <div className="prose min-w-0 max-w-none flex-auto pt-10 pb-24 dark:prose-dark lg:pb-16">
           {meta.carbon && <Carbon />}
           {meta.title && (
             <PageHeader title={meta.title} description={meta.description} />

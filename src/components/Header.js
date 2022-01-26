@@ -16,18 +16,18 @@ export default function Header() {
     buttonElRef.current.focus();
   };
   return (
-    <header className="bg-primary py-6 h-20 text-white">
-      <div className="max-w-[90rem] mx-auto flex items-center h-full px-4 sm:px-6 lg:px-8 xl:px-10">
+    <header className="h-20 bg-primary py-6 text-white">
+      <div className="mx-auto flex h-full max-w-[90rem] items-center px-4 sm:px-6 lg:px-8 xl:px-10">
         <Link href="/">
-          <a className="flex-shrink-0 relative flex items-center">
-            <Logo className="rounded-full w-16 h-16" alt="Swiper" />
-            <span className="min-w-0 text-xs font-medium opacity-70 absolute left-full top-0 text-white pointer-events-none -mt-1">
+          <a className="relative flex flex-shrink-0 items-center">
+            <Logo className="h-16 w-16 rounded-full" alt="Swiper" />
+            <span className="pointer-events-none absolute left-full top-0 -mt-1 min-w-0 text-xs font-medium text-white opacity-70">
               v{process.env.swiperReleaseVersion}
             </span>
           </a>
         </Link>
         <Link href="/">
-          <a className="md:hidden ml-2 text-4xl font-medium text-white hover:no-underline">
+          <a className="ml-2 text-4xl font-medium text-white hover:no-underline md:hidden">
             Swiper
           </a>
         </Link>
@@ -35,7 +35,7 @@ export default function Header() {
           <nav className="flex">
             {menuList.map(({ name, link }) => (
               <Link key={link} href={link}>
-                <a className="font-medium mr-4 text-white text-sm lg:text-base">
+                <a className="mr-4 text-sm font-medium text-white lg:text-base">
                   {name}
                 </a>
               </Link>
@@ -45,23 +45,23 @@ export default function Header() {
             <a
               href="https://www.patreon.com/swiperjs"
               target="_blank"
-              className="text-white inline-flex items-center text-xs font-medium opacity-60 hover:opacity-100 hover:no-underline"
+              className="inline-flex items-center text-xs font-medium text-white opacity-60 hover:no-underline hover:opacity-100"
               onClick={() => trackOutbound('https://www.patreon.com/swiperjs')}
             >
-              <PatreonLogo className="w-3 h-3 mr-1" />
+              <PatreonLogo className="mr-1 h-3 w-3" />
               <span>Support Swiper</span>
             </a>
           </div>
         </div>
-        <div className="group ml-auto mr-4 relative">
+        <div className="group relative ml-auto mr-4">
           <button
-            className="md:hidden flex items-center outline-none"
+            className="flex items-center outline-none md:hidden"
             ref={buttonElRef}
             onClick={showMenu}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 pointer-events-none"
+              className="pointer-events-none h-6 w-6"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -74,11 +74,11 @@ export default function Header() {
               />
             </svg>
           </button>
-          <nav className="hidden group-focus-within:block absolute overflow-hidden z-10 rounded-xl bg-white shadow-lg right-0 top-full w-60 divide-y">
+          <nav className="absolute right-0 top-full z-10 hidden w-60 divide-y overflow-hidden rounded-xl bg-white shadow-lg group-focus-within:block">
             {menuList.map(({ name, link }) => (
               <Link key={link} href={link}>
                 <a
-                  className="font-medium mr-4 text-gray-500 hover:text-primary hover:bg-primary hover:bg-opacity-10 duration-100 block text-base py-2 px-4 w-full hover:no-underline"
+                  className="mr-4 block w-full py-2 px-4 text-base font-medium text-gray-500 duration-100 hover:bg-primary hover:bg-opacity-10 hover:text-primary hover:no-underline"
                   onClick={hideMenu}
                   onPointerDown={(e) => e.preventDefault()}
                 >
@@ -89,20 +89,20 @@ export default function Header() {
             <a
               href="https://www.patreon.com/swiperjs"
               target="_blank"
-              className="font-medium mr-4 text-gray-500 hover:text-primary hover:bg-primary hover:bg-opacity-10 duration-100 block text-base py-2 px-4 w-full hover:no-underline flex items-center"
+              className="mr-4 block flex w-full items-center py-2 px-4 text-base font-medium text-gray-500 duration-100 hover:bg-primary hover:bg-opacity-10 hover:text-primary hover:no-underline"
               onClick={() => {
                 trackOutbound('https://www.patreon.com/swiperjs');
                 hideMenu();
               }}
               onPointerDown={(e) => e.preventDefault()}
             >
-              <PatreonLogo className="w-4 h-4 mr-1 text-[#FF424D]" />
+              <PatreonLogo className="mr-1 h-4 w-4 text-[#FF424D]" />
               <span>Support Swiper</span>
             </a>
           </nav>
         </div>
         <GithubStats white responsive className="md:ml-auto" />
-        <div className="relative flex ml-4">
+        <div className="relative ml-4 flex">
           <ThemeToggle />
         </div>
       </div>

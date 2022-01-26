@@ -103,7 +103,7 @@ export default function HomeProjects() {
         />
         <span
           data-atropos-offset="25"
-          className="project-banner-badge absolute right-4 top-4 bg-green-500 text-white font-semibold text-xs py-1 px-2 rounded-full z-10"
+          className="project-banner-badge absolute right-4 top-4 z-10 rounded-full bg-green-500 py-1 px-2 text-xs font-semibold text-white"
         >
           NEW
         </span>

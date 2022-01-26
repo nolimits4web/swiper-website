@@ -18,10 +18,10 @@ const menu = [
 
 export default function Footer() {
   return (
-    <footer className="border-t-8 border-primary text-center py-10 px-4 sm:px-6 lg:px-8 xl:px-10">
-      <div className="max-w-5xl mx-auto font-medium">
+    <footer className="border-t-8 border-primary py-10 px-4 text-center sm:px-6 lg:px-8 xl:px-10">
+      <div className="mx-auto max-w-5xl font-medium">
         <FooterSponsors />
-        <div className="text-center my-8">
+        <div className="my-8 text-center">
           <a
             href="https://www.netlify.com"
             target="_blank"
@@ -37,7 +37,7 @@ export default function Footer() {
             />
           </a>
         </div>
-        <nav className="my-8 space-x-4 flex flex-wrap justify-center">
+        <nav className="my-8 flex flex-wrap justify-center space-x-4">
           {menu}
         </nav>
         <div className="text-gray-700 dark:text-gray-400">
@@ -46,7 +46,7 @@ export default function Footer() {
             <img
               src="/images/n4w-logo.svg"
               alt="nolimits4web"
-              className="w-12 h-12 inline-block"
+              className="inline-block h-12 w-12"
             />
           </a>
         </div>
