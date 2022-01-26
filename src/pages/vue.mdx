@@ -266,10 +266,10 @@ For example:
 <swiper>
   <swiper-slide>Slide 1</swiper-slide>
   <swiper-slide>Slide 2</swiper-slide>
-  <span slot="container-start">Container Start</span>
-  <span slot="container-end">Container End</span>
-  <span slot="wrapper-start">Wrapper Start</span>
-  <span slot="wrapper-end">Wrapper End</span>
+  <template v-slot:container-start> <span>Container start<span></template>
+  <template v-slot:container-end> <span>Container end><span></template>
+  <template v-slot:wrapper-start><span>Wrapper start<span></template>
+  <template v-slot:wrapper-end> <span>Wrapper end<span></template>
 </swiper>
 ```
 
@@ -277,14 +277,14 @@ Will be rendered as:
 
 ```html
 <div class="swiper">
-  <span slot="container-start">Container Start</span>
+  <span>Container start</span>
   <div class="swiper-wrapper">
-    <span slot="wrapper-start">Wrapper Start</span>
+    <span>Wrapper start</span>
     <div class="swiper-slide">Slide 1</div>
     <div class="swiper-slide">Slide 2</div>
-    <span slot="wrapper-end">Wrapper End</span>
+    <span>Wrapper wnd</span>
   </div>
-  <span slot="container-end">Container End</span>
+  <span>Container end</span>
 </div>
 ```
 
