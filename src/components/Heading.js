@@ -25,7 +25,7 @@ export default function Heading({
         // eslint-disable-next-line
         <a
           href={`#${id}`}
-          className="absolute after:hash opacity-0 group-hover:opacity-100"
+          className="after:hash absolute opacity-0 group-hover:opacity-100"
           style={{
             marginLeft: '-1em',
             paddingRight: '0.5em',
@@ -36,13 +36,13 @@ export default function Heading({
         />
       )}
       {number && (
-        <span className="bg-cyan-100 w-8 h-8 inline-flex items-center justify-center rounded-full text-cyan-700 text-xl mr-3 flex-none">
+        <span className="mr-3 inline-flex h-8 w-8 flex-none items-center justify-center rounded-full bg-cyan-100 text-xl text-cyan-700">
           {number}
         </span>
       )}
       <span className={hidden ? 'sr-only' : undefined}>{children}</span>
       {badge && (
-        <span className="ml-3 inline-flex items-center px-3 py-1 rounded-full text-sm font-medium leading-4 bg-green-150 text-green-900">
+        <span className="bg-green-150 ml-3 inline-flex items-center rounded-full px-3 py-1 text-sm font-medium leading-4 text-green-900">
           {badge}
         </span>
       )}

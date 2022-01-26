@@ -5,7 +5,7 @@ import { useScrollSpy } from '../shared/use-scroll-spy';
 export default function TableOfContents({ tableOfContents }) {
   const currentSection = useScrollSpy(tableOfContents[0].slug);
   return (
-    <ul className="overflow-x-hidden text-gray-500 table-of-contents">
+    <ul className="table-of-contents overflow-x-hidden text-gray-500">
       {tableOfContents.map((section) => {
         let sectionIsActive = currentSection === section.slug;
         let childSectionIsActive =
@@ -18,7 +18,7 @@ export default function TableOfContents({ tableOfContents }) {
               <a
                 href={`#${section.slug}`}
                 className={clsx(
-                  'block py-1 px-2 transition-colors duration-100 text-gray-500 hover:text-primary hover:no-underline font-medium hover:bg-primary hover:bg-opacity-10 hover:dark:bg-opacity-50 rounded dark:text-gray-200',
+                  'block rounded py-1 px-2 font-medium text-gray-500 transition-colors duration-100 hover:bg-primary hover:bg-opacity-10 hover:text-primary hover:no-underline dark:text-gray-200 hover:dark:bg-opacity-50',
                   {
                     '!text-primary dark:!text-white':
                       sectionIsActive || childSectionIsActive,
@@ -38,7 +38,7 @@ export default function TableOfContents({ tableOfContents }) {
                   <a
                     href={`#${subsection.slug}`}
                     className={clsx(
-                      'block py-1 px-2 transition-colors duration-100 text-gray-500 dark:text-gray-200 hover:text-primary hover:no-underline hover:bg-primary hover:bg-opacity-10 hover:dark:bg-opacity-50 rounded',
+                      'block rounded py-1 px-2 text-gray-500 transition-colors duration-100 hover:bg-primary hover:bg-opacity-10 hover:text-primary hover:no-underline dark:text-gray-200 hover:dark:bg-opacity-50',
                       {
                         '!text-primary dark:!text-white': subsectionIsActive,
                         'bg-primary': subsectionIsActive,

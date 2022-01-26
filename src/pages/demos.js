@@ -146,12 +146,12 @@ export default function DemosPage() {
           UI Initiative
         </a>
       </p>
-      <div className="flex my-4 overflow-auto space-x-4 pb-6">
+      <div className="my-4 flex space-x-4 overflow-auto pb-6">
         {uiinitiativeDemosGrouped.map((demos) => (
-          <div className="space-y-4 w-10/12 md:w-6/12 flex-shrink-0 ">
+          <div className="w-10/12 flex-shrink-0 space-y-4 md:w-6/12 ">
             {demos.map(({ cover, url, title }) => (
               <a
-                className="w-full rounded-lg bg-black bg-opacity-10 dark:border dark:border-white dark:border-opacity-10 block"
+                className="block w-full rounded-lg bg-black bg-opacity-10 dark:border dark:border-white dark:border-opacity-10"
                 href={url}
                 target="_blank"
                 title={title}
@@ -160,7 +160,7 @@ export default function DemosPage() {
                 <img
                   width="1200"
                   height="600"
-                  className="rounded-lg block !m-0"
+                  className="!m-0 block rounded-lg"
                   src={cover}
                   alt={title}
                 />
@@ -174,7 +174,7 @@ export default function DemosPage() {
           <Heading level={2} id={slug} toc={true}>
             {title}
           </Heading>
-          <div className="flex flex-wrap my-4 text-sm">
+          <div className="my-4 flex flex-wrap text-sm">
             <a
               className="mb-2 mr-4 no-underline"
               href={`/demos/${folder}/core.html`}
@@ -206,12 +206,12 @@ export default function DemosPage() {
               );
             })}
           </div>
-          <div className="my-4 bg-gray-100 shadow demo">
+          <div className="demo my-4 bg-gray-100 shadow">
             <iframe
               data-src={`/demos/${folder}/core.html`}
               scrolling="no"
               frameBorder="0"
-              className="block w-full h-96"
+              className="block h-96 w-full"
             ></iframe>
           </div>
         </React.Fragment>

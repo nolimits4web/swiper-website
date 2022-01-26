@@ -31,7 +31,7 @@ import 'swiper/css/effect-flip';
 function SlideCenter({ children, className = '', style = {} }) {
   return (
     <div
-      className={`mx-auto max-w-[90rem] bg-white flex justify-center flex-col px-4 rounded-xl text-primary h-[500px] md:h-[400px] lg:h-[500px] ${className}`}
+      className={`mx-auto flex h-[500px] max-w-[90rem] flex-col justify-center rounded-xl bg-white px-4 text-primary md:h-[400px] lg:h-[500px] ${className}`}
     >
       {children}
     </div>
@@ -105,18 +105,18 @@ export default function HomeSlider() {
   });
   return (
     <>
-      <div className="swiper-button-prev invisible md:visible !left-auto !right-full mr-4" />
-      <div className="swiper-button-next invisible md:visible !right-auto !left-full ml-4" />
+      <div className="swiper-button-prev invisible !left-auto !right-full mr-4 md:visible" />
+      <div className="swiper-button-next invisible !right-auto !left-full ml-4 md:visible" />
       <div className="swiper header-swiper-main">
         <div className="swiper-pagination !-bottom-6" />
 
         <div className="swiper-wrapper">
           <div className="swiper-slide rounded-xl">
             <SlideCenter>
-              <span className="text-4xl text-center font-bold mb-8">
+              <span className="mb-8 text-center text-4xl font-bold">
                 Top Notch Features
               </span>
-              <ul className="flex flex-wrap text-sm sm:text-base md:mx-auto md:max-w-screen-sm font-medium text-gray-700">
+              <ul className="flex flex-wrap text-sm font-medium text-gray-700 sm:text-base md:mx-auto md:max-w-screen-sm">
                 {[
                   'Library Agnostic',
                   'Mutation Observer',
@@ -133,9 +133,9 @@ export default function HomeSlider() {
                   'Virtual Slides',
                   'And many more',
                 ].map((text, index) => (
-                  <li key={index} className="w-1/2 flex items-center my-1">
+                  <li key={index} className="my-1 flex w-1/2 items-center">
                     <svg
-                      className="text-gray-700 mr-2 flex-shrink-0"
+                      className="mr-2 flex-shrink-0 text-gray-700"
                       width="20"
                       height="20"
                       xmlns="http://www.w3.org/2000/svg"
@@ -158,26 +158,26 @@ export default function HomeSlider() {
           </div>
           <div className="swiper-slide swiper-slide-gallery rounded-xl">
             <SlideCenter className="pt-10">
-              <span className="text-4xl text-center font-bold mb-8">
+              <span className="mb-8 text-center text-4xl font-bold">
                 Build Complex Touch Galleries
               </span>
-              <div className="flex h-full justify-around min-h-0 pb-4">
-                <div className="swiper header-swiper-cards rounded-lg w-60 h-80 mx-auto max-h-full">
+              <div className="flex h-full min-h-0 justify-around pb-4">
+                <div className="swiper header-swiper-cards mx-auto h-80 max-h-full w-60 rounded-lg">
                   {Array.from({ length: 5 }).map((el, index) => (
                     <div key={index} className="swiper-slide rounded-xl">
                       <img
                         src={`demos/images/nature-${index + 1}.jpg`}
-                        className="object-cover w-full h-full"
+                        className="h-full w-full object-cover"
                       />
                     </div>
                   ))}
                 </div>
-                <div className="swiper header-swiper-flip rounded-lg w-60 h-80 mx-auto max-h-full hidden sm:block lg:hidden xl:block">
+                <div className="swiper header-swiper-flip mx-auto hidden h-80 max-h-full w-60 rounded-lg sm:block lg:hidden xl:block">
                   {Array.from({ length: 5 }).map((el, index) => (
                     <div key={index} className="swiper-slide rounded-xl">
                       <img
                         src={`demos/images/nature-${index + 1}.jpg`}
-                        className="object-cover w-full h-full"
+                        className="h-full w-full object-cover"
                       />
                     </div>
                   ))}
@@ -188,12 +188,12 @@ export default function HomeSlider() {
           </div>
           <div className="swiper-slide rounded-xl">
             <SlideCenter className="items-center">
-              <div className="text-4xl font-bold w-full text-center">
+              <div className="w-full text-center text-4xl font-bold">
                 Start Using It Now
               </div>
               <div className="mt-4">
                 <Link href="/get-started">
-                  <a className="bg-primary rounded-3xl text-white shadow-lg hover:no-underline hover:bg-opacity-95 duration-200 inline-block w-48 px-4 py-2 my-2 text-center font-bold text-lg">
+                  <a className="my-2 inline-block w-48 rounded-3xl bg-primary px-4 py-2 text-center text-lg font-bold text-white shadow-lg duration-200 hover:bg-opacity-95 hover:no-underline">
                     Get Started
                   </a>
                 </Link>

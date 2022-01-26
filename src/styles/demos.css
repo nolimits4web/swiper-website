@@ -1,7 +1,7 @@
 .demo:not(.loaded) {
   position: relative;
   &::after {
-    content: "Loading...";
+    content: 'Loading...';
     position: absolute;
     left: 0;
     width: 100%;
