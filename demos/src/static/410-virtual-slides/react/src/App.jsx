@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import SwiperCore, { Virtual } from 'swiper';
+import SwiperCore, { Virtual, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -10,33 +10,34 @@ import 'swiper/css/navigation';
 import './styles.css';
 
 // install Virtual module
-SwiperCore.use([Virtual]);
+SwiperCore.use([Virtual, Navigation, Pagination]);
 
 export default function App() {
   const [swiperRef, setSwiperRef] = useState(null);
-
-  let appendNumber = 600;
-  let prependNumber = 1;
+  const appendNumber = useRef(500);
+  const prependNumber = useRef(1);
+  // Create array with 500 slides
+  const [slides, setSlides] = useState(
+    Array.from({ length: 500 }).map((_, index) => `Slide ${index + 1}`)
+  );
 
   const prepend = () => {
-    swiperRef.virtual.prependSlide([
-      'Slide ' + --prependNumber,
-      'Slide ' + --prependNumber,
+    setSlides([
+      `Slide ${prependNumber.current - 2}`,
+      `Slide ${prependNumber.current - 1}`,
+      ...slides,
     ]);
+    prependNumber.current = prependNumber.current - 2;
+    swiperRef.slideTo(swiperRef.activeIndex + 2, 0);
   };
 
   const append = () => {
-    swiperRef.virtual.appendSlide('Slide ' + ++appendNumber);
+    setSlides([...slides, 'Slide ' + ++appendNumber.current]);
   };
 
   const slideTo = (index) => {
     swiperRef.slideTo(index - 1, 0);
   };
-
-  // Create array with 1000 slides
-  const slides = Array.from({ length: 1000 }).map(
-    (_, index) => `Slide ${index + 1}`
-  );
 
   return (
     <>

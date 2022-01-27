@@ -23,7 +23,7 @@ SwiperCore.use([Pagination, Navigation, Virtual]);
       class="mySwiper"
     >
       <ng-template swiperSlide *ngFor="let slide of slides">
-        <div>Slide</div>
+        <div>{{ slide }}</div>
       </ng-template>
     </swiper>
 
@@ -41,23 +41,22 @@ SwiperCore.use([Pagination, Navigation, Virtual]);
   encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
-  slides = Array.from({ length: 1000 }).map((_, index) => `Slide ${index + 1}`);
+  slides = Array.from({ length: 500 }).map((_, index) => `Slide ${index + 1}`);
   @ViewChild('swiperRef', { static: false }) swiperRef?: SwiperComponent;
 
-  appendNumber = 600;
+  appendNumber = 500;
   prependNumber = 1;
 
   prepend() {
-    this.swiperRef.swiperRef.virtual.prependSlide([
-      'Slide ' + --this.prependNumber,
-      'Slide ' + --this.prependNumber,
-    ]);
+    this.slides = [
+      ...['Slide ' + --this.prependNumber, 'Slide ' + --this.prependNumber],
+      ...this.slides,
+    ];
+    this.swiperRef.slideTo(this.swiperRef.activeIndex + 2, 0);
   }
 
   append() {
-    this.swiperRef.swiperRef.virtual.appendSlide(
-      'Slide ' + ++this.appendNumber
-    );
+    this.slides = [...this.slides, 'Slide ' + ++this.appendNumber];
   }
 
   slideTo(index: number) {
