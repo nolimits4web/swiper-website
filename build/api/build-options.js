@@ -48,11 +48,20 @@ const buildOptions = async (
     if (typeObj.type === 'reflection') {
       if (typeObj && typeObj.declaration && typeObj.declaration.signatures) {
         const args = (typeObj.declaration.signatures[0].parameters || [])
-          .map((param) => `<span className="text-red-700">${param.name}</span>`)
+          .map(
+            (param) =>
+              `<span className="text-red-700 dark:text-red-500">${param.name}</span>`
+          )
           .join(', ');
         return `function(${args || ''})`;
       }
       return `object`;
+    }
+
+    if (typeObj.type === 'array') {
+      if (typeObj && typeObj.elementType && typeObj.elementType.name) {
+        return `<span className="text-red-700 dark:text-red-500">${typeObj.elementType.name}</span>`;
+      }
     }
     if (item.name === 'onAny') {
       return 'function';
