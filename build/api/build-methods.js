@@ -54,7 +54,7 @@ const buildMethods = async (
 
     if (typeObj.type === 'array') {
       if (typeObj && typeObj.elementType && typeObj.elementType.name) {
-        return `<span className="text-red-700 dark:text-red-500">${typeObj.elementType.name}</span>`;
+        return `<span className="text-red-700 dark:text-red-500">${typeObj.elementType.name}[]</span>`;
       }
     }
 
