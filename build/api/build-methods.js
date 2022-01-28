@@ -37,7 +37,8 @@ const buildMethods = async (
         if (elementType)
           types.push(`${elementType.name}${type === 'array' ? '[]' : ''}`);
         else if (value) types.push(`'${value}'`);
-        else types.push(name || 'null');
+        else if (value === null) types.push(`null`);
+        else types.push(name);
       });
       return types.join(`{' | '}`);
     }
