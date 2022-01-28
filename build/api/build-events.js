@@ -33,7 +33,7 @@ const buildEvents = async (typesName, typesData, ignoreEvents = []) => {
         if (elementType)
           types.push(`${elementType.name}${type === 'array' ? '[]' : ''}`);
         else if (value) types.push(`'${value}'`);
-        else types.push(name);
+        else types.push(name || 'null');
       });
       return types.join(`{' | '}`);
     }
