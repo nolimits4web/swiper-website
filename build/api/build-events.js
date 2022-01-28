@@ -29,8 +29,10 @@ const buildEvents = async (typesName, typesData, ignoreEvents = []) => {
     const typeObj = item.type || {};
     if (typeObj.type === 'union') {
       const types = [];
-      typeObj.types.forEach(({ name, value }) => {
-        if (value) types.push(`'${value}'`);
+      typeObj.types.forEach(({ elementType, name, type, value }) => {
+        if (elementType)
+          types.push(`${elementType.name}${type === 'array' ? '[]' : ''}`);
+        else if (value) types.push(`'${value}'`);
         else types.push(name);
       });
       return types.join(`{' | '}`);

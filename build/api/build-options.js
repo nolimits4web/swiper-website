@@ -37,11 +37,11 @@ const buildOptions = async (
     }
     if (typeObj.type === 'union') {
       const types = [];
-      typeObj.types.forEach(({ name, value, type, elementType }) => {
-        if (value) types.push(`'${value}'`);
-        else if (name) types.push(name);
-        else if (type === 'array' && elementType)
-          types.push(`${elementType.name}[]`);
+      typeObj.types.forEach(({ elementType, name, type, value }) => {
+        if (elementType)
+          types.push(`${elementType.name}${type === 'array' ? '[]' : ''}`);
+        else if (value) types.push(`'${value}'`);
+        else types.push(name);
       });
       return types.join(`{' | '}`);
     }
