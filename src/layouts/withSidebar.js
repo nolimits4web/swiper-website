@@ -1,6 +1,5 @@
 import PageHeader from '@/components/PageHeader';
 import TableOfContents from '@/components/TableOfContents';
-import SidebarSponsors from '@/components/SidebarSponsors';
 import Carbon from '@/components/Carbon';
 
 export function WithSidebarLayout({
@@ -31,7 +30,6 @@ export function WithSidebarLayout({
         {toc.length > 0 && (
           <div className="mr-4 hidden w-64 flex-none text-sm sm:mr-6 lg:mr-8 lg:block xl:mr-10">
             <div className="sticky top-0 max-h-screen overflow-y-auto overscroll-contain py-10">
-              <SidebarSponsors />
               <TableOfContents tableOfContents={toc} />
             </div>
           </div>

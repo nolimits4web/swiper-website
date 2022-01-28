@@ -8,10 +8,6 @@ export default [
     link: '/swiper-api',
   },
   {
-    name: 'Demos',
-    link: '/demos',
-  },
-  {
     name: 'React',
     link: '/react',
   },
