@@ -16,9 +16,9 @@ const vueFiles = (title) => ({
         swiper: '^7.0.0',
       },
       devDependencies: {
-        vite: '^2.5.0',
-        '@vue/compiler-sfc': '^3.2.4',
-        '@vitejs/plugin-vue': '^1.4.0',
+        vite: '^2.7.0',
+        '@vue/compiler-sfc': '^3.2.0',
+        '@vitejs/plugin-vue': '^2.1.0',
       },
     },
   },

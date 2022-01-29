@@ -12,12 +12,12 @@ const svelteFiles = (title) => ({
         build: 'vite build',
       },
       dependencies: {
-        svelte: '^3.38.2',
+        svelte: '^3.46.3',
         swiper: '^7.0.0',
       },
       devDependencies: {
-        vite: '^2.5.0',
-        '@sveltejs/vite-plugin-svelte': '^1.0.0-next.19',
+        vite: '^2.7.0',
+        '@sveltejs/vite-plugin-svelte': '^1.0.0-next.36',
       },
     },
   },

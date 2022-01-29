@@ -146,8 +146,11 @@ export default function DemosPage() {
         </a>
       </p>
       <div className="my-4 flex space-x-4 overflow-auto pb-6">
-        {uiinitiativeDemosGrouped.map((demos) => (
-          <div className="w-10/12 flex-shrink-0 space-y-4 md:w-6/12 ">
+        {uiinitiativeDemosGrouped.map((demos, demoIndex) => (
+          <div
+            className="w-10/12 flex-shrink-0 space-y-4 md:w-6/12 "
+            key={demoIndex}
+          >
             {demos.map(({ cover, url, title }) => (
               <a
                 key={url}

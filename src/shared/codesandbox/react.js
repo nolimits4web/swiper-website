@@ -7,12 +7,12 @@ const reactFiles = (title) => ({
       license: 'MIT',
       tags: ['swiper'],
       dependencies: {
-        react: '17.0.1',
-        'react-dom': '17.0.1',
+        react: '17.0.2',
+        'react-dom': '17.0.2',
         swiper: '^7.0.0',
       },
       devDependencies: {
-        vite: '^2.5.0',
+        vite: '^2.7.0',
       },
       scripts: {
         dev: 'vite',
