@@ -26,7 +26,7 @@ module.exports = async (dir, _config) => {
     const { configs: parsedConfig, vars } = parseConfig(config);
     config.parsed = parsedConfig;
     const { html } = await posthtml([
-      renderPostHTML(config, vars, configReverseOrder),
+      renderPostHTML(config, vars, demoConfig),
     ]).process(content, {
       closingSingleTag: 'slash',
     });
@@ -86,7 +86,7 @@ function render(
   { templateString, vars },
   { script = {}, cssModules, modules }
 ) {
-  const _modules = modules ? modules.join(',') : '';
+  const usedModules = modules ? modules.join(',') : '';
   const varsTemplate = vars
     ? vars
         .map(({ key, value }) => {
@@ -120,11 +120,8 @@ ${
     ? `
 // import Swiper core and required modules
 import SwiperCore, {
-  ${_modules}
+  ${usedModules}
 } from 'swiper';
-
-// install Swiper modules
-SwiperCore.use([${_modules}]);
 `
     : ''
 }
@@ -147,7 +144,8 @@ export default function App() {
 }`;
 }
 
-function renderPostHTML(config, vars, reverse = false) {
+function renderPostHTML(config, vars, params) {
+  const { configReverseOrder: reverse = false, modules } = params;
   let swiperIndex = -1;
   return (tree) => {
     tree.walk((node) => {
@@ -160,7 +158,6 @@ function renderPostHTML(config, vars, reverse = false) {
       node.attrs = node.attrs || {};
       if (node.tag === 'Swiper') {
         swiperIndex++;
-        // node.tag = 'Swiper';
         const _config =
           config[reverse ? config.length - 1 - swiperIndex : swiperIndex];
         Object.keys(_config).forEach((key) => {
@@ -193,10 +190,12 @@ function renderPostHTML(config, vars, reverse = false) {
             node.attrs[key] = `{${value}}`;
           }
         });
+        if (modules) {
+          node.attrs['modules'] = `{[${modules.join(',')}]}`;
+        }
         const indexStr = getStringIndex(config, swiperIndex, reverse);
         addClass(node, `${swiperName}${indexStr}`, true);
       } else if (node.tag === 'SwiperSlide') {
-        // node.tag = 'SwiperSlide';
         // node.attrs.swiperSlide = true;
       }
 

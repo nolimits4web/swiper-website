@@ -26,7 +26,7 @@ module.exports = async (dir, _config) => {
     const { configs: parsedConfig, vars } = parseConfig(config);
     config.parsed = parsedConfig;
     const { html } = await posthtml([
-      renderPostHTML(config, vars, configReverseOrder),
+      renderPostHTML(config, vars, demoConfig),
     ]).process(
       content
         .replace(/className\=/g, 'class=')
@@ -89,7 +89,7 @@ function render(
   { templateString, vars },
   { script = {}, cssModules, modules }
 ) {
-  const _modules = modules ? modules.join(',') : '';
+  const usedModules = modules?.join(',');
   const varsTemplate = vars
     ? vars
         .map(({ key, value }) => {
@@ -99,7 +99,7 @@ function render(
         .join('\n')
     : '';
 
-  const isThumbs = modules && modules.includes('Thumbs');
+  const isThumbs = modules?.includes('Thumbs');
 
   return `
 <template>
@@ -126,12 +126,13 @@ ${
   modules
     ? `
 // import Swiper core and required modules
-import SwiperCore, {
-  ${_modules}
-} from 'swiper';
-
-// install Swiper modules
-SwiperCore.use([${_modules}]);
+import SwiperCore ${
+        usedModules
+          ? `, {
+  ${usedModules}
+}`
+          : ''
+      } from 'swiper';
 `
     : ''
 }
@@ -141,28 +142,28 @@ export default {
     Swiper,
     SwiperSlide,
   },
-  data() {
-    return {
-        ${varsTemplate}
-        ${isThumbs ? `thumbsSwiper: null` : ''}
-    };
-  },
-  methods: {
+  setup() {
+    ${isThumbs ? `let thumbsSwiper = null;` : ''}
     ${
       isThumbs
         ? `
-    setThumbsSwiper(swiper) {
-      this.thumbsSwiper = swiper;
+    const setThumbsSwiper = (swiper) => {
+      thumbsSwiper = swiper;
     },`
         : ''
     }
+    ${script.vue || ''}
+    return {
+      ${varsTemplate ? `${varsTemplate},` : ''}
+      ${usedModules ? `modules: [${usedModules}],` : ''}
+    };
   }
-  ${script.vue || ''}
 }
 </script>`;
 }
 
-function renderPostHTML(config, vars, reverse = false) {
+function renderPostHTML(config, vars, params) {
+  const { configReverseOrder: reverse = false, modules } = params;
   let swiperIndex = -1;
   return (tree) => {
     tree.walk((node) => {
@@ -209,6 +210,9 @@ function renderPostHTML(config, vars, reverse = false) {
           }
         });
         const indexStr = getStringIndex(config, swiperIndex, reverse);
+        if (modules) {
+          node.attrs[':modules'] = `modules`;
+        }
         addClass(node, `${swiperName}${indexStr}`);
       } else if (node.tag === 'SwiperSlide') {
         node.tag = 'swiper-slide';
