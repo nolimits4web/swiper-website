@@ -86,7 +86,7 @@ function render(
   { templateString, vars },
   { script = {}, cssModules, modules }
 ) {
-  const usedModules = modules ? modules.join(',') : '';
+  const modulesListComa = modules?.join(',');
   const varsTemplate = vars
     ? vars
         .map(({ key, value }) => {
@@ -96,7 +96,7 @@ function render(
         .join('\n')
     : '';
 
-  const isThumbs = modules && modules.includes('Thumbs');
+  const isThumbs = modules?.includes('Thumbs');
 
   return `
 import React, { useRef, useState } from "react";
@@ -116,12 +116,10 @@ ${
 import "./styles.css";
 
 ${
-  modules
+  modulesListComa
     ? `
-// import Swiper core and required modules
-import SwiperCore, {
-  ${usedModules}
-} from 'swiper';
+// import required modules
+import {${modulesListComa}} from 'swiper';
 `
     : ''
 }

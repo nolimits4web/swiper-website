@@ -89,7 +89,7 @@ function render(
   { templateString, vars },
   { script = {}, cssModules, modules }
 ) {
-  const usedModules = modules?.join(',');
+  const modulesListComa = modules?.join(',');
   const varsTemplate = vars
     ? vars
         .map(({ key, value }) => {
@@ -123,16 +123,10 @@ ${
 import './style.css';
 
 ${
-  modules
+  modulesListComa
     ? `
-// import Swiper core and required modules
-import SwiperCore ${
-        usedModules
-          ? `, {
-  ${usedModules}
-}`
-          : ''
-      } from 'swiper';
+// import required modules
+import {${modulesListComa}} from 'swiper';
 `
     : ''
 }
@@ -155,7 +149,7 @@ export default {
     ${script.vue || ''}
     return {
       ${varsTemplate ? `${varsTemplate},` : ''}
-      ${usedModules ? `modules: [${usedModules}],` : ''}
+      ${modulesListComa ? `modules: [${modulesListComa}],` : ''}
     };
   }
 }
