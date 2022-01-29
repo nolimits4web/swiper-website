@@ -31,13 +31,10 @@ module.exports = async (dir, _config) => {
       closingSingleTag: 'slash',
     });
     const templateString = aferPostHTML(html);
-    // const componentContent = prettier.format(
-    //   render({ templateString, vars }, demoConfig),
-    //   {
-    //     parser: 'babel',
-    //   }
-    // );
-    const componentContent = render({ templateString, vars }, demoConfig);
+    const componentContent = prettier.format(
+      render({ templateString, vars }, demoConfig),
+      { parser: 'babel' }
+    );
     await fs.writeFile(
       path.join(dir, 'react.json'),
       JSON.stringify({
