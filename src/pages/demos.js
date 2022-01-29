@@ -52,7 +52,6 @@ export default function DemosPage() {
     // {{ &quot;enabled&quote;: true }} => {{ "enabled": true }}
     if (mode === 'react') {
       Object.keys(contentJSON).map((file) => {
-        console.log(file);
         const cur = contentJSON[file];
         if (!!cur.content && typeof cur.content === 'string') {
           cur.content = cur.content.replace(/&quot;/g, '"');
@@ -151,6 +150,7 @@ export default function DemosPage() {
           <div className="w-10/12 flex-shrink-0 space-y-4 md:w-6/12 ">
             {demos.map(({ cover, url, title }) => (
               <a
+                key={url}
                 className="block w-full rounded-lg bg-black bg-opacity-10 dark:border dark:border-white dark:border-opacity-10"
                 href={url}
                 target="_blank"
