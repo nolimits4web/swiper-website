@@ -28,7 +28,7 @@ module.exports = async (dir, _config) => {
     const { configs: parsedConfig, vars } = parseConfig(config);
     config.parsed = parsedConfig;
     const { html: templateString } = await posthtml([
-      renderPostHTML(config, vars, configReverseOrder),
+      renderPostHTML(config, vars, demoConfig),
     ]).process(
       content
         .replace(/className\=/g, 'class=')
@@ -86,7 +86,7 @@ function parseConfig(configs) {
 }
 
 function render({ templateString, modules, vars }, { script = {} }) {
-  const _modules = modules ? modules.join(',') : '';
+  const modulesListComa = modules?.join(',');
   const varsTemplate = vars
     ? vars
         .map(({ key, value }) => {
@@ -96,21 +96,17 @@ function render({ templateString, modules, vars }, { script = {} }) {
         .join('\n')
     : '';
 
-  const isThumbs = modules && modules.includes('Thumbs');
+  const isThumbs = modules?.includes('Thumbs');
 
   return `
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { SwiperComponent } from 'swiper/angular';
-${
-  modules
-    ? `
-// import Swiper core and required modules
-import SwiperCore, {
-  ${_modules}
-} from 'swiper';
+import { SwiperComponent } from 'swiper/angular';\
 
-// install Swiper modules
-SwiperCore.use([${_modules}]);
+${
+  modulesListComa
+    ? `
+// import required modules
+import {${modulesListComa}} from 'swiper';
 `
     : ''
 }
@@ -130,13 +126,15 @@ export class AppComponent {
   `
       : ''
   }
+  ${modulesListComa ? `modules = [${modulesListComa}]` : ''}
   ${script.angular || ''}
 }
 
   `;
 }
 
-function renderPostHTML(config, vars, reverse = false) {
+function renderPostHTML(config, vars, params) {
+  const { configReverseOrder: reverse = false, modules } = params;
   let swiperIndex = -1;
   return (tree) => {
     tree.walk((node) => {
@@ -182,6 +180,9 @@ function renderPostHTML(config, vars, reverse = false) {
           }
         });
         const indexStr = getStringIndex(config, swiperIndex, reverse);
+        if (modules) {
+          node.attrs['[modules]'] = 'modules';
+        }
         addClass(node, `${swiperName}${indexStr}`);
       } else if (node.tag === 'SwiperSlide') {
         node.tag = 'ng-template';
