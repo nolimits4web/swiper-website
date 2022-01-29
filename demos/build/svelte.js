@@ -36,13 +36,11 @@ module.exports = async (dir, _config) => {
       }
     );
     const templateString = aferPostHTML(html);
-    // const _templateString = prettier.format(
-    //   render({ templateString, vars }, demoConfig),
-    //   {
-    //     parser: 'babel',
-    //   }
-    // );
     const componentContent = render({ templateString, vars }, demoConfig);
+    // const componentContent = prettier.format(
+    //   render({ templateString, vars }, demoConfig),
+    //   { parser: 'babel', plugins: ['prettier-plugin-svelte'] }
+    // );
     await fs.writeFile(
       path.join(dir, 'svelte.json'),
       JSON.stringify({

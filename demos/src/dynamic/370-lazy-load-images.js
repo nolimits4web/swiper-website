@@ -41,11 +41,9 @@ module.exports = (mode = 'core') => ({
     .map(
       (el, index) =>
         `<SwiperSlide>
-          <!-- Required swiper-lazy class and image source specified in data-src attribute -->
           <img data-src="https://swiperjs.com/demos/images/nature-${
             index + 1
           }.jpg" className="swiper-lazy">
-          <!-- Preloader image -->
           <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
         </SwiperSlide>`
     )

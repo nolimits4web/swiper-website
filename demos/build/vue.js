@@ -36,13 +36,12 @@ module.exports = async (dir, _config) => {
       }
     );
     const templateString = aferPostHTML(html);
-    // const _templateString = prettier.format(
+    // const componentContent = prettier.format(
     //   render({ templateString, vars }, demoConfig),
-    //   {
-    //     parser: 'babel',
-    //   }
+    //   { parser: 'babel' }
     // );
     const componentContent = render({ templateString, vars }, demoConfig);
+
     await fs.writeFile(
       path.join(dir, 'vue.json'),
       JSON.stringify({
