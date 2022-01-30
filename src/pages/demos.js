@@ -199,6 +199,7 @@ export default function DemosPage() {
   });
   const formRef = useRef();
   const [currentCodeSandboxParams, setCurrentCodeSandboxParams] = useState('');
+  const [currentCodeSandboxQuery, setCurrentCodeSandboxQuery] = useState('');
 
   useLazyDemos();
   const generateCodeSandboxWorkspace = (mode, contentJSON, title = '') => {
@@ -259,6 +260,15 @@ export default function DemosPage() {
     );
 
     setCurrentCodeSandboxParams(codeSandBoxParams);
+    setCurrentCodeSandboxQuery(
+      {
+        react: 'file=/src/App.jsx',
+        svelte: 'file=/App.svelte',
+        vue: 'file=/src/App.vue',
+        angular: 'file=/src/app/app.component.ts',
+        core: 'file=/index.html',
+      }[mode] || ''
+    );
     formRef.current.submit();
   };
 
@@ -283,6 +293,7 @@ export default function DemosPage() {
           name="parameters"
           value={currentCodeSandboxParams}
         />
+        <input type="hidden" name="query" value={currentCodeSandboxQuery} />
       </form>
       <Carbon />
       <h1 className="dark:text-gray-200">Swiper Demos</h1>
