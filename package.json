@@ -20,6 +20,7 @@
   "dependencies": {
     "@angular/core": "^13.1.1",
     "@headlessui/react": "^1.4.2",
+    "@heroicons/react": "^1.0.5",
     "@mapbox/rehype-prism": "^0.6.0",
     "@mdx-js/loader": "^1.6.22",
     "@next/mdx": "^12.0.7",
