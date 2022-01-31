@@ -36,11 +36,10 @@ module.exports = async (dir, _config) => {
       }
     );
     const templateString = aferPostHTML(html);
-    // const componentContent = prettier.format(
-    //   render({ templateString, vars }, demoConfig),
-    //   { parser: 'babel' }
-    // );
-    const componentContent = render({ templateString, vars }, demoConfig);
+    const componentContent = prettier.format(
+      render({ templateString, vars }, demoConfig),
+      { filepath: 'swiper-demo.vue' }
+    );
 
     await fs.writeFile(
       path.join(dir, 'vue.json'),
