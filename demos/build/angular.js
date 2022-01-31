@@ -36,9 +36,7 @@ module.exports = async (dir, _config) => {
     );
     const componentContent = prettier.format(
       render({ templateString, modules, vars }, demoConfig),
-      {
-        parser: 'typescript',
-      }
+      { filepath: 'swiper.component.ts' }
     );
     const componentCSS = cssModules
       ? cssModules.map((m) => `@import "~swiper/css/${m}";`)

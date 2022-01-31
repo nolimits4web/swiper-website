@@ -33,7 +33,7 @@ module.exports = async (dir, _config) => {
     const templateString = aferPostHTML(html);
     const componentContent = prettier.format(
       render({ templateString, vars }, demoConfig),
-      { parser: 'babel' }
+      { filepath: 'swiper-demo.jsx' }
     );
     await fs.writeFile(
       path.join(dir, 'react.json'),

@@ -36,11 +36,10 @@ module.exports = async (dir, _config) => {
       }
     );
     const templateString = aferPostHTML(html);
-    const componentContent = render({ templateString, vars }, demoConfig);
-    // const componentContent = prettier.format(
-    //   render({ templateString, vars }, demoConfig),
-    //   { parser: 'babel', plugins: ['prettier-plugin-svelte'] }
-    // );
+    const componentContent = prettier.format(
+      render({ templateString, vars }, demoConfig),
+      { filepath: 'swiper-demo.svelte' }
+    );
     await fs.writeFile(
       path.join(dir, 'svelte.json'),
       JSON.stringify({
@@ -173,7 +172,7 @@ function renderPostHTML(config, vars, params) {
             }
             if (attrName === 'thumbsSlider') {
               delete node.attrs[attrName];
-              node.attrs['on:swiper'] = 'setThumbsSwiper';
+              node.attrs['on:swiper'] = '{setThumbsSwiper}';
             }
           });
           let value = _config[key];
