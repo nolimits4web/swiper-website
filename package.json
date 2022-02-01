@@ -38,7 +38,7 @@
     "front-matter": "^4.0.2",
     "fs-extra": "^10.0.0",
     "globby": "^11.0.4",
-    "next": "12.0.7",
+    "next": "12.0.9",
     "node-fetch": "^2.6.1",
     "postcss": "^8.4.5",
     "postcss-import": "^14.0.2",
