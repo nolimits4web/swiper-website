@@ -9,7 +9,7 @@ const reactFiles = (title) => ({
       dependencies: {
         react: '17.0.2',
         'react-dom': '17.0.2',
-        swiper: '^7.0.0',
+        swiper: '^8.0.0',
       },
       devDependencies: {
         vite: '^2.7.0',
