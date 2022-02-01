@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "releaseVersion": "8.0.0",
-  "releaseDate": "February 1, 2021",
+  "releaseDate": "February 1, 2022",
   "scripts": {
     "dev": "npm run build-uiinitiative-demos && npm run build-sponsors && npm run build-demos && npm run build-types && npm run build-api && next dev",
     "next-dev": "next dev",
