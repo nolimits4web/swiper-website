@@ -4,9 +4,12 @@ description: SwipersJS Angular.
 carbon: true
 ---
 
-<div className="important-note md:mr-[340px]">
-  If you are upgrading from Swiper 6 to Swiper 7, check out{' '}
-  <a href="/migration-guide">Migration Guide to Swiper 7</a>
+<div className="important-note md:mr-[340px] space-y-4">
+  <div>If you are upgrading from Swiper 6 to Swiper 7, check out{' '}
+  <a href="/migration-guide">Migration Guide to Swiper 7</a></div>
+
+  <div>If you are upgrading from Swiper 7 to Swiper 8, check out{' '}
+  <a href="/migration-guide-v8">Migration Guide to Swiper 8</a></div>
 </div>
 
 ## Getting started
@@ -106,7 +109,7 @@ import SwiperCore from 'swiper';
   `,
 })
 export class AppComponent {
-  onSwiper(swiper) {
+  onSwiper([swiper]) {
     console.log(swiper);
   }
   onSlideChange() {
@@ -148,7 +151,7 @@ export class AppComponent {
     pagination: { clickable: true },
     scrollbar: { draggable: true },
   };
-  onSwiper(swiper) {
+  onSwiper([swiper]) {
     console.log(swiper);
   }
   onSlideChange() {
@@ -220,7 +223,7 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
   `,
 })
 export class AppComponent {
-  onSwiper(swiper) {
+  onSwiper([swiper]) {
     console.log(swiper);
   }
   onSlideChange() {
@@ -277,13 +280,13 @@ export class AppComponent {
 
 ## SwiperComponent events
 
-Swiper component supports all <a href="/api/#events">Swiper events</a>, including additional `swiper` event that returns swiper instance as soon as posible. For example:
-
 <div className="important-note">
   Note that Swiper Angular component all events emits outside of NgZone for
   better perfomance. Dont forget to use `ngzone.run` or ChangeDetector if you
   need to change view (e.g slides) in event handlers (e.g `slideChange`).
 </div>
+
+Swiper component supports all <a href="/api/#events">Swiper events</a>, including additional `swiper` event that returns swiper instance as soon as posible. For example:
 
 ```html
 <swiper (swiper)="..." (slideChange)="..." (reachEnd)="..." ...></swiper>

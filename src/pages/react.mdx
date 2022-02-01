@@ -3,9 +3,12 @@ title: Swiper React Components
 carbon: true
 ---
 
-<div className="important-note md:mr-[340px]">
-  If you are upgrading from Swiper 6 to Swiper 7, check out{' '}
-  <a href="/migration-guide">Migration Guide to Swiper 7</a>
+<div className="important-note md:mr-[340px] space-y-4">
+  <div>If you are upgrading from Swiper 6 to Swiper 7, check out{' '}
+  <a href="/migration-guide">Migration Guide to Swiper 7</a></div>
+
+  <div>If you are upgrading from Swiper 7 to Swiper 8, check out{' '}
+  <a href="/migration-guide-v8">Migration Guide to Swiper 8</a></div>
 </div>
 
 ## Installation
@@ -216,6 +219,42 @@ Also it supports all <a href="/api/#events">Swiper events</a> in `on{Eventname}`
     )}
   </SwiperSlide>
 </Swiper>
+```
+
+## useSwiper
+
+Swiper React provides `useSwiper` hook to easliy get the Swiper instance in components inside of Swiper:
+
+```jsx
+// some-inner-component.jsx
+import { React } from 'react';
+import { useSwiper } from 'swiper/react';
+
+export default function SlideNextButton() {
+  const swiper = useSwiper();
+
+  return (
+    <button onClick={() => swiper.slideNext()}>Slide to the next slide</button>
+  );
+}
+```
+
+## useSwiperSlide
+
+`useSwiperSlide` is one more hook for components inside of Swiper slides to get the slide data (same data as in [SwiperSlide render function](#swiper-slide-render-function))
+
+```jsx
+// some-inner-component.jsx
+import { React } from 'react';
+import { useSwiperSlide } from 'swiper/react';
+
+export default function SlideTitle() {
+  const swiperSlide = useSwiperSlide();
+
+  return (
+    <p>Current slide is {swiperSlide.isActive ? 'active' : 'not active'}</p>
+  );
+}
 ```
 
 ## Slots

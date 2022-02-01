@@ -3,9 +3,12 @@ title: Swiper Vue.js Components
 carbon: true
 ---
 
-<div className="important-note md:mr-[340px]">
-  If you are upgrading from Swiper 6 to Swiper 7, check out{' '}
-  <a href="/migration-guide">Migration Guide to Swiper 7</a>
+<div className="important-note md:mr-[340px] space-y-4">
+  <div>If you are upgrading from Swiper 6 to Swiper 7, check out{' '}
+  <a href="/migration-guide">Migration Guide to Swiper 7</a></div>
+
+  <div>If you are upgrading from Swiper 7 to Swiper 8, check out{' '}
+  <a href="/migration-guide-v8">Migration Guide to Swiper 8</a></div>
 </div>
 
 ## Installation
@@ -251,6 +254,54 @@ Swiper component supports all <a href="/api/#events">Swiper events</a>, includin
 </swiper>
 ```
 
+## useSwiper
+
+Swiper Vue provides `useSwiper` hook to easliy get the Swiper instance in components inside of Swiper:
+
+```html
+<!-- some-inner-component.vue -->
+<template>
+  <button @click="swiper.slideNext()">Slide to the next slide</button>
+</template>
+<script>
+  import { useSwiper } from 'swiper/vue';
+
+  export default {
+    setup() {
+      const swiper = useSwiper();
+
+      return {
+        swiper,
+      };
+    },
+  };
+</script>
+```
+
+## useSwiperSlide
+
+`useSwiperSlide` is one more hook for components inside of Swiper slides to get the slide data (same data as in [SwiperSlide slot props](#swiper-slide-slot-props))
+
+```html
+<!-- some-inner-component.vue -->
+<template>
+  <p>Current slide is {{swiperSlide.isActive ? 'active' : 'not active'}}</p>
+</template>
+<script>
+  import { useSwiperSlide } from 'swiper/vue';
+
+  export default {
+    setup() {
+      const swiperSlide = useSwiperSlide();
+
+      return {
+        swiperSlide,
+      };
+    },
+  };
+</script>
+```
+
 ## Slots
 
 Swiper Vue.js component uses "slots" for content distribution. There are 4 slots available
@@ -361,7 +412,7 @@ Controller requires to pass one Swiper instance to another:
       const controlledSwiper = ref(null);
       const setControlledSwiper = (swiper) => {
         controlledSwiper.value = swiper;
-      }
+      };
       return {
         Controller,
         controlledSwiper,
