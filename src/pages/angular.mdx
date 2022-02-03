@@ -118,7 +118,7 @@ export class AppComponent {
 }
 ```
 
-`[config]`
+Using `[config]`:
 
 ```js
 import { Component } from '@angular/core';
@@ -287,9 +287,36 @@ export class AppComponent {
 </div>
 
 Swiper component supports all <a href="/api/#events">Swiper events</a>, including additional `swiper` event that returns swiper instance as soon as posible. For example:
+use `EventsParams` for typing. Parameters are always returned as an array even if only one paramter passed.
 
-```html
-<swiper (swiper)="..." (slideChange)="..." (reachEnd)="..." ...></swiper>
+```ts
+import { Component } from '@angular/core';
+
+import { EventsParams } from 'swiper/angular';
+
+@Component({
+  selector: 'app-swiper-example',
+  template: `
+    <swiper
+      (swiper)="onSwiper($event)"
+      (beforeTransitionStart)="onBeforeTransitionStart()"
+    >
+      <ng-template swiperSlide>Slide 1</ng-template>
+      <ng-template swiperSlide>Slide 2</ng-template>
+      <ng-template swiperSlide>Slide 3</ng-template>
+    </swiper>
+  `,
+})
+export class AppComponent {
+  onSwiper(params: EventsParams['swiper']) {
+    const [swiper] = params;
+    console.log(swiper);
+  }
+  beforeTransitionStart(params: EventsParams['beforeSlideChangeStart']) {
+    const [swiper, speed, internal] = params;
+    console.log('beforeTransitionStart, speed: ' + speed);
+  }
+}
 ```
 
 ## SwiperSlideDirective props
