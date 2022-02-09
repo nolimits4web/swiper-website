@@ -8,6 +8,7 @@ import Swiper, {
   EffectCards,
   EffectFlip,
   Controller,
+  Mousewheel,
 } from 'swiper';
 
 Swiper.use([
@@ -18,6 +19,7 @@ Swiper.use([
   EffectCards,
   EffectFlip,
   Controller,
+  Mousewheel,
 ]);
 
 import 'swiper/css';
@@ -48,6 +50,10 @@ export default function HomeSlider() {
       slidesPerView: 1,
       effect: 'creative',
       grabCursor: true,
+      mousewheel: {
+        sensitivity: 0.3,
+        releaseOnEdges: true,
+      },
       watchSlidesProgress: true,
       creativeEffect: {
         perspective: true,
@@ -81,10 +87,12 @@ export default function HomeSlider() {
       effect: 'cards',
       createElements: true,
       pagination: true,
+      mousewheel: {},
       resistanceRatio: 0,
     });
     swiperFlip.current = new Swiper('.header-swiper-flip', {
       nested: true,
+      mousewheel: {},
       effect: 'flip',
       createElements: true,
       pagination: true,
