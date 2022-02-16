@@ -42,7 +42,7 @@ SwiperCore.use([Pagination, Navigation, Virtual]);
 })
 export class AppComponent {
   slides = Array.from({ length: 500 }).map((_, index) => `Slide ${index + 1}`);
-  @ViewChild('swiperRef', { static: false }) swiperRef?: SwiperComponent;
+  @ViewChild('swiperRef', { static: false }) swiper?: SwiperComponent;
 
   appendNumber = 500;
   prependNumber = 1;
@@ -52,7 +52,7 @@ export class AppComponent {
       ...['Slide ' + --this.prependNumber, 'Slide ' + --this.prependNumber],
       ...this.slides,
     ];
-    this.swiperRef.slideTo(this.swiperRef.activeIndex + 2, 0);
+    this.swiper.swiperRef.slideTo(this.swiper.swiperRef.activeIndex + 2, 0);
   }
 
   append() {
@@ -60,6 +60,6 @@ export class AppComponent {
   }
 
   slideTo(index: number) {
-    this.swiperRef.swiperRef.slideTo(index - 1, 0);
+    this.swiper.swiperRef.slideTo(index - 1, 0);
   }
 }
