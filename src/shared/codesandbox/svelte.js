@@ -40,8 +40,6 @@ const svelteFiles = (title) => ({
           const app = new App({
             target: document.getElementById("app")
           });
-
-          export default app;
         </script>
       </body>
     </html>
