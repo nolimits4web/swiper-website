@@ -1,22 +1,22 @@
 <script>
-  import { Swiper, SwiperSlide } from "swiper/svelte";
+  import { Swiper, SwiperSlide } from 'swiper/svelte';
 
   // Import Swiper styles
-  import "swiper/css";
+  import 'swiper/css';
 
-  import "swiper/css/pagination";
-  import "swiper/css/navigation";
+  import 'swiper/css/pagination';
+  import 'swiper/css/navigation';
 
-  import "./style.css";
+  import './style.css';
 
   // import Swiper core and required modules
-  import SwiperCore, { Pagination, Navigation, Virtual } from "swiper";
+  import SwiperCore, { Pagination, Navigation, Virtual } from 'swiper';
 
   // install Swiper modules
   SwiperCore.use([Pagination, Navigation, Virtual]);
 
   // Create array with 1000 slides
-  const virtualSlides = Array.from({ length: 600 }).map(
+  let virtualSlides = Array.from({ length: 600 }).map(
     (_, index) => `Slide ${index + 1}`
   );
   let appendNumber = 600;
@@ -34,20 +34,24 @@
   };
 
   const prepend = () => {
-    swiperRef.virtual.prependSlide([
-      "Slide " + --prependNumber,
-      "Slide " + --prependNumber
-    ]);
+    virtualSlides = [
+      `Slide ${prependNumber - 2}`,
+      `Slide ${prependNumber - 1}`,
+      ...slides,
+    ];
+    prependNumber -= 2;
   };
 
   const append = () => {
-    swiperRef.virtual.appendSlide("Slide " + ++appendNumber);
+    appendNumber += 1;
+    virtualSlides = [...slides, `Slide ${appendNumber}`];
   };
 
-  const slideTo = index => {
+  const slideTo = (index) => {
     swiperRef.slideTo(index - 1, 0);
   };
 </script>
+
 <Swiper
   on:swiper={setSwiperRef}
   slidesPerView={3}
@@ -55,16 +59,16 @@
   spaceBetween={30}
   virtual={{ slides: virtualSlides }}
   let:virtualData={{ slides, offset, from }}
-  pagination='{{
-  "type": "fraction"
-}}'
+  pagination={{
+    type: 'fraction',
+  }}
   navigation={true}
-  class="mySwiper">
-    {#each slides as slide, index (from + index)}
-    <SwiperSlide
-      virtualIndex={from + index}
-      style={`left: ${offset}px`}
-    >{slide}</SwiperSlide>
+  class="mySwiper"
+>
+  {#each slides as slide, index (from + index)}
+    <SwiperSlide virtualIndex={from + index} style={`left: ${offset}px`}
+      >{slide}</SwiperSlide
+    >
   {/each}
 </Swiper>
 <p class="append-buttons">
