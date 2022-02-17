@@ -29,7 +29,7 @@ Swiper Vue.js plugin is available only via NPM as a part of the main Swiper libr
     :slides-per-view="3"
     :space-between="50"
     @swiper="onSwiper"
-    @slideChange="onSlideChange"
+    @slide-change="onSlideChange"
   >
     <swiper-slide>Slide 1</swiper-slide>
     <swiper-slide>Slide 2</swiper-slide>
@@ -109,7 +109,7 @@ Here is the list of additional modules imports:
     :pagination="{ clickable: true }"
     :scrollbar="{ draggable: true }"
     @swiper="onSwiper"
-    @slideChange="onSlideChange"
+    @slide-change="onSlideChange"
   >
     <swiper-slide>Slide 1</swiper-slide>
     <swiper-slide>Slide 2</swiper-slide>
@@ -224,7 +224,7 @@ import 'swiper/scss/pagination';
 Swiper component supports all <a href="/api/#events">Swiper events</a>, including additional `swiper` event that returns swiper instance as soon as posible. For example:
 
 ```html
-<swiper @swiper="..." @slideChange="..." @reachEnd="..." ...></swiper>
+<swiper @swiper="..." @slide-change="..." @reach-end="..." ...></swiper>
 ```
 
 ## SwiperSlide props
