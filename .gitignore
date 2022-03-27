@@ -23,6 +23,7 @@ yarn-error.log*
 
 # local env files
 .env.local
+.env.local.old
 .env.development.local
 .env.test.local
 .env.production.local
@@ -33,14 +34,10 @@ yarn-error.log*
 public/types/**/*
 !public/types/.gitkeep
 public/.DS_Store
-public/images/sponsors/*.jpg
-public/images/sponsors/*.png
-public/images/sponsors/*.svg
 
 src/components/api/*.js
 src/types.json
 src/demos.json
 src/uiinitiative-demos.json
-src/shared/sponsors-list.js
 
 tsconfig.json
