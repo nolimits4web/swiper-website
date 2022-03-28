@@ -36,7 +36,8 @@ const downloadImage = (image) => {
 const getSponsor = (item) => {
   return new Promise((resolve, reject) => {
     const { createdAt } = item.sys;
-    const { title, link, plan, ref, image, imageHorizontal } = item.fields;
+    const { title, link, plan, ref, image, imageHorizontal, endDate } =
+      item.fields;
     const downloads = [];
     if (image) downloads.push(downloadImage(image));
     if (imageHorizontal) downloads.push(downloadImage(imageHorizontal));
@@ -50,6 +51,7 @@ const getSponsor = (item) => {
           ref,
           image: image ? image.fields.file.fileName : '',
           image_h: imageHorizontal ? imageHorizontal.fields.file.fileName : '',
+          endDate: endDate || '',
         };
         resolve(sponsor);
       })
