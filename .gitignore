@@ -39,5 +39,6 @@ src/components/api/*.js
 src/types.json
 src/demos.json
 src/uiinitiative-demos.json
+src/shared/sponsors-list-cjs.js
 
 tsconfig.json
