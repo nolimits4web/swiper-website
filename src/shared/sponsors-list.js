@@ -1,5 +1,26 @@
 export default [
   {
+    createdAt: '2022-04-05T12:02:40.833Z',
+    title:
+      'Buy Instagram Followers, Likes & Views to Boost Your Instagram Presence',
+    link: 'https://viewsinsta.com',
+    plan: 'Sponsor',
+    ref: 'https://opencollective.com/viewsinstacom',
+    image: 'viewsinsta.png',
+    image_h: '',
+    endDate: '',
+  },
+  {
+    createdAt: '2022-04-05T12:00:02.635Z',
+    title: 'Online Casino Test 2022 » 90+ Casinos von Experten geprüft!',
+    link: 'https://www.casinotest.de',
+    plan: 'Silver Sponsor',
+    ref: 'https://opencollective.com/casinoguide',
+    image: 'casinotest.png',
+    image_h: '',
+    endDate: '',
+  },
+  {
     createdAt: '2022-04-01T12:38:11.926Z',
     title: 'Kasinot | Löydä parhaat nettikasinot (2022)',
     link: 'https://www.kasinot.fi',
