@@ -1,5 +1,14 @@
 export default [
   {
+    createdAt: '2022-04-06T08:37:22.606Z',
+    title: 'Best Crypto Casinos (2022) - DoubleTheBitcoin.net',
+    link: 'https://www.doublethebitcoin.net',
+    plan: 'Sponsor',
+    ref: 'https://www.patreon.com/user/creators?u=72131823',
+    image: 'doublethebitcoin.jpg',
+    endDate: '2023-04-06T08:37:22.606Z',
+  },
+  {
     createdAt: '2022-04-05T12:02:40.833Z',
     title:
       'Buy Instagram Followers, Likes & Views to Boost Your Instagram Presence',
