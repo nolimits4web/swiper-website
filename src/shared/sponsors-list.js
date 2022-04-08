@@ -1,5 +1,14 @@
 export default [
   {
+    createdAt: '2022-04-08T09:11:19.546Z',
+    title: 'Best For Android – Your Source for everything Android',
+    link: 'https://bestforandroid.com',
+    plan: 'Sponsor',
+    ref: 'https://opencollective.com/bestforandroid',
+    image: 'bestforandroid.png',
+    endDate: '',
+  },
+  {
     createdAt: '2022-04-06T08:37:22.606Z',
     title: 'Best Crypto Casinos (2022) - DoubleTheBitcoin.net',
     link: 'https://www.doublethebitcoin.net',
