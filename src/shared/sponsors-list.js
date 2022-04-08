@@ -1,8 +1,8 @@
 export default [
   {
     createdAt: '2022-04-08T09:11:19.546Z',
-    title: 'Best For Android – Your Source for everything Android',
-    link: 'https://bestforandroid.com',
+    title: 'Download Android apps apk',
+    link: 'https://bestforandroid.com/apps/',
     plan: 'Sponsor',
     ref: 'https://opencollective.com/bestforandroid',
     image: 'bestforandroid.png',
