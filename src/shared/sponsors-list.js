@@ -1,5 +1,14 @@
 export default [
   {
+    createdAt: '2022-04-11T09:17:54.423Z',
+    title: 'Polskie Kasyno Online 2022: Najlepsze Kasyna Online w Polsce',
+    link: 'https://casinotop.pl',
+    plan: 'Sponsor',
+    ref: 'https://opencollective.com/casinotoppl',
+    image: 'casinotoppl.png',
+    endDate: '',
+  },
+  {
     createdAt: '2022-04-08T09:12:19.546Z',
     title: 'nettikasinot kuninkaat',
     link: 'https://nettikasinotkuninkaat.com',
