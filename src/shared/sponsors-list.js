@@ -1,5 +1,15 @@
 export default [
   {
+    createdAt: '2022-04-13T16:02:04.081Z',
+    title: 'Casino en Ligne Argent Réel au Canada: Meilleurs Sites de Casino',
+    link: 'https://casinoscanada.reviews',
+    plan: 'Sponsor',
+    ref: 'https://opencollective.com/casinoscanadareviews',
+    image: 'casinocanada.png',
+    image_h: '',
+    endDate: '',
+  },
+  {
     createdAt: '2022-04-11T09:17:54.423Z',
     title: 'Polskie Kasyno Online 2022: Najlepsze Kasyna Online w Polsce',
     link: 'https://casinotop.pl',
