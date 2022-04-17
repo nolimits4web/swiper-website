@@ -1,5 +1,15 @@
 export default [
   {
+    createdAt: '2022-04-17T09:25:58.507Z',
+    title: 'VPNs, Firestick, Kodi & IPTV Tips',
+    link: 'https://www.vpncheck.org',
+    plan: 'Sponsor',
+    ref: 'https://opencollective.com/vpncheck',
+    image: 'vpncheck.png',
+    image_h: '',
+    endDate: '',
+  },
+  {
     createdAt: '2022-04-13T16:02:04.081Z',
     title: 'Casino en Ligne Argent Réel au Canada: Meilleurs Sites de Casino',
     link: 'https://casinoscanada.reviews',
