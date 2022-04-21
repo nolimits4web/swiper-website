@@ -3,7 +3,7 @@ export default [
     createdAt: '2022-04-21T11:28:57.223Z',
     title: 'Best US Online Casino Sites 2022 ᐅ Top 10 USA Online Casinos',
     link: 'https://www.betastic.com/online-casinos/',
-    plan: 'sponsor',
+    plan: 'Sponsor',
     ref: 'https://www.patreon.com/user/creators?u=72180023',
     image: 'betastic.png',
     image_h: '',
