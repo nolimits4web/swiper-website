@@ -1,5 +1,15 @@
 export default [
   {
+    createdAt: '2022-04-21T11:28:57.223Z',
+    title: 'Best US Online Casino Sites 2022 ᐅ Top 10 USA Online Casinos',
+    link: 'https://www.betastic.com/online-casinos/',
+    plan: 'sponsor',
+    ref: 'https://www.patreon.com/user/creators?u=72180023',
+    image: 'betastic.png',
+    image_h: '',
+    endDate: '2023-04-21T11:28:57.223Z',
+  },
+  {
     createdAt: '2022-04-17T09:25:58.507Z',
     title: 'VPNs, Firestick, Kodi & IPTV Tips',
     link: 'https://www.vpncheck.org',
