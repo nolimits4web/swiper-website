@@ -1,5 +1,15 @@
 export default [
   {
+    createdAt: '2022-04-23T12:00:00.000Z',
+    title: 'JETX APOSTAS - Jogo do foguete JETIX 2022',
+    link: 'https://jetx-apostas.com',
+    plan: 'Sponsor',
+    ref: 'https://opencollective.com/jetx-apostas',
+    image: 'jetxjogo.png',
+    image_h: '',
+    endDate: '',
+  },
+  {
     createdAt: '2022-04-22T22:46:00.000Z',
     title: 'Aviator aposta ᐈ Jogo de avião Aviator',
     link: 'https://aviators.com.br',
