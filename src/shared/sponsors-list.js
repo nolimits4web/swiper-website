@@ -1,5 +1,15 @@
 export default [
   {
+    createdAt: '2022-04-28T10:30:00.000Z',
+    title: 'paraphrasing tool',
+    link: 'https://articlereword.com',
+    plan: 'Sponsor',
+    ref: 'https://opencollective.com/articlereworder',
+    image: 'articlereword.png',
+    image_h: '',
+    endDate: '',
+  },
+  {
     createdAt: '2022-04-26T17:34:00.000Z',
     title: 'Graveerbare Sieraden',
     link: 'https://www.xoo.nl',
