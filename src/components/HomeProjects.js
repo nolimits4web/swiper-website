@@ -27,7 +27,7 @@ export default function HomeProjects() {
         },
       ].map((item) => (
         <a
-          className="flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:no-underline hover:shadow-lg sm:flex-col sm:hover:shadow-2xl"
+          className="flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:no-underline hover:shadow-lg dark:text-white dark:hover:bg-white dark:hover:bg-opacity-10 sm:flex-col sm:hover:shadow-2xl"
           href={item.url}
           target="_blank"
           key={item.title}
@@ -38,7 +38,7 @@ export default function HomeProjects() {
             alt={item.title}
           />
           <div>
-            <div className="font-semibold text-black sm:mt-4 sm:mb-2">
+            <div className="font-semibold text-black dark:text-white sm:mt-4 sm:mb-2">
               {item.title}
             </div>
             <div className="text-sm opacity-75">{item.description}</div>
