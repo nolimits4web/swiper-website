@@ -1,5 +1,131 @@
 [
   {
+    "createdAt": "2022-04-28T10:30:00.000Z",
+    "title": "paraphrasing tool",
+    "link": "https://articlereword.com",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/articlereworder",
+    "image": "articlereword.png",
+    "image_h": "",
+    "endDate": ""
+  },
+  {
+    "createdAt": "2022-04-26T17:34:00.000Z",
+    "title": "Graveerbare Sieraden",
+    "link": "https://www.xoo.nl",
+    "plan": "Sponsor",
+    "ref": "https://www.patreon.com/user/creators?u=73175464",
+    "image": "xoo.png",
+    "image_h": "",
+    "endDate": ""
+  },
+  {
+    "createdAt": "2022-04-22T22:46:00.000Z",
+    "title": "Aviator aposta ᐈ Jogo de avião Aviator",
+    "link": "https://aviators.com.br",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/aviator-aposta",
+    "image": "aviatorscombr.png",
+    "image_h": "",
+    "endDate": ""
+  },
+  {
+    "createdAt": "2022-04-22T12:05:57.223Z",
+    "title": "Buy Instagram Followers UK for £1.99 Only - Active & Real Followers",
+    "link": "https://igfollowers.uk/buy-instagram-followers-uk/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/igfollowers-uk",
+    "image": "igfollowers.png",
+    "image_h": "",
+    "endDate": ""
+  },
+  {
+    "createdAt": "2022-04-21T11:28:57.223Z",
+    "title": "Best US Online Casino Sites 2022 ᐅ Top 10 USA Online Casinos",
+    "link": "https://www.betastic.com/online-casinos/",
+    "plan": "Sponsor",
+    "ref": "https://www.patreon.com/user/creators?u=72180023",
+    "image": "betastic.png",
+    "image_h": "",
+    "endDate": "2023-04-21T11:28:57.223Z"
+  },
+  {
+    "createdAt": "2022-04-17T09:25:58.507Z",
+    "title": "VPNs, Firestick, Kodi & IPTV Tips",
+    "link": "https://www.vpncheck.org",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/vpncheck",
+    "image": "vpncheck.png",
+    "image_h": "",
+    "endDate": ""
+  },
+  {
+    "createdAt": "2022-04-13T16:02:04.081Z",
+    "title": "Casino en Ligne Argent Réel au Canada: Meilleurs Sites de Casino",
+    "link": "https://casinoscanada.reviews",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/casinoscanadareviews",
+    "image": "casinocanada.png",
+    "image_h": "",
+    "endDate": ""
+  },
+  {
+    "createdAt": "2022-04-11T09:17:54.423Z",
+    "title": "Polskie Kasyno Online 2022: Najlepsze Kasyna Online w Polsce",
+    "link": "https://casinotop.pl",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/casinotoppl",
+    "image": "casinotoppl.png",
+    "endDate": ""
+  },
+  {
+    "createdAt": "2022-04-08T09:12:19.546Z",
+    "title": "nettikasinot kuninkaat",
+    "link": "https://nettikasinotkuninkaat.com",
+    "plan": "Sponsor",
+    "ref": "https://www.patreon.com/user/creators?u=72262385",
+    "image": "nettikasinot.jpg",
+    "endDate": ""
+  },
+  {
+    "createdAt": "2022-04-08T09:11:19.546Z",
+    "title": "Download Android apps apk",
+    "link": "https://bestforandroid.com/apps/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/bestforandroid",
+    "image": "bestforandroid.png",
+    "endDate": ""
+  },
+  {
+    "createdAt": "2022-04-06T08:37:22.606Z",
+    "title": "Best Crypto Casinos (2022) - DoubleTheBitcoin.net",
+    "link": "https://www.doublethebitcoin.net",
+    "plan": "Sponsor",
+    "ref": "https://www.patreon.com/user/creators?u=72131823",
+    "image": "doublethebitcoin.jpg",
+    "endDate": "2023-04-06T08:37:22.606Z"
+  },
+  {
+    "createdAt": "2022-04-05T12:02:40.833Z",
+    "title": "Buy Instagram Followers, Likes & Views to Boost Your Instagram Presence",
+    "link": "https://viewsinsta.com",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/viewsinstacom",
+    "image": "viewsinsta.png",
+    "image_h": "",
+    "endDate": ""
+  },
+  {
+    "createdAt": "2022-04-05T12:00:02.635Z",
+    "title": "Online Casino Test 2022 » 90+ Casinos von Experten geprüft!",
+    "link": "https://www.casinotest.de",
+    "plan": "Silver Sponsor",
+    "ref": "https://opencollective.com/casinoguide",
+    "image": "casinotest.png",
+    "image_h": "",
+    "endDate": ""
+  },
+  {
     "createdAt": "2022-04-01T12:38:11.926Z",
     "title": "Kasinot | Löydä parhaat nettikasinot (2022)",
     "link": "https://www.kasinot.fi",
@@ -13,7 +139,7 @@
     "createdAt": "2022-04-01T12:38:11.926Z",
     "title": "Discover The Best Reputable Online Casinos in Canada",
     "link": "https://playcasinoscanada.com",
-    "plan": "Top Supporter",
+    "plan": "Sponsor",
     "ref": "https://opencollective.com/playcasinoscanadacom",
     "image": "play-casinos-canada.png",
     "image_h": "",
@@ -23,7 +149,7 @@
     "createdAt": "2022-04-01T12:38:11.926Z",
     "title": "Best Bitcoin Casinos (April 2022) → Every Crypto Casino Ranked",
     "link": "https://www.coincasinos.com",
-    "plan": "Top Supporter",
+    "plan": "Sponsor",
     "ref": "https://opencollective.com/coin-casinos",
     "image": "coin-casinos.png",
     "image_h": "",
@@ -33,7 +159,7 @@
     "createdAt": "2022-03-28T16:42:29.895Z",
     "title": "1394TA: Buy Instagram Followers and Likes starting at 1.49$",
     "link": "https://1394ta.org",
-    "plan": "Top Supporter",
+    "plan": "Sponsor",
     "ref": "https://opencollective.com/1394ta-org",
     "image": "1394ta.png",
     "image_h": "",
@@ -43,7 +169,7 @@
     "createdAt": "2022-03-22T16:42:29.895Z",
     "title": "Dental clinic in Katowice (Poland). Invisalign, orthodontics, pediatric dentistry.",
     "link": "https://www.freshmed.com.pl",
-    "plan": "Top Supporter",
+    "plan": "Sponsor",
     "ref": "https://opencollective.com/freshmed",
     "image": "freshmed.png",
     "image_h": "",
@@ -260,16 +386,6 @@
     "endDate": ""
   },
   {
-    "createdAt": "2021-12-21T16:26:18.238Z",
-    "title": "Casino Online Österreich ❤️ Beste Online Casinos Österreich 2021",
-    "link": "https://casinosguide.at",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/casinosguideat",
-    "image": "casinosguide.png",
-    "image_h": "",
-    "endDate": ""
-  },
-  {
     "createdAt": "2021-12-10T17:10:03.714Z",
     "title": "Wettanbieter Vergleich » beste Sportwettenanbieter im Test",
     "link": "https://www.overlyzer.com/de/wettanbieter/",
@@ -460,16 +576,6 @@
     "endDate": ""
   },
   {
-    "createdAt": "2021-10-27T11:33:16.308Z",
-    "title": "Casino en Ligne Argent Réel au Canada: Meilleurs Sites de Casino",
-    "link": "https://casinoscanada.reviews",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/casinoscanadareviews",
-    "image": "casinocanada.png",
-    "image_h": "",
-    "endDate": ""
-  },
-  {
     "createdAt": "2021-10-25T07:47:56.591Z",
     "title": "Fortune Games® | Free Spins No Deposit Slot Games | Online Slots",
     "link": "https://www.fortunegames.com",
@@ -516,16 +622,6 @@
     "plan": "Sponsor",
     "ref": "https://www.patreon.com/user/creators?u=63064492",
     "image": "cryptogamble.png",
-    "image_h": "",
-    "endDate": ""
-  },
-  {
-    "createdAt": "2021-10-12T13:39:29.598Z",
-    "title": "Norsk Casino Guide - Casino og odds på nett - Norsk-bet.com",
-    "link": "https://norsk-bet.com",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/norsk-betcom",
-    "image": "norsk-bet.png",
     "image_h": "",
     "endDate": ""
   },
