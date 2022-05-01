@@ -3,7 +3,7 @@ import { Atropos } from 'atropos/react';
 
 export default function HomeProjects() {
   return (
-    <div className="gr mx-auto max-w-3xl items-stretch space-y-4 sm:flex sm:space-y-0 sm:space-x-8 sm:text-center">
+    <div className="gr mx-auto max-w-3xl items-stretch space-y-4 text-left sm:flex sm:space-y-0 sm:space-x-8 sm:text-center">
       {[
         {
           url: 'https://framework7.io',
