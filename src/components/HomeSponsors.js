@@ -1,5 +1,5 @@
 import { trackOutbound } from 'src/shared/track-outbound';
-import sponsors from '../shared/sponsors-list';
+import sponsors from '../shared/sponsors-list.json';
 
 const PlanSection = (props) => {
   const { showPlaceholder, showTitle } = props;
