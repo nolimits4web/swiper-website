@@ -16,6 +16,10 @@ export default [
     link: '/react',
   },
   {
+    name: 'SolidJS',
+    link: '/solid',
+  },
+  {
     name: 'Svelte',
     link: '/svelte',
   },
