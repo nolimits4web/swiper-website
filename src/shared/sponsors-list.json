@@ -873,7 +873,7 @@
     "image": "appkong.png",
     "image_h": "",
     "endDate": "",
-    "active": true
+    "active": false
   },
   {
     "createdAt": "2021-09-02T16:19:41.900Z",
@@ -1302,7 +1302,7 @@
     "image": "256-2.png",
     "image_h": "",
     "endDate": "",
-    "active": true
+    "active": false
   },
   {
     "createdAt": "2021-03-01T15:27:55.960Z",
