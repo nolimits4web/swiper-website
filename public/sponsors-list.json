@@ -1,5 +1,93 @@
 [
   {
+    "createdAt": "2022-06-06T17:50:00.00Z",
+    "title": "RushRadar • #1 Digital Platform: Articles, Reviews, Discounts",
+    "link": "https://rushradar.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/rushradar",
+    "image": "rushradar.png",
+    "image_h": "",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2022-06-06T17:40:00.00Z",
+    "title": "Adziv Digital | Full-service Digital Marketing Agency",
+    "link": "https://www.adziv.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/adziv-digital",
+    "image": "adziv.png",
+    "image_h": "",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2022-06-01T12:40:00.00Z",
+    "title": "Rating of best betting sites in Australia",
+    "link": "https://hellsbet.com/en-au/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/hellsbet-au",
+    "image": "hellsbet.png",
+    "image_h": "",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2022-05-26T15:00:00.00Z",
+    "title": "Casinos Not on GamStop » Most Trusted Non GamStop UK Casinos ⭐️",
+    "link": "https://www.sure.bet/casinos-not-on-gamstop/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/surebet",
+    "image": "surebet.png",
+    "image_h": "",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2022-05-24T10:35:00.00Z",
+    "title": "UK Betting Sites List 2022 - UK's Full List Of Betting Sites",
+    "link": "https://www.uk-betting-sites-list.com",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/uk-betting-sites-list",
+    "image": "uk-betting-sites-list.png",
+    "image_h": "",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2022-05-19T18:32:00.00Z",
+    "title": "Top FREE Crypto Sign Up Bonuses & Referral Codes",
+    "link": "https://cryptocurrencycodes.com",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/cccc",
+    "image": "cryptocurrencycodes.png",
+    "image_h": "",
+    "endDate": "2024-05-19T18:32:00.00Z",
+    "active": true
+  },
+  {
+    "createdAt": "2022-05-11T11:34:00.000Z",
+    "title": "VPN Unlimited – Encrypted, Secure & Private online VPN service",
+    "link": "https://www.vpnunlimited.com",
+    "plan": "Silver Sponsor",
+    "ref": "https://opencollective.com/keepsolid",
+    "image": "keepsolid.png",
+    "image_h": "",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2022-05-09T11:13:00.000Z",
+    "title": "Best Crypto Casinos | Top Bitcoin Gambling Sites (2022)",
+    "link": "https://casinoscrypto.com",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/casinoscrypto",
+    "image": "casinoscryptocom.png",
+    "image_h": "",
+    "endDate": "2024-05-09T11:13:00.000Z",
+    "active": true
+  },
+  {
     "createdAt": "2022-05-05T13:30:00.000Z",
     "title": "Greece Golden Visa",
     "link": "https://residence-greece.com",
@@ -785,7 +873,7 @@
     "image": "appkong.png",
     "image_h": "",
     "endDate": "",
-    "active": true
+    "active": false
   },
   {
     "createdAt": "2021-09-02T16:19:41.900Z",
@@ -922,23 +1010,12 @@
   {
     "createdAt": "2021-08-04T08:34:19.866Z",
     "title": "Quality Casinos 2021 ☆ Best Online Casino Sites Review - CasinoAuditor",
-    "link": "https://casinoauditor.com",
+    "link": "https://casinoauditor.com/online-casinos-cyprus/",
     "plan": "Silver Sponsor",
     "ref": "https://opencollective.com/casinoauditor",
     "image": "casinoauditor.png",
     "image_h": "casinoauditor_h.png",
     "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2021-08-02T07:47:21.787Z",
-    "title": "Billigste Bredbånd Priser - Sammenlign Lynhurtigt Bredbånd",
-    "link": "https://billigstbredbaand.dk",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/billigstbredbaanddk",
-    "image": "billigstbredbaand.png",
-    "image_h": "",
-    "endDate": "2022-01-30T00:00+03:00",
     "active": true
   },
   {
@@ -1107,17 +1184,6 @@
     "active": true
   },
   {
-    "createdAt": "2021-04-13T07:54:04.453Z",
-    "title": "Top FREE Crypto Sign Up Bonuses & Referral Codes",
-    "link": "https://cryptocurrencycodes.com",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/guest-95b36e5d",
-    "image": "cryptocurrencycodes.png",
-    "image_h": "",
-    "endDate": "2022-04-13T00:00+03:00",
-    "active": true
-  },
-  {
     "createdAt": "2021-04-08T14:06:16.064Z",
     "title": "Professional Essay Writing Service from Top Providers - Study Clerk",
     "link": "https://studyclerk.com",
@@ -1236,7 +1302,7 @@
     "image": "256-2.png",
     "image_h": "",
     "endDate": "",
-    "active": true
+    "active": false
   },
   {
     "createdAt": "2021-03-01T15:27:55.960Z",

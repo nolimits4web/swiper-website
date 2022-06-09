@@ -9,6 +9,8 @@ import HomeHeader from '@/components/HomeHeader';
 import HomeSponsors from '@/components/HomeSponsors';
 import HomeProjects from '@/components/HomeProjects';
 import UIInitiativeBanner from '@/components/UIInitiativeBanner';
+import SwiperStudioBanner from '@/components/SwiperStudioBanner';
+import SwiperStudioRibbon from '@/components/SwiperStudioRibbon';
 import { trackOutbound } from 'src/shared/track-outbound';
 import { ReactComponent as PatreonLogo } from '@/img/patreon-logo.svg';
 import { ReactComponent as OpenCollectiveLogo } from '@/img/opencollective-logo.svg';
@@ -133,6 +135,7 @@ export function HomeHeading({ children }) {
 export default function Home() {
   return (
     <>
+      <SwiperStudioRibbon />
       <HomeHeader />
       <div className="mb-20 flex items-center justify-center bg-primary py-5">
         <Carbon />
@@ -233,6 +236,12 @@ export default function Home() {
               </Link>
             ))}
           </nav>
+        </div>
+
+        <div className="mx-auto mt-24 mb-20 max-w-6xl text-center">
+          <HomeHeading>Swiper Studio</HomeHeading>
+          <p>Premium no-code Swiper builder and editor for Swiper patrons</p>
+          <SwiperStudioBanner />
         </div>
 
         <div className="mx-auto mt-24 mb-20 max-w-6xl text-center">
