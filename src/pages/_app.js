@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Head from 'next/head';
 import { useGA } from 'src/shared/use-ga';
+import SwiperStudioRibbon from '@/components/SwiperStudioRibbon';
 
 function App({ Component, pageProps, router }) {
   const meta = Component.layoutProps?.meta || {};
@@ -53,7 +54,12 @@ function App({ Component, pageProps, router }) {
           color="#6332F6"
         />
       </Head>
-      {router.pathname !== '/' && <Header />}
+      <SwiperStudioRibbon />
+      {router.pathname !== '/' && (
+        <>
+          <Header />
+        </>
+      )}
       <Component {...pageProps} />
       <Footer />
     </>
