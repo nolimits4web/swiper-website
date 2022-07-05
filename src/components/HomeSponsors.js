@@ -3,7 +3,9 @@ import sponsors from '../shared/sponsors-list.json';
 
 const PlanSection = (props) => {
   const { showPlaceholder, showTitle } = props;
-  const items = sponsors.filter(({ plan }) => props.plan === plan);
+  const items = sponsors.filter(
+    ({ plan, active }) => props.plan === plan && active
+  );
   const sizes = {
     'Platinum Sponsor': 'm-2 w-40 h-40',
     'Gold Sponsor': 'm-2 w-36 h-36',
