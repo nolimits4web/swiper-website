@@ -43,6 +43,19 @@ const buildDemos = async () => {
             );
             obj[filePath] = { content };
           });
+
+          if (frameworkFolder === 'core') {
+            fs.outputFileSync(
+              path.resolve(
+                __dirname,
+                '../public/demos/',
+                folder,
+                `${frameworkFolder}.html`
+              ),
+              obj['index.html'].content
+            );
+          }
+
           fs.outputFileSync(
             path.resolve(
               __dirname,
