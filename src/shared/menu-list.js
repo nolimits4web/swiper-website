@@ -16,7 +16,7 @@ export default [
     link: '/react',
   },
   {
-    name: 'SolidJS',
+    name: 'Solid',
     link: '/solid',
   },
   {
