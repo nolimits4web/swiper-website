@@ -1,23 +1,23 @@
 import Atropos from 'atropos/react';
 import { trackOutbound } from 'src/shared/track-outbound';
 
-const UIInitiativeBanner = () => {
+const SwiperStudioBanner = () => {
   return (
     <div className="my-8">
       <Atropos
         component="a"
         highlight
-        href="https://uiinitiative.com"
+        href="https://studio.swiperjs.com"
         target="_blank"
         className="mx-auto block"
         rotateTouch="scroll-y"
         rotateXMax={5}
         rotateYMax={5}
-        onClick={() => trackOutbound('https://uiinitiative.com')}
+        onClick={() => trackOutbound('https://studio.swiperjs.com')}
         innerClassName="rounded-2xl"
       >
         <img
-          src="/images/uiinitiative-banner.jpg"
+          src="/images/swiper-studio-banner.jpg"
           alt="UI Initiative"
           className="rounded-2xl"
         />
@@ -26,4 +26,4 @@ const UIInitiativeBanner = () => {
   );
 };
 
-export default UIInitiativeBanner;
+export default SwiperStudioBanner;
