@@ -12,8 +12,7 @@
     "export": "next export",
     "build-uiinitiative-demos": "node build/build-uiinitiative-demos.js",
     "build-sponsors": "node build/build-sponsors-json.js",
-    "build-demos": "node demos/build/build-demos.js",
-    "build-demos:force": "node demos/build/build-demos.js --force",
+    "build-demos": "node ./build/build-demos.js",
     "build-api": "node build/build-api.js",
     "build-types": "node build/build-types.js",
     "copy-changelog": "node build/copy-changelog.js"

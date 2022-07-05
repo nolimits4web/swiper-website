@@ -40,4 +40,7 @@ src/types.json
 src/demos.json
 src/uiinitiative-demos.json
 
+public/demos/**/*.json
+!public/demos/images
+
 tsconfig.json

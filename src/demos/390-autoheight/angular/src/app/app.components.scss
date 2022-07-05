@@ -1,0 +1,24 @@
+
+@import "~swiper/css";
+@import "~swiper/css/navigation";
+@import "~swiper/css/pagination";
+.swiper {
+  width: 100%;
+  height: auto;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+}
+
+.swiper .swiper-slide {
+  height: 300px;
+  line-height: 300px;
+}
+
+.swiper .swiper-slide:nth-child(2n) {
+  height: 500px;
+  line-height: 500px;
+}
