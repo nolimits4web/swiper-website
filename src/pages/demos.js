@@ -26,9 +26,6 @@ export default function DemosPage() {
 
   useLazyDemos();
   const generateCodeSandboxWorkspace = (mode, contentJSON, title = '') => {
-    // https://github.com/codesandbox/codesandbox-importers/blob/master/packages/import-utils/src/create-sandbox/templates.ts#L63
-    // We cant set name & tags in static environment, as codesandbox parses it from package.json
-    // Thats why we're including parcel as dependency
     if (mode === 'core') {
       return {
         files: {
@@ -51,7 +48,7 @@ export default function DemosPage() {
 
     // unescape &quot;
     // {{ &quot;enabled&quote;: true }} => {{ "enabled": true }}
-    if (mode === 'react') {
+    if (mode === 'react' || mode === 'solid') {
       Object.keys(contentJSON).map((file) => {
         const cur = contentJSON[file];
         if (!!cur.content && typeof cur.content === 'string') {
@@ -68,22 +65,7 @@ export default function DemosPage() {
   };
 
   async function getDemoContent(folder, mode) {
-    const path = {
-      angular: 'angular.json',
-      core: 'core.html',
-      react: 'react.json',
-      svelte: 'svelte.json',
-      vue: 'vue.json',
-    };
-    const _mainContent = await fetch(`demos/${folder}/${path[mode]}`);
-    if (mode === 'core') {
-      let mainContent = await _mainContent.text();
-      return {
-        'index.html': {
-          content: mainContent,
-        },
-      };
-    }
+    const _mainContent = await fetch(`demos/${folder}/${mode}.json`);
     return _mainContent.json();
   }
 
@@ -105,6 +87,7 @@ export default function DemosPage() {
     setCurrentCodeSandboxQuery(
       {
         react: 'file=/src/App.jsx',
+        solid: 'file=/src/App.jsx',
         svelte: 'file=/App.svelte',
         vue: 'file=/src/App.vue',
         angular: 'file=/src/app/app.component.ts',
@@ -197,28 +180,30 @@ export default function DemosPage() {
             >
               Open in new window
             </a>
-            {['Core', 'React', 'Vue', 'Angular', 'Svelte'].map((name) => {
-              if (skip && skip.includes(name.toLowerCase())) {
-                return null;
+            {['Core', 'React', 'Vue', 'Angular', 'Svelte', 'Solid'].map(
+              (name) => {
+                if (skip && skip.includes(name.toLowerCase())) {
+                  return null;
+                }
+                return (
+                  <a
+                    key={name}
+                    className="ml-2 no-underline"
+                    href="#"
+                    onClick={(e) =>
+                      openCodeSandbox(e, title, folder, `${name.toLowerCase()}`)
+                    }
+                  >
+                    <CodeSandBoxLogo
+                      className="inline fill-current"
+                      width="19"
+                      height="14"
+                    />
+                    {name}
+                  </a>
+                );
               }
-              return (
-                <a
-                  key={name}
-                  className="ml-2 no-underline"
-                  href="#"
-                  onClick={(e) =>
-                    openCodeSandbox(e, title, folder, `${name.toLowerCase()}`)
-                  }
-                >
-                  <CodeSandBoxLogo
-                    className="inline fill-current"
-                    width="19"
-                    height="14"
-                  />
-                  {name}
-                </a>
-              );
-            })}
+            )}
           </div>
           <div className="demo my-4 bg-gray-100 shadow">
             <iframe

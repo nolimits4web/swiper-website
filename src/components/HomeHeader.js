@@ -26,7 +26,7 @@ export default function HomeHeader() {
           <nav className="mt-4 flex flex-wrap justify-center font-medium lg:mt-8 lg:justify-start">
             {menuList.map(({ name, link }) => (
               <Link key={link} href={link}>
-                <a className="mr-4 text-white">{name}</a>
+                <a className="mr-4 text-sm text-white">{name}</a>
               </Link>
             ))}
           </nav>
