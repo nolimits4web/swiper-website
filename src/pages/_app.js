@@ -51,7 +51,7 @@ function App({ Component, pageProps, router }) {
           rel="mask-icon"
           sizes="any"
           href="/images/favicon.svg"
-          color="#6332F6"
+          color="#0080FF"
         />
       </Head>
       <SwiperStudioRibbon />
