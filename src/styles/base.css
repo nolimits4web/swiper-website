@@ -7,16 +7,13 @@
   body .prose a {
     @apply text-primary hover:underline;
   }
-  .dark footer a {
-    @apply text-primaryLight;
-  }
 
   body .prose a:hover {
     @apply hover:no-underline;
   }
 
   .important-note {
-    @apply my-3 border-l-4 border-red-500 bg-red-100 px-5 py-4 dark:border-red-500 dark:bg-red-700/40 dark:text-white;
+    @apply my-3 border-l-4 border-red-500 bg-red-100 px-5 py-4 text-sm dark:border-red-500 dark:bg-red-700/30 dark:text-white;
   }
 }
 

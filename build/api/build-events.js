@@ -72,7 +72,7 @@ export const ${typesName} = () => {
         ${items
           .map(
             (item) => `
-          <tr className="border-t">
+          <tr className="table-border-t">
             <td className="w-1/4 font-mono font-semibold text-black dark:text-white">
               <a href="#event-${item.name}" id="event-${item.name}">${
               item.name

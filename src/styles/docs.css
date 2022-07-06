@@ -1,6 +1,9 @@
 .params-table,
 .events-table,
 .methods-table {
+  .table-border-t {
+    @apply border-t border-black !border-opacity-5 dark:border-white;
+  }
   p:first-child {
     margin-top: 0;
   }
@@ -8,7 +11,7 @@
     margin-bottom: 0;
   }
   td blockquote {
-    @apply my-3 block appearance-none border-l-4 border-red-500 bg-red-100 px-5 py-4 font-normal font-normal not-italic dark:bg-red-800/40 dark:text-gray-200;
+    @apply my-3 block appearance-none border-l-4 border-red-500 bg-red-100 px-2 py-2 text-sm font-normal not-italic dark:bg-red-700/20 dark:text-gray-200;
     p:first-of-type::before,
     p:first-of-type::after {
       content: '';

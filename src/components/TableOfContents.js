@@ -18,12 +18,11 @@ export default function TableOfContents({ tableOfContents }) {
               <a
                 href={`#${section.slug}`}
                 className={clsx(
-                  'block rounded py-1 px-2 font-medium text-gray-500 transition-colors duration-100 hover:bg-primary hover:bg-opacity-10 hover:text-primary hover:no-underline dark:text-gray-200 hover:dark:bg-opacity-50',
+                  'block rounded py-1 px-2 font-medium text-gray-500 transition-colors duration-100 hover:bg-primary hover:bg-opacity-10 hover:!text-primary hover:no-underline dark:text-gray-200',
                   {
-                    '!text-primary dark:!text-white':
-                      sectionIsActive || childSectionIsActive,
+                    '!text-primary': sectionIsActive || childSectionIsActive,
                     'bg-primary': sectionIsActive,
-                    'bg-opacity-10 dark:bg-opacity-50': sectionIsActive,
+                    'bg-opacity-10': sectionIsActive,
                   }
                 )}
               >
@@ -38,11 +37,11 @@ export default function TableOfContents({ tableOfContents }) {
                   <a
                     href={`#${subsection.slug}`}
                     className={clsx(
-                      'block rounded py-1 px-2 text-gray-500 transition-colors duration-100 hover:bg-primary hover:bg-opacity-10 hover:text-primary hover:no-underline dark:text-gray-200 hover:dark:bg-opacity-50',
+                      'block rounded py-1 px-2 text-gray-500 transition-colors duration-100 hover:bg-primary hover:bg-opacity-10 hover:!text-primary hover:no-underline dark:text-gray-200',
                       {
-                        '!text-primary dark:!text-white': subsectionIsActive,
+                        '!text-primary': subsectionIsActive,
                         'bg-primary': subsectionIsActive,
-                        'bg-opacity-10 dark:bg-opacity-50': subsectionIsActive,
+                        'bg-opacity-10': subsectionIsActive,
                       }
                     )}
                   >

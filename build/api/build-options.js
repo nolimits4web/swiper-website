@@ -106,7 +106,7 @@ export const ${typesName} = () => {
         ${
           parentType
             ? `
-          <tr className="border-t">
+          <tr className="table-border-t">
             <td className="w-1/6 text-red-700 dark:text-red-500 font-mono font-semibold">
               <a href="#param-${parentType.name}" id="param-${
                 parentType.name
@@ -129,7 +129,7 @@ export const ${typesName} = () => {
         ${items
           .map(
             (item) => `
-          <tr className="border-t ${
+          <tr className="table-border-t ${
             parentType ? 'params-table-nested-row' : ''
           }">
             <td className="w-1/6 text-red-700 dark:text-red-500 font-mono font-semibold">

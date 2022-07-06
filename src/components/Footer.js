@@ -21,7 +21,7 @@ export default function Footer() {
     <footer className="border-t-8 border-primary py-10 px-4 text-center sm:px-6 lg:px-8 xl:px-10">
       <div className="mx-auto max-w-5xl font-medium">
         <FooterSponsors />
-        <nav className="my-8 flex flex-wrap justify-center space-x-4">
+        <nav className="my-8 flex flex-wrap justify-center space-x-4 text-sm">
           {menu}
         </nav>
         <div className="text-gray-700 dark:text-gray-400">

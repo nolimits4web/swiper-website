@@ -6,11 +6,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#6332f6',
-        primaryLight: '#ae93ff',
+        primary: '#0080ff',
+        primaryLight: '#0080ff',
         green: colors.emerald,
         yellow: colors.amber,
         purple: colors.violet,
+        'dark-0': '#111827',
+        'dark-1': '#1c273f',
       },
       typography: (theme) => ({
         DEFAULT: {

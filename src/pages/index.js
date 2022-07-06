@@ -40,11 +40,6 @@ const libs = [
     link: '/swiper-api',
   },
   {
-    title: 'Angular',
-    image: 'angular.svg',
-    link: '/angular',
-  },
-  {
     title: 'React',
     image: 'react.svg',
     link: '/react',
@@ -55,9 +50,19 @@ const libs = [
     link: '/vue',
   },
   {
+    title: 'SolidJS',
+    image: 'solid.svg',
+    link: '/solid',
+  },
+  {
     title: 'Svelte',
     image: 'svelte.svg',
     link: '/svelte',
+  },
+  {
+    title: 'Angular',
+    image: 'angular.svg',
+    link: '/angular',
   },
 ];
 
@@ -170,7 +175,7 @@ export default function Home() {
         </div>
         <div className="mt-24">
           <HomeHeading>Available For</HomeHeading>
-          <div className="grid grid-cols-3 gap-4 sm:grid-cols-5">
+          <div className="grid grid-cols-3 gap-4 sm:grid-cols-6">
             {libs.map(({ title, image, link }) => (
               <a
                 key={title}
@@ -262,7 +267,6 @@ export default function Home() {
               href="https://opencollective.com/swiper"
               target="_blank"
               rel="noopener"
-              className="dark:text-primaryLight"
               onClick={() => trackOutbound('https://opencollective.com/swiper')}
             >
               Open Collective
@@ -272,7 +276,6 @@ export default function Home() {
               href="https://patreon.com/swiperjs"
               target="_blank"
               rel="noopener"
-              className="dark:text-primaryLight"
               onClick={() => trackOutbound('https://patreon.com/swiperjs')}
             >
               Patreon

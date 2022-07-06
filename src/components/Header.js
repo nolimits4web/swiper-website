@@ -1,7 +1,7 @@
 import menuList from '../shared/menu-list';
 import GithubStats from './GithubStats';
 import Link from 'next/link';
-import { ReactComponent as Logo } from '@/img/logo-white.svg';
+import { ReactComponent as Logo } from '@/img/logo.svg';
 import { ReactComponent as PatreonLogo } from '@/img/patreon-logo.svg';
 import { useRef } from 'react';
 import { trackOutbound } from 'src/shared/track-outbound';
@@ -16,36 +16,32 @@ export default function Header() {
     buttonElRef.current.focus();
   };
   return (
-    <header className="h-20 bg-primary py-6 text-white">
+    <header className="sticky top-0 z-50 h-20 border-b border-b-black border-opacity-10 bg-white bg-opacity-80 py-6 backdrop-blur-lg dark:border-b-white dark:border-opacity-5 dark:bg-dark-1 dark:bg-opacity-80">
       <div className="mx-auto flex h-full max-w-[90rem] items-center px-4 sm:px-6 lg:px-8 xl:px-10">
         <Link href="/">
           <a className="relative flex flex-shrink-0 items-center">
             <Logo className="h-16 w-16 rounded-full" alt="Swiper" />
-            <span className="pointer-events-none absolute left-full top-0 -mt-1 min-w-0 text-xs font-medium text-white opacity-70">
-              v{process.env.swiperReleaseVersion}
-            </span>
           </a>
         </Link>
-        <Link href="/">
-          <a className="ml-2 text-4xl font-medium text-white hover:no-underline md:hidden">
-            Swiper
-          </a>
-        </Link>
+
         <div className="ml-4 hidden md:block">
           <nav className="flex">
             {menuList.map(({ name, link }) => (
               <Link key={link} href={link}>
-                <a className="mr-4 text-sm font-medium text-white lg:text-base">
+                <a className="mr-4 text-sm font-medium text-black hover:!text-primary hover:no-underline dark:text-white">
                   {name}
                 </a>
               </Link>
             ))}
           </nav>
-          <div className="-mb-3">
+          <div className="mt-2 flex items-center">
+            <span className="mr-4 text-xs">
+              v{process.env.swiperReleaseVersion}
+            </span>
             <a
               href="https://www.patreon.com/swiperjs"
               target="_blank"
-              className="inline-flex items-center text-xs font-medium text-white opacity-60 hover:no-underline hover:opacity-100"
+              className="inline-flex items-center text-xs font-medium text-black opacity-60 hover:!text-primary hover:no-underline hover:opacity-100 dark:text-white"
               onClick={() => trackOutbound('https://www.patreon.com/swiperjs')}
             >
               <PatreonLogo className="mr-1 h-3 w-3" />
@@ -55,7 +51,7 @@ export default function Header() {
         </div>
         <div className="group relative ml-auto mr-4">
           <button
-            className="flex items-center outline-none md:hidden"
+            className="flex items-center text-black outline-none hover:!text-primary dark:text-white md:hidden"
             ref={buttonElRef}
             onClick={showMenu}
           >

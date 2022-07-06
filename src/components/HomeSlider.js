@@ -31,8 +31,9 @@ import 'swiper/css/effect-flip';
 function SlideCenter({ children, className = '', style = {} }) {
   return (
     <div
-      className={`mx-auto flex h-[500px] max-w-[90rem] flex-col justify-center rounded-xl bg-white px-4 text-primary md:h-[400px] lg:h-[500px] ${className}`}
+      className={`mx-auto flex h-[500px] max-w-[90rem] flex-col justify-center rounded-2xl bg-primary bg-opacity-5 px-4 text-primary dark:bg-opacity-20 md:h-[400px] lg:h-[500px] ${className} relative border-4 border-primary`}
     >
+      <div className="pointer-events-none absolute left-0 top-0 z-[-1] h-full w-full rounded-xl bg-white dark:bg-black" />
       {children}
     </div>
   );
@@ -116,7 +117,7 @@ export default function HomeSlider() {
               <span className="mb-8 text-center text-4xl font-bold">
                 Top Notch Features
               </span>
-              <ul className="flex flex-wrap text-sm font-medium text-gray-700 sm:text-base md:mx-auto md:max-w-screen-sm">
+              <ul className="flex flex-wrap text-sm font-medium text-gray-700 dark:text-white sm:text-base md:mx-auto md:max-w-screen-sm">
                 {[
                   'Library Agnostic',
                   'Mutation Observer',
@@ -135,7 +136,7 @@ export default function HomeSlider() {
                 ].map((text, index) => (
                   <li key={index} className="my-1 flex w-1/2 items-center">
                     <svg
-                      className="mr-2 flex-shrink-0 text-gray-700"
+                      className="mr-2 flex-shrink-0 text-primary"
                       width="20"
                       height="20"
                       xmlns="http://www.w3.org/2000/svg"

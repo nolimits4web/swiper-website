@@ -129,7 +129,7 @@ export const ${typesName} = () => {
         ${
           props.length
             ? `
-          <tr className="border-t">
+          <tr className="table-border-t">
             <th colSpan="3" className="p-4 bg-gray-100 dark:bg-gray-900">Properties</th>
           </tr>
         `
@@ -138,7 +138,7 @@ export const ${typesName} = () => {
         ${props
           .map(
             (item) => `
-          <tr className="border-t">
+          <tr className="table-border-t">
             <td className="w-1/6 text-black dark:text-white font-mono font-semibold">
               <a href="#prop-${methodId(name(item))}" id="prop-${methodId(
               name(item)
@@ -157,7 +157,7 @@ export const ${typesName} = () => {
           ${
             methods.length
               ? `
-            <tr className="border-t">
+            <tr className="table-border-t">
               <th colSpan="3" className="p-4 bg-gray-100 dark:bg-gray-900">Methods</th>
             </tr>
             `
@@ -167,7 +167,7 @@ export const ${typesName} = () => {
           ${methods
             .map(
               (item) => `
-            <tr className="border-t">
+            <tr className="table-border-t">
               <td className="w-1/6 text-black dark:text-white font-mono font-semibold" colSpan="2">
                 <a href="#method-${methodId(name(item))}" id="method-${methodId(
                 name(item)
