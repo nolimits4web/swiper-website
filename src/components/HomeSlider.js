@@ -106,8 +106,8 @@ export default function HomeSlider() {
   });
   return (
     <>
-      <div className="swiper-button-prev invisible !left-auto !right-full mr-4 md:visible" />
-      <div className="swiper-button-next invisible !right-auto !left-full ml-4 md:visible" />
+      <div className="swiper-button-prev invisible !left-auto !right-full mr-4 md:visible 2xl:mr-8" />
+      <div className="swiper-button-next invisible !right-auto !left-full ml-4 md:visible 2xl:ml-8" />
       <div className="swiper header-swiper-main">
         <div className="swiper-pagination !-bottom-6" />
 

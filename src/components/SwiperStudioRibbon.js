@@ -1,7 +1,7 @@
 export default function SwiperStudioRibbon() {
   return (
     <a
-      className="block bg-gray-900 text-white hover:text-opacity-70 hover:no-underline dark:border-b dark:border-b-white dark:border-opacity-10"
+      className="block bg-dark-0 text-white hover:text-opacity-70 hover:no-underline "
       href="https://studio.swiperjs.com"
       target={'_blank'}
     >

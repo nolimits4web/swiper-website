@@ -40,21 +40,21 @@ export default function GithubStats(props) {
   return (
     <div className={`${className || ''}`}>
       <a
-        className={`flex items-end text-xs text-black hover:!text-primary hover:no-underline dark:text-white`}
+        className={`flex items-center text-xs text-black hover:!text-primary hover:no-underline dark:text-white`}
         href="https://github.com/nolimits4web/swiper"
         rel="noopener"
         target="_blank"
       >
         <GithubLogo height="20" className="mr-1" />
         <span
-          className={`mr-1 font-medium leading-[1] ${
-            responsive ? 'hidden text-sm md:inline' : 'text-base'
+          className={`flex items-end leading-[1] ${
+            responsive ? 'hidden md:inline' : ''
           }`}
         >
-          {data.stars}
-        </span>{' '}
-        <span className={`leading-[1] ${responsive ? 'hidden md:inline' : ''}`}>
-          stars
+          <span className={`mr-1 text-sm font-medium leading-[1]`}>
+            {data.stars}
+          </span>{' '}
+          <span className={`leading-[1]`}>stars</span>
         </span>
       </a>
     </div>

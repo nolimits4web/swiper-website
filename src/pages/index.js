@@ -233,7 +233,7 @@ export default function Home() {
           <nav className="space-x-2 text-lg">
             {menuList.map(({ name, link }) => (
               <Link key={link} href={link}>
-                <a className="my-2 inline-block  w-40 rounded-3xl bg-primary px-4 py-2 font-bold text-white shadow-lg duration-200 hover:bg-opacity-95 hover:no-underline sm:w-48">
+                <a className="my-2 inline-block w-40 rounded-full bg-primary bg-opacity-10 px-4 py-2 font-semibold text-primary duration-200 hover:bg-opacity-95 hover:text-white hover:no-underline sm:w-48">
                   {name}
                 </a>
               </Link>
