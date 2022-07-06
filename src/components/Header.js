@@ -20,7 +20,7 @@ export default function Header() {
       <div className="mx-auto flex h-full max-w-[90rem] items-center px-4 sm:px-6 lg:px-8 xl:px-10">
         <Link href="/">
           <a className="relative flex flex-shrink-0 items-center">
-            <Logo className="h-16 w-16 rounded-full" alt="Swiper" />
+            <Logo className="swiper-logo h-16 w-16 rounded-full" alt="Swiper" />
           </a>
         </Link>
 

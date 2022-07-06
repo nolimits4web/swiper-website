@@ -16,7 +16,7 @@ export default function HomeHeader() {
         {/* Left */}
         <div className="relative z-10 flex w-full flex-shrink-0 flex-col items-center text-center lg:block lg:max-w-[500px] lg:text-left xl:mr-16">
           <Logo
-            className="h-32 w-32 flex-shrink-0 rounded-full lg:h-40 lg:w-40"
+            className="swiper-logo h-32 w-32 flex-shrink-0 rounded-full lg:h-40 lg:w-40"
             alt="Swiper"
           />
 
