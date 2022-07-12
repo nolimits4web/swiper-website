@@ -51,6 +51,7 @@ body .prose pre {
 pre code {
   background: transparent !important;
 }
-html:not(.dark) .swiper-logo circle {
+html:not(.dark) .swiper-logo path:nth-child(2),
+html:not(.dark) .swiper-logo path:nth-child(3) {
   fill: #e2eafc;
 }
