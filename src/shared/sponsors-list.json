@@ -162,7 +162,7 @@
     "image": "adziv.png",
     "image_h": "",
     "endDate": "",
-    "active": true
+    "active": false
   },
   {
     "createdAt": "2022-06-01T12:40:00.00Z",
@@ -250,7 +250,7 @@
     "image": "articlereword.png",
     "image_h": "",
     "endDate": "",
-    "active": true
+    "active": false
   },
   {
     "createdAt": "2022-04-26T17:34:00.000Z",
@@ -346,7 +346,7 @@
     "ref": "https://opencollective.com/bestforandroid",
     "image": "bestforandroid.png",
     "endDate": "",
-    "active": true
+    "active": false
   },
   {
     "createdAt": "2022-04-06T08:37:22.606Z",
@@ -422,7 +422,7 @@
     "image": "freshmed.png",
     "image_h": "",
     "endDate": "",
-    "active": true
+    "active": false
   },
   {
     "createdAt": "2022-03-21T11:05:25.453Z",
@@ -950,7 +950,7 @@
     "image": "betomania.png",
     "image_h": "",
     "endDate": "",
-    "active": true
+    "active": false
   },
   {
     "createdAt": "2021-10-04T07:48:40.860Z",
@@ -983,7 +983,7 @@
     "image": "pennsylvania-online-gambling.png",
     "image_h": "",
     "endDate": "",
-    "active": true
+    "active": false
   },
   {
     "createdAt": "2021-09-28T08:23:16.257Z",
@@ -1104,7 +1104,7 @@
     "image": "coupons4printing.png",
     "image_h": "",
     "endDate": "",
-    "active": true
+    "active": false
   },
   {
     "createdAt": "2021-08-11T16:51:34.749Z",
@@ -1181,7 +1181,7 @@
     "image": "bet-italia.png",
     "image_h": "",
     "endDate": "2022-01-14T00:00+03:00",
-    "active": true
+    "active": false
   },
   {
     "createdAt": "2021-07-12T15:27:45.099Z",
@@ -1412,7 +1412,7 @@
     "image": "casinority-australia.png",
     "image_h": "casinority-australia-h.png",
     "endDate": "",
-    "active": true
+    "active": false
   },
   {
     "createdAt": "2021-03-10T13:13:23.967Z",
