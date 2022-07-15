@@ -1,6 +1,16 @@
 [
   {
     "createdAt": "2022-07-14T14:19:58.161Z",
+    "title": "Clique Studios - Creative Digital Transformation",
+    "link": "https://cliquestudios.com",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/clique-studios",
+    "image": "cliquestudios.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2022-07-14T14:19:58.161Z",
     "title": "Casino utan svensk licens",
     "link": "https://www.casinoutanlicens.io/",
     "plan": "Silver Sponsor",
