@@ -175,7 +175,7 @@ export default function Home() {
         </div>
         <div className="mt-24">
           <HomeHeading>Available For</HomeHeading>
-          <div className="grid grid-cols-3 gap-4 sm:grid-cols-6">
+          <div className="mx-auto grid max-w-6xl grid-cols-3 gap-4 sm:grid-cols-6">
             {libs.map(({ title, image, link }) => (
               <a
                 key={title}
@@ -208,8 +208,8 @@ export default function Home() {
           </ul>
         </div>
         <div className="mt-24">
-          <HomeHeading>Used By Thousands</HomeHeading>
-          <div className="grid grid-cols-4 gap-6 sm:grid-cols-8">
+          <HomeHeading>Used By Millions</HomeHeading>
+          <div className="mx-auto grid max-w-6xl grid-cols-4 gap-6 sm:grid-cols-8">
             {clientsList.map(({ image, title }) => (
               <div key={title} className="flex items-center justify-center">
                 <img
@@ -241,16 +241,22 @@ export default function Home() {
           </nav>
         </div>
 
-        <div className="mx-auto mt-24 mb-20 max-w-6xl text-center">
-          <HomeHeading>Swiper Studio</HomeHeading>
-          <p>Premium no-code Swiper builder and editor for Swiper patrons</p>
-          <SwiperStudioBanner />
-        </div>
+        <div className="mt-24 mb-20 grid-cols-2 gap-8 md:grid">
+          <div className="text-center">
+            <h2 className="mb-12 text-center text-4xl font-extrabold text-gray-900 dark:text-gray-200 sm:text-5xl md:mb-4">
+              Swiper Studio
+            </h2>
+            <p>Premium no-code Swiper builder and editor for Swiper patrons</p>
+            <SwiperStudioBanner />
+          </div>
 
-        <div className="mx-auto mt-24 mb-20 max-w-6xl text-center">
-          <HomeHeading>UI Initiative</HomeHeading>
-          <p>Premium Swiper templates & plugins for Swiper patrons</p>
-          <UIInitiativeBanner />
+          <div className="mt-24 text-center md:mt-0">
+            <h2 className="mb-12 text-center text-4xl font-extrabold text-gray-900 dark:text-gray-200 sm:text-5xl md:mb-4">
+              UI Initiative
+            </h2>
+            <p>Premium Swiper templates & plugins for Swiper patrons</p>
+            <UIInitiativeBanner />
+          </div>
         </div>
 
         <div className="mx-auto mt-24 mb-20 max-w-6xl text-center">

@@ -19,7 +19,7 @@ const SwiperStudioBanner = () => {
         <img
           src="/images/swiper-studio-banner.jpg"
           alt="UI Initiative"
-          className="rounded-2xl"
+          className="rounded-2xl dark:border dark:border-white dark:border-opacity-5"
         />
       </Atropos>
     </div>
