@@ -1,5 +1,45 @@
 [
   {
+    "createdAt": "2022-08-04T18:00:00.000Z",
+    "title": "Compare and test the best Online Casinos, with a strong focus on mobile Casino",
+    "link": "https://handycasinos24.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/handycasinos-24",
+    "image": "handycasinos24.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2022-08-04T18:00:00.000Z",
+    "title": "Make the world a better place for Online Casino comparisons",
+    "link": "https://mrcasinova.com/de/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/mrcasinova-de",
+    "image": "mrcasinova.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2022-08-04T18:00:00.000Z",
+    "title": "Ausführliche Informationen an die interessierten Spieler vermitteln um die bestmögliche Auswahl zu ermöglichen",
+    "link": "https://neuecasinos24.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/neuecasinos-24",
+    "image": "neuecasinos24.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2022-08-04T18:00:00.000Z",
+    "title": "Online Casino Deutschland - Beste deutsche Online Casinos 2022",
+    "link": "https://casinopilot24.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/casinopilot-24",
+    "image": "casinopilot24.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2022-08-04T12:00:00.000Z",
     "title": "Best Real Money Online Casino ➲ Play Online and Win Real Money",
     "link": "https://leafletcasino.com/online-casino/real-money/",
@@ -173,7 +213,7 @@
     "image": "coinmash.png",
     "image_h": "",
     "endDate": "",
-    "active": true
+    "active": false
   },
   {
     "createdAt": "2022-07-01T18:30:00.00Z",
@@ -228,7 +268,7 @@
     "image": "playsafecl.png",
     "image_h": "",
     "endDate": "",
-    "active": true
+    "active": false
   },
   {
     "createdAt": "2022-06-14T15:20:00.00Z",
@@ -415,7 +455,7 @@
     "image": "vpncheck.png",
     "image_h": "",
     "endDate": "",
-    "active": true
+    "active": false
   },
   {
     "createdAt": "2022-04-13T16:02:04.081Z",
@@ -1445,7 +1485,7 @@
     "image": "studyclerk.png",
     "image_h": "",
     "endDate": "",
-    "active": true
+    "active": false
   },
   {
     "createdAt": "2021-04-05T08:00:56.920Z",
