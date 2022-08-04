@@ -22,7 +22,7 @@ const PlanSection = (props) => {
           {props.plan}s
         </h2>
       )}
-      <div className="flex flex-wrap justify-center">
+      <div className="mx-auto flex max-w-6xl flex-wrap justify-center">
         {items.map(({ link, title, image }) => {
           return (
             <a
