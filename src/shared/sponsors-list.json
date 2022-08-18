@@ -1,5 +1,25 @@
 [
   {
+    "createdAt": "2022-08-18T18:00:00.000Z",
+    "title": "Take My Online Class For Me? NoNeedToStudy.com",
+    "link": "https://www.noneedtostudy.com/take-my-online-class/",
+    "plan": "Sponsor",
+    "ref": "https://www.patreon.com/user/creators?u=78489969",
+    "image": "noneedtostudy.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2022-08-18T18:00:00.000Z",
+    "title": "BugleLab - JAMstack development and design",
+    "link": "https://buglelab.io/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/buglelab",
+    "image": "buglelab.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2022-08-17T18:00:00.000Z",
     "title": "Best Online Casino NZ ▷ Top New Zealand Casinos [2022]",
     "link": "https://nzcasinohex.com/",
@@ -91,12 +111,12 @@
   },
   {
     "createdAt": "2022-08-04T12:00:00.000Z",
-    "title": "Norges Casino - den beste online casino guiden i Norge [ 2022 ]",
-    "link": "https://www.norges.casino/",
+    "title": "Norsk Casino - Norges Beste Online Casino På Nett 2022",
+    "link": "https://www.norgescasino.com/",
     "plan": "Silver Sponsor",
-    "ref": "https://opencollective.com/guest-63b6c95c",
+    "ref": "https://opencollective.com/norges-casino3",
     "image": "norges-casino.png",
-    "endDate": "2022-09-04T12:00:00.000Z",
+    "endDate": "",
     "active": true
   },
   {
