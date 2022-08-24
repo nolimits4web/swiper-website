@@ -1,5 +1,15 @@
 [
   {
+    "createdAt": "2022-08-24T13:00:00.000Z",
+    "title": "Jetzt Kredit beantragen und sparen - Blick",
+    "link": "https://www.blick.ch/services/publireportage-jetzt-kredit-beantragen-und-sparen-id17791794.html",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/blickch",
+    "image": "blickch.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2022-08-24T11:00:00.000Z",
     "title": "Vedonlyöntibonukset 2022 | Ilmaiset vihjeet | Koutsi hoitaa",
     "link": "https://www.vedonlyontibonukset.com/",
