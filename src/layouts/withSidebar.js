@@ -1,6 +1,8 @@
 import PageHeader from '@/components/PageHeader';
 import TableOfContents from '@/components/TableOfContents';
 import SidebarSponsors from '@/components/SidebarSponsors';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 import Carbon from '@/components/Carbon';
 
 export function WithSidebarLayout({
@@ -9,6 +11,7 @@ export function WithSidebarLayout({
   classes,
   tableOfContents = [],
 }) {
+  const router = useRouter();
   const toc = [
     ...(classes
       ? [
@@ -42,6 +45,13 @@ export function WithSidebarLayout({
             <PageHeader title={meta.title} description={meta.description} />
           )}
           {children}
+          <div className="mt-4 text-right">
+            <Link
+              href={`https://github.com/nolimits4web/swiper-website/edit/master/src/pages${router.pathname}.mdx`}
+            >
+              <a>Edit this page on GitHub</a>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
