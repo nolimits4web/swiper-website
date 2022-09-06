@@ -31,14 +31,15 @@ const processDescription = (text) => {
     });
 };
 
-module.exports = (typesItem, isEvent) => {
+module.exports = (typesItem) => {
   const getProps = (item) => {
-    if (isEvent) {
-      return typesItem.type.declaration.signatures[0].comment || {};
-    }
-    return !typesItem.comment && typesItem.signatures && typesItem.signatures[0]
-      ? typesItem.signatures[0].comment || {}
-      : typesItem.comment || {};
+    return (
+      (!typesItem.comment && typesItem.signatures && typesItem.signatures[0]
+        ? typesItem.signatures[0].comment
+        : typesItem.comment) ||
+      typesItem.type?.declaration?.signatures?.[0]?.comment ||
+      {}
+    );
   };
   const { shortText, text, tags = [] } = getProps(typesItem);
 
