@@ -1,5 +1,15 @@
 [
   {
+    "createdAt": "2022-09-12T10:00:00.000Z",
+    "title": "Techd.in features 100% real reviews and how-to guides & helps you choose the best products online",
+    "link": "https://techd.in/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/techd",
+    "image": "techd.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2022-09-08T13:00:00.000Z",
     "title": "Gambling Bitcoin – BTC Crypto Casino Guide Since 2014",
     "link": "https://www.gamblingbitcoin.com/",
@@ -441,17 +451,6 @@
     "active": false
   },
   {
-    "createdAt": "2022-06-14T15:20:00.00Z",
-    "title": "Instagram Story Viewer - Watch without Anyone Knowing",
-    "link": "https://iganony.com",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/iganony-instagram-story-viewer",
-    "image": "iganony.png",
-    "image_h": "",
-    "endDate": "",
-    "active": true
-  },
-  {
     "createdAt": "2022-06-10T17:50:00.00Z",
     "title": "Limeup | Product Design Agency",
     "link": "https://limeup.io",
@@ -635,7 +634,7 @@
     "ref": "https://opencollective.com/casinoscanadareviews",
     "image": "casinocanada.png",
     "image_h": "",
-    "endDate": "",
+    "endDate": "2022-10-02T16:02:04.081Z",
     "active": true
   },
   {
@@ -708,7 +707,7 @@
     "ref": "https://opencollective.com/playcasinoscanadacom",
     "image": "play-casinos-canada.png",
     "image_h": "",
-    "endDate": "",
+    "endDate": "2022-10-02T12:38:11.926Z",
     "active": true
   },
   {
@@ -773,17 +772,6 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/the-internet-slots-australia",
     "image": "theinternetslots.png",
-    "image_h": "",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2022-03-08T09:22:13.390Z",
-    "title": "MY Sports Injury Clinic ® Manchester City Centre",
-    "link": "https://www.mysportsinjury.co.uk",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/my-sports-injury-ltd",
-    "image": "mysportsinjury.png",
     "image_h": "",
     "endDate": "",
     "active": true
@@ -1005,7 +993,7 @@
     "ref": "https://opencollective.com/aussiebestcasinos",
     "image": "ausiebestcasinos.png",
     "image_h": "",
-    "endDate": "2022-06-05T12:00:00.000Z",
+    "endDate": "",
     "active": true
   },
   {
@@ -1181,7 +1169,7 @@
     "ref": "https://opencollective.com/fortunegames",
     "image": "fortunegames.png",
     "image_h": "",
-    "endDate": "2022-02-24T00:00+03:00",
+    "endDate": "",
     "active": true
   },
   {
@@ -1306,17 +1294,6 @@
     "active": false
   },
   {
-    "createdAt": "2021-09-28T08:23:16.257Z",
-    "title": "Buy Targeted Organic Traffic | Organic Search Traffic to Website",
-    "link": "https://www.targetedwebtraffic.com/buy/buy-targeted-organic-traffic-keyword-targeted-google-organic-traffic/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/targeted-organic-traffic",
-    "image": "targetedwebtraffic.png",
-    "image_h": "",
-    "endDate": "",
-    "active": true
-  },
-  {
     "createdAt": "2021-09-23T13:21:29.015Z",
     "title": "LÅN PENGE NU | Hurtige Online lån 2021 | Klik her og Ansøg i dag",
     "link": "https://tankpenge.dk",
@@ -1346,7 +1323,7 @@
     "ref": "https://opencollective.com/famousblast",
     "image": "famousblast.png",
     "image_h": "",
-    "endDate": "2022-02-06T00:00+03:00",
+    "endDate": "",
     "active": true
   },
   {
@@ -1389,17 +1366,6 @@
     "plan": "Silver Sponsor",
     "ref": "https://opencollective.com/casinot-net",
     "image": "casinot-net.png",
-    "image_h": "",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2021-08-23T06:33:38.591Z",
-    "title": "Casinoclaw » Reviews, bonuses & free spins",
-    "link": "https://casinoclaw.com",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/casinoclaw-com",
-    "image": "casinoclaw.png",
     "image_h": "",
     "endDate": "",
     "active": true
@@ -1460,17 +1426,6 @@
     "active": true
   },
   {
-    "createdAt": "2021-08-05T11:29:05.199Z",
-    "title": "Online Casino HEX - Best Online Casinos in Canada [2021]",
-    "link": "https://onlinecasinohex.ca",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/hexcasinoca",
-    "image": "casinohex-canada.png",
-    "image_h": "",
-    "endDate": "2022-08-05T00:00+03:00",
-    "active": true
-  },
-  {
     "createdAt": "2021-08-04T08:34:19.866Z",
     "title": "Online Casinos Cyprus - CasinoAuditor",
     "link": "https://casinoauditor.com/online-casinos-cyprus/",
@@ -1489,19 +1444,8 @@
     "ref": "https://opencollective.com/kontempry",
     "image": "freebets.png",
     "image_h": "",
-    "endDate": "2022-02-14T00:00+03:00",
+    "endDate": "",
     "active": true
-  },
-  {
-    "createdAt": "2021-07-14T11:30:03.268Z",
-    "title": "Migliori siti di scommesse e Casino Online - Top [2021] - bookmakers italiani",
-    "link": "",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/bet-italia",
-    "image": "bet-italia.png",
-    "image_h": "",
-    "endDate": "2022-01-14T00:00+03:00",
-    "active": false
   },
   {
     "createdAt": "2021-07-12T15:27:45.099Z",
@@ -1621,12 +1565,12 @@
     "ref": "https://opencollective.com/casinosters",
     "image": "casinosters.svg",
     "image_h": "",
-    "endDate": "",
+    "endDate": "2022-10-02T08:59:11.661Z",
     "active": true
   },
   {
     "createdAt": "2021-04-19T07:38:25.748Z",
-    "title": "Online Casinos Canada 🏆 Best Online Casinos in Canada for 2021 Review | CasinosHunter",
+    "title": "Best Online Casinos in Canada",
     "link": "https://casinoshunter.com/online-casinos/",
     "plan": "Silver Sponsor",
     "ref": "https://opencollective.com/casinoshunterca",
@@ -1676,8 +1620,8 @@
     "ref": "https://opencollective.com/estepera",
     "image": "estepera.png",
     "image_h": "",
-    "endDate": "2022-08-08T00:00+03:00",
-    "active": true
+    "endDate": "",
+    "active": false
   },
   {
     "createdAt": "2021-04-01T15:02:12.451Z",
@@ -1818,17 +1762,6 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/socials-up",
     "image": "socials-up.png",
-    "image_h": "",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2021-02-25T12:04:27.927Z",
-    "title": "Custom Paper Writing and Editing Service | Essay Writing Help",
-    "link": "https://writersperhour.com",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/writersperhour",
-    "image": "writers-per-hour.png",
     "image_h": "",
     "endDate": "",
     "active": true
