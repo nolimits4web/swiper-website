@@ -1,5 +1,35 @@
 [
   {
+    "createdAt": "2022-09-28T20:00:00.000Z",
+    "title": "betting sider",
+    "link": "https://betting-sider.net/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/betting-sider",
+    "image": "betting-sider.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2022-09-28T20:00:00.000Z",
+    "title": "online casinoer",
+    "link": "https://topcasinoer.net/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/top-casinoer",
+    "image": "topcasinoer.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2022-09-28T20:00:00.000Z",
+    "title": "casino uden ROFUS",
+    "link": "https://bedstespiludenomrofus.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/bedstespiludenomrofus",
+    "image": "bedstespiludenomrofus.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2022-09-13T20:00:00.000Z",
     "title": "UK Casinos not on GamStop 2022 - nongamstopcasinos.net",
     "link": "https://nongamstopcasinos.net/",
