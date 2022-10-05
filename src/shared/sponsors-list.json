@@ -1,5 +1,15 @@
 [
   {
+    "createdAt": "2022-10-05T20:00:00.000Z",
+    "title": "Stake Casino - The best online casino",
+    "link": "https://stake-casino.org/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/stake-casino",
+    "image": "stake-casino.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2022-10-04T20:00:00.000Z",
     "title": "Crazy Time Bangladesh | Play Crazy Time BD Now",
     "link": "https://gameapptraining.com/",
@@ -67,7 +77,7 @@
     "ref": "https://opencollective.com/techd",
     "image": "techd.png",
     "endDate": "",
-    "active": true
+    "active": false
   },
   {
     "createdAt": "2022-09-08T13:00:00.000Z",
@@ -651,7 +661,7 @@
     "ref": "https://opencollective.com/igfollowers-uk",
     "image": "igfollowers.png",
     "image_h": "",
-    "endDate": "",
+    "endDate": "2022-10-30T12:05:57.223Z",
     "active": true
   },
   {
@@ -868,7 +878,7 @@
     "image": "vedonlyontibonukset.org.png",
     "image_h": "",
     "endDate": "",
-    "active": true
+    "active": false
   },
   {
     "createdAt": "2022-02-01T14:54:15.326Z",
@@ -901,7 +911,7 @@
     "image": "pikavippi.png",
     "image_h": "",
     "endDate": "",
-    "active": true
+    "active": false
   },
   {
     "createdAt": "2022-01-26T18:20:16.909Z",
@@ -1252,7 +1262,7 @@
     "ref": "https://opencollective.com/casinohex-denmark",
     "image": "casinohexdk.png",
     "image_h": "",
-    "endDate": "",
+    "endDate": "2022-10-30T13:23:27.569Z",
     "active": true
   },
   {
@@ -1429,7 +1439,7 @@
     "image": "parhaatnettikasinot.png",
     "image_h": "",
     "endDate": "",
-    "active": true
+    "active": false
   },
   {
     "createdAt": "2021-08-20T06:47:30.825Z",
@@ -1637,7 +1647,7 @@
     "ref": "https://opencollective.com/gamblizard-com1",
     "image": "gamblizard.png",
     "image_h": "",
-    "endDate": "",
+    "endDate": "2022-11-02T14:45:46.769Z",
     "active": true
   },
   {
