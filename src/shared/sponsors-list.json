@@ -1395,17 +1395,6 @@
     "active": true
   },
   {
-    "createdAt": "2021-09-09T12:01:00.816Z",
-    "title": "Custom Web Development Company [AppKong]",
-    "link": "https://appkong.com",
-    "plan": "Silver Sponsor",
-    "ref": "https://opencollective.com/appkong",
-    "image": "appkong.png",
-    "image_h": "",
-    "endDate": "",
-    "active": false
-  },
-  {
     "createdAt": "2021-09-02T16:19:41.900Z",
     "title": "Buy Instagram Followers - Cheap & Instant - $3.90 per 1.000",
     "link": "https://famousblast.com/product/buyfollowers/",
@@ -1436,7 +1425,7 @@
     "image": "parhaatkasinot.png",
     "image_h": "",
     "endDate": "",
-    "active": true
+    "active": false
   },
   {
     "createdAt": "2021-08-25T10:08:46.477Z",
