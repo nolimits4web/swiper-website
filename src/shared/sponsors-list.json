@@ -1,5 +1,15 @@
 [
   {
+    "createdAt": "2022-10-14T20:00:00.000Z",
+    "title": "HelpWYZ.com - Best Marketing and Online Service",
+    "link": "https://www.helpwyz.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/helpwyz-com2",
+    "image": "helpwyz.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2022-10-11T20:00:00.000Z",
     "title": "TradingWolf | Professional Trading Indicator Suite",
     "link": "https://www.tradingwolf.com/",
@@ -627,17 +637,6 @@
     "image": "aviatorscombr.png",
     "image_h": "",
     "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2022-04-22T12:05:57.223Z",
-    "title": "Buy Instagram Followers UK for £1.99 Only - Active & Real Followers",
-    "link": "https://igfollowers.uk/buy-instagram-followers-uk/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/igfollowers-uk",
-    "image": "igfollowers.png",
-    "image_h": "",
-    "endDate": "2022-10-30T12:05:57.223Z",
     "active": true
   },
   {
