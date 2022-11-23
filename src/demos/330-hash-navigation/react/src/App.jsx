@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 import "./styles.css";
 
 // import required modules
-import { Pagination, Navigation } from "swiper";
+import { Pagination, Navigation, HashNavigation } from "swiper";
 
 export default function App() {
   return (
@@ -24,7 +24,7 @@ export default function App() {
           clickable: true,
         }}
         navigation={true}
-        modules={[Pagination, Navigation]}
+        modules={[Pagination, Navigation, HashNavigation]}
         className="mySwiper"
       >
         <SwiperSlide data-hash="slide1">Slide 1</SwiperSlide>
