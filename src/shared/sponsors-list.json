@@ -1,5 +1,15 @@
 [
   {
+    "createdAt": "2022-12-08T20:00:00.000Z",
+    "title": "cricket betting app",
+    "link": "https://4rabet.com/app",
+    "plan": "Sponsor",
+    "ref": "https://www.patreon.com/user/creators?u=83868445",
+    "image": "4rabet.svg",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2022-12-03T20:00:00.000Z",
     "title": "YoYo Casino Online ⭐ Spela casino på nätet YoYocasino",
     "link": "https://yoyocasino.se/sv/",
@@ -206,16 +216,6 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/ilcasinoitaliano",
     "image": "ilcasinoitaliano.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2022-10-17T20:00:00.000Z",
-    "title": "Buy Youtube Views",
-    "link": "https://buyyoutubviews.com/",
-    "plan": "Silver Sponsor",
-    "ref": "https://opencollective.com/buyyoutubviews",
-    "image": "buyyoutubviews.png",
     "endDate": "",
     "active": true
   },
@@ -531,31 +531,11 @@
   },
   {
     "createdAt": "2022-07-22T20:00:00.000Z",
-    "title": "Online Casino - Best Online Casinos in Canada 2022 🎖️",
-    "link": "https://realcasinoscanada.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/realcasinoscanada-com",
-    "image": "realcasinoscanada-com.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2022-07-22T20:00:00.000Z",
     "title": "VPNwelt: VPN Neuigkeiten, Testberichte und Statistik 2022",
     "link": "https://vpnwelt.com/",
     "plan": "Sponsor",
     "ref": "https://opencollective.com/vpnwelt",
     "image": "vpnwelt.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2022-07-22T20:00:00.000Z",
-    "title": "Online Casino - Best Online Casinos In Canada for 2022",
-    "link": "https://chiefcasinos.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/chiefcasinoscom",
-    "image": "chiefcasinoscom.png",
     "endDate": "",
     "active": true
   },
@@ -682,17 +662,6 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/gamblorium-com",
     "image": "gamblorium.png",
-    "image_h": "",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2022-06-17T15:20:00.00Z",
-    "title": "Betting Sites and New Online Casinos",
-    "link": "https://stayatcasinos.com",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/stayatcasinos",
-    "image": "stayatcasinos.png",
     "image_h": "",
     "endDate": "",
     "active": true
@@ -837,7 +806,7 @@
     "ref": "https://opencollective.com/casinoscanadareviews",
     "image": "casinocanada.png",
     "image_h": "",
-    "endDate": "2022-12-02T16:02:04.081Z",
+    "endDate": "",
     "active": true
   },
   {
@@ -900,7 +869,7 @@
     "ref": "https://opencollective.com/playcasinoscanadacom",
     "image": "play-casinos-canada.png",
     "image_h": "",
-    "endDate": "2022-12-02T12:38:11.926Z",
+    "endDate": "",
     "active": true
   },
   {
@@ -945,7 +914,7 @@
     "image": "theinternetslots.png",
     "image_h": "",
     "endDate": "2022-12-02T12:23:35.862Z",
-    "active": true
+    "active": false
   },
   {
     "createdAt": "2022-02-23T09:59:44.304Z",
@@ -965,17 +934,6 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/smfame",
     "image": "smfame.png",
-    "image_h": "",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2022-02-14T07:59:10.017Z",
-    "title": "UK Gambling Sites - Trusted Online Casinos & Betting Sites",
-    "link": "https://www.igamblingsites.com",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/igamblingsites",
-    "image": "igamblingsites.png",
     "image_h": "",
     "endDate": "",
     "active": true
@@ -1289,17 +1247,6 @@
     "active": true
   },
   {
-    "createdAt": "2021-11-02T14:36:20.126Z",
-    "title": "Buy Instagram Likes",
-    "link": "https://www.instafollowers.co/buy-instagram-likes",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/instafollowersco",
-    "image": "instafollowersco.png",
-    "image_h": "",
-    "endDate": "",
-    "active": true
-  },
-  {
     "createdAt": "2021-10-28T12:53:51.180Z",
     "title": "Red Dog Online Casino",
     "link": "https://reddogcasino.com/en/games",
@@ -1351,7 +1298,7 @@
     "ref": "https://opencollective.com/casinohex-denmark",
     "image": "casinohexdk.png",
     "image_h": "",
-    "endDate": "2022-12-30T13:23:27.569Z",
+    "endDate": "",
     "active": true
   },
   {
@@ -1648,7 +1595,7 @@
     "ref": "https://opencollective.com/casinosters",
     "image": "casinosters.svg",
     "image_h": "",
-    "endDate": "2022-12-04T08:59:11.661Z",
+    "endDate": "",
     "active": true
   },
   {
@@ -1670,7 +1617,7 @@
     "ref": "https://opencollective.com/gamblizard-com1",
     "image": "gamblizard.png",
     "image_h": "",
-    "endDate": "2022-12-02T14:45:46.769Z",
+    "endDate": "",
     "active": true
   },
   {
@@ -1691,17 +1638,6 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/el-royale-casino",
     "image": "elroyalcasino.png",
-    "image_h": "",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2021-03-22T13:19:33.280Z",
-    "title": "Software Development Company | CodeFirst UK",
-    "link": "https://www.codefirst.co.uk",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/codefirst",
-    "image": "codefirst.png",
     "image_h": "",
     "endDate": "",
     "active": true
@@ -1737,7 +1673,7 @@
     "image": "256.png",
     "image_h": "",
     "endDate": "2022-12-02T13:39:30.057Z",
-    "active": true
+    "active": false
   },
   {
     "createdAt": "2021-03-01T15:27:55.960Z",
