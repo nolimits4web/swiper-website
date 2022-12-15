@@ -1,5 +1,25 @@
 [
   {
+    "createdAt": "2022-12-15T20:00:00.000Z",
+    "title": "Twicsy",
+    "link": "https://opencollective.com/twicsy",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/twicsy",
+    "image": "twicsy.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2022-12-15T20:00:00.000Z",
+    "title": "Nieuwe Online Casino's December 2022 | Overzicht van de top nieuwe casinos!",
+    "link": "https://nieuwe-casinos.net/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/nieuwecasinos",
+    "image": "nieuwecasinos.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2022-12-12T20:00:00.000Z",
     "title": "Best Broadband Deals in October 2022 | Broadband.Deals",
     "link": "https://broadband.deals/",
