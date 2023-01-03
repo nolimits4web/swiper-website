@@ -1,5 +1,35 @@
 [
   {
+    "createdAt": "2023-01-03T20:00:00.000Z",
+    "title": "Link Building Brazil - Link Building Brazil",
+    "link": "https://linkbuildingbrazil.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/link-building-brazil",
+    "image": "linkbuildingbrazil.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2023-01-03T20:00:00.000Z",
+    "title": "Link Building Spain - Spanish Link Building Services",
+    "link": "https://linkbuildingspain.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/link-building-spain",
+    "image": "linkbuildingspain.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2023-01-03T20:00:00.000Z",
+    "title": "Link Building Europe - Your Link Building Agency in Europe",
+    "link": "https://linkbuildingeurope.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/link-building-europe",
+    "image": "linkbuildingeurope.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2022-12-26T20:00:00.000Z",
     "title": "Link Building Agency Europe - Link Building Services for you! - AWISEE",
     "link": "https://awisee.com/",
