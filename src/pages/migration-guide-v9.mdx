@@ -1,0 +1,39 @@
+---
+title: Migration Guide to Swiper 9
+carbon: true
+---
+
+## Angular
+
+There is not much breaking changes in Swiper 8, except how Swiper events are handled in Swiper Angular.
+
+Now all event handlers accept single array with all event "parameters":
+
+```html
+<!-- home.component.html -->
+
+<swiper (beforeTransitionStart)="onBeforeTransition($event)" ...></swiper>
+```
+
+```ts
+// home.component.ts
+
+import { SwiperEvents } from 'swiper/types';
+
+@Component({
+  selector: 'home',
+  templateUrl: './home.component.html',
+})
+export class HomePage {
+  // ...
+
+  onBeforeTransition(
+    eventParams: Parameters<SwiperEvents['beforeTransitionStart']>
+  ) {
+    const [swiper, speed, internal] = eventParams;
+    console.log({ swiper, speed, internal });
+  }
+
+  // ...
+}
+```

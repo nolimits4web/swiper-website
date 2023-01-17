@@ -15,7 +15,7 @@ const buildDemos = async () => {
           return `${word[0].toUpperCase()}${word.substring(1)}`;
         })
         .join(' ');
-      const skip = ['angular', 'core', 'react', 'svelte', 'vue', 'solid'];
+      const skip = ['core', 'react', 'vue'];
       data.push({ slug, title, skip, folder });
       fs.readdirSync(path.resolve(__dirname, '../src/demos', folder))
         .filter((f) => f[0] !== '.')

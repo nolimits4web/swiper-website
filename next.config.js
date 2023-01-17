@@ -5,7 +5,7 @@ const frontMatter = require('front-matter');
 const rehypePrism = require('@mapbox/rehype-prism');
 const { withTableOfContents } = require('./withTableOfContents');
 const minimatch = require('minimatch');
-const pkg = require('./package.json');
+const pkg = require('swiper/package.json');
 
 const fallbackLayouts = {
   'src/pages/**/*': ['@/layouts/withSidebar', 'WithSidebarLayout'],
@@ -19,7 +19,7 @@ const nextConfig = {
   },
   pageExtensions: ['js', 'jsx', 'mdx'],
   env: {
-    swiperReleaseVersion: pkg.releaseVersion,
+    swiperReleaseVersion: pkg.version,
     swiperReleaseDate: pkg.releaseDate,
   },
   webpack(config, options) {

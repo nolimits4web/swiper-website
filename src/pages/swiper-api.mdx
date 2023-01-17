@@ -57,10 +57,6 @@ import { KeyboardOptions } from '@/components/api/KeyboardOptions';
 import { KeyboardEvents } from '@/components/api/KeyboardEvents';
 import { KeyboardMethods } from '@/components/api/KeyboardMethods';
 
-import { LazyOptions } from '@/components/api/LazyOptions';
-import { LazyEvents } from '@/components/api/LazyEvents';
-import { LazyMethods } from '@/components/api/LazyMethods';
-
 import { ManipulationMethods } from '@/components/api/ManipulationMethods';
 
 import { MousewheelOptions } from '@/components/api/MousewheelOptions';
@@ -94,11 +90,9 @@ import { ZoomEvents } from '@/components/api/ZoomEvents';
 import { ZoomMethods } from '@/components/api/ZoomMethods';
 
 <div className="important-note md:mr-[340px] space-y-4">
-  <div>If you are upgrading from Swiper 6 to Swiper 7, check out{' '}
-  <a href="/migration-guide">Migration Guide to Swiper 7</a></div>
 
-  <div>If you are upgrading from Swiper 7 to Swiper 8, check out{' '}
-  <a href="/migration-guide-v8">Migration Guide to Swiper 8</a></div>
+  <div>If you are upgrading from Swiper 8 to Swiper 9, check out{' '}
+  <a href="/migration-guide-v9">Migration Guide to Swiper 9</a></div>
 </div>
 
 ## Swiper Full HTML Layout
@@ -161,7 +155,6 @@ CSS styles for core version and modules (package imports):
 - `swiper/css/hash-navigation` - styles required for Hash Navigation module
 - `swiper/css/history` - styles required for History module
 - `swiper/css/keyboard` - styles required for Keyboard module
-- `swiper/css/lazy` - styles required for Lazy module
 - `swiper/css/manipulation` - styles required for Manipulation module
 - `swiper/css/mousewheel` - styles required for Mousewheel module
 - `swiper/css/navigation` - styles required for Navigation module
@@ -192,7 +185,6 @@ Less styles are separate styles for core version and modules (package imports):
 - `swiper/less/hash-navigation` - styles required for Hash Navigation module
 - `swiper/less/history` - styles required for History module
 - `swiper/less/keyboard` - styles required for Keyboard module
-- `swiper/less/lazy` - styles required for Lazy module
 - `swiper/less/manipulation` - styles required for Manipulation module
 - `swiper/less/mousewheel` - styles required for Mousewheel module
 - `swiper/less/navigation` - styles required for Navigation module
@@ -223,7 +215,6 @@ SCSS styles are also separate styles for core version and modules (package impor
 - `swiper/scss/hash-navigation` - styles required for Hash Navigation module
 - `swiper/scss/history` - styles required for History module
 - `swiper/scss/keyboard` - styles required for Keyboard module
-- `swiper/scss/lazy` - styles required for Lazy module
 - `swiper/scss/manipulation` - styles required for Manipulation module
 - `swiper/scss/mousewheel` - styles required for Mousewheel module
 - `swiper/scss/navigation` - styles required for Navigation module
@@ -403,7 +394,7 @@ Swiper comes with a bunch of useful events you can listen. Events can be assigne
 
 ### Manipulation
 
-Manipulation module adds useful Swiper methods to manipulate slides. It makes sense to use it only with Swiper Core version, not intended to be uses with Swiper Angular, React, SolidJS, Svelte or Vue.
+Manipulation module adds useful Swiper methods to manipulate slides. It makes sense to use it only with Swiper Core version, not intended to be uses with Swiper React or Vue.
 
 #### Manipulation Methods
 
@@ -476,32 +467,17 @@ To enable lazy loading, first of all we need a special layout for images or elem
   <div class="swiper-wrapper">
     <!-- Lazy image -->
     <div class="swiper-slide">
-      <img data-src="path/to/picture-1.jpg" class="swiper-lazy" />
+      <img src="path/to/picture-1.jpg" loading="lazy" />
       <div class="swiper-lazy-preloader"></div>
     </div>
 
     <!-- Lazy image with srcset -->
     <div class="swiper-slide">
       <img
-        data-src="path/to/logo-small.png"
-        data-srcset="path/to/logo-large.png 2x"
-        class="swiper-lazy"
+        src="path/to/logo-small.png"
+        srcset="path/to/logo-large.png 2x"
+        loading="lazy"
       />
-      <div class="swiper-lazy-preloader"></div>
-    </div>
-
-    <!-- Element with lazy background image -->
-    <div class="swiper-slide">
-      <div data-background="path/to/picture-2.jpg" class="swiper-lazy">
-        <div class="swiper-lazy-preloader"></div>
-      </div>
-    </div>
-
-    <!-- Lazy background image on slide itself -->
-    <div
-      data-background="path/to/picture-3.jpg"
-      class="swiper-slide swiper-lazy"
-    >
       <div class="swiper-lazy-preloader"></div>
     </div>
   </div>
@@ -510,12 +486,8 @@ To enable lazy loading, first of all we need a special layout for images or elem
 
 As you see:
 
-- Each lazy loaded image/element should have additional "swiper-lazy" class
-- Lazy image source for &lt;img&gt; element should be specified in "data-src" attribute instead of "src"
-- Lazy image source set for &lt;img&gt; element should be specified in "data-srcset" attribute instead of "srcset"
-- Lazy background image source should be specified in "data-background" attribute
-
-You may also add animated preloader spinner to slide which will be removed automatically after image loaded:
+- Lazy image must have `loading="lazy"` attribute
+- Add animated preloader spinner to slide which will be removed automatically after image loaded:
 
 ```html
 <div class="swiper-lazy-preloader"></div>
@@ -528,36 +500,6 @@ Or white one for dark layout:
 ```
 
 After that we need to enable lazy loading on Swiper initialization:
-
-```js
-const swiper = new Swiper('.swiper', {
-  // Disable preloading of all images
-  preloadImages: false,
-  // Enable lazy loading
-  lazy: true,
-});
-```
-
-<div className="important-note">
-  If you use <code>slidesPerView: 'auto'</code> or{' '}
-  <code>slidesPerView > 1</code>, then you should also enable{' '}
-  <code>watchSlidesProgress</code> and Swiper will load images in currently
-  visible slides
-</div>
-
-#### Lazy Loading Parameters
-
-<LazyOptions />
-
-#### Lazy Loading Methods
-
-<LazyMethods />
-
-#### Lazy Loading Events
-
-<LazyEvents />
-
-<ApiDivider />
 
 ### Fade Effect
 
@@ -894,7 +836,6 @@ Swiper comes with gulp builder that allows to build custom library version where
         'scrollbar',
         'parallax',
         'zoom',
-        'lazy',
         'controller',
         'a11y',
         'history',

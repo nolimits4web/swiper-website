@@ -7,28 +7,21 @@ export default [
     name: 'API',
     link: '/swiper-api',
   },
+
   {
-    name: 'Demos',
-    link: '/demos',
+    name: 'Element',
+    link: '/element',
   },
   {
     name: 'React',
     link: '/react',
   },
   {
-    name: 'Solid',
-    link: '/solid',
-  },
-  {
-    name: 'Svelte',
-    link: '/svelte',
-  },
-  {
     name: 'Vue',
     link: '/vue',
   },
   {
-    name: 'Angular',
-    link: '/angular',
+    name: 'Demos',
+    link: '/demos',
   },
 ];

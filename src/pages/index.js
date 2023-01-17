@@ -50,19 +50,9 @@ const libs = [
     link: '/vue',
   },
   {
-    title: 'SolidJS',
-    image: 'solid.svg',
-    link: '/solid',
-  },
-  {
-    title: 'Svelte',
-    image: 'svelte.svg',
-    link: '/svelte',
-  },
-  {
-    title: 'Angular',
-    image: 'angular.svg',
-    link: '/angular',
+    title: 'WebComponents',
+    image: 'webcomponents.svg',
+    link: '/element',
   },
 ];
 
@@ -155,12 +145,8 @@ export default function Home() {
             native/hybrid apps.
           </p>
           <p>
-            Swiper is not compatible with all platforms,{' '}
-            <b>
-              it is a modern touch slider which is focused only on modern
-              apps/platforms to bring the best experience and simplicity
-            </b>
-            .
+            It is a modern touch slider which is focused only on modern
+            apps/platforms to bring the best experience and simplicity.
           </p>
           <p className="mb-2">
             Swiper, along with other great components, is a part of{' '}
@@ -175,7 +161,7 @@ export default function Home() {
         </div>
         <div className="mt-24">
           <HomeHeading>Available For</HomeHeading>
-          <div className="mx-auto grid max-w-6xl grid-cols-3 gap-4 sm:grid-cols-6">
+          <div className="mx-auto grid max-w-6xl grid-cols-4">
             {libs.map(({ title, image, link }) => (
               <a
                 key={title}

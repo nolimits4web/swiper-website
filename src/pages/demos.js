@@ -180,30 +180,28 @@ export default function DemosPage() {
             >
               Open in new window
             </a>
-            {['Core', 'React', 'Vue', 'Angular', 'Svelte', 'Solid'].map(
-              (name) => {
-                if (skip && skip.includes(name.toLowerCase())) {
-                  return null;
-                }
-                return (
-                  <a
-                    key={name}
-                    className="ml-2 no-underline"
-                    href="#"
-                    onClick={(e) =>
-                      openCodeSandbox(e, title, folder, `${name.toLowerCase()}`)
-                    }
-                  >
-                    <CodeSandBoxLogo
-                      className="inline fill-current"
-                      width="19"
-                      height="14"
-                    />
-                    {name}
-                  </a>
-                );
+            {['Core', 'React', 'Vue', 'Element'].map((name) => {
+              if (skip && skip.includes(name.toLowerCase())) {
+                return null;
               }
-            )}
+              return (
+                <a
+                  key={name}
+                  className="ml-2 no-underline"
+                  href="#"
+                  onClick={(e) =>
+                    openCodeSandbox(e, title, folder, `${name.toLowerCase()}`)
+                  }
+                >
+                  <CodeSandBoxLogo
+                    className="inline fill-current"
+                    width="19"
+                    height="14"
+                  />
+                  {name}
+                </a>
+              );
+            })}
           </div>
           <div className="demo my-4 bg-gray-100 shadow">
             <iframe
