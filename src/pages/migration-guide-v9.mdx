@@ -3,37 +3,36 @@ title: Migration Guide to Swiper 9
 carbon: true
 ---
 
-## Angular
+## Touch Events Removed
 
-There is not much breaking changes in Swiper 8, except how Swiper events are handled in Swiper Angular.
+Now Swiper handles only Pointer Events, and doesn't rely on touch events like `touchstart`, `touchmove`, etc. So if your custom extra logic relies on these events, you should update it.
 
-Now all event handlers accept single array with all event "parameters":
+## Autoplay
 
-```html
-<!-- home.component.html -->
+Swiper v9 comes with fully reworked Autoplay module, that has new paramters, methods and events. Check <a href="/swiper-api#autoplay">Autoplay documentation</a> for more information.
 
-<swiper (beforeTransitionStart)="onBeforeTransition($event)" ...></swiper>
-```
+## Loop Mode
 
-```ts
-// home.component.ts
+Loop mode has been fully reworked in version 9 and now instead of duplicating slides, it rearrange current ones dynamically.
 
-import { SwiperEvents } from 'swiper/types';
+It comes with new limitation. Amount of slides in loop mode should be at least 2x of `slidesPerView` value.
 
-@Component({
-  selector: 'home',
-  templateUrl: './home.component.html',
-})
-export class HomePage {
-  // ...
+## Lazy Loading
 
-  onBeforeTransition(
-    eventParams: Parameters<SwiperEvents['beforeTransitionStart']>
-  ) {
-    const [swiper, speed, internal] = eventParams;
-    console.log({ swiper, speed, internal });
-  }
+Lazy images loading module has been removed and integrated to the core. Check <a href="/swiper-api#lazy-loading">Lazy Loading documentation</a> for more information.
 
-  // ...
-}
-```
+## Dom7
+
+Dom7 library has been removed from Swiper, and it uses vanilla JS for DOM manipulation. If your custom code relied on Dom7, you should change it.
+
+## Swiper Angular
+
+Swiper Angular components have been removed in v9. Use <a href="/element">Swiper Element</a> instead
+
+## Swiper Solid
+
+Swiper Solid components have been removed in v9. Use <a href="/element">Swiper Element</a> instead
+
+## Swiper Svelte
+
+Swiper Svelte components have been removed in v9. Use <a href="/element">Swiper Element</a> instead
