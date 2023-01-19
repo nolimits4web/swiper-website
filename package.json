@@ -2,8 +2,6 @@
   "name": "swiper-website",
   "version": "0.1.0",
   "private": true,
-  "releaseVersion": "8.4.6",
-  "releaseDate": "January 17, 2023",
   "scripts": {
     "dev": "npm run build-uiinitiative-demos && npm run build-sponsors && npm run build-demos && npm run build-types && npm run build-api && next dev",
     "next-dev": "next dev",
