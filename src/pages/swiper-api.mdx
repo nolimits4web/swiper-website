@@ -460,7 +460,7 @@ To enable parallax effects you need to init Swiper with passed `parallax:true` p
 
 ### Lazy Loading
 
-To enable lazy loading, first of all we need a special layout for images or elements with background in slides:
+Since version 9 Swiper doesn't have specifid lazy loading API, as it relies on native browser lazy loading feature. To use lazy loading, we just need to set `loading="lazy"` on images and add preloader element:
 
 ```html
 <div class="swiper">
@@ -498,8 +498,6 @@ Or white one for dark layout:
 ```html
 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
 ```
-
-After that we need to enable lazy loading on Swiper initialization:
 
 ### Fade Effect
 
@@ -680,8 +678,7 @@ Virtual Slides module allows to keep just required amount of slides in DOM. It i
 
 <div className="important-note">
   Note that according to Virtual Slides realization it <b>doesn't work</b> with
-  loop mode, <code>slidesPerColumn</code> more than 1 and{' '}
-  <code>slidesPerView: 'auto'</code>
+  Grid module and <code>slidesPerView: 'auto'</code>
 </div>
 
 #### Virtual Slides Parameters
@@ -691,6 +688,28 @@ Virtual Slides module allows to keep just required amount of slides in DOM. It i
 #### Virtual Slides Methods
 
 <VirtualMethods />
+
+#### Virtual Slides Dom7
+
+Since version 9, Swiper virtual slides can work with slides originally rendered in DOM. On initialize it will remove them from DOM, cache and then re-use the ones which are required:
+
+```html
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">Slide 1</div>
+    <div class="swiper-slide">Slide 2</div>
+    ...
+    <div class="swiper-slide">Slide 100</div>
+  </div>
+</div>
+<script>
+  const swiper = new Swiper('.swiper', {
+    virtual: {
+      enabled: true,
+    }
+  })
+</script>
+```
 
 <ApiDivider />
 
