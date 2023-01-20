@@ -12,13 +12,13 @@ const vueFiles = (title) => ({
         build: 'vite build',
       },
       dependencies: {
-        vue: '^3.0.0',
-        swiper: '^8.0.0',
+        vue: '^3.2.45',
+        swiper: '^9.0.0-beta.33',
       },
       devDependencies: {
-        vite: '^2.7.0',
-        '@vue/compiler-sfc': '^3.2.0',
-        '@vitejs/plugin-vue': '^2.1.0',
+        vite: '^4.0.4',
+        '@vue/compiler-sfc': '^3.2.45',
+        '@vitejs/plugin-vue': '^4.0.0',
       },
     },
   },

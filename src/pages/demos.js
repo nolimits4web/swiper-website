@@ -26,7 +26,7 @@ export default function DemosPage() {
 
   useLazyDemos();
   const generateCodeSandboxWorkspace = (mode, contentJSON, title = '') => {
-    if (mode === 'core') {
+    if (mode === 'core' || mode === 'element') {
       return {
         files: {
           ...contentJSON,
@@ -35,7 +35,7 @@ export default function DemosPage() {
               name: `Swiper - ${title}`,
               tags: ['swiper'],
               dependencies: {
-                swiper: 'latest',
+                swiper: 'beta',
                 'parcel-bundler': '^1.6.1',
               },
             },
@@ -46,9 +46,7 @@ export default function DemosPage() {
     const files = codeSandboxFiles;
     const currentFile = files[mode] ? files[mode](title) : {};
 
-    // unescape &quot;
-    // {{ &quot;enabled&quote;: true }} => {{ "enabled": true }}
-    if (mode === 'react' || mode === 'solid') {
+    if (mode === 'react') {
       Object.keys(contentJSON).map((file) => {
         const cur = contentJSON[file];
         if (!!cur.content && typeof cur.content === 'string') {
@@ -87,11 +85,9 @@ export default function DemosPage() {
     setCurrentCodeSandboxQuery(
       {
         react: 'file=/src/App.jsx',
-        solid: 'file=/src/App.jsx',
-        svelte: 'file=/App.svelte',
         vue: 'file=/src/App.vue',
-        angular: 'file=/src/app/app.component.ts',
         core: 'file=/index.html',
+        element: 'file=/index.html',
       }[mode] || ''
     );
     formRef.current.submit();

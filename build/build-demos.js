@@ -15,12 +15,10 @@ const buildDemos = async () => {
           return `${word[0].toUpperCase()}${word.substring(1)}`;
         })
         .join(' ');
-      const skip = ['core', 'react', 'vue'];
-      data.push({ slug, title, skip, folder });
+      data.push({ slug, title, folder });
       fs.readdirSync(path.resolve(__dirname, '../src/demos', folder))
         .filter((f) => f[0] !== '.')
         .forEach((frameworkFolder) => {
-          skip.splice(skip.indexOf(frameworkFolder), 1);
           const paths = globby.sync('**/*.*', {
             cwd: path.resolve(
               __dirname,
@@ -44,7 +42,7 @@ const buildDemos = async () => {
             obj[filePath] = { content };
           });
 
-          if (frameworkFolder === 'core') {
+          if (frameworkFolder === 'core' || frameworkFolder === 'element') {
             fs.outputFileSync(
               path.resolve(
                 __dirname,
