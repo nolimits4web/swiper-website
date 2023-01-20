@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+  <style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    swiper-container {
+      width: 100%;
+      height: 300px;
+      margin: 20px auto;
+    }
+
+    .append-buttons {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .append-buttons button {
+      display: inline-block;
+      cursor: pointer;
+      border: 1px solid #007aff;
+      color: #007aff;
+      text-decoration: none;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin: 0 10px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <swiper-container class="mySwiper" slides-per-view="3" centered-slides="true" space-between="30" pagination="true"
+    pagination-type="fraction" navigation="true">
+    <swiper-slide>Slide 1</swiper-slide>
+    <swiper-slide>Slide 2</swiper-slide>
+    <swiper-slide>Slide 3</swiper-slide>
+    <swiper-slide>Slide 4</swiper-slide>
+  </swiper-container>
+
+  <p class="append-buttons">
+    <button class="prepend-2-slides">Prepend 2 Slides</button>
+    <button class="prepend-slide">Prepend Slide</button>
+    <button class="append-slide">Append Slide</button>
+    <button class="append-2-slides">Append 2 Slides</button>
+  </p>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@beta/swiper-element-bundle.min.js"></script>
+
+  <script>
+    const swiperEl = document.querySelector('swiper-container');
+    const swiper = swiperEl.swiper;
+
+    var appendNumber = 4;
+    var prependNumber = 1;
+    document
+      .querySelector(".prepend-2-slides")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        swiper.prependSlide([
+          '<swiper-slide>Slide ' + --prependNumber + "</swiper-slide>",
+          '<swiper-slide>Slide ' + --prependNumber + "</swiper-slide>",
+        ]);
+      });
+    document
+      .querySelector(".prepend-slide")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        swiper.prependSlide(
+          '<swiper-slide>Slide ' + --prependNumber + "</swiper-slide>"
+        );
+      });
+    document
+      .querySelector(".append-slide")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        swiper.appendSlide(
+          '<swiper-slide>Slide ' + ++appendNumber + "</swiper-slide>"
+        );
+      });
+    document
+      .querySelector(".append-2-slides")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        swiper.appendSlide([
+          '<swiper-slide>Slide ' + ++appendNumber + "</swiper-slide>",
+          '<swiper-slide>Slide ' + ++appendNumber + "</swiper-slide>",
+        ]);
+      });
+  </script>
+</body>
+
+</html>
