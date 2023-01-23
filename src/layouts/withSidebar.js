@@ -42,7 +42,7 @@ export function WithSidebarLayout({
       >
         {(toc.length > 0 || forceSidebar) && (
           <div className="mr-4 hidden w-64 flex-none text-sm sm:mr-6 lg:mr-8 lg:block xl:mr-10">
-            <div className="sticky top-20 max-h-screen overflow-y-auto overscroll-contain py-10">
+            <div className="sticky top-20 max-h-[calc(100vh-80px)] overflow-y-auto overscroll-contain py-10">
               <SidebarSponsors />
               {toc.length > 0 && <TableOfContents tableOfContents={toc} />}
             </div>

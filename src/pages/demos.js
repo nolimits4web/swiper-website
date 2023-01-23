@@ -12,6 +12,8 @@ import { trackOutbound } from 'src/shared/track-outbound';
 
 let tableOfContents;
 
+const skipComponentsDemos = ['420', '430', '440'];
+
 export default function DemosPage() {
   tableOfContents = demos.map(({ title, slug }) => {
     return {
@@ -161,7 +163,7 @@ export default function DemosPage() {
           </div>
         ))}
       </div>
-      {demos.map(({ title, slug, folder, skip }, demoIndex) => (
+      {demos.map(({ title, slug, folder }, demoIndex) => (
         <React.Fragment key={title}>
           <Heading level={2} id={slug} toc={true}>
             {title}
@@ -176,9 +178,12 @@ export default function DemosPage() {
               Open in new window
             </a>
             {['Core', 'React', 'Vue', 'Element'].map((name) => {
-              if (skip && skip.includes(name.toLowerCase())) {
+              if (
+                name !== 'Core' &&
+                skipComponentsDemos.includes(folder.split('-')[0])
+              )
                 return null;
-              }
+
               return (
                 <a
                   key={name}

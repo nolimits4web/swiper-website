@@ -9,8 +9,8 @@ const PlanSection = (props) => {
   const sizes = {
     'Platinum Sponsor': 'm-2 w-40 h-40',
     'Gold Sponsor': 'm-2 w-36 h-36',
-    'Silver Sponsor': 'm-2 sm:m-3 w-24 h-24 sm:w-32 sm:h-32',
-    Sponsor: 'm-2 w-16 h-16 sm:w-24 sm:h-24',
+    'Silver Sponsor': 'm-2 w-20 h-20',
+    Sponsor: 'm-2 w-16 h-16',
   }[props.plan];
 
   if (!items.length && !showPlaceholder) return null;
@@ -26,7 +26,7 @@ const PlanSection = (props) => {
         {items.map(({ link, title, image }) => {
           return (
             <a
-              className={`flex items-center justify-center text-center duration-300 dark:bg-white dark:p-0.5 ${sizes}`}
+              className={`flex items-center justify-center overflow-hidden rounded text-center duration-300 dark:bg-white dark:p-0.5 ${sizes}`}
               href={link}
               key={title}
               title={title}
@@ -35,7 +35,7 @@ const PlanSection = (props) => {
               onClick={() => trackOutbound(link)}
             >
               <img
-                className="h-auto max-h-full w-auto max-w-full"
+                className="h-auto max-h-full w-auto max-w-full rounded"
                 src={`/images/sponsors/${image}`}
                 alt={title}
               />

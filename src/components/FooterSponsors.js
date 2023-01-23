@@ -9,7 +9,7 @@ export default function FooterSponsors() {
         .map(({ link, title, image, image_h, alt }) => {
           return (
             <a
-              className="relative flex h-16 items-center justify-center border p-1 text-center hover:bg-gray-50 dark:border-none dark:bg-white"
+              className="relative flex h-16 items-center justify-center rounded border p-1 text-center hover:bg-gray-50 dark:border-none dark:bg-white"
               href={link}
               key={title}
               title={title}
@@ -18,7 +18,7 @@ export default function FooterSponsors() {
               onClick={() => trackOutbound(link)}
             >
               <img
-                className="max-h-[56px] w-auto max-w-full"
+                className="max-h-[56px] w-auto max-w-full rounded"
                 src={`/images/sponsors/${image_h || image}`}
                 alt={title}
               />

@@ -19,7 +19,7 @@ export default function SidebarSponsors() {
           .filter(({ plan, active }) => plan !== 'Sponsor' && active)
           .map(({ link, title, image_h, image, alt }) => (
             <a
-              className="flex items-center justify-center hover:opacity-80"
+              className="flex items-center justify-center rounded hover:opacity-80 dark:bg-white dark:p-[1px]"
               href={link}
               key={title}
               title={title}
@@ -28,7 +28,7 @@ export default function SidebarSponsors() {
               onClick={() => trackOutbound(link)}
             >
               <img
-                className="h-11 w-11 object-contain dark:rounded"
+                className="h-11 w-11 rounded object-contain"
                 alt={title}
                 src={`/images/sponsors/${image}`}
               />
