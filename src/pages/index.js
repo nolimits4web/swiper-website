@@ -13,6 +13,7 @@ import SwiperStudioBanner from '@/components/SwiperStudioBanner';
 import { trackOutbound } from 'src/shared/track-outbound';
 import { ReactComponent as PatreonLogo } from '@/img/patreon-logo.svg';
 import { ReactComponent as OpenCollectiveLogo } from '@/img/opencollective-logo.svg';
+import { HomeElementUsage } from '@/components/HomeElementUsage';
 
 function SponsorButton(props) {
   const { href, className, onClick, children, ...restProps } = props;
@@ -165,6 +166,7 @@ export default function Home() {
             {libs.map(({ title, image, link }) => (
               <a
                 key={title}
+                title={title}
                 href={link}
                 className="flex items-center justify-center"
               >
@@ -180,25 +182,35 @@ export default function Home() {
             ))}
           </div>
         </div>
+
+        <div className="mt-24">
+          <HomeHeading>As Easy As</HomeHeading>
+          <HomeElementUsage />
+        </div>
+
         <div className="mx-auto mt-24 max-w-6xl">
           <HomeHeading>Powered With Top Notch Features</HomeHeading>
-          <ul className="text-md grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 xl:gap-12">
+          <ul className="grid gap-x-4 gap-y-4 text-base sm:grid-cols-2 lg:grid-cols-4 xl:gap-4">
             {feats.map(({ title, descr }) => (
-              <li key={title}>
-                <h3 className="mb-4 text-2xl font-bold text-gray-900 dark:text-gray-200">
+              <li
+                key={title}
+                className="rounded-xl border border-black border-opacity-10 p-4 dark:border-0 dark:bg-white dark:bg-opacity-5"
+              >
+                <h3 className="mb-4 font-bold text-gray-900 dark:text-gray-200">
                   {title}
                 </h3>
-                {descr}
+                <div className="text-sm leading-normal">{descr}</div>
               </li>
             ))}
           </ul>
         </div>
         <div className="mt-24">
           <HomeHeading>Used By Millions</HomeHeading>
-          <div className="mx-auto grid max-w-6xl grid-cols-4 gap-6 sm:grid-cols-8">
+          <div className="mx-auto grid max-w-6xl grid-cols-4 gap-4 sm:grid-cols-8">
             {clientsList.map(({ image, title }) => (
               <div key={title} className="flex items-center justify-center">
                 <img
+                  className="rounded"
                   src={`/images/clients/${image}`}
                   width="120"
                   height="120"
@@ -219,7 +231,7 @@ export default function Home() {
           <nav className="space-x-2 text-lg">
             {menuList.map(({ name, link }) => (
               <Link key={link} href={link}>
-                <a className="my-2 inline-block w-40 rounded-full bg-primary bg-opacity-10 px-4 py-2 font-semibold text-primary duration-200 hover:bg-opacity-95 hover:text-white hover:no-underline sm:w-48">
+                <a className="my-2 inline-block w-40 rounded-full bg-primary bg-opacity-10 px-4 py-2 font-semibold text-primary duration-200 hover:bg-opacity-95 hover:text-white hover:no-underline">
                   {name}
                 </a>
               </Link>
