@@ -35,7 +35,6 @@ export default function DemosPage() {
               name: `Swiper - ${title}`,
               tags: ['swiper'],
               dependencies: {
-                swiper: 'beta',
                 'parcel-bundler': '^1.6.1',
               },
             },
