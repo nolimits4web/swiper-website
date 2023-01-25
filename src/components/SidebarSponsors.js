@@ -14,7 +14,7 @@ export default function SidebarSponsors() {
           Become a sponsor
         </a>
       </div>
-      <div className="grid grid-cols-5 gap-2">
+      <div className="grid grid-cols-7 gap-1">
         {sponsors
           .filter(({ plan, active }) => plan !== 'Sponsor' && active)
           .map(({ link, title, image_h, image, alt }) => (
@@ -28,7 +28,7 @@ export default function SidebarSponsors() {
               onClick={() => trackOutbound(link)}
             >
               <img
-                className="h-11 w-11 rounded object-contain"
+                className="h-8 w-8 rounded object-contain"
                 alt={title}
                 src={`/images/sponsors/${image}`}
               />
