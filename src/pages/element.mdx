@@ -198,7 +198,7 @@ Initialized Swiper instance is available as `swiper` prop of Swiper's `HTMLEleme
 
 ## Events
 
-All <Link href="/swiper-api#events">Swiper events</Link> are available as native DOM events.
+All <Link href="/swiper-api#events">Swiper events</Link> are available as native DOM events <b>but with lowecase names</b>. E.g. `slideChange` becomes `slidechange`.
 
 All event handler arguments are passed as array in `event.detail`:
 
@@ -215,6 +215,10 @@ All event handler arguments are passed as array in `event.detail`:
 
   swiperEl.addEventListener('progress', (event) => {
     const [swiper, progress] = event.detail;
+  });
+
+  swiperEl.addEventListener('slidechange', (event) => {
+    console.log('slide changed');
   });
 </script>
 ```
@@ -497,6 +501,10 @@ export const MyComponent = () => {
       const [swiper, progress] = e.detail;
       console.log(progress);
     });
+
+    swiperElRef.current.addEventListener('slidechange', (e) => {
+      console.log('slide changed');
+    });
   }, []);
 
   return (
@@ -532,8 +540,9 @@ Vue has full support for web components, including passing attributes as props a
       768: {
         slidesPerView: 3,
       },
-    }""
+    }"
     @progress="onProgress"
+    @slidechange="onSlideChange"
   >
     <swiper-slide>Slide 1</swiper-slide>
     <swiper-slide>Slide 2</swiper-slide>
@@ -554,9 +563,14 @@ Vue has full support for web components, including passing attributes as props a
         console.log(progress)
       };
 
+      const onSlideChange = (e) => {
+        console.log('slide changed')
+      }
+
       return {
         spaceBetween,
         onProgress,
+        onSlideChange,
       };
     }
   }
@@ -578,6 +592,9 @@ Svelte has full support for web components, including passing attributes as prop
     const [swiper, progress] = e.detail;
     console.log(progress)
   };
+  const onSlideChange = (e) => {
+    console.log('slide changed')
+  }
 </script>
 
 <swiper-container
@@ -593,6 +610,7 @@ Svelte has full support for web components, including passing attributes as prop
     },
   }}
   on:progress={onProgress}
+  on:slidechange={onSlideChange}
 >
   <swiper-slide>Slide 1</swiper-slide>
   <swiper-slide>Slide 2</swiper-slide>
@@ -615,6 +633,9 @@ export default () => {
     const [swiper, progress] = e.detail;
     console.log(progress);
   };
+  const onSlideChange = (e) => {
+    console.log('slide changed');
+  };
   return (
     <swiper-container
       slides-per-view={1}
@@ -629,6 +650,7 @@ export default () => {
         },
       }}
       onProgress={onProgress}
+      onSlidechange={onSlideChange}
     >
       <swiper-slide>Slide 1</swiper-slide>
       <swiper-slide>Slide 2</swiper-slide>
