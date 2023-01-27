@@ -1,14 +1,13 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import { ReactComponent as CodeSandBoxLogo } from '@/img/codesandbox.svg';
 import Heading from '@/components/Heading';
 import { WithSidebarLayout } from '@/layouts/withSidebar';
 import { useLazyDemos } from 'src/shared/use-lazy-demos';
 import demos from 'src/demos.json';
 import uiinitiativeDemos from 'src/uiinitiative-demos.json';
-import codeSandboxFiles from 'src/shared/codesandbox/codesandbox-files';
-import { compressToBase64 } from 'src/shared/lz-string';
 import Carbon from '@/components/Carbon';
 import { trackOutbound } from 'src/shared/track-outbound';
+import { openCodeSandbox } from 'src/shared/codesandbox';
 
 let tableOfContents;
 
@@ -22,77 +21,8 @@ export default function DemosPage() {
       children: [],
     };
   });
-  const formRef = useRef();
-  const [currentCodeSandboxParams, setCurrentCodeSandboxParams] = useState('');
-  const [currentCodeSandboxQuery, setCurrentCodeSandboxQuery] = useState('');
 
   useLazyDemos();
-  const generateCodeSandboxWorkspace = (mode, contentJSON, title = '') => {
-    if (mode === 'core' || mode === 'element') {
-      return {
-        files: {
-          ...contentJSON,
-          'package.json': {
-            content: {
-              name: `Swiper - ${title}`,
-              tags: ['swiper'],
-              dependencies: {
-                'parcel-bundler': '^1.6.1',
-              },
-            },
-          },
-        },
-      };
-    }
-    const files = codeSandboxFiles;
-    const currentFile = files[mode] ? files[mode](title) : {};
-
-    if (mode === 'react') {
-      Object.keys(contentJSON).map((file) => {
-        const cur = contentJSON[file];
-        if (!!cur.content && typeof cur.content === 'string') {
-          cur.content = cur.content.replace(/&quot;/g, '"');
-        }
-      });
-    }
-    return {
-      files: {
-        ...currentFile,
-        ...contentJSON,
-      },
-    };
-  };
-
-  async function getDemoContent(folder, mode) {
-    const _mainContent = await fetch(`demos/${folder}/${mode}.json`);
-    return _mainContent.json();
-  }
-
-  const compressParameters = (parameters) => {
-    return compressToBase64(JSON.stringify(parameters))
-      .replace(/\+/g, `-`) // Convert '+' to '-'
-      .replace(/\//g, `_`) // Convert '/' to '_'
-      .replace(/=+$/, ``); // Remove ending '='
-  };
-
-  const openCodeSandbox = async (e, title, folder, mode = 'core') => {
-    e.preventDefault();
-    const content = await getDemoContent(folder, mode);
-    const codeSandBoxParams = compressParameters(
-      generateCodeSandboxWorkspace(mode, content, title)
-    );
-
-    setCurrentCodeSandboxParams(codeSandBoxParams);
-    setCurrentCodeSandboxQuery(
-      {
-        react: 'file=/src/App.jsx',
-        vue: 'file=/src/App.vue',
-        core: 'file=/index.html',
-        element: 'file=/index.html',
-      }[mode] || ''
-    );
-    formRef.current.submit();
-  };
 
   const uiinitiativeDemosGrouped = [];
   uiinitiativeDemos.forEach((demo, index) => {
@@ -104,19 +34,6 @@ export default function DemosPage() {
 
   return (
     <WithSidebarLayout tableOfContents={tableOfContents}>
-      <form
-        ref={formRef}
-        action="https://codesandbox.io/api/v1/sandboxes/define"
-        method="POST"
-        target="_blank"
-      >
-        <input
-          type="hidden"
-          name="parameters"
-          value={currentCodeSandboxParams}
-        />
-        <input type="hidden" name="query" value={currentCodeSandboxQuery} />
-      </form>
       <Carbon />
       <h1 className="dark:text-gray-200">Swiper Demos</h1>
       <p>
@@ -170,7 +87,7 @@ export default function DemosPage() {
           </Heading>
           <div className="my-4 flex flex-wrap text-sm">
             <a
-              className="mb-2 mr-4 no-underline"
+              className="mr-4 no-underline"
               href={`/demos/${folder}/core.html`}
               target="_blank"
               rel="noopener"
@@ -187,7 +104,7 @@ export default function DemosPage() {
               return (
                 <a
                   key={name}
-                  className="ml-2 no-underline"
+                  className="relative ml-2 no-underline"
                   href="#"
                   onClick={(e) =>
                     openCodeSandbox(e, title, folder, `${name.toLowerCase()}`)
