@@ -189,7 +189,7 @@ export async function openCodeSandbox(e, title, folder, mode = 'core') {
   link.style.color = 'rgba(0,0,0,0)';
   link.insertAdjacentHTML(
     'beforeend',
-    '<div class="demo-loading-text text-[10px] text-center text-black dark:text-white flex w-full h-full absolute left-0 top-0 items-center justify-center">Loading</div>'
+    '<div class="demo-preloader">Loading</div>'
   );
   const query =
     {
@@ -198,6 +198,7 @@ export async function openCodeSandbox(e, title, folder, mode = 'core') {
       core: 'file=/index.html',
       element: 'file=/index.html',
     }[mode] || '';
+
   fetch(`https://codesandbox.io/api/v1/sandboxes/define?json=1`, {
     method: 'POST',
     headers: {
@@ -210,7 +211,7 @@ export async function openCodeSandbox(e, title, folder, mode = 'core') {
     .then(({ sandbox_id }) => {
       link.style.pointerEvents = '';
       link.style.color = '';
-      link.querySelector('.demo-loading-text').remove();
+      link.querySelector('.demo-preloader').remove();
 
       window.open(
         `https://codesandbox.io/p/sandbox/${sandbox_id}?${query}`,
