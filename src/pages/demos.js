@@ -36,16 +36,7 @@ export default function DemosPage() {
     <WithSidebarLayout tableOfContents={tableOfContents}>
       <Carbon />
       <h1 className="dark:text-gray-200">Swiper Demos</h1>
-      <p>
-        You can download all these demos and hook into the code from GitHub{' '}
-        <a
-          href="https://github.com/nolimits4web/Swiper/tree/master/demos/"
-          target="_blank"
-          rel="noopener"
-        >
-          here
-        </a>
-      </p>
+
       <h2>UI Initiative</h2>
       <p>
         Premium Swiper templates & plugins from{' '}

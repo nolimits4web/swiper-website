@@ -30,6 +30,7 @@ export default function SidebarSponsors() {
               <img
                 className="h-8 w-8 rounded object-contain"
                 alt={title}
+                loading="lazy"
                 src={`/images/sponsors/${image}`}
               />
             </a>

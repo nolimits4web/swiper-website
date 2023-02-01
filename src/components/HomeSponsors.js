@@ -38,6 +38,7 @@ const PlanSection = (props) => {
                 className="h-auto max-h-full w-auto max-w-full rounded"
                 src={`/images/sponsors/${image}`}
                 alt={title}
+                loading="lazy"
               />
             </a>
           );

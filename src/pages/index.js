@@ -184,7 +184,7 @@ export default function Home() {
         </div>
 
         <div className="mt-24">
-          <HomeHeading>As Easy As</HomeHeading>
+          <HomeHeading>Easy As</HomeHeading>
           <HomeElementUsage />
         </div>
 
