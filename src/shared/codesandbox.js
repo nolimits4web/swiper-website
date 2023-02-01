@@ -1,5 +1,5 @@
-function packageName(title, lib) {
-  return `swiper-${lib.toLowerCase()}-${title
+function packageName(lib, title) {
+  return `swiper-${lib.toLowerCase().replace(/ /g, '-')}-${title
     .toLowerCase()
     .replace(/ /g, '-')}`;
 }
