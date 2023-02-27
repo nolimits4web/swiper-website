@@ -1,11 +1,21 @@
 [
   {
     "createdAt": "2023-02-27T20:00:00.000Z",
-    "title": "Best Online Casinos India 2023 ▷ Top Indian Casino Sites",
-    "link": "https://www.bestonlinecasinos.in/",
+    "title": "Automatenspieler - Das Casino-Portal von Spielern für Spieler",
+    "link": "https://automatenspieler.net/",
+    "plan": "Silver Sponsor",
+    "ref": "https://opencollective.com/automatenspieler",
+    "image": "automatenspieler.png",
+    "endDate": "2024-02-27T20:00:00.000Z",
+    "active": true
+  },
+  {
+    "createdAt": "2023-02-27T20:00:00.000Z",
+    "title": "CZC-NET",
+    "link": "https://opencollective.com/czc-net",
     "plan": "Sponsor",
-    "ref": "https://opencollective.com/bestonlinecasinos-in",
-    "image": "bestonlinecasinosin.png",
+    "ref": "https://opencollective.com/czc-net",
+    "image": "czc-net.png",
     "endDate": "2024-02-27T20:00:00.000Z",
     "active": true
   },
