@@ -482,6 +482,24 @@ By default all `swiper-container` children are rendered as children of `.swiper-
 </swiper-container>
 ```
 
+## SwiperElementRegisterParams
+
+Since 9.1.0 there is a new global `window.SwiperElementRegisterParams` function to register new (or extra) params that are not part of default Swiper parameters. This may be required if you use Swiper element with some custom plugins which extend Swiper parameters.
+
+```js
+// register swiper-container HTMLElement props to be treated as Swiper parameters
+window.SwiperElementRegisterParams(['foo', 'bar']);
+
+const swiperEl = document.querySelector('swiper-container');
+
+Object.assign(swiperEl, {
+  foo: 1,
+  bar: 2,
+});
+
+swiperEl.initialize();
+```
+
 ## Usage with React
 
 React doesn't fully supports web components yet (as for version 18). So the usage is basically the same as in HTML:
