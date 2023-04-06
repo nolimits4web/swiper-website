@@ -96,7 +96,7 @@ const feats = [
   },
   {
     title: 'Flexbox Layout',
-    descr: `Swiper uses modern flexbox layout for slides layout, which solves a lot of problems and time with size caclulations. Such layout also allows configuring the Slides grid using pure CSS`,
+    descr: `Swiper uses modern flexbox layout for slides layout, which solves a lot of problems and time with size calculations. Such layout also allows configuring the Slides grid using pure CSS`,
   },
   {
     title: 'Most Flexible Slides Layout Grid',
