@@ -223,6 +223,29 @@ All event handler arguments are passed as array in `event.detail`:
 </script>
 ```
 
+It is also possible to prefix emitted events names to prevent clashing with other libs or native events using `events-prefix` attribute/parameter:
+
+```html
+<swiper-container events-prefix="swiper-">
+  <swiper-slide>Slide 1</swiper-slide>
+  <swiper-slide>Slide 2</swiper-slide>
+  <swiper-slide>Slide 3</swiper-slide>
+  ...
+</swiper-container>
+
+<script>
+  const swiperEl = document.querySelector('swiper-container');
+
+  swiperEl.addEventListener('swiper-progress', (event) => {
+    const [swiper, progress] = event.detail;
+  });
+
+  swiperEl.addEventListener('swiper-slidechange', (event) => {
+    console.log('slide changed');
+  });
+</script>
+```
+
 ## Pagination, Navigation, Scrollbar
 
 If you don't pass these modules elements in parameters (e.g. `scrollbar.el`, `pagination.el`), it will render them automatically, if module parameter is specified:
