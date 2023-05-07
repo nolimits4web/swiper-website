@@ -1,5 +1,35 @@
 [
   {
+    "createdAt": "2023-05-07T20:00:00.000Z",
+    "title": "SEO Agency UK - International SEO and Link Building Services",
+    "link": "https://awisee.co.uk/",
+    "plan": "Silver Sponsor",
+    "ref": "https://opencollective.com/awiseecouk",
+    "image": "awiseecouk.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2023-05-07T20:00:00.000Z",
+    "title": "Linkbuilding Sweden - Link Building Agency Sweden",
+    "link": "https://linkbuildingsweden.com/",
+    "plan": "Silver Sponsor",
+    "ref": "https://opencollective.com/lbsweden",
+    "image": "lbsweden.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2023-05-07T20:00:00.000Z",
+    "title": "Linkbuilding Italy - Link Building Italy",
+    "link": "https://linkbuildingitaly.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/link-building-italy",
+    "image": "link-building-italy.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2023-05-02T20:00:00.000Z",
     "title": "Pikakasinot 2023 | Löydä paras uusi pikakasino suomessa!",
     "link": "https://uusi-pikakasino.com/",
