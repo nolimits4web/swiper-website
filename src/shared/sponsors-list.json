@@ -1,5 +1,15 @@
 [
   {
+    "createdAt": "2023-05-25T20:00:00.000Z",
+    "title": "iGamingMI: Your Trusted Online Gambling Guide In Michigan",
+    "link": "https://igamingmi.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/igamingmi",
+    "image": "igamingmi.png",
+    "endDate": "2024-05-25T20:00:00.000Z",
+    "active": true
+  },
+  {
     "createdAt": "2023-05-24T20:00:00.000Z",
     "title": "Property for sale in Spain",
     "link": "https://tranio.com/spain/",
@@ -97,7 +107,7 @@
     "ref": "https://opencollective.com/socialboss",
     "image": "socialboss.png",
     "endDate": "",
-    "active": true
+    "active": false
   },
   {
     "createdAt": "2023-05-07T20:00:00.000Z",
