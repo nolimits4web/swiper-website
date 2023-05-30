@@ -1,5 +1,25 @@
 [
   {
+    "createdAt": "2023-05-30T20:00:00.000Z",
+    "title": "Casino Zonder Cruks",
+    "link": "https://casino-zonder-cruks.com",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/casino-zonder-cruks",
+    "image": "casino-zonder-cruks.png",
+    "endDate": "2024-05-30T20:00:00.000Z",
+    "active": true
+  },
+  {
+    "createdAt": "2023-05-30T20:00:00.000Z",
+    "title": "mena seo agency - supercharge your growth in the MENA region",
+    "link": "https://menaseo.ae/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/mena-seo",
+    "image": "mena-seo.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2023-05-25T20:00:00.000Z",
     "title": "iGamingMI: Your Trusted Online Gambling Guide In Michigan",
     "link": "https://igamingmi.com/",
