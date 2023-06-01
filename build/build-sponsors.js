@@ -1,6 +1,9 @@
-const fs = require('fs');
-const path = require('path');
-const fetch = require('node-fetch');
+import fs from 'fs';
+import path from 'path';
+import fetch from 'node-fetch';
+import * as url from 'url';
+
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 const writeEmptySponsors = () => {
   fs.writeFileSync(

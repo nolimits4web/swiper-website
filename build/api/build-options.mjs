@@ -1,6 +1,9 @@
-const fs = require('fs-extra');
-const path = require('path');
-const description = require('./description');
+import fs from 'fs-extra';
+import path from 'path';
+import description from './description.mjs';
+import * as url from 'url';
+
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 const buildOptions = async (
   typesName,
@@ -9,7 +12,7 @@ const buildOptions = async (
   ignoreTypes = [],
   parentTypesData
 ) => {
-  items =
+  const items =
     (typesData[typesName] || [])
       .filter((item) =>
         item.comment && item.comment.shortText
@@ -170,4 +173,4 @@ export const ${typesName} = () => {
   );
 };
 
-module.exports = buildOptions;
+export default buildOptions;

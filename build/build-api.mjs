@@ -1,12 +1,15 @@
-const fs = require('fs-extra');
-const path = require('path');
-const elapsed = require('elapsed-time-logger');
-const chalk = require('chalk');
-const { promise: exec } = require('exec-sh');
+import fs from 'fs-extra';
+import path from 'path';
+import elapsed from 'elapsed-time-logger';
 
-const buildOptions = require('./api/build-options');
-const buildEvents = require('./api/build-events');
-const buildMethods = require('./api/build-methods');
+import exec from 'exec-sh';
+
+import buildOptions from './api/build-options.mjs';
+import buildEvents from './api/build-events.mjs';
+import buildMethods from './api/build-methods.mjs';
+import * as url from 'url';
+
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 const components = [
   'A11y',
@@ -37,17 +40,18 @@ const components = [
 
 (async () => {
   elapsed.start('Typedoc');
+  const { default: chalk } = await import('chalk');
   fs.writeFileSync(
     './tsconfig.json',
     fs.readFileSync('./tsconfig.json.typedoc', 'utf-8')
   );
-  await exec(`npx typedoc --json ./src/types.json`);
+  await exec.promise(`npx typedoc --json ./src/types.json`);
   elapsed.end('Typedoc');
   elapsed.start('Generate all types');
   const typesPath = path.join(__dirname, '../src/types.json');
-  const { children } = await fs.readJSON(typesPath);
+  const { children } = JSON.parse(fs.readFileSync(typesPath, 'utf-8'));
   const types = {};
-
+  console.log(children.length, children.forEach);
   children.forEach(async ({ name, children, flags, originalName }) => {
     const _name = name.replace(/^\"(.*).d\"$/, '$1');
     if (

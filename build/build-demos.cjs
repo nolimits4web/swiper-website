@@ -1,8 +1,8 @@
 const fs = require('fs-extra');
 const path = require('path');
-const globby = require('globby');
 
 const buildDemos = async () => {
+  const { globbySync } = await import('globby');
   const data = [];
   fs.readdirSync(path.resolve(__dirname, '../src/demos'))
     .filter((f) => f[0] !== '.')
@@ -19,7 +19,7 @@ const buildDemos = async () => {
       fs.readdirSync(path.resolve(__dirname, '../src/demos', folder))
         .filter((f) => f[0] !== '.')
         .forEach((frameworkFolder) => {
-          const paths = globby.sync('**/*.*', {
+          const paths = globbySync('**/*.*', {
             cwd: path.resolve(
               __dirname,
               '../src/demos',

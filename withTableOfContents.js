@@ -1,4 +1,5 @@
-const slugify = require('@sindresorhus/slugify');
+import slugify from '@sindresorhus/slugify';
+
 const addImport = function addImport(tree, mod, name) {
   tree.children.unshift({
     type: 'import',
@@ -13,7 +14,7 @@ const addExport = function addExport(tree, name, value) {
     value: `export const ${name} = ${JSON.stringify(value)}`,
   });
 };
-module.exports.withTableOfContents = () => {
+export const withTableOfContents = () => {
   return (tree) => {
     const component = addImport(tree, '@/components/Heading', 'Heading');
     const contents = [];

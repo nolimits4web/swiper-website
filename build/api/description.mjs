@@ -1,8 +1,8 @@
-const unified = require('unified');
-const parse = require('remark-parse');
-const remark2rehype = require('remark-rehype');
-const rehypePrism = require('@mapbox/rehype-prism');
-const html = require('rehype-stringify');
+import { unified } from 'unified';
+import parse from 'remark-parse';
+import remark2rehype from 'remark-rehype';
+import rehypePrism from '@mapbox/rehype-prism';
+import html from 'rehype-stringify';
 
 const processDescription = (text) => {
   const result = unified()
@@ -10,7 +10,8 @@ const processDescription = (text) => {
     .use(remark2rehype)
     .use(rehypePrism)
     .use(html)
-    .processSync(text).contents;
+    .processSync(text).value;
+
   return result
     .replace(/>\{</g, `>{'{'}<`)
     .replace(/>\}</g, `>{'}'}<`)
@@ -31,7 +32,7 @@ const processDescription = (text) => {
     });
 };
 
-module.exports = (typesItem) => {
+export default (typesItem) => {
   const getProps = (item) => {
     return (
       (!typesItem.comment && typesItem.signatures && typesItem.signatures[0]

@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --color-primary-shade: #004892;
+  --color-primary-tint: #0070e4;
+  --color-primary-rgb: 0, 92, 187;
+  --color-primary: #005cbb;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #d7e3ff;
+  --color-on-primary-container: #001b3f;
+  --color-secondary: #565e71;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #dae2f9;
+  --color-on-secondary-container: #131c2b;
+  --color-surface: #fdfbff;
+  --color-on-surface: #1a1b1f;
+  --color-surface-variant: #e0e2ec;
+  --color-on-surface-variant: #44474e;
+  --color-outline: #74777f;
+  --color-outline-variant: #c4c6d0;
+  --color-inverse-surface: #2f3033;
+  --color-inverse-on-surface: #f2f0f4;
+  --color-inverse-primary: #abc7ff;
+  --color-surface-1: #f0f3fc;
+  --color-surface-2: #e9eefa;
+  --color-surface-3: #e1eaf8;
+  --color-surface-4: #dfe8f7;
+  --color-surface-5: #dae5f5;
+}
+.dark {
+  --color-primary-shade: #82acff;
+  --color-primary-tint: #d4e2ff;
+  --color-primary-rgb: 171, 199, 255;
+  --color-primary: #abc7ff;
+  --color-on-primary: #002f65;
+  --color-primary-container: #00458f;
+  --color-on-primary-container: #d7e3ff;
+  --color-secondary: #bec6dc;
+  --color-on-secondary: #283041;
+  --color-secondary-container: #3e4759;
+  --color-on-secondary-container: #dae2f9;
+  --color-surface: #1a1b1f;
+  --color-on-surface: #e3e2e6;
+  --color-surface-variant: #44474e;
+  --color-on-surface-variant: #c4c6d0;
+  --color-outline: #8e9099;
+  --color-outline-variant: #44474e;
+  --color-inverse-surface: #e3e2e6;
+  --color-inverse-on-surface: #2f3033;
+  --color-inverse-primary: #005cbb;
+  --color-surface-1: #21242a;
+  --color-surface-2: #262931;
+  --color-surface-3: #2a2e38;
+  --color-surface-4: #2b303a;
+  --color-surface-5: #2e333e;
+}
+@layer base {
+  a,
+  body .prose a {
+    @apply text-primary hover:underline;
+  }
+
+  body .prose a:hover {
+    @apply hover:no-underline;
+  }
+
+  .important-note {
+    @apply my-3 border-l-4 border-red-500 bg-red-100 px-5 py-4 text-sm dark:border-red-500 dark:bg-red-700/30 dark:text-white;
+  }
+}
+
+body {
+  font-family: Inter, -apple-system, system-ui, Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+body .prose {
+  color: #5f6570;
+}
+body .prose code:before,
+body .prose code:after {
+  display: none;
+}
+body .prose code {
+  background: #f5f5f5;
+  padding: 1px 4px;
+  border-radius: 4px;
+}
+.prose > ul > li code {
+  word-break: break-word;
+}
+body .prose pre code {
+  background: transparent;
+  border-radius: 0px;
+  padding: initial;
+}
+.after\:hash:after {
+  content: '#';
+}
+body .prose pre {
+  border-radius: 0.75rem;
+}
+pre code {
+  background: transparent !important;
+}
+html:not(.dark) .swiper-logo path:nth-child(2),
+html:not(.dark) .swiper-logo path:nth-child(3) {
+  fill: #e2eafc;
+}

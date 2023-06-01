@@ -1,6 +1,9 @@
-const fs = require('fs-extra');
-const path = require('path');
-const description = require('./description');
+import fs from 'fs-extra';
+import path from 'path';
+import description from './description.mjs';
+import * as url from 'url';
+
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 const plainDescription = (item) => {
   if (item.comment && item.comment.shortText)
@@ -18,7 +21,7 @@ const plainDescription = (item) => {
 };
 
 const buildEvents = async (typesName, typesData, ignoreEvents = []) => {
-  items =
+  const items =
     (typesData[typesName] || [])
       .filter(
         (item) => !plainDescription(item).toLowerCase().includes('internal')
@@ -98,4 +101,4 @@ export const ${typesName} = () => {
   );
 };
 
-module.exports = buildEvents;
+export default buildEvents;
