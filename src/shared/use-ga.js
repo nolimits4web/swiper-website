@@ -3,14 +3,14 @@ import { useEffect } from 'react';
 export const useGA = (router) => {
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=UA-149857145-1';
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-VETT26833W';
     script.onload = () => {
       window.dataLayer = window.dataLayer || [];
       window.gtag = function () {
         dataLayer.push(arguments);
       };
       window.gtag('js', new Date());
-      window.gtag('config', 'UA-149857145-1');
+      window.gtag('config', 'G-VETT26833W');
     };
     document.body.appendChild(script);
 
