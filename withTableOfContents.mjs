@@ -14,13 +14,14 @@ const addExport = function addExport(tree, name, value) {
     value: `export const ${name} = ${JSON.stringify(value)}`,
   });
 };
+
 export const withTableOfContents = () => {
   return (tree) => {
     const component = addImport(tree, '@/components/Heading', 'Heading');
     const contents = [];
 
     for (let i = 0; i < tree.children.length; i++) {
-      let node = tree.children[i];
+      const node = tree.children[i];
 
       if (node.type === 'heading' && [2, 3, 4].includes(node.depth)) {
         const level = node.depth;
@@ -37,7 +38,7 @@ export const withTableOfContents = () => {
 
         let slug = slugify(title);
 
-        let allOtherSlugs = contents.flatMap((entry) => [
+        const allOtherSlugs = contents.flatMap((entry) => [
           entry.slug,
           ...entry.children.map(({ slug }) => slug),
         ]);

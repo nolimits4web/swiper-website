@@ -1,15 +1,22 @@
-const path = require('path');
-const querystring = require('querystring');
-const { createLoader } = require('simple-functional-loader');
-const frontMatter = require('front-matter');
-const rehypePrism = require('@mapbox/rehype-prism');
-const { withTableOfContents } = require('./withTableOfContents');
-const minimatch = require('minimatch');
-const pkg = require('swiper/package.json');
+import path from 'path';
+import fs from 'fs';
+import querystring from 'querystring';
+import { createLoader } from 'simple-functional-loader';
+import frontMatter from 'front-matter';
+import rehypePrism from '@mapbox/rehype-prism';
+import minimatch from 'minimatch';
+import * as url from 'url';
+import { withTableOfContents } from './withTableOfContents.mjs';
+
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 const fallbackLayouts = {
   'src/pages/**/*': ['@/layouts/withSidebar', 'WithSidebarLayout'],
 };
+
+const pkg = JSON.parse(
+  fs.readFileSync('./node_modules/swiper/package.json', 'utf-8')
+);
 
 const nextConfig = {
   experimental: { esmExternals: true },
@@ -21,6 +28,9 @@ const nextConfig = {
   env: {
     swiperReleaseVersion: pkg.version,
     swiperReleaseDate: pkg.releaseDate,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
   },
   webpack(config, options) {
     config.module.rules.push({
@@ -54,12 +64,12 @@ const nextConfig = {
             const [meta] = source.match(
               /\/\*START_META\*\/(.*?)\/\*END_META\*\//s
             );
-            return 'export default ' + meta;
+            return `export default ${meta}`;
           }
-          return (
-            source.replace(/export const/gs, 'const') +
-            `\nMDXContent.layoutProps = layoutProps\n`
-          );
+          return `${source.replace(
+            /export const/gs,
+            'const'
+          )}\nMDXContent.layoutProps = layoutProps\n`;
         }),
         {
           loader: '@mdx-js/loader',
@@ -69,23 +79,23 @@ const nextConfig = {
           },
         },
         createLoader(function (source) {
-          let { meta: fields } = querystring.parse(
+          const { meta: fields } = querystring.parse(
             this.resourceQuery.substr(1)
           );
-          let { attributes: meta, body } = frontMatter(source);
+          const { attributes: meta, body } = frontMatter(source);
           if (fields) {
-            for (let field in meta) {
+            for (const field in meta) {
               if (!fields.split(',').includes(field)) {
                 delete meta[field];
               }
             }
           }
 
-          let extra = [];
-          let resourcePath = path.relative(__dirname, this.resourcePath);
+          const extra = [];
+          const resourcePath = path.relative(__dirname, this.resourcePath);
 
           if (!/^\s*export\s+(var|let|const)\s+Layout\s+=/m.test(source)) {
-            for (let glob in fallbackLayouts) {
+            for (const glob in fallbackLayouts) {
               if (minimatch(resourcePath, glob)) {
                 extra.push(
                   `import { ${fallbackLayouts[glob][1]} as _Layout } from '${fallbackLayouts[glob][0]}'`,
@@ -101,7 +111,7 @@ const nextConfig = {
               source.replace(/```(.*?)```/gs, '')
             )
           ) {
-            for (let glob in fallbackLayouts) {
+            for (const glob in fallbackLayouts) {
               if (minimatch(resourcePath, glob)) {
                 extra.push(
                   `import { ${fallbackLayouts[glob][1]} as _Default } from '${fallbackLayouts[glob][0]}'`,
@@ -142,4 +152,4 @@ const nextConfig = {
     ];
   },
 };
-module.exports = nextConfig;
+export default nextConfig;
