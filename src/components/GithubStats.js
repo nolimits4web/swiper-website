@@ -1,4 +1,4 @@
-import { ReactComponent as GithubLogo } from '@/img/github.svg';
+import GithubLogo from '@/img/github.svg';
 import { useEffect, useState } from 'react';
 
 function getLocalStats() {

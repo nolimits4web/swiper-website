@@ -1,7 +1,11 @@
-@import 'fonts';
-@import 'base';
-@import 'carbon';
-@import 'demos';
-@import 'prism';
-@import 'docs';
-@import 'home-projects';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './fonts.scss';
+@import './base.scss';
+@import './carbon.scss';
+@import './demos.scss';
+@import './prism.scss';
+@import './docs.scss';
+@import './home-projects.scss';

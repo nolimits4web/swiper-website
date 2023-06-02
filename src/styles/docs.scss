@@ -2,7 +2,8 @@
 .events-table,
 .methods-table {
   .table-border-t {
-    @apply border-t border-black !border-opacity-5 dark:border-white;
+    @apply border-t border-black dark:border-white;
+    @apply border-opacity-5 #{!important};
   }
   p:first-child {
     margin-top: 0;

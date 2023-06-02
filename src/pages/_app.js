@@ -1,8 +1,8 @@
-// import '../styles/globals.scss';
+import '../styles/globals.scss';
+import Head from 'next/head';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import Head from 'next/head';
-import { useGA } from 'src/shared/use-ga';
+import { useGA } from '@/shared/use-ga';
 
 function App({ Component, pageProps, router }) {
   const meta = Component.layoutProps?.meta || {};
@@ -53,11 +53,7 @@ function App({ Component, pageProps, router }) {
           color="#0080FF"
         />
       </Head>
-      {router.pathname !== '/' && (
-        <>
-          <Header />
-        </>
-      )}
+      {router.pathname !== '/' && <Header />}
       <Component {...pageProps} />
       <Footer />
     </>

@@ -2,17 +2,17 @@ import React from 'react';
 import Link from 'next/link';
 // import Image from 'next/image';
 
-import menuList from 'src/shared/menu-list';
-import clientsList from 'src/shared/clients-list';
+import menuList from '@/shared/menu-list';
+import clientsList from '@/shared/clients-list';
 import Carbon from '@/components/Carbon';
 import HomeHeader from '@/components/HomeHeader';
 import HomeSponsors from '@/components/HomeSponsors';
 import HomeProjects from '@/components/HomeProjects';
 import UIInitiativeBanner from '@/components/UIInitiativeBanner';
 import SwiperStudioBanner from '@/components/SwiperStudioBanner';
-import { trackOutbound } from 'src/shared/track-outbound';
-import { ReactComponent as PatreonLogo } from '@/img/patreon-logo.svg';
-import { ReactComponent as OpenCollectiveLogo } from '@/img/opencollective-logo.svg';
+import { trackOutbound } from '@/shared/track-outbound';
+import PatreonLogo from '@/img/patreon-logo.svg';
+import OpenCollectiveLogo from '@/img/opencollective-logo.svg';
 import { HomeElementUsage } from '@/components/HomeElementUsage';
 
 function SponsorButton(props) {
@@ -23,7 +23,7 @@ function SponsorButton(props) {
       rel="noopener"
       target="_blank"
       {...restProps}
-      className={`inline-flex max-w-full items-center rounded-full bg-white px-6 py-4 text-sm font-medium text-black shadow-lg duration-200 hover:bg-black hover:bg-opacity-5 hover:no-underline dark:bg-primary/80 dark:text-white dark:hover:bg-primary sm:text-lg ${className}`}
+      className={`dark:bg-primary/80 inline-flex max-w-full items-center rounded-full bg-white px-6 py-4 text-sm font-medium text-black shadow-lg duration-200 hover:bg-black hover:bg-opacity-5 hover:no-underline dark:text-white dark:hover:bg-primary sm:text-lg ${className}`}
       onClick={(e) => {
         onClick(e);
         trackOutbound(href);
@@ -222,7 +222,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div className="mx-auto mt-24 mb-20 max-w-6xl text-center">
+        <div className="mx-auto mb-20 mt-24 max-w-6xl text-center">
           <HomeHeading>And It Is Free</HomeHeading>
           <div className="my-4">
             Swiper is completely free and open-source (MIT Licensed)
@@ -230,16 +230,14 @@ export default function Home() {
 
           <nav className="space-x-2 text-lg">
             {menuList.map(({ name, link }) => (
-              <Link key={link} href={link}>
-                <a className="my-2 inline-block w-40 rounded-full bg-primary bg-opacity-10 px-4 py-2 font-semibold text-primary duration-200 hover:bg-opacity-95 hover:text-white hover:no-underline">
-                  {name}
-                </a>
+              <Link key={link} href={link} className="my-2 inline-block w-40 rounded-full bg-primary bg-opacity-10 px-4 py-2 font-semibold text-primary duration-200 hover:bg-opacity-95 hover:text-white hover:no-underline">
+                {name}
               </Link>
             ))}
           </nav>
         </div>
 
-        <div className="mt-24 mb-20 grid-cols-2 gap-8 md:grid">
+        <div className="mb-20 mt-24 grid-cols-2 gap-8 md:grid">
           <div className="text-center">
             <h2 className="mb-12 text-center text-4xl font-extrabold text-gray-900 dark:text-gray-200 sm:text-5xl md:mb-4">
               Swiper Studio
@@ -257,12 +255,12 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mx-auto mt-24 mb-20 max-w-6xl text-center">
+        <div className="mx-auto mb-20 mt-24 max-w-6xl text-center">
           <HomeHeading>More Of Our Projects</HomeHeading>
           <HomeProjects />
         </div>
 
-        <div className="mt-24 mb-20 text-center">
+        <div className="mb-20 mt-24 text-center">
           <HomeHeading>Sponsors</HomeHeading>
           <HomeSponsors />
           <div className="my-4">

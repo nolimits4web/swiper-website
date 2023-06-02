@@ -1,9 +1,9 @@
-import { trackOutbound } from 'src/shared/track-outbound';
+import { trackOutbound } from '@/shared/track-outbound';
 import { Atropos } from 'atropos/react';
 
 export default function HomeProjects() {
   return (
-    <div className="gr mx-auto max-w-3xl items-stretch space-y-4 text-left sm:flex sm:space-y-0 sm:space-x-8 sm:text-center">
+    <div className="gr mx-auto max-w-3xl items-stretch space-y-4 text-left sm:flex sm:space-x-8 sm:space-y-0 sm:text-center">
       {[
         {
           url: 'https://framework7.io',
@@ -38,7 +38,7 @@ export default function HomeProjects() {
             alt={item.title}
           />
           <div>
-            <div className="font-semibold text-black dark:text-white sm:mt-4 sm:mb-2">
+            <div className="font-semibold text-black dark:text-white sm:mb-2 sm:mt-4">
               {item.title}
             </div>
             <div className="text-sm opacity-75">{item.description}</div>

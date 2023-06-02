@@ -193,10 +193,8 @@ export default function HomeSlider() {
                 Start Using It Now
               </div>
               <div className="mt-4">
-                <Link href="/get-started">
-                  <a className="my-2 inline-block w-48 rounded-3xl bg-primary px-4 py-2 text-center text-lg font-bold text-white shadow-lg duration-200 hover:bg-opacity-95 hover:no-underline">
-                    Get Started
-                  </a>
+                <Link href="/get-started" className="my-2 inline-block w-48 rounded-3xl bg-primary px-4 py-2 text-center text-lg font-bold text-white shadow-lg duration-200 hover:bg-opacity-95 hover:no-underline">
+                  Get Started
                 </Link>
               </div>
             </SlideCenter>

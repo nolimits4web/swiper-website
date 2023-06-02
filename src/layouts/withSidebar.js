@@ -58,7 +58,7 @@ export function WithSidebarLayout({
             <Link
               href={`https://github.com/nolimits4web/swiper-website/edit/master/src/pages${router.pathname}.mdx`}
             >
-              <a>Edit this page on GitHub</a>
+              Edit this page on GitHub
             </Link>
           </div>
         </div>

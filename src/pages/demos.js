@@ -1,13 +1,13 @@
 import React from 'react';
-import { ReactComponent as CodeSandBoxLogo } from '@/img/codesandbox.svg';
+import CodeSandBoxLogo from '@/img/codesandbox.svg';
 import Heading from '@/components/Heading';
 import { WithSidebarLayout } from '@/layouts/withSidebar';
-import { useLazyDemos } from 'src/shared/use-lazy-demos';
-import demos from 'src/demos.json';
-import uiinitiativeDemos from 'src/uiinitiative-demos.json';
+import { useLazyDemos } from '@/shared/use-lazy-demos';
+import demos from '@/demos.json';
+import uiinitiativeDemos from '@/uiinitiative-demos.json';
 import Carbon from '@/components/Carbon';
-import { trackOutbound } from 'src/shared/track-outbound';
-import { openCodeSandbox } from 'src/shared/codesandbox';
+import { trackOutbound } from '@/shared/track-outbound';
+import { openCodeSandbox } from '@/shared/codesandbox';
 
 let tableOfContents;
 

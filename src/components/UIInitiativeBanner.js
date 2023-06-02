@@ -1,5 +1,5 @@
 import Atropos from 'atropos/react';
-import { trackOutbound } from 'src/shared/track-outbound';
+import { trackOutbound } from '@/shared/track-outbound';
 
 const UIInitiativeBanner = () => {
   return (

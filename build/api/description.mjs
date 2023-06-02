@@ -9,12 +9,27 @@ const processDescription = (text) => {
     .use(parse)
     .use(remark2rehype)
     .use(rehypePrism)
-    .use(html)
-    .processSync(text).value;
+    .use(html, {
+      entities: { useNamedReferences: true, useShortestReferences: true },
+    })
+    .processSync(text)
+    .value.replace(/><\/code>/g, `&gt;</code>`)
+    .replace(/ >= /g, ` &gt;= `)
+    .replace(/ > /g, ` &gt; `)
+    .replace(/>></g, `>&gt;<`)
+    .replace(/ -->/g, ` --&gt;`)
+    .replace(/ -> /g, ' -&gt; ')
+    .replace(/'">/g, `'"&gt;`)
+    .replace(
+      /&lt;div class="swiper-slide">/g,
+      '&lt;div class="swiper-slide"&gt;'
+    )
+    .replace(/&lt;\/([a-z]*)>/g, '&lt;/$1&gt;');
 
   return result
-    .replace(/>\{</g, `>{'{'}<`)
-    .replace(/>\}</g, `>{'}'}<`)
+    .replace(/([{}])/g, (v) => {
+      return `{'${v}'}`;
+    })
     .replace(/ class="/g, ' className="')
     .replace(/<code className="([a-z-]*)">([^№]*)<\/code>/g, (...args) => {
       const lang = args[1];
@@ -26,14 +41,15 @@ const processDescription = (text) => {
           )}<`;
         })
         .replace(/\n/g, '{`\n`}')
-        .replace(/&#x3C;([a-z]*) className="/g, '&#x3C;$1 class="')
-        .replace(/&#x3C;([a-z]*){' '}className="/g, `&#x3C;$1{' '}class="`);
+        .replace(/&#x26;/g, '&')
+        .replace(/&lt;([a-z]*) className="/g, '&lt;$1 class="')
+        .replace(/&lt;([a-z]*){' '}className="/g, `&lt;$1{' '}class="`);
       return `<code className="${lang}">${inner}</code>`;
     });
 };
 
 export default (typesItem) => {
-  const getProps = (item) => {
+  const getProps = () => {
     return (
       (!typesItem.comment && typesItem.signatures && typesItem.signatures[0]
         ? typesItem.signatures[0].comment
@@ -48,6 +64,7 @@ export default (typesItem) => {
 
   const tagsContent = tags
     .filter((tag) => tag.tag === 'note' || tag.tag === 'example')
+    // eslint-disable-next-line
     .map((tag) => {
       if (tag.tag === 'note') {
         return `> ${tag.text}`;

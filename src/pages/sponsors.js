@@ -1,6 +1,6 @@
 import React from 'react';
-import { ReactComponent as PatreonLogo } from '@/img/patreon-logo.svg';
-import { ReactComponent as OpenCollectiveLogo } from '@/img/opencollective-logo.svg';
+import  PatreonLogo from '@/img/patreon-logo.svg';
+import OpenCollectiveLogo from '@/img/opencollective-logo.svg';
 import HomeSponsors from '@/components/HomeSponsors';
 
 export default function SponsorsPage() {
