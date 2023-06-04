@@ -11,8 +11,6 @@ import HomeProjects from '@/components/HomeProjects';
 import UIInitiativeBanner from '@/components/UIInitiativeBanner';
 import SwiperStudioBanner from '@/components/SwiperStudioBanner';
 import { trackOutbound } from '@/shared/track-outbound';
-import PatreonLogo from '@/img/patreon-logo.svg';
-import OpenCollectiveLogo from '@/img/opencollective-logo.svg';
 import { HomeElementUsage } from '@/components/HomeElementUsage';
 
 function SponsorButton(props) {
@@ -23,7 +21,7 @@ function SponsorButton(props) {
       rel="noopener"
       target="_blank"
       {...restProps}
-      className={`dark:bg-primary/80 inline-flex max-w-full items-center rounded-full bg-white px-6 py-4 text-sm font-medium text-black shadow-lg duration-200 hover:bg-black hover:bg-opacity-5 hover:no-underline dark:text-white dark:hover:bg-primary sm:text-lg ${className}`}
+      className={`inline-flex max-w-full items-center rounded-full bg-white px-6 py-4 text-sm font-medium text-black shadow-lg duration-200 hover:bg-black hover:bg-opacity-5 hover:no-underline dark:bg-primary/80 dark:text-white dark:hover:bg-primary sm:text-lg ${className}`}
       onClick={(e) => {
         onClick(e);
         trackOutbound(href);
@@ -230,7 +228,11 @@ export default function Home() {
 
           <nav className="space-x-2 text-lg">
             {menuList.map(({ name, link }) => (
-              <Link key={link} href={link} className="my-2 inline-block w-40 rounded-full bg-primary bg-opacity-10 px-4 py-2 font-semibold text-primary duration-200 hover:bg-opacity-95 hover:text-white hover:no-underline">
+              <Link
+                key={link}
+                href={link}
+                className="my-2 inline-block w-40 rounded-full bg-primary bg-opacity-10 px-4 py-2 font-semibold text-primary duration-200 hover:bg-opacity-95 hover:text-white hover:no-underline"
+              >
                 {name}
               </Link>
             ))}
@@ -288,11 +290,14 @@ export default function Home() {
           </div>
           <div className="my-4 flex flex-col items-center space-y-6">
             <SponsorButton href="https://opencollective.com/swiper">
-              <OpenCollectiveLogo className="mr-4 h-6 w-6" />
+              <img
+                src="/images/opencollective-logo.svg"
+                className="mr-4 h-6 w-6"
+              />
               <span>Become a sponsor on OpenCollective</span>
             </SponsorButton>
             <SponsorButton href="https://patreon.com/swiperjs">
-              <PatreonLogo className="mr-4 h-6 w-6 text-[#FF424D]" />
+              <img src="/images/patreon-logo.svg" className="mr-4 h-6 w-6" />
               <span>Support Swiper on Patreon</span>
             </SponsorButton>
           </div>

@@ -15,38 +15,17 @@ const pkg = JSON.parse(
 );
 
 const nextConfig = withMdx({
-  experimental: { esmExternals: true },
   images: {
     // https://stackoverflow.com/questions/68008498/nextjs-typeerror-unsupported-file-type-undefined-after-update-to-v-11
     disableStaticImages: true,
   },
-  pageExtensions: ['js', 'jsx', 'mdx'],
+  pageExtensions: ['js', 'jsx', 'mdx', 'md'],
   env: {
     swiperReleaseVersion: pkg.version,
     swiperReleaseDate: pkg.releaseDate,
   },
   eslint: {
     ignoreDuringBuilds: true,
-  },
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      // use: ['@svgr/webpack'],
-      use: [
-        {
-          loader: '@svgr/webpack',
-          options: {
-            dimensions: false,
-            removeViewBox: false,
-            svgoConfig: {
-              removeDimensions: true,
-              removeViewBox: false,
-            },
-          },
-        },
-      ],
-    });
-    return config;
   },
   async redirects() {
     return [

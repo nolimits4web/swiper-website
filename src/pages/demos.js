@@ -1,5 +1,4 @@
 import React from 'react';
-import CodeSandBoxLogo from '@/img/codesandbox.svg';
 import Heading from '@/components/Heading';
 import { WithSidebarLayout } from '@/layouts/withSidebar';
 import { useLazyDemos } from '@/shared/use-lazy-demos';
@@ -17,7 +16,7 @@ export default function DemosPage() {
   tableOfContents = demos.map(({ title, slug }) => {
     return {
       title,
-      slug: slug,
+      slug,
       children: [],
     };
   });
@@ -73,7 +72,7 @@ export default function DemosPage() {
       </div>
       {demos.map(({ title, slug, folder }, demoIndex) => (
         <React.Fragment key={title}>
-          <Heading level={2} id={slug} toc={true}>
+          <Heading level={2} id={slug} toc>
             {title}
           </Heading>
           <div className="my-4 flex flex-wrap text-sm">
@@ -101,8 +100,9 @@ export default function DemosPage() {
                     openCodeSandbox(e, title, folder, `${name.toLowerCase()}`)
                   }
                 >
-                  <CodeSandBoxLogo
-                    className="inline fill-current"
+                  <img
+                    src="/images/codesandbox-logo.svg"
+                    className="!mb-0 !mt-0 inline h-[14px] w-[19px]"
                     width="19"
                     height="14"
                   />
@@ -117,7 +117,7 @@ export default function DemosPage() {
               scrolling="no"
               frameBorder="0"
               className="block h-96 w-full"
-            ></iframe>
+            />
           </div>
         </React.Fragment>
       ))}

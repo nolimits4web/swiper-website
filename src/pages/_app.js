@@ -13,7 +13,6 @@ function App({ Component, pageProps, router }) {
 
   useGA(router);
 
-  // TODO: use https://github.com/garmeeh/next-seo
   return (
     <>
       <Head>
