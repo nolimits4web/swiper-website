@@ -27,6 +27,15 @@ const buildEvents = async (typesName, typesData, ignoreEvents = []) => {
         (item) => !plainDescription(item).toLowerCase().includes('internal')
       )
       .filter((item) => !ignoreEvents.includes(item.name)) || [];
+  items.sort((a, b) => {
+    if (a.name < b.name) {
+      return -1;
+    }
+    if (a.name > b.name) {
+      return 1;
+    }
+    return 0;
+  });
 
   const type = (item = {}) => {
     const typeObj = item.type || {};
