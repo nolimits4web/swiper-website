@@ -1,6 +1,6 @@
 import React from 'react';
 import Heading from '@/components/Heading';
-import { WithSidebarLayout } from '@/layouts/withSidebar';
+import { WithSidebarLayout } from '@/layouts/WithSidebarLayout';
 import { useLazyDemos } from '@/shared/use-lazy-demos';
 import demos from '@/demos.json';
 import uiinitiativeDemos from '@/uiinitiative-demos.json';

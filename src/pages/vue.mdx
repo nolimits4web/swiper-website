@@ -1,25 +1,16 @@
----
-title: Swiper Vue.js Components
-carbon: true
----
+import { MDXProvider } from '@mdx-js/react';
+import Heading from '@/components/Heading.js';
+import { WithSidebarLayout } from '@/layouts/WithSidebarLayout.js';
+export const meta = {
+  title: 'Swiper Vue.js Components',
+  carbon: true,
+};
 
+{/* prettier-ignore */}
 <div className="important-note space-y-4 md:mr-[340px]">
-  <div>
-    <b>
-      Swiper Vue components will likely to be removed in future versions. It is
-      recommended to migrate to <a href="/element">Swiper Element</a> instead.
-    </b>
-  </div>
-  <div>
-    If you are upgrading from Swiper 8 to Swiper 9, check out{' '}
-    <a href="/migration-guide-v9">Migration Guide to Swiper 9</a>
-  </div>
-  <div>
-    If you are looking for v8 docs, they are here{' '}
-    <a href="https://v8.swiperjs.com" target="_blank">
-      v8.swiperjs.com
-    </a>
-  </div>
+  <div><b>Swiper Vue components will likely to be removed in future versions. It is recommended to migrate to <a href="/element">Swiper Element</a> instead.</b></div>
+  <div>If you are upgrading from Swiper 8 to Swiper 9, check out <a href="/migration-guide-v9">Migration Guide to Swiper 9</a></div>
+  <div>If you are looking for v8 docs, they are here <a href="https://v8.swiperjs.com" target="_blank">v8.swiperjs.com</a></div>
 </div>
 
 ## Installation
@@ -76,12 +67,8 @@ Swiper Vue.js plugin is available only via NPM as a part of the main Swiper libr
 </script>
 ```
 
-<div className="important-note">
-  By default Swiper Vue.js uses core version of Swiper (without any additional
-  modules). If you want to use Navigation, Pagination and{' '}
-  <a href="/swiper-api/#custom-build">other modules</a>, you have to install
-  them first.
-</div>
+{/* prettier-ignore */}
+<div className="important-note">By default Swiper Vue uses core version of Swiper (without any additional modules). If you want to use Navigation, Pagination and <a href="/swiper-api/#custom-build">other modules</a>, you have to install them first:</div>
 
 Here is the list of additional modules imports:
 
@@ -163,12 +150,8 @@ Here is the list of additional modules imports:
 </script>
 ```
 
-<div className="important-note">
-  Note, Swiper Vue.js component will create required elements for Navigation,
-  Pagination and Scrollbar if you pass these params without specifying its
-  elements (e.g. without <code>navigation.nextEl</code>,{' '}
-  <code>pagination.el</code>, etc.)
-</div>
+{/* prettier-ignore */}
+<div className="important-note">Note, Swiper Vue component will create required elements for Navigation, Pagination and Scrollbar if you pass these params without specifying its elements (e.g. without <code>navigation.nextEl</code>, <code>pagination.el</code>, etc.)</div>
 
 ## Styles
 
@@ -588,3 +571,17 @@ As you see it is really easy to integrate Swiper into your website or app. So he
 - If you have questions about Swiper ask them in <a href="http://stackoverflow.com" target="_blank">StackOverflow</a> or <a href="https://github.com/nolimits4web/swiper/discussions" target="_blank">Swiper Discussions</a>.
 - Create issue on <a href="https://github.com/nolimits4web/swiper/" target="_blank">GitHub</a> if you found a bug.
 - If you are looking for support, we have a private Discord support chat room for <a href="https://www.patreon.com/swiperjs" target="_blank">Swiper Patrons</a>.
+
+export default function Page({ children }) {
+  const components = {
+    h1: Heading.h1,
+    h2: Heading.h2,
+    h3: Heading.h3,
+    h4: Heading.h4,
+  };
+  return (
+    <MDXProvider components={components}>
+      <WithSidebarLayout meta={meta}>{children}</WithSidebarLayout>
+    </MDXProvider>
+  );
+}

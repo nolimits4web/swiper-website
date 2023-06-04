@@ -1,12 +1,13 @@
 import fs from 'fs';
 import rehypePrism from '@mapbox/rehype-prism';
+import rehypeSlug from 'rehype-slug';
 import nextMdx from '@next/mdx';
 
 const withMdx = nextMdx({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: [],
-    rehypePlugins: [rehypePrism],
+    rehypePlugins: [rehypeSlug, rehypePrism],
     providerImportSource: '@mdx-js/react',
   },
 });

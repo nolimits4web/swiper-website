@@ -1,7 +1,11 @@
----
-title: Migration Guide to Swiper 9
-carbon: true
----
+import { MDXProvider } from '@mdx-js/react';
+import Heading from '@/components/Heading.js';
+import { WithSidebarLayout } from '@/layouts/WithSidebarLayout.js';
+
+export const meta = {
+  title: 'Migration Guide to Swiper 9',
+  carbon: true,
+};
 
 ## Touch Events Removed
 
@@ -38,3 +42,17 @@ Swiper Solid components have been removed in v9. Use <a href="/element">Swiper E
 ## Swiper Svelte
 
 Swiper Svelte components have been removed in v9. Use <a href="/element">Swiper Element</a> instead
+
+export default function Page({ children }) {
+  const components = {
+    h1: Heading.h1,
+    h2: Heading.h2,
+    h3: Heading.h3,
+    h4: Heading.h4,
+  };
+  return (
+    <MDXProvider components={components}>
+      <WithSidebarLayout meta={meta}>{children}</WithSidebarLayout>
+    </MDXProvider>
+  );
+}

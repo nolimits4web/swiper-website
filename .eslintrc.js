@@ -9,6 +9,7 @@ module.exports = {
     'next/core-web-vitals',
     'plugin:react/recommended',
     'airbnb',
+    'plugin:@dword-design/import-alias/recommended',
     'prettier',
   ],
   parserOptions: {

@@ -39,3 +39,8 @@ export default function Heading({
     </Component>
   );
 }
+
+Heading.h1 = (props) => <Heading level={1} {...props} />;
+Heading.h2 = (props) => <Heading level={2} {...props} />;
+Heading.h3 = (props) => <Heading level={3} {...props} />;
+Heading.h4 = (props) => <Heading level={4} {...props} />;

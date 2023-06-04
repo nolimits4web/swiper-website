@@ -1,17 +1,28 @@
----
-title: Swiper SolidJS Components
-carbon: true
----
+import { MDXProvider } from '@mdx-js/react';
+import Heading from '@/components/Heading.js';
+import { WithSidebarLayout } from '@/layouts/WithSidebarLayout.js';
 
+export const meta = {
+  title: 'Swiper SolidJS Components',
+  carbon: true,
+};
+
+{/* prettier-ignore */}
 <div className="important-note space-y-4 md:mr-[340px]">
-  <div>
-    Swiper Solid components have been removed in v9. Use{' '}
-    <a href="/element">Swiper Element</a> instead
-  </div>
-  <div>
-    If you are looking for v8 docs, they are here{' '}
-    <a href="https://v8.swiperjs.com" target="_blank">
-      v8.swiperjs.com
-    </a>
-  </div>
+  <div>Swiper Solid components have been removed in v9. Use <a href="/element">Swiper Element</a> instead</div>
+  <div>If you are looking for v8 docs, they are here <a href="https://v8.swiperjs.com" target="_blank">v8.swiperjs.com</a></div>
 </div>
+
+export default function Page({ children }) {
+  const components = {
+    h1: Heading.h1,
+    h2: Heading.h2,
+    h3: Heading.h3,
+    h4: Heading.h4,
+  };
+  return (
+    <MDXProvider components={components}>
+      <WithSidebarLayout meta={meta}>{children}</WithSidebarLayout>
+    </MDXProvider>
+  );
+}

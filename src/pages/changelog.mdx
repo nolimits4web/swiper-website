@@ -1,8 +1,7 @@
----
-title: Swiper Changelog
+export const meta = {
+  title: Swiper Changelog
 description: Swiper changelog.
 ---
-
 
 ## [9.3.2](https://github.com/nolimits4web/Swiper/compare/v9.3.1...v9.3.2) (2023-05-15)
 
@@ -261,7 +260,10 @@ description: Swiper changelog.
 * **pagination:** more CSS variables to control appearance and position ([c8b1228](https://github.com/nolimits4web/Swiper/commit/c8b1228397513745cdec7b2f4577be59da58b4df))
 * **scrollbar:** more CSS variables to control appearance ([cfad536](https://github.com/nolimits4web/Swiper/commit/cfad5364043c9a7bb0a3bc4f3ac1b24bd3f6e3cd))
 * add element core version ([de6c7f7](https://github.com/nolimits4web/Swiper/commit/de6c7f70160a5a90b8dc5bb95441c02afa32c9db))
-* export element css styles ([51334a3](https://github.com/nolimits4web/Swiper/commit/51334a3efd5f5b45cbd83d511cb0ff856c04235b))
+* export element css styles ([51334a3](https://github.com/nolimits4web/Swiper/commit/51334a3efd5f5b45cbd83d511cb0ff856c04235b)
+
+  )
+
 * injectStyles and injectStylesUrls params ([71b10b2](https://github.com/nolimits4web/Swiper/commit/71b10b27546e52ff179beb4cc49cb75286888944))
 * **parallax:** support parallax rotate ([4949163](https://github.com/nolimits4web/Swiper/commit/49491636476c4b29622a6f08f26041c08a960c81)), closes [#6126](https://github.com/nolimits4web/Swiper/issues/6126)
 * **zoom:** `in` method now accepts custom zoom ratio ([d88df61](https://github.com/nolimits4web/Swiper/commit/d88df610b6557ee221d6ed69e3e5da22e6cbfb57)), closes [#5527](https://github.com/nolimits4web/Swiper/issues/5527)
@@ -1383,7 +1385,9 @@ description: Swiper changelog.
     ```jsx
     <Swiper>
       <SwiperSlide>
-        {({ isActive }) => <div>Current slide is {isActive ? 'active' : 'not active'}</div>}
+        {({ isActive }) => (
+          <div>Current slide is {isActive ? 'active' : 'not active'}</div>
+        )}
       </SwiperSlide>
       <SwiperSlide>...</SwiperSlide>
       ...
