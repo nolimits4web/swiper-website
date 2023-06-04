@@ -45,12 +45,8 @@ const buildEvents = async (typesName, typesData, ignoreEvents = []) => {
   };
 
   const args = (item) => {
-    if (
-      item.type &&
-      item.type.declaration &&
-      item.type.declaration.signatures
-    ) {
-      const params = (item.type.declaration.signatures[0].parameters || []).map(
+    if (item.signatures) {
+      const params = (item.signatures[0].parameters || []).map(
         (param) => param.name
       );
       if (!params.length) return '';

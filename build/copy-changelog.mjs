@@ -1,5 +1,5 @@
-const fs = require('fs-extra');
-const fetch = require('node-fetch');
+import fs from 'fs-extra';
+import fetch from 'node-fetch';
 const prepend =
   `
 import { MDXProvider } from '@mdx-js/react';
@@ -30,12 +30,12 @@ export default function Page({ children }) {
 async function writeFile(content) {
   await fs.writeFile(
     './src/pages/changelog.mdx',
-    append +
+    prepend +
       content
         .replace(/\# \[/g, '## [')
         .replace('# Changelog', '')
         .replace(/\#\#\# \[/g, '## [') +
-      prepend
+      append
   );
   console.log('copy changelog done');
 }
@@ -48,7 +48,7 @@ async function writeFile(content) {
     await writeFile(content);
     return;
   }
-  console.log(`local didnt find: ${localPath}. Fetching from web`);
+  console.log(`local didn't find: ${localPath}. Fetching from web`);
   const response = await fetch(
     'https://raw.githubusercontent.com/nolimits4web/swiper/master/CHANGELOG.md'
   );

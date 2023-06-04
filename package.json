@@ -13,7 +13,7 @@
     "build-demos": "node ./build/build-demos.cjs",
     "build-api": "node build/build-api.mjs",
     "build-types": "node build/build-types.cjs",
-    "copy-changelog": "node build/copy-changelog.cjs"
+    "copy-changelog": "node build/copy-changelog.mjs"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.15",

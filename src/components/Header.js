@@ -14,7 +14,7 @@ export default function Header() {
     buttonElRef.current.focus();
   };
   return (
-    <header className="dark:bg-dark-1 sticky top-0 z-50 h-20 border-b border-b-black border-opacity-10 bg-white bg-opacity-80 py-6 backdrop-blur-lg dark:border-b-transparent dark:bg-opacity-80">
+    <header className="sticky top-0 z-50 h-20 border-b border-b-black border-opacity-10 bg-white bg-opacity-80 py-6 backdrop-blur-lg dark:border-b-transparent dark:bg-dark-1 dark:bg-opacity-80">
       <div className="mx-auto flex h-full max-w-[90rem] items-center px-4 sm:px-6 lg:px-8 xl:px-10">
         <Link href="/" className="relative flex flex-shrink-0 items-center">
           <svg
@@ -81,7 +81,7 @@ export default function Header() {
               />
             </svg>
           </button>
-          <nav className="dark:bg-dark-0 absolute right-0 top-full z-10 hidden w-60 divide-y divide-black !divide-opacity-5 overflow-hidden rounded-xl bg-white shadow-lg ring-1 ring-gray-900/10 group-focus-within:block dark:divide-white dark:ring-white/10">
+          <nav className="absolute right-0 top-full z-10 hidden w-60 divide-y divide-black !divide-opacity-5 overflow-hidden rounded-xl bg-white shadow-lg ring-1 ring-gray-900/10 group-focus-within:block dark:divide-white dark:bg-dark-0 dark:ring-white/10">
             {menuList.map(({ name, link }) => (
               <Link
                 key={link}
@@ -103,7 +103,7 @@ export default function Header() {
               }}
               onPointerDown={(e) => e.preventDefault()}
             >
-              <img src="/images/patreon-logo.svg" className="mr-4 h-6 w-6" />
+              <img src="/images/patreon-logo.svg" className="mr-2 h-4 w-4" />
               <span>Support Swiper</span>
             </a>
           </nav>

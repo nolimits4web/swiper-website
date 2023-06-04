@@ -51,7 +51,6 @@ const components = [
   const typesPath = path.join(__dirname, '../src/types.json');
   const { children } = JSON.parse(fs.readFileSync(typesPath, 'utf-8'));
   const types = {};
-  console.log(children.length, children.forEach);
   children.forEach(async ({ name, children, flags, originalName }) => {
     const _name = name.replace(/^\"(.*).d\"$/, '$1');
     if (

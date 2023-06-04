@@ -32,7 +32,6 @@ const buildOptions = async (
         }
         return true;
       }) || [];
-
   const type = (item = {}) => {
     const typeObj = item.type || {};
     if (typeObj.type === 'array' && typeObj.elementType) {
@@ -49,9 +48,10 @@ const buildOptions = async (
       });
       return types.join(`{' | '}`);
     }
-    if (typeObj.type === 'reflection') {
-      if (typeObj && typeObj.declaration && typeObj.declaration.signatures) {
-        const args = (typeObj.declaration.signatures[0].parameters || [])
+    if (typeObj.type === 'reflection' || (!item.type && item.signatures)) {
+      const signatures = item.signatures;
+      if (signatures) {
+        const args = (signatures[0].parameters || [])
           .map(
             (param) =>
               `<span className="text-red-700 dark:text-red-500">${param.name}</span>`

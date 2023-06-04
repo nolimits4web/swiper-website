@@ -15,14 +15,25 @@ export function WithSidebarLayout({ children, meta = {} }) {
 
   useIsomorphicLayoutEffect(() => {
     const t = [];
-    contentRef.current.querySelectorAll('h2, h3, h4').forEach((el) => {
+    let parent;
+    contentRef.current.querySelectorAll('h2, h3').forEach((el) => {
       const slug = el.getAttribute('id');
       const title = el.textContent.trim();
-      t.push({
+      if (el.nodeName.toLowerCase() === 'h3') {
+        parent = true;
+      } else {
+        parent = false;
+      }
+      const obj = {
         slug,
         title,
         children: [],
-      });
+      };
+      if (!parent) {
+        t.push(obj);
+      } else {
+        t[t.length - 1].children.push(obj);
+      }
     });
     setToc(t);
     return () => {};
