@@ -1,8 +1,8 @@
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 import PageHeader from '@/components/PageHeader';
 import TableOfContents from '@/components/TableOfContents';
 import SidebarSponsors from '@/components/SidebarSponsors';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
 import Carbon from '@/components/Carbon';
 
 export function WithSidebarLayout({
@@ -48,7 +48,7 @@ export function WithSidebarLayout({
             </div>
           </div>
         )}
-        <div className="prose min-w-0 max-w-none flex-auto pt-10 pb-24 dark:prose-dark lg:pb-16">
+        <div className="prose min-w-0 max-w-none flex-auto pb-24 pt-10 dark:prose-dark lg:pb-16">
           {meta.carbon && <Carbon />}
           {meta.title && (
             <PageHeader title={meta.title} description={meta.description} />

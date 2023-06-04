@@ -44,6 +44,7 @@
     "remark": "^14.0.3",
     "remark-frontmatter": "^4.0.1",
     "remark-html": "^15.0.2",
+    "remark-mdx-frontmatter": "github:remcohaszing/remark-mdx-frontmatter",
     "remark-parse": "^10.0.2",
     "remark-prism": "^1.3.6",
     "remark-rehype": "^10.1.0",

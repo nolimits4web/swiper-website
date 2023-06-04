@@ -1,13 +1,14 @@
 import fs from 'fs';
 import rehypePrism from '@mapbox/rehype-prism';
 import nextMdx from '@next/mdx';
-// import { withTableOfContents } from './withTableOfContents.mjs';
 
 const withMdx = nextMdx({
-  remarkPlugins: [
-    /* withTableOfContents */
-  ],
-  rehypePlugins: [rehypePrism],
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [rehypePrism],
+    providerImportSource: '@mdx-js/react',
+  },
 });
 
 const pkg = JSON.parse(
@@ -15,11 +16,7 @@ const pkg = JSON.parse(
 );
 
 const nextConfig = withMdx({
-  images: {
-    // https://stackoverflow.com/questions/68008498/nextjs-typeerror-unsupported-file-type-undefined-after-update-to-v-11
-    disableStaticImages: true,
-  },
-  pageExtensions: ['js', 'jsx', 'mdx', 'md'],
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   env: {
     swiperReleaseVersion: pkg.version,
     swiperReleaseDate: pkg.releaseDate,
