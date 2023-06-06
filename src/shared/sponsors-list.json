@@ -1,5 +1,15 @@
 [
   {
+    "createdAt": "2023-06-06T20:00:00.000Z",
+    "title": "Kayakstore is the premier Swedish e-commerce destination for fishing gear and outdoor products",
+    "link": "https://www.kayakstore.se/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/kayakstore",
+    "image": "kayakstore.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2023-06-01T20:00:00.000Z",
     "title": "DashTickets NZ online pokies for real money in New Zealand",
     "link": "https://dashtickets.nz/online-pokies-real-money/",
