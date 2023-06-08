@@ -55,11 +55,7 @@
 @layer base {
   a,
   body .prose a {
-    @apply text-primary hover:underline;
-  }
-
-  body .prose a:hover {
-    @apply hover:no-underline;
+    @apply text-primary no-underline hover:underline;
   }
 
   .important-note {
@@ -71,9 +67,11 @@ body {
   font-family: Inter, -apple-system, system-ui, Helvetica Neue, Helvetica, Arial,
     sans-serif;
   -webkit-font-smoothing: antialiased;
+  @apply bg-surface text-on-surface;
 }
-body .prose {
-  color: #5f6570;
+body .prose,
+.dark .prose {
+  @apply text-on-surface #{!important};
 }
 body .prose code:before,
 body .prose code:after {
@@ -97,6 +95,8 @@ body .prose pre code {
 }
 body .prose pre {
   border-radius: 0.75rem;
+  @apply bg-surface-1;
+  box-shadow: none !important;
 }
 pre code {
   background: transparent !important;

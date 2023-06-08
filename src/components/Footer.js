@@ -18,7 +18,7 @@ const menu = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-t-black border-opacity-10 px-4 py-10 text-center dark:border-t-transparent dark:bg-dark-1 dark:bg-opacity-80 sm:px-6 lg:px-8 xl:px-10">
+    <footer className="border-t border-outline-variant px-4 py-10 text-center sm:px-6 lg:px-8 xl:px-10">
       <div className="mx-auto max-w-5xl font-medium">
         <FooterSponsors />
         <nav className="my-8 flex flex-wrap justify-center space-x-4 text-sm">

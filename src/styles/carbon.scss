@@ -3,21 +3,22 @@
   min-height: 121px;
   font-size: 13px;
   line-height: 1.4;
-  color: #fff;
   padding: 8px 10px 8px;
   overflow: hidden;
-  border-radius: 3px;
   margin-top: 0px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.02);
+  @apply rounded-lg bg-surface-1;
+  &,
   a {
-    color: #fff;
+    @apply text-on-surface #{!important};
+  }
+  a {
     display: block;
   }
   img {
     display: block;
     width: 130px;
     height: 100px;
+    @apply rounded-md;
   }
   .carbon-img {
     display: block;
@@ -39,15 +40,6 @@
     margin: 0 auto;
     position: relative;
   }
-  header &,
-  .prose & {
-    border-color: rgba(0, 0, 0, 0.1);
-    background-color: rgba(0, 0, 0, 0.05);
-    a,
-    & {
-      color: #333;
-    }
-  }
   .prose & {
     display: block;
     margin-bottom: 32px;
@@ -59,14 +51,6 @@
     }
     @media (min-width: 768px) {
       float: right;
-    }
-  }
-  .dark .prose & {
-    color: #9ca3af;
-    border-color: rgba(255, 255, 255, 0.1);
-    background-color: rgba(255, 255, 255, 0.05);
-    a {
-      color: inherit;
     }
   }
 }

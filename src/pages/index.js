@@ -21,7 +21,7 @@ function SponsorButton(props) {
       rel="noopener"
       target="_blank"
       {...restProps}
-      className={`inline-flex max-w-full items-center rounded-full bg-white px-6 py-4 text-sm font-medium text-black shadow-lg duration-200 hover:bg-black hover:bg-opacity-5 hover:no-underline dark:bg-primary/80 dark:text-white dark:hover:bg-primary sm:text-lg ${className}`}
+      className={`inline-flex h-14 max-w-full items-center justify-center rounded-full bg-primary px-6 text-base font-bold text-on-primary duration-200 hover:bg-primary-shade hover:no-underline ${className}`}
       onClick={(e) => {
         onClick(e);
         trackOutbound(href);
@@ -190,13 +190,8 @@ export default function Home() {
           <HomeHeading>Powered With Top Notch Features</HomeHeading>
           <ul className="grid gap-x-4 gap-y-4 text-base sm:grid-cols-2 lg:grid-cols-4 xl:gap-4">
             {feats.map(({ title, descr }) => (
-              <li
-                key={title}
-                className="rounded-xl border border-black border-opacity-10 p-4 dark:border-0 dark:bg-white dark:bg-opacity-5"
-              >
-                <h3 className="mb-4 font-bold text-gray-900 dark:text-gray-200">
-                  {title}
-                </h3>
+              <li key={title} className="rounded-xl bg-surface-1 p-4">
+                <h3 className="mb-4 font-bold">{title}</h3>
                 <div className="text-sm leading-normal">{descr}</div>
               </li>
             ))}
@@ -226,12 +221,12 @@ export default function Home() {
             Swiper is completely free and open-source (MIT Licensed)
           </div>
 
-          <nav className="space-x-2 text-lg">
+          <nav className="space-x-2 text-base">
             {menuList.map(({ name, link }) => (
               <Link
                 key={link}
                 href={link}
-                className="my-2 inline-block w-40 rounded-full bg-primary bg-opacity-10 px-4 py-2 font-semibold text-primary duration-200 hover:bg-opacity-95 hover:text-white hover:no-underline"
+                className="my-2 inline-flex w-40 justify-center rounded-full bg-primary px-4 py-2 text-center font-semibold text-on-primary hover:no-underline"
               >
                 {name}
               </Link>
@@ -290,14 +285,9 @@ export default function Home() {
           </div>
           <div className="my-4 flex flex-col items-center space-y-6">
             <SponsorButton href="https://opencollective.com/swiper">
-              <img
-                src="/images/opencollective-logo.svg"
-                className="mr-4 h-6 w-6"
-              />
               <span>Become a sponsor on OpenCollective</span>
             </SponsorButton>
             <SponsorButton href="https://patreon.com/swiperjs">
-              <img src="/images/patreon-logo.svg" className="mr-4 h-6 w-6" />
               <span>Support Swiper on Patreon</span>
             </SponsorButton>
           </div>

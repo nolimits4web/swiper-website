@@ -1,24 +1,83 @@
 import Link from 'next/link';
-import { useRef } from 'react';
-import { trackOutbound } from '../shared/track-outbound';
-import menuList from '../shared/menu-list';
+import { useRef, useState, useEffect } from 'react';
 import GithubStats from './GithubStats';
-import { ThemeToggle } from './ThemeToggle';
+import {
+  SunMaxFill,
+  MoonStarsFill,
+  Desktopcomputer,
+} from 'framework7-icons/react';
+import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect';
+
+function update() {
+  if (
+    localStorage.theme === 'dark' ||
+    (!('theme' in localStorage) &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches)
+  ) {
+    document.documentElement.classList.add('dark', 'changing-theme');
+  } else {
+    document.documentElement.classList.remove('dark', 'changing-theme');
+  }
+  window.setTimeout(() => {
+    document.documentElement.classList.remove('changing-theme');
+  });
+}
 
 export default function Header() {
-  const buttonElRef = useRef(null);
-  const hideMenu = () => {
-    if (document && document.activeElement) document.activeElement.blur();
-  };
-  const showMenu = () => {
-    buttonElRef.current.focus();
-  };
+  let [setting, setSetting] = useState('system');
+  let initial = useRef(true);
+
+  useIsomorphicLayoutEffect(() => {
+    let theme = localStorage.theme;
+    if (theme === 'light' || theme === 'dark') {
+      setSetting(theme);
+    }
+  }, []);
+
+  useIsomorphicLayoutEffect(() => {
+    if (setting === 'system') {
+      localStorage.removeItem('theme');
+    } else if (setting === 'light' || setting === 'dark') {
+      localStorage.theme = setting;
+    }
+    if (initial.current) {
+      initial.current = false;
+    } else {
+      update();
+    }
+  }, [setting]);
+
+  useEffect(() => {
+    let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    mediaQuery.addEventListener('change', update);
+
+    function onStorage() {
+      update();
+      let theme = localStorage.theme;
+      if (theme === 'light' || theme === 'dark') {
+        setSetting(theme);
+      } else {
+        setSetting('system');
+      }
+    }
+    window.addEventListener('storage', onStorage);
+
+    return () => {
+      mediaQuery.removeEventListener('change', update);
+      window.removeEventListener('storage', onStorage);
+    };
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 h-20 border-b border-b-black border-opacity-10 bg-white bg-opacity-80 py-6 backdrop-blur-lg dark:border-b-transparent dark:bg-dark-1 dark:bg-opacity-80">
-      <div className="mx-auto flex h-full max-w-[90rem] items-center px-4 sm:px-6 lg:px-8 xl:px-10">
-        <Link href="/" className="relative flex flex-shrink-0 items-center">
+    <header className="sticky top-0 z-50 h-16 bg-surface-2 py-6">
+      <div className="mx-auto flex h-full max-w-[90rem] items-center justify-between px-4 sm:px-6 lg:px-8 xl:px-10">
+        {/* Left */}
+        <Link
+          href="/"
+          className="relative flex flex-shrink-0 items-center text-inherit hover:no-underline dark:text-white"
+        >
           <svg
-            className="swiper-logo h-16 w-16 rounded-full"
+            className="swiper-logo h-12 w-12 rounded-full"
             alt="Swiper"
             width="129"
             height="129"
@@ -31,86 +90,170 @@ export default function Header() {
               fill="#0080FF"
             />
           </svg>
+          <span className="ml-2 text-2xl font-bold">Swiper</span>
+          <span className="relative top-px ml-2 font-mono text-[10px] opacity-75">
+            v{process.env.swiperReleaseVersion}
+          </span>
         </Link>
 
-        <div className="ml-4 hidden md:block">
-          <nav className="flex">
-            {menuList.map(({ name, link }) => (
-              <Link
-                key={link}
-                href={link}
-                className="mr-4 text-sm font-medium text-black hover:!text-primary hover:no-underline dark:text-white"
-              >
-                {name}
-              </Link>
-            ))}
+        {/* Right */}
+        <div>
+          {/* Nav */}
+          <nav>
+            <ul className="flex items-center space-x-2">
+              <li className="group relative">
+                <div className="flex h-7 cursor-pointer items-center rounded-md px-3 text-sm font-medium text-primary hover:bg-primary hover:text-on-primary">
+                  Docs
+                </div>
+                <ul className="absolute right-0 top-full hidden space-y-1 whitespace-nowrap rounded-xl bg-surface-3 px-3 py-4 text-sm group-hover:block">
+                  <li>
+                    <Link
+                      href="/get-started"
+                      className="block rounded-md px-3 py-1 font-medium leading-6 hover:bg-primary hover:text-on-primary hover:no-underline"
+                    >
+                      Getting Started
+                    </Link>
+                  </li>
+                  <li className="!my-3 h-px bg-outline-variant"></li>
+                  <li>
+                    <Link
+                      href="/swiper-api"
+                      className="block rounded-md px-3 py-1 font-medium leading-6 hover:bg-primary hover:text-on-primary hover:no-underline"
+                    >
+                      Swiper Core / API
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/element"
+                      className="block rounded-md px-3 py-1 font-medium leading-6 hover:bg-primary hover:text-on-primary hover:no-underline"
+                    >
+                      Swiper Element
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/react"
+                      className="block rounded-md px-3 py-1 font-medium leading-6 hover:bg-primary hover:text-on-primary hover:no-underline"
+                    >
+                      Swiper React
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/vue"
+                      className="block rounded-md px-3 py-1 font-medium leading-6 hover:bg-primary hover:text-on-primary hover:no-underline"
+                    >
+                      Swiper Vue
+                    </Link>
+                  </li>
+                  <li className="!my-3 h-px bg-outline-variant"></li>
+                  <li>
+                    <Link
+                      href="/changelog"
+                      className="block rounded-md px-3 py-1 font-medium leading-6 hover:bg-primary hover:text-on-primary hover:no-underline"
+                    >
+                      Changelog
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+              <li className="group relative">
+                <div className="flex h-7 cursor-pointer items-center rounded-md px-3 text-sm font-medium text-primary hover:bg-primary hover:text-on-primary">
+                  Resources
+                </div>
+                <ul className="absolute right-0 top-full hidden space-y-1 whitespace-nowrap rounded-xl bg-surface-3 px-3 py-4 text-sm group-hover:block">
+                  <li>
+                    <Link
+                      href="/demos"
+                      className="block rounded-md px-3 py-1 font-medium leading-6 hover:bg-primary hover:text-on-primary hover:no-underline"
+                    >
+                      Demos
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/plugins"
+                      className="block rounded-md px-3 py-1 font-medium leading-6 hover:bg-primary hover:text-on-primary hover:no-underline"
+                    >
+                      Plugins
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="https://studio.swiperjs.com"
+                      target="_blank"
+                      className="block rounded-md px-3 py-1 font-medium leading-6 hover:bg-primary hover:text-on-primary hover:no-underline"
+                    >
+                      Swiper Studio
+                    </Link>
+                  </li>
+                  <li className="!my-3 h-px bg-outline-variant"></li>
+                  <li>
+                    <Link
+                      href="/sponsors"
+                      className="block rounded-md px-3 py-1 font-medium leading-6 hover:bg-primary hover:text-on-primary hover:no-underline"
+                    >
+                      Sponsors
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+              <li className="group relative">
+                <Link
+                  href="/blog"
+                  className="flex h-7 cursor-pointer items-center rounded-md px-3 text-sm font-medium text-primary hover:bg-primary hover:text-on-primary hover:no-underline"
+                >
+                  Blog
+                </Link>
+              </li>
+              <li className="group relative">
+                <Link
+                  href="https://github.com/nolimits4web/swiper"
+                  className="flex h-7 cursor-pointer items-center rounded-md px-3 text-sm font-medium text-primary hover:bg-primary hover:text-on-primary hover:no-underline"
+                  rel="noopener"
+                  target="_blank"
+                >
+                  <GithubStats />
+                </Link>
+              </li>
+              <li className="group relative">
+                <div className="flex h-7 cursor-pointer items-center rounded-md px-3 text-sm font-medium text-primary hover:bg-primary hover:text-on-primary">
+                  <SunMaxFill className="h-5 w-5 dark:hidden" />
+                  <MoonStarsFill className="hidden h-5 w-5 dark:block" />
+                </div>
+                <ul className="absolute right-0 top-full hidden space-y-1 whitespace-nowrap rounded-xl bg-surface-3 px-3 py-4 text-sm group-hover:block">
+                  <li>
+                    <button
+                      onClick={() => setSetting('light')}
+                      className="flex w-full items-center space-x-3 rounded-md px-3 py-1 font-medium leading-6 text-primary hover:bg-primary hover:text-on-primary hover:no-underline"
+                    >
+                      <SunMaxFill className="h-5 w-5" />
+                      <span>Light</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      onClick={() => setSetting('dark')}
+                      className="flex w-full items-center space-x-3 rounded-md px-3 py-1 font-medium leading-6 text-primary hover:bg-primary hover:text-on-primary hover:no-underline"
+                    >
+                      <MoonStarsFill className="h-5 w-5" />
+                      <span>Dark</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      onClick={() => setSetting('system')}
+                      className="flex w-full items-center space-x-3 rounded-md px-3 py-1 font-medium leading-6 text-primary hover:bg-primary hover:text-on-primary hover:no-underline"
+                    >
+                      <Desktopcomputer className="h-5 w-5" />
+                      <span>System</span>
+                    </button>
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </nav>
-          <div className="mt-2 flex items-center">
-            <span className="mr-4 text-xs">
-              v{process.env.swiperReleaseVersion}
-            </span>
-            <a
-              href="https://www.patreon.com/swiperjs"
-              target="_blank"
-              className="inline-flex items-center text-xs font-medium text-black opacity-60 hover:!text-primary hover:no-underline hover:opacity-100 dark:text-white"
-              onClick={() => trackOutbound('https://www.patreon.com/swiperjs')}
-            >
-              <img src="/images/patreon-logo.svg" className="mr-1 h-3 w-3" />
-              <span>Support Swiper</span>
-            </a>
-          </div>
-        </div>
-        <div className="group relative ml-auto mr-4">
-          <button
-            className="flex items-center text-black outline-none hover:!text-primary dark:text-white md:hidden"
-            ref={buttonElRef}
-            onClick={showMenu}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="pointer-events-none h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
-          <nav className="absolute right-0 top-full z-10 hidden w-60 divide-y divide-black !divide-opacity-5 overflow-hidden rounded-xl bg-white shadow-lg ring-1 ring-gray-900/10 group-focus-within:block dark:divide-white dark:bg-dark-0 dark:ring-white/10">
-            {menuList.map(({ name, link }) => (
-              <Link
-                key={link}
-                href={link}
-                className="mr-4 block w-full px-4 py-2 text-sm font-medium text-gray-500 duration-100 hover:bg-primary hover:bg-opacity-10 hover:no-underline dark:text-white"
-                onClick={hideMenu}
-                onPointerDown={(e) => e.preventDefault()}
-              >
-                {name}
-              </Link>
-            ))}
-            <a
-              href="https://www.patreon.com/swiperjs"
-              target="_blank"
-              className="mr-4 flex w-full items-center px-4 py-2 text-sm font-medium text-gray-500 duration-100 hover:bg-primary hover:bg-opacity-10 hover:no-underline dark:text-white"
-              onClick={() => {
-                trackOutbound('https://www.patreon.com/swiperjs');
-                hideMenu();
-              }}
-              onPointerDown={(e) => e.preventDefault()}
-            >
-              <img src="/images/patreon-logo.svg" className="mr-2 h-4 w-4" />
-              <span>Support Swiper</span>
-            </a>
-          </nav>
-        </div>
-        <GithubStats white responsive className="md:ml-auto" />
-        <div className="relative ml-4 flex">
-          <ThemeToggle />
         </div>
       </div>
     </header>

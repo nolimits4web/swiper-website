@@ -16,47 +16,47 @@ There are few options on how to include/import Swiper into your project:
 We can install Swiper from NPM
 
 ```
-  $ npm install swiper
+$ npm install swiper
 ```
 
 ```js
-  // import Swiper JS
-  import Swiper from 'swiper';
-  // import Swiper styles
-  import 'swiper/css';
+// import Swiper JS
+import Swiper from 'swiper';
+// import Swiper styles
+import 'swiper/css';
 
-  const swiper = new Swiper(...);
+const swiper = new Swiper(...);
 ```
 
 By default Swiper exports only core version without additional modules (like Navigation, Pagination, etc.). So you need to import and configure them too:
 
 ```js
-  // core version + navigation, pagination modules:
-  import Swiper, { Navigation, Pagination } from 'swiper';
-  // import Swiper and modules styles
-  import 'swiper/css';
-  import 'swiper/css/navigation';
-  import 'swiper/css/pagination';
+// core version + navigation, pagination modules:
+import Swiper, { Navigation, Pagination } from 'swiper';
+// import Swiper and modules styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-  // init Swiper:
-  const swiper = new Swiper('.swiper', {
-    // configure Swiper to use modules
-    modules: [Navigation, Pagination],
-    ...
-  });
+// init Swiper:
+const swiper = new Swiper('.swiper', {
+  // configure Swiper to use modules
+  modules: [Navigation, Pagination],
+  ...
+});
 ```
 
 If you want to import Swiper with all modules (bundle) then it should be imported from `swiper/bundle`:
 
 ```js
-  // import Swiper bundle with all modules installed
-  import Swiper from 'swiper/bundle';
+// import Swiper bundle with all modules installed
+import Swiper from 'swiper/bundle';
 
-  // import styles bundle
-  import 'swiper/css/bundle';
+// import styles bundle
+import 'swiper/css/bundle';
 
-  // init Swiper:
-  const swiper = new Swiper(...);
+// init Swiper:
+const swiper = new Swiper(...);
 ```
 
 ### Use Swiper from CDN

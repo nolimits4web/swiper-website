@@ -52,7 +52,7 @@ function App({ Component, pageProps, router }) {
           color="#0080FF"
         />
       </Head>
-      {router.pathname !== '/' && <Header />}
+      <Header />
       <Component {...pageProps} />
       <Footer />
     </>

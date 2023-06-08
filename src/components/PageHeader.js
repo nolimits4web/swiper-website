@@ -1,9 +1,5 @@
 export default function PageHeader({ title }) {
   if (!title) return null;
 
-  return (
-    <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-gray-200">
-      {title}
-    </h1>
-  );
+  return <h1 className="font-bold tracking-tight text-on-surface">{title}</h1>;
 }
