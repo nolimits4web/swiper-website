@@ -92,10 +92,10 @@ export default function DemosPage() {
                 return null;
 
               return (
-                <a
+                <button
+                  type="button"
                   key={name}
-                  className="relative ml-2 no-underline"
-                  href="#"
+                  className="relative ml-2 text-blue-600 no-underline"
                   onClick={(e) =>
                     openCodeSandbox(e, title, folder, `${name.toLowerCase()}`)
                   }
@@ -104,10 +104,11 @@ export default function DemosPage() {
                     src="/images/codesandbox-logo.svg"
                     className="!mb-0 !mt-0 inline h-[14px] w-[19px]"
                     width="19"
+                    alt=""
                     height="14"
                   />
                   {name}
-                </a>
+                </button>
               );
             })}
           </div>

@@ -184,7 +184,7 @@ export async function openCodeSandbox(e, title, folder, mode = 'core') {
   e.preventDefault();
   const content = await getDemoContent(folder, mode);
   const codeSandBoxParams = generateCodeSandboxWorkspace(mode, content, title);
-  const link = e.target.closest('a');
+  const link = e.target.closest('button');
   link.style.pointerEvents = 'none';
   link.style.color = 'rgba(0,0,0,0)';
   link.insertAdjacentHTML(
