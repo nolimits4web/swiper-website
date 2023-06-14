@@ -2,10 +2,13 @@ import clsx from 'clsx';
 import { Fragment } from 'react';
 import { useScrollSpy } from '../shared/use-scroll-spy';
 
-export default function TableOfContents({ tableOfContents }) {
+export default function TableOfContents({ tableOfContents, onClick }) {
   const currentSection = useScrollSpy(tableOfContents[0].slug);
   return (
-    <ul className="table-of-contents overflow-x-hidden text-gray-500">
+    <ul
+      className="table-of-contents overflow-x-hidden text-on-surface-variant"
+      onClick={onClick}
+    >
       {tableOfContents.map((section) => {
         const sectionIsActive = currentSection === section.slug;
         const childSectionIsActive =
@@ -18,11 +21,11 @@ export default function TableOfContents({ tableOfContents }) {
               <a
                 href={`#${section.slug}`}
                 className={clsx(
-                  'block rounded px-2 py-1 font-medium text-gray-500 transition-colors duration-100 hover:bg-primary hover:bg-opacity-10 hover:!text-primary hover:no-underline dark:text-gray-200',
+                  'block rounded px-2 py-1 font-medium text-on-surface-variant  hover:bg-secondary-container hover:text-primary hover:no-underline',
                   {
-                    '!text-primary': sectionIsActive || childSectionIsActive,
-                    'bg-primary': sectionIsActive,
-                    'bg-opacity-10': sectionIsActive,
+                    '!text-primary': childSectionIsActive,
+                    '!text-on-primary': sectionIsActive,
+                    '!bg-primary': sectionIsActive,
                   }
                 )}
               >
@@ -37,11 +40,10 @@ export default function TableOfContents({ tableOfContents }) {
                   <a
                     href={`#${subsection.slug}`}
                     className={clsx(
-                      'block rounded px-2 py-1 text-gray-500 transition-colors duration-100 hover:bg-primary hover:bg-opacity-10 hover:!text-primary hover:no-underline dark:text-gray-200',
+                      'block rounded px-2 py-1 text-on-surface-variant  hover:bg-secondary-container hover:text-primary hover:no-underline',
                       {
-                        '!text-primary': subsectionIsActive,
-                        'bg-primary': subsectionIsActive,
-                        'bg-opacity-10': subsectionIsActive,
+                        '!text-on-primary': subsectionIsActive,
+                        '!bg-primary': subsectionIsActive,
                       }
                     )}
                   >

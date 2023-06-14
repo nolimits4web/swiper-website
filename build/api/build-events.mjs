@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import path from 'path';
-import description from './description.mjs';
 import * as url from 'url';
+import description from './description.mjs';
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
@@ -37,6 +37,7 @@ const buildEvents = async (typesName, typesData, ignoreEvents = []) => {
     return 0;
   });
 
+  // eslint-disable-next-line
   const type = (item = {}) => {
     const typeObj = item.type || {};
     if (typeObj.type === 'union') {
@@ -68,6 +69,7 @@ const buildEvents = async (typesName, typesData, ignoreEvents = []) => {
   const content = `
 export const ${typesName} = () => {
   return (
+    <div className="table-wrap">
     <table className="events-table">
       <thead>
         <tr>
@@ -81,12 +83,12 @@ export const ${typesName} = () => {
           .map(
             (item) => `
           <tr className="table-border-t">
-            <td className="w-1/4 font-mono font-semibold text-black dark:text-white">
+            <td className="w-1/4 font-mono">
               <a href="#event-${item.name}" id="event-${item.name}">${
               item.name
             }</a>
             </td>
-            <td className="w-1/4 text-red-700 dark:text-red-500 font-mono font-semibold">
+            <td className="w-1/4 text-red font-mono">
               ${args(item)}
             </td>
             <td className="w-1/2 space-y-2">${description(item, true)}</td>
@@ -97,6 +99,7 @@ export const ${typesName} = () => {
 
       </tbody>
     </table>
+    </div>
   )
 }
 `;

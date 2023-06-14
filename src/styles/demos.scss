@@ -10,7 +10,7 @@
     margin-top: -15px;
     top: 50%;
     text-align: center;
-    color: #555;
+    color: var(--color-on-surface);
   }
 }
 
@@ -25,7 +25,7 @@
   z-index: 10;
   transform-origin: 50%;
   box-sizing: border-box;
-  border: 2px solid #0080ff;
+  border: 2px solid var(--color-primary);
   border-radius: 50%;
   border-top-color: transparent;
   animation: demo-preloader-spin 1s infinite linear;
@@ -38,4 +38,10 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.codesandbox-logo {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-on-surface);
 }

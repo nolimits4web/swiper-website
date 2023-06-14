@@ -1,12 +1,44 @@
 .prose :where(thead th):not(:where([class~='not-prose'] *)) {
   color: inherit;
 }
+.table-wrap {
+  @media (min-width: 1024px) {
+    @apply relative my-[2em] overflow-hidden rounded-xl bg-surface-1 pb-4;
+    thead {
+      @apply border-outline-variant;
+      th {
+        @apply pt-4;
+      }
+    }
+    th,
+    td {
+      &:first-child {
+        @apply pl-4;
+      }
+      &:last-child {
+        @apply pr-4;
+      }
+    }
+    th[colspan],
+    tr:first-child {
+      @apply border-t-0;
+    }
+    th[colspan] {
+      @apply bg-surface-2;
+    }
+    > table {
+      @apply my-0;
+    }
+    td pre {
+      @apply border border-outline-variant;
+    }
+  }
+}
 .params-table,
 .events-table,
 .methods-table {
   .table-border-t {
-    @apply border-t border-black dark:border-white;
-    @apply border-opacity-5 #{!important};
+    @apply border-t border-outline-variant;
   }
   p:first-child {
     margin-top: 0;
@@ -15,7 +47,7 @@
     margin-bottom: 0;
   }
   td blockquote {
-    @apply my-3 block appearance-none border-l-4 border-red-500 bg-red-100 px-2 py-2 text-sm font-normal not-italic dark:bg-red-700/20 dark:text-gray-200;
+    @apply my-3 block appearance-none border-l-4 border-red bg-surface-1 px-2 py-2 text-sm font-normal not-italic text-red;
     p:first-of-type::before,
     p:first-of-type::after {
       content: '';

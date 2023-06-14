@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import path from 'path';
-import description from './description.mjs';
 import * as url from 'url';
+import description from './description.mjs';
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
@@ -61,10 +61,7 @@ const buildOptions = async (
       const signatures = item.signatures;
       if (signatures) {
         const args = (signatures[0].parameters || [])
-          .map(
-            (param) =>
-              `<span className="text-red-700 dark:text-red-500">${param.name}</span>`
-          )
+          .map((param) => `<span className="text-red">${param.name}</span>`)
           .join(', ');
         return `function(${args || ''})`;
       }
@@ -73,7 +70,7 @@ const buildOptions = async (
 
     if (typeObj.type === 'array') {
       if (typeObj && typeObj.elementType && typeObj.elementType.name) {
-        return `<span className="text-red-700 dark:text-red-500">${typeObj.elementType.name}[]</span>`;
+        return `<span className="text-red">${typeObj.elementType.name}[]</span>`;
       }
     }
     if (item.name === 'onAny') {
@@ -105,6 +102,7 @@ const buildOptions = async (
   const content = `
 export const ${typesName} = () => {
   return (
+    <div className="table-wrap">
     <table className="params-table">
       <thead>
         <tr>
@@ -119,21 +117,21 @@ export const ${typesName} = () => {
           parentType
             ? `
           <tr className="table-border-t">
-            <td className="w-1/6 text-red-700 dark:text-red-500 font-mono font-semibold">
+            <td className="w-1/6 text-red font-mono">
               <a href="#param-${parentType.name}" id="param-${
                 parentType.name
               }">${parentType.name}</a>
             </td>
-            <td className="w-1/6 text-green-700 font-mono font-semibold">
+            <td className="w-1/6 text-green font-mono">
               ${type(parentType)}
             </td>
-            <td className="w-1/6 text-yellow-700 font-mono font-semibold">
+            <td className="w-1/6 text-orange font-mono">
               ${defaultValue(parentType)}
             </td>
             <td className="w-3/6 space-y-2">${description(parentType)}</td>
           </tr>
           <tr className="params-table-nested-open">
-            <td colSpan="4" className="font-semibold">{'{'}</td>
+            <td colSpan="4">{'{'}</td>
           </tr>
         `
             : ''
@@ -144,17 +142,17 @@ export const ${typesName} = () => {
           <tr className="table-border-t ${
             parentType ? 'params-table-nested-row' : ''
           }">
-            <td className="w-1/6 text-red-700 dark:text-red-500 font-mono font-semibold">
+            <td className="w-1/6 text-red font-mono">
               <a href="#param-${parentType ? `${parentType.name}-` : ''}${
               item.name
             }" id="param-${parentType ? `${parentType.name}-` : ''}${
               item.name
             }">${item.name}</a>
             </td>
-            <td className="w-1/6 text-green-700 dark:text-green-500 font-mono font-semibold">
+            <td className="w-1/6 text-green font-mono">
               ${type(item)}
             </td>
-            <td className="w-1/6 text-yellow-700 dark:text-yellow-500 font-mono font-semibold">
+            <td className="w-1/6 text-orange font-mono">
               ${defaultValue(item)}
             </td>
             <td className="w-3/6 space-y-2">${description(item)}</td>
@@ -166,13 +164,14 @@ export const ${typesName} = () => {
             parentType
               ? `
             <tr className="params-table-nested-close">
-              <td colSpan="4" className="font-semibold">{'}'}</td>
+              <td colSpan="4">{'}'}</td>
             </tr>
           `
               : ''
           }
       </tbody>
     </table>
+    </div>
   )
 }
 `;

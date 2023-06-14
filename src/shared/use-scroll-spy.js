@@ -21,6 +21,7 @@ export const useScrollSpy = (initialCurrent) => {
     windowHeight.current = window.innerHeight;
     headings.current.forEach((heading) => {
       const rect = heading.el.getBoundingClientRect();
+      // eslint-disable-next-line
       heading.offset = scrollY + rect.top;
     });
   };

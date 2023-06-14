@@ -7,7 +7,8 @@ export const useGA = (router) => {
     script.onload = () => {
       window.dataLayer = window.dataLayer || [];
       window.gtag = function () {
-        dataLayer.push(arguments);
+        // eslint-disable-next-line
+        window.dataLayer.push(arguments);
       };
       window.gtag('js', new Date());
       window.gtag('config', 'G-VETT26833W');

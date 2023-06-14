@@ -1,6 +1,7 @@
 import React from 'react';
 import HomeSponsors from '@/components/HomeSponsors';
 import { trackOutbound } from '@/shared/track-outbound';
+import { SponsorButton } from '@/components/SponsorButton';
 
 export default function SponsorsPage() {
   return (
@@ -32,29 +33,12 @@ export default function SponsorsPage() {
         <br />
         Your support means a lot for us!
         <div className="my-4 flex flex-col items-center space-y-6">
-          <a
-            href="https://opencollective.com/swiper"
-            rel="noopener"
-            target="_blank"
-            className="inline-flex max-w-full items-center rounded-full bg-white px-6 py-4 text-sm font-medium text-black shadow-lg duration-200 hover:bg-black hover:bg-opacity-5 hover:no-underline dark:hover:bg-white dark:hover:bg-opacity-75 sm:text-lg"
-            onClick={() => trackOutbound('https://opencollective.com/swiper')}
-          >
-            <img
-              src="/images/opencollective-logo.svg"
-              className="mr-4 h-6 w-6"
-            />
+          <SponsorButton href="https://opencollective.com/swiper">
             <span>Become a sponsor on OpenCollective</span>
-          </a>
-          <a
-            href="https://patreon.com/swiperjs"
-            rel="noopener"
-            target="_blank"
-            className="inline-flex max-w-full items-center rounded-full bg-white px-6 py-4 text-sm font-medium text-black shadow-lg duration-200 hover:bg-black hover:bg-opacity-5 hover:no-underline dark:hover:bg-white dark:hover:bg-opacity-75 sm:text-lg"
-            onClick={() => trackOutbound('https://patreon.com/swiperjs')}
-          >
-            <img src="/images/patreon-logo.svg" className="mr-4 h-6 w-6" />
+          </SponsorButton>
+          <SponsorButton href="https://patreon.com/swiperjs">
             <span>Support Swiper on Patreon</span>
-          </a>
+          </SponsorButton>
         </div>
       </div>
 

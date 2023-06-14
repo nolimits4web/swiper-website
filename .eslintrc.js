@@ -9,7 +9,7 @@ module.exports = {
     'next/core-web-vitals',
     'plugin:react/recommended',
     'airbnb',
-    'plugin:@dword-design/import-alias/recommended',
+    // 'plugin:@dword-design/import-alias/recommended',
     'prettier',
   ],
   parserOptions: {
@@ -49,6 +49,8 @@ module.exports = {
     'no-restricted-syntax': 'off',
     'no-shadow': 'off',
     'no-plusplus': 'off',
+    'default-param-last': 'off',
+    'jsx-a11y/no-noninteractive-element-interactions': 'off',
     camelcase: 'off',
     'global-require': 'off',
     'prefer-destructuring': 'off',

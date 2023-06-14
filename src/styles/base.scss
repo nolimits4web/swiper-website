@@ -10,7 +10,8 @@
   --color-on-secondary: #ffffff;
   --color-secondary-container: #dae2f9;
   --color-on-secondary-container: #131c2b;
-  --color-surface: #fdfbff;
+  // --color-surface: #fdfbff;
+  --color-surface: #ffffff;
   --color-on-surface: #1a1b1f;
   --color-surface-variant: #e0e2ec;
   --color-on-surface-variant: #44474e;
@@ -24,6 +25,13 @@
   --color-surface-3: #e1eaf8;
   --color-surface-4: #dfe8f7;
   --color-surface-5: #dae5f5;
+
+  --color-code: #6f43c0;
+  --color-pre-bg: #21242a;
+  --color-pre-color: #e3e2e6;
+  --color-red: #c0000a;
+  --color-green: #006e24;
+  --color-orange: #8c5000;
 }
 .dark {
   --color-primary-shade: #82acff;
@@ -51,6 +59,11 @@
   --color-surface-3: #2a2e38;
   --color-surface-4: #2b303a;
   --color-surface-5: #2e333e;
+
+  --color-code: #d3bbff;
+  --color-red: #ffb4aa;
+  --color-green: #55e16b;
+  --color-orange: #ffb874;
 }
 @layer base {
   a,
@@ -59,7 +72,7 @@
   }
 
   .important-note {
-    @apply my-3 border-l-4 border-red-500 bg-red-100 px-5 py-4 text-sm dark:border-red-500 dark:bg-red-700/30 dark:text-white;
+    @apply my-3 border-l-4 border-red bg-surface-1 px-5 py-4 text-sm text-red;
   }
 }
 
@@ -73,14 +86,14 @@ body .prose,
 .dark .prose {
   @apply text-on-surface #{!important};
 }
-body .prose code:before,
-body .prose code:after {
-  display: none;
-}
 body .prose code {
-  background: #f5f5f5;
-  padding: 1px 4px;
-  border-radius: 4px;
+  font-weight: normal;
+}
+.prose :where(code):not(:where([class~='not-prose'] *)) {
+  color: var(--color-code);
+}
+.prose :where(a):not(:where([class~='not-prose'] *)) {
+  font-weight: normal;
 }
 .prose > ul > li code {
   word-break: break-word;
@@ -89,13 +102,15 @@ body .prose pre code {
   background: transparent;
   border-radius: 0px;
   padding: initial;
+  color: var(--color-pre-color);
 }
 .after\:hash:after {
   content: '#';
 }
 body .prose pre {
   border-radius: 0.75rem;
-  @apply bg-surface-1;
+  background: var(--color-pre-bg);
+  color: var(--color-pre-color);
   box-shadow: none !important;
 }
 pre code {
@@ -104,4 +119,11 @@ pre code {
 html:not(.dark) .swiper-logo path:nth-child(2),
 html:not(.dark) .swiper-logo path:nth-child(3) {
   fill: #e2eafc;
+}
+
+a[id],
+h2[id],
+h3[id],
+h4[id] {
+  scroll-margin-top: 72px;
 }

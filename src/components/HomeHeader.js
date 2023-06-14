@@ -40,9 +40,7 @@ export default function HomeHeader() {
             />
           </svg>
 
-          <div className="mt-8 text-5xl font-semibold text-primary md:text-6xl">
-            Swiper
-          </div>
+          <div className="mt-8 text-5xl text-primary md:text-6xl">Swiper</div>
           <div className="my-2 mt-4 max-w-2xl text-2xl font-medium tracking-tight text-primary sm:text-4xl md:text-4xl md:leading-tight">
             The Most Modern Mobile Touch Slider
           </div>
@@ -51,13 +49,13 @@ export default function HomeHeader() {
               <Link
                 key={link}
                 href={link}
-                className="mr-4 text-sm text-black hover:!text-primary hover:no-underline dark:text-white"
+                className="mr-4 text-sm hover:!text-primary hover:no-underline "
               >
                 {name}
               </Link>
             ))}
           </nav>
-          <div className="my-2 text-sm text-black dark:text-white lg:my-4">
+          <div className="my-2 text-sm  lg:my-4">
             <span className="opacity-50">
               MIT Licensed, v{process.env.swiperReleaseVersion} released on{' '}
               {process.env.swiperReleaseDate}{' '}
@@ -65,7 +63,7 @@ export default function HomeHeader() {
             <span> </span>
             <Link
               href="/changelog"
-              className="text-black hover:text-primary hover:no-underline dark:text-white dark:hover:text-primary"
+              className="hover:text-primary hover:no-underline  dark:hover:text-primary"
             >
               Changelog
             </Link>

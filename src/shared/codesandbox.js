@@ -160,6 +160,7 @@ function generateCodeSandboxWorkspace(mode, contentJSON, title = '') {
     : {};
 
   if (mode === 'react') {
+    // eslint-disable-next-line
     Object.keys(contentJSON).map((file) => {
       const cur = contentJSON[file];
       if (!!cur.content && typeof cur.content === 'string') {

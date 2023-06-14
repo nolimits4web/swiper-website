@@ -1,13 +1,13 @@
-const colors = require('tailwindcss/colors');
-
 module.exports = {
   content: ['./src/**/*.js', './src/**/*.mdx', './src/**/*.md'],
   darkMode: 'class',
   theme: {
     extend: {
+      screens: {
+        '2xl': '1400px',
+      },
       colors: {
-        // primary: '#0080ff',
-        // primaryLight: '#0080ff',
+        brand: '#0080ff',
         'primary-shade': 'var(--color-primary-shade)',
         'primary-tint': 'var(--color-primary-tint)',
         primary: 'var(--color-primary)',
@@ -32,27 +32,38 @@ module.exports = {
         'surface-3': 'var(--color-surface-3)',
         'surface-4': 'var(--color-surface-4)',
         'surface-5': 'var(--color-surface-5)',
-        green: colors.emerald,
-        yellow: colors.amber,
-        purple: colors.violet,
-        'dark-0': '#111827',
-        'dark-1': '#1c273f',
+        red: 'var(--color-red)',
+        green: 'var(--color-green)',
+        orange: 'var(--color-orange)',
       },
-      typography: (theme) => ({
+      typography: () => ({
         DEFAULT: {
           css: {
+            strong: {
+              color: 'inherit',
+              fontWeight: 'bold',
+            },
             h1: {
               'font-size': '40px',
+              'font-weight': 'bold',
+              color: 'inherit',
             },
             h2: {
               'font-size': '32px',
+              'margin-top': '1.5em',
               color: 'inherit',
+              a: {
+                'font-weight': 'inherit',
+              },
             },
             h3: {
               'font-size': '26px',
+              'margin-top': '1.25em',
+              'font-weight': 'bold',
               color: 'inherit',
             },
             h4: {
+              'font-weight': 'bold',
               color: 'inherit',
             },
           },

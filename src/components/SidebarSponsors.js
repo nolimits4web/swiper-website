@@ -14,12 +14,12 @@ export default function SidebarSponsors() {
           Become a sponsor
         </a>
       </div>
-      <div className="grid grid-cols-7 gap-1">
+      <div className="flex flex-wrap gap-1">
         {sponsors
           .filter(({ plan, active }) => plan !== 'Sponsor' && active)
-          .map(({ link, title, image_h, image, alt }) => (
+          .map(({ link, title, image }) => (
             <a
-              className="flex items-center justify-center rounded hover:opacity-80 dark:bg-white dark:p-[1px]"
+              className="flex items-center justify-center rounded hover:opacity-80 dark:bg-white"
               href={link}
               key={title}
               title={title}
@@ -28,7 +28,7 @@ export default function SidebarSponsors() {
               onClick={() => trackOutbound(link)}
             >
               <img
-                className="h-8 w-8 rounded object-contain"
+                className="h-7 w-7 rounded object-contain lg:h-8 lg:w-8"
                 alt={title}
                 loading="lazy"
                 src={`/images/sponsors/${image}`}

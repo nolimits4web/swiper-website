@@ -15,7 +15,7 @@ export const HomeElementUsage = () => {
           </span>
           <span className="token punctuation">&gt;</span>
         </span>
-        <span className="token script"></span>
+        <span className="token script" />
         <span className="token tag">
           <span className="token tag">
             <span className="token punctuation">&lt;/</span>script

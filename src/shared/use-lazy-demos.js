@@ -7,11 +7,13 @@ export const useLazyDemos = () => {
     const demoEls = document.querySelectorAll('.demo');
     for (let i = 0; i < demoEls.length; i += 1) {
       const demoEl = demoEls[i];
+      // eslint-disable-next-line
       if (demoEl.classList.contains('loaded')) continue;
       const demoElRect = demoEl.getBoundingClientRect();
       const iframeEl = demoEl.querySelector('iframe');
       const offsetTop = demoElRect.top;
       if (offsetTop + demoEl.offsetHeight < 0) {
+        // eslint-disable-next-line
         continue;
       }
       if (offsetTop < window.innerHeight + 50) {
@@ -24,7 +26,7 @@ export const useLazyDemos = () => {
 
   const onScroll = () => {
     clearTimeout(iframeTimeout.current);
-    iframeTimeout.current = setTimeout(function () {
+    iframeTimeout.current = setTimeout(() => {
       lazyLoadDemos();
     }, 500);
   };

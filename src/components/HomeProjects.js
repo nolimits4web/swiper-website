@@ -1,6 +1,3 @@
-import { trackOutbound } from '@/shared/track-outbound';
-import { Atropos } from 'atropos/react';
-
 export default function HomeProjects() {
   return (
     <div className="gr mx-auto max-w-3xl items-stretch space-y-4 text-left sm:flex sm:space-x-8 sm:space-y-0 sm:text-center">

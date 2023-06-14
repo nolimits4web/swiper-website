@@ -1,30 +1,11 @@
-import menuList from '../shared/menu-list';
-import Link from 'next/link';
 import FooterSponsors from './FooterSponsors';
-// import { trackOutbound } from '@/shared/track-outbound';
-// import Image from 'next/image';
-
-const menu = [
-  { name: 'Swiper', link: '/' },
-  ...menuList,
-  { name: 'Sponsors', link: '/sponsors' },
-].map(({ name, link }) => {
-  return (
-    <Link key={link} href={link}>
-      {name}
-    </Link>
-  );
-});
 
 export default function Footer() {
   return (
-    <footer className="border-t border-outline-variant px-4 py-10 text-center sm:px-6 lg:px-8 xl:px-10">
-      <div className="mx-auto max-w-5xl font-medium">
+    <footer className="border-t border-outline-variant px-4 py-8 text-center sm:px-6 lg:px-8 xl:px-10">
+      <div className="mx-auto max-w-5xl">
         <FooterSponsors />
-        <nav className="my-8 flex flex-wrap justify-center space-x-4 text-sm">
-          {menu}
-        </nav>
-        <div className="text-gray-700 dark:text-gray-400">
+        <div className="text-on-surface-variant">
           {new Date().getFullYear()} © Swiper by{' '}
           <a href="https://nolimits4web.com" target="_blank">
             <img

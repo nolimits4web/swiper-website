@@ -1,5 +1,6 @@
 const fs = require('fs-extra');
 const { promise: exec } = require('exec-sh');
+
 const dir = './public/types';
 
 (async () => {

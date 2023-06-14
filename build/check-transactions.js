@@ -1,7 +1,8 @@
 const fs = require('fs');
+// eslint-disable-next-line
 const sponsors = require('./src/shared/sponsors-list.json');
 
-let content = fs.readFileSync('./swiper-transactions.csv', 'utf8');
+const content = fs.readFileSync('./swiper-transactions.csv', 'utf8');
 const data = {};
 
 content

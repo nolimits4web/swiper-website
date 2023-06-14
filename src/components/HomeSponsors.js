@@ -45,8 +45,10 @@ const PlanSection = (props) => {
         })}
         {showPlaceholder && (
           <a
-            className={`m-4 flex items-center justify-center bg-gray-100 p-3 text-center text-sm font-semibold duration-300 hover:bg-gray-200 hover:no-underline ${sizes}`}
-            href={'https://opencollective.com/swiper'}
+            className={`flex items-center justify-center rounded-md bg-surface-1 p-1 text-center font-semibold duration-300 hover:bg-surface-2 hover:no-underline ${sizes} ${
+              props.plan === 'Sponsor' ? 'text-[6px] leading-none' : 'text-xs'
+            }`}
+            href="https://opencollective.com/swiper"
             onClick={() => trackOutbound('https://opencollective.com/swiper')}
             rel="noopener"
             target="_blank"

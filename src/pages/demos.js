@@ -12,6 +12,22 @@ let tableOfContents;
 
 const skipComponentsDemos = ['420', '430', '440'];
 
+const DemoButton = (props) => {
+  const { children, onClick, tonal, ...rest } = props;
+  const Tag = rest.href ? 'a' : 'button';
+  return (
+    <Tag
+      className={`relative flex cursor-pointer items-center justify-center rounded-md px-3 text-sm !font-medium text-primary !no-underline hover:bg-primary hover:text-on-primary ${
+        tonal ? 'bg-secondary-container' : ''
+      } h-7`}
+      onClick={onClick}
+      {...rest}
+    >
+      {children}
+    </Tag>
+  );
+};
+
 export default function DemosPage() {
   tableOfContents = demos.map(({ title, slug }) => {
     return {
@@ -33,8 +49,8 @@ export default function DemosPage() {
 
   return (
     <WithSidebarLayout tableOfContents={tableOfContents}>
-      <Carbon />
-      <h1 className="dark:text-gray-200">Swiper Demos</h1>
+      <Carbon sidebar />
+      <h1>Swiper Demos</h1>
 
       <h2>UI Initiative</h2>
       <p>
@@ -52,7 +68,7 @@ export default function DemosPage() {
             {demos.map(({ cover, url, title }) => (
               <a
                 key={url}
-                className="block w-full rounded-lg bg-black bg-opacity-10 dark:border dark:border-white dark:border-opacity-10"
+                className="block w-full rounded-lg bg-surface-1"
                 href={url}
                 target="_blank"
                 title={title}
@@ -70,54 +86,58 @@ export default function DemosPage() {
           </div>
         ))}
       </div>
-      {demos.map(({ title, slug, folder }, demoIndex) => (
+      {demos.map(({ title, slug, folder }) => (
         <React.Fragment key={title}>
-          <Heading level={2} id={slug} toc>
+          <Heading level={2} id={slug}>
             {title}
           </Heading>
-          <div className="my-4 flex flex-wrap text-sm">
-            <a
-              className="mr-4 no-underline"
+          <div className="my-4 flex flex-wrap space-x-4 text-sm">
+            <DemoButton
               href={`/demos/${folder}/core.html`}
               target="_blank"
               rel="noopener"
+              tonal
             >
-              Open in new window
-            </a>
-            {['Core', 'React', 'Vue', 'Element'].map((name) => {
-              if (
-                name !== 'Core' &&
-                skipComponentsDemos.includes(folder.split('-')[0])
-              )
-                return null;
+              Preview
+            </DemoButton>
+            <div className="flex items-center space-x-1">
+              <span className="font-mono text-xs">CodeSandbox:</span>
+              {['Core', 'React', 'Vue', 'Element'].map((name) => {
+                if (
+                  name !== 'Core' &&
+                  skipComponentsDemos.includes(folder.split('-')[0])
+                )
+                  return null;
 
-              return (
-                <button
-                  type="button"
-                  key={name}
-                  className="relative ml-2 text-blue-600 no-underline"
-                  onClick={(e) =>
-                    openCodeSandbox(e, title, folder, `${name.toLowerCase()}`)
-                  }
-                >
-                  <img
+                return (
+                  <DemoButton
+                    type="button"
+                    key={name}
+                    tonal
+                    onClick={(e) =>
+                      openCodeSandbox(e, title, folder, `${name.toLowerCase()}`)
+                    }
+                  >
+                    {/* <img
                     src="/images/codesandbox-logo.svg"
                     className="!mb-0 !mt-0 inline h-[14px] w-[19px]"
                     width="19"
                     alt=""
                     height="14"
-                  />
-                  {name}
-                </button>
-              );
-            })}
+                  /> */}
+                    {name}
+                  </DemoButton>
+                );
+              })}
+            </div>
           </div>
-          <div className="demo my-4 bg-gray-100 shadow">
+          <div className="demo my-4 overflow-hidden rounded-xl border border-outline-variant bg-surface-1 dark:border-transparent">
             <iframe
+              title={title}
               data-src={`/demos/${folder}/core.html`}
               scrolling="no"
               frameBorder="0"
-              className="block h-96 w-full"
+              className="block h-96 w-full overflow-hidden rounded-xl bg-surface-1"
             />
           </div>
         </React.Fragment>

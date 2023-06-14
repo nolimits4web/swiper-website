@@ -1,5 +1,6 @@
 import fs from 'fs-extra';
 import fetch from 'node-fetch';
+
 const prepend =
   `
 import { MDXProvider } from '@mdx-js/react';
@@ -10,7 +11,7 @@ export const meta = {
   title: 'Swiper Changelog',
   description: 'Swiper changelog',
 }
-` + '\n';
+` + '\n'; // eslint-disable-line
 const append = `
 
 export default function Page({ children }) {
@@ -27,6 +28,7 @@ export default function Page({ children }) {
   );
 }
 `;
+/* eslint-disable */
 async function writeFile(content) {
   await fs.writeFile(
     './src/pages/changelog.mdx',
@@ -39,6 +41,7 @@ async function writeFile(content) {
   );
   console.log('copy changelog done');
 }
+/* eslint-enable */
 
 (async () => {
   const localPath = '../swiper/CHANGELOG.md';

@@ -10,6 +10,14 @@ import Swiper, {
   Controller,
 } from 'swiper';
 
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/a11y';
+import 'swiper/css/effect-creative';
+import 'swiper/css/effect-cards';
+import 'swiper/css/effect-flip';
+
 Swiper.use([
   Navigation,
   Pagination,
@@ -20,15 +28,7 @@ Swiper.use([
   Controller,
 ]);
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/a11y';
-import 'swiper/css/effect-creative';
-import 'swiper/css/effect-cards';
-import 'swiper/css/effect-flip';
-
-function SlideCenter({ children, className = '', style = {} }) {
+function SlideCenter({ children, className = '' }) {
   return (
     <div
       className={`mx-auto flex h-[500px] max-w-[90rem] flex-col justify-center rounded-2xl bg-primary bg-opacity-5 px-4 text-primary dark:bg-opacity-20 md:h-[400px] lg:h-[500px] ${className} relative border-4 border-primary`}
@@ -107,7 +107,7 @@ export default function HomeSlider() {
   return (
     <>
       <div className="swiper-button-prev invisible !left-auto !right-full mr-4 md:visible 2xl:mr-8" />
-      <div className="swiper-button-next invisible !right-auto !left-full ml-4 md:visible 2xl:ml-8" />
+      <div className="swiper-button-next invisible !left-full !right-auto ml-4 md:visible 2xl:ml-8" />
       <div className="swiper header-swiper-main">
         <div className="swiper-pagination !-bottom-6" />
 
@@ -152,7 +152,7 @@ export default function HomeSlider() {
                     {text}
                   </li>
                 ))}
-                <li></li>
+                <li />
               </ul>
             </SlideCenter>
             <div className="swiper-slide-shadow" />
@@ -193,7 +193,10 @@ export default function HomeSlider() {
                 Start Using It Now
               </div>
               <div className="mt-4">
-                <Link href="/get-started" className="my-2 inline-block w-48 rounded-3xl bg-primary px-4 py-2 text-center text-lg font-bold text-white shadow-lg duration-200 hover:bg-opacity-95 hover:no-underline">
+                <Link
+                  href="/get-started"
+                  className="my-2 inline-block w-48 rounded-3xl bg-primary px-4 py-2 text-center text-lg font-bold text-white shadow-lg duration-200 hover:bg-opacity-95 hover:no-underline"
+                >
                   Get Started
                 </Link>
               </div>

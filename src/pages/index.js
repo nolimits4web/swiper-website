@@ -1,7 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-// import Image from 'next/image';
-
 import menuList from '@/shared/menu-list';
 import clientsList from '@/shared/clients-list';
 import Carbon from '@/components/Carbon';
@@ -12,25 +10,7 @@ import UIInitiativeBanner from '@/components/UIInitiativeBanner';
 import SwiperStudioBanner from '@/components/SwiperStudioBanner';
 import { trackOutbound } from '@/shared/track-outbound';
 import { HomeElementUsage } from '@/components/HomeElementUsage';
-
-function SponsorButton(props) {
-  const { href, className, onClick, children, ...restProps } = props;
-  return (
-    <a
-      href={href}
-      rel="noopener"
-      target="_blank"
-      {...restProps}
-      className={`inline-flex h-14 max-w-full items-center justify-center rounded-full bg-primary px-6 text-base font-bold text-on-primary duration-200 hover:bg-primary-shade hover:no-underline ${className}`}
-      onClick={(e) => {
-        onClick(e);
-        trackOutbound(href);
-      }}
-    >
-      {children}
-    </a>
-  );
-}
+import { SponsorButton } from '@/components/SponsorButton';
 
 const libs = [
   {

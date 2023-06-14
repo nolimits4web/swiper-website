@@ -4,10 +4,10 @@ import elapsed from 'elapsed-time-logger';
 
 import exec from 'exec-sh';
 
+import * as url from 'url';
 import buildOptions from './api/build-options.mjs';
 import buildEvents from './api/build-events.mjs';
 import buildMethods from './api/build-methods.mjs';
-import * as url from 'url';
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
@@ -51,7 +51,9 @@ const components = [
   const typesPath = path.join(__dirname, '../src/types.json');
   const { children } = JSON.parse(fs.readFileSync(typesPath, 'utf-8'));
   const types = {};
+  // eslint-disable-next-line
   children.forEach(async ({ name, children, flags, originalName }) => {
+    // eslint-disable-next-line
     const _name = name.replace(/^\"(.*).d\"$/, '$1');
     if (
       _name === 'public-api' ||

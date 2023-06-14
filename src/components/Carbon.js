@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 
-export default function Carbon() {
+export default function Carbon({ sidebar }) {
   const elRef = useRef(null);
 
   useEffect(() => {
@@ -12,5 +12,7 @@ export default function Carbon() {
     elRef.current.appendChild(scriptEl);
   }, []);
 
-  return <div ref={elRef} className="carbon" />;
+  return (
+    <div ref={elRef} className={`carbon ${sidebar ? 'carbon-sidebar' : ''}`} />
+  );
 }
