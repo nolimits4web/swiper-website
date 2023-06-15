@@ -127,3 +127,39 @@ h3[id],
 h4[id] {
   scroll-margin-top: 72px;
 }
+
+.header-swiper-main > .swiper-wrapper > .swiper-slide {
+  transition-property: transform, opacity, height, box-shadow;
+}
+.home-header-light-blue {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 150%;
+  height: 150%;
+  background-image: radial-gradient(
+    closest-side at 50% 50%,
+    #0080ff,
+    transparent
+  );
+  transform: translateX(-50%) translateY(-50%);
+  opacity: 0.1;
+  z-index: -20;
+  pointer-events: none;
+}
+.home-header-light-pink {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    closest-side at 50% 50%,
+    #7000ff,
+    transparent
+  );
+  transform: translateX(50%) translateY(50%);
+  opacity: 0.1;
+  z-index: -20;
+  pointer-events: none;
+}

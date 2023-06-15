@@ -100,7 +100,7 @@ const feats = [
 
 export function HomeHeading({ children }) {
   return (
-    <h2 className="mb-12 text-center text-4xl font-extrabold text-gray-900 dark:text-gray-200 sm:text-5xl">
+    <h2 className="mb-12 text-center text-5xl font-bold  sm:text-6xl">
       {children}
     </h2>
   );
@@ -109,54 +109,66 @@ export default function Home() {
   return (
     <>
       <HomeHeader />
-      <div className="mb-20 flex items-center justify-center bg-primary py-5">
+      <div className="mb-20 flex items-center justify-center py-5">
         <Carbon />
       </div>
       <div className="mx-auto max-w-[90rem] px-4 text-lg sm:px-6 lg:px-8 xl:px-10">
         <div className="mx-auto flex max-w-5xl flex-col space-y-5">
-          <h1 className="mb-6 text-center text-4xl font-extrabold text-gray-900 dark:text-gray-200 sm:text-5xl">
+          <h1 className="mb-6 text-center text-5xl font-bold  sm:text-6xl">
             Swiper
           </h1>
-          <p>
-            Swiper is the most modern free mobile touch slider with hardware
-            accelerated transitions and amazing native behavior. It is intended
-            to be used in mobile websites, mobile web apps, and mobile
-            native/hybrid apps.
-          </p>
-          <p>
-            It is a modern touch slider which is focused only on modern
-            apps/platforms to bring the best experience and simplicity.
-          </p>
-          <p className="mb-2">
-            Swiper, along with other great components, is a part of{' '}
-            <a href="//framework7.io">Framework7</a> - a fully-featured
-            framework for building iOS &amp; Android apps. Swiper is also a
-            default slider component in the{' '}
-            <a href="http://ionicframework.com/" target="blank" rel="noopener">
-              Ionic Framework
-            </a>
-            .
-          </p>
+          <div className="space-y-5 rounded-3xl bg-surface-1 p-12">
+            <p>
+              Swiper is the most modern free mobile touch slider with hardware
+              accelerated transitions and amazing native behavior. It is
+              intended to be used in mobile websites, mobile web apps, and
+              mobile native/hybrid apps.
+            </p>
+            <p>
+              It is a modern touch slider which is focused only on modern
+              apps/platforms to bring the best experience and simplicity.
+            </p>
+            <p className="mb-2">
+              Swiper, along with other great components, is a part of{' '}
+              <a href="//framework7.io">Framework7</a> - a fully-featured
+              framework for building iOS &amp; Android apps. Swiper is also a
+              default slider component in the{' '}
+              <a
+                href="http://ionicframework.com/"
+                target="blank"
+                rel="noopener"
+              >
+                Ionic Framework
+              </a>
+              .
+            </p>
+          </div>
         </div>
         <div className="mt-24">
           <HomeHeading>Available For</HomeHeading>
-          <div className="mx-auto grid max-w-6xl grid-cols-4">
+          <div className="mx-auto grid max-w-6xl grid-cols-4 gap-8">
             {libs.map(({ title, image, link }) => (
-              <a
+              <Link
                 key={title}
                 title={title}
                 href={link}
-                className="flex items-center justify-center"
+                className="relative overflow-hidden rounded-3xl bg-surface-1 text-on-surface duration-100 hover:bg-primary-container hover:no-underline"
               >
-                <img
-                  src={`/images/libs/${image}`}
-                  width="140"
-                  height="140"
-                  alt={`${title} logo`}
-                  title={title}
-                  loading="lazy"
-                />
-              </a>
+                <div className="flex items-center justify-center border-b border-outline-variant p-6 ">
+                  <img
+                    src={`/images/libs/${image}`}
+                    width="140"
+                    height="140"
+                    alt={`${title} logo`}
+                    title={title}
+                    loading="lazy"
+                    className="h-36 w-36 max-w-none object-contain"
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="font-bold">Swiper React</div>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
