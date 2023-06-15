@@ -11,6 +11,7 @@ import SwiperStudioBanner from '@/components/SwiperStudioBanner';
 import { trackOutbound } from '@/shared/track-outbound';
 import { HomeElementUsage } from '@/components/HomeElementUsage';
 import { SponsorButton } from '@/components/SponsorButton';
+import { homeFeatures } from '@/shared/home-features';
 
 const libs = [
   {
@@ -35,72 +36,9 @@ const libs = [
   },
 ];
 
-const feats = [
-  {
-    title: 'Library Agnostic',
-    descr: `Swiper doesn't require any JavaScript libraries like jQuery, which makes Swiper much smaller and faster. It can be safely used with libraries such as jQuery, Zepto, jQuery Mobile, etc.`,
-  },
-  {
-    title: '1:1 Touch movement',
-    descr: `By default, Swiper provides 1:1 touch movement interaction, but this ratio can be configured through Swiper settings`,
-  },
-  {
-    title: 'Mutation Observer',
-    descr: `Swiper has an option to enable Mutation Observer, with this feature Swiper will be automatically reinitialized and recalculate all required parameters if you make dynamic changes to the DOM, or in Swiper styles itself`,
-  },
-  {
-    title: 'Rich API',
-    descr: `Swiper comes with a very rich API. It allows creating your own pagination, navigation buttons, parallax effects and many more`,
-  },
-  {
-    title: 'Full True RTL Support',
-    descr: `Swiper is the only slider that provides 100% RTL support with correct layout`,
-  },
-  {
-    title: 'Multi Row Slides Layout',
-    descr: `Swiper allows a multiple row slides layout, with a few slides per column`,
-  },
-  {
-    title: 'Transition Effects',
-    descr: `There are 3 new transition effects in addition to the usual Slide: Fade, 3D Cube and 3D Coverflow`,
-  },
-  {
-    title: 'Two-way Control',
-    descr: `Now Swiper may be used as controller for any number of other Swipers, and even be controlled at the same time`,
-  },
-  {
-    title: 'Full Navigation Control',
-    descr: `Swiper comes with all required built-in navigation elements, such as Pagination, Navigation arrows and Scrollbar`,
-  },
-  {
-    title: 'Flexbox Layout',
-    descr: `Swiper uses modern flexbox layout for slides layout, which solves a lot of problems and time with size calculations. Such layout also allows configuring the Slides grid using pure CSS`,
-  },
-  {
-    title: 'Most Flexible Slides Layout Grid',
-    descr: `Swiper has a lot of parameters on initialization to make it as flexible as possible. You can control slides per view, per column, per group, space between slides, and many more`,
-  },
-  {
-    title: 'Parallax Transitions',
-    descr: `Swiper supports modern parallax transition effects that can be used on any element inside of Swiper: images, text blocks, headings, backgrounds, etc.`,
-  },
-  {
-    title: 'Images Lazy Loading',
-    descr: `Swiper Lazy Loading delays loading of images in inactive/invisible slides until the user swipes to them. Such feature could make the page load faster and improve Swiper performance`,
-  },
-  {
-    title: 'Virtual Slides',
-    descr: `Swiper comes with Virtual Slides feature that is great when you have a lot of slides or content-heavy/image-heavy slides so it will keep just the required amount of slides in DOM`,
-  },
-  {
-    title: 'And many more ...',
-    descr: `All Swiper well-known features are also here: Responsive, Scroll prevention, Resistant bounds, Autoplay, Loop mode, Nested Swipers`,
-  },
-];
-
 export function HomeHeading({ children }) {
   return (
-    <h2 className="mb-12 text-center text-5xl font-bold  sm:text-6xl">
+    <h2 className="mb-12 text-center text-5xl font-bold leading-tight sm:text-6xl">
       {children}
     </h2>
   );
@@ -117,7 +55,7 @@ export default function Home() {
           <h1 className="mb-6 text-center text-5xl font-bold  sm:text-6xl">
             Swiper
           </h1>
-          <div className="space-y-5 rounded-3xl bg-surface-1 p-12">
+          <div className="space-y-5 rounded-3xl bg-surface-1 p-8 sm:p-12">
             <p>
               Swiper is the most modern free mobile touch slider with hardware
               accelerated transitions and amazing native behavior. It is
@@ -146,15 +84,15 @@ export default function Home() {
         </div>
         <div className="mt-24">
           <HomeHeading>Available For</HomeHeading>
-          <div className="mx-auto grid max-w-6xl grid-cols-4 gap-8">
+          <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 md:grid-cols-4 md:gap-8">
             {libs.map(({ title, image, link }) => (
               <Link
                 key={title}
                 title={title}
                 href={link}
-                className="relative overflow-hidden rounded-3xl bg-surface-1 text-on-surface duration-100 hover:bg-primary-container hover:no-underline"
+                className="relative overflow-hidden rounded-3xl border border-outline-variant bg-surface-1 p-6 text-on-surface duration-100 hover:bg-primary-container hover:no-underline"
               >
-                <div className="flex items-center justify-center border-b border-outline-variant p-6 ">
+                <div className="flex items-center justify-center">
                   <img
                     src={`/images/libs/${image}`}
                     width="140"
@@ -162,11 +100,11 @@ export default function Home() {
                     alt={`${title} logo`}
                     title={title}
                     loading="lazy"
-                    className="h-36 w-36 max-w-none object-contain"
+                    className="h-16 w-16 max-w-full object-contain sm:h-36 sm:w-36"
                   />
                 </div>
-                <div className="p-6">
-                  <div className="font-bold">Swiper React</div>
+                <div className="mt-4 hidden text-center sm:block">
+                  <div className="font-bold">{title}</div>
                 </div>
               </Link>
             ))}
@@ -180,22 +118,29 @@ export default function Home() {
 
         <div className="mx-auto mt-24 max-w-6xl">
           <HomeHeading>Powered With Top Notch Features</HomeHeading>
-          <ul className="grid gap-x-4 gap-y-4 text-base sm:grid-cols-2 lg:grid-cols-4 xl:gap-4">
-            {feats.map(({ title, descr }) => (
-              <li key={title} className="rounded-xl bg-surface-1 p-4">
-                <h3 className="mb-4 font-bold">{title}</h3>
-                <div className="text-sm leading-normal">{descr}</div>
+          <ul className="grid gap-x-4 gap-y-4 sm:grid-cols-2 lg:grid-cols-3 xl:gap-4">
+            {homeFeatures.map(({ title, descr, svg }) => (
+              <li key={title} className="flex rounded-3xl bg-surface-1 p-4">
+                <div className="mr-4 h-16 w-16 shrink-0 rounded-xl bg-surface-2">
+                  {svg}
+                </div>
+                <div className="min-w-0 shrink">
+                  <h3 className="mb-1 font-bold">{title}</h3>
+                  <div className="text-base leading-normal text-on-surface-variant">
+                    {descr}
+                  </div>
+                </div>
               </li>
             ))}
           </ul>
         </div>
         <div className="mt-24">
           <HomeHeading>Used By Millions</HomeHeading>
-          <div className="mx-auto grid max-w-6xl grid-cols-4 gap-4 sm:grid-cols-8">
+          <div className="mx-auto grid max-w-6xl grid-cols-4 gap-4 rounded-3xl bg-surface-1 p-4 sm:grid-cols-8">
             {clientsList.map(({ image, title }) => (
               <div key={title} className="flex items-center justify-center">
                 <img
-                  className="rounded"
+                  className="rounded-2xl"
                   src={`/images/clients/${image}`}
                   width="120"
                   height="120"
@@ -207,7 +152,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div className="mx-auto mb-20 mt-24 max-w-6xl text-center">
+        {/* <div className="mx-auto mb-20 mt-24 max-w-6xl text-center">
           <HomeHeading>And It Is Free</HomeHeading>
           <div className="my-4">
             Swiper is completely free and open-source (MIT Licensed)
@@ -224,23 +169,42 @@ export default function Home() {
               </Link>
             ))}
           </nav>
-        </div>
+        </div> */}
 
-        <div className="mb-20 mt-24 grid-cols-2 gap-8 md:grid">
-          <div className="text-center">
-            <h2 className="mb-12 text-center text-4xl font-extrabold text-gray-900 dark:text-gray-200 sm:text-5xl md:mb-4">
-              Swiper Studio
-            </h2>
-            <p>Premium no-code Swiper builder and editor for Swiper patrons</p>
-            <SwiperStudioBanner />
-          </div>
+        <div className="mb-20 mt-24">
+          <HomeHeading>Premium Services</HomeHeading>
+          <div className="grid-cols-2 gap-8 md:grid">
+            <Link
+              className="swiper-studio-card block rounded-3xl border border-outline-variant bg-surface-1 text-center text-on-surface duration-100 hover:bg-primary-container hover:no-underline"
+              href="https://uiinitiative.com"
+              target="_blank"
+            >
+              <SwiperStudioBanner />
+              <div className="p-8">
+                <h2 className="mb-4 text-center text-4xl font-bold">
+                  Swiper Studio
+                </h2>
+                <p className="text-on-surface-variant">
+                  Premium no-code Swiper builder and editor
+                </p>
+              </div>
+            </Link>
 
-          <div className="mt-24 text-center md:mt-0">
-            <h2 className="mb-12 text-center text-4xl font-extrabold text-gray-900 dark:text-gray-200 sm:text-5xl md:mb-4">
-              UI Initiative
-            </h2>
-            <p>Premium Swiper templates & plugins for Swiper patrons</p>
-            <UIInitiativeBanner />
+            <Link
+              href="https://studio.swiperjs.com"
+              target="_blank"
+              className="uiinitiative-card mt-8 block rounded-3xl border border-outline-variant bg-surface-1 text-center text-on-surface duration-100 hover:bg-primary-container  hover:no-underline md:mt-0"
+            >
+              <UIInitiativeBanner />
+              <div className="p-8">
+                <h2 className="mb-4 text-center text-4xl font-bold">
+                  UI Initiative
+                </h2>
+                <p className="text-on-surface-variant">
+                  Premium Swiper templates & plugins
+                </p>
+              </div>
+            </Link>
           </div>
         </div>
 
@@ -251,7 +215,6 @@ export default function Home() {
 
         <div className="mb-20 mt-24 text-center">
           <HomeHeading>Sponsors</HomeHeading>
-          <HomeSponsors />
           <div className="my-4">
             Support Swiper on{' '}
             <a
@@ -275,13 +238,16 @@ export default function Home() {
             <br />
             Your support means a lot for us!
           </div>
-          <div className="my-4 flex flex-col items-center space-y-6">
+          <div className="mb-8 mt-4 flex flex-col items-center space-y-6">
             <SponsorButton href="https://opencollective.com/swiper">
               <span>Become a sponsor on OpenCollective</span>
             </SponsorButton>
             <SponsorButton href="https://patreon.com/swiperjs">
               <span>Support Swiper on Patreon</span>
             </SponsorButton>
+          </div>
+          <div className="space-y-8 rounded-3xl bg-surface-1 px-4 py-8 sm:px-8">
+            <HomeSponsors spacing={false} />
           </div>
         </div>
       </div>

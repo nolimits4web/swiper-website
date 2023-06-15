@@ -21,7 +21,7 @@ export default function TableOfContents({ tableOfContents, onClick }) {
               <a
                 href={`#${section.slug}`}
                 className={clsx(
-                  'block rounded px-2 py-1 font-medium text-on-surface-variant  hover:bg-secondary-container hover:text-primary hover:no-underline',
+                  'block rounded-full px-3 py-1.5 font-medium text-on-surface-variant  hover:bg-secondary-container hover:text-primary hover:no-underline',
                   {
                     '!text-primary': childSectionIsActive,
                     '!text-on-primary': sectionIsActive,
@@ -40,7 +40,7 @@ export default function TableOfContents({ tableOfContents, onClick }) {
                   <a
                     href={`#${subsection.slug}`}
                     className={clsx(
-                      'block rounded px-2 py-1 text-on-surface-variant  hover:bg-secondary-container hover:text-primary hover:no-underline',
+                      'block rounded-full px-3 py-1 text-on-surface-variant  hover:bg-secondary-container hover:text-primary hover:no-underline',
                       {
                         '!text-on-primary': subsectionIsActive,
                         '!bg-primary': subsectionIsActive,

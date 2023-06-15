@@ -61,7 +61,7 @@ const buildOptions = async (
       const signatures = item.signatures;
       if (signatures) {
         const args = (signatures[0].parameters || [])
-          .map((param) => `<span className="text-red">${param.name}</span>`)
+          .map((param) => `<span className="text-primary">${param.name}</span>`)
           .join(', ');
         return `function(${args || ''})`;
       }
@@ -70,7 +70,7 @@ const buildOptions = async (
 
     if (typeObj.type === 'array') {
       if (typeObj && typeObj.elementType && typeObj.elementType.name) {
-        return `<span className="text-red">${typeObj.elementType.name}[]</span>`;
+        return `<span className="text-primary">${typeObj.elementType.name}[]</span>`;
       }
     }
     if (item.name === 'onAny') {
@@ -117,7 +117,7 @@ export const ${typesName} = () => {
           parentType
             ? `
           <tr className="table-border-t">
-            <td className="w-1/6 text-red font-mono">
+            <td className="w-1/6 text-primary font-mono">
               <a href="#param-${parentType.name}" id="param-${
                 parentType.name
               }">${parentType.name}</a>
@@ -142,7 +142,7 @@ export const ${typesName} = () => {
           <tr className="table-border-t ${
             parentType ? 'params-table-nested-row' : ''
           }">
-            <td className="w-1/6 text-red font-mono">
+            <td className="w-1/6 text-primary font-mono">
               <a href="#param-${parentType ? `${parentType.name}-` : ''}${
               item.name
             }" id="param-${parentType ? `${parentType.name}-` : ''}${

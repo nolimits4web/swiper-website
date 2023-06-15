@@ -108,6 +108,30 @@
       padding-top: 10px;
       padding-bottom: 10px;
       flex-wrap: wrap;
+      border: none;
+    }
+    tbody tr {
+      background: var(--color-surface-1);
+      padding: 8px 16px;
+      border-radius: 12px;
+      + tr {
+        margin-top: 8px;
+      }
+      &.methods-table-title-row {
+        display: none;
+      }
+      &.params-table-nested-open,
+      &.params-table-nested-close {
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        td {
+          font-size: 18px;
+        }
+      }
+      &.params-table-nested-row {
+        margin-left: 24px;
+      }
     }
     tbody th,
     tbody td,
@@ -127,9 +151,6 @@
       th[colspan] {
         text-align: center;
         font-size: 16px;
-      }
-      tr + tr {
-        border-top: 1px solid #eaeaea;
       }
 
       td:last-child {

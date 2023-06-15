@@ -24,19 +24,19 @@ export default function HomeProjects() {
         },
       ].map((item) => (
         <a
-          className="flex w-full items-center rounded-xl bg-surface-1 px-4 py-6 text-on-surface duration-200 hover:bg-surface-2 hover:no-underline sm:flex-col"
+          className="flex w-full items-center rounded-3xl border border-outline-variant bg-surface-1 px-4 py-6 text-on-surface duration-100 hover:bg-primary-container  hover:no-underline sm:flex-col"
           href={item.url}
           target="_blank"
           key={item.title}
         >
           <img
-            className="mr-4 w-12 sm:mr-0 sm:h-32 sm:w-32"
+            className="mr-4 w-16 sm:mr-0 sm:h-32 sm:w-32"
             src={`/images/projects/${item.logo}`}
             alt={item.title}
           />
           <div>
-            <div className="font-semibold sm:mb-2 sm:mt-4">{item.title}</div>
-            <div className="text-sm text-on-surface-variant">
+            <div className="font-bold sm:mb-2 sm:mt-4">{item.title}</div>
+            <div className="text-base text-on-surface-variant">
               {item.description}
             </div>
           </div>

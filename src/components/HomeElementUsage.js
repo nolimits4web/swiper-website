@@ -1,6 +1,6 @@
 export const HomeElementUsage = () => {
   return (
-    <pre className="language-html !mx-auto block max-w-[800px] whitespace-pre rounded-3xl !bg-[var(--color-pre-bg)] !py-6 text-sm">
+    <pre className="language-html !mx-auto block max-w-[900px] whitespace-pre rounded-3xl !bg-[var(--color-pre-bg)] !p-8 text-sm">
       <code className="language-html">
         <span className="token tag">
           <span className="token tag">

@@ -56,7 +56,7 @@ const buildMethods = async (
     if (typeObj.type === 'reflection') {
       if (typeObj && typeObj.declaration && typeObj.declaration.signatures) {
         const args = (typeObj.declaration.signatures[0].parameters || [])
-          .map((param) => `<span className="text-red">${param.name}</span>`)
+          .map((param) => `<span className="text-orange">${param.name}</span>`)
           .join(', ');
         return `function(${args || ''})`;
       }
@@ -65,7 +65,7 @@ const buildMethods = async (
 
     if (typeObj.type === 'array') {
       if (typeObj && typeObj.elementType && typeObj.elementType.name) {
-        return `<span className="text-red">${typeObj.elementType.name}[]</span>`;
+        return `<span className="text-green">${typeObj.elementType.name}[]</span>`;
       }
     }
 
@@ -85,7 +85,7 @@ const buildMethods = async (
           ${params
             .map(
               (param) => `
-          <li><span className="text-red font-mono">${
+          <li><span className="text-orange font-mono">${
             param.name
           }</span> - <span className="text-green font-mono">${type(
                 param
@@ -114,7 +114,7 @@ const buildMethods = async (
     let args = '';
     if (isMethod) {
       args = (item.signatures[0].parameters || [])
-        .map((param) => `<span className="text-red">${param.name}</span>`)
+        .map((param) => `<span className="text-orange">${param.name}</span>`)
         .join(', ');
       args = `(${args})`;
     }
@@ -135,7 +135,7 @@ export const ${typesName} = () => {
         ${
           props.length
             ? `
-          <tr className="table-border-t">
+          <tr className="table-border-t methods-table-title-row">
             <th colSpan="3" className="p-4 bg-surface-1">Properties</th>
           </tr>
         `
@@ -145,12 +145,12 @@ export const ${typesName} = () => {
           .map(
             (item) => `
           <tr className="table-border-t">
-            <td className="w-1/6 font-mono">
+            <td className="w-1/6 font-mono text-primary">
               <a href="#prop-${methodId(name(item))}" id="prop-${methodId(
               name(item)
             )}">${name(item)}</a>
             </td>
-            <td className="w-1/6 text-red font-mono">
+            <td className="w-1/6 text-green font-mono">
               ${type(item)}
             </td>
 
@@ -163,7 +163,7 @@ export const ${typesName} = () => {
           ${
             methods.length
               ? `
-            <tr className="table-border-t">
+            <tr className="table-border-t methods-table-title-row">
               <th colSpan="3" className="p-4 bg-surface-1">Methods</th>
             </tr>
             `
@@ -174,7 +174,7 @@ export const ${typesName} = () => {
             .map(
               (item) => `
             <tr className="table-border-t">
-              <td className="w-1/6 font-mono" colSpan="2">
+              <td className="w-1/6 font-mono text-primary" colSpan="2">
                 <a href="#method-${methodId(name(item))}" id="method-${methodId(
                 name(item)
               )}">${name(item)}</a>

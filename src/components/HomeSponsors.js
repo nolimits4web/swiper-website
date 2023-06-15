@@ -2,7 +2,7 @@ import { trackOutbound } from '@/shared/track-outbound';
 import sponsors from '../shared/sponsors-list.json';
 
 const PlanSection = (props) => {
-  const { showPlaceholder, showTitle } = props;
+  const { showPlaceholder, showTitle, spacing } = props;
   const items = sponsors.filter(
     ({ plan, active }) => props.plan === plan && active
   );
@@ -16,9 +16,9 @@ const PlanSection = (props) => {
   if (!items.length && !showPlaceholder) return null;
 
   return (
-    <div className="mb-20">
+    <div className={spacing ? 'mb-8' : ''}>
       {showTitle && (
-        <h2 className="mb-4 text-center text-2xl font-extrabold text-gray-900 dark:text-gray-200 sm:text-3xl">
+        <h2 className="mb-4 text-center text-2xl font-extrabold sm:text-3xl">
           {props.plan}s
         </h2>
       )}
@@ -26,7 +26,7 @@ const PlanSection = (props) => {
         {items.map(({ link, title, image }) => {
           return (
             <a
-              className={`flex items-center justify-center overflow-hidden rounded text-center duration-300 dark:bg-white dark:p-px ${sizes}`}
+              className={`flex items-center justify-center overflow-hidden rounded bg-white text-center duration-300 ${sizes}`}
               href={link}
               key={title}
               title={title}
@@ -61,27 +61,31 @@ const PlanSection = (props) => {
   );
 };
 
-export default function HomeSponsors({ showPlaceholders, showTitles }) {
+export default function HomeSponsors({ showPlaceholders, showTitles, spacing = true }) {
   return (
     <>
       <PlanSection
         showPlaceholder={showPlaceholders}
         showTitle={showTitles}
+        spacing={spacing}
         plan="Platinum Sponsor"
       />
       <PlanSection
         showPlaceholder={showPlaceholders}
         showTitle={showTitles}
+        spacing={spacing}
         plan="Gold Sponsor"
       />
       <PlanSection
         showPlaceholder={showPlaceholders}
         showTitle={showTitles}
+        spacing={spacing}
         plan="Silver Sponsor"
       />
       <PlanSection
         showPlaceholder={showPlaceholders}
         showTitle={showTitles}
+        spacing={spacing}
         plan="Sponsor"
       />
     </>

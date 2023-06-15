@@ -1,10 +1,7 @@
-import FooterSponsors from './FooterSponsors';
-
 export default function Footer() {
   return (
     <footer className="border-t border-outline-variant px-4 py-8 text-center sm:px-6 lg:px-8 xl:px-10">
       <div className="mx-auto max-w-5xl">
-        <FooterSponsors />
         <div className="text-on-surface-variant">
           {new Date().getFullYear()} © Swiper by{' '}
           <a href="https://nolimits4web.com" target="_blank">

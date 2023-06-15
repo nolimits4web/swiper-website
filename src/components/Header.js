@@ -107,7 +107,7 @@ export default function Header() {
             onClick={() => setNavOpened(false)}
           />
           <ul
-            className={`fixed right-0 top-0 z-50 h-screen w-56 items-center overflow-auto bg-surface-3 md:relative md:top-0 md:z-auto md:h-auto md:w-auto md:space-x-2 md:overflow-visible md:bg-transparent ${
+            className={`fixed right-0 top-0 z-50 h-screen w-56 items-center overflow-auto rounded-l-2xl bg-surface-3 md:relative md:top-0 md:z-auto md:h-auto md:w-auto md:space-x-2 md:overflow-visible md:rounded-none md:bg-transparent ${
               navOpened ? 'block' : 'hidden'
             } md:!flex`}
             onClick={onNavClick}
