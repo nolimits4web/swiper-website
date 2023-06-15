@@ -6,18 +6,15 @@ import * as url from 'url';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 const plainDescription = (item) => {
-  if (item.comment && item.comment.shortText)
-    return item.comment.shortText || '';
-  if (
-    item.type &&
-    item.type.declaration &&
-    item.type.declaration.signatures &&
-    item.type.declaration.signatures[0] &&
-    item.type.declaration.signatures[0].comment &&
-    item.type.declaration.signatures[0].comment.shortText
-  )
-    return item.type.declaration.signatures[0].comment.shortText || '';
-  return '';
+  const data =
+    (!item.comment && item.signatures && item.signatures[0]
+      ? item.signatures[0].comment
+      : item.comment) ||
+    item.type?.declaration?.signatures?.[0]?.comment ||
+    {};
+
+  const { shortText, text } = data;
+  return [shortText || '', text || ''].join('');
 };
 
 const buildEvents = async (typesName, typesData, ignoreEvents = []) => {
