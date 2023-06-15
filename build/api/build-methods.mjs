@@ -5,6 +5,18 @@ import description from './description.mjs';
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
+const plainDescription = (item) => {
+  const data =
+    (!item.comment && item.signatures && item.signatures[0]
+      ? item.signatures[0].comment
+      : item.comment) ||
+    item.type?.declaration?.signatures?.[0]?.comment ||
+    {};
+
+  const { shortText, text } = data;
+  return [shortText || '', text || ''].join('');
+};
+
 const buildMethods = async (
   typesName,
   typesData,
@@ -13,10 +25,8 @@ const buildMethods = async (
 ) => {
   const items =
     (typesData[typesName] || [])
-      .filter((item) =>
-        item.comment && item.comment.shortText
-          ? !item.comment.shortText.toLowerCase().includes('internal')
-          : true
+      .filter(
+        (item) => !plainDescription(item).toLowerCase().includes('internal')
       )
       .filter((item) => !ignoreOptions.includes(item.name))
       .filter((item) => {
