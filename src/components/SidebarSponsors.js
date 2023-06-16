@@ -1,4 +1,3 @@
-import { trackOutbound } from '@/shared/track-outbound';
 import sponsors from '../shared/sponsors-list.json';
 
 export default function SidebarSponsors() {
@@ -25,7 +24,6 @@ export default function SidebarSponsors() {
               title={title}
               rel="noopener"
               target="_blank"
-              onClick={() => trackOutbound(link)}
             >
               <img
                 className="h-7 w-7 rounded object-contain lg:h-8 lg:w-8"

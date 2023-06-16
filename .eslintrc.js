@@ -21,6 +21,7 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
+    'no-param-reassign': 'off',
     'jsx-a11y/anchor-has-content': 'off',
     'jsx-a11y/alt-text': 'off',
     'react/prop-types': 'off',

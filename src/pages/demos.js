@@ -5,7 +5,6 @@ import { useLazyDemos } from '@/shared/use-lazy-demos';
 import demos from '@/demos.json';
 import uiinitiativeDemos from '@/uiinitiative-demos.json';
 import Carbon from '@/components/Carbon';
-import { trackOutbound } from '@/shared/track-outbound';
 import { openCodeSandbox } from '@/shared/codesandbox';
 
 let tableOfContents;
@@ -72,7 +71,6 @@ export default function DemosPage() {
                 href={url}
                 target="_blank"
                 title={title}
-                onClick={() => trackOutbound(url)}
               >
                 <img
                   width="1200"

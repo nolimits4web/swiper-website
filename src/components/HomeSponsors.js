@@ -1,4 +1,3 @@
-import { trackOutbound } from '@/shared/track-outbound';
 import sponsors from '../shared/sponsors-list.json';
 
 const PlanSection = (props) => {
@@ -32,7 +31,6 @@ const PlanSection = (props) => {
               title={title}
               rel="noopener"
               target="_blank"
-              onClick={() => trackOutbound(link)}
             >
               <img
                 className="h-auto max-h-full w-auto max-w-full rounded"
@@ -49,7 +47,6 @@ const PlanSection = (props) => {
               props.plan === 'Sponsor' ? 'text-[6px] leading-none' : 'text-xs'
             }`}
             href="https://opencollective.com/swiper"
-            onClick={() => trackOutbound('https://opencollective.com/swiper')}
             rel="noopener"
             target="_blank"
           >
@@ -61,7 +58,11 @@ const PlanSection = (props) => {
   );
 };
 
-export default function HomeSponsors({ showPlaceholders, showTitles, spacing = true }) {
+export default function HomeSponsors({
+  showPlaceholders,
+  showTitles,
+  spacing = true,
+}) {
   return (
     <>
       <PlanSection

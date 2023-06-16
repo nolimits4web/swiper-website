@@ -1,6 +1,5 @@
 import React from 'react';
 import HomeSponsors from '@/components/HomeSponsors';
-import { trackOutbound } from '@/shared/track-outbound';
 import { SponsorButton } from '@/components/SponsorButton';
 
 export default function SponsorsPage() {
@@ -16,17 +15,11 @@ export default function SponsorsPage() {
           href="https://opencollective.com/swiper"
           target="_blank"
           rel="noopener"
-          onClick={() => trackOutbound('https://opencollective.com/swiper')}
         >
           Open Collective
         </a>{' '}
         or{' '}
-        <a
-          href="https://patreon.com/swiperjs"
-          target="_blank"
-          rel="noopener"
-          onClick={() => trackOutbound('https://patreon.com/swiperjs')}
-        >
+        <a href="https://patreon.com/swiperjs" target="_blank" rel="noopener">
           Patreon
         </a>{' '}
         and help us to make it even better!

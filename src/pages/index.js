@@ -5,7 +5,6 @@ import Carbon from '@/components/Carbon';
 import HomeHeader from '@/components/HomeHeader';
 import HomeSponsors from '@/components/HomeSponsors';
 import HomeProjects from '@/components/HomeProjects';
-import { trackOutbound } from '@/shared/track-outbound';
 import { HomeElementUsage } from '@/components/HomeElementUsage';
 import { SponsorButton } from '@/components/SponsorButton';
 import { homeFeatures } from '@/shared/home-features';
@@ -52,11 +51,12 @@ export default function Home() {
           <h1 className="mb-6 text-center text-5xl font-bold  sm:text-6xl">
             Swiper
           </h1>
-          <div className="space-y-5 text-center font-medium leading-[1.75] sm:p-12">
+          <div className="space-y-5 text-center text-xl font-medium leading-[1.75] sm:p-12">
             <p>
-              Swiper is the most modern free mobile touch slider with hardware
-              accelerated transitions and amazing native behavior. Use it on
-              websites, web apps, and mobile native/hybrid apps.
+              Swiper is the most modern <b>free and open source</b> mobile touch
+              slider with hardware accelerated transitions and{' '}
+              <b>amazing native behavior</b>. Use it on websites, web apps, and
+              mobile native/hybrid apps.
             </p>
             <p className="mb-2">
               Swiper, along with other great components, is a part of{' '}
@@ -79,7 +79,7 @@ export default function Home() {
                 key={title}
                 title={title}
                 href={link}
-                className="relative overflow-hidden rounded-3xl border border-outline-variant p-6 text-on-surface duration-100 hover:bg-primary-container hover:no-underline"
+                className="relative overflow-hidden rounded-3xl border border-outline-variant p-6 text-on-surface duration-100 hover:bg-primary-container hover:no-underline active:rounded-xl"
               >
                 <div className="flex items-center justify-center">
                   <img
@@ -164,7 +164,7 @@ export default function Home() {
           <HomeHeading>Premium Services</HomeHeading>
           <div className="grid-cols-2 gap-8 md:grid">
             <Link
-              className="swiper-studio-card block rounded-3xl border border-outline-variant text-center text-on-surface duration-100 hover:bg-primary-container hover:no-underline"
+              className="swiper-studio-card block rounded-3xl border border-outline-variant text-center text-on-surface duration-100 hover:bg-primary-container hover:no-underline active:rounded-xl"
               href="https://uiinitiative.com"
               target="_blank"
             >
@@ -188,7 +188,7 @@ export default function Home() {
             <Link
               href="https://studio.swiperjs.com"
               target="_blank"
-              className="uiinitiative-card mt-8 block rounded-3xl border border-outline-variant text-center text-on-surface duration-100 hover:bg-primary-container  hover:no-underline md:mt-0"
+              className="uiinitiative-card mt-8 block rounded-3xl border border-outline-variant text-center text-on-surface duration-100 hover:bg-primary-container hover:no-underline  active:rounded-xl md:mt-0"
             >
               <div className="mx-auto px-4 pt-4">
                 <img
@@ -222,7 +222,6 @@ export default function Home() {
               href="https://opencollective.com/swiper"
               target="_blank"
               rel="noopener"
-              onClick={() => trackOutbound('https://opencollective.com/swiper')}
             >
               Open Collective
             </a>{' '}
@@ -231,7 +230,6 @@ export default function Home() {
               href="https://patreon.com/swiperjs"
               target="_blank"
               rel="noopener"
-              onClick={() => trackOutbound('https://patreon.com/swiperjs')}
             >
               Patreon
             </a>{' '}

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import Link from 'next/link';
 import Swiper, {
   Navigation,
@@ -17,6 +17,7 @@ import 'swiper/css/a11y';
 import 'swiper/css/effect-creative';
 import 'swiper/css/effect-cards';
 import 'swiper/css/effect-flip';
+import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect';
 
 Swiper.use([
   Navigation,
@@ -28,23 +29,58 @@ Swiper.use([
   Controller,
 ]);
 
-function SlideCenter({ children, className = '' }) {
+const slidesBgs = ['#ce1111', '#008cff', '#0ab86f', '#d37a07', '#76a30c'];
+
+const MainSlide = ({ className, children }) => {
   return (
     <div
-      className={`mx-auto flex h-[500px] max-w-[90rem] flex-col justify-center rounded-2xl  px-4  md:h-[400px] lg:h-[500px] ${className} relative `}
+      className={`swiper-slide !flex !h-auto origin-top flex-col items-center justify-center rounded-3xl bg-surface-1 p-8 md:!h-full md:bg-surface-2 ${
+        className || ''
+      }`}
     >
-      {/* <div className="pointer-events-none absolute left-0 top-0 z-[-1] h-full w-full rounded-xl bg-black dark:bg-white" /> */}
+      <div className="header-swiper-shadow pointer-events-none absolute left-0 top-0 z-30 h-full w-full bg-black bg-opacity-20 opacity-0 dark:bg-opacity-30" />
       {children}
     </div>
   );
-}
+};
+const DemoSlide = ({ index }) => {
+  return (
+    <div
+      className="swiper-slide !flex items-center justify-center rounded-2xl font-bold text-white"
+      style={{
+        background: slidesBgs[index],
+      }}
+    >
+      Slide {index + 1}
+    </div>
+  );
+};
 
 export default function HomeSlider() {
+  const isMobile = useRef(false);
   const swiperMain = useRef(null);
   const swiperCards = useRef(null);
   const swiperFlip = useRef(null);
+  const swiperCreative1 = useRef(null);
+  const swiperCreative2 = useRef(null);
+
+  const getCreativeTranslates = () => {
+    const w = window.innerWidth;
+    isMobile.current = w < 768;
+    return {
+      prev: {
+        translate: w < 768 ? ['-120%', 0, 0] : [0, -12, -1],
+        scale: w < 768 ? 1 : 0.92,
+      },
+      next: {
+        translate: w < 768 ? [0, -12, -1] : ['120%', 0, 0],
+        scale: w < 768 ? 0.92 : 1,
+      },
+    };
+  };
 
   const createSwipers = () => {
+    const { prev, next } = getCreativeTranslates();
     swiperMain.current = new Swiper('.header-swiper-main', {
       slidesPerView: 1,
       effect: 'creative',
@@ -55,13 +91,14 @@ export default function HomeSlider() {
         limitProgress: 5,
         prev: {
           shadow: false,
-          translate: [0, -12, -1],
+          translate: prev.translate,
           rotate: [0, 0, 0],
-          scale: 0.92,
+          scale: prev.scale,
         },
         next: {
           shadow: false,
-          translate: ['120%', 0, 0],
+          translate: next.translate,
+          scale: next.scale,
         },
       },
       speed: 300,
@@ -82,20 +119,26 @@ export default function HomeSlider() {
           slides.forEach((slideEl) => {
             const progress = slideEl.progress;
             const shadowEl = slideEl.querySelector('.header-swiper-shadow');
-            if (progress > -1 && progress <= 0) {
-              const percentage = 1 + progress;
+            const isM = isMobile.current;
+            const setShadowOpacity = isM ? progress < 0 : progress > 0;
+
+            if (
+              (isM && progress < 1 && progress >= 0) ||
+              (!isM && progress > -1 && progress <= 0)
+            ) {
+              const percentage = isM ? 1 - progress : 1 + progress;
               slideEl.style.boxShadow = `-10px 10px 30px rgba(0,0,0,${
                 0.2 * percentage
               })`;
-            } else if (progress > 0) {
-              const percentage = 1 - progress;
+            } else if (setShadowOpacity) {
+              const percentage = isM ? progress + 1 : 1 - progress; //* (isM ? -1 : 1);
               slideEl.style.boxShadow = `-10px 10px 30px rgba(0,0,0,${
                 0.2 * percentage
               })`;
             } else {
-              slideEl.style.boxShadow = `-10px 10px 0px rgba(0,0,0,0)`;
+              slideEl.style.boxShadow = `none`;
             }
-            if (progress > 0) {
+            if (setShadowOpacity) {
               const perSlide = 1 / (slides.length - 1);
               shadowEl.style.opacity = perSlide * Math.abs(progress);
             } else {
@@ -127,120 +170,209 @@ export default function HomeSlider() {
       pagination: true,
       resistanceRatio: 0,
     });
+    swiperCreative1.current = new Swiper('.header-swiper-creative-1', {
+      nested: true,
+      effect: 'creative',
+      creativeEffect: {
+        prev: {
+          shadow: true,
+          translate: [0, 0, -800],
+          rotate: [180, 0, 0],
+        },
+        next: {
+          shadow: true,
+          translate: [0, 0, -800],
+          rotate: [-180, 0, 0],
+        },
+      },
+      createElements: true,
+      pagination: true,
+      resistanceRatio: 0,
+    });
+    swiperCreative2.current = new Swiper('.header-swiper-creative-2', {
+      nested: true,
+      effect: 'creative',
+      creativeEffect: {
+        prev: {
+          shadow: true,
+          origin: 'left center',
+          translate: ['-5%', 0, -200],
+          rotate: [0, 100, 0],
+        },
+        next: {
+          origin: 'right center',
+          translate: ['5%', 0, -200],
+          rotate: [0, -100, 0],
+        },
+      },
+      createElements: true,
+      pagination: true,
+      resistanceRatio: 0,
+    });
     document.querySelector('.header-swiper-main').style.overflow = 'visible';
+  };
+
+  const onResize = () => {
+    if (swiperMain.current && swiperMain.current.params) {
+      const { prev, next } = getCreativeTranslates();
+      Object.assign(swiperMain.current.params.creativeEffect.prev, prev);
+      Object.assign(swiperMain.current.params.creativeEffect.next, next);
+    }
   };
 
   const destroySwipers = () => {
     if (swiperCards.current) swiperCards.current.destroy();
     if (swiperFlip.current) swiperFlip.current.destroy();
+    if (swiperCreative1.current) swiperCreative1.current.destroy();
+    if (swiperCreative2.current) swiperCreative2.current.destroy();
     if (swiperMain.current) swiperMain.current.destroy();
   };
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     createSwipers();
-    return () => destroySwipers();
+    window.addEventListener('resize', onResize);
+    return () => {
+      destroySwipers();
+      window.removeEventListener('resize', onResize);
+    };
   });
   return (
-    <>
-      {/* <div className="swiper-button-prev invisible !left-auto !right-full mr-4 md:visible 2xl:mr-8" /> */}
-      {/* <div className="swiper-button-next invisible !left-full !right-auto ml-4 md:visible 2xl:ml-8" /> */}
-      <div className="swiper header-swiper-main !absolute -bottom-5 -top-5 right-0  z-20 w-1/2">
-        <div className="swiper-pagination !-bottom-6" />
+    <div
+      className="swiper header-swiper-main !z-[5] mt-8 max-w-[740px] md:!absolute md:bottom-12 md:right-6 md:top-4 md:!z-20 md:mt-0 md:w-1/2 lg:right-8 lg:top-12 xl:right-10"
+      style={{ '--swiper-theme-color': 'var(--color-primary)' }}
+    >
+      <div className="swiper-button-prev invisible !left-auto !right-full z-20 -mr-5 md:visible" />
+      <div className="swiper-button-next invisible !left-full !right-auto z-20 -ml-5 md:visible" />
+      <div
+        className="swiper-pagination !-bottom-6"
+        style={{
+          '--swiper-pagination-bullet-inactive-color':
+            'var(--color-on-surface)',
+        }}
+      />
 
-        <div className="swiper-wrapper">
-          <div className="swiper-slide origin-top rounded-3xl bg-surface-2">
-            <div className="header-swiper-shadow pointer-events-none absolute left-0 top-0 h-full w-full bg-black bg-opacity-20  " />
-            <SlideCenter>
-              <span className="mb-8 text-center text-4xl font-bold">
-                Top Notch Features
-              </span>
-              <ul className="flex flex-wrap text-sm font-medium text-gray-700 dark:text-white sm:text-base md:mx-auto md:max-w-screen-sm">
-                {[
-                  'Library Agnostic',
-                  'Mutation Observer',
-                  'Flexbox Layout',
-                  'Full True RTL Support',
-                  'Multi Row Slides Layout',
-                  '3D Effects',
-                  'Two-way Control',
-                  'Full Navigation Control',
-                  'Rich API',
-                  'Most Flexible Slides Layout Grid',
-                  'Parallax Transitions',
-                  'Images Lazy Loading',
-                  'Virtual Slides',
-                  'And many more',
-                ].map((text, index) => (
-                  <li key={index} className="my-1 flex w-1/2 items-center">
-                    <svg
-                      className="mr-2 flex-shrink-0 text-primary"
-                      width="20"
-                      height="20"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    {text}
-                  </li>
-                ))}
-                <li />
-              </ul>
-            </SlideCenter>
+      <div className="swiper-wrapper">
+        <MainSlide>
+          <div className="w-full text-center text-4xl font-bold lg:text-5xl">
+            Endless Creativity
           </div>
-          <div className="swiper-slide swiper-slide-gallery origin-top rounded-3xl bg-surface-2">
-            <div className="header-swiper-shadow pointer-events-none absolute left-0 top-0 h-full w-full bg-black bg-opacity-20  " />
-            <SlideCenter className="pt-10">
-              <span className="mb-8 text-center text-4xl font-bold">
-                Build Complex Touch Galleries
-              </span>
-              <div className="flex h-full min-h-0 justify-around pb-4">
-                <div className="swiper header-swiper-cards mx-auto h-80 max-h-full w-60 rounded-lg">
-                  {Array.from({ length: 5 }).map((el, index) => (
-                    <div key={index} className="swiper-slide rounded-xl">
-                      <img
-                        src={`demos/images/nature-${index + 1}.jpg`}
-                        className="h-full w-full object-cover"
-                      />
-                    </div>
-                  ))}
-                </div>
-                <div className="swiper header-swiper-flip mx-auto hidden h-80 max-h-full w-60 rounded-lg sm:block lg:hidden xl:block">
-                  {Array.from({ length: 5 }).map((el, index) => (
-                    <div key={index} className="swiper-slide rounded-xl">
-                      <img
-                        src={`demos/images/nature-${index + 1}.jpg`}
-                        className="h-full w-full object-cover"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </SlideCenter>
+          <div className="mt-8 grid grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-8">
+            <div className="relative mx-auto w-fit rounded-2xl border border-outline-variant">
+              <video
+                className="relative z-0 hidden max-h-48 rounded-2xl dark:block md:max-h-none"
+                src="/images/videos/carousel-dark.mp4"
+                muted
+                autoPlay
+                loop
+              />
+              <video
+                className="relative z-0 rounded-2xl dark:hidden"
+                src="/images/videos/carousel-light.mp4"
+                muted
+                autoPlay
+                loop
+              />
+              <div className="home-video-shadow absolute left-0 top-0 z-10 h-full w-full rounded-2xl" />
+            </div>
+            <div className="relative mx-auto hidden w-fit rounded-2xl border border-outline-variant lg:block">
+              <video
+                className="relative z-0 hidden rounded-2xl dark:block"
+                src="/images/videos/panorama-dark.mp4"
+                muted
+                autoPlay
+                loop
+              />
+              <video
+                className="relative z-0 rounded-2xl dark:hidden"
+                src="/images/videos/panorama-light.mp4"
+                muted
+                autoPlay
+                loop
+              />
+              <div className="home-video-shadow absolute left-0 top-0 z-10 h-full w-full rounded-2xl" />
+            </div>
+            <div className="relative mx-auto w-fit rounded-2xl border border-outline-variant">
+              <video
+                className="relative z-0 max-h-48 rounded-2xl md:max-h-none"
+                src="/images/videos/fashion.mp4"
+                muted
+                autoPlay
+                loop
+              />
+            </div>
+            <div className="relative mx-auto hidden w-fit rounded-2xl border border-outline-variant lg:block">
+              <video
+                className="relative z-0 hidden rounded-2xl dark:block"
+                src="/images/videos/triple-dark.mp4"
+                muted
+                autoPlay
+                loop
+              />
+              <video
+                className="relative z-0 rounded-2xl dark:hidden"
+                src="/images/videos/triple-light.mp4"
+                muted
+                autoPlay
+                loop
+              />
+              <div className="home-video-shadow absolute left-0 top-0 z-10 h-full w-full rounded-2xl" />
+            </div>
           </div>
-          <div className="swiper-slide origin-top rounded-3xl bg-surface-2">
-            <div className="header-swiper-shadow pointer-events-none absolute left-0 top-0 h-full w-full bg-black bg-opacity-10 " />
-            <SlideCenter className="items-center">
-              <div className="w-full text-center text-4xl font-bold">
-                Start Using It Now
-              </div>
-              <div className="mt-4">
-                <Link
-                  href="/get-started"
-                  className="my-2 inline-block w-48 rounded-3xl bg-primary px-4 py-2 text-center text-lg font-bold text-white shadow-lg duration-200 hover:bg-opacity-95 hover:no-underline"
-                >
-                  Get Started
-                </Link>
-              </div>
-            </SlideCenter>
+        </MainSlide>
+        <MainSlide>
+          <span className="text-center text-4xl font-bold lg:text-5xl">
+            Build Complex Touch Galleries
+          </span>
+          <div className="mt-8 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 lg:gap-8">
+            <div
+              className="swiper header-swiper-cards h-40 w-4/5 max-w-full rounded-lg lg:w-60"
+              style={{ '--swiper-theme-color': '#fff' }}
+            >
+              {Array.from({ length: 5 }).map((el, index) => (
+                <DemoSlide index={index} key={index} />
+              ))}
+            </div>
+            <div
+              className="swiper header-swiper-flip h-40 w-4/5 max-w-full rounded-lg lg:w-60"
+              style={{ '--swiper-theme-color': '#fff' }}
+            >
+              {Array.from({ length: 5 }).map((el, index) => (
+                <DemoSlide index={index} key={index} />
+              ))}
+            </div>
+            <div
+              className="swiper header-swiper-creative-1 !hidden h-40 w-60 max-w-full rounded-lg lg:!block"
+              style={{ '--swiper-theme-color': '#fff' }}
+            >
+              {Array.from({ length: 5 }).map((el, index) => (
+                <DemoSlide index={index} key={index} />
+              ))}
+            </div>
+            <div
+              className="swiper header-swiper-creative-2 !hidden h-40 w-60 max-w-full rounded-lg lg:!block"
+              style={{ '--swiper-theme-color': '#fff' }}
+            >
+              {Array.from({ length: 5 }).map((el, index) => (
+                <DemoSlide index={index} key={index} />
+              ))}
+            </div>
           </div>
-        </div>
+        </MainSlide>
+
+        <MainSlide>
+          <div className="w-full text-center text-4xl font-bold lg:text-5xl">
+            Start Using It Now
+          </div>
+          <div className="mt-8">
+            <Link
+              href="/get-started"
+              className="inline-flex h-14 items-center justify-center rounded-[28px] bg-primary px-6 font-bold text-on-primary duration-200 hover:bg-primary-shade hover:no-underline active:rounded-xl"
+            >
+              Get Started
+            </Link>
+          </div>
+        </MainSlide>
       </div>
-    </>
+    </div>
   );
 }

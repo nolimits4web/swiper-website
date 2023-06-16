@@ -1,8 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-
-import menuList from '@/shared/menu-list';
-import GithubStats from '@/components/GithubStats';
 import HomeSlider from './HomeSlider';
 
 export default function HomeHeader() {
@@ -11,11 +8,11 @@ export default function HomeHeader() {
       <div className="home-header-light-blue" />
       <div className="home-header-light-pink" />
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-screen-2xl rounded-3xl p-8 md:p-16">
+      <div className="relative z-10 mx-auto max-w-screen-2xl rounded-3xl p-8 md:p-12 lg:p-16">
         {/* bg */}
-        <div className="pointer-events-none absolute left-0 top-0 -z-10 h-full w-[calc(50%+32px)] overflow-hidden rounded-3xl bg-surface-1 shadow-2xl" />
+        <div className="pointer-events-none absolute left-0 top-0 -z-10 h-full w-full overflow-hidden rounded-3xl bg-surface-1 shadow-2xl md:w-[calc(50%+32px)]" />
         {/* S */}
-        <div className="pointer-events-none absolute left-0 top-0 h-full w-[calc(50%+32px)] overflow-hidden rounded-3xl">
+        <div className="pointer-events-none absolute left-0 top-0 h-full w-full overflow-hidden rounded-3xl md:w-[calc(50%+32px)]">
           <svg
             className="absolute left-1/4 top-[-10%] -z-10 h-[120%] w-auto"
             width="217"
@@ -30,7 +27,7 @@ export default function HomeHeader() {
             />
           </svg>
         </div>
-        <div className="w-1/2">
+        <div className="md:w-[calc(50%-48px)]">
           <svg
             className="h-32 w-32 lg:h-40 lg:w-40"
             alt="Swiper"
@@ -57,14 +54,14 @@ export default function HomeHeader() {
           <div className="mt-6">
             <Link
               href="/get-started"
-              className="inline-flex h-14 items-center justify-center rounded-full bg-primary px-6 font-bold text-on-primary duration-200 hover:bg-primary-shade hover:no-underline"
+              className="inline-flex h-14 items-center justify-center rounded-[28px] bg-primary px-6 font-bold text-on-primary duration-200 hover:bg-primary-shade hover:no-underline active:rounded-xl"
             >
               Get Started
             </Link>
           </div>
         </div>
-        <HomeSlider />
       </div>
+      <HomeSlider />
     </div>
   );
 }

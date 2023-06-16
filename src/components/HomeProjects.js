@@ -24,7 +24,7 @@ export default function HomeProjects() {
         },
       ].map((item) => (
         <a
-          className="flex w-full items-center rounded-3xl border border-outline-variant px-4 py-6 text-on-surface duration-100 hover:bg-primary-container  hover:no-underline sm:flex-col"
+          className="flex w-full items-center rounded-3xl border border-outline-variant px-4 py-6 text-on-surface duration-100 hover:bg-primary-container  hover:no-underline active:rounded-xl sm:flex-col"
           href={item.url}
           target="_blank"
           key={item.title}
