@@ -75,13 +75,13 @@ export default function DemosPage() {
               </div>
             </div>
 
-            <div className="demo my-4 overflow-hidden rounded-xl border border-outline-variant bg-surface-1 dark:border-transparent">
+            <div className="demo my-4 overflow-hidden rounded-xl border border-outline-variant bg-surface-1">
               <iframe
                 title={title}
                 data-src={preview}
                 scrolling="no"
                 frameBorder="0"
-                className="block h-[420px] w-full overflow-hidden rounded-xl border border-outline-variant bg-surface-1"
+                className="block h-[420px] w-full overflow-hidden rounded-xl bg-surface-1"
               />
             </div>
           </div>
