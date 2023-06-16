@@ -7,6 +7,10 @@ const build = async () => {
   const demos = await fetch(
     'https://uiinitiative.com/api/list?tech=Swiper'
   ).then((res) => res.json());
+  demos.forEach((demo) => {
+    // eslint-disable-next-line
+    demo.slug = demo.preview.split('https://')[1].split('.uiinitiative.com')[0];
+  });
   fs.writeFileSync(
     path.resolve(__dirname, '../src/uiinitiative-demos.json'),
     JSON.stringify(demos)

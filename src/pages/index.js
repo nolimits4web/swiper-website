@@ -1,13 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import menuList from '@/shared/menu-list';
 import clientsList from '@/shared/clients-list';
 import Carbon from '@/components/Carbon';
 import HomeHeader from '@/components/HomeHeader';
 import HomeSponsors from '@/components/HomeSponsors';
 import HomeProjects from '@/components/HomeProjects';
-import UIInitiativeBanner from '@/components/UIInitiativeBanner';
-import SwiperStudioBanner from '@/components/SwiperStudioBanner';
 import { trackOutbound } from '@/shared/track-outbound';
 import { HomeElementUsage } from '@/components/HomeElementUsage';
 import { SponsorButton } from '@/components/SponsorButton';
@@ -55,30 +52,22 @@ export default function Home() {
           <h1 className="mb-6 text-center text-5xl font-bold  sm:text-6xl">
             Swiper
           </h1>
-          <div className="space-y-5 rounded-3xl bg-surface-1 p-8 sm:p-12">
+          <div className="space-y-5 text-center font-medium leading-[1.75] sm:p-12">
             <p>
               Swiper is the most modern free mobile touch slider with hardware
-              accelerated transitions and amazing native behavior. It is
-              intended to be used in mobile websites, mobile web apps, and
-              mobile native/hybrid apps.
-            </p>
-            <p>
-              It is a modern touch slider which is focused only on modern
-              apps/platforms to bring the best experience and simplicity.
+              accelerated transitions and amazing native behavior. Use it on
+              websites, web apps, and mobile native/hybrid apps.
             </p>
             <p className="mb-2">
               Swiper, along with other great components, is a part of{' '}
-              <a href="//framework7.io">Framework7</a> - a fully-featured
-              framework for building iOS &amp; Android apps. Swiper is also a
-              default slider component in the{' '}
-              <a
-                href="http://ionicframework.com/"
-                target="blank"
-                rel="noopener"
-              >
+              <a href="https://framework7.io" target="_blank">
+                Framework7
+              </a>{' '}
+              and{' '}
+              <a href="https://ionicframework.com/" target="_blank">
                 Ionic Framework
-              </a>
-              .
+              </a>{' '}
+              - a fully-featured frameworks for building iOS &amp; Android apps.
             </p>
           </div>
         </div>
@@ -90,7 +79,7 @@ export default function Home() {
                 key={title}
                 title={title}
                 href={link}
-                className="relative overflow-hidden rounded-3xl border border-outline-variant bg-surface-1 p-6 text-on-surface duration-100 hover:bg-primary-container hover:no-underline"
+                className="relative overflow-hidden rounded-3xl border border-outline-variant p-6 text-on-surface duration-100 hover:bg-primary-container hover:no-underline"
               >
                 <div className="flex items-center justify-center">
                   <img
@@ -136,11 +125,11 @@ export default function Home() {
         </div>
         <div className="mt-24">
           <HomeHeading>Used By Millions</HomeHeading>
-          <div className="mx-auto grid max-w-6xl grid-cols-4 gap-4 rounded-3xl bg-surface-1 p-4 sm:grid-cols-8">
+          <div className="mx-auto grid max-w-6xl grid-cols-4 gap-4 sm:grid-cols-8">
             {clientsList.map(({ image, title }) => (
               <div key={title} className="flex items-center justify-center">
                 <img
-                  className="rounded-2xl"
+                  className="rounded-3xl"
                   src={`/images/clients/${image}`}
                   width="120"
                   height="120"
@@ -175,11 +164,17 @@ export default function Home() {
           <HomeHeading>Premium Services</HomeHeading>
           <div className="grid-cols-2 gap-8 md:grid">
             <Link
-              className="swiper-studio-card block rounded-3xl border border-outline-variant bg-surface-1 text-center text-on-surface duration-100 hover:bg-primary-container hover:no-underline"
+              className="swiper-studio-card block rounded-3xl border border-outline-variant text-center text-on-surface duration-100 hover:bg-primary-container hover:no-underline"
               href="https://uiinitiative.com"
               target="_blank"
             >
-              <SwiperStudioBanner />
+              <div className="px-4 pt-4">
+                <img
+                  src="/images/swiper-studio-banner.jpg"
+                  alt="UI Initiative"
+                  className="rounded-3xl"
+                />
+              </div>
               <div className="p-8">
                 <h2 className="mb-4 text-center text-4xl font-bold">
                   Swiper Studio
@@ -193,9 +188,15 @@ export default function Home() {
             <Link
               href="https://studio.swiperjs.com"
               target="_blank"
-              className="uiinitiative-card mt-8 block rounded-3xl border border-outline-variant bg-surface-1 text-center text-on-surface duration-100 hover:bg-primary-container  hover:no-underline md:mt-0"
+              className="uiinitiative-card mt-8 block rounded-3xl border border-outline-variant text-center text-on-surface duration-100 hover:bg-primary-container  hover:no-underline md:mt-0"
             >
-              <UIInitiativeBanner />
+              <div className="mx-auto px-4 pt-4">
+                <img
+                  src="/images/uiinitiative-banner.jpg"
+                  alt="UI Initiative"
+                  className="rounded-3xl"
+                />
+              </div>
               <div className="p-8">
                 <h2 className="mb-4 text-center text-4xl font-bold">
                   UI Initiative
@@ -215,7 +216,7 @@ export default function Home() {
 
         <div className="mb-20 mt-24 text-center">
           <HomeHeading>Sponsors</HomeHeading>
-          <div className="my-4">
+          <div className="my-4 font-medium leading-[1.75]">
             Support Swiper on{' '}
             <a
               href="https://opencollective.com/swiper"
@@ -246,7 +247,7 @@ export default function Home() {
               <span>Support Swiper on Patreon</span>
             </SponsorButton>
           </div>
-          <div className="space-y-8 rounded-3xl bg-surface-1 px-4 py-8 sm:px-8">
+          <div className="space-y-8">
             <HomeSponsors spacing={false} />
           </div>
         </div>

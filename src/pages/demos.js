@@ -17,7 +17,7 @@ const DemoButton = (props) => {
   const Tag = rest.href ? 'a' : 'button';
   return (
     <Tag
-      className={`relative flex cursor-pointer items-center justify-center rounded-md px-3 text-sm !font-medium text-primary !no-underline hover:bg-primary hover:text-on-primary ${
+      className={`relative flex cursor-pointer items-center justify-center rounded-md px-3 text-sm !font-medium text-primary !no-underline hover:bg-primary hover:text-on-primary sm:ml-1 ${
         tonal ? 'bg-secondary-container' : ''
       } h-7`}
       onClick={onClick}
@@ -91,7 +91,7 @@ export default function DemosPage() {
           <Heading level={2} id={slug}>
             {title}
           </Heading>
-          <div className="my-4 flex flex-wrap space-x-4 text-sm">
+          <div className="my-4 flex justify-between text-sm sm:justify-start sm:space-x-4">
             <DemoButton
               href={`/demos/${folder}/core.html`}
               target="_blank"
@@ -100,35 +100,37 @@ export default function DemosPage() {
             >
               Preview
             </DemoButton>
-            <div className="flex items-center space-x-1">
-              <span className="font-mono text-xs">CodeSandbox:</span>
-              {['Core', 'React', 'Vue', 'Element'].map((name) => {
-                if (
-                  name !== 'Core' &&
-                  skipComponentsDemos.includes(folder.split('-')[0])
-                )
-                  return null;
+            <div className="flex min-w-0 shrink-[10] items-start sm:items-center">
+              <span className="mr-1 mt-1 font-mono text-xs sm:mr-0 sm:mt-0">
+                CodeSandbox:
+              </span>
+              <div className="grid grid-cols-2 gap-1 sm:contents">
+                {['Core', 'React', 'Vue', 'Element'].map((name) => {
+                  if (
+                    name !== 'Core' &&
+                    skipComponentsDemos.includes(folder.split('-')[0])
+                  )
+                    return null;
 
-                return (
-                  <DemoButton
-                    type="button"
-                    key={name}
-                    tonal
-                    onClick={(e) =>
-                      openCodeSandbox(e, title, folder, `${name.toLowerCase()}`)
-                    }
-                  >
-                    {/* <img
-                    src="/images/codesandbox-logo.svg"
-                    className="!mb-0 !mt-0 inline h-[14px] w-[19px]"
-                    width="19"
-                    alt=""
-                    height="14"
-                  /> */}
-                    {name}
-                  </DemoButton>
-                );
-              })}
+                  return (
+                    <DemoButton
+                      type="button"
+                      key={name}
+                      tonal
+                      onClick={(e) =>
+                        openCodeSandbox(
+                          e,
+                          title,
+                          folder,
+                          `${name.toLowerCase()}`
+                        )
+                      }
+                    >
+                      {name}
+                    </DemoButton>
+                  );
+                })}
+              </div>
             </div>
           </div>
           <div className="demo my-4 overflow-hidden rounded-xl border border-outline-variant bg-surface-1 dark:border-transparent">

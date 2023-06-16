@@ -21,6 +21,7 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
+    'jsx-a11y/anchor-has-content': 'off',
     'jsx-a11y/alt-text': 'off',
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',

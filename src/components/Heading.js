@@ -3,6 +3,7 @@ import clsx from 'clsx';
 export default function Heading({
   level,
   id,
+  link = true,
   children,
   number,
   className = '',
@@ -19,22 +20,20 @@ export default function Heading({
       {...props}
     >
       {/* eslint-disable-next-line */}
-      <a
-        href={`#${id}`}
-        className="after:hash absolute opacity-0 group-hover:opacity-100"
-        style={{
-          marginLeft: '-1em',
-          paddingRight: '0.5em',
-          color: '#a1a1aa',
-          textDecoration: 'none',
-        }}
-        aria-label="Anchor"
-      />
-      {number && (
-        <span className="mr-3 inline-flex h-8 w-8 flex-none items-center justify-center rounded-full bg-cyan-100 text-xl text-cyan-700">
-          {number}
-        </span>
+      {link && (
+        <a
+          href={`#${id}`}
+          className="after:hash absolute opacity-0 group-hover:opacity-100"
+          style={{
+            marginLeft: '-1em',
+            paddingRight: '0.5em',
+            color: '#a1a1aa',
+            textDecoration: 'none',
+          }}
+          aria-label="Anchor"
+        />
       )}
+
       <span>{children}</span>
     </Component>
   );
