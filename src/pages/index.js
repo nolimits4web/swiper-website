@@ -161,7 +161,7 @@ export default function Home() {
             >
               <div className="px-4 pt-4">
                 <img
-                  src="/images/swiper-studio-banner.jpg"
+                  src="/images/swiper-studio-banner-2.jpg"
                   alt="UI Initiative"
                   className="rounded-3xl"
                 />
@@ -183,7 +183,7 @@ export default function Home() {
             >
               <div className="mx-auto px-4 pt-4">
                 <img
-                  src="/images/uiinitiative-banner.jpg"
+                  src="/images/uiinitiative-banner-2.jpg"
                   alt="UI Initiative"
                   className="rounded-3xl"
                 />

@@ -256,66 +256,75 @@ export default function HomeSlider() {
           <div className="w-full text-center text-4xl font-bold lg:text-5xl">
             Endless Creativity
           </div>
-          <div className="mt-8 grid grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-8">
-            <div className="relative mx-auto w-fit rounded-2xl border border-outline-variant">
-              <video
-                className="relative z-0 hidden max-h-48 rounded-2xl dark:block md:max-h-none"
-                src="/images/videos/carousel-dark.mp4"
-                muted
-                autoPlay
-                loop
-              />
-              <video
-                className="relative z-0 rounded-2xl dark:hidden"
-                src="/images/videos/carousel-light.mp4"
-                muted
-                autoPlay
-                loop
-              />
-              <div className="home-video-shadow absolute left-0 top-0 z-10 h-full w-full rounded-2xl" />
-            </div>
-            <div className="relative mx-auto hidden w-fit rounded-2xl border border-outline-variant lg:block">
-              <video
-                className="relative z-0 hidden rounded-2xl dark:block"
-                src="/images/videos/panorama-dark.mp4"
-                muted
-                autoPlay
-                loop
-              />
-              <video
-                className="relative z-0 rounded-2xl dark:hidden"
-                src="/images/videos/panorama-light.mp4"
-                muted
-                autoPlay
-                loop
-              />
-              <div className="home-video-shadow absolute left-0 top-0 z-10 h-full w-full rounded-2xl" />
-            </div>
-            <div className="relative mx-auto w-fit rounded-2xl border border-outline-variant">
-              <video
-                className="relative z-0 max-h-48 rounded-2xl md:max-h-none"
-                src="/images/videos/fashion.mp4"
-                muted
-                autoPlay
-                loop
-              />
-            </div>
-            <div className="relative mx-auto hidden w-fit rounded-2xl border border-outline-variant lg:block">
-              <video
-                className="relative z-0 hidden rounded-2xl dark:block"
-                src="/images/videos/triple-dark.mp4"
-                muted
-                autoPlay
-                loop
-              />
-              <video
-                className="relative z-0 rounded-2xl dark:hidden"
-                src="/images/videos/triple-light.mp4"
-                muted
-                autoPlay
-                loop
-              />
-              <div className="home-video-shadow absolute left-0 top-0 z-10 h-full w-full rounded-2xl" />
+          <div className="mt-8 w-full lg:grid lg:grid-cols-2 lg:gap-4 xl:gap-8">
+            <div className="mx-auto max-w-[390px] space-y-2 lg:contents lg:space-y-0">
+              <div className="relative mx-auto w-full rounded-2xl border border-outline-variant pb-[48%]">
+                <video
+                  className="absolute left-0 top-0 z-0 hidden h-full  w-full rounded-2xl object-cover dark:block"
+                  src="/images/videos/carousel-dark.mp4"
+                  poster="/images/videos/carousel-dark.jpg"
+                  muted
+                  autoPlay
+                  loop
+                />
+                <video
+                  className="absolute left-0 top-0 z-0 h-full w-full rounded-2xl object-cover dark:hidden"
+                  src="/images/videos/carousel-light.mp4"
+                  poster="/images/videos/carousel-light.jpg"
+                  muted
+                  autoPlay
+                  loop
+                />
+                <div className="home-video-shadow absolute left-0 top-0 z-10 h-full w-full rounded-2xl" />
+              </div>
+              <div className="relative mx-auto hidden w-full rounded-2xl border border-outline-variant pb-[48%] lg:block">
+                <video
+                  className="absolute left-0 top-0 z-0 hidden h-full w-full rounded-2xl object-cover dark:block"
+                  src="/images/videos/panorama-dark.mp4"
+                  poster="/images/videos/panorama-dark.jpg"
+                  muted
+                  autoPlay
+                  loop
+                />
+                <video
+                  className="absolute left-0 top-0 z-0 h-full w-full rounded-2xl object-cover dark:hidden"
+                  src="/images/videos/panorama-light.mp4"
+                  poster="/images/videos/panorama-light.jpg"
+                  muted
+                  autoPlay
+                  loop
+                />
+                <div className="home-video-shadow absolute left-0 top-0 z-10 h-full w-full rounded-2xl" />
+              </div>
+              <div className="relative mx-auto w-full rounded-2xl border border-outline-variant pb-[48%]">
+                <video
+                  className="absolute left-0 top-0 z-0 h-full w-full rounded-2xl object-cover"
+                  src="/images/videos/fashion.mp4"
+                  poster="/images/videos/fashion.jpg"
+                  muted
+                  autoPlay
+                  loop
+                />
+              </div>
+              <div className="relative mx-auto hidden w-full rounded-2xl border border-outline-variant pb-[48%] lg:block">
+                <video
+                  className="absolute left-0 top-0 z-0 hidden h-full w-full rounded-2xl object-cover dark:block"
+                  src="/images/videos/triple-dark.mp4"
+                  poster="/images/videos/triple-dark.jpg"
+                  muted
+                  autoPlay
+                  loop
+                />
+                <video
+                  className="absolute left-0 top-0 z-0 h-full w-full rounded-2xl object-cover dark:hidden"
+                  src="/images/videos/triple-light.mp4"
+                  poster="/images/videos/triple-light.jpg"
+                  muted
+                  autoPlay
+                  loop
+                />
+                <div className="home-video-shadow absolute left-0 top-0 z-10 h-full w-full rounded-2xl" />
+              </div>
             </div>
           </div>
         </MainSlide>
