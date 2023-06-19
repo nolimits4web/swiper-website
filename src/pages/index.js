@@ -53,18 +53,27 @@ export default function Home() {
           </h1>
           <div className="space-y-5 text-center text-xl font-medium leading-[1.75] sm:p-12">
             <p>
-              Swiper is the most modern <b>free and open source</b> mobile touch
+              Swiper is the most modern{' '}
+              <b className="underline">free and open source</b> mobile touch
               slider with hardware accelerated transitions and{' '}
-              <b>amazing native behavior</b>. Use it on websites, web apps, and
-              mobile native/hybrid apps.
+              <b className="underline">amazing native behavior</b>. Use it on
+              websites, web apps, and mobile native/hybrid apps.
             </p>
             <p className="mb-2">
               Swiper, along with other great components, is a part of{' '}
-              <a href="https://framework7.io" target="_blank">
+              <a
+                href="https://framework7.io"
+                target="_blank"
+                className="font-bold"
+              >
                 Framework7
               </a>{' '}
               and{' '}
-              <a href="https://ionicframework.com/" target="_blank">
+              <a
+                href="https://ionicframework.com/"
+                target="_blank"
+                className="font-bold"
+              >
                 Ionic Framework
               </a>{' '}
               - a fully-featured frameworks for building iOS &amp; Android apps.
@@ -141,24 +150,6 @@ export default function Home() {
             ))}
           </div>
         </div>
-        {/* <div className="mx-auto mb-20 mt-24 max-w-6xl text-center">
-          <HomeHeading>And It Is Free</HomeHeading>
-          <div className="my-4">
-            Swiper is completely free and open-source (MIT Licensed)
-          </div>
-
-          <nav className="space-x-2 text-base">
-            {menuList.map(({ name, link }) => (
-              <Link
-                key={link}
-                href={link}
-                className="my-2 inline-flex w-40 justify-center rounded-full bg-primary px-4 py-2 text-center font-semibold text-on-primary hover:no-underline"
-              >
-                {name}
-              </Link>
-            ))}
-          </nav>
-        </div> */}
 
         <div className="mb-20 mt-24">
           <HomeHeading>Premium Services</HomeHeading>
