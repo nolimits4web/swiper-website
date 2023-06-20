@@ -54,7 +54,7 @@ export default function GithubStats(props) {
           <span className="mr-1 text-sm font-medium leading-[1]">
             {data.stars}
           </span>{' '}
-          <span className="leading-[1]">stars</span>
+          <span className="leading-[1] md:hidden lg:inline">stars</span>
         </span>
       </div>
     </div>

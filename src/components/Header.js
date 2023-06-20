@@ -1,3 +1,4 @@
+import { DocSearch } from '@docsearch/react';
 import Link from 'next/link';
 import { useRef, useState, useEffect } from 'react';
 import GithubStats from './GithubStats';
@@ -84,8 +85,10 @@ export default function Header() {
             alt="Swiper"
           />
 
-          <span className="ml-2 text-2xl font-bold text-primary">Swiper</span>
-          <span className="relative top-px ml-2 font-mono text-[10px] text-on-surface opacity-75">
+          <span className="header-swiper-name ml-2 text-2xl font-bold text-primary">
+            Swiper
+          </span>
+          <span className="header-swiper-version relative top-px ml-2 font-mono text-[10px] text-on-surface opacity-75">
             v{process.env.swiperReleaseVersion}
           </span>
         </Link>
@@ -98,8 +101,13 @@ export default function Header() {
             }`}
             onClick={() => setNavOpened(false)}
           />
+          <DocSearch
+            appId="K52IIJWQL1"
+            indexName="swiperjs"
+            apiKey="997edea3f9d162f3ffb7442f399aa8c3"
+          />
           <ul
-            className={`fixed right-0 top-0 z-50 h-screen w-56 items-center overflow-auto  bg-surface-3 md:relative md:top-0 md:z-auto md:h-auto md:w-auto md:space-x-2 md:overflow-visible md:rounded-none md:bg-transparent ${
+            className={`fixed right-0 top-0 z-50 h-screen w-56 items-center overflow-auto  bg-surface-3 md:relative md:top-0 md:z-auto md:h-auto md:w-auto md:space-x-1 md:overflow-visible md:rounded-none md:bg-transparent lg:space-x-2 ${
               navOpened ? 'block' : 'hidden'
             } md:!flex`}
             onClick={onNavClick}

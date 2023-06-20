@@ -10,6 +10,11 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <link
+            rel="preconnect"
+            href="https://K52IIJWQL1-dsn.algolia.net"
+            crossOrigin
+          />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <script
             dangerouslySetInnerHTML={{
