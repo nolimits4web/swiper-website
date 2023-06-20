@@ -91,7 +91,7 @@ export default function Header() {
         </Link>
 
         {/* Nav */}
-        <nav className="flex items-center space-x-2">
+        <nav className="flex items-center sm:space-x-2">
           <div
             className={`fixed right-0 top-0 z-40 h-full w-full bg-black bg-opacity-10 md:!hidden ${
               navOpened ? 'block' : 'hidden'

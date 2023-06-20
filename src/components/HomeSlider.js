@@ -122,22 +122,6 @@ export default function HomeSlider() {
             const isM = isMobile.current;
             const setShadowOpacity = isM ? progress < 0 : progress > 0;
 
-            if (
-              (isM && progress < 1 && progress >= 0) ||
-              (!isM && progress > -1 && progress <= 0)
-            ) {
-              const percentage = isM ? 1 - progress : 1 + progress;
-              slideEl.style.boxShadow = `-10px 10px 30px rgba(0,0,0,${
-                0.2 * percentage
-              })`;
-            } else if (setShadowOpacity) {
-              const percentage = isM ? progress + 1 : 1 - progress; //* (isM ? -1 : 1);
-              slideEl.style.boxShadow = `-10px 10px 30px rgba(0,0,0,${
-                0.2 * percentage
-              })`;
-            } else {
-              slideEl.style.boxShadow = `none`;
-            }
             if (setShadowOpacity) {
               const perSlide = 1 / (slides.length - 1);
               shadowEl.style.opacity = perSlide * Math.abs(progress);
@@ -238,7 +222,7 @@ export default function HomeSlider() {
   });
   return (
     <div
-      className="swiper header-swiper-main !z-[5] mt-8 max-w-[740px] md:!absolute md:bottom-12 md:right-6 md:top-4 md:!z-20 md:mt-0 md:w-1/2 lg:right-8 lg:top-12 xl:right-10"
+      className="swiper header-swiper-main !z-20 mt-8 max-w-[740px] md:!absolute md:bottom-12 md:right-6 md:top-4 md:mt-0 md:w-1/2 lg:right-8 lg:top-12 xl:right-10"
       style={{ '--swiper-theme-color': 'var(--color-primary)' }}
     >
       <div className="swiper-button-prev invisible !left-auto !right-full z-20 -mr-5 md:visible" />
@@ -275,7 +259,6 @@ export default function HomeSlider() {
                   autoPlay
                   loop
                 />
-                <div className="home-video-shadow absolute left-0 top-0 z-10 h-full w-full rounded-2xl" />
               </div>
               <div className="relative mx-auto hidden w-full rounded-2xl border border-outline-variant pb-[48%] lg:block">
                 <video
@@ -294,7 +277,6 @@ export default function HomeSlider() {
                   autoPlay
                   loop
                 />
-                <div className="home-video-shadow absolute left-0 top-0 z-10 h-full w-full rounded-2xl" />
               </div>
               <div className="relative mx-auto w-full rounded-2xl border border-outline-variant pb-[48%]">
                 <video
@@ -323,7 +305,6 @@ export default function HomeSlider() {
                   autoPlay
                   loop
                 />
-                <div className="home-video-shadow absolute left-0 top-0 z-10 h-full w-full rounded-2xl" />
               </div>
             </div>
           </div>
