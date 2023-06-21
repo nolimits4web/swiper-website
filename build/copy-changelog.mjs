@@ -23,7 +23,9 @@ export default function Page({ children }) {
   };
   return (
     <MDXProvider components={components}>
-      <WithSidebarLayout meta={meta}>{children}</WithSidebarLayout>
+      <WithSidebarLayout meta={meta}>
+        <div className="break-words">{children}</div>
+      </WithSidebarLayout>
     </MDXProvider>
   );
 }
