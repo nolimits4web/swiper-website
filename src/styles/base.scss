@@ -123,3 +123,22 @@ h3[id],
 h4[id] {
   scroll-margin-top: 72px;
 }
+
+.blog-post-content {
+  iframe {
+    @apply my-8 h-[320px] w-full rounded-lg border border-outline-variant;
+  }
+  img {
+    @apply mx-auto max-h-screen rounded-3xl border border-outline-variant;
+    + em {
+      @apply -mt-6 mb-12 block text-center;
+    }
+  }
+  video {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  blockquote {
+    @apply border-l-4 border-primary bg-secondary-container py-1.5 pl-4 pr-3 not-italic text-on-secondary-container #{!important};
+  }
+}

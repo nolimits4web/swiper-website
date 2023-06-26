@@ -7,7 +7,13 @@ import SidebarSponsors from '@/components/SidebarSponsors';
 import Carbon from '@/components/Carbon';
 import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect';
 
-export function WithSidebarLayout({ children, meta = {} }) {
+export function WithSidebarLayout({
+  children,
+  meta = {},
+  pageTitle = '',
+  beforePageTitle = '',
+  afterPageTitle = '',
+}) {
   const router = useRouter();
   const contentRef = useRef(null);
   const [toc, setToc] = useState([]);
@@ -98,9 +104,11 @@ export function WithSidebarLayout({ children, meta = {} }) {
         ref={contentRef}
       >
         {meta.carbon && <Carbon sidebar />}
-        {meta.title && <h1>{meta.title}</h1>}
+        {beforePageTitle}
+        {(pageTitle || meta.title) && <h1>{pageTitle || meta.title}</h1>}
+        {afterPageTitle}
         {children}
-        <div className="mt-4 text-right">
+        <div className="mt-4 text-right pt-4 border-t border-outline-variant">
           <Link
             href={`https://github.com/nolimits4web/swiper-website/edit/master/src/pages${router.pathname}.mdx`}
           >
