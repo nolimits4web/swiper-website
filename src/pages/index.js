@@ -156,7 +156,7 @@ export default function Home() {
           <div className="grid-cols-2 gap-8 md:grid">
             <Link
               className="swiper-studio-card block rounded-3xl border border-outline-variant text-center text-on-surface duration-100 hover:bg-primary-container hover:no-underline active:rounded-xl"
-              href="https://uiinitiative.com"
+              href="https://studio.swiperjs.com"
               target="_blank"
             >
               <div className="px-4 pt-4">
@@ -177,7 +177,7 @@ export default function Home() {
             </Link>
 
             <Link
-              href="https://studio.swiperjs.com"
+              href="https://uiinitiative.com"
               target="_blank"
               className="uiinitiative-card mt-8 block rounded-3xl border border-outline-variant text-center text-on-surface duration-100 hover:bg-primary-container hover:no-underline  active:rounded-xl md:mt-0"
             >
