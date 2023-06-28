@@ -1,5 +1,6 @@
 import { MDXProvider } from '@mdx-js/react';
 import Heading from '@/components/Heading.js';
+import ModuleTitle from '@/components/ModuleTitle.js';
 import { WithSidebarLayout } from '@/layouts/WithSidebarLayout.js';
 export const meta = {
   title: 'Swiper API',
@@ -94,7 +95,7 @@ import { ZoomMethods } from '@/components/api/ZoomMethods';
 
 {/* prettier-ignore */}
 <div className="important-note md:mr-[300px] 2xl:mr-0 space-y-4">
-  <div>If you are upgrading from Swiper 8 to Swiper 9, check out{' '} <a href="/migration-guide-v9">Migration Guide to Swiper 9</a></div>
+  <div>If you are upgrading from Swiper 9 to Swiper 10, check out{' '} <a href="/migration-guide-v10">Migration Guide to Swiper 10</a></div>
 </div>
 
 ## Swiper Full HTML Layout
@@ -312,7 +313,7 @@ Swiper comes with a bunch of useful events you can listen. Events can be assigne
 
 ## Modules
 
-### Navigation
+<ModuleTitle module="navigation" id="navigation" title="Navigation"/>
 
 #### Navigation Parameters
 
@@ -329,15 +330,17 @@ Swiper comes with a bunch of useful events you can listen. Events can be assigne
 #### Navigation CSS Custom Properties
 
 ```css
---swiper-navigation-size: 44px;
---swiper-navigation-top-offset: 50%;
---swiper-navigation-sides-offset: 10px;
---swiper-navigation-color: var(--swiper-theme-color);
+ {
+  --swiper-navigation-size: 44px;
+  --swiper-navigation-top-offset: 50%;
+  --swiper-navigation-sides-offset: 10px;
+  --swiper-navigation-color: var(--swiper-theme-color);
+}
 ```
 
 <ApiDivider />
 
-### Pagination
+<ModuleTitle module="pagination" id="pagination" title="Pagination"/>
 
 #### Pagination Parameters
 
@@ -354,27 +357,29 @@ Swiper comes with a bunch of useful events you can listen. Events can be assigne
 #### Pagination CSS Custom Properties
 
 ```css
---swiper-pagination-color: var(--swiper-theme-color);
---swiper-pagination-left: auto;
---swiper-pagination-right: 8px;
---swiper-pagination-bottom: 8px;
---swiper-pagination-top: auto;
---swiper-pagination-fraction-color: inherit;
---swiper-pagination-progressbar-bg-color: rgba(0, 0, 0, 0.25);
---swiper-pagination-progressbar-size: 4px;
---swiper-pagination-bullet-size: 8px;
---swiper-pagination-bullet-width: 8px;
---swiper-pagination-bullet-height: 8px;
---swiper-pagination-bullet-inactive-color: #000;
---swiper-pagination-bullet-inactive-opacity: 0.2;
---swiper-pagination-bullet-opacity: 1;
---swiper-pagination-bullet-horizontal-gap: 4px;
---swiper-pagination-bullet-vertical-gap: 6px;
+ {
+  --swiper-pagination-color: var(--swiper-theme-color);
+  --swiper-pagination-left: auto;
+  --swiper-pagination-right: 8px;
+  --swiper-pagination-bottom: 8px;
+  --swiper-pagination-top: auto;
+  --swiper-pagination-fraction-color: inherit;
+  --swiper-pagination-progressbar-bg-color: rgba(0, 0, 0, 0.25);
+  --swiper-pagination-progressbar-size: 4px;
+  --swiper-pagination-bullet-size: 8px;
+  --swiper-pagination-bullet-width: 8px;
+  --swiper-pagination-bullet-height: 8px;
+  --swiper-pagination-bullet-inactive-color: #000;
+  --swiper-pagination-bullet-inactive-opacity: 0.2;
+  --swiper-pagination-bullet-opacity: 1;
+  --swiper-pagination-bullet-horizontal-gap: 4px;
+  --swiper-pagination-bullet-vertical-gap: 6px;
+}
 ```
 
 <ApiDivider />
 
-### Scrollbar
+<ModuleTitle module="scrollbar" id="scrollbar" title="Scrollbar"/>
 
 #### Scrollbar Parameters
 
@@ -391,20 +396,22 @@ Swiper comes with a bunch of useful events you can listen. Events can be assigne
 #### Scrollbar CSS Custom Properties
 
 ```css
---swiper-scrollbar-border-radius: 10px;
---swiper-scrollbar-top: auto;
---swiper-scrollbar-bottom: 4px;
---swiper-scrollbar-left: auto;
---swiper-scrollbar-right: 4px;
---swiper-scrollbar-sides-offset: 1%;
---swiper-scrollbar-bg-color: rgba(0, 0, 0, 0.1);
---swiper-scrollbar-drag-bg-color: rgba(0, 0, 0, 0.5);
---swiper-scrollbar-size: 4px;
+ {
+  --swiper-scrollbar-border-radius: 10px;
+  --swiper-scrollbar-top: auto;
+  --swiper-scrollbar-bottom: 4px;
+  --swiper-scrollbar-left: auto;
+  --swiper-scrollbar-right: 4px;
+  --swiper-scrollbar-sides-offset: 1%;
+  --swiper-scrollbar-bg-color: rgba(0, 0, 0, 0.1);
+  --swiper-scrollbar-drag-bg-color: rgba(0, 0, 0, 0.5);
+  --swiper-scrollbar-size: 4px;
+}
 ```
 
 <ApiDivider />
 
-### Autoplay
+<ModuleTitle module="autoplay" id="autoplay" title="Autoplay"/>
 
 #### Autoplay Parameters
 
@@ -420,7 +427,7 @@ Swiper comes with a bunch of useful events you can listen. Events can be assigne
 
 <ApiDivider />
 
-### Free Mode
+<ModuleTitle module="freemode" id="free-mode" title="Free Mode"/>
 
 #### Free Mode Parameters
 
@@ -428,7 +435,7 @@ Swiper comes with a bunch of useful events you can listen. Events can be assigne
 
 <ApiDivider />
 
-### Grid
+<ModuleTitle module="grid" id="grid" title="Grid"/>
 
 #### Grid Parameters
 
@@ -436,7 +443,7 @@ Swiper comes with a bunch of useful events you can listen. Events can be assigne
 
 <ApiDivider />
 
-### Manipulation
+<ModuleTitle module="manipulation" id="manipulation" title="Manipulation"/>
 
 Manipulation module adds useful Swiper methods to manipulate slides. It makes sense to use it only with Swiper Core version, not intended to be uses with Swiper React or Vue.
 
@@ -446,7 +453,7 @@ Manipulation module adds useful Swiper methods to manipulate slides. It makes se
 
 <ApiDivider />
 
-### Parallax
+<ModuleTitle module="parallax" id="parallax" title="Parallax"/>
 
 Swiper supports parallax transition effects for swiper/slides nested elements. There are two types of parallax elements supported:
 
@@ -502,7 +509,7 @@ To enable parallax effects you need to init Swiper with passed `parallax:true` p
 
 <ApiDivider />
 
-### Lazy Loading
+<ModuleTitle module="lazy" id="lazy-loading" title="Lazy Loading"/>
 
 Since version 9 Swiper doesn't have a specific lazy loading API, as it relies on native browser lazy loading feature. To use lazy loading, we just need to set `loading="lazy"` on images and add preloader element:
 
@@ -543,7 +550,7 @@ Or white one for dark layout:
 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
 ```
 
-### Fade Effect
+<ModuleTitle module="fade" id="fade-effect" title="Fade Effect"/>
 
 Be sure to have the `effect` param set to `'fade'` in order for this to work.
 
@@ -556,7 +563,7 @@ Be sure to have the `effect` param set to `'fade'` in order for this to work.
 
 <ApiDivider />
 
-### Coverflow Effect
+<ModuleTitle module="coverflow" id="coverflow-effect" title="Coverflow Effect"/>
 
 Be sure to have the `effect` param set to `'coverflow'` in order for this to work.
 
@@ -566,7 +573,7 @@ Be sure to have the `effect` param set to `'coverflow'` in order for this to wor
 
 <ApiDivider />
 
-### Flip Effect
+<ModuleTitle module="flip" id="flip-effect" title="Flip Effect"/>
 
 Be sure to have the `effect` param set to `'flip'` in order for this to work.
 
@@ -576,7 +583,7 @@ Be sure to have the `effect` param set to `'flip'` in order for this to work.
 
 <ApiDivider />
 
-### Cube Effect
+<ModuleTitle module="cube" id="cube-effect" title="Cube Effect"/>
 
 Be sure to have the `effect` param set to `'cube'` in order for this to work.
 
@@ -586,7 +593,7 @@ Be sure to have the `effect` param set to `'cube'` in order for this to work.
 
 <ApiDivider />
 
-### Cards Effect
+<ModuleTitle module="cards" id="cards-effect" title="Cards Effect"/>
 
 Be sure to have the `effect` param set to `'cards'` in order for this to work.
 
@@ -596,7 +603,7 @@ Be sure to have the `effect` param set to `'cards'` in order for this to work.
 
 <ApiDivider />
 
-### Creative Effect
+<ModuleTitle module="creative" id="creative-effect" title="Creative Effect"/>
 
 Be sure to have the `effect` param set to `'creative'` in order for this to work.
 
@@ -606,7 +613,7 @@ Be sure to have the `effect` param set to `'creative'` in order for this to work
 
 <ApiDivider />
 
-### Thumbs
+<ModuleTitle module="thumbs" id="thumbs" title="Thumbs"/>
 
 In addition to [Controller](#controller) component Swiper comes with Thumbs component that is designed to work with additional thumbs swiper in a more correct way than Controller which is used for syncing two swipers.
 
@@ -620,7 +627,7 @@ In addition to [Controller](#controller) component Swiper comes with Thumbs comp
 
 <ApiDivider />
 
-### Zoom
+<ModuleTitle module="zoom" id="zoom" title="Zoom"/>
 
 Swiper supports zoom images functionality (similar to what you see on iOS when browsing single photo) where you can zoom-in image by pinch gesture and or by zoom-in/out by double tap on it. In this case, additional layout is required:
 
@@ -681,7 +688,7 @@ Swiper supports zoom images functionality (similar to what you see on iOS when b
 
 <ApiDivider />
 
-### Keyboard Control
+<ModuleTitle module="keyboard" id="keyboard-control" title="Keyboard Control"/>
 
 #### Keyboard Control Parameters
 
@@ -697,7 +704,7 @@ Swiper supports zoom images functionality (similar to what you see on iOS when b
 
 <ApiDivider />
 
-### Mousewheel Control
+<ModuleTitle module="mousewheel" id="mousewheel-control" title="Mousewheel Control"/>
 
 #### Mousewheel Control Parameters
 
@@ -713,7 +720,7 @@ Swiper supports zoom images functionality (similar to what you see on iOS when b
 
 <ApiDivider />
 
-### Virtual Slides
+<ModuleTitle module="virtual" id="virtual-slides" title="Virtual Slides"/>
 
 Virtual Slides module allows to keep just required amount of slides in DOM. It is very useful in terms in performance and memory issues if you have a lot of slides, especially slides with heavyweight DOM tree or images.
 
@@ -752,7 +759,7 @@ Since version 9, Swiper virtual slides can work with slides originally rendered 
 
 <ApiDivider />
 
-### Hash Navigation
+<ModuleTitle module="hash" id="hash-navigation" title="Hash Navigation"/>
 
 Hash navigation is intended to have a link to specific slide that allows to load page with specific slide opened.
 
@@ -788,7 +795,7 @@ const swiper = new Swiper('.swiper', {
 
 <ApiDivider />
 
-### History Navigation
+<ModuleTitle module="history" id="history-navigation" title="History Navigation"/>
 
 #### History Navigation Parameters
 
@@ -796,7 +803,7 @@ const swiper = new Swiper('.swiper', {
 
 <ApiDivider />
 
-### Controller
+<ModuleTitle module="control" id="controller" title="Controller"/>
 
 #### Controller Parameters
 
@@ -808,7 +815,7 @@ const swiper = new Swiper('.swiper', {
 
 <ApiDivider />
 
-### Accessibility (a11y)
+<ModuleTitle module="a11y" id="accessibility-a11y" title="Accessibility (a11y)"/>
 
 #### Accessibility Parameters
 

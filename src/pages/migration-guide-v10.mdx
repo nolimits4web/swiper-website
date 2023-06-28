@@ -1,0 +1,58 @@
+import { MDXProvider } from '@mdx-js/react';
+import Heading from '@/components/Heading.js';
+import { WithSidebarLayout } from '@/layouts/WithSidebarLayout.js';
+
+export const meta = {
+  title: 'Migration Guide to Swiper 10',
+  carbon: true,
+};
+
+## Touch Events Removed
+
+Now Swiper handles only Pointer Events, and doesn't rely on touch events like `touchstart`, `touchmove`, etc. So if your custom extra logic relies on these events, you should update it.
+
+## Autoplay
+
+Swiper v9 comes with fully reworked Autoplay module, that has new parameters, methods and events. Check <a href="/swiper-api#autoplay">Autoplay documentation</a> for more information.
+
+## Loop Mode
+
+Loop mode has been fully reworked in version 9 and now instead of duplicating slides, it rearranges current ones dynamically.
+
+It comes with new limitation. Amount of slides in loop mode should be at least 2x of `slidesPerView` value.
+
+`loopedSlides` with new logic works in a bit different way, and you probably should remove it or make sure it is less or equal to `slidesPerView`.
+
+## Lazy Loading
+
+Lazy images loading module has been removed and integrated to the core. Check <a href="/swiper-api#lazy-loading">Lazy Loading documentation</a> for more information.
+
+## Dom7
+
+Dom7 library has been removed from Swiper, and it uses vanilla JS for DOM manipulation. If your custom code relied on Dom7, you should change it.
+
+## Swiper Angular
+
+Swiper Angular components have been removed in v9. Use <a href="/element">Swiper Element</a> instead
+
+## Swiper Solid
+
+Swiper Solid components have been removed in v9. Use <a href="/element">Swiper Element</a> instead
+
+## Swiper Svelte
+
+Swiper Svelte components have been removed in v9. Use <a href="/element">Swiper Element</a> instead
+
+export default function Page({ children }) {
+  const components = {
+    h1: Heading.h1,
+    h2: Heading.h2,
+    h3: Heading.h3,
+    h4: Heading.h4,
+  };
+  return (
+    <MDXProvider components={components}>
+      <WithSidebarLayout meta={meta}>{children}</WithSidebarLayout>
+    </MDXProvider>
+  );
+}

@@ -27,6 +27,7 @@ module.exports = {
         'inverse-surface': 'var(--color-inverse-surface)',
         'inverse-on-surface': 'var(--color-inverse-on-surface)',
         'inverse-primary': 'var(--color-inverse-primary)',
+        'surface-0': 'var(--color-surface-0)',
         'surface-1': 'var(--color-surface-1)',
         'surface-2': 'var(--color-surface-2)',
         'surface-3': 'var(--color-surface-3)',
