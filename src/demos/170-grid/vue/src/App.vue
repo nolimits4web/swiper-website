@@ -31,7 +31,7 @@
   import './style.css';
 
   // import required modules
-  import { Grid, Pagination } from 'swiper';
+  import { Grid, Pagination } from 'swiper/modules';
 
   export default {
     components: {

@@ -25,7 +25,7 @@
   import './style.css';
 
   // import required modules
-  import { Scrollbar } from 'swiper';
+  import { Scrollbar } from 'swiper/modules';
 
   export default {
     components: {

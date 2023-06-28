@@ -32,7 +32,7 @@
   import './style.css';
 
   // import required modules
-  import { Keyboard, Pagination, Navigation } from 'swiper';
+  import { Keyboard, Pagination, Navigation } from 'swiper/modules';
 
   export default {
     components: {

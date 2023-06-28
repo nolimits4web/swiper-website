@@ -28,7 +28,7 @@
   import './style.css';
 
   // import required modules
-  import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper';
+  import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
 
   export default {
     components: {

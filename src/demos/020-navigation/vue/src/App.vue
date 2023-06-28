@@ -19,7 +19,7 @@
   import './style.css';
 
   // import required modules
-  import { Navigation } from 'swiper';
+  import { Navigation } from 'swiper/modules';
 
   export default {
     components: {

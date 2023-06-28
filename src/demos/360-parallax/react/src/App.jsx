@@ -1,24 +1,24 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState } from 'react';
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
-import "./styles.css";
+import './styles.css';
 
 // import required modules
-import { Parallax, Pagination, Navigation } from "swiper";
+import { Parallax, Pagination, Navigation } from 'swiper/modules';
 
 export default function App() {
   return (
     <>
       <Swiper
         style={{
-          "--swiper-navigation-color": "#fff",
-          "--swiper-pagination-color": "#fff",
+          '--swiper-navigation-color': '#fff',
+          '--swiper-pagination-color': '#fff',
         }}
         speed={600}
         parallax={true}
@@ -33,8 +33,8 @@ export default function App() {
           slot="container-start"
           className="parallax-bg"
           style={{
-            "background-image":
-              "url(https://swiperjs.com/demos/images/nature-1.jpg)",
+            'background-image':
+              'url(https://swiperjs.com/demos/images/nature-1.jpg)',
           }}
           data-swiper-parallax="-23%"
         ></div>

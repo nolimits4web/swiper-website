@@ -1,16 +1,16 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState } from 'react';
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
-import "./styles.css";
+import './styles.css';
 
 // import required modules
-import { Pagination, Navigation } from "swiper";
+import { Pagination, Navigation } from 'swiper/modules';
 
 export default function App() {
   const [swiperRef, setSwiperRef] = useState(null);
@@ -20,27 +20,27 @@ export default function App() {
 
   const prepend2 = () => {
     swiperRef.prependSlide([
-      '<div class="swiper-slide">Slide ' + --prependNumber + "</div>",
-      '<div class="swiper-slide">Slide ' + --prependNumber + "</div>",
+      '<div class="swiper-slide">Slide ' + --prependNumber + '</div>',
+      '<div class="swiper-slide">Slide ' + --prependNumber + '</div>',
     ]);
   };
 
   const prepend = () => {
     swiperRef.prependSlide(
-      '<div class="swiper-slide">Slide ' + --prependNumber + "</div>"
+      '<div class="swiper-slide">Slide ' + --prependNumber + '</div>'
     );
   };
 
   const append = () => {
     swiperRef.appendSlide(
-      '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>"
+      '<div class="swiper-slide">Slide ' + ++appendNumber + '</div>'
     );
   };
 
   const append2 = () => {
     swiperRef.appendSlide([
-      '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>",
-      '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>",
+      '<div class="swiper-slide">Slide ' + ++appendNumber + '</div>',
+      '<div class="swiper-slide">Slide ' + ++appendNumber + '</div>',
     ]);
   };
 
@@ -52,7 +52,7 @@ export default function App() {
         centeredSlides={true}
         spaceBetween={30}
         pagination={{
-          type: "fraction",
+          type: 'fraction',
         }}
         navigation={true}
         modules={[Pagination, Navigation]}

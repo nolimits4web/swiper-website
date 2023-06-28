@@ -47,7 +47,7 @@
   import './style.css';
 
   // import required modules
-  import { Autoplay, Pagination, Navigation } from 'swiper';
+  import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
   export default {
     components: {

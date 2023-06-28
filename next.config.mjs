@@ -1,4 +1,5 @@
 import fs from 'fs';
+import remarkGfm from 'remark-gfm';
 import rehypePrism from '@mapbox/rehype-prism';
 import rehypeSlug from 'rehype-slug';
 import nextMdx from '@next/mdx';
@@ -6,7 +7,7 @@ import nextMdx from '@next/mdx';
 const withMdx = nextMdx({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [],
+    remarkPlugins: [remarkGfm],
     rehypePlugins: [rehypeSlug, rehypePrism],
     providerImportSource: '@mdx-js/react',
   },

@@ -46,7 +46,7 @@
   import './style.css';
 
   // import Swiper core and required modules
-  import { Pagination, Navigation, Virtual } from 'swiper';
+  import { Pagination, Navigation, Virtual } from 'swiper/modules';
 
   export default {
     components: {

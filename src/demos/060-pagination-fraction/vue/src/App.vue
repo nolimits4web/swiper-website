@@ -27,7 +27,7 @@
   import './style.css';
 
   // import required modules
-  import { Pagination, Navigation } from 'swiper';
+  import { Pagination, Navigation } from 'swiper/modules';
 
   export default {
     components: {

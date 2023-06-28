@@ -1,29 +1,29 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState } from 'react';
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/effect-creative";
+import 'swiper/css';
+import 'swiper/css/effect-creative';
 
-import "./styles.css";
+import './styles.css';
 
 // import required modules
-import { EffectCreative } from "swiper";
+import { EffectCreative } from 'swiper/modules';
 
 export default function App() {
   return (
     <>
       <Swiper
         grabCursor={true}
-        effect={"creative"}
+        effect={'creative'}
         creativeEffect={{
           prev: {
             shadow: true,
             translate: [0, 0, -400],
           },
           next: {
-            translate: ["100%", 0, 0],
+            translate: ['100%', 0, 0],
           },
         }}
         modules={[EffectCreative]}
@@ -41,15 +41,15 @@ export default function App() {
       </Swiper>
       <Swiper
         grabCursor={true}
-        effect={"creative"}
+        effect={'creative'}
         creativeEffect={{
           prev: {
             shadow: true,
-            translate: ["-120%", 0, -500],
+            translate: ['-120%', 0, -500],
           },
           next: {
             shadow: true,
-            translate: ["120%", 0, -500],
+            translate: ['120%', 0, -500],
           },
         }}
         modules={[EffectCreative]}
@@ -67,14 +67,14 @@ export default function App() {
       </Swiper>
       <Swiper
         grabCursor={true}
-        effect={"creative"}
+        effect={'creative'}
         creativeEffect={{
           prev: {
             shadow: true,
-            translate: ["-20%", 0, -1],
+            translate: ['-20%', 0, -1],
           },
           next: {
-            translate: ["100%", 0, 0],
+            translate: ['100%', 0, 0],
           },
         }}
         modules={[EffectCreative]}
@@ -92,7 +92,7 @@ export default function App() {
       </Swiper>
       <Swiper
         grabCursor={true}
-        effect={"creative"}
+        effect={'creative'}
         creativeEffect={{
           prev: {
             shadow: true,
@@ -120,16 +120,16 @@ export default function App() {
       </Swiper>
       <Swiper
         grabCursor={true}
-        effect={"creative"}
+        effect={'creative'}
         creativeEffect={{
           prev: {
             shadow: true,
-            translate: ["-125%", 0, -800],
+            translate: ['-125%', 0, -800],
             rotate: [0, 0, -90],
           },
           next: {
             shadow: true,
-            translate: ["125%", 0, -800],
+            translate: ['125%', 0, -800],
             rotate: [0, 0, 90],
           },
         }}
@@ -148,17 +148,17 @@ export default function App() {
       </Swiper>
       <Swiper
         grabCursor={true}
-        effect={"creative"}
+        effect={'creative'}
         creativeEffect={{
           prev: {
             shadow: true,
-            origin: "left center",
-            translate: ["-5%", 0, -200],
+            origin: 'left center',
+            translate: ['-5%', 0, -200],
             rotate: [0, 100, 0],
           },
           next: {
-            origin: "right center",
-            translate: ["5%", 0, -200],
+            origin: 'right center',
+            translate: ['5%', 0, -200],
             rotate: [0, -100, 0],
           },
         }}

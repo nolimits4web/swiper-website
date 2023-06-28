@@ -7,41 +7,111 @@ export const meta = {
   carbon: true,
 };
 
-## Touch Events Removed
+## Swiper Element Layout
 
-Now Swiper handles only Pointer Events, and doesn't rely on touch events like `touchstart`, `touchmove`, etc. So if your custom extra logic relies on these events, you should update it.
+Swiper Element now comes with additional `<div class="swiper">` main element internal layout.
 
-## Autoplay
+In v9:
 
-Swiper v9 comes with fully reworked Autoplay module, that has new parameters, methods and events. Check <a href="/swiper-api#autoplay">Autoplay documentation</a> for more information.
+```html
+<swiper-container>
+  <!-- shadow -->
+  <div class="swiper-wrapper">
+    <slot />
+  </div>
+</swiper-container>
+```
 
-## Loop Mode
+In v10:
 
-Loop mode has been fully reworked in version 9 and now instead of duplicating slides, it rearranges current ones dynamically.
+```html
+<swiper-container>
+  <!-- shadow -->
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <slot />
+    </div>
+  </div>
+</swiper-container>
+```
 
-It comes with new limitation. Amount of slides in loop mode should be at least 2x of `slidesPerView` value.
+So if you rely and do some tricks with shadow DOM internals, you need to consider new layout.
 
-`loopedSlides` with new logic works in a bit different way, and you probably should remove it or make sure it is less or equal to `slidesPerView`.
+## Swiper Element Styles
 
-## Lazy Loading
+Swiper web component doesn't inject global styles to document anymore. In this case if you will use custom navigation, pagination, scrollbar elements they will be not styled.
 
-Lazy images loading module has been removed and integrated to the core. Check <a href="/swiper-api#lazy-loading">Lazy Loading documentation</a> for more information.
+## Modules Imports
 
-## Dom7
+For better tree-shaking all modules must be imported now from `/swiper/modules`
 
-Dom7 library has been removed from Swiper, and it uses vanilla JS for DOM manipulation. If your custom code relied on Dom7, you should change it.
+In v9:
 
-## Swiper Angular
+```js
+import Swiper, { Navigation, Pagination } from 'swiper';
+```
 
-Swiper Angular components have been removed in v9. Use <a href="/element">Swiper Element</a> instead
+In v10:
 
-## Swiper Solid
+```js
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+```
 
-Swiper Solid components have been removed in v9. Use <a href="/element">Swiper Element</a> instead
+## Package Structure
 
-## Swiper Svelte
+Main breaking change in v10 is the simplified package structure:
 
-Swiper Svelte components have been removed in v9. Use <a href="/element">Swiper Element</a> instead
+- most of the files (except modules) are now in the package root
+- `.esm.js` scripts replaced with `.mjs`
+- `.browser.esm.js` scripts are now same `.mjs`
+
+You need to consider it if you import files directly. Here is the new package structure:
+
+```
+/modules/
+/shared/
+/types/
+/package.json
+/swiper-bundle.css
+/swiper-bundle.js
+/swiper-bundle.min.css
+/swiper-bundle.min.js
+/swiper-bundle.min.js.map
+/swiper-bundle.min.mjs
+/swiper-bundle.min.mjs.map
+/swiper-bundle.mjs
+/swiper-element-bundle.js
+/swiper-element-bundle.min.js
+/swiper-element-bundle.min.js.map
+/swiper-element-bundle.min.mjs
+/swiper-element-bundle.min.mjs.map
+/swiper-element-bundle.mjs
+/swiper-element.d.ts
+/swiper-element.js
+/swiper-element.min.js
+/swiper-element.min.js.map
+/swiper-element.min.mjs
+/swiper-element.min.mjs.map
+/swiper-element.mjs
+/swiper-react.d.ts
+/swiper-react.mjs
+/swiper-vars.less
+/swiper-vars.scss
+/swiper-vue.d.ts
+/swiper-vue.mjs
+/swiper.css
+/swiper.d.ts
+/swiper.js
+/swiper.less
+/swiper.min.css
+/swiper.min.js
+/swiper.min.js.map
+/swiper.min.mjs
+/swiper.min.mjs.map
+/swiper.mjs
+/swiper.scss
+```
 
 export default function Page({ children }) {
   const components = {

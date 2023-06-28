@@ -24,7 +24,7 @@ const reactFiles = (title) => ({
       dependencies: {
         react: '18.2.0',
         'react-dom': '18.2.0',
-        swiper: '^9.0.0',
+        swiper: '^10.0.0',
       },
       devDependencies: {
         vite: '^4.0.4',
@@ -83,7 +83,7 @@ const vueFiles = (title) => ({
       },
       dependencies: {
         vue: '^3.2.45',
-        swiper: '^9.0.0',
+        swiper: '^10.0.0',
       },
       devDependencies: {
         vite: '^4.0.4',

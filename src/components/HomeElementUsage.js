@@ -10,7 +10,7 @@ export const HomeElementUsage = () => {
           <span className="token attr-value">
             <span className="token punctuation attr-equals">=</span>
             <span className="token punctuation">"</span>
-            https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js
+            https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js
             <span className="token punctuation">"</span>
           </span>
           <span className="token punctuation">&gt;</span>

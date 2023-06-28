@@ -29,7 +29,7 @@
   import './style.css';
 
   // import required modules
-  import { FreeMode, Pagination } from 'swiper';
+  import { FreeMode, Pagination } from 'swiper/modules';
 
   export default {
     components: {
