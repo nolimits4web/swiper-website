@@ -1,3 +1,4 @@
+import fs from 'fs';
 import React from 'react';
 import Link from 'next/link';
 import clientsList from '@/shared/clients-list';
@@ -39,7 +40,15 @@ export function HomeHeading({ children }) {
     </h2>
   );
 }
-export default function Home() {
+export default function Home(props) {
+  const { posts = [] } = props;
+  const formatDate = (d) => {
+    return Intl.DateTimeFormat('en-us', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+    }).format(new Date(d));
+  };
   return (
     <>
       <HomeHeader />
@@ -200,6 +209,38 @@ export default function Home() {
           </div>
         </div>
 
+        <div className="mb-20 mt-24">
+          <HomeHeading>Latest From The Blog</HomeHeading>
+          <div className="space-y-8 grid-cols-3 gap-8 md:grid md:space-y-0">
+            {posts.map((post) => (
+              <Link
+              key={post.title}
+              className="group relative block rounded-3xl border border-outline-variant p-4 duration-200 hover:bg-primary-container hover:text-on-primary-container hover:no-underline active:rounded-xl"
+              href={post.path}
+            >
+              <div className="relative overflow-hidden rounded-xl pb-[50%]">
+                {post.image && (
+                  <img
+                    className="absolute left-0 top-0 h-full w-full object-cover object-center duration-200"
+                    src={`${post.image}`}
+                    alt={post.title}
+                    loading="lazy"
+                  />
+                )}
+              </div>
+              <div className="mt-4 w-fit text-xl font-bold text-on-surface group-hover:text-on-primary-container">
+                {post.title}
+              </div>
+              <div className="mt-1 text-sm text-on-surface opacity-75">
+                {formatDate(post.date)}
+              </div>
+            </Link>
+            ))}
+
+
+          </div>
+        </div>
+
         <div className="mx-auto mb-20 mt-24 max-w-6xl text-center">
           <HomeHeading>More Of Our Projects</HomeHeading>
           <HomeProjects />
@@ -243,4 +284,51 @@ export default function Home() {
       </div>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const posts = fs
+    .readdirSync('./src/pages/blog')
+    .filter((f) => f.includes('.mdx'))
+    .map((f) => {
+      const content = fs.readFileSync(`./src/pages/blog/${f}`, 'utf-8');
+      const data = {
+        path: `/blog/${f.split('.mdx')[0]}`,
+        published: true,
+      };
+      content
+        .split('export const meta = {')[1]
+        .split('}')[0]
+        .trim()
+        .split('/n')
+        .forEach((line) => {
+          if (line.includes('title:')) {
+            data.title = line.split(`title: '`)[1].split(`'`)[0];
+          }
+          if (line.includes('image:')) {
+            data.image = line.split(`image: '`)[1].split(`'`)[0];
+          }
+          if (line.includes('date:')) {
+            data.date = line.split(`date: '`)[1].split(`'`)[0];
+          }
+          if (line.includes('published:')) {
+            data.published = !line.includes('published: false');
+          }
+          if (line.includes('featured: true')) {
+            data.featured = true;
+          }
+        });
+      return data;
+    })
+    .filter((d) => d.published);
+
+  posts.sort((a, b) => {
+    return new Date(b.date) - new Date(a.date);
+  });
+
+  return {
+    props: {
+      posts,
+    },
+  };
 }

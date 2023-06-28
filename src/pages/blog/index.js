@@ -16,7 +16,7 @@ export default function Blog(props) {
         <h1 className="mb-[0.7em] text-[40px] font-bold leading-[1.2]">
           Swiper Blog
         </h1>
-        <div className="space-y-16 md:grid md:grid-cols-2 md:gap-16 md:space-y-0">
+        <div className="space-y-8 md:grid md:grid-cols-2 md:gap-8 md:space-y-0">
           {posts.map((post) => (
             <Link
               href={post.path}
@@ -77,7 +77,6 @@ export async function getStaticProps() {
             data.published = !line.includes('published: false');
           }
           if (line.includes('featured: true')) {
-            console.log('wtf?!');
             data.featured = true;
           }
         });
