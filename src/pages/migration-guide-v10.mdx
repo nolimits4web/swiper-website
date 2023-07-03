@@ -1,0 +1,128 @@
+import { MDXProvider } from '@mdx-js/react';
+import Heading from '@/components/Heading.js';
+import { WithSidebarLayout } from '@/layouts/WithSidebarLayout.js';
+
+export const meta = {
+  title: 'Migration Guide to Swiper 10',
+  carbon: true,
+};
+
+## Swiper Element Layout
+
+Swiper Element now comes with additional `<div class="swiper">` main element internal layout.
+
+In v9:
+
+```html
+<swiper-container>
+  <!-- shadow -->
+  <div class="swiper-wrapper">
+    <slot />
+  </div>
+</swiper-container>
+```
+
+In v10:
+
+```html
+<swiper-container>
+  <!-- shadow -->
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <slot />
+    </div>
+  </div>
+</swiper-container>
+```
+
+So if you rely and do some tricks with shadow DOM internals, you need to consider new layout.
+
+## Swiper Element Styles
+
+Swiper web component doesn't inject global styles to document anymore. In this case if you will use custom navigation, pagination, scrollbar elements they will be not styled.
+
+## Modules Imports
+
+For better tree-shaking all modules must be imported now from `/swiper/modules`
+
+In v9:
+
+```js
+import Swiper, { Navigation, Pagination } from 'swiper';
+```
+
+In v10:
+
+```js
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+```
+
+## Package Structure
+
+Main breaking change in v10 is the simplified package structure:
+
+- most of the files (except modules) are now in the package root
+- `.esm.js` scripts replaced with `.mjs`
+- `.browser.esm.js` scripts are now same `.mjs`
+
+You need to consider it if you import files directly. Here is the new package structure:
+
+```
+/modules/
+/shared/
+/types/
+/package.json
+/swiper-bundle.css
+/swiper-bundle.js
+/swiper-bundle.min.css
+/swiper-bundle.min.js
+/swiper-bundle.min.js.map
+/swiper-bundle.min.mjs
+/swiper-bundle.min.mjs.map
+/swiper-bundle.mjs
+/swiper-element-bundle.js
+/swiper-element-bundle.min.js
+/swiper-element-bundle.min.js.map
+/swiper-element-bundle.min.mjs
+/swiper-element-bundle.min.mjs.map
+/swiper-element-bundle.mjs
+/swiper-element.d.ts
+/swiper-element.js
+/swiper-element.min.js
+/swiper-element.min.js.map
+/swiper-element.min.mjs
+/swiper-element.min.mjs.map
+/swiper-element.mjs
+/swiper-react.d.ts
+/swiper-react.mjs
+/swiper-vars.less
+/swiper-vars.scss
+/swiper-vue.d.ts
+/swiper-vue.mjs
+/swiper.css
+/swiper.d.ts
+/swiper.js
+/swiper.less
+/swiper.min.css
+/swiper.min.js
+/swiper.min.js.map
+/swiper.min.mjs
+/swiper.min.mjs.map
+/swiper.mjs
+/swiper.scss
+```
+
+export default function Page({ children }) {
+  const components = {
+    h1: Heading.h1,
+    h2: Heading.h2,
+    h3: Heading.h3,
+    h4: Heading.h4,
+  };
+  return (
+    <MDXProvider components={components}>
+      <WithSidebarLayout meta={meta}>{children}</WithSidebarLayout>
+    </MDXProvider>
+  );
+}

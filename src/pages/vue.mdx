@@ -9,8 +9,8 @@ export const meta = {
 {/* prettier-ignore */}
 <div className="important-note space-y-4 md:mr-[300px] 2xl:mr-0">
   <div><b>Swiper Vue components will likely to be removed in future versions. It is recommended to migrate to <a href="/element">Swiper Element</a> instead.</b></div>
-  <div>If you are upgrading from Swiper 8 to Swiper 9, check out <a href="/migration-guide-v9">Migration Guide to Swiper 9</a></div>
-  <div>If you are looking for v8 docs, they are here <a href="https://v8.swiperjs.com" target="_blank">v8.swiperjs.com</a></div>
+  <div>If you are upgrading from Swiper 9 to Swiper 10, check out <a href="/migration-guide-v10">Migration Guide to Swiper 10</a></div>
+  <div>If you are looking for v9 docs, they are here <a href="https://v9.swiperjs.com" target="_blank">v9.swiperjs.com</a></div>
 </div>
 
 ## Installation
@@ -70,7 +70,7 @@ Swiper Vue.js plugin is available only via NPM as a part of the main Swiper libr
 {/* prettier-ignore */}
 <div className="important-note">By default Swiper Vue uses core version of Swiper (without any additional modules). If you want to use Navigation, Pagination and <a href="/swiper-api/#custom-build">other modules</a>, you have to install them first:</div>
 
-Here is the list of additional modules imports:
+Here is the list of additional modules imports from `swiper/modules`:
 
 - <code>Virtual</code> - Virtual Slides module
 - <code>Keyboard</code> - Keyboard Control module
@@ -116,7 +116,7 @@ Here is the list of additional modules imports:
 </template>
 <script>
   // import Swiper core and required modules
-  import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+  import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
   // Import Swiper Vue.js components
   import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -347,7 +347,7 @@ Virtual Slides rendering here is fully handled by Vue.js and not required anythi
   </swiper>
 </template>
 <script>
-  import { Virtual } from 'swiper';
+  import { Virtual } from 'swiper/modules';
   import { Swiper, SwiperSlide } from 'swiper/vue';
 
   export default {
@@ -392,7 +392,7 @@ Controller requires to pass one Swiper instance to another:
 </template>
 <script>
   import { ref } from 'vue';
-  import { Controller } from 'swiper';
+  import { Controller } from 'swiper/modules';
   import { Swiper, SwiperSlide } from 'swiper/vue';
 
   export default {
@@ -438,7 +438,7 @@ For two-way control (when both Swipers control each other) it should be like thi
 </template>
 <script>
   import { ref } from 'vue';
-  import { Controller } from 'swiper';
+  import { Controller } from 'swiper/modules';
   import { Swiper, SwiperSlide } from 'swiper/vue';
 
   export default {
@@ -492,7 +492,7 @@ Same as with controller we need to store thumbs instance and pass it to main gal
 </template>
 <script>
   import { ref } from 'vue';
-  import { Thumbs } from 'swiper';
+  import { Thumbs } from 'swiper/modules';
   import { Swiper, SwiperSlide } from 'swiper/vue';
 
   export default {
@@ -542,7 +542,7 @@ You can find running <a href="https://swiperjs.com/demos/#effect-fade">effect de
   </swiper>
 </template>
 <script>
-  import { EffectFade } from 'swiper';
+  import { EffectFade } from 'swiper/modules';
   import { Swiper, SwiperSlide } from 'swiper/vue';
 
   import 'swiper/css';

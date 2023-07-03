@@ -20,6 +20,7 @@
   --color-inverse-surface: #2f3033;
   --color-inverse-on-surface: #f2f0f4;
   --color-inverse-primary: #abc7ff;
+  --color-surface-0: #f3f5f9;
   --color-surface-1: #f0f3fc;
   --color-surface-2: #e9eefa;
   --color-surface-3: #e1eaf8;
@@ -54,6 +55,7 @@
   --color-inverse-surface: #e3e2e6;
   --color-inverse-on-surface: #2f3033;
   --color-inverse-primary: #005cbb;
+  --color-surface-0: #141518;
   --color-surface-1: #21242a;
   --color-surface-2: #262931;
   --color-surface-3: #2a2e38;
@@ -122,4 +124,23 @@ h2[id],
 h3[id],
 h4[id] {
   scroll-margin-top: 72px;
+}
+
+.blog-post-content {
+  iframe {
+    @apply my-8 h-[320px] w-full rounded-lg border border-outline-variant;
+  }
+  img {
+    @apply mx-auto max-h-screen rounded-3xl border border-outline-variant;
+    + em {
+      @apply -mt-6 mb-12 block text-center;
+    }
+  }
+  video {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  blockquote {
+    @apply border-l-4 border-primary bg-secondary-container py-1.5 pl-4 pr-3 not-italic text-on-secondary-container #{!important};
+  }
 }

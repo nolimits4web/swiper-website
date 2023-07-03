@@ -1,14 +1,14 @@
 import React, { useRef } from 'react';
 import Link from 'next/link';
-import Swiper, {
+import Swiper from 'swiper';
+import {
   Navigation,
   Pagination,
   A11y,
   EffectCreative,
   EffectCards,
   EffectFlip,
-  Controller,
-} from 'swiper';
+} from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -26,7 +26,6 @@ Swiper.use([
   EffectCreative,
   EffectCards,
   EffectFlip,
-  Controller,
 ]);
 
 const slidesBgs = ['#ce1111', '#008cff', '#0ab86f', '#d37a07', '#76a30c'];

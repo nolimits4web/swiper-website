@@ -1,0 +1,200 @@
+import { PostLayout } from '@/components/PostLayout.js';
+
+export const meta = {
+  title: 'Using Swiper Element In React',
+  date: '2023-07-03T11:00:00.000Z',
+  image: '/images/blog/using-swiper-element-in-react/cover.png',
+  featured: false,
+  published: true,
+};
+
+Let's take a bit closer look on how to use the Swiper web component in React.
+
+## Parameters
+
+React doesn't support custom elements (web components) natively yet, so this code:
+
+```jsx
+<swiper-container
+  slides-per-view={3}
+  breakpoints={{
+    768: {
+      slidesPerView: 4,
+    },
+  }}
+>
+  ...
+</swiper-container>
+```
+
+actually renders to the following:
+
+{/* prettier-ignore */}
+```html
+<swiper-container slides-per-view="3" breakpoints="[object Object]">
+  ...
+</swiper-container>
+```
+
+which is not what we expect.
+
+This is why it is required to use Swiper Element in React by passing [parameters as props](/element#parameters-as-props) and use custom initialization:
+
+```jsx
+import { useEffect, useRef } from 'react';
+import { register } from 'swiper/element/bundle';
+
+export default function App() {
+  const swiperRef = useRef(null);
+
+  useEffect(() => {
+    // Object with parameters
+    const params = {
+      slidesPerView: 3,
+      breakpoints: {
+        768: {
+          slidesPerView: 4,
+        },
+      },
+    };
+
+    // Assign it to swiper element
+    Object.assign(swiperRef.current, params);
+
+    // initialize swiper
+    swiperRef.current.initialize();
+  }, []);
+
+  return (
+    <swiper-container init="false" ref={swiperRef}>
+      ...
+    </swiper-container>
+  );
+}
+```
+
+## Events
+
+Same with events, they can not be assigned using React's `on[Event]` syntax and should be added using `.addEventListener` method or by passing them in `on` in parameters:
+
+```jsx
+import { useEffect, useRef } from 'react';
+import { register } from 'swiper/element/bundle';
+
+export default function App() {
+  const swiperRef = useRef(null);
+
+  useEffect(() => {
+    // Add event listener
+    swiperRef.current.addEventListener('slidechange', (e) => {
+      console.log(e.detail);
+    });
+
+    // Object with parameters
+    const params = {
+      // or pass it in on
+      on: {
+        slideChange(s) {
+          console.log(s);
+        },
+      },
+    };
+
+    // Assign it to swiper element
+    Object.assign(swiperRef.current, params);
+
+    // initialize swiper
+    swiperRef.current.initialize();
+  }, []);
+
+  return (
+    <swiper-container init="false" ref={swiperRef}>
+      ...
+    </swiper-container>
+  );
+}
+```
+
+## Custom Wrapper Component
+
+If you have a lot of Swipers in your project, we can make a simple React component that basically wraps a Swiper Element:
+
+```jsx
+import { useEffect, useRef } from 'react';
+import { register } from 'swiper/element/bundle';
+
+export function Swiper(props) {
+  const swiperRef = useRef(null);
+  const {
+    children,
+    ...rest
+  } = props;
+
+  useEffect(() => {
+    // pass component props to parameters
+    const params = {
+      ...rest
+    };
+
+    // Assign it to swiper element
+    Object.assign(swiperRef.current, params);
+
+    // initialize swiper
+    swiperRef.current.initialize();
+  }, []);
+
+  return (
+    <swiper-container init="false" ref={swiperRef}>
+      {children}
+    </swiper-container>
+  );
+}
+export function SwiperSlide(props) {
+  const {
+    children,
+    ...rest
+  } = props;
+
+  return (
+    <swiper-slide {...rest}>
+      {children}
+    </swiper-container>
+  );
+}
+```
+
+And now we can use it in the following way across our app:
+
+```jsx
+import { Swiper, SwiperSlide } from 'path/to/my-swiper.jsx';
+
+export default function App() {
+  return (
+    <Swiper
+      slidesPerView={3}
+      breakpoints={{ 768: { slidesPerView: 4 } }}
+      on={{
+        slideChange: () => console.log('slide changed'),
+        progress: (s, progress) => console.log(`progress is ${progress}`),
+      }}
+    >
+      <SwiperSlide>Slide 1</SwiperSlide>
+      <SwiperSlide>Slide 2</SwiperSlide>
+      <SwiperSlide>Slide 3</SwiperSlide>
+    </Swiper>
+  );
+}
+```
+
+## P.S.
+
+And as always, if you love Framework7, please, support project by donating or pledging:
+
+- on Patreon: [https://www.patreon.com/swiperjs](https://www.patreon.com/swiperjs)
+- on Open Collective: [https://opencollective.com/swiper](https://opencollective.com/swiper)
+
+Your support means a lot for us!
+
+export default ({ children }) => (
+  <PostLayout meta={meta}>{children}</PostLayout>
+);

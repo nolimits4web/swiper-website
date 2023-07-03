@@ -10,8 +10,8 @@ export const meta = {
 {/* prettier-ignore */}
 <div className="important-note space-y-4 md:mr-[300px] 2xl:mr-0">
   <div><b>Swiper React components will likely to be removed in future versions. It is recommended to migrate to <a href="/element">Swiper Element</a> instead.</b></div>
-  <div>If you are upgrading from Swiper 8 to Swiper 9, check out <a href="/migration-guide-v9">Migration Guide to Swiper 9</a></div>
-  <div>If you are looking for v8 docs, they are here <a href="https://v8.swiperjs.com" target="_blank">v8.swiperjs.com</a></div>
+  <div>If you are upgrading from Swiper 9 to Swiper 10, check out <a href="/migration-guide-v10">Migration Guide to Swiper 10</a></div>
+  <div>If you are looking for v9 docs, they are here <a href="https://v9.swiperjs.com" target="_blank">v9.swiperjs.com</a></div>
 </div>
 
 ## Installation
@@ -54,7 +54,7 @@ export default () => {
 {/* prettier-ignore */}
 <div className="important-note">By default Swiper React uses core version of Swiper (without any additional modules). If you want to use Navigation, Pagination and <a href="/swiper-api/#custom-build">other modules</a>, you have to install them first.</div>
 
-Here is the list of additional modules imports:
+Here is the list of additional modules imports from `swiper/modules`:
 
 - <code>Virtual</code> - Virtual Slides module
 - <code>Keyboard</code> - Keyboard Control module
@@ -82,7 +82,7 @@ Here is the list of additional modules imports:
 
 ```jsx
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -294,7 +294,7 @@ Will be rendered as:
 Virtual Slides rendering here is fully handled by React and not required anything except setting `virtual:true` property and setting `virtualIndex` on slides:
 
 ```jsx
-import { Virtual } from 'swiper';
+import { Virtual } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -325,7 +325,7 @@ Controller requires to pass one Swiper instance to another:
 
 ```jsx
   import React, { useState } from 'react';
-  import { Controller } from 'swiper';
+  import { Controller } from 'swiper/modules';
   import { Swiper, SwiperSlide } from 'swiper/react';
 
   const App = () => {
@@ -352,7 +352,7 @@ For two-way control (when both Swipers control each other) it should be like thi
 
 ```jsx
 import React, { useState } from 'react';
-import { Controller } from 'swiper';
+import { Controller } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const App = () => {
@@ -389,7 +389,7 @@ Same as with controller we need to store thumbs instance and pass it to main gal
 ```jsx
   import React, { useState } from 'react';
   import { Swiper, SwiperSlide } from 'swiper/react';
-  import { Thumbs } from 'swiper';
+  import { Thumbs } from 'swiper/modules';
 
   const App = () => {
     // store thumbs swiper instance
@@ -437,7 +437,7 @@ You can find running <a href="https://swiperjs.com/demos/#effect-fade">effect de
 ```jsx
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectFade } from 'swiper';
+import { EffectFade } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/effect-fade';
@@ -461,9 +461,9 @@ In this case we need to use direct file imports:
 
 ```js
 // Core modules imports are same as usual
-import { Navigation, Pagination } from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
 // Direct React component imports
-import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
+import { Swiper, SwiperSlide } from 'swiper/swiper-react.mjs';
 
 // Styles must use direct files imports
 import 'swiper/swiper.scss'; // core Swiper

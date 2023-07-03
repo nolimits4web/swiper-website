@@ -99,7 +99,7 @@
   import './style.css';
 
   // import required modules
-  import { Lazy, Pagination, Navigation } from 'swiper';
+  import { Lazy, Pagination, Navigation } from 'swiper/modules';
 
   export default {
     components: {

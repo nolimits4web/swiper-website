@@ -29,7 +29,7 @@
   import './style.css';
 
   // import required modules
-  import { Mousewheel, Pagination } from 'swiper';
+  import { Mousewheel, Pagination } from 'swiper/modules';
 
   export default {
     components: {

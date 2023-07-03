@@ -54,7 +54,7 @@
   import './style.css';
 
   // import required modules
-  import { Pagination } from 'swiper';
+  import { Pagination } from 'swiper/modules';
 
   export default {
     components: {

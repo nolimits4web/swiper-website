@@ -1,16 +1,16 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState } from 'react';
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-import "./styles.css";
+import './styles.css';
 
 // import required modules
-import { Navigation, Pagination, History } from "swiper";
+import { Navigation, Pagination, History } from 'swiper/modules';
 
 export default function App() {
   return (
@@ -21,7 +21,7 @@ export default function App() {
         navigation={true}
         pagination={true}
         history={{
-          key: "slide",
+          key: 'slide',
         }}
         modules={[Navigation, Pagination, History]}
         className="mySwiper"

@@ -83,39 +83,39 @@
   </swiper>
 </template>
 <script>
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from 'swiper/vue';
+  // Import Swiper Vue.js components
+  import { Swiper, SwiperSlide } from 'swiper/vue';
 
-// Import Swiper styles
-import 'swiper/css';
+  // Import Swiper styles
+  import 'swiper/css';
 
-import "swiper/css/free-mode"
-import "swiper/css/navigation"
-import "swiper/css/thumbs"
+  import "swiper/css/free-mode"
+  import "swiper/css/navigation"
+  import "swiper/css/thumbs"
 
-import './style.css';
-
-
-// import required modules
-import {FreeMode,Navigation,Thumbs} from 'swiper';
+  import './style.css';
 
 
-export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
-  setup() {
-    let thumbsSwiper = null;
+  // import required modules
+  import {FreeMode,Navigation,Thumbs} from 'swiper/modules';
 
-    const setThumbsSwiper = (swiper) => {
-      thumbsSwiper = swiper;
+
+  export default {
+    components: {
+      Swiper,
+      SwiperSlide,
     },
+    setup() {
+      let thumbsSwiper = null;
 
-    return {
+      const setThumbsSwiper = (swiper) => {
+        thumbsSwiper = swiper;
+      },
 
-      modules: [FreeMode,Navigation,Thumbs],
-    };
+      return {
+
+        modules: [FreeMode,Navigation,Thumbs],
+      };
+    }
   }
-}
 </script>

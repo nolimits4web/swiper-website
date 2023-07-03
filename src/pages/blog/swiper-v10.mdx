@@ -1,0 +1,135 @@
+import { PostLayout } from '@/components/PostLayout.js';
+
+export const meta = {
+  title: 'Swiper v10',
+  date: '2023-07-03T10:00:00.000Z',
+  image: '/images/blog/swiper-v10/cover.png',
+  featured: false,
+  published: true,
+};
+
+We are glad to announce all new Swiper v10. Let's look at main new features arrived in this release.
+
+## Swiper Element
+
+There are a lot of improvements for Swiper web component.
+
+### Container in Shadow DOM
+
+First of all, we moved main Swiper container element to the Shadow DOM, it allows to fix some issues (especially in Safari) with the 3D perspective of 3D effects (except Cube which is still not displayed correctly due to Safari bug)
+
+In v9:
+
+```html
+<swiper-container>
+  <!-- shadow -->
+  <div class="swiper-wrapper">
+    <slot />
+  </div>
+</swiper-container>
+```
+
+In v10:
+
+```html
+<swiper-container>
+  <!-- shadow -->
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <slot />
+    </div>
+  </div>
+</swiper-container>
+```
+
+### Navigation Buttons
+
+Swiper Element now uses SVG element for Navigation buttons instead of icon font used before. It should help with the specific content security policies.
+
+### JSON In Attributes
+
+With version 10 Swiper Element supports JSON in attributes that expected to receive `Object`. For example:
+
+```html
+<swiper-container breakpoints='{"768": {"slidesPerView": 3}}'>
+  ...
+</swiper-container>
+```
+
+It is not recommended and it is better to pass [parameters as props](/element#parameters-as-props).
+
+### Swiper Element Styles
+
+Swiper web component doesn't inject global styles to document anymore. In this case if you will use custom navigation, pagination, scrollbar elements they will be not styled.
+
+## Package Stucture
+
+Main breaking change in v10 is the simplified package structure:
+
+- most of the files (except modules) are now in the package root
+- `.esm.js` scripts replaced with `.mjs`
+- `.browser.esm.js` scripts are now same `.mjs`
+
+You can read more about it in [v10 migration guide](/migration-guide-v10#package-structure).
+
+## Modules Import
+
+For better tree-shaking all modules must be imported from `/swiper/modules`
+
+In v9:
+
+```js
+import Swiper, { Navigation, Pagination } from 'swiper';
+```
+
+In v10:
+
+```js
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+```
+
+## Browser Modules
+
+Now, we can use ES modules and use only those we need directly in browser:
+
+{/* prettier-ignore */}
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/modules/navigation.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/modules/pagination.min.css" />
+
+<div class="swiper">...</div>
+
+<script type="module">
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@10/swiper.min.mjs'
+  import Navigation from 'https://cdn.jsdelivr.net/npm/swiper@10/modules/navigation.min.mjs'
+  import Pagination from 'https://cdn.jsdelivr.net/npm/swiper@10/modules/pagination.min.mjs'
+
+  const swiper = new Swiper('.swiper', {
+    modules: [Navigation, Pagination],
+    ...
+  })
+</script>
+```
+
+## What's Next?
+
+It was an overview of most significant changes and new features.
+
+For all changes list please refer to [full v10 changelog](/changelog).
+
+And it is recommended to check the [Migration guide to v10](/migration-guide-v10).
+
+## P.S.
+
+And as always, if you love Framework7, please, support project by donating or pledging:
+
+- on Patreon: [https://www.patreon.com/swiperjs](https://www.patreon.com/swiperjs)
+- on Open Collective: [https://opencollective.com/swiper](https://opencollective.com/swiper)
+
+Your support means a lot for us!
+
+export default ({ children }) => (
+  <PostLayout meta={meta}>{children}</PostLayout>
+);

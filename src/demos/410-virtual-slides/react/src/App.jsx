@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import SwiperCore, { Virtual, Navigation, Pagination } from 'swiper';
+import SwiperCore, { Virtual, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles

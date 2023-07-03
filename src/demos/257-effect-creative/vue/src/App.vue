@@ -149,7 +149,7 @@
   import './style.css';
 
   // import required modules
-  import { EffectCreative } from 'swiper';
+  import { EffectCreative } from 'swiper/modules';
 
   export default {
     components: {

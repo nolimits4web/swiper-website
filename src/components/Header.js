@@ -193,6 +193,14 @@ export default function Header() {
                 <li className="!my-3 hidden h-px bg-outline-variant md:block" />
                 <li>
                   <Link
+                    href="/blog"
+                    className="block rounded-md px-3 py-1 font-medium leading-6 hover:bg-primary hover:text-on-primary hover:no-underline"
+                  >
+                    Swiper Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/sponsors"
                     className="block rounded-md px-3 py-1 font-medium leading-6 hover:bg-primary hover:text-on-primary hover:no-underline"
                   >

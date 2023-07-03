@@ -11,7 +11,7 @@ import 'swiper/css/navigation';
 import './styles.css';
 
 // import required modules
-import { Lazy, Pagination, Navigation } from 'swiper';
+import { Lazy, Pagination, Navigation } from 'swiper/modules';
 
 export default function App() {
   return (

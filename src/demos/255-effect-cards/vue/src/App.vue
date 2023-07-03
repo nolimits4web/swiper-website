@@ -24,7 +24,7 @@
   import './style.css';
 
   // import required modules
-  import { EffectCards } from 'swiper';
+  import { EffectCards } from 'swiper/modules';
 
   export default {
     components: {

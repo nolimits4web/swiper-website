@@ -34,6 +34,7 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
+        <script async src="/scripts/swiper-motion.js" />
       </Html>
     );
   }

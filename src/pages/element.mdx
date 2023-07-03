@@ -38,7 +38,7 @@ register();
 You can also install it from CDN by directly adding it to the website with `<script>` tag:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
 ```
 
 In this case, it will be automatically registered, no need to call `register()`
@@ -351,11 +351,6 @@ Same as with Thumbs, Controller in version 9 also accepts CSS Selector:
 
 ## Injecting Styles
 
-Due to Swiper web components realisation, same styles are injected in two places:
-
-- global scope (will be added to document `<head>`)
-- shadow DOM
-
 If you need to add styles to shadow DOM scope, you can use `injectStyles` or `injectStylesUrls` parameters, e.g.:
 
 ```html
@@ -387,38 +382,6 @@ If you need to add styles to shadow DOM scope, you can use `injectStyles` or `in
 </script>
 ```
 
-If your environment (content security policy) doesn't allow injecting styles to document, you can disable default styles injection by passing `false` to `register` function:
-
-```html
-<!-- add styles as usual -->
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.css"
-/>
-
-<swiper-container init="false"> ... </swiper-container>
-
-<script type="module">
-  import { register } from 'swiper/element/bundle';
-
-  // pass false to prevent automatic styles injection
-  register(false);
-
-  const swiperEl = document.querySelector('swiper-container');
-
-  const params = {
-    // inject same style to shadow DOM
-    injectStylesUrls: [
-      'https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.css',
-    ],
-  };
-
-  Object.assign(swiperEl, params);
-
-  swiperEl.initialize();
-</script>
-```
-
 ## Core Version & Modules
 
 There is also Core version of Swiper element available (without additional modules).
@@ -435,15 +398,11 @@ register();
 To add modules, we need to use `modules` parameter as usual to inuclude modules scripts, and we also need to add modules styles globally and also inject modules styles to the shadow DOM
 
 ```html
-<!-- add modules styles globally -->
-<link rel="stylesheet" href="path/to/navigation-element.min.css" />
-<link rel="stylesheet" href="path/to/pagination-element.min.css" />
-
 <swiper-container init="false"> ... </swiper-container>
 
 <script>
   import { register } from 'swiper/element';
-  import { Navigation, Pagination } from 'swiper';
+  import { Navigation, Pagination } from 'swiper/modules';
 
   register();
 
@@ -506,6 +465,27 @@ By default all `swiper-container` children are rendered as children of `.swiper-
   <swiper-slide>Slide 3</swiper-slide>
   ...
 </swiper-container>
+```
+
+## Parts
+
+There are following CSS parts are available for styling:
+
+- `container` - styles for `<div class="swiper">`
+- `wrapper` - styles for `<div class="swiper-wrapper">`
+- `button-prev` - styles for prev Navigation button `<div class="swiper-button-prev">`
+- `button-next` - styles for next Navigation button `<div class="swiper-button-next">`
+- `pagination` - styles for prev Pagination container `<div class="swiper-pagination">`
+  - `bullet` - styles for Pagination bullet element
+  - `bullet-active` - styles for active Pagination bullet element
+- `scrollbar` - - styles for Scrollbar container `<div class="swiper-scrollbar">`
+
+For example:
+
+```css
+swiper-container::part(bullet-active) {
+  background-color: red;
+}
 ```
 
 ## Register Parameters
