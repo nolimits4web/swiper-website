@@ -19,7 +19,7 @@
   "typedocOptions": {
     "name": "Swiper",
     "entryPoints": [
-      "node_modules/swiper/swiper.d.ts",
+      "node_modules/swiper/",
       "node_modules/swiper/types/"
     ],
     "excludeExternals": false,
