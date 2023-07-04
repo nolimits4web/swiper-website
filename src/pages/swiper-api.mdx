@@ -833,7 +833,8 @@ If you use bundler with JS modules support in your project you can import only t
 
 ```js
 // Import Swiper and modules
-import Swiper, { Navigation, Pagination, Scrollbar } from 'swiper';
+import Swiper from 'swiper';
+import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
 
 // Now you can use Swiper
 const swiper = new Swiper('.swiper', {
