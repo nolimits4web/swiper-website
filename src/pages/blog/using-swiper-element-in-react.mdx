@@ -69,7 +69,7 @@ export default function App() {
   }, []);
 
   return (
-    <swiper-container init="false" ref={swiperRef}>
+    <swiper-container init={false} ref={swiperRef}>
       ...
     </swiper-container>
   );
@@ -114,7 +114,7 @@ export default function App() {
   }, []);
 
   return (
-    <swiper-container init="false" ref={swiperRef}>
+    <swiper-container init={false} ref={swiperRef}>
       ...
     </swiper-container>
   );
@@ -153,7 +153,7 @@ export function Swiper(props) {
   }, []);
 
   return (
-    <swiper-container init="false" ref={swiperRef}>
+    <swiper-container init={false} ref={swiperRef}>
       {children}
     </swiper-container>
   );
