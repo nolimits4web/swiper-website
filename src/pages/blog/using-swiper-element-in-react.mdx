@@ -48,6 +48,9 @@ export default function App() {
   const swiperRef = useRef(null);
 
   useEffect(() => {
+    // Register Swiper web component
+    register();
+
     // Object with parameters
     const params = {
       slidesPerView: 3,
@@ -85,6 +88,9 @@ export default function App() {
   const swiperRef = useRef(null);
 
   useEffect(() => {
+    // Register Swiper web component
+    register();
+
     // Add event listener
     swiperRef.current.addEventListener('slidechange', (e) => {
       console.log(e.detail);
@@ -131,6 +137,9 @@ export function Swiper(props) {
   } = props;
 
   useEffect(() => {
+    // Register Swiper web component
+    register();
+
     // pass component props to parameters
     const params = {
       ...rest
