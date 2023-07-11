@@ -313,7 +313,7 @@ Swiper comes with a bunch of useful events you can listen. Events can be assigne
 
 ## Modules
 
-<ModuleTitle module="navigation" id="navigation" title="Navigation"/>
+<ModuleTitle module="navigation" id="navigation" title="Navigation" />
 
 #### Navigation Parameters
 
@@ -340,7 +340,7 @@ Swiper comes with a bunch of useful events you can listen. Events can be assigne
 
 <ApiDivider />
 
-<ModuleTitle module="pagination" id="pagination" title="Pagination"/>
+<ModuleTitle module="pagination" id="pagination" title="Pagination" />
 
 #### Pagination Parameters
 
@@ -379,7 +379,7 @@ Swiper comes with a bunch of useful events you can listen. Events can be assigne
 
 <ApiDivider />
 
-<ModuleTitle module="scrollbar" id="scrollbar" title="Scrollbar"/>
+<ModuleTitle module="scrollbar" id="scrollbar" title="Scrollbar" />
 
 #### Scrollbar Parameters
 
@@ -411,7 +411,7 @@ Swiper comes with a bunch of useful events you can listen. Events can be assigne
 
 <ApiDivider />
 
-<ModuleTitle module="autoplay" id="autoplay" title="Autoplay"/>
+<ModuleTitle module="autoplay" id="autoplay" title="Autoplay" />
 
 #### Autoplay Parameters
 
@@ -427,7 +427,7 @@ Swiper comes with a bunch of useful events you can listen. Events can be assigne
 
 <ApiDivider />
 
-<ModuleTitle module="freemode" id="free-mode" title="Free Mode"/>
+<ModuleTitle module="freemode" id="free-mode" title="Free Mode" />
 
 #### Free Mode Parameters
 
@@ -435,7 +435,7 @@ Swiper comes with a bunch of useful events you can listen. Events can be assigne
 
 <ApiDivider />
 
-<ModuleTitle module="grid" id="grid" title="Grid"/>
+<ModuleTitle module="grid" id="grid" title="Grid" />
 
 #### Grid Parameters
 
@@ -443,7 +443,7 @@ Swiper comes with a bunch of useful events you can listen. Events can be assigne
 
 <ApiDivider />
 
-<ModuleTitle module="manipulation" id="manipulation" title="Manipulation"/>
+<ModuleTitle module="manipulation" id="manipulation" title="Manipulation" />
 
 Manipulation module adds useful Swiper methods to manipulate slides. It makes sense to use it only with Swiper Core version, not intended to be uses with Swiper React or Vue.
 
@@ -453,7 +453,7 @@ Manipulation module adds useful Swiper methods to manipulate slides. It makes se
 
 <ApiDivider />
 
-<ModuleTitle module="parallax" id="parallax" title="Parallax"/>
+<ModuleTitle module="parallax" id="parallax" title="Parallax" />
 
 Swiper supports parallax transition effects for swiper/slides nested elements. There are two types of parallax elements supported:
 
@@ -509,7 +509,7 @@ To enable parallax effects you need to init Swiper with passed `parallax:true` p
 
 <ApiDivider />
 
-<ModuleTitle module="lazy" id="lazy-loading" title="Lazy Loading"/>
+<ModuleTitle module="lazy" id="lazy-loading" title="Lazy Loading" />
 
 Since version 9 Swiper doesn't have a specific lazy loading API, as it relies on native browser lazy loading feature. To use lazy loading, we just need to set `loading="lazy"` on images and add preloader element:
 
@@ -550,7 +550,7 @@ Or white one for dark layout:
 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
 ```
 
-<ModuleTitle module="fade" id="fade-effect" title="Fade Effect"/>
+<ModuleTitle module="fade" id="fade-effect" title="Fade Effect" />
 
 Be sure to have the `effect` param set to `'fade'` in order for this to work.
 
@@ -563,7 +563,11 @@ Be sure to have the `effect` param set to `'fade'` in order for this to work.
 
 <ApiDivider />
 
-<ModuleTitle module="coverflow" id="coverflow-effect" title="Coverflow Effect"/>
+<ModuleTitle
+  module="coverflow"
+  id="coverflow-effect"
+  title="Coverflow Effect"
+/>
 
 Be sure to have the `effect` param set to `'coverflow'` in order for this to work.
 
@@ -573,7 +577,7 @@ Be sure to have the `effect` param set to `'coverflow'` in order for this to wor
 
 <ApiDivider />
 
-<ModuleTitle module="flip" id="flip-effect" title="Flip Effect"/>
+<ModuleTitle module="flip" id="flip-effect" title="Flip Effect" />
 
 Be sure to have the `effect` param set to `'flip'` in order for this to work.
 
@@ -583,7 +587,7 @@ Be sure to have the `effect` param set to `'flip'` in order for this to work.
 
 <ApiDivider />
 
-<ModuleTitle module="cube" id="cube-effect" title="Cube Effect"/>
+<ModuleTitle module="cube" id="cube-effect" title="Cube Effect" />
 
 Be sure to have the `effect` param set to `'cube'` in order for this to work.
 
@@ -593,7 +597,7 @@ Be sure to have the `effect` param set to `'cube'` in order for this to work.
 
 <ApiDivider />
 
-<ModuleTitle module="cards" id="cards-effect" title="Cards Effect"/>
+<ModuleTitle module="cards" id="cards-effect" title="Cards Effect" />
 
 Be sure to have the `effect` param set to `'cards'` in order for this to work.
 
@@ -603,7 +607,7 @@ Be sure to have the `effect` param set to `'cards'` in order for this to work.
 
 <ApiDivider />
 
-<ModuleTitle module="creative" id="creative-effect" title="Creative Effect"/>
+<ModuleTitle module="creative" id="creative-effect" title="Creative Effect" />
 
 Be sure to have the `effect` param set to `'creative'` in order for this to work.
 
@@ -613,7 +617,7 @@ Be sure to have the `effect` param set to `'creative'` in order for this to work
 
 <ApiDivider />
 
-<ModuleTitle module="thumbs" id="thumbs" title="Thumbs"/>
+<ModuleTitle module="thumbs" id="thumbs" title="Thumbs" />
 
 In addition to [Controller](#controller) component Swiper comes with Thumbs component that is designed to work with additional thumbs swiper in a more correct way than Controller which is used for syncing two swipers.
 
@@ -627,7 +631,7 @@ In addition to [Controller](#controller) component Swiper comes with Thumbs comp
 
 <ApiDivider />
 
-<ModuleTitle module="zoom" id="zoom" title="Zoom"/>
+<ModuleTitle module="zoom" id="zoom" title="Zoom" />
 
 Swiper supports zoom images functionality (similar to what you see on iOS when browsing single photo) where you can zoom-in image by pinch gesture and or by zoom-in/out by double tap on it. In this case, additional layout is required:
 
@@ -688,7 +692,7 @@ Swiper supports zoom images functionality (similar to what you see on iOS when b
 
 <ApiDivider />
 
-<ModuleTitle module="keyboard" id="keyboard-control" title="Keyboard Control"/>
+<ModuleTitle module="keyboard" id="keyboard-control" title="Keyboard Control" />
 
 #### Keyboard Control Parameters
 
@@ -704,7 +708,11 @@ Swiper supports zoom images functionality (similar to what you see on iOS when b
 
 <ApiDivider />
 
-<ModuleTitle module="mousewheel" id="mousewheel-control" title="Mousewheel Control"/>
+<ModuleTitle
+  module="mousewheel"
+  id="mousewheel-control"
+  title="Mousewheel Control"
+/>
 
 #### Mousewheel Control Parameters
 
@@ -720,7 +728,7 @@ Swiper supports zoom images functionality (similar to what you see on iOS when b
 
 <ApiDivider />
 
-<ModuleTitle module="virtual" id="virtual-slides" title="Virtual Slides"/>
+<ModuleTitle module="virtual" id="virtual-slides" title="Virtual Slides" />
 
 Virtual Slides module allows to keep just required amount of slides in DOM. It is very useful in terms in performance and memory issues if you have a lot of slides, especially slides with heavyweight DOM tree or images.
 
@@ -759,7 +767,7 @@ Since version 9, Swiper virtual slides can work with slides originally rendered 
 
 <ApiDivider />
 
-<ModuleTitle module="hash" id="hash-navigation" title="Hash Navigation"/>
+<ModuleTitle module="hash" id="hash-navigation" title="Hash Navigation" />
 
 Hash navigation is intended to have a link to specific slide that allows to load page with specific slide opened.
 
@@ -795,7 +803,11 @@ const swiper = new Swiper('.swiper', {
 
 <ApiDivider />
 
-<ModuleTitle module="history" id="history-navigation" title="History Navigation"/>
+<ModuleTitle
+  module="history"
+  id="history-navigation"
+  title="History Navigation"
+/>
 
 #### History Navigation Parameters
 
@@ -803,7 +815,7 @@ const swiper = new Swiper('.swiper', {
 
 <ApiDivider />
 
-<ModuleTitle module="control" id="controller" title="Controller"/>
+<ModuleTitle module="control" id="controller" title="Controller" />
 
 #### Controller Parameters
 
@@ -815,7 +827,11 @@ const swiper = new Swiper('.swiper', {
 
 <ApiDivider />
 
-<ModuleTitle module="a11y" id="accessibility-a11y" title="Accessibility (a11y)"/>
+<ModuleTitle
+  module="a11y"
+  id="accessibility-a11y"
+  title="Accessibility (a11y)"
+/>
 
 #### Accessibility Parameters
 
@@ -936,7 +952,8 @@ Swiper is fully typed, it exports `Swiper` and `SwiperOptions` types:
 
 ```ts
 // main.ts
-import { Swiper, SwiperOptions } from 'swiper';
+import Swiper from 'swiper';
+import { SwiperOptions } from 'swiper/types';
 
 const swiperParams: SwiperOptions = {
   slidesPerView: 3,
