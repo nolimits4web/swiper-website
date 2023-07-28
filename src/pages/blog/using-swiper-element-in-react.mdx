@@ -8,6 +8,8 @@ export const meta = {
   published: true,
 };
 
+**Updated on July 28 2023 - added Virtual Slides implementation**
+
 Let's take a bit closer look on how to use the Swiper web component in React.
 
 ## Parameters
@@ -125,6 +127,7 @@ export default function App() {
 
 If you have a lot of Swipers in your project, we can make a simple React component that basically wraps a Swiper Element:
 
+{/* prettier-ignore */}
 ```jsx
 import { useEffect, useRef } from 'react';
 import { register } from 'swiper/element/bundle';
@@ -167,7 +170,7 @@ export function SwiperSlide(props) {
   return (
     <swiper-slide {...rest}>
       {children}
-    </swiper-container>
+    </swiper-slide>
   );
 }
 ```
@@ -190,6 +193,118 @@ export default function App() {
       <SwiperSlide>Slide 1</SwiperSlide>
       <SwiperSlide>Slide 2</SwiperSlide>
       <SwiperSlide>Slide 3</SwiperSlide>
+    </Swiper>
+  );
+}
+```
+
+## Virtual Slides
+
+If you use Virtual Slides, we can go deeper and implement virtual slides in React-way too. We need to modify `Swiper` component a bit in the following way:
+
+{/* prettier-ignore */}
+```jsx
+import React, { useEffect, useState, useRef } from 'react';
+import { register } from 'swiper/element/bundle';
+
+export function Swiper(props) {
+  const swiperRef = useRef(null);
+  const {
+    children,
+    virtual, // specify virtual prop
+    ...rest
+  } = props;
+
+  // store virtual data
+  const [virtualData, setVirtualData] = useState({
+    from: 0,
+    to: 0,
+    offset: 0,
+    slides: [],
+  });
+
+  useEffect(() => {
+    // Register Swiper web component
+    register();
+
+    // pass component props to parameters
+    const params = {
+      ...rest
+    };
+
+    // if we have virtual prop passed add virtual prameters
+    if (virtual) {
+      params.virtual = {
+        enabled: true,
+        // pass component children (slides) in `slides` array
+        slides: children,
+        // set virtual data on renderExternal
+        renderExternal(vd) {
+          setVirtualData(vd);
+        },
+      };
+    }
+
+    // Assign it to swiper element
+    Object.assign(swiperRef.current, params);
+
+    // initialize swiper
+    swiperRef.current.initialize();
+  }, []);
+
+  // calc slides to render
+  const slides = virtual
+    ? virtualData.slides.map((slide, index) =>
+        // clone slide
+        React.cloneElement(slide, {
+          // add key
+          key: virtualData.from + index,
+          // set slides offset
+          style: {
+            [props.direction === "vertical" ? "top" : "left"]:
+              virtualData.offset,
+          },
+          // add and swiper slide index to data attribute
+          ["data-swiper-slide-index"]: virtualData.from + index,
+        })
+      )
+    : children; // return children if virtual is disabled
+
+  return (
+    <swiper-container init="false" ref={swiperRef}>
+      {slides}
+    </swiper-container>
+  );
+}
+
+// SwiperSlide component stays the same
+export function SwiperSlide(props) {
+  const {
+    children,
+    ...rest
+  } = props;
+
+  return (
+    <swiper-slide {...rest}>
+      {children}
+    </swiper-slide>
+  );
+}
+```
+
+And now we can easily create Swiper with virtual slides in React:
+
+```jsx
+import { Swiper, SwiperSlide } from 'path/to/my-swiper.jsx';
+
+export default function App() {
+  return (
+    <Swiper virtual navigation>
+      <SwiperSlide>Slide 1</SwiperSlide>
+      <SwiperSlide>Slide 2</SwiperSlide>
+      <SwiperSlide>Slide 3</SwiperSlide>
+      ...
+      <SwiperSlide>Slide 1000</SwiperSlide>
     </Swiper>
   );
 }

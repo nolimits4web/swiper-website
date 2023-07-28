@@ -196,7 +196,7 @@ export default function Header() {
                     href="/blog"
                     className="block rounded-md px-3 py-1 font-medium leading-6 hover:bg-primary hover:text-on-primary hover:no-underline"
                   >
-                    Swiper Blog
+                    Blog
                   </Link>
                 </li>
                 <li>
