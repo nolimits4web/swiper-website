@@ -1,0 +1,128 @@
+import { PostLayout } from '@/components/PostLayout.js';
+
+export const meta = {
+  title: 'Slide Slots in v10.1.0',
+  date: '2023-08-01T11:00:00.000Z',
+  image: '/images/blog/slide-slots-in-v10-1-0/cover.png',
+  featured: false,
+  published: true,
+};
+
+## Problem
+
+All latest versions of the Safari browser have a bug ([#6650](https://github.com/nolimits4web/swiper/issues/6650)) that doesn't 3D-transform correctly elements passed to a custom element in slots.
+
+This causes to a wrong appearance of Swiper effects that use 3D transformations such as Cube, Coverflow and (possibly) Creative Effect.
+
+```html
+<swiper-container effect="cube">
+  <!-- "perspective" prop can't be applied to these slides -->
+  <swiper-slide>Slide 1</swiper-slide>
+  <swiper-slide>Slide 2</swiper-slide>
+  <swiper-slide>Slide 3</swiper-slide>
+</swiper-container>
+```
+
+<iframe
+  width="800"
+  height="640"
+  style={{ height: '640px' }}
+  src="https://codesandbox.io/p/sandbox/mxhjqx?file=%2Findex.html&embed=1"
+  allowfullscreen
+/>
+
+## Solution
+
+In Swiper v10.1.0 we introduced slide slots to workaround this issue. In this case we don't put slides into the `swiper-container`, but only their contents:
+
+```html
+<swiper-container effect="cube">
+  <!-- Content goes to the first slide (with index 0) -->
+  <div slot="slide-0">Slide 1</div>
+  <!-- Content goes to the second slide (with index 1) -->
+  <div slot="slide-1">Slide 2</div>
+  <!-- Content goes to the third slide (with index 2) -->
+  <div slot="slide-2">Slide 3</div>
+</swiper-container>
+```
+
+The Swiper component will dynamically check the number of slots passed to it in child components and automatically create the required number of slides. There are no restrictions on the number of slide slots to be used.
+
+But in this case we need to reconsider the styling of the slides, as we don't have slide elements directly in the DOM, and the slides themselves are now in the shadow DOM.
+
+So it is recommended to use some custom wrapper for the contents of the slide slots, e.g.:
+
+```html
+<swiper-container effect="cube">
+  <!-- Content goes to the first slide (with index 0) -->
+  <div slot="slide-0" class="slide-content">
+    <img class="slide-image" src="path/to/slide-image.jpg" />
+    <div class="slide-title">Slide 1</div>
+  </div>
+  <!-- Content goes to the second slide (with index 1) -->
+  <div slot="slide-1" class="slide-content">
+    <img class="slide-image" src="path/to/slide-image.jpg" />
+    <div class="slide-title">Slide 2</div>
+  </div>
+  <!-- Content goes to the third slide (with index 2) -->
+  <div slot="slide-2" class="slide-content">
+    <img class="slide-image" src="path/to/slide-image.jpg" />
+    <div class="slide-title">Slide 3</div>
+  </div>
+  ...
+</swiper-container>
+<style>
+  /* make sure slide content takes all available slide size */
+  .slide-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  /* slide image */
+  .slide-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* slide title */
+  .slide-title {
+    color: #fff;
+    position: absolute;
+    left: 32px;
+    bottom: 32px;
+    font-weight: bold;
+    font-size: 32px;
+  }
+</style>
+```
+
+And now everything works correctly (in Safari):
+
+<iframe
+  width="800"
+  height="640"
+  style={{ height: '640px' }}
+  src="https://codesandbox.io/p/sandbox/swiper-effect-cube-forked-c9x494"
+  allowfullscreen
+/>
+
+## P.S.
+
+And as always, if you love Swiper, please, support project by donating or pledging:
+
+- on Patreon: [https://www.patreon.com/swiperjs](https://www.patreon.com/swiperjs)
+- on Open Collective: [https://opencollective.com/swiper](https://opencollective.com/swiper)
+
+And checking our premium projects:
+
+- [UI Initiative](https://uiinitiative.com)
+- [Swiper Studio](https://studio.swiperjs.com)
+
+Your support means a lot for us!
+
+export default ({ children }) => (
+  <PostLayout meta={meta}>{children}</PostLayout>
+);
