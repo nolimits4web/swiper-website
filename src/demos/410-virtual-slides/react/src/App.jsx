@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import SwiperCore, { Virtual, Navigation, Pagination } from 'swiper/modules';
+import { Virtual, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -8,9 +8,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import './styles.css';
-
-// install Virtual module
-SwiperCore.use([Virtual, Navigation, Pagination]);
 
 export default function App() {
   const [swiperRef, setSwiperRef] = useState(null);
@@ -42,6 +39,7 @@ export default function App() {
   return (
     <>
       <Swiper
+        modules={[Virtual, Navigation, Pagination]}
         onSwiper={setSwiperRef}
         slidesPerView={3}
         centeredSlides={true}
