@@ -92,14 +92,13 @@
   // Import Swiper styles
   import 'swiper/css';
 
-  import 'swiper/css/lazy';
   import 'swiper/css/pagination';
   import 'swiper/css/navigation';
 
   import './style.css';
 
   // import required modules
-  import { Lazy, Pagination, Navigation } from 'swiper/modules';
+  import { Pagination, Navigation } from 'swiper/modules';
 
   export default {
     components: {
@@ -108,7 +107,7 @@
     },
     setup() {
       return {
-        modules: [Lazy, Pagination, Navigation],
+        modules: [Pagination, Navigation],
       };
     },
   };
