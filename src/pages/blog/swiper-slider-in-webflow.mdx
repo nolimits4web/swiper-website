@@ -1,0 +1,217 @@
+import { PostLayout } from '@/components/PostLayout.js';
+
+export const meta = {
+  title: 'Swiper Slider In Webflow',
+  date: '2023-08-01T12:00:00.000Z',
+  image: '/images/blog/swiper-slider-in-webflow/cover.png',
+  featured: true,
+  published: true,
+};
+
+Webflow comes with a built-in slider that is not even close to what Swiper offers. In this article, we'll look at how to integrate Swiper into your Webflow site to get a best-in-class slider and make your pages stand out!
+
+## Collection
+
+First, as we want to use Webflow's CMS features, we need to create a collection with slides. I have created a simple collection called "Movies Sliders" with additional `title` and `image` fields.
+
+<img
+  src="/images/blog/swiper-slider-in-webflow/01-collection.jpg"
+  loading="lazy"
+/>
+
+Next, add collection to the place where we want to place our slider,
+
+<img
+  src="/images/blog/swiper-slider-in-webflow/02-add-collection.jpg"
+  loading="lazy"
+/>
+
+and choose "Movies Sliders" collection as a source:
+
+<img
+  src="/images/blog/swiper-slider-in-webflow/03-collection-source.jpg"
+  loading="lazy"
+/>
+
+Now, we need to add classes to `Collection List Wrapper`, `Collection List` and `Collection Item` to match Swiper's required layout:
+
+- `Collection List Wrapper` -> `.swiper.swiper-movies` (use extra class `swiper-movies` here for initialization)
+- `Collection List` -> `.swiper-wrapper`
+- `Collection Item` -> `.swiper-slide`
+
+<img
+  src="/images/blog/swiper-slider-in-webflow/04-swiper-class.jpg"
+  loading="lazy"
+/>
+
+<img
+  src="/images/blog/swiper-slider-in-webflow/05-swiper-wrapper-class.jpg"
+  loading="lazy"
+/>
+
+<img
+  src="/images/blog/swiper-slider-in-webflow/06-swiper-slide-class.jpg"
+  loading="lazy"
+/>
+
+## Slide Image
+
+Once we have set required layout for slides, let's add `Image` element to the slide, check `Get image from Movies Sliders` and select the `image` field as image source:
+
+<img
+  src="/images/blog/swiper-slider-in-webflow/08-image-source.jpg"
+  loading="lazy"
+/>
+
+And add `swiper-slide-image` class to the image:
+
+<img
+  src="/images/blog/swiper-slider-in-webflow/09-image-class.jpg"
+  loading="lazy"
+/>
+
+## Slide Title
+
+Final thing to setup here is the slide title. Same as with the image, add `Text` element to the slide, check `Get text from Movies Sliders` checkbox and select the `title` field:
+
+<img
+  src="/images/blog/swiper-slider-in-webflow/11-text-source.jpg"
+  loading="lazy"
+/>
+
+And add `swiper-slide-title` class to the text:
+
+<img
+  src="/images/blog/swiper-slider-in-webflow/12-text-class.jpg"
+  loading="lazy"
+/>
+
+## Add Swiper Assets
+
+Now we need to add Swiper's stylesheet and script.
+
+In page settings and in the `Custom Code` section add the following code:
+
+- add Swiper stylesheet in the `Inside <head> tag` section:
+  ```html
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+  />
+  ```
+- add Swiper script in the `Before </body> tag` section:
+  ```html
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  ```
+
+<img
+  src="/images/blog/swiper-slider-in-webflow/13-page-custom-code.jpg"
+  loading="lazy"
+/>
+
+## Styles
+
+With all the basics set up, let's go back to our Swiper component in the designer and apply some styles.
+
+`Collection List Wrapper` / `swiper`:
+
+<img
+  src="/images/blog/swiper-slider-in-webflow/14-swiper-styles.jpg"
+  loading="lazy"
+/>
+
+`Collection List` / `swiper-wrapper`:
+
+<img
+  src="/images/blog/swiper-slider-in-webflow/15-swiper-wrapper-styles.jpg"
+  loading="lazy"
+/>
+
+`Collection Item` / `swiper-slide`:
+
+<img
+  src="/images/blog/swiper-slider-in-webflow/16-swiper-slide-styles.jpg"
+  loading="lazy"
+/>
+
+`Image` / `swiper-slide-image`:
+
+<img
+  src="/images/blog/swiper-slider-in-webflow/17-image-styles.jpg"
+  loading="lazy"
+/>
+
+`Text` / `swiper-slide-title`:
+
+<img
+  src="/images/blog/swiper-slider-in-webflow/18-text-styles.jpg"
+  loading="lazy"
+/>
+
+## Init
+
+Finally, we need to initialize our Swiper. Go back to the Custom Code section in the page settings and change the `Before </body> tag` section to the following:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script>
+  const swiper = new Swiper('.swiper-movies', {
+    effect: 'coverflow',
+    centeredSlides: true,
+    slidesPerView: 1,
+    loop: true,
+    createElements: true,
+    pagination: true,
+    autoplay: true,
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+      },
+    },
+  });
+</script>
+```
+
+We can also tweak Swiper's default pagination by edditing the `Inside <head> tag` section:
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+<style>
+  :root {
+    --swiper-pagination-color: #000;
+  }
+</style>
+```
+
+## Result
+
+As a result, we have an amazing slider on our Webflow website
+
+<video
+  src="/images/blog/swiper-slider-in-webflow/21-final-video.mp4"
+  muted
+  autoPlay
+  loop
+/>
+
+## P.S.
+
+And as always, if you love Swiper, please, support project by donating or pledging:
+
+- on Patreon: [https://www.patreon.com/swiperjs](https://www.patreon.com/swiperjs)
+- on Open Collective: [https://opencollective.com/swiper](https://opencollective.com/swiper)
+
+And checking our premium projects:
+
+- [UI Initiative](https://uiinitiative.com)
+- [Swiper Studio](https://studio.swiperjs.com)
+
+Your support means a lot for us!
+
+export default ({ children }) => (
+  <PostLayout meta={meta}>{children}</PostLayout>
+);

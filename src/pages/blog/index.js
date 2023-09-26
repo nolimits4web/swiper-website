@@ -16,7 +16,7 @@ export default function Blog(props) {
         <h1 className="mb-[0.7em] text-[40px] font-bold leading-[1.2]">
           Swiper Blog
         </h1>
-        <div className="space-y-8 md:grid md:grid-cols-2 md:gap-8 md:space-y-0">
+        <div className="space-y-8 sm:grid sm:grid-cols-2 sm:gap-8 sm:space-y-0">
           {posts.map((post) => (
             <Link
               href={post.path}

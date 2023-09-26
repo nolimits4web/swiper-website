@@ -7,14 +7,23 @@ import Carbon from '@/components/Carbon';
 
 let tableOfContents;
 
+const studioAvailable = [
+  'tinder-slider',
+  'carousel-slider',
+  'panorama-slider',
+  'shaders-slider',
+  'shutters-slider',
+  'slicer-slider',
+];
+
 const DemoButton = (props) => {
-  const { children, onClick, tonal, ...rest } = props;
+  const { children, onClick, tonal, className, ...rest } = props;
   const Tag = rest.href ? 'a' : 'button';
   return (
     <Tag
-      className={`relative flex cursor-pointer items-center justify-center rounded-md px-3 text-sm !font-medium text-primary !no-underline hover:bg-primary hover:text-on-primary sm:ml-1 ${
+      className={`relative flex cursor-pointer items-center justify-center rounded-md px-3 text-sm !font-medium text-primary !no-underline hover:bg-primary hover:text-on-primary ${
         tonal ? 'bg-secondary-container' : ''
-      } h-7`}
+      } h-7 ${className || ''}`}
       onClick={onClick}
       {...rest}
     >
@@ -42,6 +51,10 @@ export default function DemosPage() {
         Premium Swiper templates & plugins from{' '}
         <a href="https://uiinitiative.com" target="_blank">
           UI Initiative
+        </a>{' '}
+        and{' '}
+        <a href="https://studio.swiperjs.com" target="_blank">
+          Swiper Studio
         </a>
       </p>
 
@@ -58,19 +71,37 @@ export default function DemosPage() {
                 <Heading level={2} className="mt-0" id={slug} link={false}>
                   {title}{' '}
                 </Heading>
-                <div className=" -mt-2 block opacity-60">{subtitle}</div>
-                <div className="my-4 flex space-x-4 text-sm">
+                <div className="-mt-4 block opacity-60">{subtitle}</div>
+                <div className="mt-2 flex flex-wrap text-sm">
                   <DemoButton
                     href={preview}
                     target="_blank"
                     rel="noopener"
                     tonal
+                    className="mb-2 mr-2"
                   >
                     Preview
                   </DemoButton>
-                  <DemoButton href={url} target="_blank" rel="noopener" tonal>
+                  <DemoButton
+                    href={url}
+                    className="mb-2 mr-2"
+                    target="_blank"
+                    rel="noopener"
+                    tonal
+                  >
                     Store Page
                   </DemoButton>
+                  {studioAvailable.includes(slug) && (
+                    <DemoButton
+                      href="https://studio.swiperjs.com"
+                      target="_blank"
+                      rel="noopener"
+                      tonal
+                      title="This effect is available in Swiper Studio"
+                    >
+                      Available in Studio
+                    </DemoButton>
+                  )}
                 </div>
               </div>
             </div>

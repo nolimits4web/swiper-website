@@ -162,7 +162,7 @@ export default function Home(props) {
 
         <div className="mb-20 mt-24">
           <HomeHeading>Premium Services</HomeHeading>
-          <div className="grid-cols-2 gap-8 md:grid">
+          <div className="grid-cols-2 gap-8 sm:grid">
             <Link
               className="swiper-studio-card block rounded-3xl border border-outline-variant text-center text-on-surface duration-100 hover:bg-primary-container hover:no-underline active:rounded-xl"
               href="https://studio.swiperjs.com"
@@ -188,7 +188,7 @@ export default function Home(props) {
             <Link
               href="https://uiinitiative.com"
               target="_blank"
-              className="uiinitiative-card mt-8 block rounded-3xl border border-outline-variant text-center text-on-surface duration-100 hover:bg-primary-container hover:no-underline  active:rounded-xl md:mt-0"
+              className="uiinitiative-card mt-8 block rounded-3xl border border-outline-variant text-center text-on-surface duration-100 hover:bg-primary-container hover:no-underline  active:rounded-xl sm:mt-0"
             >
               <div className="mx-auto px-4 pt-4">
                 <img
@@ -211,33 +211,31 @@ export default function Home(props) {
 
         <div className="mb-20 mt-24">
           <HomeHeading>Latest From The Blog</HomeHeading>
-          <div className="space-y-8 grid-cols-3 gap-8 md:grid md:space-y-0">
+          <div className="grid-cols-2 gap-8 space-y-8 sm:grid sm:space-y-0 md:grid-cols-3">
             {posts.map((post) => (
               <Link
-              key={post.title}
-              className="group relative block rounded-3xl border border-outline-variant p-4 duration-200 hover:bg-primary-container hover:text-on-primary-container hover:no-underline active:rounded-xl"
-              href={post.path}
-            >
-              <div className="relative overflow-hidden rounded-xl pb-[50%]">
-                {post.image && (
-                  <img
-                    className="absolute left-0 top-0 h-full w-full object-cover object-center duration-200"
-                    src={`${post.image}`}
-                    alt={post.title}
-                    loading="lazy"
-                  />
-                )}
-              </div>
-              <div className="mt-4 w-fit text-xl font-bold text-on-surface group-hover:text-on-primary-container">
-                {post.title}
-              </div>
-              <div className="mt-1 text-sm text-on-surface opacity-75">
-                {formatDate(post.date)}
-              </div>
-            </Link>
+                key={post.title}
+                className="group relative block rounded-3xl border border-outline-variant p-4 duration-200 hover:bg-primary-container hover:text-on-primary-container hover:no-underline active:rounded-xl"
+                href={post.path}
+              >
+                <div className="relative overflow-hidden rounded-xl pb-[50%]">
+                  {post.image && (
+                    <img
+                      className="absolute left-0 top-0 h-full w-full object-cover object-center duration-200"
+                      src={`${post.image}`}
+                      alt={post.title}
+                      loading="lazy"
+                    />
+                  )}
+                </div>
+                <div className="mt-4 w-fit text-xl font-bold text-on-surface group-hover:text-on-primary-container">
+                  {post.title}
+                </div>
+                <div className="mt-1 text-sm text-on-surface opacity-75">
+                  {formatDate(post.date)}
+                </div>
+              </Link>
             ))}
-
-
           </div>
         </div>
 
@@ -328,7 +326,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      posts,
+      posts: posts.slice(0, 3),
     },
   };
 }

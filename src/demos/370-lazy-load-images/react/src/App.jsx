@@ -4,14 +4,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/lazy';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import './styles.css';
 
 // import required modules
-import { Lazy, Pagination, Navigation } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 
 export default function App() {
   return (
@@ -26,7 +25,7 @@ export default function App() {
           clickable: true,
         }}
         navigation={true}
-        modules={[Lazy, Pagination, Navigation]}
+        modules={[Pagination, Navigation]}
         className="mySwiper"
       >
         <SwiperSlide>

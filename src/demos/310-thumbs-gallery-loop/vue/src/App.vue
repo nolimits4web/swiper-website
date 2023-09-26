@@ -7,7 +7,7 @@
     :loop="true"
     :spaceBetween="10"
     :navigation="true"
-    :thumbs="{ swiper: thumbsSwiper }"
+    :thumbs="{ swiper: thumbsSwiper.value }"
     :modules="modules"
     class="mySwiper2"
   >
@@ -85,22 +85,21 @@
   </swiper>
 </template>
 <script>
+  import { ref } from 'vue';
   // Import Swiper Vue.js components
   import { Swiper, SwiperSlide } from 'swiper/vue';
 
   // Import Swiper styles
   import 'swiper/css';
 
-  import "swiper/css/free-mode"
-  import "swiper/css/navigation"
-  import "swiper/css/thumbs"
+  import 'swiper/css/free-mode';
+  import 'swiper/css/navigation';
+  import 'swiper/css/thumbs';
 
   import './style.css';
 
-
   // import required modules
-  import {FreeMode,Navigation,Thumbs} from 'swiper/modules';
-
+  import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 
   export default {
     components: {
@@ -108,16 +107,17 @@
       SwiperSlide,
     },
     setup() {
-      let thumbsSwiper = null;
+      const thumbsSwiper = ref(null);
 
       const setThumbsSwiper = (swiper) => {
-        thumbsSwiper = swiper;
-      },
+        thumbsSwiper.value = swiper;
+      };
 
       return {
-
-        modules: [FreeMode,Navigation,Thumbs],
+        thumbsSwiper,
+        setThumbsSwiper,
+        modules: [FreeMode, Navigation, Thumbs],
       };
-    }
-  }
+    },
+  };
 </script>

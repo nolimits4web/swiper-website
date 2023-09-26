@@ -1,7 +1,7 @@
 import { PostLayout } from '@/components/PostLayout.js';
 
 export const meta = {
-  title: 'Slide Slots in v10.1.0',
+  title: 'Slide Slots In v10.1.0',
   date: '2023-08-01T11:00:00.000Z',
   image: '/images/blog/slide-slots-in-v10-1-0/cover.png',
   featured: false,
@@ -27,8 +27,8 @@ This causes to a wrong appearance of Swiper effects that use 3D transformations 
   width="800"
   height="640"
   style={{ height: '640px' }}
-  src="https://codesandbox.io/p/sandbox/mxhjqx?file=%2Findex.html&embed=1"
-  allowfullscreen
+  src="https://codesandbox.io/p/sandbox/swiper-effect-cube-forked-288dyk?file=%2Findex.html%3A65%2C27&embed=1"
+  allowFullScreen
 />
 
 ## Solution
@@ -46,11 +46,11 @@ In Swiper v10.1.0 we introduced slide slots to workaround this issue. In this ca
 </swiper-container>
 ```
 
-The Swiper component will dynamically check the number of slots passed to it in child components and automatically create the required number of slides. There are no restrictions on the number of slide slots to be used.
+The Swiper component will dynamically check the number of elements with slide slots passed and automatically create the required number of slides. There are no restrictions on the number of slide slots to be used.
 
 But in this case we need to reconsider the styling of the slides, as we don't have slide elements directly in the DOM, and the slides themselves are now in the shadow DOM.
 
-So it is recommended to use some custom wrapper for the contents of the slide slots, e.g.:
+So it is recommended to use some custom wrapper for the slide content, e.g.:
 
 ```html
 <swiper-container effect="cube">
@@ -106,7 +106,7 @@ And now everything works correctly (in Safari):
   height="640"
   style={{ height: '640px' }}
   src="https://codesandbox.io/p/sandbox/swiper-effect-cube-forked-c9x494"
-  allowfullscreen
+  allowFullScreen
 />
 
 ## P.S.
