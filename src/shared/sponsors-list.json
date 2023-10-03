@@ -1,5 +1,15 @@
 [
   {
+    "createdAt": "2023-10-03T16:00:00.00Z",
+    "title": "Игровые автоматы",
+    "link": "https://777.ua/ru/games/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/games-777",
+    "image": "games-777.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2023-10-02T16:00:00.00Z",
     "title": "BetFans - Alles over online wedden; Bookmakers Vergelijken",
     "link": "https://betfans.nl/",
