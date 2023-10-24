@@ -17,7 +17,7 @@ import 'swiper/css/a11y';
 import 'swiper/css/effect-creative';
 import 'swiper/css/effect-cards';
 import 'swiper/css/effect-flip';
-import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect';
+import { useIsomorphicLayoutEffect } from '../hooks/useIsomorphicLayoutEffect';
 
 Swiper.use([
   Navigation,
@@ -249,6 +249,7 @@ export default function HomeSlider() {
                   muted
                   autoPlay
                   loop
+                  playsInline
                 />
                 <video
                   className="absolute left-0 top-0 z-0 h-full w-full rounded-2xl object-cover dark:hidden"
@@ -257,6 +258,7 @@ export default function HomeSlider() {
                   muted
                   autoPlay
                   loop
+                  playsInline
                 />
               </div>
               <div className="relative mx-auto hidden w-full rounded-2xl border border-outline-variant pb-[48%] lg:block">
@@ -267,6 +269,7 @@ export default function HomeSlider() {
                   muted
                   autoPlay
                   loop
+                  playsInline
                 />
                 <video
                   className="absolute left-0 top-0 z-0 h-full w-full rounded-2xl object-cover dark:hidden"
@@ -275,6 +278,7 @@ export default function HomeSlider() {
                   muted
                   autoPlay
                   loop
+                  playsInline
                 />
               </div>
               <div className="relative mx-auto w-full rounded-2xl border border-outline-variant pb-[48%]">
@@ -285,6 +289,7 @@ export default function HomeSlider() {
                   muted
                   autoPlay
                   loop
+                  playsInline
                 />
               </div>
               <div className="relative mx-auto hidden w-full rounded-2xl border border-outline-variant pb-[48%] lg:block">
@@ -295,6 +300,7 @@ export default function HomeSlider() {
                   muted
                   autoPlay
                   loop
+                  playsInline
                 />
                 <video
                   className="absolute left-0 top-0 z-0 h-full w-full rounded-2xl object-cover dark:hidden"
@@ -303,6 +309,7 @@ export default function HomeSlider() {
                   muted
                   autoPlay
                   loop
+                  playsInline
                 />
               </div>
             </div>
