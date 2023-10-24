@@ -17,11 +17,11 @@ export default function Blog(props) {
           Swiper Blog
         </h1>
         <div className="space-y-8 sm:grid sm:grid-cols-2 sm:gap-8 sm:space-y-0">
-          {posts.map((post) => (
+          {posts.map((post, postIndex) => (
             <Link
               href={post.path}
               key={post.title}
-              style={{ gridColumn: post.featured ? '1 / span 2' : 'auto' }}
+              style={{ gridColumn: postIndex === 0 ? '1 / span 2' : 'auto' }}
               className="group relative block rounded-3xl border border-outline-variant p-4 duration-200 hover:bg-primary-container hover:text-on-primary-container hover:no-underline active:rounded-xl"
             >
               <div className="relative overflow-hidden rounded-xl pb-[50%]">

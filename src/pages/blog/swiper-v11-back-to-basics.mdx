@@ -1,0 +1,84 @@
+import { PostLayout } from '@/components/PostLayout.js';
+
+export const meta = {
+  title: 'Swiper v11 - Back To Basics',
+  date: '2023-10-24T10:00:00.000Z',
+  image: '/images/blog/swiper-v11-back-to-basics/cover.jpg',
+  published: true,
+};
+
+We're beyond excited to introduce our latest update: Swiper v11. But this isn't just any update. With v11, we're taking a significant stride — we're going "Back To Basics".
+
+## Touch Events
+
+In our continuous endeavor to make Swiper the go-to library for mobile touch sliders, we've traversed various pathways, experimented with technologies, and always aimed to provide the best experience for both developers and end-users. One such direction we took was pivoting to Pointer Events in Swiper v9, believing it was the best course of action for a unified handling of touch and mouse events.
+
+However, we noticed that while Pointer Events are undoubtedly revolutionary, they don't always provide the seamless touch experience we aim for in certain edge cases. Feedback from our community, coupled with our rigorous testing, highlighted some nuances and limitations with touch interactions.
+
+Given our commitment to the finest user experience, we decided to reintroduce support for touch events in v11 (where supported). By going "Back To Basics", we are ensuring that those edge cases, those tiny moments where touch needs to feel just right, are perfectly catered to.
+
+At least it will fix and improve the following cases:
+
+- `edgeSwipeDetection` and `touchReleaseOnEdges` parameters work correctly now on devices with touch events support (iOS/Android)
+- improved page scrolling detection and prevention
+
+## Loop Mode
+
+Loop mode has been seriously improved in v11:
+
+- added support for multirow layout with `grid.rows`
+- removed the `loopedSlides` parameter
+- added `loopAdditionalSlides` parameter instead of defining additional slides for "looping" (rearranging)
+- new `loopAddBlankSlides` parameter that will automatically add empty slides for `slidesPerGroup` and `grid.rows`
+- new relaxed requirements for the number of slides:
+  - minimum number of slides must be >= `slidesPerView` + `slidesPerGroup`
+  - the number of slides should be even to `slidesPerGroup` (or use `loopAddBlankSlides` parameter)
+  - the number of slides should be even to `grid.rows` (or use `loopAddBlankSlides` parameter)
+
+For example, if we have `slidesPerView: 3`, in v10 we needed at least 6 slides for loop mode. In v11, we now need only 4 slides for that.
+
+## Element Events Prefix
+
+Swiper Element emits native DOM events using the same event names as Swiper class events. This caused problems if a third-party library used similar native DOM events, such as `touchstart`, `touchmove`, etc. Therefore, in v11, all Swiper Element events now have a `swiper` prefix (configurable in the `eventsPrefix` parameter).
+
+This can now be used as follows:
+
+```html
+<swiper-container> ... </swiper-container>
+<script>
+  const swiperEl = document.querySelector('swiper-container');
+
+  // listen for `slideChange` event
+  swiperEl.addEventListener('swiperslidechange', onSlideChange);
+</script>
+```
+
+## Overflow Hidden
+
+In Swiper v10, the `overflow` property of the container defaulted to `clip`. As it turned out, not all browsers support this property correctly, so in v11 we reverted to `overflow: hidden` for the default Swiper container styles.
+
+## What's Next?
+
+It was an overview of most significant changes and new features.
+
+For all changes list please refer to [full v11 changelog](/changelog).
+
+And it is recommended to check the [Migration guide to v11](/migration-guide-v11).
+
+## P.S.
+
+And as always, if you love Swiper, please, support project by donating or pledging:
+
+- on Patreon: [https://www.patreon.com/swiperjs](https://www.patreon.com/swiperjs)
+- on Open Collective: [https://opencollective.com/swiper](https://opencollective.com/swiper)
+
+And checking our premium projects:
+
+- [UI Initiative](https://uiinitiative.com)
+- [Swiper Studio](https://studio.swiperjs.com)
+
+Your support means a lot for us!
+
+export default ({ children }) => (
+  <PostLayout meta={meta}>{children}</PostLayout>
+);
