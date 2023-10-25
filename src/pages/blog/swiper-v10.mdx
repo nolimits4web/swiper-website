@@ -94,16 +94,16 @@ Now, we can use ES modules and use only those we need directly in browser:
 
 {/* prettier-ignore */}
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper.min.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/modules/navigation.min.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/modules/pagination.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/modules/navigation.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/modules/pagination.min.css" />
 
 <div class="swiper">...</div>
 
 <script type="module">
-  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@10/swiper.min.mjs'
-  import Navigation from 'https://cdn.jsdelivr.net/npm/swiper@10/modules/navigation.min.mjs'
-  import Pagination from 'https://cdn.jsdelivr.net/npm/swiper@10/modules/pagination.min.mjs'
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper.min.mjs'
+  import Navigation from 'https://cdn.jsdelivr.net/npm/swiper@11/modules/navigation.min.mjs'
+  import Pagination from 'https://cdn.jsdelivr.net/npm/swiper@11/modules/pagination.min.mjs'
 
   const swiper = new Swiper('.swiper', {
     modules: [Navigation, Pagination],
