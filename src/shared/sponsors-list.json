@@ -1,16 +1,36 @@
 [
   {
-    "createdAt": "2023-10-3016:00:00.00Z",
+    "createdAt": "2023-10-31T16:00:00.00Z",
+    "title": "The Ultimate Crash Gambling Experience – Crash Game",
+    "link": "https://crash-game.org/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/crashgame",
+    "image": "crashgame.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2023-10-31T16:00:00.00Z",
+    "title": "Casino utan Svensk Licens | Bästa Casinon utan Spelpaus 🎖️",
+    "link": "https://spelpressen.se/casino-reportage/casino-utan-svensk-licens",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/spelpressen-se",
+    "image": "spelpressen-se.png",
+    "endDate": "2024-10-31T16:00:00.00Z",
+    "active": true
+  },
+  {
+    "createdAt": "2023-10-30T16:00:00.00Z",
     "title": "Casinomir UK - Your Guide to the World of Online Casinos",
     "link": "https://uk.casinomir.com/",
     "plan": "Sponsor",
     "ref": "https://opencollective.com/miruk",
     "image": "miruk.png",
-    "endDate": "2024-10-3016:00:00.00Z",
+    "endDate": "2024-10-30T16:00:00.00Z",
     "active": true
   },
   {
-    "createdAt": "2023-10-3016:00:00.00Z",
+    "createdAt": "2023-10-30T16:00:00.00Z",
     "title": "Česká Online Casino - Nová, Legální Online Casina 2023",
     "link": "https://bestczechcasinos.cz/",
     "plan": "Sponsor",
@@ -20,17 +40,17 @@
     "active": true
   },
   {
-    "createdAt": "2023-10-3016:00:00.00Z",
+    "createdAt": "2023-10-30T16:00:00.00Z",
     "title": "Casinos Not On Gamstop UK: Where To Play Safely In 2023 Updated October",
     "link": "https://www.outlookindia.com/outlook-spotlight/casinos-not-on-gamstop-uk-news-302214/",
     "plan": "Sponsor",
     "ref": "https://opencollective.com/wendy-mantilla",
     "image": "wendy-mantilla.png",
-    "endDate": "2024-10-3016:00:00.00Z",
+    "endDate": "2024-10-30T16:00:00.00Z",
     "active": true
   },
   {
-    "createdAt": "2023-10-3016:00:00.00Z",
+    "createdAt": "2023-10-30T16:00:00.00Z",
     "title": "E-Learning and Self-Development - Self-Starters",
     "link": "https://self-starters.com/",
     "plan": "Sponsor",
@@ -40,7 +60,7 @@
     "active": true
   },
   {
-    "createdAt": "2023-10-2716:00:00.00Z",
+    "createdAt": "2023-10-27T16:00:00.00Z",
     "title": "A Legjobb Online Kaszinók Magyarországon 2023 A Legjobb Kaszinó Bónuszokkal",
     "link": "https://kaszinozone.com/",
     "plan": "Sponsor",
@@ -50,7 +70,7 @@
     "active": true
   },
   {
-    "createdAt": "2023-10-2416:00:00.00Z",
+    "createdAt": "2023-10-24T16:00:00.00Z",
     "title": "Fortune Ox | Jogo do Touro Fortune-Ox",
     "link": "https://fortune-ox.com.br/",
     "plan": "Sponsor",
