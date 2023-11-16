@@ -1,11 +1,21 @@
 [
   {
-    "createdAt": "2023-11-15T16:00:00.00Z",
+    "createdAt": "2023-11-16T16:00:00.00Z",
     "title": "High Roller Online Casinos 🎖️ Best High Roller Casino Sites",
     "link": "https://high-roller.vip/",
     "plan": "Sponsor",
     "ref": "https://opencollective.com/max56",
     "image": "high-roller-vip.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2023-11-16T16:00:00.00Z",
+    "title": "Instagram Story Viewer",
+    "link": "https://anonstories.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/ig-story-viewer",
+    "image": "ig-story-viewer.png",
     "endDate": "",
     "active": true
   },
