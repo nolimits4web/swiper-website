@@ -1,5 +1,35 @@
 [
   {
+    "createdAt": "2023-11-20T16:00:00.00Z",
+    "title": "ObKøb på afbetaling",
+    "link": "https://afbetalt.dk/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/afbetalt-kob-pa-afbetaling",
+    "image": "afbetalt-kob-pa-afbetaling.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2023-11-20T16:00:00.00Z",
+    "title": "Obillex.com is a free service where we connect you with selected retailers that offer your prefered payment methods",
+    "link": "https://obillex.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/obillex",
+    "image": "obillex.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2023-11-20T16:00:00.00Z",
+    "title": "Utländska Casino | Bästa Casinon med Trustly, BankID & Zimpler",
+    "link": "https://xn--utlndskacasino-7hb.se/",
+    "plan": "Sponsor",
+    "ref": "",
+    "image": "utlandska.png",
+    "endDate": "2024-11-20T16:00:00.00Z",
+    "active": true
+  },
+  {
     "createdAt": "2023-11-16T16:00:00.00Z",
     "title": "High Roller Online Casinos 🎖️ Best High Roller Casino Sites",
     "link": "https://high-roller.vip/",
