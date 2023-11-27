@@ -1,5 +1,55 @@
 [
   {
+    "createdAt": "2023-11-27T16:00:00.00Z",
+    "title": "SVITUA",
+    "link": "https://svitua.com.ua/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/svitua-media",
+    "image": "svitua-media.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2023-11-27T16:00:00.00Z",
+    "title": "A Legjobb Online Kaszinók Magyarországon 2023 A Legjobb Kaszinó Bónuszokkal",
+    "link": "https://kaszinozone.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/kaszino-zone",
+    "image": "kaszino-zone.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2023-11-27T16:00:00.00Z",
+    "title": "Dive into the Crazy Time Live game by Evolution Gaming",
+    "link": "https://crazytime.games/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/crazy-time-game",
+    "image": "crazy-time-game.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2023-11-27T16:00:00.00Z",
+    "title": "Migliori Casinò non AAMS Senza Documenti",
+    "link": "https://casinosenzadocumenti.net/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/casinosenzadocumenti",
+    "image": "casinosenzadocumenti.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2023-11-27T16:00:00.00Z",
+    "title": "Bruxo 10bet - Entre no Site Oficial com Bônus Exclusivo",
+    "link": "https://bruxo10bet.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/bruxo-10bet",
+    "image": "bruxo-10bet.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2023-11-24T16:00:00.00Z",
     "title": "casino zonder registratie",
     "link": "https://casinoszonderregistratie.net",
