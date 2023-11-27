@@ -14,6 +14,7 @@ const studioAvailable = [
   'shaders-slider',
   'shutters-slider',
   'slicer-slider',
+  'material-slider',
 ];
 
 const DemoButton = (props) => {
