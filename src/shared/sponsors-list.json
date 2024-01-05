@@ -1,5 +1,45 @@
 [
   {
+    "createdAt": "2024-01-05T16:00:00.00Z",
+    "title": "Intertwitter",
+    "link": "https://intertwitter.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/intertwitter",
+    "image": "intertwitter.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2024-01-05T16:00:00.00Z",
+    "title": "Säljer unika och snygga posters till bra priser",
+    "link": "https://posterbutiken.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/posterbutiken",
+    "image": "posterbutiken.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2024-01-05T16:00:00.00Z",
+    "title": "Nyhetssida om Apple och Mac produkter",
+    "link": "https://mac.nu/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/macnu",
+    "image": "macnu.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2024-01-05T16:00:00.00Z",
+    "title": "Casino Bonus Immediato Senza Deposito e Documento",
+    "link": "https://www.outlookindia.com/outlook-spotlight/casino-con-bonus-immediato-senza-deposito-e-senza-documento-news-336137",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/casino-bonus-immediato-senza-d",
+    "image": "casino-bonus-immediato-senza-d.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2024-01-03T16:00:00.00Z",
     "title": "buy youtube views from stormlikes",
     "link": "https://www.stormlikes.net/buy-youtube-views",
