@@ -1,5 +1,35 @@
 [
   {
+    "createdAt": "2024-01-19T20:00:00.000Z",
+    "title": "SLEX Trade Crypto & Commodity",
+    "link": "https://slex.io/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/slex",
+    "image": "slex.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2024-01-19T20:00:00.000Z",
+    "title": "Jogo Tiger Fortune – Jogo do Tigrinho para Ganhar Dinheiro",
+    "link": "https://jogo-tiger-fortune.com.br/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/fortune-tiger",
+    "image": "fortune-tiger.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2024-01-19T20:00:00.000Z",
+    "title": "Twitter Video Downloader - Download Twitter Videos in MP4",
+    "link": "https://ssstwitter.online/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/ssstwitter",
+    "image": "ssstwitter.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2024-01-17T20:00:00.000Z",
     "title": "Best Non Gamstop Casinos",
     "link": "https://bestnongamstopcasinos.net/",
@@ -56,7 +86,7 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/justuk-club",
     "image": "justuk-club.png",
-    "endDate": "2024-03-24T20:00:00.000Z",
+    "endDate": "2024-04-24T20:00:00.000Z",
     "active": true
   },
   {
@@ -841,11 +871,11 @@
   },
   {
     "createdAt": "2023-09-19T16:00:00.00Z",
-    "title": "Best Online Casinos in New Jersey: Your Ultimate Guide",
-    "link": "https://njcasimile.com/",
+    "title": "Best Online Casinos in New Jersey",
+    "link": "https://testcasinos.com/us/nj/",
     "plan": "Sponsor",
-    "ref": "https://opencollective.com/njcasimilecom",
-    "image": "njcasimilecom.png",
+    "ref": "https://opencollective.com/testcasinoscomusnj",
+    "image": "testcasinoscomusnj.png",
     "endDate": "2024-09-19T16:00:00.00Z",
     "active": true
   },
