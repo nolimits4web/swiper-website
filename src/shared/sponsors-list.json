@@ -1,5 +1,15 @@
 [
   {
+    "createdAt": "2024-01-26T20:00:00.000Z",
+    "title": "Local newspaper in Dublin",
+    "link": "https://indublin.ie/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/indublin",
+    "image": "indublin.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2024-01-25T20:00:00.000Z",
     "title": "Limitless Casino Bonus",
     "link": "https://limitlesscasinobonus.net",
