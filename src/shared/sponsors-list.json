@@ -1,6 +1,16 @@
 [
   {
     "createdAt": "2024-01-29T20:00:00.000Z",
+    "title": "Anonymous Instagram Story Viewer - Instanavigation",
+    "link": "https://instanavigation.us/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/instagram-story-viewer-by-inst",
+    "image": "instagram-story-viewer-by-inst.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2024-01-29T20:00:00.000Z",
     "title": "buy instagram followers from skweezer.net",
     "link": "https://skweezer.net/buy-instagram-followers",
     "plan": "Silver Sponsor",
@@ -1526,7 +1536,7 @@
     "plan": "Silver Sponsor",
     "ref": "https://opencollective.com/automatenspielexcom",
     "image": "automatenspielexcom.png",
-    "endDate": "2024-02-28T20:00:00.000Z",
+    "endDate": "2025-02-28T20:00:00.000Z",
     "active": true
   },
   {
