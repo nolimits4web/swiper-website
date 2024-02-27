@@ -87,15 +87,16 @@ export function WithSidebarLayout({
         onClick={() => setSidebarOpened(false)}
       />
       <div
-        className={`fixed left-0 top-0 z-50 mr-10 h-screen w-56 flex-none bg-surface-3 text-sm lg:relative lg:z-40 lg:!block lg:h-auto lg:rounded-none lg:bg-transparent ${
+        className={`fixed left-0 top-0 z-50 mr-10 h-screen w-64 flex-none bg-surface-3 text-sm lg:relative lg:z-40 lg:!block lg:h-auto lg:rounded-none lg:bg-transparent ${
           sidebarOpened ? 'block' : 'hidden'
         }`}
       >
-        <div className="h-full overflow-y-auto overscroll-contain px-4 py-10 lg:sticky lg:top-16 lg:h-auto lg:max-h-[calc(100vh-64px)] lg:px-0">
+        <div className="h-full overflow-y-auto overscroll-contain px-4 pt-10 lg:sticky lg:top-16 lg:h-auto lg:max-h-[calc(100vh-64px)] lg:px-0">
           <SidebarSponsors />
           {toc.length > 0 && (
             <TableOfContents onClick={onListClick} tableOfContents={toc} />
           )}
+          <Carbon sidebar />
         </div>
       </div>
       {/* Center */}
@@ -103,12 +104,11 @@ export function WithSidebarLayout({
         className="dark:prose-dark prose mx-auto min-w-0 max-w-none flex-auto pb-24 pt-10 lg:pb-16 2xl:max-w-[940px]"
         ref={contentRef}
       >
-        {meta.carbon && <Carbon sidebar />}
         {beforePageTitle}
         {(pageTitle || meta.title) && <h1>{pageTitle || meta.title}</h1>}
         {afterPageTitle}
         {children}
-        <div className="mt-4 text-right pt-4 border-t border-outline-variant">
+        <div className="mt-4 border-t border-outline-variant pt-4 text-right">
           <Link
             href={`https://github.com/nolimits4web/swiper-website/edit/master/src/pages${router.pathname}.mdx`}
           >

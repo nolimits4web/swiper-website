@@ -3,7 +3,6 @@ import Heading from '@/components/Heading';
 import { WithSidebarLayout } from '@/layouts/WithSidebarLayout';
 import { useLazyDemos } from '@/shared/use-lazy-demos';
 import uiinitiativeDemos from '@/uiinitiative-demos.json';
-import Carbon from '@/components/Carbon';
 
 let tableOfContents;
 
@@ -46,7 +45,6 @@ export default function DemosPage() {
 
   return (
     <WithSidebarLayout tableOfContents={tableOfContents}>
-      <Carbon sidebar />
       <h1>Premium Swiper Plugins</h1>
       <p>
         Premium Swiper templates & plugins from{' '}
