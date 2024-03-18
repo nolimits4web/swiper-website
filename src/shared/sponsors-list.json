@@ -1,11 +1,21 @@
 [
   {
     "createdAt": "2024-03-18T20:00:00.000Z",
+    "title": "Quantum AI",
+    "link": "https://quantumai.bot/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/quantumai",
+    "image": "quantumai.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2024-03-18T20:00:00.000Z",
     "title": "Daman Game Download",
     "link": "https://damangamesapp.org/",
     "plan": "Sponsor",
     "ref": "https://opencollective.com/daman-games-official",
-    "image": "daman-games-official.png",
+    "image": "daman-games-official.webp",
     "endDate": "",
     "active": true
   },
