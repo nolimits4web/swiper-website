@@ -1,5 +1,15 @@
 [
   {
+    "createdAt": "2024-03-26T20:00:00.000Z",
+    "title": "Fortune Tiger",
+    "link": "https://fortune-tiger-br.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/fortune-tiger2",
+    "image": "fortune-tiger2.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2024-03-25T20:00:00.000Z",
     "title": "Casino Bonussen Nederland",
     "link": "https://www.hellobonuses.com/nl/",
@@ -160,36 +170,6 @@
     "active": true
   },
   {
-    "createdAt": "2024-02-23T20:00:00.000Z",
-    "title": "Gamblingtips",
-    "link": "https://opencollective.com/gamblingtips",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/gamblingtips",
-    "image": "gamblingtips.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2024-02-19T20:00:00.000Z",
-    "title": "Browse Prisons Or Search Inmates in USA",
-    "link": "https://kendallcountyhistory.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/kendallcountyhistorycom",
-    "image": "kendallcountyhistorycom.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2024-02-14T20:00:00.000Z",
-    "title": "Best online casinos in The Netherlands",
-    "link": "https://www.casinokennis.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/casinokennis",
-    "image": "casinokennis.png",
-    "endDate": "2025-02-14T20:00:00.000Z",
-    "active": true
-  },
-  {
     "createdAt": "2024-02-12T20:00:00.000Z",
     "title": "The best casino reviews, bonuses and slots",
     "link": "https://gamblecritic.net/",
@@ -260,26 +240,6 @@
     "active": true
   },
   {
-    "createdAt": "2024-01-26T20:00:00.000Z",
-    "title": "Local newspaper in Dublin",
-    "link": "https://indublin.ie/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/indublin",
-    "image": "indublin.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2024-01-25T20:00:00.000Z",
-    "title": "Limitless Casino Bonus",
-    "link": "https://limitlesscasinobonus.net",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/limitlesscasinobonus",
-    "image": "limitlesscasinobonus.png",
-    "endDate": "",
-    "active": true
-  },
-  {
     "createdAt": "2024-01-25T20:00:00.000Z",
     "title": "Non UKGC Casino",
     "link": "https://www.outlookindia.com/outlook-spotlight/non-ukgc-casino-new-2024",
@@ -306,16 +266,6 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/blastup_com",
     "image": "blastup_com.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2024-01-25T20:00:00.000Z",
-    "title": "Android/iOS Games Apps Download",
-    "link": "https://redmoonpie.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/redmoonpiewebsite",
-    "image": "redmoonpiewebsite.png",
     "endDate": "",
     "active": true
   },
@@ -350,26 +300,6 @@
     "active": true
   },
   {
-    "createdAt": "2024-01-19T20:00:00.000Z",
-    "title": "Twitter Video Downloader - Download Twitter Videos in MP4",
-    "link": "https://ssstwitter.online/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/ssstwitter",
-    "image": "ssstwitter.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2024-01-17T20:00:00.000Z",
-    "title": "Best Non Gamstop Casinos",
-    "link": "https://bestnongamstopcasinos.net/",
-    "plan": "Sponsor",
-    "ref": "https://www.patreon.com/LimitlessCasino",
-    "image": "limitlesscasino.webp",
-    "endDate": "",
-    "active": true
-  },
-  {
     "createdAt": "2024-01-17T20:00:00.000Z",
     "title": "30 Best Casinos Not on Gamstop in 2024",
     "link": "https://finance.yahoo.com/news/30-best-casinos-not-gamstop-091943696.html?guccounter=1",
@@ -396,16 +326,6 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/casinos-zonder-cruks",
     "image": "casinos-zonder-cruks.svg",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2024-01-16T20:00:00.000Z",
-    "title": "try bookmakers not on GamStop",
-    "link": "https://nongamstopbookies.com/uk/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/try-bookmakers-not-on-gamstop",
-    "image": "try-bookmakers-not-on-gamstop.svg",
     "endDate": "",
     "active": true
   },
@@ -486,26 +406,6 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/intertwitter",
     "image": "intertwitter.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2024-01-05T16:00:00.00Z",
-    "title": "Säljer unika och snygga posters till bra priser",
-    "link": "https://posterbutiken.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/posterbutiken",
-    "image": "posterbutiken.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2024-01-05T16:00:00.00Z",
-    "title": "Nyhetssida om Apple och Mac produkter",
-    "link": "https://mac.nu/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/macnu",
-    "image": "macnu.png",
     "endDate": "",
     "active": true
   },
@@ -641,16 +541,6 @@
   },
   {
     "createdAt": "2023-12-01T16:00:00.00Z",
-    "title": "Software Development Company - Chudovo",
-    "link": "https://chudovo.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/chudovo",
-    "image": "chudovo.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2023-12-01T16:00:00.00Z",
     "title": "Čеské оnlinе kаsinо rесеnzе а hоdnосеní",
     "link": "https://ceskecasino.best/",
     "plan": "Sponsor",
@@ -666,16 +556,6 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/socialfollowersuk",
     "image": "buy-tiktok-followers.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2023-11-28T16:00:00.00Z",
-    "title": "Fortune Ox",
-    "link": "https://fortune-ox.com.br/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/fortune-ox",
-    "image": "fortune-ox.png",
     "endDate": "",
     "active": true
   },
@@ -720,56 +600,6 @@
     "active": true
   },
   {
-    "createdAt": "2023-11-27T16:00:00.00Z",
-    "title": "A Legjobb Online Kaszinók Magyarországon 2023 A Legjobb Kaszinó Bónuszokkal",
-    "link": "https://kaszinozone.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/kaszino-zone",
-    "image": "kaszino-zone.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2023-11-27T16:00:00.00Z",
-    "title": "Dive into the Crazy Time Live game by Evolution Gaming",
-    "link": "https://crazytime.games/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/crazy-time-game",
-    "image": "crazy-time-game.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2023-11-27T16:00:00.00Z",
-    "title": "Migliori Casinò non AAMS Senza Documenti",
-    "link": "https://casinosenzadocumenti.net/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/casinosenzadocumenti",
-    "image": "casinosenzadocumenti.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2023-11-27T16:00:00.00Z",
-    "title": "Bruxo 10bet - Entre no Site Oficial com Bônus Exclusivo",
-    "link": "https://bruxo10bet.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/bruxo-10bet",
-    "image": "bruxo-10bet.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2023-11-24T16:00:00.00Z",
-    "title": "casino zonder registratie",
-    "link": "https://casinoszonderregistratie.net",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/sasinoszonderregistratie-net",
-    "image": "sasinoszonderregistratie-net.png",
-    "endDate": "",
-    "active": true
-  },
-  {
     "createdAt": "2023-11-23T16:00:00.00Z",
     "title": "Lemon Casino Polska: ➡ Odbierz Bonus do 3000 PLN + 200 FS",
     "link": "https://lemon-kasyno-pl.com/",
@@ -786,16 +616,6 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/bruno-casino-nl",
     "image": "bruno-casino-nl.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2023-11-22T16:00:00.00Z",
-    "title": "Svensk Kryptoblogg: Lär dig allt om Krypto",
-    "link": "https://wekrypto.co/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/wekrypto",
-    "image": "wekrypto.png",
     "endDate": "",
     "active": true
   },
@@ -821,26 +641,6 @@
   },
   {
     "createdAt": "2023-11-20T16:00:00.00Z",
-    "title": "ObKøb på afbetaling",
-    "link": "https://afbetalt.dk/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/afbetalt-kob-pa-afbetaling",
-    "image": "afbetalt-kob-pa-afbetaling.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2023-11-20T16:00:00.00Z",
-    "title": "Obillex.com is a free service where we connect you with selected retailers that offer your prefered payment methods",
-    "link": "https://obillex.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/obillex",
-    "image": "obillex.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2023-11-20T16:00:00.00Z",
     "title": "Utländska Casino | Bästa Casinon med Trustly, BankID & Zimpler",
     "link": "https://xn--utlndskacasino-7hb.se/",
     "plan": "Sponsor",
@@ -851,51 +651,11 @@
   },
   {
     "createdAt": "2023-11-16T16:00:00.00Z",
-    "title": "High Roller Online Casinos 🎖️ Best High Roller Casino Sites",
-    "link": "https://high-roller.vip/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/max56",
-    "image": "high-roller-vip.svg",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2023-11-16T16:00:00.00Z",
     "title": "Instagram Story Viewer",
     "link": "https://anonstories.com/",
     "plan": "Sponsor",
     "ref": "https://opencollective.com/ig-story-viewer",
     "image": "ig-story-viewer.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2023-11-14T16:00:00.00Z",
-    "title": "casino uden ROFUS",
-    "link": "https://casinoudenrofus.info/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/sasinoudenrofus-info",
-    "image": "sasinoudenrofus-info.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2023-11-10T16:00:00.00Z",
-    "title": "Free Slots No Deposit",
-    "link": "https://onecdn.co.uk/casino/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/free-slots-no-deposit",
-    "image": "free-slots-no-deposit.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2023-11-09T16:00:00.00Z",
-    "title": "Best No Deposit Bonus Codes of 2023: Our Top 7 (out of 67)",
-    "link": "https://www.timesunion.com/marketplace/article/no-deposit-bonus-codes-18475605.php",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/no-deposit-welcome-bonus",
-    "image": "no-deposit-welcome-bonus.png",
     "endDate": "",
     "active": true
   },
@@ -927,16 +687,6 @@
     "ref": "https://opencollective.com/founder-shield",
     "image": "founder-shield.png",
     "endDate": "2024-11-04T16:00:00.00Z",
-    "active": true
-  },
-  {
-    "createdAt": "2023-11-01T16:00:00.00Z",
-    "title": "Best betting sites in Kenya",
-    "link": "https://outlookindia.com/outlook-spotlight/best-betting-sites-in-kenya-news-328043",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/best-betting-sites-in-kenya",
-    "image": "best-betting-sites-in-kenya.png",
-    "endDate": "",
     "active": true
   },
   {
@@ -981,52 +731,12 @@
   },
   {
     "createdAt": "2023-10-30T16:00:00.00Z",
-    "title": "Česká Online Casino - Nová, Legální Online Casina 2023",
-    "link": "https://bestczechcasinos.cz/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/best-czech-casinos",
-    "image": "best-czech-casinos.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2023-10-30T16:00:00.00Z",
     "title": "Casinos Not On Gamstop UK: Where To Play Safely In 2023 Updated October",
     "link": "https://www.outlookindia.com/outlook-spotlight/casinos-not-on-gamstop-uk-news-302214/",
     "plan": "Sponsor",
     "ref": "https://opencollective.com/wendy-mantilla",
     "image": "wendy-mantilla.png",
     "endDate": "2024-10-30T16:00:00.00Z",
-    "active": true
-  },
-  {
-    "createdAt": "2023-10-30T16:00:00.00Z",
-    "title": "E-Learning and Self-Development - Self-Starters",
-    "link": "https://self-starters.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/self-starters",
-    "image": "self-starters.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2023-10-27T16:00:00.00Z",
-    "title": "A Legjobb Online Kaszinók Magyarországon 2023 A Legjobb Kaszinó Bónuszokkal",
-    "link": "https://kaszinozone.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/gabor-kovacs",
-    "image": "kaszino-zone.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2023-10-18T16:00:00.00Z",
-    "title": "Migliori Casino Non AAMS Sicuri - Casinò Senza Licenza ADM",
-    "link": "https://www.outlookindia.com/outlook-spotlight/migliori-casino-non-aams-sicuri-casin%C3%B2-senza-licenza-adm-news-317630",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/casino-online-non-aams-outlook",
-    "image": "casino-online-non-aams-outlook.png",
-    "endDate": "",
     "active": true
   },
   {
@@ -1056,16 +766,6 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/betting-sites-not-on-gamstop",
     "image": "betting-sites-not-on-gamstop.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2023-10-05T16:00:00.00Z",
-    "title": "Instagram Story Viewer",
-    "link": "https://ig-story-viewer.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/igsv",
-    "image": "igsv.png",
     "endDate": "",
     "active": true
   },
@@ -1151,16 +851,6 @@
   },
   {
     "createdAt": "2023-09-25T16:00:00.00Z",
-    "title": "Buy Rumble Views - Safe and Real - Marketing Heaven",
-    "link": "https://themarketingheaven.com/buy-rumble-views/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/rumble-views",
-    "image": "rumble-views.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2023-09-25T16:00:00.00Z",
     "title": "Hit'n'Spin Bonus ohne Einzahlung",
     "link": "https://www.slotozilla.com/de/online-casino-test/hitnspin-casino",
     "plan": "Silver Sponsor",
@@ -1220,16 +910,6 @@
     "active": true
   },
   {
-    "createdAt": "2023-09-11T16:00:00.00Z",
-    "title": "Buy Instagram followers UK with Instant delivery - Social Viral",
-    "link": "https://socialviral.uk/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/social-viral",
-    "image": "social-viral.png",
-    "endDate": "",
-    "active": true
-  },
-  {
     "createdAt": "2023-09-06T16:00:00.00Z",
     "title": "Outsourcing Software Development Company » A-Team Global",
     "link": "https://a-team.global/",
@@ -1266,16 +946,6 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/slotcasinocanadaca",
     "image": "slotcasinocanadaca.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2023-08-07T16:00:00.00Z",
-    "title": "AnonStories • Anonymous Instagram Story Viewer • Anon IG Viewer",
-    "link": "https://anonstories.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/anonstories",
-    "image": "anonstories.png",
     "endDate": "",
     "active": true
   },
@@ -1440,16 +1110,6 @@
     "active": true
   },
   {
-    "createdAt": "2023-06-01T20:00:00.000Z",
-    "title": "DashTickets NZ online pokies for real money in New Zealand",
-    "link": "https://dashtickets.nz/online-pokies-real-money/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/jetx-jogo-223",
-    "image": "jetx-jogo-223-2.png",
-    "endDate": "",
-    "active": true
-  },
-  {
     "createdAt": "2023-05-30T20:00:00.000Z",
     "title": "Hosting Europe – Super fast support better than AI",
     "link": "https://wmd.hosting/",
@@ -1457,16 +1117,6 @@
     "ref": "https://opencollective.com/ilija-divic",
     "image": "wmd-logo.png",
     "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2023-05-30T20:00:00.000Z",
-    "title": "Casino Zonder Cruks",
-    "link": "https://casino-zonder-cruks.com",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/casino-zonder-cruks",
-    "image": "casino-zonder-cruks.png",
-    "endDate": "2024-05-30T20:00:00.000Z",
     "active": true
   },
   {
@@ -1590,16 +1240,6 @@
     "active": true
   },
   {
-    "createdAt": "2023-04-24T20:00:00.000Z",
-    "title": "no id verification withdrawal casino uk",
-    "link": "https://no-verification.casino/uk/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/noverificationcasino",
-    "image": "noverificationcasino.png",
-    "endDate": "",
-    "active": true
-  },
-  {
     "createdAt": "2023-04-21T20:00:00.000Z",
     "title": "Top 10 Najboljih Online Casino u Hrvatskoj u 2023",
     "link": "https://dr.sc/top-10-najboljih-online-casina-u-hrvatskoj/",
@@ -1616,26 +1256,6 @@
     "plan": "Silver Sponsor",
     "ref": "https://opencollective.com/vedonlyontibonukset",
     "image": "vedonlyontibonukset.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2023-04-17T20:00:00.000Z",
-    "title": "Anon Instagram Story Viewer:1000 Free Views⋆IG Anony",
-    "link": "https://anonypro.com",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/user-53231496",
-    "image": "user-53231496.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2023-04-12T20:00:00.000Z",
-    "title": "Vahvat Nikotiinipussit Laillisesti Suomeen - Kiekkotorni",
-    "link": "https://www.kiekkotorni.com/vahvat-nikotiinipussit",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/vahvat-nikotiinipussit-netista",
-    "image": "vahvat-nikotiinipussit-netista.png",
     "endDate": "",
     "active": true
   },
@@ -1700,16 +1320,6 @@
     "active": true
   },
   {
-    "createdAt": "2023-03-05T20:00:00.000Z",
-    "title": "JetX - jogo do foguete que ganha dinheiro - tudo sobre o jogo jetX",
-    "link": "https://jetxgame.org/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/jetx-jogo-223",
-    "image": "jetx-jogo-223.png",
-    "endDate": "",
-    "active": true
-  },
-  {
     "createdAt": "2023-03-02T20:00:00.000Z",
     "title": "Sup! - Standups, Holidays, and Surveys for your team | Sup! Standup Bot",
     "link": "https://sup.today/",
@@ -1720,23 +1330,13 @@
     "active": true
   },
   {
-    "createdAt": "2023-03-02T20:00:00.000Z",
-    "title": "casino utan svensk licens",
-    "link": "https://casinoutanspelpaus.io/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/mikael2",
-    "image": "casinoutanspelpaus.jpeg",
-    "endDate": "",
-    "active": true
-  },
-  {
     "createdAt": "2023-03-01T20:00:00.000Z",
     "title": "Casino utan Svensk Licens 2023",
     "link": "https://starwarscasinos.com/",
     "plan": "Silver Sponsor",
     "ref": "https://opencollective.com/casino-utan-svensk-licens1",
     "image": "starwarscasinos.png",
-    "endDate": "2024-03-01T20:00:00.000Z",
+    "endDate": "2025-03-01T20:00:00.000Z",
     "active": true
   },
   {
@@ -1766,7 +1366,7 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/czc-net",
     "image": "czc-net.png",
-    "endDate": "2024-02-27T20:00:00.000Z",
+    "endDate": "2025-02-27T20:00:00.000Z",
     "active": true
   },
   {
@@ -1776,7 +1376,7 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/bestonlinecasinos-in",
     "image": "bestonlinecasinosin.png",
-    "endDate": "2024-02-25T20:00:00.000Z",
+    "endDate": "2025-02-25T20:00:00.000Z",
     "active": true
   },
   {
@@ -1906,26 +1506,6 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/nodeposit-guide",
     "image": "nodeposit-guide.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2022-11-23T20:00:00.000Z",
-    "title": "Discover the Best Online Casinos in New Zealand in 2022",
-    "link": "https://www.nzcasinoclub.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/nzcasinoclub",
-    "image": "nzcasinoclub.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2022-11-17T20:00:00.000Z",
-    "title": "Best Asian Bookies",
-    "link": "https://asian-bookies.net/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/asian-bookmakers",
-    "image": "asian-bookies.svg",
     "endDate": "",
     "active": true
   },
@@ -2130,46 +1710,6 @@
     "active": true
   },
   {
-    "createdAt": "2022-08-04T18:00:00.000Z",
-    "title": "Compare and test the best Online Casinos, with a strong focus on mobile Casino",
-    "link": "https://handycasinos24.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/handycasinos-24",
-    "image": "handycasinos24.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2022-08-04T18:00:00.000Z",
-    "title": "Make the world a better place for Online Casino comparisons",
-    "link": "https://mrcasinova.com/de/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/mrcasinova-de",
-    "image": "mrcasinova.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2022-08-04T18:00:00.000Z",
-    "title": "Ausführliche Informationen an die interessierten Spieler vermitteln um die bestmögliche Auswahl zu ermöglichen",
-    "link": "https://neuecasinos24.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/neuecasinos-24",
-    "image": "neuecasinos24.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2022-08-04T18:00:00.000Z",
-    "title": "Online Casino Deutschland - Beste deutsche Online Casinos 2022",
-    "link": "https://casinopilot24.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/casinopilot-24",
-    "image": "casinopilot24.png",
-    "endDate": "",
-    "active": true
-  },
-  {
     "createdAt": "2022-08-04T12:00:00.000Z",
     "title": "Best Real Money Online Casino ➲ Play Online and Win Real Money",
     "link": "https://leafletcasino.com/online-casino/real-money/",
@@ -2232,17 +1772,6 @@
     "active": true
   },
   {
-    "createdAt": "2022-06-30T13:30:00.00Z",
-    "title": "Gamblorium publishes news, information, and reviews about regulated online gambling operators.",
-    "link": "https://gamblorium.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/gamblorium-com",
-    "image": "gamblorium.png",
-    "image_h": "",
-    "endDate": "",
-    "active": true
-  },
-  {
     "createdAt": "2022-06-01T12:40:00.00Z",
     "title": "Rating of best betting sites in Australia",
     "link": "https://hellsbet.com/en-au/",
@@ -2298,17 +1827,6 @@
     "active": true
   },
   {
-    "createdAt": "2022-04-01T12:38:11.926Z",
-    "title": "Discover The Best Reputable Online Casinos in Canada",
-    "link": "https://playcasinoscanada.com",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/playcasinoscanadacom",
-    "image": "play-casinos-canada.png",
-    "image_h": "",
-    "endDate": "",
-    "active": true
-  },
-  {
     "createdAt": "2022-03-21T11:05:25.453Z",
     "title": "The Most Popular Stuff On The Internet",
     "link": "https://popularwow.com",
@@ -2359,28 +1877,6 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/guest-17fcbe58",
     "image": "nycjackets.png",
-    "image_h": "",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2021-12-21T16:32:41.811Z",
-    "title": "Kasyno Online Legalne Polska ⚡️ Ranking Kasyn Grudzień 2021 !",
-    "link": "https://bestcasinos-pl.com",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/bestcasinos",
-    "image": "bestcasinos-pl.png",
-    "image_h": "",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2021-12-07T17:31:30.388Z",
-    "title": "Instant Withdrawal Casino Sites Worth Visiting in 2021",
-    "link": "https://aussiecasinoreviewer.com/instant-withdrawal-casino/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/aussiebestcasinos",
-    "image": "ausiebestcasinos.png",
     "image_h": "",
     "endDate": "",
     "active": true
