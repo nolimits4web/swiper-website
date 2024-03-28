@@ -64,7 +64,7 @@ body {
   stroke-width: 4px;
   stroke: var(--swiper-theme-color);
   fill: none;
-  stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+  stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
   stroke-dasharray: 125.6;
   transform: rotate(-90deg);
 }
