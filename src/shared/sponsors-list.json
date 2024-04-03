@@ -1,5 +1,25 @@
 [
   {
+    "createdAt": "2024-04-03T20:00:00.000Z",
+    "title": "Chudovo",
+    "link": "https://chudovo.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/chudovo",
+    "image": "chudovo.png",
+    "endDate": "2024-05-03T20:00:00.000Z",
+    "active": true
+  },
+  {
+    "createdAt": "2024-04-03T20:00:00.000Z",
+    "title": "Aviator Game",
+    "link": "https://aviatorgamebet.org/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/aviator-gamer",
+    "image": "aviator-gamer.png",
+    "endDate": "2024-05-03T20:00:00.000Z",
+    "active": true
+  },
+  {
     "createdAt": "2024-03-26T20:00:00.000Z",
     "title": "Fortune Tiger",
     "link": "https://fortune-tiger-br.com/",
