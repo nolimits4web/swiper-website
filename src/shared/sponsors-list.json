@@ -1,5 +1,15 @@
 [
   {
+    "createdAt": "2024-04-29T20:00:00.000Z",
+    "title": "Social Media Marketing",
+    "link": "https://buzzoid.pro/.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/buzzoidpro",
+    "image": "buzzoidpro.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2024-04-25T20:00:00.000Z",
     "title": "Bountii Coupons",
     "link": "https://bountii.com/",
