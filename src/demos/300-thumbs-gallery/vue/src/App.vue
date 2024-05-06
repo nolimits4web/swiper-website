@@ -6,7 +6,7 @@
     }"
     :spaceBetween="10"
     :navigation="true"
-    :thumbs="{ swiper: thumbsSwiper.value }"
+    :thumbs="{ swiper: thumbsSwiper }"
     :modules="modules"
     class="mySwiper2"
   >
