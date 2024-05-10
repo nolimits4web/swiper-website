@@ -1,5 +1,25 @@
 [
   {
+    "createdAt": "2024-05-10T20:00:00.000Z",
+    "title": "Sitio web con reseñas de los mejores casinos en línea de Chile",
+    "link": "https://www.c19.cl/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/casino-online-chile",
+    "image": "casino-online-chile.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2024-05-10T20:00:00.000Z",
+    "title": "EarthWeb",
+    "link": "https://earthweb.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/earthweb1",
+    "image": "earthweb1.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2024-05-06T20:00:00.000Z",
     "title": "Graming TikTok Followers",
     "link": "https://graming.com/tiktok-followers/",
