@@ -1,6 +1,6 @@
 const fs = require('fs');
 // eslint-disable-next-line
-const sponsors = require('./src/shared/sponsors-list.json');
+const sponsors = require('../src/shared/sponsors-list.json');
 
 const content = fs.readFileSync('./swiper-transactions.csv', 'utf8');
 const data = {};
@@ -34,3 +34,5 @@ sponsors.forEach((sponsor) => {
     toRemove.push(slug);
   }
 });
+
+console.log(toRemove.map((ref) => `https://opencollective.com/${ref}`));
