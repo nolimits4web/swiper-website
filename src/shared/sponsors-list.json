@@ -1,5 +1,45 @@
 [
   {
+    "createdAt": "2024-06-17T20:00:00.000Z",
+    "title": "Ai2people",
+    "link": "https://ai2people.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/ai2people",
+    "image": "ai2people.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2024-06-17T20:00:00.000Z",
+    "title": "Accelerating Your Software Products | Teravision Technologies",
+    "link": "https://www.teravisiontech.com/",
+    "plan": "Sponsor",
+    "ref": "https://www.patreon.com/user?u=131596767",
+    "image": "teravisiontech.webp",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2024-06-17T20:00:00.000Z",
+    "title": "revistacomunicacion.org",
+    "link": "https://revistacomunicacion.org/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/revistacomunicacion-org",
+    "image": "revistacomunicacion-org.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2024-06-17T20:00:00.000Z",
+    "title": "Casino Magyar",
+    "link": "https://onlinecasinosgr.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/casino-magyar",
+    "image": "casino-magyar.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2024-06-14T20:00:00.000Z",
     "title": "Ta καλύτερα διαδικτυακά καζίνο στην Ελλάδα το 2024",
     "link": "https://onlinecasinosgr.com/",
