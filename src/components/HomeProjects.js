@@ -1,7 +1,13 @@
 export default function HomeProjects() {
   return (
-    <div className="gr mx-auto max-w-3xl items-stretch space-y-4 text-left sm:flex sm:space-x-8 sm:space-y-0 sm:text-center">
+    <div className="mx-auto flex max-w-5xl flex-col items-stretch gap-4 text-left sm:grid sm:grid-cols-2 sm:gap-8 sm:text-center md:grid-cols-4">
       {[
+        {
+          url: 'https://t0ggles.com',
+          title: 't0ggles',
+          description: 'Your ultimate multiple projects management tool',
+          logo: 't0ggles.svg',
+        },
         {
           url: 'https://framework7.io',
           title: 'Framework7',

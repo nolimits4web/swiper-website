@@ -30,8 +30,6 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'react/jsx-one-expression-per-line': 'off',
     'react/no-array-index-key': 'off',
-    'import/prefer-default-export': 'off',
-    'import/no-dynamic-require': 'off',
     '@next/next/no-img-element': 'off',
     '@next/next/no-html-link-for-pages': 'off',
     'react/jsx-no-target-blank': 'off',
