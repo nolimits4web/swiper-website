@@ -1,6 +1,16 @@
 [
   {
     "createdAt": "2024-07-03T20:00:00.000Z",
+    "title": "Daman Games",
+    "link": "https://damangamesapp.org/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/daman-games-official",
+    "image": "daman-games-official.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2024-07-03T20:00:00.000Z",
     "title": "SANCTIONS LAW FIRM",
     "link": "https://sanctionslawyers.net/",
     "plan": "Sponsor",
