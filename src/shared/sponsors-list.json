@@ -1,6 +1,16 @@
 [
   {
     "createdAt": "2024-07-05T20:00:00.000Z",
+    "title": "SocialBoss",
+    "link": "https://socialboss.org/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/socialboss",
+    "image": "socialboss.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2024-07-05T20:00:00.000Z",
     "title": "Casinos e Apostas",
     "link": "https://casinosapostas.com/",
     "plan": "Sponsor",
