@@ -1,5 +1,55 @@
 [
   {
+    "createdAt": "2024-07-17T20:00:00.000Z",
+    "title": "Automatenspieler",
+    "link": "https://automatenspieler.net/",
+    "plan": "Silver Sponsor",
+    "ref": "https://opencollective.com/automatenspieler",
+    "image": "automatenspieler.png",
+    "endDate": "2025-02-17T20:00:00.000Z",
+    "active": true
+  },
+  {
+    "createdAt": "2024-07-17T20:00:00.000Z",
+    "title": "BloodyCase",
+    "link": "https://opencollective.com/bloodycase",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/bloodycase",
+    "image": "bloodycase.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2024-07-17T20:00:00.000Z",
+    "title": "Crypto Loko",
+    "link": "https://crypto-loko-casino.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/crypto-loko1",
+    "image": "crypto-loko1.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2024-07-17T20:00:00.000Z",
+    "title": "Free Chip No Deposit",
+    "link": "https://free-chip-no-deposit.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/free-chip-no-deposit",
+    "image": "free-chip-no-deposit.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2024-07-17T20:00:00.000Z",
+    "title": "Online Kasyno Polis",
+    "link": "https://onlinekasyno-polis.pl/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/onlinekasyno-polis",
+    "image": "onlinekasyno-polis.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2024-07-09T20:00:00.000Z",
     "title": "SMM Panel Services Provider RunLikes",
     "link": "https://runlikes.com/",
