@@ -22,22 +22,24 @@ const PlanSection = (props) => {
         </h2>
       )}
       <div className="mx-auto flex max-w-6xl flex-wrap justify-center">
-        {items.map(({ link, title, image }) => {
+        {items.map(({ link, title, image }, index) => {
           return (
             <a
               className={`flex items-center justify-center overflow-hidden rounded bg-white text-center duration-300 ${sizes}`}
               href={link}
-              key={title}
+              key={title + index}
               title={title}
               rel="noopener"
               target="_blank"
             >
-              <img
-                className="h-auto max-h-full w-auto max-w-full rounded"
-                src={`/images/sponsors/${image}`}
-                alt={title}
-                loading="lazy"
-              />
+              {image && (
+                <img
+                  className="h-auto max-h-full w-auto max-w-full rounded"
+                  src={`/images/sponsors/${image}`}
+                  alt={title}
+                  loading="lazy"
+                />
+              )}
             </a>
           );
         })}

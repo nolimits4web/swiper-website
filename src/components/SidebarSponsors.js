@@ -16,21 +16,23 @@ export default function SidebarSponsors() {
       <div className="flex flex-wrap gap-1">
         {sponsors
           .filter(({ plan, active }) => plan !== 'Sponsor' && active)
-          .map(({ link, title, image }) => (
+          .map(({ link, title, image }, index) => (
             <a
               className="flex items-center justify-center rounded hover:opacity-80 dark:bg-white"
               href={link}
               key={title}
-              title={title}
+              title={title + index}
               rel="noopener"
               target="_blank"
             >
-              <img
-                className="h-7 w-7 rounded object-contain lg:h-8 lg:w-8"
-                alt={title}
-                loading="lazy"
-                src={`/images/sponsors/${image}`}
-              />
+              {image && (
+                <img
+                  className="h-7 w-7 rounded object-contain lg:h-8 lg:w-8"
+                  alt={title}
+                  loading="lazy"
+                  src={`/images/sponsors/${image}`}
+                />
+              )}
             </a>
           ))}
       </div>
