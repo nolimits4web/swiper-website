@@ -1,5 +1,15 @@
 [
   {
+    "createdAt": "2024-07-23T20:00:00.000Z",
+    "title": "ZonderCruks - Online Gokken Zonder CRUKS",
+    "link": "https://zondercruks.net/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/zondercruksnet",
+    "image": "zondercruksnet.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2024-07-22T20:00:00.000Z",
     "title": "Amazon Return Pallets",
     "link": "https://opencollective.com/amazon-return-pallets",
