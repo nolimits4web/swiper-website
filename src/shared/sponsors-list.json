@@ -1,5 +1,15 @@
 [
   {
+    "createdAt": "2024-07-30T20:00:00.000Z",
+    "title": "CasinoOnlineCA",
+    "link": "https://casinoonlineca.ca/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/casinoonlineca",
+    "image": "casinoonlineca.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2024-07-23T20:00:00.000Z",
     "title": "ZonderCruks - Online Gokken Zonder CRUKS",
     "link": "https://zondercruks.net/",
@@ -711,8 +721,8 @@
   },
   {
     "createdAt": "2024-02-12T20:00:00.000Z",
-    "title": "Slidz",
-    "link": "https://slidz.co",
+    "title": "Vapemaps",
+    "link": "https://vapemaps.io",
     "plan": "Sponsor",
     "ref": "https://opencollective.com/adam-smith1",
     "image": "quickbookstoolhub.png",
