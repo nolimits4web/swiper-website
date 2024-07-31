@@ -1,5 +1,15 @@
 [
   {
+    "createdAt": "2024-07-31T20:00:00.000Z",
+    "title": "FitclubFinder",
+    "link": "https://fitclubfinder.com/",
+    "plan": "Sponsor",
+    "ref": "https://www.patreon.com/members?userId=136917898",
+    "image": "fitclubfinder.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2024-07-30T20:00:00.000Z",
     "title": "CasinoOnlineCA",
     "link": "https://casinoonlineca.ca/",
