@@ -1,5 +1,15 @@
 [
   {
+    "createdAt": "2024-08-13T16:00:00.00Z",
+    "title": "My Coding Pal",
+    "link": "https://mycodingpal.com/do-my-programming-homework/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/mycodingpal",
+    "image": "mycodingpal.png",
+    "endDate": "2025-08-13T16:00:00.00Z",
+    "active": true
+  },
+  {
     "createdAt": "2024-08-08T16:00:00.00Z",
     "title": "Hashtags For Likes",
     "link": "https://hashtagsforlikes.co/",
