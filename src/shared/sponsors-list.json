@@ -1,5 +1,15 @@
 [
   {
+    "createdAt": "2024-09-01T16:00:00.00Z",
+    "title": "eSports at HellaGood Marketing agency",
+    "link": "https://hellagood.marketing/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/diana-nikitiuk",
+    "image": "diana-nikitiuk.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2024-08-30T16:00:00.00Z",
     "title": "Dotcom-Monitor: Advanced Website Monitoring Solutions",
     "link": "https://www.dotcom-monitor.com/sponsoring-open-source-projects/",
