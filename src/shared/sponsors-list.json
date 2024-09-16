@@ -1,5 +1,35 @@
 [
   {
+    "createdAt": "2024-09-16T16:00:00.00Z",
+    "title": "Cassino Pix 20 Reais",
+    "link": "https://cassinosnobrasil.com/pagamento/pix/20-reais/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/cassinosnobrasil",
+    "image": "cassinosnobrasil.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2024-09-16T16:00:00.00Z",
+    "title": "NoVerification Casinos",
+    "link": "https://noverificationcasinos.net/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/noverificationcasinos",
+    "image": "noverificationcasinos.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2024-09-16T16:00:00.00Z",
+    "title": "Buy Instagram Followers",
+    "link": "https://buzzoid.com/buy-instagram-followers/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/buzzoid-buy-instagram-followers",
+    "image": "buzzoid-buy-instagram-followers.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2024-09-12T16:00:00.00Z",
     "title": "Betting Site",
     "link": "https://bettingsite.cc/",
