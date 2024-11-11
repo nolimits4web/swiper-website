@@ -1,5 +1,25 @@
 [
   {
+    "createdAt": "2024-11-11T16:00:00.00Z",
+    "title": "Ricky Casino",
+    "link": "https://rickycasino.co/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/ihor-dumanskyi",
+    "image": "ihor-dumanskyi.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2024-11-11T16:00:00.00Z",
+    "title": "Betting Websites",
+    "link": "https://betting-websites.net/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/betting-websites",
+    "image": "betting-websites.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2024-11-08T16:00:00.00Z",
     "title": "Buy TikTok Likes",
     "link": "https://www.famety.com/buy-tiktok-likes",
@@ -200,33 +220,13 @@
     "active": true
   },
   {
-    "createdAt": "2024-10-09T16:00:00.00Z",
-    "title": "NEON SIGN CUSTOM",
-    "link": "https://neonsigncustom.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/neon-sign-custom",
-    "image": "neon-sign-custom.png",
-    "endDate": "",
-    "active": true
-  },
-  {
     "createdAt": "2024-10-08T16:00:00.00Z",
     "title": "SS Market: Social Media Services Market",
     "link": "https://ssmarket.net/",
     "plan": "Silver Sponsor",
     "ref": "https://opencollective.com/ss-market",
     "image": "ss-market.png",
-    "endDate": "2024-10-08T16:00:00.00Z",
-    "active": true
-  },
-  {
-    "createdAt": "2024-10-02T16:00:00.00Z",
-    "title": "Graming TikTok Views",
-    "link": "https://graming.com/buy-tiktok-views/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/graming-tiktok-views",
-    "image": "graming-tiktok-views.png",
-    "endDate": "",
+    "endDate": "2025-10-08T16:00:00.00Z",
     "active": true
   },
   {
@@ -306,7 +306,7 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/likesid",
     "image": "likesid.png",
-    "endDate": "",
+    "endDate": "2024-12-02T16:00:00.00Z",
     "active": true
   },
   {
@@ -326,16 +326,6 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/casinos-portugal",
     "image": "casinos-portugal.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2024-09-16T16:00:00.00Z",
-    "title": "Cassino Pix 20 Reais",
-    "link": "https://cassinosnobrasil.com/pagamento/pix/20-reais/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/cassinosnobrasil",
-    "image": "cassinosnobrasil.png",
     "endDate": "",
     "active": true
   },
@@ -410,26 +400,6 @@
     "active": true
   },
   {
-    "createdAt": "2024-09-08T16:00:00.00Z",
-    "title": "Best domain registrars Reddit",
-    "link": "https://www.reddit.com/r/SiteWays/comments/1cv49f1/best_domain_registrars_2024_free_whois_privacy/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/domainred",
-    "image": "domainred.png",
-    "endDate": "",
-    "active": false
-  },
-  {
-    "createdAt": "2024-09-04T16:00:00.00Z",
-    "title": "TikTok Expert: Buy TikTok Followers",
-    "link": "https://www.reddit.com/r/TikTokExpert/comments/1f812o7/best_and_cheapest_site_to_buy_tiktok_followers/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/tt-expert-buy-tiktok-followers",
-    "image": "tt-expert-buy-tiktok-followers.png",
-    "endDate": "",
-    "active": true
-  },
-  {
     "createdAt": "2024-09-04T16:00:00.00Z",
     "title": "Nove Casino",
     "link": "https://novecasino.net/",
@@ -471,26 +441,6 @@
   },
   {
     "createdAt": "2024-08-26T16:00:00.00Z",
-    "title": "Buy Tiktok Followers",
-    "link": "https://igchamp.com/buy-tiktok-followers",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/shahzada-sohail-sharif",
-    "image": "shahzada-sohail-sharif.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2024-08-26T16:00:00.00Z",
-    "title": "Buy Instagram Followers",
-    "link": "https://buzzoid.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/buy-instagram-followers-buzzoid",
-    "image": "buy-instagram-followers-buzzoid.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2024-08-26T16:00:00.00Z",
     "title": "Buy Instagram Automatic Likes",
     "link": "https://instantautolikes.com/",
     "plan": "Sponsor",
@@ -507,16 +457,6 @@
     "ref": "https://opencollective.com/inclavecasino",
     "image": "inclavecasino.png",
     "endDate": "2025-08-19T16:00:00.00Z",
-    "active": true
-  },
-  {
-    "createdAt": "2024-08-18T16:00:00.00Z",
-    "title": "Buy TikTok Views",
-    "link": "https://www.reddit.com/r/TikTokExpert/comments/1d1ps78/where_can_i_buy_tiktok_views_likes_followers/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/tiktok-expert-buy-tiktok-views",
-    "image": "tiktok-expert-buy-tiktok-views.png",
-    "endDate": "",
     "active": true
   },
   {
@@ -550,16 +490,6 @@
     "active": true
   },
   {
-    "createdAt": "2024-08-15T16:00:00.00Z",
-    "title": "Get Organic TikTok Growth With Real Followers, Likes And Views",
-    "link": "https://thunderclap.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/thunderclapcom",
-    "image": "thunderclapcom.png",
-    "endDate": "",
-    "active": true
-  },
-  {
     "createdAt": "2024-08-13T16:00:00.00Z",
     "title": "My Coding Pal",
     "link": "https://mycodingpal.com/do-my-programming-homework/",
@@ -581,16 +511,6 @@
   },
   {
     "createdAt": "2024-08-07T16:00:00.00Z",
-    "title": "Buy Google Reviews",
-    "link": "https://buyreviewz.com/buy-google-reviews",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/buy-google-reviews-usa",
-    "image": "buy-google-reviews-usa.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2024-08-07T16:00:00.00Z",
     "title": "UK Casinos not on GamStop 2023 - nongamstopcasinos.net",
     "link": "https://nongamstopcasinos.net/gb/",
     "plan": "Sponsor",
@@ -598,36 +518,6 @@
     "image": "nongamstopcasinosnet.png",
     "endDate": "2025-08-07T16:00:00.00Z",
     "active": true
-  },
-  {
-    "createdAt": "2024-08-07T20:00:00.000Z",
-    "title": "Buy Instagram Followers Thunderclapit",
-    "link": "https://thunderclap.it/buy-instagram-followers",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/buy-instagram-followers-usa",
-    "image": "buy-instagram-followers-usa.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2024-08-07T20:00:00.000Z",
-    "title": "CreditCaptain – Leading AI Credit Repair Service",
-    "link": "https://www.creditcaptain.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/creditcaptain",
-    "image": "creditcaptain.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2024-08-06T20:00:00.000Z",
-    "title": "Buy TikTok Followers",
-    "link": "https://www.likesforyou.co/buy-tiktok-followers/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/likesforyou-co",
-    "image": "likesforyou-co.png",
-    "endDate": "",
-    "active": false
   },
   {
     "createdAt": "2024-08-06T20:00:00.000Z",
@@ -690,16 +580,6 @@
     "active": true
   },
   {
-    "createdAt": "2024-07-22T20:00:00.000Z",
-    "title": "Amazon Return Pallets",
-    "link": "https://www.upliquidation.com/amazon-liquidation/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/amazon-return-pallets",
-    "image": "amazon-return-pallets.jpg",
-    "endDate": "",
-    "active": true
-  },
-  {
     "createdAt": "2024-07-17T20:00:00.000Z",
     "title": "Automatenspieler",
     "link": "https://automatenspieler.net/",
@@ -711,41 +591,11 @@
   },
   {
     "createdAt": "2024-07-17T20:00:00.000Z",
-    "title": "BloodyCase",
-    "link": "https://bloodycase.com/?promocode=SWIPER",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/bloodycase",
-    "image": "bloodycase.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2024-07-17T20:00:00.000Z",
-    "title": "Crypto Loko",
-    "link": "https://crypto-loko-casino.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/crypto-loko1",
-    "image": "crypto-loko1.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2024-07-17T20:00:00.000Z",
     "title": "Free Chip No Deposit",
     "link": "https://free-chip-no-deposit.com/",
     "plan": "Sponsor",
     "ref": "https://opencollective.com/free-chip-no-deposit",
     "image": "free-chip-no-deposit.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2024-07-17T20:00:00.000Z",
-    "title": "Online Kasyno Polis",
-    "link": "https://onlinekasyno-polis.pl/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/onlinekasyno-polis",
-    "image": "onlinekasyno-polis.png",
     "endDate": "",
     "active": true
   },
@@ -840,16 +690,6 @@
     "active": true
   },
   {
-    "createdAt": "2024-07-01T20:00:00.000Z",
-    "title": "The Red Playground",
-    "link": "https://theredplayground.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/the-red-playground",
-    "image": "the-red-playground.png",
-    "endDate": "",
-    "active": false
-  },
-  {
     "createdAt": "2024-06-24T20:00:00.000Z",
     "title": "Buy Instagram Followers & Likes",
     "link": "https://leofame.com/",
@@ -901,16 +741,6 @@
   },
   {
     "createdAt": "2024-06-17T20:00:00.000Z",
-    "title": "revistacomunicacion.org",
-    "link": "https://revistacomunicacion.org/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/revistacomunicacion-org",
-    "image": "revistacomunicacion-org.png",
-    "endDate": "",
-    "active": false
-  },
-  {
-    "createdAt": "2024-06-17T20:00:00.000Z",
     "title": "Casino Magyar",
     "link": "https://onlinecasinosgr.com/",
     "plan": "Sponsor",
@@ -926,16 +756,6 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/onlinecasinosgr-com",
     "image": "onlinecasinosgr-com.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2024-06-11T20:00:00.000Z",
-    "title": "$10 Deposit Casinos",
-    "link": "https://au.casinologin.mobi/10-dollar-minimum-deposit-casinos/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/casinologinmobi-10dollar",
-    "image": "casinologinmobi-10dollar.png",
     "endDate": "",
     "active": true
   },
@@ -956,16 +776,6 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/best-sites-to-buy-instagram-followers1",
     "image": "best-sites-to-buy-instagram-followers1.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2024-06-10T20:00:00.000Z",
-    "title": "Buy Tiktok Followers",
-    "link": "https://www.socialfollowers.uk/buy-tiktok-followers/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/social-followers",
-    "image": "buy-youtube-views-social-followers.png",
     "endDate": "",
     "active": true
   },
@@ -991,16 +801,6 @@
   },
   {
     "createdAt": "2024-05-22T20:00:00.000Z",
-    "title": "instagram profile viewer",
-    "link": "https://www.exploreig.com",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/exploreig",
-    "image": "exploreig.png",
-    "endDate": "",
-    "active": false
-  },
-  {
-    "createdAt": "2024-05-22T20:00:00.000Z",
     "title": "Gokken Online",
     "link": "https://www.gokken-online.com/",
     "plan": "Sponsor",
@@ -1018,16 +818,6 @@
     "image": "czc.png",
     "endDate": "2025-05-22T20:00:00.000Z",
     "active": true
-  },
-  {
-    "createdAt": "2024-05-15T20:00:00.000Z",
-    "title": "buy youtube views",
-    "link": "https://www.socialfollowers.uk/buy-youtube-views",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/buy-youtube-views-social-followers",
-    "image": "buy-youtube-views-social-followers.png",
-    "endDate": "",
-    "active": false
   },
   {
     "createdAt": "2024-05-15T20:00:00.000Z",
@@ -1060,16 +850,6 @@
     "active": true
   },
   {
-    "createdAt": "2024-05-10T20:00:00.000Z",
-    "title": "EarthWeb",
-    "link": "https://earthweb.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/earthweb1",
-    "image": "earthweb1.png",
-    "endDate": "",
-    "active": false
-  },
-  {
     "createdAt": "2024-05-03T20:00:00.000Z",
     "title": "fb post likes",
     "link": "https://www.fbpostlikes.com/",
@@ -1078,26 +858,6 @@
     "image": "pankaj-jangir.png",
     "endDate": "2024-06-03T20:00:00.000Z",
     "active": true
-  },
-  {
-    "createdAt": "2024-04-29T20:00:00.000Z",
-    "title": "Buzzoid.pro",
-    "link": "https://buzzoid.pro",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/buzzoidpro",
-    "image": "buzzoidpro.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2024-04-25T20:00:00.000Z",
-    "title": "Bountii Coupons",
-    "link": "https://bountii.coupons/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/bountii",
-    "image": "bountii.png",
-    "endDate": "",
-    "active": false
   },
   {
     "createdAt": "2024-04-21T20:00:00.000Z",
@@ -1117,16 +877,6 @@
     "ref": "https://opencollective.com/uusimmatkasinotcom",
     "image": "uusimmatkasinotcom.png",
     "endDate": "2026-04-18T20:00:00.000Z",
-    "active": true
-  },
-  {
-    "createdAt": "2024-04-18T20:00:00.000Z",
-    "title": "Buy Instagram Reels views",
-    "link": "https://expressfollowers.com/buy-instagram-reel-views/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/expressfollowers",
-    "image": "expressfollowers.png",
-    "endDate": "",
     "active": true
   },
   {
@@ -1150,16 +900,6 @@
     "active": true
   },
   {
-    "createdAt": "2024-04-03T20:00:00.000Z",
-    "title": "Chudovo",
-    "link": "https://chudovo.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/chudovo",
-    "image": "chudovo.png",
-    "endDate": "2024-05-03T20:00:00.000Z",
-    "active": true
-  },
-  {
     "createdAt": "2024-03-26T20:00:00.000Z",
     "title": "Fortune Tiger",
     "link": "https://fortune-tiger-br.com/",
@@ -1178,26 +918,6 @@
     "image": "casino-bonussen-nederland.png",
     "endDate": "",
     "active": true
-  },
-  {
-    "createdAt": "2024-03-25T20:00:00.000Z",
-    "title": "impltech",
-    "link": "https://impltech.de/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/impltech",
-    "image": "impltech.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2024-03-19T20:00:00.000Z",
-    "title": "Norsk casinoer på nett",
-    "link": "https://trondheim24.no/nyheter/norges-beste-casinos-pa-nett/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/norsk-casino-pa-nett",
-    "image": "norsk-casino-pa-nett.png",
-    "endDate": "",
-    "active": false
   },
   {
     "createdAt": "2024-03-11T20:00:00.000Z",
@@ -1220,62 +940,12 @@
     "active": true
   },
   {
-    "createdAt": "2024-02-28T20:00:00.000Z",
-    "title": "Instasocials",
-    "link": "https://instasocials.com/buy-instagram-reels-views/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/instasocials",
-    "image": "instasocials.png",
-    "endDate": "",
-    "active": true
-  },
-  {
     "createdAt": "2024-02-12T20:00:00.000Z",
     "title": "The best casino reviews, bonuses and slots",
     "link": "https://gamblecritic.net/",
     "plan": "Sponsor",
     "ref": "https://opencollective.com/gamblecritic",
     "image": "gamblecritic.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2024-02-12T20:00:00.000Z",
-    "title": "Vapemaps",
-    "link": "https://vapemaps.io",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/adam-smith1",
-    "image": "quickbookstoolhub.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2024-02-12T20:00:00.000Z",
-    "title": "Quickbooks Tool Hub",
-    "link": "https://quickbookstoolhub.com",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/adam-smith1",
-    "image": "quickbookstoolhub.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2024-01-29T20:00:00.000Z",
-    "title": "Anonymous Instagram Story Viewer - Instanavigation",
-    "link": "https://instanavigation.us/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/instagram-story-viewer-by-inst",
-    "image": "instagram-story-viewer-by-inst.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2024-01-29T20:00:00.000Z",
-    "title": "buy instagram followers from skweezer.net",
-    "link": "https://skweezer.net/buy-instagram-followers",
-    "plan": "Silver Sponsor",
-    "ref": "https://opencollective.com/skweezer-net",
-    "image": "skweezer-net.png",
     "endDate": "",
     "active": true
   },
@@ -1340,16 +1010,6 @@
     "active": true
   },
   {
-    "createdAt": "2024-01-17T20:00:00.000Z",
-    "title": "All Bitcoin & Crypto Casino",
-    "link": "https://cryptocasinos.online",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/chris-born",
-    "image": "chris-born.svg",
-    "endDate": "",
-    "active": true
-  },
-  {
     "createdAt": "2024-01-13T16:00:00.00Z",
     "title": "Trace a phone number within minutes",
     "link": "https://geofinder.mobi/",
@@ -1390,16 +1050,6 @@
     "active": true
   },
   {
-    "createdAt": "2024-01-06T16:00:00.00Z",
-    "title": "eBay Arbitrage Software",
-    "link": "https://www.flipl.io/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/flipl-io",
-    "image": "flipl-io.png",
-    "endDate": "",
-    "active": true
-  },
-  {
     "createdAt": "2024-01-03T16:00:00.00Z",
     "title": "UpGrow: #1 AI-Powered Instagram Growth | Real IG Followers",
     "link": "https://www.upgrow.com/",
@@ -1431,16 +1081,6 @@
   },
   {
     "createdAt": "2023-12-23T16:00:00.00Z",
-    "title": "buy instagram likes",
-    "link": "https://followerscart.com/buy-instagram-likes/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/followers-cart1",
-    "image": "followerscart.png",
-    "endDate": "",
-    "active": false
-  },
-  {
-    "createdAt": "2023-12-23T16:00:00.00Z",
     "title": "90+ UK Casinos Not on Gamstop » Non GamStop Sites",
     "link": "https://casinogap.org/uk/",
     "plan": "Sponsor",
@@ -1466,16 +1106,6 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/mark-taylor1",
     "image": "casinowhizz.jpg",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2023-12-01T16:00:00.00Z",
-    "title": "Čеské оnlinе kаsinо rесеnzе а hоdnосеní",
-    "link": "https://ceskecasino.best/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/ceskecasinobest",
-    "image": "ceskecasinobest.png",
     "endDate": "",
     "active": true
   },
@@ -1510,16 +1140,6 @@
     "active": true
   },
   {
-    "createdAt": "2023-11-23T16:00:00.00Z",
-    "title": "Bruno Casino is a great online casino offering various bonuses for your favourite slot games.",
-    "link": "https://casinos.cc/nl/bruno-casino/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/bruno-casino-nl",
-    "image": "bruno-casino-nl.png",
-    "endDate": "",
-    "active": false
-  },
-  {
     "createdAt": "2023-11-21T16:00:00.00Z",
     "title": "Nexus Smoke Premium E-Liquid and Luxury Vape Products",
     "link": "https://nexussmoke.com/",
@@ -1550,53 +1170,13 @@
     "active": true
   },
   {
-    "createdAt": "2023-11-04T16:00:00.00Z",
-    "title": "Founder Shield | Risk Management for High-Growth Companies",
-    "link": "https://foundershield.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/founder-shield",
-    "image": "founder-shield.png",
-    "endDate": "2024-11-04T16:00:00.00Z",
-    "active": true
-  },
-  {
-    "createdAt": "2023-11-01T16:00:00.00Z",
-    "title": "Buy Instagram Follower & Likes | Dopoid",
-    "link": "https://dopoid.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/dopoid",
-    "image": "dopoid.png",
-    "endDate": "",
-    "active": false
-  },
-  {
     "createdAt": "2023-10-31T16:00:00.00Z",
     "title": "Casino utan Svensk Licens | Bästa Casinon utan Spelpaus 🎖️",
     "link": "https://spelpressen.se/casino-reportage/casino-utan-svensk-licens",
     "plan": "Sponsor",
     "ref": "https://opencollective.com/spelpressen-se",
     "image": "spelpressen-se.png",
-    "endDate": "2024-10-31T16:00:00.00Z",
-    "active": true
-  },
-  {
-    "createdAt": "2023-10-30T16:00:00.00Z",
-    "title": "Casinomir UK - Your Guide to the World of Online Casinos",
-    "link": "https://uk.casinomir.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/miruk",
-    "image": "miruk.png",
-    "endDate": "2024-10-30T16:00:00.00Z",
-    "active": true
-  },
-  {
-    "createdAt": "2023-10-30T16:00:00.00Z",
-    "title": "Casinos Not On Gamstop UK: Where To Play Safely In 2023 Updated October",
-    "link": "https://www.outlookindia.com/plugin-play/casinos-not-on-gamstop-uk-news-302214",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/wendy-mantilla",
-    "image": "wendy-mantilla.png",
-    "endDate": "2024-10-30T16:00:00.00Z",
+    "endDate": "2025-10-31T16:00:00.00Z",
     "active": true
   },
   {
@@ -1617,16 +1197,6 @@
     "ref": "https://opencollective.com/detectico",
     "image": "detectico.png",
     "endDate": "2024-10-12T16:00:00.00Z",
-    "active": true
-  },
-  {
-    "createdAt": "2023-10-05T16:00:00.00Z",
-    "title": "AlphaRoot",
-    "link": "https://alpharoot.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/alpharoot",
-    "image": "alpharoot.png",
-    "endDate": "2024-10-05T16:00:00.00Z",
     "active": true
   },
   {
@@ -1656,7 +1226,7 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/betfans",
     "image": "betfans.png",
-    "endDate": "2024-10-02T16:00:00.00Z",
+    "endDate": "2025-10-02T16:00:00.00Z",
     "active": true
   },
   {
@@ -1666,38 +1236,8 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/online-united-states-casinos",
     "image": "online-united-states-casinos.png",
-    "endDate": "2024-09-27T16:00:00.00Z",
+    "endDate": "2025-09-27T16:00:00.00Z",
     "active": true
-  },
-  {
-    "createdAt": "2023-09-27T16:00:00.00Z",
-    "title": "Buy Instagram Reel Views",
-    "link": "https://buytoplikes.com/reels-views/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/artem-hidin",
-    "image": "buytoplikes.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2023-09-25T16:00:00.00Z",
-    "title": "Hit'n'Spin Bonus ohne Einzahlung",
-    "link": "https://www.slotozilla.com/de/online-casino-test/hitnspin-casino",
-    "plan": "Silver Sponsor",
-    "ref": "https://opencollective.com/de2",
-    "image": "hitnspin-casino.webp",
-    "endDate": "2024-09-25T16:00:00.00Z",
-    "active": false
-  },
-  {
-    "createdAt": "2023-09-25T16:00:00.00Z",
-    "title": "Gamble for Real Money at Honest Casinos - GambleDex",
-    "link": "https://www.gambledex.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/gambledex",
-    "image": "gambledex.png",
-    "endDate": "2024-09-25T16:00:00.00Z",
-    "active": false
   },
   {
     "createdAt": "2023-09-19T16:00:00.00Z",
@@ -1706,7 +1246,7 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/philippinescasinosph",
     "image": "philippinescasinosph.png",
-    "endDate": "2024-09-19T16:00:00.00Z",
+    "endDate": "2025-09-19T16:00:00.00Z",
     "active": true
   },
   {
@@ -1717,16 +1257,6 @@
     "ref": "https://opencollective.com/testcasinoscomusnj",
     "image": "testcasinoscomusnj.png",
     "endDate": "2025-09-19T16:00:00.00Z",
-    "active": true
-  },
-  {
-    "createdAt": "2023-09-15T16:00:00.00Z",
-    "title": "Best SMM Panel In The World | Crescitaly.com",
-    "link": "https://crescitaly.com/",
-    "plan": "Silver Sponsor",
-    "ref": "https://opencollective.com/crescitaly",
-    "image": "crescitaly.png",
-    "endDate": "2024-09-15T16:00:00.00Z",
     "active": true
   },
   {
@@ -1766,16 +1296,6 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/kaszinomagyarcom",
     "image": "kaszinomagyarcom.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2023-07-24T16:00:00.00Z",
-    "title": "UX Design & Software Development Company",
-    "link": "https://limeup.io/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/limeup",
-    "image": "limeup.png",
     "endDate": "",
     "active": true
   },
@@ -2011,16 +1531,6 @@
   },
   {
     "createdAt": "2022-12-08T20:00:00.000Z",
-    "title": "オンラインカジノ - OnlineCasinoWiki.com",
-    "link": "https://onlinecasinowiki.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/onlinecasinowikicom",
-    "image": "onlinecasinowiki.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2022-12-08T20:00:00.000Z",
     "title": "cricket betting app",
     "link": "https://4rabet.com/app",
     "plan": "Sponsor",
@@ -2170,34 +1680,12 @@
     "active": true
   },
   {
-    "createdAt": "2022-07-05T17:10:00.00Z",
-    "title": "Buy TikTok Followers - 100% Real & Fast | Just $5.00 - SocialBoosting",
-    "link": "https://www.socialboosting.com/buy-tiktok-followers",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/socialboosting",
-    "image": "socialboosting.png",
-    "image_h": "",
-    "endDate": "",
-    "active": false
-  },
-  {
     "createdAt": "2022-07-03T19:10:00.00Z",
     "title": "NonGamStopOdds casino sites",
     "link": "https://www.nongamstopodds.com/casinos-not-on-gamstop/",
     "plan": "Silver Sponsor",
     "ref": "https://www.patreon.com/user/creators?u=64192013",
     "image": "nongamstopodds.png",
-    "image_h": "",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2022-06-01T12:40:00.00Z",
-    "title": "Rating of best betting sites in Australia",
-    "link": "https://hellsbet.com/en-au/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/hellsbet-au",
-    "image": "hellsbet.png",
     "image_h": "",
     "endDate": "",
     "active": true
@@ -2355,28 +1843,6 @@
     "image_h": "",
     "endDate": "",
     "active": true
-  },
-  {
-    "createdAt": "2021-08-25T10:08:46.477Z",
-    "title": "Casino utan spelpaus",
-    "link": "https://casinoutankonto.net/casino-utan-svensk-licens/",
-    "plan": "Silver Sponsor",
-    "ref": "https://opencollective.com/casinoutankonto-net",
-    "image": "casinoutankonto.png",
-    "image_h": "",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2021-08-10T14:28:12.654Z",
-    "title": "Erik Kings Zamsino Bonus seiten",
-    "link": "https://zamsino.com/de/casino-bonus/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/erik-king",
-    "image": "zamsino.png",
-    "image_h": "",
-    "endDate": "",
-    "active": false
   },
   {
     "createdAt": "2021-08-10T12:09:04.253Z",

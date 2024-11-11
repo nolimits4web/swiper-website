@@ -21,22 +21,17 @@ const toRemove = [];
 sponsors.forEach((sponsor) => {
   if (!sponsor.ref.includes('opencollective')) return;
   const slug = sponsor.ref.split('https://opencollective.com/')[1];
-  if (!data[slug] || !data[slug][0]) {
-    if (sponsor.endDate) {
-      const endDate = new Date(sponsor.endDate);
-      if (endDate.getTime() > new Date().getTime()) {
-        return;
-      }
-    }
-    toRemove.push(slug);
-    return;
-  }
   if (sponsor.endDate) {
     const endDate = new Date(sponsor.endDate);
     if (endDate.getTime() > new Date().getTime()) {
       return;
     }
   }
+  if (!data[slug] || !data[slug][0]) {
+    toRemove.push(slug);
+    return;
+  }
+
   const lastDate = new Date(data[slug][0]);
   if (new Date().getTime() - lastDate.getTime() > 31 * 24 * 60 * 60 * 1000) {
     toRemove.push(slug);
