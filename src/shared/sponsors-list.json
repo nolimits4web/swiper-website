@@ -1,7 +1,17 @@
 [
   {
+    "createdAt": "2024-11-16T16:00:00.00Z",
+    "title": "Neon Sign Custom",
+    "link": "https://neonsigncustom.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/neon-sign-custom",
+    "image": "neon-sign-custom.png",
+    "endDate": "2024-12-16T16:00:00.00Z",
+    "active": true
+  },
+  {
     "createdAt": "2024-11-15T16:00:00.00Z",
-    "title": "Instagram Story Viewer",
+    "title": "InstantStories",
     "link": "https://instant-stories.com/",
     "plan": "Sponsor",
     "ref": "https://opencollective.com/instantstories",
