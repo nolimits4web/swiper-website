@@ -1,5 +1,25 @@
 [
   {
+    "createdAt": "2024-11-19T16:00:00.00Z",
+    "title": "Online Kasyno Polis",
+    "link": "https://onlinekasyno-polis.pl/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/onlinekasyno-polis",
+    "image": "onlinekasyno-polis.png",
+    "endDate": "2025-11-19T16:00:00.00Z",
+    "active": true
+  },
+  {
+    "createdAt": "2024-11-19T16:00:00.00Z",
+    "title": "SEO Casino Pro - Your Multiplier of Success in the Gambling Business",
+    "link": "https://seocasino.pro/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/ihor-dumanskyi",
+    "image": "seocasinopro.png",
+    "endDate": "2024-12-19T16:00:00.00Z",
+    "active": true
+  },
+  {
     "createdAt": "2024-11-18T16:00:00.00Z",
     "title": "RoboCat Casino",
     "link": "https://robocat.casino/",
