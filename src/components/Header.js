@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from 'react';
 import GithubStats from './GithubStats';
 import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect';
 import TogglesRibbon from './TogglesRibbon';
+import BlackFridayRibbon from './BlackFridayRibbon';
 
 function updateColorTheme() {
   if (
@@ -74,7 +75,7 @@ export default function Header() {
 
   return (
     <>
-      <TogglesRibbon />
+      <BlackFridayRibbon />
       <header className="sticky top-0 z-50 h-16 bg-surface-2 py-6">
         <div className="mx-auto flex h-full items-center justify-between px-4 sm:px-6">
           {/* Left */}
