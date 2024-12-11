@@ -1,5 +1,35 @@
 [
   {
+    "createdAt": "2024-12-11T20:00:00.000Z",
+    "title": "Ставки на спорт",
+    "link": "https://betking.com.ua/sports-book/#/overview",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/stavki-na-sport-ua",
+    "image": "stavki-na-sport-ua.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2024-12-11T20:00:00.000Z",
+    "title": "Ставки на спорт",
+    "link": "https://betking.com.ua/sports-book/#/overview",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/bukmeker",
+    "image": "bukmeker.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2024-12-11T20:00:00.000Z",
+    "title": "buy instagram followers",
+    "link": "https://skweezer.net/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/skweezer-net",
+    "image": "skweezer-net.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2024-12-09T20:00:00.000Z",
     "title": "Онлайн казино та БК (ставки на спорт) в Україні",
     "link": "https://betking.com.ua/",
