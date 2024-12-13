@@ -1,5 +1,15 @@
 [
   {
+    "createdAt": "2024-12-13T20:00:00.000Z",
+    "title": "Free Music and Video Downloads",
+    "link": "https://musicza.co.za/",
+    "plan": "Silver Sponsor",
+    "ref": "https://opencollective.com/musicza",
+    "image": "musicza.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2024-12-12T20:00:00.000Z",
     "title": "WildWinz",
     "link": "https://wildwinz.com/",
