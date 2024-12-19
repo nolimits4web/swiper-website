@@ -1,5 +1,35 @@
 [
   {
+    "createdAt": "2024-12-19T20:00:00.000Z",
+    "title": "Graming",
+    "link": "https://graming.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/graming",
+    "image": "graming.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2024-12-19T20:00:00.000Z",
+    "title": "Limbo Gambling",
+    "link": "https://limbogambling.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/limbo-gambling",
+    "image": "limbo-gambling.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2024-12-19T20:00:00.000Z",
+    "title": "Онлайн казино casino.ua",
+    "link": "https://casino.ua/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/casinoua",
+    "image": "casinoua.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2024-12-13T20:00:00.000Z",
     "title": "Free Music and Video Downloads",
     "link": "https://musicza.co.za/",
