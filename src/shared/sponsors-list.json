@@ -1,5 +1,15 @@
 [
   {
+    "createdAt": "2024-12-24T20:00:00.000Z",
+    "title": "Mercury Jets",
+    "link": "https://www.mercuryjets.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/private-flight",
+    "image": "private-flight.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2024-12-19T20:00:00.000Z",
     "title": "Graming",
     "link": "https://graming.com/",
