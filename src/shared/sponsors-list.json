@@ -1,5 +1,25 @@
 [
   {
+    "createdAt": "2025-01-06T20:00:00.000Z",
+    "title": "My Social Following",
+    "link": "https://mysocialfollowing.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/mysocialfollowing",
+    "image": "mysocialfollowing.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2025-01-06T20:00:00.000Z",
+    "title": "DashTickets New Zealand gambling magazine",
+    "link": "https://dashtickets.nz/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/dashtickets-new-zealand-gambling-magazine",
+    "image": "dashtickets-new-zealand-gambling-magazine.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2025-01-02T20:00:00.000Z",
     "title": "Generate QR codes",
     "link": "https://www.ideal.es/granada/mejores-herramientas-crear-codigo-pdf-20241108002251-nt.html",
