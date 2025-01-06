@@ -3,8 +3,7 @@ import Link from 'next/link';
 import { useRef, useState, useEffect } from 'react';
 import GithubStats from './GithubStats';
 import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect';
-import NewYearRibbon from './NewYearRibbon';
-// import TogglesRibbon from './TogglesRibbon';
+import TogglesRibbon from './TogglesRibbon';
 
 function updateColorTheme() {
   if (
@@ -75,7 +74,7 @@ export default function Header() {
 
   return (
     <>
-      <NewYearRibbon />
+      <TogglesRibbon />
       <header className="sticky top-0 z-50 h-16 bg-surface-2 py-6">
         <div className="mx-auto flex h-full items-center justify-between px-4 sm:px-6">
           {/* Left */}
