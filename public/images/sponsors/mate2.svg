@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background square with rounded corners -->
+  <rect width="512" height="512" rx="128" fill="#2563eb"/>
+  <!-- M letter centered -->
+  <text x="256" y="340" 
+        font-size="320" 
+        font-family="system-ui, -apple-system, Arial, sans-serif" 
+        font-weight="700" 
+        text-anchor="middle" 
+        fill="white">M</text>
+</svg>

@@ -1,5 +1,25 @@
 [
   {
+    "createdAt": "2025-01-09T20:00:00.000Z",
+    "title": "Online Tools for Developers & Creators",
+    "link": "https://mate.tools/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/mate2",
+    "image": "mate2.svg",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2025-01-09T20:00:00.000Z",
+    "title": "Online Tools for Developers & Creators",
+    "link": "https://mate.tools/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/mate2",
+    "image": "mate2.svg",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2025-01-06T20:00:00.000Z",
     "title": "My Social Following",
     "link": "https://mysocialfollowing.com/",
@@ -302,10 +322,10 @@
   {
     "createdAt": "2024-11-19T16:00:00.00Z",
     "title": "Online Kasyno Polis",
-    "link": "https://onlinekasyno-polis.pl/",
+    "link": "https://polskiesloty.com/",
     "plan": "Sponsor",
     "ref": "https://opencollective.com/onlinekasyno-polis",
-    "image": "onlinekasyno-polis.png",
+    "image": "onlinekasyno-polis.jpg",
     "endDate": "2025-11-19T16:00:00.00Z",
     "active": true
   },
