@@ -1,5 +1,25 @@
 [
   {
+    "createdAt": "2025-01-21T20:00:00.000Z",
+    "title": "Nettikasinot",
+    "link": "https://www.nettikasinot.org/",
+    "plan": "Silver Sponsor",
+    "ref": "https://opencollective.com/nettikasinot-org",
+    "image": "nettikasinot-org.png",
+    "endDate": "2025-01-21T20:00:00.000Z",
+    "active": true
+  },
+  {
+    "createdAt": "2025-01-21T20:00:00.000Z",
+    "title": "Strands Game",
+    "link": "https://strandsgame.info/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/strands-game2",
+    "image": "strands-game2.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2025-01-20T20:00:00.000Z",
     "title": "superluxuryreps",
     "link": "https://superluxuryreps.com/",
