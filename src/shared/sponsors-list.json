@@ -1,5 +1,25 @@
 [
   {
+    "createdAt": "2025-01-25T20:00:00.000Z",
+    "title": "Slots City",
+    "link": "https://casinoallianz.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/casinoallianz",
+    "image": "casinoallianz.png",
+    "endDate": "2026-01-25T20:00:00.000Z",
+    "active": true
+  },
+  {
+    "createdAt": "2025-01-25T20:00:00.000Z",
+    "title": "Slots City",
+    "link": "https://slotscity.ua/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/slotscity",
+    "image": "slotscity.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2025-01-23T20:00:00.000Z",
     "title": "Useful guides about PayID pokies and casino sites for Australians",
     "link": "https://payid-pokies-sites.com/",
