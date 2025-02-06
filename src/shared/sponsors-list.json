@@ -1,5 +1,55 @@
 [
   {
+    "createdAt": "2025-02-06T20:00:00.000Z",
+    "title": "БК Favbet",
+    "link": "https://www.favbet.ua/uk/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/favbet",
+    "image": "favbet.png",
+    "endDate": "2026-02-06T20:00:00.000Z",
+    "active": true
+  },
+  {
+    "createdAt": "2025-02-06T20:00:00.000Z",
+    "title": "WestNews Фриспины",
+    "link": "https://westnews.com.ua/freespins/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/westnews-frispiny",
+    "image": "westnews-frispiny.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2025-02-06T20:00:00.000Z",
+    "title": "Grademiners - Professional writers, original content, quality you can trust!",
+    "link": "https://grademiners.com/",
+    "plan": "Silver Sponsor",
+    "ref": "https://www.patreon.com/members?userId=158254124",
+    "image": "grademiners.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2025-02-06T20:00:00.000Z",
+    "title": "Казино онлайн",
+    "link": "https://legal-casino.net/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/legal-casino",
+    "image": "legal-casino.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2025-02-06T20:00:00.000Z",
+    "title": "casinos not on Gamstop",
+    "link": "https://www.vso.org.uk/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/casinos-not-on-gamstop10",
+    "image": "casinos-not-on-gamstop10.png",
+    "endDate": "2026-02-06T20:00:00.000Z",
+    "active": true
+  },
+  {
     "createdAt": "2025-02-05T20:00:00.000Z",
     "title": "Online Casinos mit deutscher Lizenz",
     "link": "https://bonusoid.com/",
@@ -880,16 +930,6 @@
     "active": true
   },
   {
-    "createdAt": "2024-07-31T20:00:00.000Z",
-    "title": "FitclubFinder",
-    "link": "https://fitclubfinder.com/",
-    "plan": "Sponsor",
-    "ref": "https://www.patreon.com/members?userId=136917898",
-    "image": "fitclubfinder.png",
-    "endDate": "",
-    "active": true
-  },
-  {
     "createdAt": "2024-07-23T20:00:00.000Z",
     "title": "ZonderCruks - Online Gokken Zonder CRUKS",
     "link": "https://zondercruks.net/",
@@ -1449,16 +1489,7 @@
     "endDate": "2025-09-19T16:00:00.00Z",
     "active": true
   },
-  {
-    "createdAt": "2023-08-03T16:00:00.00Z",
-    "title": "Buy YouTube Subscribers & Views UK @ just £1.99 - Boostlikes",
-    "link": "https://boostlikes.uk/buy-youtube-subscribers-views/",
-    "plan": "Sponsor",
-    "ref": "https://www.patreon.com/user/creators?u=31009923",
-    "image": "boostlikes.png",
-    "endDate": "",
-    "active": true
-  },
+
   {
     "createdAt": "2023-08-01T16:00:00.00Z",
     "title": "Buy Twitter Followers – 100% Active & Instant",
@@ -1479,16 +1510,7 @@
     "endDate": "",
     "active": true
   },
-  {
-    "createdAt": "2023-06-27T16:00:00.00Z",
-    "title": "siti non AAMS - outlookindia.com",
-    "link": "https://www.outlookindia.com/outlook-spotlight/migliori-siti-non-aams-siti-scommesse-senza-licenza-sicuri-news-294715",
-    "plan": "Sponsor",
-    "ref": "https://www.patreon.com/user/creators?u=26699621",
-    "image": "outlookindia.png",
-    "endDate": "",
-    "active": true
-  },
+
   {
     "createdAt": "2021-09-23T13:21:29.015Z",
     "title": "LÅN PENGE NU | Hurtige Online lån 2021 | Klik her og Ansøg i dag",
