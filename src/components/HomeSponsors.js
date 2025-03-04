@@ -29,7 +29,7 @@ const PlanSection = (props) => {
               href={link}
               key={title + index}
               title={title}
-              rel="noopener"
+              rel="sponsored"
               target="_blank"
             >
               {image && (
