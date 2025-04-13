@@ -3,6 +3,12 @@ export default function HomeProjects() {
     <div className="mx-auto flex max-w-5xl flex-col items-stretch gap-4 text-left sm:grid sm:grid-cols-2 sm:gap-8 sm:text-center md:grid-cols-4">
       {[
         {
+          url: 'https://paneflow.com',
+          title: 'Paneflow',
+          description: 'Build Stunning Slideshows Visually. No Code Required',
+          logo: 'paneflow.svg',
+        },
+        {
           url: 'https://t0ggles.com',
           title: 't0ggles',
           description: 'Your ultimate multiple projects management tool',
