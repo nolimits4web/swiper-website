@@ -218,6 +218,19 @@ export default function Header() {
                 <ul className="right-0 top-full space-y-1 whitespace-nowrap rounded-xl bg-surface-3 px-3 pb-0 pt-4 text-sm group-hover:block md:absolute md:hidden md:py-4">
                   <li>
                     <Link
+                      href="https://paneflow.com"
+                      target="_blank"
+                      className="group/link flex items-center rounded-md px-3 py-1 font-medium leading-6 hover:bg-primary hover:text-on-primary hover:no-underline"
+                    >
+                      <img
+                        src="/images/projects/paneflow.svg"
+                        className="mr-2 block h-6 w-6 group-hover/link:block"
+                      />
+                      <span className="mr-6">PaneFlow</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
                       href="https://uiinitiative.com"
                       target="_blank"
                       className="group/link flex items-center rounded-md px-3 py-1 font-medium leading-6 hover:bg-primary hover:text-on-primary hover:no-underline"

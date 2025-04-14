@@ -48,39 +48,67 @@ export default function DemosPage() {
   return (
     <WithSidebarLayout tableOfContents={tableOfContents}>
       <h1>Swiper Demos</h1>
-
-      <h2>UI Initiative</h2>
-      <p>
+      <h2 className="flex items-center">
+        <img
+          src="/images/projects/paneflow.svg"
+          className="my-0 mr-2 h-8 w-8"
+          alt="PaneFlow - Build Stunning Slideshows Visually. No Code Required"
+        />
+        PaneFlow
+      </h2>
+      <a
+        href="https://paneflow.com"
+        target="_blank"
+        className="-mt-4 block duration-300 hover:opacity-75"
+      >
+        <img
+          src="/images/paneflow-banner.jpg"
+          className="rounded-xl border border-white/10"
+        />
+      </a>
+      <h2 className="flex items-center">
+        <img
+          src="/images/uiinitiative-logo.svg"
+          className="my-0 mr-2 hidden h-8 w-8 dark:block"
+        />
+        <img
+          src="/images/uiinitiative-logo-black.svg"
+          className="my-0 mr-2 block h-8 w-8 dark:hidden"
+        />
+        UI Initiative
+      </h2>
+      <p className="-mt-4">
         Premium Swiper templates & plugins from{' '}
         <a href="https://uiinitiative.com" target="_blank">
           UI Initiative
         </a>
       </p>
-      <div className="my-4 flex space-x-4 overflow-auto pb-6">
-        {uiinitiativeDemosGrouped.map((demos, demoIndex) => (
-          <div
-            className="w-10/12 flex-shrink-0 space-y-4 md:w-6/12 "
-            key={demoIndex}
-          >
-            {demos.map(({ cover, url, title }) => (
-              <a
-                key={url}
-                className="block w-full rounded-lg bg-surface-1"
-                href={url}
-                target="_blank"
-                title={title}
-              >
-                <img
-                  width="1200"
-                  height="600"
-                  className="!m-0 block rounded-lg"
-                  src={cover}
-                  alt={title}
-                />
-              </a>
-            ))}
-          </div>
-        ))}
+      <div className="relative">
+        <div className="relative my-4 flex space-x-4 overflow-auto pb-6">
+          {uiinitiativeDemosGrouped.map((demos, demoIndex) => (
+            <div className="w-5/12 flex-shrink-0 space-y-4" key={demoIndex}>
+              {demos.map(({ cover, url, title }) => (
+                <a
+                  key={url}
+                  className="block w-full rounded-lg bg-surface-1 duration-300 hover:opacity-75"
+                  href={url}
+                  target="_blank"
+                  title={title}
+                >
+                  <img
+                    width="1200"
+                    height="600"
+                    className="!m-0 block rounded-xl border border-white/10"
+                    src={cover}
+                    alt={title}
+                  />
+                </a>
+              ))}
+            </div>
+          ))}
+          <div className="h-px w-1/12 shrink-0"></div>
+        </div>
+        <div className="absolute right-0 top-0 h-full w-1/12 bg-gradient-to-r from-transparent to-surface"></div>
       </div>
       {demos.map(({ title, slug, folder }) => (
         <React.Fragment key={title}>
