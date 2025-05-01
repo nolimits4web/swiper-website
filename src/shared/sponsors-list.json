@@ -1,5 +1,25 @@
 [
   {
+    "createdAt": "2025-05-01T20:00:00.000Z",
+    "title": "Casino not on GamStop",
+    "link": "https://casinonotongamstop.uk/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/casino-not-on-gamstop",
+    "image": "casino-not-on-gamstop.webp",
+    "endDate": "2026-05-01T20:00:00.000Z",
+    "active": true
+  },
+  {
+    "createdAt": "2025-05-01T20:00:00.000Z",
+    "title": "Best Betting",
+    "link": "https://best-betting.net/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/best-betting",
+    "image": "best-betting.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2025-04-29T20:00:00.000Z",
     "title": "Buy YouTube Subscribers",
     "link": "https://www.mediamister.com/buy-youtube-subscribers",
