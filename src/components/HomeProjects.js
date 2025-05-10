@@ -15,6 +15,13 @@ export default function HomeProjects() {
           logo: 't0ggles.svg',
         },
         {
+          url: 'https://studio.swiperjs.com',
+          title: 'Swiper Studio',
+          description:
+            'Create Beautiful And Responsive Swipers Without Writing Any Code',
+          logo: 'swiper-studio-logo.svg',
+        },
+        {
           url: 'https://framework7.io',
           title: 'Framework7',
           description:
