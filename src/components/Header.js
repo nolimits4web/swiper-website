@@ -237,12 +237,9 @@ export default function Header() {
                     >
                       <img
                         src="/images/uiinitiative-logo.svg"
-                        className="mr-2 hidden h-6 w-6 group-hover/link:block dark:block dark:group-hover/link:hidden"
+                        className="mr-2 h-6 w-6"
                       />
-                      <img
-                        src="/images/uiinitiative-logo-black.svg"
-                        className="mr-2 h-6 w-6 group-hover/link:hidden dark:hidden dark:group-hover/link:block"
-                      />
+
                       <span className="mr-6">UI Initiative</span>
                     </Link>
                   </li>

@@ -22,6 +22,13 @@ export default function HomeProjects() {
           logo: 'swiper-studio-logo.svg',
         },
         {
+          url: 'https://uiinitiative.com',
+          title: 'UI Initiative',
+          description:
+            'High-quality premium templates & plugins for Swiper and Framework7',
+          logo: 'uiinitiative.svg',
+        },
+        {
           url: 'https://framework7.io',
           title: 'Framework7',
           description:
