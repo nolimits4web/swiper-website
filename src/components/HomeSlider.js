@@ -329,7 +329,7 @@ export default function HomeSlider() {
               ))}
             </div>
             <div
-              className="swiper header-swiper-flip h-40 w-4/5 max-w-full rounded-lg lg:w-60"
+              className="swiper header-swiper-flip transform-3d h-40 w-4/5 max-w-full rounded-lg lg:w-60"
               style={{ '--swiper-theme-color': '#fff' }}
             >
               {Array.from({ length: 5 }).map((el, index) => (

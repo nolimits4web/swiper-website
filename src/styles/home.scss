@@ -78,3 +78,10 @@
     transform: scale(0);
   }
 }
+.header-swiper-flip,
+.header-swiper-creative-1,
+.header-swiper-creative-2,
+.header-swiper-cards {
+  transform-style: preserve-3d;
+  overflow: visible !important;
+}
