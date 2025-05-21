@@ -505,6 +505,54 @@ Object.assign(swiperEl, {
 swiperEl.initialize();
 ```
 
+## Usage with Angular
+
+Angular has full support for web components, including passing attributes as props and listening for custom events:
+
+```ts
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { register } from 'swiper/element/bundle';
+import { Swiper } from 'swiper/types';
+
+register();
+
+@Component({
+  selector: 'my-component',
+  template: `
+    <swiper-container
+      slides-per-view="3"
+      space-between="spaceBetween"
+      centered-slides="true"
+      [pagination]="{ hideOnClick: true }"
+      [breakpoints]="{
+        '768': {
+          slidesPerView: 3
+        }
+      }"
+      (swiperprogress)="onProgress($any($event))"
+      (swiperslidechange)="onSlideChange()"
+    >
+      <swiper-slide>Slide 1</swiper-slide>
+      <swiper-slide>Slide 2</swiper-slide>
+      <swiper-slide>Slide 3</swiper-slide>
+    </swiper-container>
+  `,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+})
+export class MyComponent {
+  spaceBetween = 10;
+
+  onProgress(event: CustomEvent<[Swiper, number]>) {
+    const [swiper, progress] = event.detail;
+    console.log(progress);
+  }
+
+  onSlideChange() {
+    console.log('slide changed');
+  }
+}
+```
+
 ## Usage with React
 
 React doesn't fully supports web components yet (as for version 18). So the usage is basically the same as in HTML:
