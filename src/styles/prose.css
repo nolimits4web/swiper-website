@@ -1,0 +1,30 @@
+body .prose pre {
+  border-radius: 0.75rem;
+  background: var(--color-pre-bg);
+  color: var(--color-pre-color);
+  box-shadow: none !important;
+}
+pre code {
+  background: transparent !important;
+}
+body .prose pre code {
+  background: transparent;
+  border-radius: 0px;
+  padding: initial;
+  color: var(--color-pre-color);
+}
+body .prose code {
+  font-weight: normal;
+}
+.prose :where(code):not(:where([class~='not-prose'] *)) {
+  @apply text-primary-variant;
+}
+.prose :where(a):not(:where([class~='not-prose'] *)) {
+  font-weight: normal;
+}
+.prose > ul > li code {
+  word-break: break-word;
+}
+body .prose {
+  @apply text-on-surface;
+}

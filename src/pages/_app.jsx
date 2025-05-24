@@ -1,7 +1,7 @@
 import '@docsearch/css';
-import '../styles/globals.scss';
+import '../styles/globals.css';
 import Head from 'next/head';
-import Header from '@/components/Header';
+import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import { useGA } from '@/shared/use-ga';
 
@@ -53,7 +53,7 @@ function App({ Component, pageProps, router }) {
           color="#0080FF"
         />
       </Head>
-      <Header />
+      <Nav />
       <Component {...pageProps} />
       <Footer />
     </>

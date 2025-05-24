@@ -1,0 +1,27 @@
+body {
+  font-family:
+    Inter,
+    -apple-system,
+    system-ui,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  @apply bg-background text-on-surface;
+}
+a,
+body .prose a {
+  @apply text-primary no-underline hover:underline;
+}
+
+.after\:hash:after {
+  content: '#';
+}
+
+a[id],
+h2[id],
+h3[id],
+h4[id] {
+  scroll-margin-top: 72px;
+}

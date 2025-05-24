@@ -1,0 +1,14 @@
+@theme {
+  --color-background: #000;
+  --color-brand: #0080ff;
+  --color-primary: #50a8ff;
+  --color-primary-variant: #cfe3f0;
+  --color-surface-glass: rgba(50, 50, 50, 0.5);
+  --color-outline: rgba(255, 255, 255, 0.15);
+  --color-surface: #1e2832;
+  --color-on-surface: #fff;
+  --color-on-surface-dark: rgba(255, 255, 255, 0.75);
+  --color-on-surface-darker: rgba(255, 255, 255, 0.5);
+  --breakpoint-xs: 480px;
+  --breakpoint-2xl: 1400px;
+}

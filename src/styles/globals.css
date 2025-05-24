@@ -1,0 +1,10 @@
+@import 'tailwindcss';
+@import './theme.css';
+@import './fonts.css';
+@import './base.css';
+@import './prose.css';
+@import './home.css';
+/* @import './demos.css'; */
+/* @import './prism.css'; */
+/* @import './docs.css'; */
+/* @import './docsearch.css'; */

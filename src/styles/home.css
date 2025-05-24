@@ -1,0 +1,42 @@
+.header-swiper-flip,
+.header-swiper-creative-1,
+.header-swiper-creative-2,
+.header-swiper-cards {
+  transform-style: preserve-3d;
+  overflow: visible !important;
+}
+
+.home-features-bg {
+  background-image: url('/images/home/features-bg.jpg');
+  /* Create View Timeline */
+  view-timeline-name: --revealing-image;
+  view-timeline-axis: block;
+
+  /* Attach animation, linked to the  View Timeline */
+  animation:
+    linear reveal both,
+    linear reveal-transform both;
+  animation-timeline: --revealing-image;
+
+  /* Tweak range when effect should run*/
+  animation-range:
+    entry -20% cover 10%,
+    entry -20% cover 100%;
+}
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes reveal-transform {
+  from {
+    transform: translate(0, 200px);
+  }
+  to {
+    transform: translate(0, -200px);
+  }
+}

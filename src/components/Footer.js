@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-outline-variant px-4 py-8 text-center sm:px-6 lg:px-8 xl:px-10">
+    <footer className="border-t border-outline px-4 py-8 text-center sm:px-6 lg:px-8 xl:px-10">
       <div className="mx-auto max-w-5xl">
         <div className="text-on-surface-variant">
           {new Date().getFullYear()} © Swiper by{' '}

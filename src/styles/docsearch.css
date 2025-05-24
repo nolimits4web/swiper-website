@@ -58,18 +58,3 @@ button.DocSearch-Button {
     }
   }
 }
-
-@media (max-width: 375px) {
-  .header-swiper-version {
-    position: absolute;
-    right: -4px;
-    top: -2px;
-  }
-}
-
-@media (max-width: 319px) {
-  .header-swiper-version,
-  .header-swiper-name {
-    display: none;
-  }
-}
