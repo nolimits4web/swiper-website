@@ -6,6 +6,7 @@ import TableOfContents from '@/components/TableOfContents';
 import SidebarSponsors from '@/components/SidebarSponsors';
 import Carbon from '@/components/Carbon';
 import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect';
+import { Button } from '@/components/Button';
 
 export function WithSidebarLayout({
   children,
@@ -64,9 +65,8 @@ export function WithSidebarLayout({
         </Head>
       )}
       {/* Left */}
-      <button
-        type="button"
-        className="fixed bottom-6 right-6 z-40 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-on-primary hover:opacity-75 lg:hidden"
+      <Button
+        className="!fixed bottom-4 right-4 z-40 lg:hidden bg-surface-glass border border-outline backdrop-blur-lg w-16 h-16"
         onClick={() => setSidebarOpened(true)}
       >
         <svg
@@ -79,19 +79,26 @@ export function WithSidebarLayout({
         >
           <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
         </svg>
-      </button>
+      </Button>
+      {/* <button
+        type="button"
+        className="fixed bottom-6 right-6 z-40 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-on-primary hover:opacity-75 lg:hidden"
+
+      >
+
+      </button> */}
       <div
-        className={`fixed right-0 top-0 z-50 h-full w-full bg-black bg-opacity-10 lg:z-40 lg:!hidden ${
+        className={`fixed right-0 top-0 z-50 h-full w-full bg-black/40 lg:z-40 lg:!hidden ${
           sidebarOpened ? 'block' : 'hidden'
         }`}
         onClick={() => setSidebarOpened(false)}
       />
       <div
-        className={`fixed left-0 top-0 z-50 mr-10 h-screen w-64 flex-none bg-surface-3 text-sm lg:relative lg:z-40 lg:!block lg:h-auto lg:rounded-none lg:bg-transparent ${
+        className={`fixed left-2 top-2 bottom-2 z-50 mr-10 h-[calc(100vh-16px)] w-64 flex-none text-sm lg:relative lg:z-40 lg:!block lg:h-auto lg:rounded-none ${
           sidebarOpened ? 'block' : 'hidden'
         }`}
       >
-        <div className="h-full overflow-y-auto overscroll-contain px-4 pt-10 lg:sticky lg:top-16 lg:h-auto lg:max-h-[calc(100vh-64px)] lg:px-0">
+        <div className="h-full overflow-y-auto overscroll-contain p-4 lg:sticky lg:top-4 lg:h-auto lg:max-h-[calc(100vh-32px)] bg-surface-glass border rounded-3xl border-outline  backdrop-blur-2xl">
           <SidebarSponsors />
           {toc.length > 0 && (
             <TableOfContents onClick={onListClick} tableOfContents={toc} />

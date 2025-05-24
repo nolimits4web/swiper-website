@@ -1,7 +1,7 @@
 import '@docsearch/css';
 import '../styles/globals.css';
 import Head from 'next/head';
-import Nav from '@/components/Nav';
+import { Nav } from '@/components/Nav';
 import Footer from '@/components/Footer';
 import { useGA } from '@/shared/use-ga';
 

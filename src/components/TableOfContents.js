@@ -5,10 +5,7 @@ import { useScrollSpy } from '../shared/use-scroll-spy';
 export default function TableOfContents({ tableOfContents, onClick }) {
   const currentSection = useScrollSpy(tableOfContents[0].slug);
   return (
-    <ul
-      className="table-of-contents overflow-x-hidden text-on-surface-variant"
-      onClick={onClick}
-    >
+    <ul className="table-of-contents overflow-x-hidden" onClick={onClick}>
       {tableOfContents.map((section) => {
         const sectionIsActive = currentSection === section.slug;
         const childSectionIsActive =
@@ -21,11 +18,12 @@ export default function TableOfContents({ tableOfContents, onClick }) {
               <a
                 href={`#${section.slug}`}
                 className={clsx(
-                  'block rounded-full px-3 py-1.5 font-medium text-on-surface-variant  hover:bg-secondary-container hover:text-primary hover:no-underline',
+                  'block rounded-full py-1.5 !text-on-surface-darker   !no-underline',
                   {
+                    'hover:!text-on-surface-dark':
+                      !sectionIsActive && !childSectionIsActive,
                     '!text-primary': childSectionIsActive,
-                    '!text-on-primary': sectionIsActive,
-                    '!bg-primary': sectionIsActive,
+                    '!text-primary': sectionIsActive,
                   }
                 )}
               >

@@ -8,11 +8,14 @@ body {
     Arial,
     sans-serif;
   -webkit-font-smoothing: antialiased;
+  color-scheme: dark;
   @apply bg-background text-on-surface;
 }
-a,
-body .prose a {
+a {
   @apply text-primary no-underline hover:underline;
+}
+footer a {
+  @apply text-on-surface-darker;
 }
 
 .after\:hash:after {

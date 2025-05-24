@@ -1,16 +1,16 @@
 import fs from 'fs';
 import React from 'react';
 import Link from 'next/link';
-import clientsList from '@/shared/clients-list';
 import Carbon from '@/components/Carbon';
 import HomeHeader from '@/components/HomeHeader';
 import HomeSponsors from '@/components/HomeSponsors';
 import HomeProjects from '@/components/HomeProjects';
 import { HomeElementUsage } from '@/components/HomeElementUsage';
 import { SponsorButton } from '@/components/SponsorButton';
-import { homeFeatures } from '@/shared/home-features';
 import clsx from 'clsx';
 import { Button } from '@/components/Button';
+import { homeFeatures } from '@/shared/home-features';
+import { homeClients } from '@/shared/home-clients';
 
 const libs = [
   {
@@ -75,14 +75,14 @@ const HomeSectionTitle = ({ className, children }) => {
 };
 const HomeSectionText = ({ className, children }) => {
   return (
-    <p
+    <div
       className={clsx(
         'text-lg sm:text-2xl leading-[1.75] text-center text-on-surface-dark my-12 text-pretty max-w-5xl mx-auto',
         className
       )}
     >
       {children}
-    </p>
+    </div>
   );
 };
 export default function Home(props) {
@@ -174,15 +174,15 @@ export default function Home(props) {
           easily integrates with frameworks like Svelte, Angular, Next.js,
           Ember, and more.
         </HomeSectionText>
-        <div className="flex items-center justify-center gap-8 my-12">
+        <div className="grid grid-cols-2 xs:flex flex-wrap items-center justify-center gap-4 md:gap-8 my-12">
           {libs.map(({ title, image, link }) => (
             <Link
               key={title}
               href="/swiper-api"
-              className="w-48 h-48 bg-surface !text-on-surface !no-underline rounded-3xl relative group"
+              className="xs:w-48 w-full h-48 bg-surface !text-on-surface !no-underline rounded-3xl relative group"
             >
-              <div className="absolute inset-0 bg-white/10 rounded-3xl opacity-0 group-hover:opacity-100 duration-200 group-active:opacity-50" />
-              <div className="flex flex-col gap-8 p-8 items-center justify-center group-active:scale-90 group-active:opacity-75 duration-200">
+              <div className="absolute inset-0 bg-white/10 rounded-3xl opacity-0 group-hover:opacity-100 duration-200 group-active:opacity-50 pointer-events-none" />
+              <div className="flex flex-col gap-4 md:gap-8 p-4 md:p-8 items-center justify-center group-active:scale-90 group-active:opacity-75 duration-200 h-full">
                 <img
                   src={`/images/libs/${image}`}
                   width="140"
@@ -238,13 +238,28 @@ export default function Home(props) {
           Millions of developers and the world's top companies rely on Swiper
           every day.
         </HomeSectionText>
+        <div className="flex flex-wrap gap-4 sm:gap-8 justify-center">
+          {homeClients.map(({ image, title }) => (
+            <img
+              key={title}
+              className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
+              src={`/images/clients/${image}`}
+              width="120"
+              height="120"
+              alt={`${title} logo`}
+              title={title}
+              loading="lazy"
+            />
+          ))}
+        </div>
       </HomeContainer>
 
-      <HomeContainer className="my-64">
-        <HomeSectionTitle>
+      <HomeContainer className="my-64 relative home-premium">
+        <div className="home-premium-bg absolute w-screen h-[1448px] bg-center bg-no-repeat left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+        <HomeSectionTitle className="relative">
           Build More with Swiper Studio & UI Initiative
         </HomeSectionTitle>
-        <HomeSectionText>
+        <HomeSectionText className="relative">
           Beyond the core library, Swiper is part of a growing ecosystem.{' '}
           <Link href="https://studio.swiperjs.com" target="_blank">
             Swiper Studio
@@ -255,235 +270,87 @@ export default function Home(props) {
           </Link>{' '}
           delivers premium Swiper-based UI templates and effects.
         </HomeSectionText>
+        <div className="grid grid-cols-1 xs:grid-cols-2 gap-4 sm:gap-8 relative">
+          <Link
+            href="https://uiinitiative.com"
+            target="_blank"
+            className="flex flex-col gap-4 sm:gap-8 p-4 xs:p-8 bg-black/50 border border-outline rounded-3xl items-center justify-center text-center !text-on-surface !no-underline backdrop-blur-lg text-pretty relative group home-premium-link"
+          >
+            <div className="absolute inset-0 bg-white/5 rounded-3xl opacity-0 group-hover:opacity-100 duration-200 group-active:opacity-50 pointer-events-none" />
+            <div className="flex items-center justify-center gap-4 xs:contents xs:text-center text-left mb-4">
+              <img
+                className="w-16 md:w-32 h-16 md:h-32"
+                src="/images/projects/uiinitiative.svg"
+                alt="UI Initiative"
+              />
+              <div className="text-lg md:text-2xl leading-[1.75]">
+                Premium Templates & Plugins for Swiper and Framework7
+              </div>
+            </div>
+            <img
+              src="/images/uiinitiative-banner.jpg"
+              alt="UI Initiative"
+              className="rounded-xl border-2 border-outline"
+            />
+          </Link>
+          <Link
+            href="https://studio.swiperjs.com"
+            target="_blank"
+            className="flex flex-col gap-4 sm:gap-8 p-4 xs:p-8 bg-black/50 border border-outline rounded-3xl items-center justify-center text-center !text-on-surface !no-underline backdrop-blur-lg text-pretty relative group home-premium-link"
+          >
+            <div className="absolute inset-0 bg-white/5 rounded-3xl opacity-0 group-hover:opacity-100 duration-200 group-active:opacity-50 pointer-events-none" />
+            <div className="flex items-center justify-center gap-4 xs:contents xs:text-center text-left mb-4">
+              <img
+                className="w-16 md:w-32 h-16 md:h-32"
+                src="/images/projects/swiper-studio-logo.svg"
+                alt="Swiper Studio"
+              />
+              <div className="text-lg md:text-2xl leading-[1.75]">
+                Create Beautiful And Responsive Sliders Without Writing Any Code
+              </div>
+            </div>
+            <img
+              src="/images/swiper-studio-banner.jpg"
+              alt="Swiper Studio"
+              className="rounded-xl border-2 border-outline"
+            />
+          </Link>
+        </div>
       </HomeContainer>
 
-      <HomeHeader />
+      <HomeContainer className="my-64 relative z-10">
+        <HomeSectionTitle>
+          The Tools Powering Modern Front-End Development
+        </HomeSectionTitle>
+        <HomeSectionText>
+          Discover our full suite of UI tools, frameworks, and no-code solutions
+          built to elevate your development workflow.
+        </HomeSectionText>
+        <HomeProjects />
+      </HomeContainer>
 
-      <div className="mx-auto max-w-7xl px-4 text-lg sm:px-6 lg:px-8 xl:px-10">
-        <div className="mx-auto flex max-w-5xl flex-col space-y-5">
-          <h1 className="mb-6 text-center text-5xl font-bold  sm:text-6xl">
-            Swiper
-          </h1>
-          <div className="space-y-5 text-center text-xl font-medium leading-[1.75] sm:p-12">
-            <p>
-              Swiper is the most modern{' '}
-              <b className="underline">free and open source</b> mobile touch
-              slider with hardware accelerated transitions and{' '}
-              <b className="underline">amazing native behavior</b>. Use it on
-              websites, web apps, and mobile native/hybrid apps.
-            </p>
-            <p className="mb-2">
-              Swiper, along with other great components, is a part of{' '}
-              <a
-                href="https://framework7.io"
-                target="_blank"
-                className="font-bold"
-              >
-                Framework7
-              </a>{' '}
-              and{' '}
-              <a
-                href="https://ionicframework.com/"
-                target="_blank"
-                className="font-bold"
-              >
-                Ionic Framework
-              </a>{' '}
-              - a fully-featured frameworks for building iOS &amp; Android apps.
-            </p>
-          </div>
-        </div>
-        <div className="mt-24">
-          <HomeHeading>Available For</HomeHeading>
-          <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 md:grid-cols-4 md:gap-8">
-            {libs.map(({ title, image, link }) => (
-              <Link
-                key={title}
-                title={title}
-                href={link}
-                className="relative overflow-hidden rounded-3xl border border-outline-variant p-6 text-on-surface duration-100 hover:bg-primary-container hover:no-underline active:rounded-xl"
-              >
-                <div className="flex items-center justify-center">
-                  <img
-                    src={`/images/libs/${image}`}
-                    width="140"
-                    height="140"
-                    alt={`${title} logo`}
-                    title={title}
-                    loading="lazy"
-                    className="h-16 w-16 max-w-full object-contain sm:h-36 sm:w-36"
-                  />
-                </div>
-                <div className="mt-4 hidden text-center sm:block">
-                  <div className="font-bold">{title}</div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-24">
-          <HomeHeading>Easy As</HomeHeading>
-          <HomeElementUsage />
-        </div>
-
-        <div className="mx-auto mt-24 max-w-6xl">
-          <HomeHeading>Powered With Top Notch Features</HomeHeading>
-          <ul className="grid gap-x-4 gap-y-4 sm:grid-cols-2 lg:grid-cols-3 xl:gap-4">
-            {homeFeatures.map(({ title, descr, svg }) => (
-              <li key={title} className="flex rounded-3xl bg-surface-1 p-4">
-                <div className="mr-4 h-16 w-16 shrink-0 rounded-xl bg-surface-2">
-                  {svg}
-                </div>
-                <div className="min-w-0 shrink">
-                  <h3 className="mb-1 font-bold">{title}</h3>
-                  <div className="text-base leading-normal text-on-surface-variant">
-                    {descr}
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="mt-24">
-          <HomeHeading>Used By Millions</HomeHeading>
-          <div className="mx-auto grid max-w-6xl grid-cols-4 gap-4 sm:grid-cols-8">
-            {clientsList.map(({ image, title }) => (
-              <div key={title} className="flex items-center justify-center">
-                <img
-                  className="rounded-3xl"
-                  src={`/images/clients/${image}`}
-                  width="120"
-                  height="120"
-                  alt={`${title} logo`}
-                  title={title}
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="mb-20 mt-24">
-          <HomeHeading>Premium Services</HomeHeading>
-          <div className="grid-cols-2 gap-8 sm:grid">
-            <Link
-              className="swiper-studio-card block rounded-3xl border border-outline-variant text-center text-on-surface duration-100 hover:bg-primary-container hover:no-underline active:rounded-xl"
-              href="https://studio.swiperjs.com"
-              target="_blank"
-            >
-              <div className="px-4 pt-4">
-                <img
-                  src="/images/swiper-studio-banner-2.jpg"
-                  alt="UI Initiative"
-                  className="rounded-3xl"
-                />
-              </div>
-              <div className="p-8">
-                <h2 className="mb-4 text-center text-4xl font-bold">
-                  Swiper Studio
-                </h2>
-                <p className="text-on-surface-variant">
-                  Premium no-code Swiper builder and editor
-                </p>
-              </div>
-            </Link>
-
-            <Link
-              href="https://uiinitiative.com"
-              target="_blank"
-              className="uiinitiative-card mt-8 block rounded-3xl border border-outline-variant text-center text-on-surface duration-100 hover:bg-primary-container hover:no-underline  active:rounded-xl sm:mt-0"
-            >
-              <div className="mx-auto px-4 pt-4">
-                <img
-                  src="/images/uiinitiative-banner-2.jpg"
-                  alt="UI Initiative"
-                  className="rounded-3xl"
-                />
-              </div>
-              <div className="p-8">
-                <h2 className="mb-4 text-center text-4xl font-bold">
-                  UI Initiative
-                </h2>
-                <p className="text-on-surface-variant">
-                  Premium Swiper templates & plugins
-                </p>
-              </div>
-            </Link>
-          </div>
-        </div>
-
-        <div className="mb-20 mt-24">
-          <HomeHeading>Latest From The Blog</HomeHeading>
-          <div className="grid-cols-2 gap-8 space-y-8 sm:grid sm:space-y-0 md:grid-cols-3">
-            {posts.map((post) => (
-              <Link
-                key={post.title}
-                className="group relative block rounded-3xl border border-outline-variant p-4 duration-200 hover:bg-primary-container hover:text-on-primary-container hover:no-underline active:rounded-xl"
-                href={post.path}
-              >
-                <div className="relative overflow-hidden rounded-xl pb-[50%]">
-                  {post.image && (
-                    <img
-                      className="absolute left-0 top-0 h-full w-full object-cover object-center duration-200"
-                      src={`${post.image}`}
-                      alt={post.title}
-                      loading="lazy"
-                    />
-                  )}
-                </div>
-                <div className="mt-4 w-fit text-xl font-bold text-on-surface group-hover:text-on-primary-container">
-                  {post.title}
-                </div>
-                <div className="mt-1 text-sm text-on-surface opacity-75">
-                  {formatDate(post.date)}
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-
-        <div className="mx-auto mb-20 mt-24 max-w-6xl text-center">
-          <HomeHeading>More Of Our Projects</HomeHeading>
-          <HomeProjects />
-        </div>
-
-        <div className="mb-20 mt-24 text-center">
-          <HomeHeading>Sponsors</HomeHeading>
-          <div className="my-4 font-medium leading-[1.75]">
+      <HomeContainer className="my-64 relative z-10">
+        <HomeSectionTitle>Sponsors</HomeSectionTitle>
+        <HomeSectionText>
+          <div>
             Support Swiper on{' '}
-            <a
-              href="https://opencollective.com/swiper"
-              target="_blank"
-              rel="noopener"
-            >
+            <a href="https://opencollective.com/swiper" target="_blank">
               Open Collective
             </a>{' '}
             or{' '}
-            <a
-              href="https://patreon.com/swiperjs"
-              target="_blank"
-              rel="noopener"
-            >
+            <a href="https://patreon.com/swiperjs" target="_blank">
               Patreon
             </a>{' '}
-            and help us to make it even better!
-            <br />
-            Your support means a lot for us!
+            and help us to make it even better! Your support means a lot for us!
           </div>
-          <div className="mb-8 mt-4 flex flex-col items-center space-y-6">
-            <SponsorButton href="https://opencollective.com/swiper">
-              <span>Become a sponsor on OpenCollective</span>
-            </SponsorButton>
-            <SponsorButton href="https://patreon.com/swiperjs">
-              <span>Support Swiper on Patreon</span>
-            </SponsorButton>
+          <div className="mt-6 flex justify-center">
+            <Button href="https://opencollective.com/swiper" target="_blank">
+              Become a Sponsor
+            </Button>
           </div>
-          <div className="space-y-8">
-            <HomeSponsors spacing={false} />
-          </div>
-        </div>
-      </div>
+        </HomeSectionText>
+        <HomeSponsors spacing={false} />
+      </HomeContainer>
     </>
   );
 }

@@ -1,14 +1,11 @@
-
 import { MDXProvider } from '@mdx-js/react';
 import Heading from '@/components/Heading.js';
-import { WithSidebarLayout } from '@/layouts/WithSidebarLayout.js';
-
+import { WithSidebarLayout } from '@/pages/layouts/WithSidebarLayout.js';
+@/layouts/WithSidebarLayout.js
 export const meta = {
   title: 'Swiper Changelog',
   description: 'Swiper changelog',
-}
-
-
+};
 
 ## [11.2.8](https://github.com/nolimits4web/Swiper/compare/v11.2.7...v11.2.8) (2025-05-23)
 
@@ -751,7 +748,9 @@ export const meta = {
 * **pagination:** more CSS variables to control appearance and position ([c8b1228](https://github.com/nolimits4web/Swiper/commit/c8b1228397513745cdec7b2f4577be59da58b4df))
 * **scrollbar:** more CSS variables to control appearance ([cfad536](https://github.com/nolimits4web/Swiper/commit/cfad5364043c9a7bb0a3bc4f3ac1b24bd3f6e3cd))
 * add element core version ([de6c7f7](https://github.com/nolimits4web/Swiper/commit/de6c7f70160a5a90b8dc5bb95441c02afa32c9db))
-* export element css styles ([51334a3](https://github.com/nolimits4web/Swiper/commit/51334a3efd5f5b45cbd83d511cb0ff856c04235b))
+* export element css styles ([51334a3](https://github.com/nolimits4web/Swiper/commit/51334a3efd5f5b45cbd83d511cb0ff856c04235b)
+
+  )
 * injectStyles and injectStylesUrls params ([71b10b2](https://github.com/nolimits4web/Swiper/commit/71b10b27546e52ff179beb4cc49cb75286888944))
 * **parallax:** support parallax rotate ([4949163](https://github.com/nolimits4web/Swiper/commit/49491636476c4b29622a6f08f26041c08a960c81)), closes [#6126](https://github.com/nolimits4web/Swiper/issues/6126)
 * **zoom:** `in` method now accepts custom zoom ratio ([d88df61](https://github.com/nolimits4web/Swiper/commit/d88df610b6557ee221d6ed69e3e5da22e6cbfb57)), closes [#5527](https://github.com/nolimits4web/Swiper/issues/5527)
@@ -1873,7 +1872,9 @@ export const meta = {
     ```jsx
     <Swiper>
       <SwiperSlide>
-        {({ isActive }) => <div>Current slide is {isActive ? 'active' : 'not active'}</div>}
+        {({ isActive }) => (
+          <div>Current slide is {isActive ? 'active' : 'not active'}</div>
+        )}
       </SwiperSlide>
       <SwiperSlide>...</SwiperSlide>
       ...
@@ -2714,7 +2715,6 @@ export const meta = {
   - Better clicks prevention during swiping
 - Many of API methods, parameters and callbacks are changed
 - Added a bit lightweight jQuery/Zepto version of Swiper that can be used if you use jQuery/Zepto in your project
-
 
 export default function Page({ children }) {
   const components = {

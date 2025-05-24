@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 @import './theme.css';
-@import './fonts.css';
 @import './base.css';
+@import './fonts.css';
 @import './prose.css';
 @import './home.css';
 /* @import './demos.css'; */

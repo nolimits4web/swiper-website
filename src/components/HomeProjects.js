@@ -1,6 +1,8 @@
+import Link from 'next/link';
+
 export default function HomeProjects() {
   return (
-    <div className="mx-auto flex max-w-5xl flex-col items-stretch gap-4 text-left sm:grid sm:grid-cols-2 sm:gap-8 sm:text-center md:grid-cols-4">
+    <div className="mx-auto grid grid-cols-2 items-stretch gap-4 sm:grid-cols-3 md:gap-8 text-center lg:grid-cols-4">
       {[
         {
           url: 'https://paneflow.com',
@@ -24,8 +26,7 @@ export default function HomeProjects() {
         {
           url: 'https://uiinitiative.com',
           title: 'UI Initiative',
-          description:
-            'High-quality premium templates & plugins for Swiper and Framework7',
+          description: 'Premium templates & plugins for Swiper and Framework7',
           logo: 'uiinitiative.svg',
         },
         {
@@ -49,24 +50,25 @@ export default function HomeProjects() {
           logo: 'konsta.svg',
         },
       ].map((item) => (
-        <a
-          className="flex w-full items-center rounded-3xl border border-outline-variant px-4 py-6 text-on-surface duration-100 hover:bg-primary-container  hover:no-underline active:rounded-xl sm:flex-col"
+        <Link
+          className=" bg-surface rounded-3xl !text-on-surface !no-underline relative group"
           href={item.url}
           target="_blank"
           key={item.title}
         >
-          <img
-            className="mr-4 w-16 sm:mr-0 sm:h-32 sm:w-32"
-            src={`/images/projects/${item.logo}`}
-            alt={item.title}
-          />
-          <div>
-            <div className="font-bold sm:mb-2 sm:mt-4">{item.title}</div>
-            <div className="text-base text-on-surface-variant">
-              {item.description}
+          <div className="absolute inset-0 bg-white/10 rounded-3xl opacity-0 group-hover:opacity-100 duration-200 group-active:opacity-50 pointer-events-none" />
+          <div className="flex flex-col gap-4 md:gap-8 p-4 md:p-8 items-center justify-center group-active:scale-90 group-active:opacity-75 duration-200">
+            <img
+              className="w-16 h-16 lg:w-24 lg:h-24"
+              src={`/images/projects/${item.logo}`}
+              alt={item.title}
+            />
+            <div className="flex flex-col gap-2 md:gap-4">
+              <div className="">{item.title}</div>
+              <div className="text-on-surface-darker">{item.description}</div>
             </div>
           </div>
-        </a>
+        </Link>
       ))}
     </div>
   );

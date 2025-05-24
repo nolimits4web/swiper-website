@@ -43,76 +43,25 @@ const DropdownLink = ({ href, children, target }) => {
   );
 };
 
-export default function Nav() {
-  const [setting, setSetting] = useState('system');
-  const [navOpened, setNavOpened] = useState(false);
-  const initial = useRef(true);
-
-  useIsomorphicLayoutEffect(() => {
-    const theme = localStorage.theme;
-    if (theme === 'light' || theme === 'dark') {
-      setSetting(theme);
-    }
-  }, []);
-
-  useIsomorphicLayoutEffect(() => {
-    if (setting === 'system') {
-      localStorage.removeItem('theme');
-    } else if (setting === 'light' || setting === 'dark') {
-      localStorage.theme = setting;
-    }
-    if (initial.current) {
-      initial.current = false;
-    } else {
-      updateColorTheme();
-    }
-  }, [setting]);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    mediaQuery.addEventListener('change', updateColorTheme);
-
-    function onStorage() {
-      updateColorTheme();
-      const theme = localStorage.theme;
-      if (theme === 'light' || theme === 'dark') {
-        setSetting(theme);
-      } else {
-        setSetting('system');
-      }
-    }
-    window.addEventListener('storage', onStorage);
-
-    return () => {
-      mediaQuery.removeEventListener('change', updateColorTheme);
-      window.removeEventListener('storage', onStorage);
-    };
-  }, []);
-
-  const onNavClick = (e) => {
-    if (e.target && e.target.closest('a')) {
-      setNavOpened(false);
-    }
-  };
-
+export const Nav = () => {
   return (
     <>
       {/* <PaneFlowBanner /> */}
-      <div className="sticky top-0 z-50 flex py-4 justify-center items-center">
-        <nav className="mx-auto flex gap-4 h-14 rounded-full max-w-screen-sm items-center justify-between px-4 relative">
+      <div className="sticky top-0 z-50 flex py-4 justify-center items-center pointer-events-none">
+        <nav className="mx-auto flex gap-4 h-16 rounded-full max-w-screen-sm items-center justify-between px-4 relative pointer-events-auto">
           <div className="absolute left-0 top-0 w-full h-full bg-surface-glass border-outline border rounded-full backdrop-blur-xl backdrop-saturate-200"></div>
           {/* Left */}
           <Link
             href="/"
-            className="relative flex flex-shrink-0 items-center text-inherit hover:no-underline dark:text-white w-8 h-8"
+            className="relative flex shrink-0 items-center text-inherit hover:no-underline dark:text-white w-10 h-10"
           >
             <img
               src="/images/swiper-logo.svg"
-              className="h-8 w-8"
+              className="h-full w-full shrink-0"
               alt="Swiper"
             />
 
-            <span className="absolute font-mono text-[10px] text-on-surface-darker left-full -ml-1 -top-2 leading-none pointer-events-none">
+            <span className="absolute font-mono text-[10px] text-on-surface-darker left-full ml-4 -top-1 leading-none pointer-events-none">
               v{process.env.swiperReleaseVersion}
             </span>
           </Link>
@@ -124,10 +73,7 @@ export default function Nav() {
               indexName="swiperjs"
               apiKey="997edea3f9d162f3ffb7442f399aa8c3"
             /> */}
-          <ul
-            className={`items-center relative flex gap-4`}
-            onClick={onNavClick}
-          >
+          <ul className={`items-center relative flex gap-4`}>
             <li className="group relative ">
               <div className="cursor-pointer text-sm hover:text-primary">
                 Docs
@@ -216,4 +162,4 @@ export default function Nav() {
       </div>
     </>
   );
-}
+};

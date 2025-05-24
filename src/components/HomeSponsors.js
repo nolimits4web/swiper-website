@@ -25,7 +25,7 @@ const PlanSection = (props) => {
         {items.map(({ link, title, image }, index) => {
           return (
             <a
-              className={`flex items-center justify-center overflow-hidden rounded bg-white text-center duration-300 ${sizes}`}
+              className={`flex items-center justify-center overflow-hidden bg-white text-center duration-300 ${sizes}`}
               href={link}
               key={title + index}
               title={title}
@@ -34,7 +34,7 @@ const PlanSection = (props) => {
             >
               {image && (
                 <img
-                  className="h-auto max-h-full w-auto max-w-full rounded"
+                  className="h-auto max-h-full w-auto max-w-full "
                   src={`/images/sponsors/${image}`}
                   alt={title}
                   loading="lazy"
@@ -45,7 +45,7 @@ const PlanSection = (props) => {
         })}
         {showPlaceholder && (
           <a
-            className={`flex items-center justify-center rounded-md bg-surface-1 p-1 text-center font-semibold duration-300 hover:bg-surface-2 hover:no-underline ${sizes} ${
+            className={`flex items-center justify-center -md bg-surface-1 p-1 text-center font-semibold duration-300 hover:bg-surface-2 hover:no-underline ${sizes} ${
               props.plan === 'Sponsor' ? 'text-[6px] leading-none' : 'text-xs'
             }`}
             href="https://opencollective.com/swiper"

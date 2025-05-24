@@ -6,6 +6,35 @@
   overflow: visible !important;
 }
 
+.home-premium {
+  .home-premium-link:first-child {
+    box-shadow: 16px -16px 16px rgba(0, 0, 0, 0.3);
+  }
+  .home-premium-link:last-child {
+    box-shadow: -16px -16px 16px rgba(0, 0, 0, 0.3);
+  }
+  .home-premium-link img:last-child {
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    view-timeline-name: --revealing-premium-image;
+    view-timeline-axis: block;
+    animation: linear reveal-premium-image both;
+    animation-timeline: --revealing-premium-image;
+    animation-range: entry -20% cover 100%;
+  }
+}
+.home-premium-bg {
+  background-image: url('/images/home/premium-bg.jpg');
+
+  view-timeline-name: --revealing-image;
+  view-timeline-axis: block;
+
+  animation: linear reveal both;
+  animation-timeline: --revealing-image;
+
+  /* Tweak range when effect should run*/
+  animation-range: entry -20% cover 10%;
+}
+
 .home-features-bg {
   background-image: url('/images/home/features-bg.jpg');
   /* Create View Timeline */
@@ -38,5 +67,14 @@
   }
   to {
     transform: translate(0, -200px);
+  }
+}
+
+@keyframes reveal-premium-image {
+  from {
+    transform: translate(0, 20%);
+  }
+  to {
+    transform: translate(0, -20%);
   }
 }
