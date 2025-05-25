@@ -11,7 +11,7 @@ export default function ModuleTitle({ id, module, title }) {
       >
         {title}
       </Heading.h3>
-      <MotionComponent class="swiper-motion mx-auto block h-60 w-fit shrink-0 overflow-hidden rounded-3xl border border-outline-variant sm:mx-0" />
+      <MotionComponent class="swiper-motion mx-auto block h-60 w-fit shrink-0 overflow-hidden rounded-3xl border border-outline sm:mx-0" />
     </div>
   );
 }

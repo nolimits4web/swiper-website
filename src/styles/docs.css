@@ -5,7 +5,7 @@
   @media (min-width: 1024px) {
     @apply relative my-[2em] overflow-hidden rounded-xl bg-surface-1 pb-4;
     thead {
-      @apply border-outline-variant;
+      @apply border-b border-outline;
       th {
         @apply pt-4;
       }
@@ -23,22 +23,28 @@
     tr:first-child {
       @apply border-t-0;
     }
-    th[colspan] {
-      @apply bg-surface-2;
-    }
     > table {
       @apply my-0;
     }
     td pre {
-      @apply border border-outline-variant;
+      @apply border border-outline;
     }
   }
 }
 .params-table,
 .events-table,
 .methods-table {
+  td.font-mono {
+    @apply text-xs;
+  }
+  td:last-child {
+    .text-green.font-mono,
+    .text-orange.font-mono {
+      @apply text-xs;
+    }
+  }
   .table-border-t {
-    @apply border-t border-outline-variant;
+    @apply border-t border-outline;
   }
   p:first-child {
     margin-top: 0;
@@ -47,7 +53,7 @@
     margin-bottom: 0;
   }
   td blockquote {
-    @apply my-3 block appearance-none border-l-4 border-red bg-surface-1 px-2 py-2 text-sm font-normal not-italic text-red;
+    @apply my-3 block appearance-none border-l-4 border-red-300 bg-surface-1 px-2 py-2 text-xs font-normal not-italic text-red-300 leading-relaxed;
     p:first-of-type::before,
     p:first-of-type::after {
       content: '';

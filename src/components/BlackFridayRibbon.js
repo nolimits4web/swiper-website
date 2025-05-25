@@ -1,6 +1,6 @@
 export default function BlackFridayRibbon() {
   return (
-    <div className="flex min-h-[64px] items-center  justify-center bg-surface px-4 py-2 text-sm font-semibold  sm:px-6 lg:px-8 xl:px-10">
+    <div className="flex min-h-[64px] items-center  justify-center bg-surface-2 px-4 py-2 text-sm font-semibold  sm:px-6 lg:px-8 xl:px-10">
       <div className="text-center">
         🔥 Black Friday Sale: Up to 40% OFF on{' '}
         <a

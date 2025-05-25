@@ -1,16 +1,16 @@
 import fs from 'fs';
 import React from 'react';
 import Link from 'next/link';
-import Carbon from '@/components/Carbon';
-import HomeHeader from '@/components/HomeHeader';
 import HomeSponsors from '@/components/HomeSponsors';
 import HomeProjects from '@/components/HomeProjects';
-import { HomeElementUsage } from '@/components/HomeElementUsage';
-import { SponsorButton } from '@/components/SponsorButton';
 import clsx from 'clsx';
 import { Button } from '@/components/Button';
 import { homeFeatures } from '@/shared/home-features';
 import { homeClients } from '@/shared/home-clients';
+import { HomeContainer } from '@/components/HomeContainer';
+import { HomeSectionTitle } from '@/components/HomeSectionTitle';
+import { HomeSectionText } from '@/components/HomeSectionText';
+import { HomeVideos } from '@/components/HomeVideos';
 
 const libs = [
   {
@@ -47,44 +47,6 @@ const extraLibs = [
   'wordpress.svg',
 ];
 
-export function HomeHeading({ children }) {
-  return (
-    <h2 className="mb-12 text-center text-5xl font-bold leading-tight sm:text-6xl">
-      {children}
-    </h2>
-  );
-}
-const HomeContainer = ({ children, className }) => {
-  return (
-    <div className={clsx('mx-auto max-w-7xl px-4 sm:px-6 md:px-8', className)}>
-      {children}
-    </div>
-  );
-};
-const HomeSectionTitle = ({ className, children }) => {
-  return (
-    <h2
-      className={clsx(
-        'text-3xl sm:text-5xl font-normal leading-normal text-center mb-12',
-        className
-      )}
-    >
-      {children}
-    </h2>
-  );
-};
-const HomeSectionText = ({ className, children }) => {
-  return (
-    <div
-      className={clsx(
-        'text-lg sm:text-2xl leading-[1.75] text-center text-on-surface-dark my-12 text-pretty max-w-5xl mx-auto',
-        className
-      )}
-    >
-      {children}
-    </div>
-  );
-};
 export default function Home(props) {
   const { posts = [] } = props;
   const formatDate = (d) => {
@@ -97,29 +59,36 @@ export default function Home(props) {
   return (
     <>
       <HomeContainer className="flex flex-col items-center justify-center gap-12 mt-16 mb-20">
-        <div className="flex items-center justify-center gap-8">
+        <div className="home-header-bg absolute w-screen h-[727px] bg-center bg-no-repeat left-1/2 top-0 -translate-x-1/2" />
+        <div className="flex items-center justify-center gap-8 relative">
           <img
             src="/images/swiper-logo.svg"
-            className="h-32 w-32"
+            className="w-24 h-24 sm:h-32 sm:w-32"
             alt="Swiper"
           />
-          <h1 className="text-6xl sm:text-8xl">Swiper</h1>
+          <h1 className="text-6xl sm:text-8xl bg-gradient-to-r from-primary to-white bg-clip-text text-transparent">
+            Swiper
+          </h1>
         </div>
-        <h2 className="text-3xl sm:text-5xl text-center text-primary-variant leading-tight text-pretty max-w-4xl">
+        <h2 className="text-3xl sm:text-5xl text-center text-primary-variant leading-tight text-pretty max-w-4xl relative">
           Powering Millions of Sliders - Smooth, Fast, Everywhere
         </h2>
-        <div className="text-center text-lg text-on-surface-darker">
+        <div className="text-center text-lg text-on-surface-darker relative">
           v{process.env.swiperReleaseVersion} released on{' '}
           {process.env.swiperReleaseDate}
         </div>
-        <div className="flex items-center gap-16">
+        <div className="flex items-center gap-16 relative">
           <Button href="/get-started" className="w-48">
             Get started
           </Button>
         </div>
       </HomeContainer>
 
-      <HomeContainer className="my-64">
+      <HomeContainer className="mb-32 sm:mb-64">
+        <HomeVideos />
+      </HomeContainer>
+
+      <HomeContainer className="my-32 sm:my-64">
         <div className="border-2 border-outline p-8 sm:p-16 lg:px-24 flex gap-4 text-lg sm:text-2xl leading-[1.75]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -167,7 +136,7 @@ export default function Home(props) {
         </div>
       </HomeContainer>
 
-      <HomeContainer className="my-64 relative z-10">
+      <HomeContainer className="my-32 sm:my-64 relative z-10">
         <HomeSectionTitle>Works Anywhere You Build</HomeSectionTitle>
         <HomeSectionText>
           Swiper is available for JavaScript, React, Vue, Web Components - and
@@ -179,7 +148,7 @@ export default function Home(props) {
             <Link
               key={title}
               href="/swiper-api"
-              className="xs:w-48 w-full h-48 bg-surface !text-on-surface !no-underline rounded-3xl relative group"
+              className="xs:w-48 w-full h-48 bg-surface-2 !text-on-surface !no-underline rounded-3xl relative group"
             >
               <div className="absolute inset-0 bg-white/10 rounded-3xl opacity-0 group-hover:opacity-100 duration-200 group-active:opacity-50 pointer-events-none" />
               <div className="flex flex-col gap-4 md:gap-8 p-4 md:p-8 items-center justify-center group-active:scale-90 group-active:opacity-75 duration-200 h-full">
@@ -212,7 +181,7 @@ export default function Home(props) {
         </div>
       </HomeContainer>
 
-      <HomeContainer className="my-64 relative">
+      <HomeContainer className="my-32 sm:my-64 relative">
         <div className="home-features-bg absolute w-screen h-[1403px] bg-center bg-no-repeat left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
         <HomeSectionTitle className="relative">
           Powered With Top Notch Features
@@ -221,7 +190,7 @@ export default function Home(props) {
           {homeFeatures.map(({ title, descr, svg }) => (
             <div
               key={title}
-              className="flex rounded-3xl border border-outline bg-surface-glass flex-col px-4 py-4 lg:py-8 items-center justify-start gap-4 md:w-36 md:h-40 lg:w-48 lg:h-48 text-center backdrop-blur backdrop-saturate-200 text-sm lg:text-base"
+              className="flex rounded-3xl border border-outline bg-surface-1 flex-col px-4 py-4 lg:py-8 items-center justify-start gap-4 md:w-36 md:h-40 lg:w-48 lg:h-48 text-center backdrop-blur backdrop-saturate-200 text-sm lg:text-base"
             >
               <div className="w-12 h-12 lg:w-16 lg:h-16 bg-white/10 rounded-xl">
                 {svg}
@@ -232,7 +201,7 @@ export default function Home(props) {
         </div>
       </HomeContainer>
 
-      <HomeContainer className="my-64 relative z-10">
+      <HomeContainer className="my-32 sm:my-64 relative z-10">
         <HomeSectionTitle>Proven. Trusted. Everywhere</HomeSectionTitle>
         <HomeSectionText>
           Millions of developers and the world's top companies rely on Swiper
@@ -254,7 +223,7 @@ export default function Home(props) {
         </div>
       </HomeContainer>
 
-      <HomeContainer className="my-64 relative home-premium">
+      <HomeContainer className="my-32 sm:my-64 relative home-premium">
         <div className="home-premium-bg absolute w-screen h-[1448px] bg-center bg-no-repeat left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
         <HomeSectionTitle className="relative">
           Build More with Swiper Studio & UI Initiative
@@ -318,7 +287,7 @@ export default function Home(props) {
         </div>
       </HomeContainer>
 
-      <HomeContainer className="my-64 relative z-10">
+      <HomeContainer className="my-32 sm:my-64 relative z-10">
         <HomeSectionTitle>
           The Tools Powering Modern Front-End Development
         </HomeSectionTitle>
@@ -329,7 +298,7 @@ export default function Home(props) {
         <HomeProjects />
       </HomeContainer>
 
-      <HomeContainer className="my-64 relative z-10">
+      <HomeContainer className="my-32 sm:my-64 relative z-10">
         <HomeSectionTitle>Sponsors</HomeSectionTitle>
         <HomeSectionText>
           <div>

@@ -55,7 +55,7 @@ export function WithSidebarLayout({
   return (
     <div
       id={meta.containerId}
-      className="mx-auto flex w-full justify-between px-4 sm:px-6"
+      className="mx-auto flex w-full justify-between px-4 sm:px-6 md:px-8 relative"
     >
       {meta && (
         <Head>
@@ -66,7 +66,7 @@ export function WithSidebarLayout({
       )}
       {/* Left */}
       <Button
-        className="!fixed bottom-4 right-4 z-40 lg:hidden bg-surface-glass border border-outline backdrop-blur-lg w-16 h-16"
+        className="!fixed bottom-4 right-4 z-40 lg:hidden bg-surface-1 border border-outline backdrop-blur-lg w-16 h-16"
         onClick={() => setSidebarOpened(true)}
       >
         <svg
@@ -80,13 +80,7 @@ export function WithSidebarLayout({
           <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
         </svg>
       </Button>
-      {/* <button
-        type="button"
-        className="fixed bottom-6 right-6 z-40 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-on-primary hover:opacity-75 lg:hidden"
 
-      >
-
-      </button> */}
       <div
         className={`fixed right-0 top-0 z-50 h-full w-full bg-black/40 lg:z-40 lg:!hidden ${
           sidebarOpened ? 'block' : 'hidden'
@@ -94,28 +88,27 @@ export function WithSidebarLayout({
         onClick={() => setSidebarOpened(false)}
       />
       <div
-        className={`fixed left-2 top-2 bottom-2 z-50 mr-10 h-[calc(100vh-16px)] w-64 flex-none text-sm lg:relative lg:z-40 lg:!block lg:h-auto lg:rounded-none ${
+        className={`fixed left-2 top-2 bottom-2 z-50 mr-10 h-[calc(100vh-16px)] w-64 flex-none text-sm lg:relative lg:z-40 lg:left-0 lg:top-0 lg:!block lg:h-auto lg:rounded-none ${
           sidebarOpened ? 'block' : 'hidden'
         }`}
       >
-        <div className="h-full overflow-y-auto overscroll-contain p-4 lg:sticky lg:top-4 lg:h-auto lg:max-h-[calc(100vh-32px)] bg-surface-glass border rounded-3xl border-outline  backdrop-blur-2xl">
+        <div className="h-full overflow-y-auto overscroll-contain p-4 lg:sticky lg:top-4 lg:h-auto lg:max-h-[calc(100vh-32px)] bg-surface-1 border rounded-3xl border-outline  backdrop-blur-2xl">
           <SidebarSponsors />
           {toc.length > 0 && (
             <TableOfContents onClick={onListClick} tableOfContents={toc} />
           )}
-          <Carbon sidebar />
         </div>
       </div>
       {/* Center */}
       <div
-        className="dark:prose-dark prose mx-auto min-w-0 max-w-none flex-auto pb-24 pt-10 lg:pb-16 2xl:max-w-[940px]"
+        className="dark:prose-dark prose mx-auto min-w-0 max-w-none flex-auto pb-8 pt-10 2xl:max-w-[940px]"
         ref={contentRef}
       >
         {beforePageTitle}
         {(pageTitle || meta.title) && <h1>{pageTitle || meta.title}</h1>}
         {afterPageTitle}
         {children}
-        <div className="mt-4 border-t border-outline-variant pt-4 text-right">
+        <div className="mt-4 border-t border-outline pt-4 text-right text-sm">
           <Link
             href={`https://github.com/nolimits4web/swiper-website/edit/master/src/pages${router.pathname}.mdx`}
           >
@@ -124,7 +117,7 @@ export function WithSidebarLayout({
         </div>
       </div>
       {/* Right */}
-      <div className="hidden h-px w-[calc(224px+40px)] shrink-0 2xl:block" />
+      <div className="hidden h-px w-[calc(256px+40px)] shrink-0 2xl:block" />
     </div>
   );
 }

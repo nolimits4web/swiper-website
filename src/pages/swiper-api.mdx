@@ -93,7 +93,7 @@ import { ZoomEvents } from '@/components/api/ZoomEvents';
 import { ZoomMethods } from '@/components/api/ZoomMethods';
 
 {/* prettier-ignore */}
-<div className="important-note md:mr-[300px] 2xl:mr-0 space-y-4">
+<div className="important-note space-y-4">
   <div>If you are upgrading from Swiper 9 to Swiper 10, check out{' '} <a href="/migration-guide-v10">Migration Guide to Swiper 10</a></div>
 </div>
 
@@ -899,7 +899,7 @@ Swiper comes with gulp builder that allows to build custom library version where
 3.  Now, we need to install required dependencies. Go to the folder with downloaded and unzipped Swiper repository and execute in terminal:
 
     ```
-    $ npm install
+    npm install
     ```
 
 4.  Open `scripts/build-config.js` file:
@@ -938,7 +938,7 @@ Swiper comes with gulp builder that allows to build custom library version where
 5.  Now, we are ready to build custom version of Swiper:
 
     ```
-    $ npm run build:prod
+    npm run build:prod
     ```
 
 6.  That is all. Generated CSS and JS files and their minified versions will be available in `dist/` folder.

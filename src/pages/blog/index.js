@@ -11,9 +11,9 @@ export default function Blog(props) {
     }).format(new Date(d));
   };
   return (
-    <div className="px-4 sm:px-6">
+    <div className="px-4 sm:px-6 md:px-8 relative">
       <div className="mx-auto max-w-[940px] pb-24 pt-10  lg:pb-16">
-        <h1 className="mb-[0.7em] text-[40px] font-bold leading-[1.2]">
+        <h1 className="mb-[0.5em] text-4xl leading-[1.125] sm:text-[42px] sm:leading-tight">
           Swiper Blog
         </h1>
         <div className="space-y-8 sm:grid sm:grid-cols-2 sm:gap-8 sm:space-y-0">
@@ -22,9 +22,9 @@ export default function Blog(props) {
               href={post.path}
               key={post.title}
               style={{ gridColumn: postIndex === 0 ? '1 / span 2' : 'auto' }}
-              className="group relative block rounded-3xl border border-outline-variant p-4 duration-200 hover:bg-primary-container hover:text-on-primary-container hover:no-underline active:rounded-xl"
+              className="group relative block duration-200 hover:!no-underline"
             >
-              <div className="relative overflow-hidden rounded-xl pb-[50%]">
+              <div className="relative overflow-hidden rounded-3xl pb-[50%]">
                 {post.image && (
                   <img
                     className="absolute left-0 top-0 h-full w-full object-cover object-center duration-200"
@@ -34,7 +34,7 @@ export default function Blog(props) {
                   />
                 )}
               </div>
-              <div className="mt-4 w-fit text-xl font-bold text-on-surface group-hover:text-on-primary-container">
+              <div className="mt-4 w-fit text-xl text-on-surface group-hover:text-primary">
                 {post.title}
               </div>
               <div className="mt-1 text-sm text-on-surface opacity-75">

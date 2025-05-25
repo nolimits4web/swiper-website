@@ -28,3 +28,24 @@ h3[id],
 h4[id] {
   scroll-margin-top: 72px;
 }
+
+.important-note {
+  @apply my-3 border-l-4 border-red-300 bg-surface-1 px-5 py-4 text-sm leading-relaxed text-red-300;
+}
+
+.page-top-bg {
+  background-image: url('/images/page-top-bg.jpg');
+  animation: page-top-bg-reveal 2s forwards;
+  background-size: auto 100%;
+}
+
+@keyframes page-top-bg-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  to {
+    opacity: 0.75;
+    transform: translateY(0);
+  }
+}

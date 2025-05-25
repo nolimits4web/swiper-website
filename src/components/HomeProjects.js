@@ -51,7 +51,7 @@ export default function HomeProjects() {
         },
       ].map((item) => (
         <Link
-          className=" bg-surface rounded-3xl !text-on-surface !no-underline relative group"
+          className=" bg-surface-2 rounded-3xl !text-on-surface !no-underline relative group"
           href={item.url}
           target="_blank"
           key={item.title}

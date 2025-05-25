@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from 'react';
 import GithubStats from './GithubStats';
 import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect';
 import PaneFlowBanner from './PaneFlowBanner';
+import { useRouter } from 'next/router';
 function updateColorTheme() {
   if (
     localStorage.theme === 'dark' ||
@@ -21,7 +22,7 @@ function updateColorTheme() {
 
 const Dropdown = ({ children }) => {
   return (
-    <ul className="left-1/2 -translate-x-1/2 top-full whitespace-nowrap rounded-3xl bg-surface-glass border-outline border text-sm hidden group-hover:block absolute backdrop-blur-xl backdrop-saturate-200 py-4 min-w-40">
+    <ul className="left-1/2 -translate-x-1/2 top-full whitespace-nowrap rounded-3xl bg-surface-1 border-outline border text-sm hidden group-hover:block absolute backdrop-blur-xl backdrop-saturate-200 py-4 min-w-40">
       {children}
     </ul>
   );
@@ -44,16 +45,25 @@ const DropdownLink = ({ href, children, target }) => {
 };
 
 export const Nav = () => {
+  const router = useRouter();
+  const pageTopBg = router.pathname !== '/';
   return (
     <>
       {/* <PaneFlowBanner /> */}
+      {pageTopBg && (
+        <div
+          key="page-top-bg"
+          className="page-top-bg absolute w-screen h-[188px] bg-center bg-no-repeat left-1/2 top-0 -translate-x-1/2 pointer-events-none"
+        />
+      )}
+
       <div className="sticky top-0 z-50 flex py-4 justify-center items-center pointer-events-none">
         <nav className="mx-auto flex gap-4 h-16 rounded-full max-w-screen-sm items-center justify-between px-4 relative pointer-events-auto">
-          <div className="absolute left-0 top-0 w-full h-full bg-surface-glass border-outline border rounded-full backdrop-blur-xl backdrop-saturate-200"></div>
+          <div className="absolute left-0 top-0 w-full h-full bg-surface-1 border-outline border rounded-full backdrop-blur-xl backdrop-saturate-200"></div>
           {/* Left */}
           <Link
             href="/"
-            className="relative flex shrink-0 items-center text-inherit hover:no-underline dark:text-white w-10 h-10"
+            className="relative flex shrink-0 items-center text-inherit hover:no-underline dark:text-white w-8 h-8 xs:w-10 xs:h-10"
           >
             <img
               src="/images/swiper-logo.svg"
@@ -61,18 +71,11 @@ export const Nav = () => {
               alt="Swiper"
             />
 
-            <span className="absolute font-mono text-[10px] text-on-surface-darker left-full ml-4 -top-1 leading-none pointer-events-none">
+            <span className="absolute font-mono text-[10px] text-on-surface-darker left-full ml-4 -top-2 xs:-top-1 leading-none pointer-events-none">
               v{process.env.swiperReleaseVersion}
             </span>
           </Link>
 
-          {/* Nav */}
-
-          {/* <DocSearch
-              appId="K52IIJWQL1"
-              indexName="swiperjs"
-              apiKey="997edea3f9d162f3ffb7442f399aa8c3"
-            /> */}
           <ul className={`items-center relative flex gap-4`}>
             <li className="group relative ">
               <div className="cursor-pointer text-sm hover:text-primary">
@@ -158,6 +161,11 @@ export const Nav = () => {
               </Link>
             </li>
           </ul>
+          <DocSearch
+            appId="K52IIJWQL1"
+            indexName="swiperjs"
+            apiKey="997edea3f9d162f3ffb7442f399aa8c3"
+          />
         </nav>
       </div>
     </>

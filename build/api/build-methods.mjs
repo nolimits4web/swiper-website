@@ -98,8 +98,8 @@ const buildMethods = async (
           <li><span className="text-orange font-mono">${
             param.name
           }</span> - <span className="text-green font-mono">${type(
-                param
-              )}</span> - ${param.comment.text || ''}</li>
+            param
+          )}</span> - ${param.comment.text || ''}</li>
           `
             )
             .join('')}
@@ -146,7 +146,7 @@ export const ${typesName} = () => {
           props.length
             ? `
           <tr className="table-border-t methods-table-title-row">
-            <th colSpan="3" className="p-4 bg-surface-1">Properties</th>
+            <th colSpan="3" className="p-4">Properties</th>
           </tr>
         `
             : ''
@@ -157,8 +157,8 @@ export const ${typesName} = () => {
           <tr className="table-border-t">
             <td className="w-1/6 font-mono text-primary">
               <a href="#prop-${methodId(name(item))}" id="prop-${methodId(
-              name(item)
-            )}">${name(item)}</a>
+                name(item)
+              )}">${name(item)}</a>
             </td>
             <td className="w-1/6 text-green font-mono">
               ${type(item)}
@@ -174,7 +174,7 @@ export const ${typesName} = () => {
             methods.length
               ? `
             <tr className="table-border-t methods-table-title-row">
-              <th colSpan="3" className="p-4 bg-surface-1">Methods</th>
+              <th colSpan="3" className="p-4">Methods</th>
             </tr>
             `
               : ''
@@ -186,8 +186,8 @@ export const ${typesName} = () => {
             <tr className="table-border-t">
               <td className="w-1/6 font-mono text-primary" colSpan="2">
                 <a href="#method-${methodId(name(item))}" id="method-${methodId(
-                name(item)
-              )}">${name(item)}</a>
+                  name(item)
+                )}">${name(item)}</a>
               </td>
 
               <td className="w-3/6 space-y-2">

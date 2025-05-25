@@ -20,8 +20,7 @@ export default function TableOfContents({ tableOfContents, onClick }) {
                 className={clsx(
                   'block rounded-full py-1.5 !text-on-surface-darker   !no-underline',
                   {
-                    'hover:!text-on-surface-dark':
-                      !sectionIsActive && !childSectionIsActive,
+                    'hover:!text-on-surface-dark': !sectionIsActive,
                     '!text-primary': childSectionIsActive,
                     '!text-primary': sectionIsActive,
                   }
@@ -38,10 +37,10 @@ export default function TableOfContents({ tableOfContents, onClick }) {
                   <a
                     href={`#${subsection.slug}`}
                     className={clsx(
-                      'block rounded-full px-3 py-1 text-on-surface-variant  hover:bg-secondary-container hover:text-primary hover:no-underline',
+                      'block rounded-full px-3 py-1 !text-on-surface-darker !no-underline',
                       {
-                        '!text-on-primary': subsectionIsActive,
-                        '!bg-primary': subsectionIsActive,
+                        'hover:!text-on-surface-dark': !subsectionIsActive,
+                        '!text-primary': subsectionIsActive,
                       }
                     )}
                   >

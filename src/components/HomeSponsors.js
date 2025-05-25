@@ -1,4 +1,5 @@
 import sponsors from '../shared/sponsors-list.json';
+import { HomeSectionTitle } from './HomeSectionTitle';
 
 const PlanSection = (props) => {
   const { showPlaceholder, showTitle, spacing } = props;
@@ -15,12 +16,8 @@ const PlanSection = (props) => {
   if (!items.length && !showPlaceholder) return null;
 
   return (
-    <div className={spacing ? 'mb-8' : ''}>
-      {showTitle && (
-        <h2 className="mb-4 text-center text-2xl font-extrabold sm:text-3xl">
-          {props.plan}s
-        </h2>
-      )}
+    <div className={spacing ? 'mb-16' : ''}>
+      {showTitle && <HomeSectionTitle>{props.plan}s</HomeSectionTitle>}
       <div className="mx-auto flex max-w-6xl flex-wrap justify-center">
         {items.map(({ link, title, image }, index) => {
           return (

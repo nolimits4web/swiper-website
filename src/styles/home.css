@@ -6,6 +6,11 @@
   overflow: visible !important;
 }
 
+.home-header-bg {
+  background-image: url('/images/home/header-bg.jpg');
+  animation: reveal 2s forwards;
+}
+
 .home-premium {
   .home-premium-link:first-child {
     box-shadow: 16px -16px 16px rgba(0, 0, 0, 0.3);
@@ -76,5 +81,37 @@
   }
   to {
     transform: translate(0, -20%);
+  }
+}
+
+.home-videos-row-top {
+  animation: linear home-videos-row-top 60s infinite;
+}
+
+.home-videos-row-bottom {
+  animation: linear home-videos-row-bottom 60s infinite;
+}
+
+@keyframes home-videos-row-top {
+  from {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(calc(-250% - 4 * 32px + 100%));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes home-videos-row-bottom {
+  from {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(calc(-250% - 4 * 32px + 100% - 50% - 32px));
+  }
+  to {
+    transform: translateX(0);
   }
 }

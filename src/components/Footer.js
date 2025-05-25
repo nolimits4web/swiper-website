@@ -1,9 +1,30 @@
+import clsx from 'clsx';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function Footer() {
+  const router = useRouter();
+  const withSidebar =
+    [
+      '/get-started',
+      '/react',
+      '/vue',
+      '/element',
+      '/swiper-api',
+      '/changelog',
+      '/demos',
+      '/plugins',
+    ].includes(router.pathname) || router.pathname.match(/blog\/[a-z0-9]/);
+
   return (
-    <footer className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-      <div className="bg-surface-glass border-outline border rounded-3xl p-8 mb-4">
+    <footer
+      className={clsx(
+        'mx-auto max-w-7xl px-4 sm:px-6 md:px-8',
+        withSidebar &&
+          '2xl:w-[calc(100%-256px*2-40px*2-48px)] 2xl:max-w-[940px] 2xl:!px-0 mt-8'
+      )}
+    >
+      <div className="bg-surface-1 border-outline border rounded-3xl p-8 mb-4">
         <div className="flex flex-wrap grid-cols-4 gap-4 sm:grid">
           <div className="flex flex-col gap-4 min-w-40">
             <Link href="/">

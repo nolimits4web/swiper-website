@@ -4,7 +4,7 @@
 @import './fonts.css';
 @import './prose.css';
 @import './home.css';
-/* @import './demos.css'; */
-/* @import './prism.css'; */
-/* @import './docs.css'; */
-/* @import './docsearch.css'; */
+@import './demos.css';
+@import './prism.css';
+@import './docs.css';
+@import './docsearch.css';

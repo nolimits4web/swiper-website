@@ -51,7 +51,7 @@ export default function GithubStats(props) {
         </svg>
 
         <span className="items-end leading-[1] hidden xs:flex">
-          <span className="mr-1 text-[10px] font-mono leading-[1]">
+          <span className="mr-1 text-[12px] font-mono leading-[1]">
             {data.stars}
           </span>{' '}
         </span>

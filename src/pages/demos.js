@@ -5,24 +5,23 @@ import { useLazyDemos } from '@/shared/use-lazy-demos';
 import demos from '@/demos.json';
 import uiinitiativeDemos from '@/uiinitiative-demos.json';
 import { openCodeSandbox } from '@/shared/codesandbox';
+import { Button } from '@/components/Button';
 
 let tableOfContents;
 
 const skipComponentsDemos = ['420', '430', '440'];
 
 const DemoButton = (props) => {
-  const { children, onClick, tonal, ...rest } = props;
-  const Tag = rest.href ? 'a' : 'button';
+  const { children, onClick, ...rest } = props;
   return (
-    <Tag
-      className={`relative flex cursor-pointer items-center justify-center rounded-md px-3 text-sm !font-medium text-primary !no-underline hover:bg-primary hover:text-on-primary sm:ml-1 ${
-        tonal ? 'bg-secondary-container' : ''
-      } h-7`}
+    <Button
+      transparent
+      className={`relative flex cursor-pointer items-center justify-center !h-8 text-xs !px-4`}
       onClick={onClick}
       {...rest}
     >
-      {children}
-    </Tag>
+      <div className="flex items-center gap-2">{children}</div>
+    </Button>
   );
 };
 
@@ -44,6 +43,13 @@ export default function DemosPage() {
       uiinitiativeDemosGrouped[groupIndex] = [];
     uiinitiativeDemosGrouped[groupIndex].push(demo);
   });
+
+  const icons = {
+    Core: '/images/libs/js-white.svg',
+    React: '/images/libs/react-white.svg',
+    Vue: '/images/libs/vue-white.svg',
+    Element: '/images/libs/webcomponents-white.svg',
+  };
 
   return (
     <WithSidebarLayout tableOfContents={tableOfContents}>
@@ -69,11 +75,7 @@ export default function DemosPage() {
       <h2 className="flex items-center">
         <img
           src="/images/uiinitiative-logo.svg"
-          className="my-0 mr-2 hidden h-8 w-8 dark:block"
-        />
-        <img
-          src="/images/uiinitiative-logo-black.svg"
-          className="my-0 mr-2 block h-8 w-8 dark:hidden"
+          className="my-0 mr-2 h-8 w-8 !rounded-none !border-0"
         />
         UI Initiative
       </h2>
@@ -120,41 +122,36 @@ export default function DemosPage() {
               href={`/demos/${folder}/core.html`}
               target="_blank"
               rel="noopener"
-              tonal
             >
               Preview
             </DemoButton>
-            <div className="flex min-w-0 shrink-[10] items-start sm:items-center">
-              <span className="mr-1 mt-1 font-mono text-xs sm:mr-0 sm:mt-0">
+            <div className="flex min-w-0 shrink-[10] items-center gap-1">
+              <span className="font-mono text-xs sm:mr-0 sm:mt-0 hidden sm:block">
                 CodeSandbox:
               </span>
-              <div className="grid grid-cols-2 gap-1 sm:contents">
-                {['Core', 'React', 'Vue', 'Element'].map((name) => {
-                  if (
-                    name !== 'Core' &&
-                    skipComponentsDemos.includes(folder.split('-')[0])
-                  )
-                    return null;
+              {['Core', 'React', 'Vue', 'Element'].map((name) => {
+                if (
+                  name !== 'Core' &&
+                  skipComponentsDemos.includes(folder.split('-')[0])
+                )
+                  return null;
 
-                  return (
-                    <DemoButton
-                      type="button"
-                      key={name}
-                      tonal
-                      onClick={(e) =>
-                        openCodeSandbox(
-                          e,
-                          title,
-                          folder,
-                          `${name.toLowerCase()}`
-                        )
-                      }
-                    >
-                      {name}
-                    </DemoButton>
-                  );
-                })}
-              </div>
+                return (
+                  <DemoButton
+                    type="button"
+                    key={name}
+                    onClick={(e) =>
+                      openCodeSandbox(e, title, folder, `${name.toLowerCase()}`)
+                    }
+                  >
+                    <img
+                      className="w-4 h-4 object-contain !rounded-none !border-0"
+                      src={icons[name]}
+                    />
+                    <span className="hidden xs:block">{name}</span>
+                  </DemoButton>
+                );
+              })}
             </div>
           </div>
           <div className="demo my-4 overflow-hidden rounded-xl border border-outline-variant bg-surface-1 dark:border-transparent">
