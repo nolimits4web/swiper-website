@@ -20,6 +20,7 @@ const pkg = JSON.parse(
 const nextConfig = withMdx({
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   output: 'export',
+  distDir: 'out',
   env: {
     swiperReleaseVersion: pkg.version,
     swiperReleaseDate: pkg.releaseDate,
