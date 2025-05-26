@@ -1,6 +1,16 @@
 [
   {
     "createdAt": "2025-05-26T20:00:00.000Z",
+    "title": "ゴールド取引",
+    "link": "https://www.hfm.com/int/jp/trading-education/how-to-trade-gold",
+    "plan": "Sponsor",
+    "ref": "bazoom#268212",
+    "image": "hfm.png",
+    "endDate": "2026-05-26T20:00:00.000Z",
+    "active": true
+  },
+  {
+    "createdAt": "2025-05-26T20:00:00.000Z",
     "title": "Buy Instagram Followers ",
     "link": "https://www.reddit.com/r/MarketingMentor/comments/1cut7x5/where_to_buy_instagram_followers_likes/",
     "plan": "Sponsor",
