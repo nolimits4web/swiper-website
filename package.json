@@ -8,7 +8,6 @@
     "next-dev": "next dev",
     "build": "npm run build-uiinitiative-demos && npm run build-demos && npm run build-types && npm run build-api && npm run build-sponsors && next build",
     "start": "next start",
-    "export": "next export",
     "build-uiinitiative-demos": "node build/build-uiinitiative-demos.cjs",
     "build-sponsors": "node build/build-sponsors-json.cjs",
     "build-demos": "node ./build/build-demos.cjs",
