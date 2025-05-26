@@ -26,8 +26,9 @@ const Dropdown = ({ children, opened }) => {
   return (
     <ul
       className={clsx(
-        'left-1/2 -translate-x-1/2 top-full whitespace-nowrap rounded-3xl bg-surface-1 border-outline border text-sm hidden group-hover:block absolute backdrop-blur-xl backdrop-saturate-200 py-4 min-w-40',
-        opened && '!block'
+        'left-1/2 -translate-x-1/2 top-full whitespace-nowrap rounded-3xl bg-surface-1 border-outline border text-sm  absolute backdrop-blur-xl backdrop-saturate-200 py-4 min-w-40',
+        !opened && 'hidden',
+        opened && 'block'
       )}
     >
       {children}
@@ -37,13 +38,14 @@ const Dropdown = ({ children, opened }) => {
 const DropdownDivider = () => {
   return <li className="h-px w-full bg-outline my-1"></li>;
 };
-const DropdownLink = ({ href, children, target }) => {
+const DropdownLink = ({ href, children, target, onClick }) => {
   return (
     <li>
       <Link
         href={href}
         target={target}
         className="px-4 h-8 items-center flex !text-on-surface hover:!text-primary !no-underline"
+        onClick={onClick}
       >
         {children}
       </Link>
@@ -134,20 +136,48 @@ export const Nav = () => {
                 Docs
               </div>
               <Dropdown opened={docsNavOpened}>
-                <DropdownLink href="/get-started">Getting Started</DropdownLink>
+                <DropdownLink
+                  onClick={() => setDocsNavOpened(false)}
+                  href="/get-started"
+                >
+                  Getting Started
+                </DropdownLink>
                 <DropdownDivider />
 
-                <DropdownLink href="/swiper-api">
+                <DropdownLink
+                  onClick={() => setDocsNavOpened(false)}
+                  href="/swiper-api"
+                >
                   Swiper Core / API
                 </DropdownLink>
-                <DropdownLink href="/element">Swiper Element</DropdownLink>
+                <DropdownLink
+                  onClick={() => setDocsNavOpened(false)}
+                  href="/element"
+                >
+                  Swiper Element
+                </DropdownLink>
 
-                <DropdownLink href="/react">Swiper React</DropdownLink>
-                <DropdownLink href="/vue">Swiper Vue</DropdownLink>
+                <DropdownLink
+                  onClick={() => setDocsNavOpened(false)}
+                  href="/react"
+                >
+                  Swiper React
+                </DropdownLink>
+                <DropdownLink
+                  onClick={() => setDocsNavOpened(false)}
+                  href="/vue"
+                >
+                  Swiper Vue
+                </DropdownLink>
 
                 <DropdownDivider />
 
-                <DropdownLink href="/changelog">Changelog</DropdownLink>
+                <DropdownLink
+                  onClick={() => setDocsNavOpened(false)}
+                  href="/changelog"
+                >
+                  Changelog
+                </DropdownLink>
               </Dropdown>
             </li>
             <li className="group relative" ref={resourcesNavDropdownRef}>
@@ -162,11 +192,31 @@ export const Nav = () => {
                 Resources
               </div>
               <Dropdown opened={resourcesNavOpened}>
-                <DropdownLink href="/demos">Demos</DropdownLink>
-                <DropdownLink href="/plugins">Plugins</DropdownLink>
+                <DropdownLink
+                  onClick={() => setResourcesNavOpened(false)}
+                  href="/demos"
+                >
+                  Demos
+                </DropdownLink>
+                <DropdownLink
+                  onClick={() => setResourcesNavOpened(false)}
+                  href="/plugins"
+                >
+                  Plugins
+                </DropdownLink>
                 <DropdownDivider />
-                <DropdownLink href="/blog">Blog</DropdownLink>
-                <DropdownLink href="/sponsors">Sponsors</DropdownLink>
+                <DropdownLink
+                  onClick={() => setResourcesNavOpened(false)}
+                  href="/blog"
+                >
+                  Blog
+                </DropdownLink>
+                <DropdownLink
+                  onClick={() => setResourcesNavOpened(false)}
+                  href="/sponsors"
+                >
+                  Sponsors
+                </DropdownLink>
               </Dropdown>
             </li>
             <li className="group relative" ref={premiumNavDropdownRef}>
@@ -181,14 +231,22 @@ export const Nav = () => {
                 Premium
               </div>
               <Dropdown opened={premiumNavOpened}>
-                <DropdownLink href="https://paneflow.com" target="_blank">
+                <DropdownLink
+                  onClick={() => setPremiumNavOpened(false)}
+                  href="https://paneflow.com"
+                  target="_blank"
+                >
                   <img
                     src="/images/projects/paneflow.svg"
                     className="mr-2 h-4 w-4"
                   />
                   <span>PaneFlow</span>
                 </DropdownLink>
-                <DropdownLink href="https://uiinitiative.com" target="_blank">
+                <DropdownLink
+                  onClick={() => setPremiumNavOpened(false)}
+                  href="https://uiinitiative.com"
+                  target="_blank"
+                >
                   <img
                     src="/images/uiinitiative-logo.svg"
                     className="mr-2 h-4 w-4"
@@ -197,6 +255,7 @@ export const Nav = () => {
                   <span>UI Initiative</span>
                 </DropdownLink>
                 <DropdownLink
+                  onClick={() => setPremiumNavOpened(false)}
                   href="https://studio.swiperjs.com"
                   target="_blank"
                 >

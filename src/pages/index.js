@@ -3,7 +3,6 @@ import React from 'react';
 import Link from 'next/link';
 import HomeSponsors from '@/components/HomeSponsors';
 import HomeProjects from '@/components/HomeProjects';
-import clsx from 'clsx';
 import { Button } from '@/components/Button';
 import { homeFeatures } from '@/shared/home-features';
 import { homeClients } from '@/shared/home-clients';

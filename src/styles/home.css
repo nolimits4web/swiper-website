@@ -20,42 +20,45 @@
   }
   .home-premium-link img:last-child {
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
-    view-timeline-name: --revealing-premium-image;
-    view-timeline-axis: block;
-    animation: linear reveal-premium-image both;
-    animation-timeline: --revealing-premium-image;
-    animation-range: entry -20% cover 100%;
   }
 }
 .home-premium-bg {
   background-image: url('/images/home/premium-bg.jpg');
-
-  view-timeline-name: --revealing-image;
-  view-timeline-axis: block;
-
-  animation: linear reveal both;
-  animation-timeline: --revealing-image;
-
-  /* Tweak range when effect should run*/
-  animation-range: entry -20% cover 10%;
 }
 
 .home-features-bg {
   background-image: url('/images/home/features-bg.jpg');
-  /* Create View Timeline */
-  view-timeline-name: --revealing-image;
-  view-timeline-axis: block;
+}
+@supports (animation-timeline: --revealing-image) {
+  .home-premium {
+    .home-premium-link img:last-child {
+      view-timeline-name: --revealing-premium-image;
+      view-timeline-axis: block;
+      animation: linear reveal-premium-image both;
+      animation-timeline: --revealing-premium-image;
+      animation-range: entry -20% cover 100%;
+    }
+  }
+  .home-premium-bg {
+    view-timeline-name: --revealing-image;
+    view-timeline-axis: block;
 
-  /* Attach animation, linked to the  View Timeline */
-  animation:
-    linear reveal both,
-    linear reveal-transform both;
-  animation-timeline: --revealing-image;
+    animation: linear reveal both;
+    animation-timeline: --revealing-image;
+    animation-range: entry -20% cover 10%;
+  }
 
-  /* Tweak range when effect should run*/
-  animation-range:
-    entry -20% cover 10%,
-    entry -20% cover 100%;
+  .home-features-bg {
+    view-timeline-name: --revealing-image;
+    view-timeline-axis: block;
+    animation:
+      linear reveal both,
+      linear reveal-transform both;
+    animation-timeline: --revealing-image;
+    animation-range:
+      entry -20% cover 10%,
+      entry -20% cover 100%;
+  }
 }
 @keyframes reveal {
   from {

@@ -26,7 +26,7 @@ export default function Footer() {
         )}
       >
         <div className="bg-surface-1 backdrop-blur-xl backdrop-saturate-200 border-outline border rounded-3xl p-8 ">
-          <div className="flex flex-wrap grid-cols-4 gap-4 sm:grid">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 gap-y-8 sm:gap-y-0">
             <div className="flex flex-col gap-4 min-w-40">
               <Link
                 href="/"
