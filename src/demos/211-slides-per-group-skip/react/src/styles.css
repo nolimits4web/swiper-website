@@ -1,4 +1,6 @@
-#app { height: 100% }
+#app {
+  height: 100%;
+}
 html,
 body {
   position: relative;
@@ -6,10 +8,14 @@ body {
 }
 
 body {
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  background: #000;
+  font-family:
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
   font-size: 14px;
-  color: #000;
+  color: #fff;
   margin: 0;
   padding: 0;
 }
@@ -59,11 +65,11 @@ body {
     z-index: 1;
   }
 
-  .swiper[dir="rtl"] .swiper-slide.swiper-slide-active:first-child {
+  .swiper[dir='rtl'] .swiper-slide.swiper-slide-active:first-child {
     transform: translateX(-50%);
   }
 
-  .swiper[dir="rtl"] .swiper-slide.swiper-slide-next:nth-child(2) {
+  .swiper[dir='rtl'] .swiper-slide.swiper-slide-next:nth-child(2) {
     transform: translateX(-55%);
   }
 }

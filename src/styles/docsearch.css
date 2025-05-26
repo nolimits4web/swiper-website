@@ -1,8 +1,6 @@
 button.DocSearch-Button {
   --docsearch-searchbox-focus-background: var(--color-surface-2);
   --docsearch-searchbox-shadow: none;
-  --docsearch-muted-color: var(--color-secondary);
-  --docsearch-text-color: var(--color-secondary);
   --docsearch-key-gradient: none;
   --docsearch-key-shadow: none;
   @apply bg-transparent border border-outline relative rounded-full gap-2 w-8 h-8 px-0 md:pr-0 md:pl-2 ml-0 md:w-auto flex items-center justify-center hover:!bg-white/10 focus:!bg-white/10;
@@ -16,7 +14,7 @@ button.DocSearch-Button {
   .DocSearch-Button-Key {
     top: 0;
     font-size: 12px;
-    @apply bg-surface-3 font-mono;
+    @apply bg-white/10 font-mono;
     padding: 0;
   }
 }

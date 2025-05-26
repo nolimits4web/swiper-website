@@ -9,13 +9,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   color-scheme: dark;
+  position: relative;
   @apply bg-background text-on-surface;
 }
 a {
   @apply text-primary no-underline hover:underline;
 }
 footer a {
-  @apply text-on-surface-darker;
+  @apply text-on-surface-dark;
 }
 
 .after\:hash:after {
@@ -37,6 +38,30 @@ h4[id] {
   background-image: url('/images/page-top-bg.jpg');
   animation: page-top-bg-reveal 2s forwards;
   background-size: auto 100%;
+}
+.page-bottom-bg {
+  background-image: url('/images/page-bottom-bg.jpg');
+  background-size: auto 100%;
+
+  view-timeline-name: --revealing-bottom-image;
+  view-timeline-axis: block;
+
+  animation: linear reveal-bottom-image both;
+  animation-timeline: --revealing-bottom-image;
+
+  /* Tweak range when effect should run*/
+  animation-range: entry 0% entry 100%;
+}
+
+@keyframes reveal-bottom-image {
+  from {
+    transform: translate(0, -50%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0%);
+    opacity: 1;
+  }
 }
 
 @keyframes page-top-bg-reveal {
