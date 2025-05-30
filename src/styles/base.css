@@ -43,25 +43,6 @@ h4[id] {
   background-image: url('/images/page-bottom-bg.jpg');
   background-size: auto 100%;
 }
-@supports (animation-timeline: none) {
-  .page-bottom-bg {
-    view-timeline-name: --revealing-bottom-image;
-    view-timeline-axis: block;
-    animation: linear reveal-bottom-image both;
-    animation-timeline: --revealing-bottom-image;
-    animation-range: entry 0% entry 100%;
-  }
-}
-@keyframes reveal-bottom-image {
-  from {
-    transform: translate(0, -50%);
-    opacity: 0;
-  }
-  to {
-    transform: translate(0, 0%);
-    opacity: 1;
-  }
-}
 
 @keyframes page-top-bg-reveal {
   from {
