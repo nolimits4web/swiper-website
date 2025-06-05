@@ -5,7 +5,10 @@ import { useScrollSpy } from '../shared/use-scroll-spy';
 export default function TableOfContents({ tableOfContents, onClick }) {
   const currentSection = useScrollSpy(tableOfContents[0].slug);
   return (
-    <ul className="table-of-contents overflow-x-hidden" onClick={onClick}>
+    <ul
+      className="table-of-contents overflow-x-hidden shrink-0"
+      onClick={onClick}
+    >
       {tableOfContents.map((section) => {
         const sectionIsActive = currentSection === section.slug;
         const childSectionIsActive =

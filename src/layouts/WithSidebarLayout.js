@@ -92,12 +92,12 @@ export function WithSidebarLayout({
           sidebarOpened ? 'block' : 'hidden'
         }`}
       >
-        <div className="h-full overflow-y-auto overscroll-contain p-4 lg:sticky lg:top-4 lg:h-auto lg:max-h-[calc(100vh-32px)] bg-surface-1 border rounded-3xl border-outline  backdrop-blur-2xl">
+        <div className="h-full overflow-y-auto overscroll-contain p-4 lg:sticky lg:top-4 lg:h-auto lg:max-h-[calc(100vh-32px)] bg-surface-1 border rounded-3xl border-outline  backdrop-blur-2xl flex flex-col">
           <SidebarSponsors />
           {toc.length > 0 && (
             <TableOfContents onClick={onListClick} tableOfContents={toc} />
           )}
-          <div id="TA_AD_CONTAINER" className="-mx-4 -mb-4" />
+          <div id="TA_AD_CONTAINER" className="-mx-4 -mb-4 mt-auto shrink-0" />
         </div>
       </div>
       {/* Center */}
