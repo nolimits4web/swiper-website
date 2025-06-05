@@ -2,25 +2,10 @@ import { DocSearch } from '@docsearch/react';
 import Link from 'next/link';
 import { useRef, useState, useEffect } from 'react';
 import GithubStats from './GithubStats';
-import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect';
 import PaneFlowBanner from './PaneFlowBanner';
 import { useRouter } from 'next/router';
 import TogglesBanner from './TogglesBanner';
 import clsx from 'clsx';
-function updateColorTheme() {
-  if (
-    localStorage.theme === 'dark' ||
-    (!('theme' in localStorage) &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches)
-  ) {
-    document.documentElement.classList.add('dark', 'changing-theme');
-  } else {
-    document.documentElement.classList.remove('dark', 'changing-theme');
-  }
-  window.setTimeout(() => {
-    document.documentElement.classList.remove('changing-theme');
-  });
-}
 
 const Dropdown = ({ children, opened }) => {
   return (
@@ -81,7 +66,6 @@ export const Nav = () => {
   }, []);
   return (
     <>
-      {/* <PaneFlowBanner /> */}
       {pageTopBg && (
         <div
           key="page-top-bg"
@@ -128,7 +112,7 @@ export const Nav = () => {
               <div
                 className="cursor-pointer text-sm hover:text-primary active:opacity-50 duration-200"
                 onPointerEnter={() => {
-                  setDocsNavOpened(!docsNavOpened);
+                  setDocsNavOpened(true);
                   setResourcesNavOpened(false);
                   setPremiumNavOpened(false);
                 }}
@@ -184,7 +168,7 @@ export const Nav = () => {
               <div
                 className="cursor-pointer text-sm hover:text-primary active:opacity-50 duration-200"
                 onPointerEnter={() => {
-                  setResourcesNavOpened(!resourcesNavOpened);
+                  setResourcesNavOpened(true);
                   setDocsNavOpened(false);
                   setPremiumNavOpened(false);
                 }}
@@ -223,7 +207,7 @@ export const Nav = () => {
               <div
                 className="cursor-pointer text-sm hover:text-primary active:opacity-50 duration-200"
                 onPointerEnter={() => {
-                  setPremiumNavOpened(!premiumNavOpened);
+                  setPremiumNavOpened(true);
                   setDocsNavOpened(false);
                   setResourcesNavOpened(false);
                 }}
