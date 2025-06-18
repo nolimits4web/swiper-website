@@ -142,12 +142,12 @@ export default function Home(props) {
           easily integrates with frameworks like Svelte, Angular, Next.js,
           Ember, and more.
         </HomeSectionText>
-        <div className="grid grid-cols-2 xs:flex flex-wrap items-center justify-center gap-4 md:gap-8 my-12">
+        <div className="grid grid-cols-3 xs:flex flex-wrap items-center justify-center gap-4 md:gap-8 my-12">
           {libs.map(({ title, image, link }) => (
             <Link
               key={title}
               href="/swiper-api"
-              className="xs:w-48 w-full h-48 bg-surface-2 !text-on-surface !no-underline rounded-3xl relative group"
+              className="xs:w-48 w-full h-36 sm:h-48 bg-surface-2 !text-on-surface !no-underline rounded-3xl relative group text-sm sm:text-base"
             >
               <div className="absolute inset-0 bg-white/10 rounded-3xl opacity-0 group-hover:opacity-100 duration-200 group-active:opacity-50 pointer-events-none" />
               <div className="flex flex-col gap-4 md:gap-8 p-4 md:p-8 items-center justify-center group-active:scale-90 group-active:opacity-75 duration-200 h-full">
@@ -158,12 +158,35 @@ export default function Home(props) {
                   alt={`${title} logo`}
                   title={title}
                   loading="lazy"
-                  className="h-16 w-16 object-contain"
+                  className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
                 />
-                {title}
+                <div className="truncate max-w-full">{title}</div>
               </div>
             </Link>
           ))}
+          <Link
+            href="https://studio.swiperjs.com"
+            className="xs:w-48 w-full h-36 sm:h-48 bg-surface-2 !text-on-surface !no-underline rounded-3xl relative group text-sm sm:text-base"
+          >
+            <div className="absolute inset-0 bg-white/10 rounded-3xl opacity-0 group-hover:opacity-100 duration-200 group-active:opacity-50 pointer-events-none" />
+            <div className="flex flex-col gap-4 md:gap-8 p-4 md:p-8 items-center justify-center group-active:scale-90 group-active:opacity-75 duration-200 h-full">
+              <img
+                src={`/images/webflow-logo.svg`}
+                width="140"
+                height="140"
+                alt="Webflow"
+                title="Webflow"
+                loading="lazy"
+                className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
+              />
+              Webflow
+            </div>
+            <img
+              src="/images/swiper-studio-logo.svg"
+              alt="Swiper Studio"
+              className="absolute right-2 top-2 sm:right-4 sm:top-4 w-6 h-6 sm:w-8 sm:h-8 object-contain"
+            />
+          </Link>
         </div>
         <div className="flex items-center justify-center gap-8 my-12 flex-wrap">
           {extraLibs.map((image) => (
@@ -174,7 +197,7 @@ export default function Home(props) {
               alt={`${image.split('.')[0]} logo`}
               title={image.split('.')[0]}
               loading="lazy"
-              className="h-16 w-16 object-contain shrink-0"
+              className="w-12 h-12 sm:w-16 sm:h-16 object-contain shrink-0"
             />
           ))}
         </div>
@@ -245,7 +268,7 @@ export default function Home(props) {
             className="flex flex-col gap-4 sm:gap-8 p-4 xs:p-8 bg-black/50 border border-outline rounded-3xl items-center justify-center text-center !text-on-surface !no-underline backdrop-blur-lg text-pretty relative group home-premium-link"
           >
             <div className="absolute inset-0 bg-white/5 rounded-3xl opacity-0 group-hover:opacity-100 duration-200 group-active:opacity-50 pointer-events-none" />
-            <div className="flex items-center justify-center gap-4 xs:contents xs:text-center text-left mb-4">
+            <div className="flex items-center justify-center gap-4 xs:contents xs:text-center text-left ">
               <img
                 className="w-16 md:w-32 h-16 md:h-32"
                 src="/images/projects/uiinitiative.svg"
@@ -267,7 +290,7 @@ export default function Home(props) {
             className="flex flex-col gap-4 sm:gap-8 p-4 xs:p-8 bg-black/50 border border-outline rounded-3xl items-center justify-center text-center !text-on-surface !no-underline backdrop-blur-lg text-pretty relative group home-premium-link"
           >
             <div className="absolute inset-0 bg-white/5 rounded-3xl opacity-0 group-hover:opacity-100 duration-200 group-active:opacity-50 pointer-events-none" />
-            <div className="flex items-center justify-center gap-4 xs:contents xs:text-center text-left mb-4">
+            <div className="flex items-center justify-center gap-4 xs:contents xs:text-center text-left ">
               <img
                 className="w-16 md:w-32 h-16 md:h-32"
                 src="/images/projects/swiper-studio-logo.svg"
