@@ -1,5 +1,15 @@
 [
   {
+    "createdAt": "2025-06-26T20:00:00.000Z",
+    "title": "Custom Writings",
+    "link": "https://www.customwritings.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/customwritings",
+    "image": "customwritings.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2025-06-24T20:00:00.000Z",
     "title": "someone to take my online class service",
     "link": "https://homeworkguy.org/someone-to-take-my-online-class",
