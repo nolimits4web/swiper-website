@@ -190,7 +190,7 @@ export async function openCodeSandbox(e, title, folder, mode = 'core') {
   link.style.color = 'rgba(0,0,0,0)';
   link.insertAdjacentHTML(
     'beforeend',
-    '<div class="demo-preloader">Loading</div>'
+    '<div class="demo-preloader"></div>'
   );
   const query =
     {
