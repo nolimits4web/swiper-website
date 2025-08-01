@@ -22,7 +22,7 @@ export default function SidebarSponsors() {
               href={link}
               key={title}
               title={title + index}
-              rel="sponsored"
+              rel="noopener"
               target="_blank"
             >
               {image && (
