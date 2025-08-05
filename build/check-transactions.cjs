@@ -11,7 +11,7 @@ content
   .forEach((row) => {
     const cols = row.split(',');
     const date = (cols[0] || '').replace(/"/g, '');
-    const slug = (cols[17] || '').replace(/"/g, '');
+    const slug = (cols[13] || '').replace(/"/g, '');
     if (slug === 'opensource' || !slug) return;
     if (!data[slug]) data[slug] = [];
     data[slug].push(date);
