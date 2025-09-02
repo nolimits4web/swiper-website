@@ -1,7 +1,7 @@
-export default function PaneFlowBanner() {
+export default function PaneFlowBanner({ className }) {
   return (
     <a
-      className="group flex h-10 items-center justify-center bg-surface-1 !text-on-surface-dark  !no-underline rounded-full border border-outline text-xs font-medium px-2 gap-2 leading-none whitespace-nowrap backdrop-blur-lg backdrop-saturate-200 shrink min-w-0 w-fit"
+      className={`group flex h-14 items-center justify-center bg-surface-1 !text-on-surface !no-underline rounded-full border border-outline text-sm font-normal px-2 sm:px-4 gap-2 leading-none whitespace-nowrap backdrop-blur-lg backdrop-saturate-200 shrink min-w-0 w-fit ${className || ''}`}
       href="https://paneflow.com"
       target="_blank"
     >
@@ -11,10 +11,15 @@ export default function PaneFlowBanner() {
         alt="PaneFlow"
         className="h-6 w-6 relative"
       />
-      <div className="shrink min-w-0 relative text-ellipsis overflow-hidden">
-        <span className="hidden sm:inline">PaneFlow: </span>Build Stunning
-        Slideshows Visually
+      <div className="shrink min-w-0 relative text-ellipsis overflow-hidden flex items-center">
+        Meet <span className="hidden sm:inline ml-1">our new project </span>
+        <span className="border-b border-white/30 ml-1 shrink min-w-0 truncate">
+          PaneFlow: Create Stunning Slideshows Visually
+        </span>
       </div>
+      <span className="absolute sm:static right-5 top-1 text-[10px] rounded-full font-medium  sm:bg-black/25 sm:p-2">
+        Now With AI
+      </span>
     </a>
   );
 }

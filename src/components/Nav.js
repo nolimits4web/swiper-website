@@ -1,6 +1,6 @@
 import { DocSearch } from '@docsearch/react';
 import Link from 'next/link';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useLayoutEffect } from 'react';
 import GithubStats from './GithubStats';
 import PaneFlowBanner from './PaneFlowBanner';
 import { useRouter } from 'next/router';
@@ -47,6 +47,8 @@ export const Nav = () => {
   const docsNavDropdownRef = useRef(null);
   const resourcesNavDropdownRef = useRef(null);
   const premiumNavDropdownRef = useRef(null);
+  const [banner, setBanner] = useState('paneflow');
+  const [bannerSet, setBannerSet] = useState(false);
   const onClick = (e) => {
     if (!docsNavDropdownRef.current.contains(e.target)) {
       setDocsNavOpened(false);
@@ -58,6 +60,10 @@ export const Nav = () => {
       setPremiumNavOpened(false);
     }
   };
+  useLayoutEffect(() => {
+    setBanner(Math.random() > 0.5 ? 'paneflow' : 'toggles');
+    setBannerSet(true);
+  }, []);
   useEffect(() => {
     document.addEventListener('click', onClick);
     return () => {
@@ -73,8 +79,18 @@ export const Nav = () => {
         />
       )}
       <div className="flex items-center justify-center relative z-[1] pt-2 gap-1 -mb-2 max-w-full px-4">
-        <PaneFlowBanner />
-        <TogglesBanner />
+        <PaneFlowBanner
+          className={clsx(
+            banner === 'paneflow' ? 'block' : 'hidden',
+            !bannerSet && 'opacity-0'
+          )}
+        />
+        <TogglesBanner
+          className={clsx(
+            banner === 'toggles' ? 'block' : 'hidden',
+            !bannerSet && 'opacity-0'
+          )}
+        />
       </div>
 
       <div className="sticky top-0 z-50 flex py-4 justify-center items-center pointer-events-none">

@@ -1,8 +1,8 @@
 // t0ggles - Next-Gen Project Management
-export default function TogglesBanner() {
+export default function TogglesBanner({ className }) {
   return (
     <a
-      className="group flex h-10 items-center justify-center bg-surface-1 !text-on-surface-dark  !no-underline rounded-full border border-outline text-xs font-medium px-2 gap-2 leading-none whitespace-nowrap backdrop-blur-lg backdrop-saturate-200 shrink min-w-0 w-fit"
+      className={`group flex h-14 items-center justify-center bg-surface-1 !text-on-surface !no-underline rounded-full border border-outline text-sm font-normal px-2 sm:px-4 gap-2 whitespace-nowrap backdrop-blur-lg backdrop-saturate-200 shrink min-w-0 w-fit ${className || ''}`}
       href="https://t0ggles.com"
       target="_blank"
     >
@@ -12,9 +12,11 @@ export default function TogglesBanner() {
         alt="t0ggles"
         className="h-6 w-6 relative"
       />
-      <div className="shrink min-w-0 relative text-ellipsis overflow-hidden">
-        <span className="hidden sm:inline">t0ggles: </span>Next-Gen Project
-        Management
+      <div className="shrink min-w-0 relative text-ellipsis overflow-hidden flex items-center">
+        Meet <span className="hidden sm:inline ml-1">our new project </span>
+        <span className="ml-1 border-b border-white/30 shrink min-w-0 truncate">
+          t0ggles: Next-Gen Project Management
+        </span>
       </div>
     </a>
   );
