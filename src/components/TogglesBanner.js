@@ -2,7 +2,7 @@
 export default function TogglesBanner({ className }) {
   return (
     <a
-      className={`group flex h-14 items-center justify-center bg-surface-1 !text-on-surface !no-underline rounded-full border border-outline text-sm font-normal px-2 sm:px-4 gap-2 whitespace-nowrap backdrop-blur-lg backdrop-saturate-200 shrink min-w-0 w-fit ${className || ''}`}
+      className={`group flex h-14 items-center justify-center bg-surface-1 !text-on-surface !no-underline rounded-full border border-outline text-sm font-normal px-2 pr-4 sm:px-4 gap-2 whitespace-nowrap backdrop-blur-lg backdrop-saturate-200 shrink min-w-0 w-fit ${className || ''}`}
       href="https://t0ggles.com"
       target="_blank"
     >
