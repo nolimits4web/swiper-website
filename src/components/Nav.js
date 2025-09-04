@@ -80,17 +80,17 @@ export const Nav = () => {
       )}
       <div className="flex items-center justify-center relative z-[1] pt-2 gap-1 -mb-2 max-w-full px-4">
         <PaneFlowBanner
-          className={clsx(
-            banner === 'paneflow' ? 'block' : 'hidden',
-            !bannerSet && 'opacity-0'
-          )}
+        // className={clsx(
+        //   // banner === 'paneflow' ? 'block' : 'hidden',
+        //   // !bannerSet && 'opacity-0'
+        // )}
         />
-        <TogglesBanner
+        {/* <TogglesBanner
           className={clsx(
             banner === 'toggles' ? 'block' : 'hidden',
             !bannerSet && 'opacity-0'
           )}
-        />
+        /> */}
       </div>
 
       <div className="sticky top-0 z-50 flex py-4 justify-center items-center pointer-events-none">
