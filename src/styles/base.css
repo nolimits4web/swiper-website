@@ -55,10 +55,8 @@ h4[id] {
   }
 }
 
-@media (min-height: 640px) {
-  [ta-ad-container],
-  #TA_AD_CONTAINER {
-    position: sticky;
-    bottom: -16px;
-  }
+[ta-ad-container],
+#TA_AD_CONTAINER {
+  position: sticky;
+  bottom: -16px;
 }
