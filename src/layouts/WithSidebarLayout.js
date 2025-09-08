@@ -88,7 +88,7 @@ export function WithSidebarLayout({
         onClick={() => setSidebarOpened(false)}
       />
       <div
-        className={`fixed left-2 top-2 bottom-2 z-50 mr-10 h-[calc(100vh-16px)] w-64 flex-none text-sm lg:relative lg:z-40 lg:left-0 lg:top-0 lg:!block lg:h-auto lg:rounded-none ${
+        className={`fixed left-2 top-2 bottom-2 z-50 mr-10 h-[calc(100vh-16px)] w-64 flex-none text-sm lg:relative lg:z-40 lg:left-0 lg:-top-34 lg:!block lg:h-auto lg:rounded-none ${
           sidebarOpened ? 'block' : 'hidden'
         }`}
       >

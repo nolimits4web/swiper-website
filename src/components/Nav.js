@@ -78,7 +78,7 @@ export const Nav = () => {
           className="page-top-bg absolute w-screen h-[188px] bg-center bg-no-repeat left-1/2 top-0 -translate-x-1/2 pointer-events-none"
         />
       )}
-      <div className="flex items-center justify-center relative z-[1] pt-2 gap-1 -mb-2 max-w-full px-4">
+      <div className="flex items-center justify-center relative z-[1] pt-2 gap-1 -mb-2 max-w-full px-4 lg:justify-start lg:pl-80 2xl:!pl-4 2xl:!justify-center">
         <PaneFlowBanner
         // className={clsx(
         //   // banner === 'paneflow' ? 'block' : 'hidden',
@@ -93,9 +93,9 @@ export const Nav = () => {
         /> */}
       </div>
 
-      <div className="sticky top-0 z-50 flex py-4 justify-center items-center pointer-events-none">
+      <div className="sticky top-0 z-50 flex py-4 justify-center items-center pointer-events-none lg:justify-start lg:pl-80 2xl:!pl-4 2xl:!justify-center">
         <nav
-          className="mx-auto flex gap-4 h-16 rounded-full max-w-screen-sm items-center justify-between px-4 relative pointer-events-auto"
+          className="mx-auto flex gap-4 h-16 rounded-full max-w-screen-sm items-center justify-between px-4 relative pointer-events-auto lg:mx-0 2xl:!mx-auto"
           onPointerLeave={(e) => {
             if (e.pointerType === 'mouse') {
               setDocsNavOpened(false);
