@@ -1,0 +1,178 @@
+import { PostLayout } from '@/components/PostLayout.js';
+
+export const meta = {
+  title: 'Swiper v12',
+  date: '2025-09-11T10:00:00.000Z',
+  image: '/images/blog/swiper-v12/cover.jpg',
+  published: true,
+};
+
+Swiper has always aimed to be fast, lightweight, and easy to integrate. Modern CSS now gives us enough power to ditch preprocessors in the package itself, simplify theming, and ship fewer bytes. We also reworked navigation icons to eliminate font-icon headaches and CSP false positives. Finally, we've made Virtual Slides more flexible in real-world carousels that need `slidesPerView: 'auto'`.
+
+What follows is a quick tour plus a practical upgrade guide.
+
+## Styles: Less and SCSS removed, CSS only
+
+- The Swiper package no longer ships `.less` or `.scss` sources.
+- All official styles are standard CSS, organized to work out-of-the-box and be themeable via CSS custom properties.
+
+### Why we did it
+
+- Modern CSS covers most preprocessor use cases: variables, nesting, cascade layers, and improved selectors.
+- Shipping a single canonical CSS source avoids duplication, reduces maintenance, and minimizes confusion about "which file to import.""
+
+### How to migrate
+
+**Before (SCSS):**
+
+```scss
+// remove these imports
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
+```
+
+**After (CSS):**
+
+```js
+// ESM
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+```
+
+or
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+```
+
+**Customizing look and feel**
+Use CSS variables instead of SCSS variables:
+
+```css
+:root {
+  /* common Swiper variables (examples) */
+  --swiper-theme-color: #111; /* primary accent */
+  --swiper-navigation-size: 20px; /* icon size */
+  --swiper-pagination-color: #111; /* bullets */
+}
+```
+
+If you previously relied on SCSS mixins or maps for theming, move those to your own build step, but treat Swiper's distributed CSS as the final API. You can still compose your own cascade layers or utility classes on top.
+
+## Navigation icons: from font to inline SVG
+
+Swiper now injects **SVG elements** into navigation buttons instead of using a custom icon font.
+
+### Why we did it
+
+- **Better customization:** SVGs are just DOM; you can style `fill`, `width`, `height`, and apply transforms with CSS.
+- **CSP friendly:** Many projects block inlined fonts or data URLs via Content Security Policy rules. SVG elements avoid those font-loading pitfalls.
+
+### How to use and customize
+
+By default, Swiper will render SVG arrows inside your `prevEl` and `nextEl`. You can style them globally:
+
+```css
+/* Size and color via CSS variables */
+:root {
+  --swiper-navigation-color: #0f172a;
+  --swiper-navigation-size: 26px;
+}
+
+/* OR fine-grained control using selectors */
+.swiper-button-next svg,
+.swiper-button-prev svg {
+  width: 26px;
+  height: 26px;
+  fill: #0f172a;
+}
+```
+
+Want completely custom icons? Provide your own button markup so Swiper doesn't inject defaults:
+
+```html
+<div class="swiper-button-prev">
+  <!-- your SVG -->
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6" /></svg>
+</div>
+<div class="swiper-button-next">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
+</div>
+```
+
+Swiper will attach interactions to these elements without replacing your SVGs.
+
+**CSP note:** If you enforce strict CSP, the new approach eliminates the previous font-face inline policy concerns. Keep allowing inline styles only if your app needs them elsewhere; Swiper's default SVGs do not require inline styles.
+
+## Virtual Slides: partial support for `slidesPerView: auto`
+
+Virtual Slides are ideal for rendering large lists efficiently, but historically clashed with `slidesPerView: 'auto'` because auto-sizing requires measuring real DOM nodes.
+
+### What's new
+
+Swiper v12 introduces a **partial** compatibility layer via:
+
+- `virtual.slidesPerViewAutoSlideSize` - a fixed numeric slide width used **only in virtual mode** when `slidesPerView` is `'auto'`. It acts as a stand-in size so the virtual engine can compute which slides should be in view without measuring each one.
+
+This is especially useful when your slides are roughly uniform or you can declare a sensible average width.
+
+### Example
+
+```js
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
+
+const swiper = new Swiper('.swiper', {
+  slidesPerView: 'auto',
+  spaceBetween: 12,
+  virtual: {
+    enabled: true,
+    slides: Array.from({ length: 10000 }, (_, i) => `Slide #${i + 1}`),
+    slidesPerViewAutoSlideSize: 320, // pixels (example)
+  },
+});
+```
+
+## Upgrade checklist
+
+- Replace any `scss`/`less` imports with `swiper/css/*` imports.
+- Move theme overrides to CSS custom properties and standard CSS rules.
+- If you depended on the old icon font, remove related font-loading code; style the new SVG arrows or provide your own SVGs.
+- For large carousels using Virtual Slides with auto-sized items, add `virtual.slidesPerViewAutoSlideSize` and align your slide CSS to roughly match that width.
+
+## FAQ
+
+**Can I still use SCSS/Less in my app?**
+Yes. You can keep using SCSS/Less in your build, but import Swiper's distributed CSS as a final artifact. Treat Swiper's CSS as an external dependency just like any other library's CSS.
+
+**Will the SVG icons break my existing custom buttons?**
+No. If you provide your own `prevEl`/`nextEl` with content, Swiper will not overwrite them. The SVG injection only happens when Swiper needs to render default icons.
+
+**Is `slidesPerView: 'auto'` fully supported with Virtual Slides now?**
+It's a pragmatic middle ground. If your auto-sized slides are close to a common width, the new option works great. If each slide varies significantly, consider constraining widths or using non-virtual mode.
+
+# Final thoughts
+
+Swiper v12 trims legacy surface area and leans into the modern web platform. CSS-only distribution simplifies theming and bundling, SVG icons remove a class of integration issues, and Virtual Slides become more useful for auto-sized galleries at scale. If you run into an edge case while upgrading, share a minimal repro - we're committed to iterating quickly.
+
+## What's Next?
+
+And as always, if you love Swiper, please, support project by donating or pledging:
+
+- on Patreon: [https://www.patreon.com/swiperjs](https://www.patreon.com/swiperjs)
+- on Open Collective: [https://opencollective.com/swiper](https://opencollective.com/swiper)
+
+And checking our premium projects:
+
+- [UI Initiative](https://uiinitiative.com)
+- [Swiper Studio](https://studio.swiperjs.com)
+- [PaneFlow](https://paneflow.com)
+- [t0ggles](https://t0ggles.com)
+
+Your support means a lot for us!
+
+export default ({ children }) => (
+  <PostLayout meta={meta}>{children}</PostLayout>
+);

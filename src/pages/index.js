@@ -10,6 +10,8 @@ import { HomeContainer } from '@/components/HomeContainer';
 import { HomeSectionTitle } from '@/components/HomeSectionTitle';
 import { HomeSectionText } from '@/components/HomeSectionText';
 import { HomeVideos } from '@/components/HomeVideos';
+import { Nav } from '@/components/Nav';
+import Footer from '@/components/Footer';
 
 const libs = [
   {
@@ -57,6 +59,7 @@ export default function Home(props) {
   };
   return (
     <>
+      <Nav />
       <HomeContainer className="flex flex-col items-center justify-center gap-12 mt-16 mb-20">
         <div className="home-header-bg absolute w-screen h-[727px] bg-center bg-no-repeat left-1/2 top-0 -translate-x-1/2" />
         <div className="flex items-center justify-center gap-8 relative">
@@ -342,6 +345,7 @@ export default function Home(props) {
         </HomeSectionText>
         <HomeSponsors spacing={false} />
       </HomeContainer>
+      <Footer />
     </>
   );
 }

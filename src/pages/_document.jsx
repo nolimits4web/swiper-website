@@ -15,10 +15,10 @@ export default function Document() {
         <Main />
         <NextScript />
         <script
-          src="https://app.tinyadz.com/scripts/v1.0/ads.js"
+          src="https://cdn.apitiny.net/scripts/v2.0/main.js"
           data-site-id="6841c0b5f93cb3a2cae303bf"
           async
-        />
+        ></script>
       </body>
       <script async src="/scripts/swiper-motion.js" />
     </Html>

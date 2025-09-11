@@ -5,10 +5,13 @@ import { HomeContainer } from '@/components/HomeContainer';
 import { HomeSectionTitle } from '@/components/HomeSectionTitle';
 import { HomeSectionText } from '@/components/HomeSectionText';
 import { Button } from '@/components/Button';
+import { Nav } from '@/components/Nav';
+import Footer from '@/components/Footer';
 
 export default function SponsorsPage() {
   return (
     <>
+      <Nav />
       <HomeContainer className="my-16 relative">
         <HomeSectionTitle>Swiper Sponsors</HomeSectionTitle>
         <HomeSectionText>
@@ -31,6 +34,7 @@ export default function SponsorsPage() {
         </HomeSectionText>
       </HomeContainer>
       <HomeSponsors showPlaceholders showTitles />
+      <Footer />
     </>
   );
 }

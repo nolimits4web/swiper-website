@@ -6,12 +6,6 @@ export const meta = {
   title: 'Swiper React Components',
 };
 
-{/* prettier-ignore */}
-<div className="important-note space-y-4">
-  <div>If you are upgrading from Swiper 9 to Swiper 10, check out <a href="/migration-guide-v10">Migration Guide to Swiper 10</a></div>
-  <div>If you are looking for v9 docs, they are here <a href="https://v9.swiperjs.com" target="_blank">v9.swiperjs.com</a></div>
-</div>
-
 ## Installation
 
 Swiper React is available only via NPM as a part of the main Swiper library:
@@ -118,7 +112,7 @@ export default () => {
 
 ## Styles
 
-Swiper package contains different sets of CSS, Less and SCSS styles:
+Swiper package contains different sets of CSS styles:
 
 - `swiper/css` - only core Swiper styles
 - `swiper/css/bundle` - all Swiper styles including all modules styles (like Navigation, Pagination, etc.)
@@ -148,22 +142,6 @@ Modules styles (not required if you already imported bundle styles):
 - `swiper/css/thumbs` - styles required for Thumbs module
 - `swiper/css/virtual` - styles required for Virtual module
 - `swiper/css/zoom` - styles required for Zoom module
-
-For Less styles replace `css` with `less` in imports paths, e.g.:
-
-```js
-import 'swiper/less';
-import 'swiper/less/navigation';
-import 'swiper/less/pagination';
-```
-
-For SCSS styles replace `css` with `scss` in imports paths, e.g.:
-
-```js
-import 'swiper/scss';
-import 'swiper/scss/navigation';
-import 'swiper/scss/pagination';
-```
 
 ## Swiper props
 
@@ -449,24 +427,6 @@ export default () => {
     </Swiper>
   );
 };
-```
-
-## Usage with Create React App
-
-Create React App doesn't support pure ESM packages yet. It is still possible to use Swiper (7.2.0+) with it.
-
-In this case we need to use direct file imports:
-
-```js
-// Core modules imports are same as usual
-import { Navigation, Pagination } from 'swiper/modules';
-// Direct React component imports
-import { Swiper, SwiperSlide } from 'swiper/swiper-react.mjs';
-
-// Styles must use direct files imports
-import 'swiper/swiper.scss'; // core Swiper
-import 'swiper/modules/navigation.scss'; // Navigation module
-import 'swiper/modules/pagination.scss'; // Pagination module
 ```
 
 ## What next?

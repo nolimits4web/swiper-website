@@ -5,13 +5,6 @@ export const meta = {
   title: 'Swiper Vue.js Components',
 };
 
-{/* prettier-ignore */}
-<div className="important-note space-y-4 2xl:mr-0">
-  <div><b>Swiper Vue components will likely to be removed in future versions. It is recommended to migrate to <a href="/element">Swiper Element</a> instead.</b></div>
-  <div>If you are upgrading from Swiper 9 to Swiper 10, check out <a href="/migration-guide-v10">Migration Guide to Swiper 10</a></div>
-  <div>If you are looking for v9 docs, they are here <a href="https://v9.swiperjs.com" target="_blank">v9.swiperjs.com</a></div>
-</div>
-
 ## Installation
 
 Swiper Vue.js plugin is available only via NPM as a part of the main Swiper library:
@@ -154,7 +147,7 @@ Here is the list of additional modules imports from `swiper/modules`:
 
 ## Styles
 
-Swiper package contains different sets of CSS, Less and SCSS styles:
+Swiper package contains different sets of CSS styles:
 
 - `swiper/css` - only core Swiper styles
 - `swiper/css/bundle` - all Swiper styles including all modules styles (like Navigation, Pagination, etc.)
@@ -184,22 +177,6 @@ Modules styles (not required if you already imported bundle styles):
 - `swiper/css/thumbs` - styles required for Thumbs module
 - `swiper/css/virtual` - styles required for Virtual module
 - `swiper/css/zoom` - styles required for Zoom module
-
-For Less styles replace `css` with `less` in imports paths, e.g.:
-
-```js
-import 'swiper/less';
-import 'swiper/less/navigation';
-import 'swiper/less/pagination';
-```
-
-For SCSS styles replace `css` with `scss` in imports paths, e.g.:
-
-```js
-import 'swiper/scss';
-import 'swiper/scss/navigation';
-import 'swiper/scss/pagination';
-```
 
 ## Swiper props
 

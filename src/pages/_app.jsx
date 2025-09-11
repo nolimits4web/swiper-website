@@ -53,9 +53,8 @@ function App({ Component, pageProps, router }) {
           color="#0080FF"
         />
       </Head>
-      <Nav />
+
       <Component {...pageProps} />
-      <Footer />
     </>
   );
 }
