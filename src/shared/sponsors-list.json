@@ -1,5 +1,15 @@
 [
   {
+    "createdAt": "2025-09-23T20:00:00.000Z",
+    "title": "Uudet Nettikasinot",
+    "link": "https://fi.parhaatuudetkasinot.com/",
+    "plan": "Silver Sponsor",
+    "ref": "https://opencollective.com/parhaatuudetkasinotcom",
+    "image": "parhaatuudetkasinotcom.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2025-09-22T20:00:00.000Z",
     "title": "gmkoutsi.com",
     "link": "https://gmkoutsi.com/",
