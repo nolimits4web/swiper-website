@@ -17,9 +17,6 @@ export default function PaneFlowBanner({ className }) {
           PaneFlow: Create Stunning Slideshows Visually
         </span>
       </div>
-      <span className="absolute sm:static right-0 -top-1.75 text-[10px] rounded-full font-medium  bg-[#124051] sm:bg-black/25 p-2">
-        Now With AI
-      </span>
     </a>
   );
 }
