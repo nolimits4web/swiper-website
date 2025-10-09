@@ -1,5 +1,35 @@
 [
   {
+    "createdAt": "2025-10-09T20:00:00.000Z",
+    "title": "Brecktic UK",
+    "link": "https://brecktic.uk/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/brecktic-ltd",
+    "image": "brecktic-ltd.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2025-10-09T20:00:00.000Z",
+    "title": "fortune365",
+    "link": "https://www.fortune365.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/fortune365",
+    "image": "fortune365.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2025-10-09T20:00:00.000Z",
+    "title": "CryptoCasino Guide",
+    "link": "https://cryptocasino-guide.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/cryptocasino-guide",
+    "image": "cryptocasino-guide.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2025-10-06T20:00:00.000Z",
     "title": "Buy Facebook Likes for Post & Page",
     "link": "https://www.fbpostlikes.com/",
