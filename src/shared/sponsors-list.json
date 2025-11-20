@@ -1,5 +1,25 @@
 [
   {
+    "createdAt": "2025-11-20T20:00:00.000Z",
+    "title": "Kasino Kurko: Uudet nettikasinot",
+    "link": "https://kasinokurko.com/",
+    "plan": "Silver Sponsor",
+    "ref": "https://opencollective.com/kurko-uudetnettikasinot",
+    "image": "kurko-uudetnettikasinot.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2025-11-20T20:00:00.000Z",
+    "title": "Slotozilla - Your Trusted Gambling Source",
+    "link": "https://www.slotozilla.com/",
+    "plan": "Sponsor",
+    "ref": "bazoom#324356",
+    "image": "slotozilla.png",
+    "endDate": "2026-11-20T20:00:00.000Z",
+    "active": true
+  },
+  {
     "createdAt": "2025-11-19T20:00:00.000Z",
     "title": "WriteHuman AI Humanizer",
     "link": "https://writehuman.ai/",
