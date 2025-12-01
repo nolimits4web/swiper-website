@@ -6,7 +6,7 @@ import PaneFlowBanner from './PaneFlowBanner';
 import { useRouter } from 'next/router';
 import TogglesBanner from './TogglesBanner';
 import clsx from 'clsx';
-import BlackFridayRibbon from './BlackFridayRibbon';
+// import BlackFridayRibbon from './BlackFridayRibbon';
 
 const Dropdown = ({ children, opened }) => {
   return (
@@ -86,13 +86,13 @@ export const Nav = ({ withSidebar = false }) => {
             'lg:justify-start lg:pl-80 2xl:!pl-4 2xl:!justify-center'
         )}
       >
-        <BlackFridayRibbon />
-        {/* <PaneFlowBanner
-        // className={clsx(
-        //   // banner === 'paneflow' ? 'block' : 'hidden',
-        //   // !bannerSet && 'opacity-0'
-        // )}
-        /> */}
+        {/* <BlackFridayRibbon /> */}
+        <PaneFlowBanner
+          className={clsx()
+          // banner === 'paneflow' ? 'block' : 'hidden',
+          // !bannerSet && 'opacity-0'
+          }
+        />
         {/* <TogglesBanner
           className={clsx(
             banner === 'toggles' ? 'block' : 'hidden',
