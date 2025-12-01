@@ -1,8 +1,18 @@
 [
   {
+    "createdAt": "2025-12-01T20:00:00.000Z",
+    "title": "iDealeCasinos",
+    "link": "https://idealecasinos.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/idealecasinoscom",
+    "image": "idealecasinoscom.png",
+    "endDate": "2026-12-01T20:00:00.000Z",
+    "active": true
+  },
+  {
     "createdAt": "2025-11-30T20:00:00.000Z",
     "title": "สล็อต",
-    "link": "https://ontheriver.net/menu.html",
+    "link": "https://www.yayaschophouse.com/eat-2",
     "plan": "Silver Sponsor",
     "ref": "https://opencollective.com/thslot",
     "image": "thslot.png",
