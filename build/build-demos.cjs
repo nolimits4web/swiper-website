@@ -15,10 +15,12 @@ const buildDemos = async () => {
           return `${word[0].toUpperCase()}${word.substring(1)}`;
         })
         .join(' ');
-      data.push({ slug, title, folder });
+      const demo = { slug, title, folder, frameworks: [] };
+      data.push(demo);
       fs.readdirSync(path.resolve(__dirname, '../src/demos', folder))
         .filter((f) => f[0] !== '.')
         .forEach((frameworkFolder) => {
+          demo.frameworks.push(frameworkFolder);
           const paths = globbySync('**/*.*', {
             cwd: path.resolve(
               __dirname,
