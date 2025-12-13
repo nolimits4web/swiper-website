@@ -13,6 +13,19 @@ const plainDescription = (item) => {
     item.type?.declaration?.signatures?.[0]?.comment ||
     {};
 
+  if (data.summary && Array.isArray(data.summary)) {
+    return data.summary
+      .map((item) => {
+        if (item.kind === 'text' || item.kind === 'code') {
+          return item.text || '';
+        }
+        return '';
+      })
+      .filter(Boolean)
+      .join('');
+  }
+
+  // Fallback to old format
   const { shortText, text } = data;
   return [shortText || '', text || ''].join('');
 };
@@ -54,12 +67,21 @@ const buildMethods = async (
     const typeObj = item.type || {};
     if (typeObj.type === 'union') {
       const types = [];
-      typeObj.types.forEach(({ elementType, name, type, value }) => {
-        if (elementType)
-          types.push(`${elementType.name}${type === 'array' ? '[]' : ''}`);
-        else if (value) types.push(`'${value}'`);
-        else if (value === null) types.push(`null`);
-        else types.push(name);
+      typeObj.types.forEach((typeItem) => {
+        const typeName = typeItem.name || (typeItem.target?.qualifiedName) || '';
+        const elementType = typeItem.elementType;
+        const value = typeItem.value;
+        const itemType = typeItem.type;
+
+        if (elementType) {
+          const elementName = elementType.name || (elementType.target?.qualifiedName) || '';
+          types.push(`${elementName}${itemType === 'array' ? '[]' : ''}`);
+        } else if (value !== undefined) {
+          if (value === null) types.push(`null`);
+          else types.push(`'${value}'`);
+        } else if (typeName) {
+          types.push(typeName);
+        }
       });
       return types.join(`{' | '}`);
     }
@@ -74,9 +96,17 @@ const buildMethods = async (
     }
 
     if (typeObj.type === 'array') {
-      if (typeObj && typeObj.elementType && typeObj.elementType.name) {
-        return `<span className="text-green">${typeObj.elementType.name}[]</span>`;
+      const elementType = typeObj.elementType;
+      if (elementType) {
+        const elementName = elementType.name || (elementType.target?.qualifiedName) || '';
+        if (elementName) {
+          return `<span className="text-green">${elementName}[]</span>`;
+        }
       }
+    }
+
+    if (typeObj.type === 'reference') {
+      return typeObj.name || (typeObj.target?.qualifiedName) || '';
     }
 
     return typeObj.name || '';
@@ -87,20 +117,38 @@ const buildMethods = async (
       const params = [];
       item.signatures[0].parameters.forEach((param) => {
         const { comment } = param;
-        if (comment && comment.text) params.push(param);
+        const hasComment = comment && (
+          (comment.summary && Array.isArray(comment.summary) && comment.summary.length > 0) ||
+          comment.text
+        );
+        if (hasComment) params.push(param);
       });
       if (!params.length) return '';
       return `
         <ul>
           ${params
             .map(
-              (param) => `
+              (param) => {
+                // Extract comment text from new or old format
+                let commentText = '';
+                if (param.comment) {
+                  if (param.comment.summary && Array.isArray(param.comment.summary)) {
+                    commentText = param.comment.summary
+                      .map((item) => (item.kind === 'text' || item.kind === 'code' ? item.text : ''))
+                      .filter(Boolean)
+                      .join('');
+                  } else if (param.comment.text) {
+                    commentText = param.comment.text;
+                  }
+                }
+                return `
           <li><span className="text-orange font-mono">${
             param.name
           }</span> - <span className="text-green font-mono">${type(
             param
-          )}</span> - ${param.comment.text || ''}</li>
-          `
+          )}</span> - ${commentText}</li>
+          `;
+              }
             )
             .join('')}
 
@@ -115,9 +163,11 @@ const buildMethods = async (
   };
 
   let parentProp = '';
-  typesData.Swiper.forEach((item) => {
-    if (item.type && item.type.name === typesName) parentProp = item.name;
-  });
+  if (typesData.Swiper && Array.isArray(typesData.Swiper)) {
+    typesData.Swiper.forEach((item) => {
+      if (item.type && item.type.name === typesName) parentProp = item.name;
+    });
+  }
 
   const name = (item) => {
     const isMethod = !!item.signatures;

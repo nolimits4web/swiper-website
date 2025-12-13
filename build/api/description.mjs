@@ -48,7 +48,7 @@ const processDescription = (text) => {
     });
 };
 
-export default (typesItem) => {
+export default (typesItem, isEvent = false) => {
   const getProps = () => {
     return (
       (!typesItem.comment && typesItem.signatures && typesItem.signatures[0]
@@ -58,21 +58,59 @@ export default (typesItem) => {
       {}
     );
   };
-  const { shortText, text, tags = [] } = getProps(typesItem);
+  const comment = getProps(typesItem);
 
-  const textContent = [shortText, text].filter((el) => !!el).join('\n\n');
+  let textContent = '';
+  let tagsContent = '';
 
-  const tagsContent = tags
-    .filter((tag) => tag.tag === 'note' || tag.tag === 'example')
-    // eslint-disable-next-line
+  if (comment.summary && Array.isArray(comment.summary)) {
+    textContent = comment.summary
+      .map((item) => {
+        if (item.kind === 'text' || item.kind === 'code') {
+          return item.text || '';
+        }
+        return '';
+      })
+      .filter(Boolean)
+      .join('');
+  } else if (comment.shortText || comment.text) {
+    textContent = [comment.shortText, comment.text].filter((el) => !!el).join('\n\n');
+  }
+
+  // Handle blockTags
+  const blockTags = comment.blockTags || [];
+  const legacyTags = comment.tags || [];
+
+  tagsContent = [...blockTags, ...legacyTags]
+    .filter((tag) => {
+      // Extract tag name and remove @ symbol
+      const rawTag = tag.tag || tag.tagName || '';
+      const tagName = rawTag.replace(/^@/, '');
+      return tagName === 'note' || tagName === 'example';
+    })
     .map((tag) => {
-      if (tag.tag === 'note') {
-        return `> ${tag.text}`;
+      // Extract tag name and remove @ symbol
+      const rawTag = tag.tag || tag.tagName || '';
+      const tagName = rawTag.replace(/^@/, '');
+      let content = '';
+
+      if (tag.content && Array.isArray(tag.content)) {
+        content = tag.content
+          .map((item) => (item.kind === 'text' || item.kind === 'code' ? item.text : ''))
+          .filter(Boolean)
+          .join('');
+      } else if (tag.text) {
+        content = tag.text;
       }
 
-      if (tag.tag === 'example') return tag.text;
+      if (tagName === 'note') {
+        return `> ${content}`;
+      }
+
+      if (tagName === 'example') return content;
     })
+    .filter(Boolean)
     .join('\n\n');
 
-  return processDescription([textContent, tagsContent].join('\n\n'));
+  return processDescription([textContent, tagsContent].filter(Boolean).join('\n\n'));
 };

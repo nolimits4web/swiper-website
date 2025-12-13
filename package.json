@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "npm-run-all --parallel worker-dev next-dev",
     "next-dev": "npm run build-uiinitiative-demos && npm run build-sponsors && npm run build-demos && npm run build-types && npm run build-api && next dev",
+    "next": "next dev",
     "worker-dev": "wrangler dev --port 8080",
     "build": "npm run build-uiinitiative-demos && npm run build-demos && npm run build-types && npm run build-api && npm run build-sponsors && next build",
     "start": "next start",
@@ -47,8 +48,8 @@
     "remark-rehype": "^11.1.2",
     "swiper": "^12.0.3",
     "tailwindcss": "^4.1.7",
-    "typedoc": "^0.21.2",
-    "typescript": "4.3.5",
+    "typedoc": "^0.28.15",
+    "typescript": "5.9.3",
     "unified": "^11.0.5"
   },
   "devDependencies": {

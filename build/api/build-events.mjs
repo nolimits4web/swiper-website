@@ -13,6 +13,19 @@ const plainDescription = (item) => {
     item.type?.declaration?.signatures?.[0]?.comment ||
     {};
 
+  if (data.summary && Array.isArray(data.summary)) {
+    return data.summary
+      .map((item) => {
+        if (item.kind === 'text' || item.kind === 'code') {
+          return item.text || '';
+        }
+        return '';
+      })
+      .filter(Boolean)
+      .join('');
+  }
+
+  // Fallback to old format
   const { shortText, text } = data;
   return [shortText || '', text || ''].join('');
 };
@@ -34,28 +47,22 @@ const buildEvents = async (typesName, typesData, ignoreEvents = []) => {
     return 0;
   });
 
-  // eslint-disable-next-line
-  const type = (item = {}) => {
-    const typeObj = item.type || {};
-    if (typeObj.type === 'union') {
-      const types = [];
-      typeObj.types.forEach(({ elementType, name, type, value }) => {
-        if (elementType)
-          types.push(`${elementType.name}${type === 'array' ? '[]' : ''}`);
-        else if (value) types.push(`'${value}'`);
-        else if (value === null) types.push(`null`);
-        else types.push(name);
-      });
-      return types.join(`{' | '}`);
-    }
-    return typeObj.name || '';
-  };
+
 
   const args = (item) => {
-    if (item.signatures) {
-      const params = (item.signatures[0].parameters || []).map(
-        (param) => param.name
-      );
+    // Events can have signatures in two places:
+    // 1. Directly: item.signatures (for methods)
+    // 2. In type declaration: item.type.declaration.signatures (for event properties with function types)
+    let signatures = null;
+
+    if (item.signatures && item.signatures.length > 0) {
+      signatures = item.signatures;
+    } else if (item.type && item.type.declaration && item.type.declaration.signatures && item.type.declaration.signatures.length > 0) {
+      signatures = item.type.declaration.signatures;
+    }
+
+    if (signatures && signatures[0] && signatures[0].parameters) {
+      const params = signatures[0].parameters.map((param) => param.name);
       if (!params.length) return '';
       return `(${params.join(', ')})`;
     }

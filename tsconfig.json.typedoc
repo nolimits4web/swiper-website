@@ -14,7 +14,8 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "types": []
   },
   "typedocOptions": {
     "name": "Swiper",
@@ -22,9 +23,20 @@
       "node_modules/swiper/",
       "node_modules/swiper/types/"
     ],
+    "entryPointStrategy": "expand",
     "excludeExternals": false,
     "includeVersion": true,
-    "out": "./public/types"
+    "out": "./public/types",
+    "exclude": [
+      "**/*.mjs",
+      "**/*.js",
+      "**/swiper-bundle*",
+      "**/swiper-element*"
+    ]
   },
-  "include": ["node_modules/swiper/*.d.ts", "node_modules/swiper/**/*.d.ts"]
+  "include": [
+    "node_modules/swiper/*.d.ts",
+    "node_modules/swiper/**/*.d.ts",
+    "node_modules/swiper/types/**/*.ts"
+  ]
 }

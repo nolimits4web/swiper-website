@@ -28,19 +28,5 @@ const nextConfig = withMdx({
   eslint: {
     ignoreDuringBuilds: true,
   },
-  async redirects() {
-    return [
-      {
-        source: '/api',
-        destination: '/swiper-api',
-        permanent: true,
-      },
-      {
-        source: '/types',
-        destination: '/types/index.html',
-        permanent: true,
-      },
-    ];
-  },
 });
 export default nextConfig;
