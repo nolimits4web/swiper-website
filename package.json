@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "npm-run-all --parallel worker-dev next-dev",
-    "next-dev": "npm run build-uiinitiative-demos && npm run build-sponsors && npm run build-demos && npm run build-types && npm run build-api && next dev",
+    "next-dev": "npm run build-uiinitiative-demos && npm run build-sponsors && npm run build-demos && npm run build-api && npm run build-types && next dev",
     "next": "next dev",
     "worker-dev": "wrangler dev --port 8080",
-    "build": "npm run build-uiinitiative-demos && npm run build-demos && npm run build-types && npm run build-api && npm run build-sponsors && next build",
+    "build": "npm run build-uiinitiative-demos && npm run build-demos && npm run build-api && npm run build-types && npm run build-sponsors && next build",
     "start": "next start",
     "build-uiinitiative-demos": "node build/build-uiinitiative-demos.cjs",
     "build-sponsors": "node build/build-sponsors-json.cjs",

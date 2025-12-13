@@ -11,7 +11,7 @@
     "binding": "ASSETS",
     "directory": "./out",
     "not_found_handling": "none",
-    "html_handling": "drop-trailing-slash",
+    "html_handling": "auto-trailing-slash",
   },
   "observability": {
     "enabled": true,

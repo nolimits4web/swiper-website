@@ -45,3 +45,4 @@ public/demos/**/*.html
 !public/demos/images
 
 public/sponsors-list.json
+.wrangler/
