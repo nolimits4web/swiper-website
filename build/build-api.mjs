@@ -41,6 +41,7 @@ const components = [
 (async () => {
   elapsed.start('Typedoc');
   const { default: chalk } = await import('chalk');
+  const originalTsconfig = fs.readFileSync('./tsconfig.json', 'utf-8');
   fs.writeFileSync(
     './tsconfig.json',
     fs.readFileSync('./tsconfig.json.typedoc', 'utf-8')
@@ -137,5 +138,5 @@ const components = [
   await fs.writeFile(typesPath, `${JSON.stringify(types, null, 4)}`);
   elapsed.end('Generate all types');
   console.log(chalk.green(`Types generation finished`));
-  fs.unlinkSync('./tsconfig.json');
+  fs.writeFileSync('./tsconfig.json', originalTsconfig);
 })();

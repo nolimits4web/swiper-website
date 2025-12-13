@@ -4,8 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "npm run build-uiinitiative-demos && npm run build-sponsors && npm run build-demos && npm run build-types && npm run build-api && next dev",
-    "next-dev": "next dev",
+    "dev": "npm-run-all --parallel worker-dev next-dev",
+    "next-dev": "npm run build-uiinitiative-demos && npm run build-sponsors && npm run build-demos && npm run build-types && npm run build-api && next dev",
+    "worker-dev": "wrangler dev --port 8080",
     "build": "npm run build-uiinitiative-demos && npm run build-demos && npm run build-types && npm run build-api && npm run build-sponsors && next build",
     "start": "next start",
     "build-uiinitiative-demos": "node build/build-uiinitiative-demos.cjs",
@@ -13,7 +14,9 @@
     "build-demos": "node ./build/build-demos.cjs",
     "build-api": "node build/build-api.mjs",
     "build-types": "node build/build-types.cjs",
-    "copy-changelog": "node build/copy-changelog.mjs"
+    "copy-changelog": "node build/copy-changelog.mjs",
+    "check-types": "tsc --noEmit",
+    "cf-typegen": "wrangler types  --env-interface CloudflareBindings"
   },
   "dependencies": {
     "@docsearch/react": "^3.9.0",
@@ -22,7 +25,6 @@
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.1.8",
     "@tailwindcss/typography": "^0.5.9",
-    "@types/node": "^14.14.41",
     "autoprefixer": "^10.4.14",
     "chalk": "^5.2.0",
     "clsx": "^2.1.1",
@@ -51,7 +53,13 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.7",
-    "prettier": "^3.5.3",
-    "prettier-plugin-tailwindcss": "^0.6.11"
+    "@types/node": "^25.0.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "hono": "^4.11.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.7.4",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "wrangler": "^4.54.0"
   }
 }

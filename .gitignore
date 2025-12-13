@@ -44,6 +44,4 @@ public/demos/**/*.json
 public/demos/**/*.html
 !public/demos/images
 
-tsconfig.json
-
 public/sponsors-list.json
