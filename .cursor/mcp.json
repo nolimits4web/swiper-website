@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "swiper": {
+      "url": "http://localhost:8080/mcp"
+    }
+  }
+}
