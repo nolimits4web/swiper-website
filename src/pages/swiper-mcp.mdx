@@ -1,0 +1,545 @@
+import { MDXProvider } from '@mdx-js/react';
+import Heading from '@/components/Heading.js';
+import { WithSidebarLayout } from '@/layouts/WithSidebarLayout.js';
+
+export const meta = {
+  title: 'Swiper MCP Server',
+  description:
+    'Model Context Protocol server for Swiper API documentation and demos',
+};
+
+## Overview
+
+The Swiper MCP (Model Context Protocol) Server provides programmatic access to Swiper's API documentation, demos, and code examples. It enables AI assistants and development tools to search, retrieve, and understand Swiper's API through a standardized JSON-RPC 2.0 interface.
+
+### Features
+
+- **API Documentation Search**: Search through Swiper options, methods, and events
+- **Detailed API Lookups**: Get comprehensive information about specific API items
+- **Module Documentation**: Retrieve all options, methods, and events for a specific module
+- **Demo Code Access**: Get complete demo code for any Swiper demo in your preferred framework
+- **Public Access**: No authentication required - free to use
+
+### Server Information
+
+- **Protocol**: MCP (Model Context Protocol) via JSON-RPC 2.0
+- **Transport**: HTTP POST requests
+- **Endpoint**: `https://swiperjs.com/mcp`
+- **Protocol Version**: 2024-11-05
+
+## Available Tools
+
+The Swiper MCP server provides 7 tools for interacting with Swiper documentation:
+
+### 1. `search-api`
+
+Search Swiper API documentation for options, methods, or events.
+
+**Parameters:**
+
+- `query` (string, required): Search query string
+- `type` (string, optional): Filter by type - `"option"`, `"method"`, `"event"`, or `"all"` (default)
+
+**Example:**
+
+```json
+{
+  "name": "search-api",
+  "arguments": {
+    "query": "navigation",
+    "type": "option"
+  }
+}
+```
+
+**Returns:** Array of matching API items with descriptions, types, and categories.
+
+### 2. `get-option`
+
+Get detailed information about a specific Swiper option by name.
+
+**Parameters:**
+
+- `name` (string, required): The name of the option (e.g., `"slidesPerView"`, `"spaceBetween"`)
+
+**Example:**
+
+```json
+{
+  "name": "get-option",
+  "arguments": {
+    "name": "slidesPerView"
+  }
+}
+```
+
+**Returns:** Option details including type, default value, description, and full type information.
+
+### 3. `get-method`
+
+Get detailed information about a specific Swiper method by name.
+
+**Parameters:**
+
+- `name` (string, required): The name of the method (e.g., `"slideNext"`, `"update"`, `"destroy"`)
+
+**Example:**
+
+```json
+{
+  "name": "get-method",
+  "arguments": {
+    "name": "slideNext"
+  }
+}
+```
+
+**Returns:** Method details including signature, parameters, return type, and description.
+
+### 4. `get-event`
+
+Get detailed information about a specific Swiper event by name.
+
+**Parameters:**
+
+- `name` (string, required): The name of the event (e.g., `"slideChange"`, `"init"`, `"transitionStart"`)
+
+**Example:**
+
+```json
+{
+  "name": "get-event",
+  "arguments": {
+    "name": "slideChange"
+  }
+}
+```
+
+**Returns:** Event details including parameters, description, and usage information.
+
+### 5. `get-module-options`
+
+Get all options, methods, and events for a specific Swiper module.
+
+**Parameters:**
+
+- `module` (string, required): The module name (e.g., `"navigation"`, `"pagination"`, `"autoplay"`). Case-insensitive.
+
+**Example:**
+
+```json
+{
+  "name": "get-module-options",
+  "arguments": {
+    "module": "navigation"
+  }
+}
+```
+
+**Returns:** Complete module documentation including:
+
+- `options`: All configuration options for the module
+- `methods`: All available methods for the module
+- `events`: All events emitted by the module
+
+### 6. `list-demos`
+
+List all available Swiper demos with their metadata.
+
+**Parameters:** None
+
+**Example:**
+
+```json
+{
+  "name": "list-demos",
+  "arguments": {}
+}
+```
+
+**Returns:** Array of demo objects containing:
+
+- `slug`: Demo identifier (e.g., `"navigation"`, `"pagination"`)
+- `title`: Human-readable demo name
+- `folder`: Demo folder name
+- `frameworks`: Array of available framework variants (e.g., `["core", "element", "react", "vue"]`)
+
+### 7. `get-demo`
+
+Get complete demo code for a specific Swiper demo in your preferred framework.
+
+**Parameters:**
+
+- `slug` (string, required): The demo slug (e.g., `"default"`, `"navigation"`, `"pagination"`)
+- `framework` (string, required): The framework variant - `"core"`, `"element"`, `"react"`, `"vue"`, etc.
+
+**Example:**
+
+```json
+{
+  "name": "get-demo",
+  "arguments": {
+    "slug": "navigation",
+    "framework": "react"
+  }
+}
+```
+
+**Returns:** Object with file paths as keys and file content as values. For example:
+
+```json
+{
+  "src/App.jsx": {
+    "content": "import React from 'react';\n..."
+  },
+  "src/styles.css": {
+    "content": ".swiper { ... }"
+  }
+}
+```
+
+## Setup Instructions
+
+### Cursor
+
+1. Open Cursor Settings
+2. Navigate to **Tools & MCP** → **Install MCP Server**
+3. Click **New MCP Server** or edit your MCP configuration file (usually `.cursor/mcp.json` in your project or global Cursor config)
+4. Add the following configuration:
+
+```json
+{
+  "mcpServers": {
+    "swiper": {
+      "url": "https://swiperjs.com/mcp"
+    }
+  }
+}
+```
+
+5. The Swiper MCP server will now be available in your AI conversations
+
+### Claude Code
+
+Claude Code uses the command-line interface to add MCP servers. HTTP transport is recommended for remote servers like Swiper.
+
+**Add the Swiper MCP server:**
+
+```bash
+claude mcp add --transport http swiper https://swiperjs.com/mcp
+```
+
+**Verify the server was added:**
+
+```bash
+claude mcp list
+```
+
+**Get server details:**
+
+```bash
+claude mcp get swiper
+```
+
+**Check server status in Claude Code:**
+
+Within Claude Code, use the `/mcp` command to see all connected MCP servers and their status.
+
+**Scopes:**
+
+You can specify where the configuration is stored using the `--scope` flag:
+
+- `local` (default): Available only to you in the current project
+- `project`: Shared with everyone via `.mcp.json` file in project root
+- `user`: Available to you across all projects
+
+**Example with project scope:**
+
+```bash
+claude mcp add --transport http swiper --scope project https://swiperjs.com/mcp
+```
+
+**Remove a server:**
+
+```bash
+claude mcp remove swiper
+```
+
+You can now ask Claude Code about Swiper API documentation, and it will use the MCP tools automatically.
+
+### VS Code
+
+VS Code has built-in support for MCP servers starting from version 1.102. You can add MCP servers to your workspace or user configuration.
+
+**Add to Workspace (Recommended for team projects):**
+
+1. Create a `.vscode/mcp.json` file in your workspace root
+2. Add the Swiper MCP server configuration:
+
+```json
+{
+  "servers": {
+    "swiper": {
+      "type": "http",
+      "url": "https://swiperjs.com/mcp"
+    }
+  }
+}
+```
+
+**Add to User Configuration (Available across all projects):**
+
+1. Run the **MCP: Add Server** command from the Command Palette (⇧⌘P / Ctrl+Shift+P)
+2. Choose **HTTP** as the server type
+3. Enter the server name: `swiper`
+4. Enter the URL: `https://swiperjs.com/mcp`
+5. Select **Global** to add it to your user configuration
+
+Alternatively, you can run **MCP: Open User Configuration** and manually add the configuration.
+
+**Add from Extensions View:**
+
+1. Open the Extensions view (⇧⌘X / Ctrl+Shift+X)
+2. Search for `@mcp` or run the **MCP: Browse Servers** command
+3. Search for "swiper" and install it
+
+**Using the Tools:**
+
+Once configured, you can use Swiper MCP tools in the Chat view:
+
+- Open Chat (⌃⌘I / Ctrl+Alt+I)
+- Tools are automatically available when using agents
+- You can explicitly reference tools by typing `#` followed by the tool name
+
+For more information, see the [VS Code MCP documentation](https://code.visualstudio.com/docs/copilot/customization/mcp-servers).
+
+### Codex (OpenAI)
+
+Codex supports MCP servers through both the Codex CLI and Codex IDE extension. Configuration is shared between both.
+
+**Add using CLI (Recommended):**
+
+```bash
+codex mcp add swiper --url https://swiperjs.com/mcp
+```
+
+**Add by editing config.toml:**
+
+1. Open or create the Codex configuration file at `~/.codex/config.toml`
+2. If using the IDE extension, click the gear icon → `MCP settings > Open config.toml`
+3. Add the Swiper MCP server configuration:
+
+```bash
+[mcp_servers.swiper]
+url = "https://swiperjs.com/mcp"
+```
+
+**Verify the server:**
+
+In the Codex TUI (Terminal UI), use `/mcp` to see your actively connected MCP servers.
+
+**Advanced Configuration:**
+
+You can customize timeouts and other settings:
+
+```bash
+[mcp_servers.swiper]
+url = "https://swiperjs.com/mcp"
+startup_timeout_sec = 10
+tool_timeout_sec = 60
+enabled = true
+```
+
+**Disable/Enable:**
+
+To temporarily disable a server without removing it:
+
+```bash
+[mcp_servers.swiper]
+url = "https://swiperjs.com/mcp"
+enabled = false
+```
+
+For more information, see the [Codex MCP documentation](https://developers.openai.com/codex/mcp/).
+
+### OpenCode
+
+OpenCode supports both local and remote MCP servers. The Swiper MCP server is a remote HTTP server.
+
+**Add to your OpenCode configuration:**
+
+1. Open or create your `opencode.jsonc` or `opencode.json` configuration file
+2. Add the Swiper MCP server under the `mcp` section:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "swiper": {
+      "type": "remote",
+      "url": "https://swiperjs.com/mcp",
+      "enabled": true
+    }
+  }
+}
+```
+
+**Disable temporarily:**
+
+Set `enabled` to `false` to temporarily disable without removing the configuration:
+
+```json
+{
+  "mcp": {
+    "swiper": {
+      "type": "remote",
+      "url": "https://swiperjs.com/mcp",
+      "enabled": false
+    }
+  }
+}
+```
+
+**Manage MCP servers:**
+
+- Disable globally in the `tools` section: `"swiper": false`
+- Enable per-agent by adding `"swiper": true` in the agent's tools configuration
+
+For more information, see the [OpenCode MCP documentation](https://opencode.ai/docs/mcp-servers/).
+
+## Usage Examples
+
+### Example 1: Finding Navigation Options
+
+Ask your AI assistant:
+
+> "What are the available options for Swiper navigation?"
+
+The assistant will use the `get-module-options` tool with `module: "navigation"` and return all navigation-related options, methods, and events.
+
+### Example 2: Getting Demo Code
+
+Ask your AI assistant:
+
+> "Show me the React code for a Swiper navigation demo"
+
+The assistant will:
+
+1. Use `list-demos` to find demos
+2. Use `get-demo` with `slug: "navigation"` and `framework: "react"`
+3. Return the complete React component code
+
+### Example 3: Searching for a Specific Option
+
+Ask your AI assistant:
+
+> "What does the slidesPerView option do?"
+
+The assistant will use `get-option` with `name: "slidesPerView"` and return detailed documentation including:
+
+- Type information
+- Default value
+- Description
+- Usage examples
+
+### Example 4: Finding Methods
+
+Ask your AI assistant:
+
+> "How do I programmatically go to the next slide?"
+
+The assistant will use `get-method` with `name: "slideNext"` and return the method signature, parameters, and usage instructions.
+
+## Supported Modules
+
+The following Swiper modules are fully documented and accessible via the MCP server:
+
+- **A11y** - Accessibility features
+- **Autoplay** - Automatic slide transitions
+- **Controller** - Control multiple swipers
+- **CoverflowEffect** - 3D coverflow effect
+- **CubeEffect** - 3D cube effect
+- **CreativeEffect** - Creative transition effects
+- **CardsEffect** - Cards transition effect
+- **FadeEffect** - Fade transition effect
+- **FlipEffect** - Flip transition effect
+- **FreeMode** - Free scroll mode
+- **Grid** - Multi-row grid layout
+- **HashNavigation** - Hash-based navigation
+- **History** - Browser history integration
+- **Keyboard** - Keyboard control
+- **Lazy** - Lazy loading
+- **Manipulation** - Slide manipulation methods
+- **Mousewheel** - Mousewheel control
+- **Navigation** - Navigation arrows
+- **Pagination** - Pagination bullets/dots
+- **Parallax** - Parallax effects
+- **Scrollbar** - Scrollbar navigation
+- **Thumbs** - Thumbnail gallery
+- **Virtual** - Virtual slides
+- **Zoom** - Image zoom
+
+Each module can be queried using the `get-module-options` tool.
+
+## API Response Format
+
+All tools return responses in the MCP Tool Call Result format:
+
+```typescript
+{
+  content: Array<{
+    type: 'text';
+    text: string; // JSON string containing the actual data
+  }>;
+  isError?: boolean; // Present if an error occurred
+}
+```
+
+The `text` field contains a JSON string that, when parsed, contains the actual response data or error information.
+
+## Error Handling
+
+The MCP server uses standard JSON-RPC 2.0 error codes:
+
+- `-32700`: Parse error - Invalid JSON
+- `-32600`: Invalid Request - Request structure is invalid
+- `-32601`: Method not found - Unknown method requested
+- `-32602`: Invalid params - Parameters are missing or invalid
+- `-32603`: Internal error - Server-side error occurred
+
+Error responses include helpful messages indicating what went wrong and, when applicable, suggestions for fixing the issue.
+
+## Rate Limits
+
+Currently, the Swiper MCP server is publicly accessible without authentication and has no rate limits. However, please use responsibly. If you need higher rate limits or have specific requirements, please contact the Swiper team.
+
+## Contributing
+
+The MCP server implementation is part of the Swiper website repository. To contribute improvements or report issues:
+
+1. Visit the [Swiper GitHub repository](https://github.com/nolimits4web/swiper-website)
+2. Open an issue or submit a pull request
+3. Include detailed information about your use case or the issue you encountered
+
+## Changelog
+
+### Version 1.0.0
+
+- Initial release
+- 7 tools for API documentation and demo access
+- Support for all Swiper modules
+- Public access without authentication
+
+export default function Page({ children }) {
+  const components = {
+    h1: Heading.h1,
+    h2: Heading.h2,
+    h3: Heading.h3,
+    h4: Heading.h4,
+  };
+  return (
+    <MDXProvider components={components}>
+      <WithSidebarLayout meta={meta}>{children}</WithSidebarLayout>
+    </MDXProvider>
+  );
+}

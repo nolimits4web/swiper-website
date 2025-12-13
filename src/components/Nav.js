@@ -184,6 +184,13 @@ export const Nav = ({ withSidebar = false }) => {
                   Swiper Vue
                 </DropdownLink>
 
+                <DropdownLink
+                  onClick={() => setDocsNavOpened(false)}
+                  href="/swiper-mcp"
+                >
+                  Swiper MCP
+                </DropdownLink>
+
                 <DropdownDivider />
 
                 <DropdownLink

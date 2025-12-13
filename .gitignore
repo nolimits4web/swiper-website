@@ -46,3 +46,4 @@ public/demos/**/*.html
 
 public/sponsors-list.json
 .wrangler/
+.tsbuildinfo

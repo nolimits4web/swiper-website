@@ -11,6 +11,7 @@ export default function Footer() {
       '/vue',
       '/element',
       '/swiper-api',
+      '/swiper-mcp',
       '/changelog',
       '/demos',
       '/plugins',
@@ -48,6 +49,7 @@ export default function Footer() {
                 <Link href="/element">Swiper Element</Link>
                 <Link href="/react">Swiper React</Link>
                 <Link href="/vue">Swiper Vue</Link>
+                <Link href="/swiper-mcp">Swiper MCP</Link>
                 <Link href="/changelog">Changelog</Link>
               </div>
             </div>
