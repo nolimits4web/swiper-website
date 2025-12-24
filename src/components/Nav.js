@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import TogglesBanner from './TogglesBanner';
 import clsx from 'clsx';
 // import BlackFridayRibbon from './BlackFridayRibbon';
+import NewYearRibbon from './NewYearRibbon';
 
 const Dropdown = ({ children, opened }) => {
   return (
@@ -87,18 +88,9 @@ export const Nav = ({ withSidebar = false }) => {
         )}
       >
         {/* <BlackFridayRibbon /> */}
-        <PaneFlowBanner
-          className={clsx()
-          // banner === 'paneflow' ? 'block' : 'hidden',
-          // !bannerSet && 'opacity-0'
-          }
-        />
-        {/* <TogglesBanner
-          className={clsx(
-            banner === 'toggles' ? 'block' : 'hidden',
-            !bannerSet && 'opacity-0'
-          )}
-        /> */}
+        <NewYearRibbon />
+        {/* <PaneFlowBanner /> */}
+        {/* <TogglesBanner /> */}
       </div>
 
       <div
