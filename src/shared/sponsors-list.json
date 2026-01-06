@@ -1,5 +1,15 @@
 [
   {
+    "createdAt": "2026-01-06T20:00:00.000Z",
+    "title": "Kai Donno",
+    "link": "https://www.kaidonno1.com",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/davemorris",
+    "image": "davemorris.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2026-01-05T20:00:00.000Z",
     "title": "Kasino.page",
     "link": "https://kasino.page/",
