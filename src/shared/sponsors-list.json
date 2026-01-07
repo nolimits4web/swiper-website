@@ -1,8 +1,28 @@
 [
   {
+    "createdAt": "2026-01-07T20:00:00.000Z",
+    "title": "CASINOLEGAL",
+    "link": "https://casinolegal.ro/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/casinolegalromania",
+    "image": "casinolegalromania.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2026-01-07T20:00:00.000Z",
+    "title": "super clone watches",
+    "link": "https://swisswatchesinindia.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/super-clone-watches1",
+    "image": "super-clone-watches1.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2026-01-06T20:00:00.000Z",
-    "title": "Kai Donno",
-    "link": "https://www.kaidonno1.com",
+    "title": "สล็อต",
+    "link": "https://www.kaidonno1.com/index.php",
     "plan": "Sponsor",
     "ref": "https://opencollective.com/davemorris",
     "image": "davemorris.png",
