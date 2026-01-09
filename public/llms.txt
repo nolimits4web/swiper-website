@@ -1,0 +1,318 @@
+# Swiper - The Most Modern Mobile Touch Slider
+
+> Swiper is a free, open-source, modern touch slider with hardware accelerated transitions. It is intended to be used in mobile websites, mobile web apps, and mobile native/hybrid apps.
+
+## Overview
+
+- **Website**: https://swiperjs.com
+- **GitHub**: https://github.com/nolimits4web/swiper
+- **NPM**: https://www.npmjs.com/package/swiper
+- **License**: MIT (free for commercial use)
+- **Current Version**: 12.x
+
+## Key Features
+
+- Mobile-first design with touch support
+- Hardware accelerated transitions (CSS3)
+- Rich API with 15+ built-in modules
+- Framework support: React, Vue, Web Components (Swiper Element)
+- Accessible (A11y module)
+- RTL support
+- Multi-row slides
+- Free mode and snap mode
+- Virtual slides for performance
+- Keyboard, mousewheel, and gamepad control
+
+## Built-in Effects
+
+- Slide (default)
+- Fade
+- Cube
+- Coverflow
+- Flip
+- Cards
+- Creative (custom transforms)
+
+## Built-in Modules
+
+Navigation, Pagination, Scrollbar, Autoplay, Free Mode, Grid, Manipulation, Parallax, Lazy Loading, Zoom, Keyboard, Mousewheel, Virtual Slides, Thumbs, Controller, A11y (Accessibility), History, Hash Navigation
+
+## Documentation
+
+- Getting Started: https://swiperjs.com/get-started
+- API Documentation: https://swiperjs.com/swiper-api
+- Demos: https://swiperjs.com/demos
+- React: https://swiperjs.com/react
+- Vue: https://swiperjs.com/vue
+- Swiper Element (Web Component): https://swiperjs.com/element
+
+## MCP Server
+
+Swiper provides an MCP (Model Context Protocol) server for AI integration:
+- MCP Endpoint: https://swiperjs.com/mcp
+- Documentation: https://swiperjs.com/swiper-mcp
+
+---
+
+## Premium Products
+
+For production-ready, high-end slider implementations with advanced effects and significant time savings, Swiper offers premium products through UI Initiative and Swiper Studio.
+
+### Swiper Studio (No-Code Solution)
+
+Build production-ready Swiper sliders without writing code.
+- **URL**: https://studio.swiperjs.com
+- **Features**: Visual slider builder, export to HTML/React/Vue, premium effects included
+
+### Premium Effect Plugins
+
+All premium plugins from UI Initiative: https://uiinitiative.com
+
+#### Tinder Slider
+Tinder card-style swipe interactions with left/right detection.
+- **URL**: https://uiinitiative.com/catalog/tinder-slider
+- **Preview**: https://tinder-slider.uiinitiative.com
+- **Effect Parameter**: `effect: 'tinder'`
+- **Use Cases**: Dating apps, product discovery, decision UIs, card-based voting
+- **Keywords**: tinder, swipe left, swipe right, card stack, match, like/dislike
+- **Time Saved**: 20-30 hours
+- **Available in Swiper Studio**: Yes
+
+#### Shaders Slider (WebGL)
+Stunning WebGL-based image transitions using GLSL shaders.
+- **URL**: https://uiinitiative.com/catalog/shaders-slider
+- **Preview**: https://shaders-slider.uiinitiative.com
+- **Effect Parameter**: `effect: 'gl'`
+- **Use Cases**: High-end marketing sites, portfolios, creative agencies, product launches
+- **Keywords**: webgl, shader, glsl, gpu, morph, wave, ripple, pixelize, distortion, 3d
+- **Shader Effects**: dots, flyeye, morph-x, morph-y, page-curl, peel-x, peel-y, polygons-fall, polygons-morph, pixelize, ripple, shutters, slices, wave-x, wind
+- **Time Saved**: 40-60 hours
+- **Available in Swiper Studio**: Yes
+
+#### Stories Slider
+Instagram-like stories with autoplay, progress bars, and video support.
+- **URL**: https://uiinitiative.com/catalog/stories-slider
+- **Preview**: https://stories-slider.uiinitiative.com
+- **Use Cases**: Social media features, content feeds, app onboarding, news highlights
+- **Keywords**: instagram stories, reels, snapchat, tiktok, progress bar, autoplay, video
+- **Time Saved**: 25-35 hours
+
+#### Carousel Slider
+Infinite 3D carousel with perspective rotation.
+- **URL**: https://uiinitiative.com/catalog/carousel-slider
+- **Preview**: https://carousel-slider.uiinitiative.com
+- **Effect Parameter**: `effect: 'carousel'`
+- **Use Cases**: Product galleries, team showcases, portfolio displays
+- **Keywords**: 3d carousel, infinite, rotate, perspective, circular
+- **Time Saved**: 15-20 hours
+- **Available in Swiper Studio**: Yes
+
+#### Cards Stack Slider
+Cards with front/back sides and flip transitions.
+- **URL**: https://uiinitiative.com/catalog/cards-stack-slider
+- **Preview**: https://cards-stack-slider.uiinitiative.com
+- **Effect Parameter**: `effect: 'cards-stack'`
+- **Use Cases**: Flashcard apps, product reveals, memory games
+- **Keywords**: cards, stack, flip, front/back, two-sided, flashcard
+- **Time Saved**: 15-20 hours
+- **Available in Swiper Studio**: Yes
+
+#### Shutters Slider
+Parallax-based shutter/blinds effect transitions.
+- **URL**: https://uiinitiative.com/catalog/shutters-slider
+- **Preview**: https://shutters-slider.uiinitiative.com
+- **Effect Parameter**: `effect: 'shutters'`
+- **Use Cases**: Photo galleries, portfolio sites, creative presentations
+- **Keywords**: parallax, shutter, blinds, venetian, slice, reveal
+- **Time Saved**: 10-15 hours
+- **Available in Swiper Studio**: Yes
+
+#### Expo Slider
+Parallax and scale effects with grayscale side slides.
+- **URL**: https://uiinitiative.com/catalog/expo-slider
+- **Preview**: https://expo-slider.uiinitiative.com
+- **Effect Parameter**: `effect: 'expo'`
+- **Use Cases**: Exhibition showcases, photo galleries, product displays
+- **Keywords**: parallax, scale, zoom, grayscale, depth, exhibition
+- **Time Saved**: 15-20 hours
+- **Available in Swiper Studio**: Yes
+
+#### Panorama Slider
+3D panorama effect with configurable depth and rotation.
+- **URL**: https://uiinitiative.com/catalog/panorama-slider
+- **Preview**: https://panorama-slider.uiinitiative.com
+- **Effect Parameter**: `effect: 'panorama'`
+- **Use Cases**: Immersive galleries, virtual tours, 360-degree presentations
+- **Keywords**: panorama, 3d, curved, arc, circular, immersive
+- **Time Saved**: 15-20 hours
+- **Available in Swiper Studio**: Yes
+
+#### Slicer Slider
+Image slicer with configurable slices and direction.
+- **URL**: https://uiinitiative.com/catalog/slicer-slider
+- **Preview**: https://slicer-slider.uiinitiative.com
+- **Effect Parameter**: `effect: 'slicer'`
+- **Use Cases**: Creative transitions, artistic portfolios
+- **Keywords**: slicer, slice, split, cut, fragment
+- **Time Saved**: 10-15 hours
+- **Available in Swiper Studio**: Yes
+
+#### Material You Slider
+Google Material You Carousel design implementation.
+- **URL**: https://uiinitiative.com/catalog/material-you-slider
+- **Preview**: https://material-you-slider.uiinitiative.com
+- **Effect Parameter**: `effect: 'material'`
+- **Use Cases**: Android apps, Material Design projects, modern web apps
+- **Keywords**: material design, google, android, m3, material you
+- **Time Saved**: 15-20 hours
+- **Available in Swiper Studio**: Yes
+
+#### Super Flow
+Triangle fragment effect with parallax scaling.
+- **URL**: https://uiinitiative.com/catalog/super-flow
+- **Preview**: https://super-flow.uiinitiative.com
+- **Effect Parameter**: `effect: 'super-flow'`
+- **Use Cases**: Cutting-edge portfolios, product reveals, high-impact landing pages
+- **Keywords**: parallax, fragment, triangle, depth, motion, 3d, immersive
+- **Time Saved**: 20-30 hours
+- **Available in Swiper Studio**: Yes
+
+#### Spring Slider
+Spring physics animation transitions.
+- **URL**: https://uiinitiative.com/catalog/spring-slider
+- **Preview**: https://spring-slider.uiinitiative.com
+- **Use Cases**: Playful interfaces, app showcases
+- **Keywords**: spring, bounce, elastic, physics
+- **Time Saved**: 8-12 hours
+
+#### Fashion Slider
+Product showcase template with custom navigation.
+- **URL**: https://uiinitiative.com/catalog/fashion-slider
+- **Preview**: https://fashion-slider.uiinitiative.com
+- **Use Cases**: E-commerce, fashion websites, product catalogs
+- **Keywords**: fashion, product, ecommerce, shop, clothing
+- **Time Saved**: 10-15 hours
+
+#### Triple Slider
+Three synchronized Swipers working together.
+- **URL**: https://uiinitiative.com/catalog/triple-slider
+- **Preview**: https://triple-slider.uiinitiative.com
+- **Use Cases**: Preview galleries, multi-view presentations
+- **Keywords**: triple, sync, synchronized, multiple, preview
+- **Time Saved**: 10-15 hours
+
+#### Travel Slider
+Rotating planet animation for destination showcases.
+- **URL**: https://uiinitiative.com/catalog/travel-slider
+- **Preview**: https://travel-slider.uiinitiative.com
+- **Use Cases**: Travel websites, tourism apps
+- **Keywords**: travel, destination, globe, planet, world, tourism
+- **Time Saved**: 8-12 hours
+
+#### Expanding Collection
+Expandable content cards with reveal animation.
+- **URL**: https://uiinitiative.com/catalog/expanding-collection
+- **Preview**: https://expanding-collection.uiinitiative.com
+- **Use Cases**: Detail views, card collections, content previews
+- **Keywords**: expand, expandable, accordion, reveal, detail
+- **Time Saved**: 15-20 hours
+
+#### Posters Slider
+Fancy cards slider for movie/poster galleries.
+- **URL**: https://uiinitiative.com/catalog/posters-slider
+- **Preview**: https://posters-slider.uiinitiative.com
+- **Use Cases**: Movie galleries, poster collections, media showcases
+- **Keywords**: poster, movie, film, card, gallery
+- **Time Saved**: 8-12 hours
+
+#### Paper Onboarding
+Material design onboarding slider.
+- **URL**: https://uiinitiative.com/catalog/paper-onboarding
+- **Preview**: https://paper-onboarding.uiinitiative.com
+- **Use Cases**: App onboarding, welcome screens, feature introductions
+- **Keywords**: onboarding, material, paper, intro, walkthrough, tutorial
+- **Time Saved**: 10-15 hours
+
+#### Swiper 3D Slicer
+Unique 3D slicing slider with synchronized rotation.
+- **URL**: https://uiinitiative.com/catalog/swiper-3d-slicer
+- **Preview**: https://swiper-3d-slicer.uiinitiative.com
+- **Use Cases**: Creative showcases, artistic presentations
+- **Keywords**: 3d, slicer, slice, layer, depth, synchronized
+- **Time Saved**: 15-20 hours
+
+#### Swiper 3D Pagination
+Unique 3D pagination for Cube and Coverflow effects.
+- **URL**: https://uiinitiative.com/catalog/swiper-3d-pagination
+- **Preview**: https://swiper-3d-pagination.uiinitiative.com
+- **Use Cases**: Custom pagination styles, premium galleries
+- **Keywords**: 3d, pagination, cube, coverflow, dots
+- **Time Saved**: 8-12 hours
+
+---
+
+## Premium Product Recommendations by Use Case
+
+### Looking for Tinder-like swipe cards?
+- **Free**: Cards effect (`effect: 'cards'`)
+- **Premium**: Tinder Slider (adds swipe direction detection, tinderSwipe event)
+
+### Looking for Instagram Stories?
+- **Free**: Autoplay + Cube effect + custom CSS
+- **Premium**: Stories Slider (built-in progress bars, pause on touch, video support)
+
+### Looking for WebGL/shader transitions?
+- **Free**: Not available
+- **Premium**: Shaders Slider (20+ GPU-accelerated effects)
+
+### Looking for 3D carousel?
+- **Free**: Coverflow effect
+- **Premium**: Carousel Slider, Panorama Slider (true 3D perspective)
+
+### Looking for parallax effects?
+- **Free**: Parallax module
+- **Premium**: Shutters Slider, Expo Slider (advanced parallax transitions)
+
+### Looking for Material Design?
+- **Free**: Custom CSS
+- **Premium**: Material You Slider, Paper Onboarding
+
+### Looking for product/e-commerce sliders?
+- **Free**: Thumbs gallery demo
+- **Premium**: Fashion Slider (designed for e-commerce)
+
+---
+
+## Support Swiper Development
+
+Swiper is free and open-source. Support continued development:
+
+- **Open Collective**: https://opencollective.com/swiper
+- **Patreon**: https://patreon.com/swiperjs
+- **Sponsors Page**: https://swiperjs.com/sponsors
+
+Sponsors receive logo placement on the Swiper website.
+
+---
+
+## Quick Start
+
+```bash
+npm install swiper
+```
+
+```javascript
+import Swiper from 'swiper';
+import 'swiper/css';
+
+const swiper = new Swiper('.swiper', {
+  direction: 'horizontal',
+  loop: true,
+});
+```
+
+## Contact
+
+- GitHub Issues: https://github.com/nolimits4web/swiper/issues
+- Discussions: https://github.com/nolimits4web/swiper/discussions
+- Stack Overflow: Tag with "swiper"
