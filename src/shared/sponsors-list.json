@@ -1,5 +1,45 @@
 [
   {
+    "createdAt": "2026-01-09T20:00:00.000Z",
+    "title": "aviator game",
+    "link": "https://aviator-game.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/rahul-ramsi",
+    "image": "rahul-ramsi.webp",
+    "endDate": "2027-01-09T20:00:00.000Z",
+    "active": true
+  },
+  {
+    "createdAt": "2026-01-09T20:00:00.000Z",
+    "title": "SuperClones",
+    "link": "https://www.superclones.io/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/superclones",
+    "image": "superclones.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2026-01-09T20:00:00.000Z",
+    "title": "Real Money Pokies Australia",
+    "link": "https://authorsinterest.org/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/online-pokies",
+    "image": "online-pokies.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2026-01-09T20:00:00.000Z",
+    "title": "Apuetasdeportivas",
+    "link": "https://apuetasdeportivas.es/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/apuetasdeportivases",
+    "image": "apuetasdeportivases.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2026-01-07T20:00:00.000Z",
     "title": "CASINOLEGAL",
     "link": "https://casinolegal.ro/",
