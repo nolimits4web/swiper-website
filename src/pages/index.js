@@ -34,6 +34,11 @@ const libs = [
     image: 'webcomponents.svg',
     link: '/element',
   },
+  {
+    title: 'Model Context Protocol',
+    image: 'mcp.svg',
+    link: '/swiper-mcp',
+  },
 ];
 
 const extraLibs = [
@@ -149,11 +154,11 @@ export default function Home(props) {
           {libs.map(({ title, image, link }) => (
             <Link
               key={title}
-              href="/swiper-api"
-              className="xs:w-48 w-full h-36 sm:h-48 bg-surface-2 !text-on-surface !no-underline rounded-3xl relative group text-sm sm:text-base"
+              href={link}
+              className="xs:w-40 w-full h-36 sm:h-40 bg-surface-2 !text-on-surface !no-underline rounded-3xl relative group text-sm sm:text-base"
             >
               <div className="absolute inset-0 bg-white/10 rounded-3xl opacity-0 group-hover:opacity-100 duration-200 group-active:opacity-50 pointer-events-none" />
-              <div className="flex flex-col gap-4 md:gap-8 p-4 md:p-8 items-center justify-center group-active:scale-90 group-active:opacity-75 duration-200 h-full">
+              <div className="flex flex-col gap-4 p-4 items-center justify-center group-active:scale-90 group-active:opacity-75 duration-200 h-full">
                 <img
                   src={`/images/libs/${image}`}
                   width="140"
@@ -169,7 +174,7 @@ export default function Home(props) {
           ))}
           <Link
             href="https://studio.swiperjs.com"
-            className="xs:w-48 w-full h-36 sm:h-48 bg-surface-2 !text-on-surface !no-underline rounded-3xl relative group text-sm sm:text-base"
+            className="xs:w-40 w-full h-36 sm:h-40 bg-surface-2 !text-on-surface !no-underline rounded-3xl relative group text-sm sm:text-base"
           >
             <div className="absolute inset-0 bg-white/10 rounded-3xl opacity-0 group-hover:opacity-100 duration-200 group-active:opacity-50 pointer-events-none" />
             <div className="flex flex-col gap-4 md:gap-8 p-4 md:p-8 items-center justify-center group-active:scale-90 group-active:opacity-75 duration-200 h-full">
