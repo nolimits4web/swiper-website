@@ -246,15 +246,11 @@ export const Nav = ({ withSidebar = false }) => {
               <Dropdown opened={premiumNavOpened}>
                 <DropdownLink
                   onClick={() => setPremiumNavOpened(false)}
-                  href="https://paneflow.com"
-                  target="_blank"
+                  href="/premium-guide"
                 >
-                  <img
-                    src="/images/projects/paneflow.svg"
-                    className="mr-2 h-4 w-4"
-                  />
-                  <span>PaneFlow</span>
+                  Premium Guide
                 </DropdownLink>
+                <DropdownDivider />
                 <DropdownLink
                   onClick={() => setPremiumNavOpened(false)}
                   href="https://uiinitiative.com"
@@ -277,6 +273,17 @@ export const Nav = ({ withSidebar = false }) => {
                     className="mr-2 h-4 w-4"
                   />
                   <span>Swiper Studio</span>
+                </DropdownLink>
+                <DropdownLink
+                  onClick={() => setPremiumNavOpened(false)}
+                  href="https://paneflow.com"
+                  target="_blank"
+                >
+                  <img
+                    src="/images/projects/paneflow.svg"
+                    className="mr-2 h-4 w-4"
+                  />
+                  <span>PaneFlow</span>
                 </DropdownLink>
               </Dropdown>
             </li>

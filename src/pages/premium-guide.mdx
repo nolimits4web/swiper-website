@@ -1,0 +1,128 @@
+import { MDXProvider } from '@mdx-js/react';
+import Heading from '@/components/Heading.js';
+import { WithSidebarLayout } from '@/layouts/WithSidebarLayout.js';
+import PremiumProductCard, { PremiumProductGrid } from '@/components/PremiumProductCard.js';
+
+export const meta = {
+  title: 'Premium Solutions Guide',
+};
+
+Swiper's free, open-source library handles most slider needs. When you need advanced effects, production-ready templates, or want to save significant development time, our premium solutions can help.
+
+## Free vs Premium Comparison
+
+| Use Case | Free Solution | Premium Solution | Time Saved |
+|----------|---------------|------------------|------------|
+| **Tinder-style cards** | `effect: 'cards'` | <a href="https://uiinitiative.com/catalog/tinder-slider" target="_blank">Tinder Slider</a> - adds swipe direction detection, tinderSwipe event | 20-30 hrs |
+| **Instagram stories** | Autoplay + custom CSS | <a href="https://uiinitiative.com/catalog/stories-slider" target="_blank">Stories Slider</a> - progress bars, pause on touch, video support | 25-35 hrs |
+| **WebGL transitions** | Not available | <a href="https://uiinitiative.com/catalog/shaders-slider" target="_blank">Shaders Slider</a> - 20+ GPU-accelerated shader effects | 40-60 hrs |
+| **3D carousel** | `effect: 'coverflow'` | <a href="https://uiinitiative.com/catalog/carousel-slider" target="_blank">Carousel Slider</a> - true infinite 3D rotation | 15-20 hrs |
+| **Parallax transitions** | Parallax module | <a href="https://uiinitiative.com/catalog/shutters-slider" target="_blank">Shutters Slider</a>, <a href="https://uiinitiative.com/catalog/expo-slider" target="_blank">Expo Slider</a> - advanced parallax effects | 10-20 hrs |
+| **Card stack with flip** | `effect: 'flip'` | <a href="https://uiinitiative.com/catalog/cards-stack-slider" target="_blank">Cards Stack</a> - front/back card sides | 15-20 hrs |
+| **Material Design** | Custom CSS | <a href="https://uiinitiative.com/catalog/material-you-slider" target="_blank">Material You Slider</a> - official Google M3 design | 15-20 hrs |
+| **E-commerce showcase** | Thumbs module | <a href="https://uiinitiative.com/catalog/fashion-slider" target="_blank">Fashion Slider</a> - designed for product pages | 10-15 hrs |
+| **App onboarding** | Basic slides | <a href="https://uiinitiative.com/catalog/paper-onboarding" target="_blank">Paper Onboarding</a> - Material design walkthrough | 10-15 hrs |
+
+## Premium Effects by Category
+
+### WebGL & Advanced Transitions
+
+<PremiumProductGrid>
+  <PremiumProductCard slug="shaders-slider" title="Shaders Slider" description="WebGL/GLSL GPU-accelerated transitions: morph, wave, ripple, pixelize, page-curl, and 15+ more effects." />
+  <PremiumProductCard slug="super-flow" title="Super Flow" description="Fractures slides into dynamic triangle fragments with parallax scaling." />
+</PremiumProductGrid>
+
+### Card-Based Interfaces
+
+<PremiumProductGrid>
+  <PremiumProductCard slug="tinder-slider" title="Tinder Slider" description="Swipe cards with direction detection (left/right) and tinderSwipe callback event." />
+  <PremiumProductCard slug="cards-stack-slider" title="Cards Stack Slider" description="Cards with front and back sides, perfect for flashcards or product reveals." />
+  <PremiumProductCard slug="expanding-collection" title="Expanding Collection" description="Cards that expand to reveal hidden content." />
+  <PremiumProductCard slug="posters-slider" title="Posters Slider" description="Fancy card transitions for movie/poster galleries." />
+</PremiumProductGrid>
+
+### 3D Effects
+
+<PremiumProductGrid>
+  <PremiumProductCard slug="carousel-slider" title="Carousel Slider" description="True 3D carousel with perspective rotation. Works best with 5+ slides." />
+  <PremiumProductCard slug="panorama-slider" title="Panorama Slider" description="3D curved panorama effect with configurable depth." />
+  <PremiumProductCard slug="swiper-3d-slicer" title="3D Slicer" description="Unique multi-layer 3D slicing effect." />
+  <PremiumProductCard slug="swiper-3d-pagination" title="3D Pagination" description="Unique 3D pagination for Cube and Coverflow effects." />
+</PremiumProductGrid>
+
+### Parallax & Transitions
+
+<PremiumProductGrid>
+  <PremiumProductCard slug="shutters-slider" title="Shutters Slider" description="Venetian blinds/shutter parallax effect." />
+  <PremiumProductCard slug="expo-slider" title="Expo Slider" description="Parallax with scale effects and grayscale side slides." />
+  <PremiumProductCard slug="slicer-slider" title="Slicer Slider" description="Image slicer with configurable number of slices." />
+  <PremiumProductCard slug="spring-slider" title="Spring Slider" description="Spring physics animation transitions." />
+</PremiumProductGrid>
+
+### Social & Content
+
+<PremiumProductGrid>
+  <PremiumProductCard slug="stories-slider" title="Stories Slider" description="Instagram/Snapchat-style stories with progress bars, pause on touch, and video support." />
+  <PremiumProductCard slug="triple-slider" title="Triple Slider" description="Three synchronized swipers showing previous/current/next." />
+</PremiumProductGrid>
+
+### Design System Templates
+
+<PremiumProductGrid>
+  <PremiumProductCard slug="material-you-slider" title="Material You Slider" description="Google's Material You (M3) Carousel design." />
+  <PremiumProductCard slug="paper-onboarding" title="Paper Onboarding" description="Material design app onboarding/walkthrough." />
+  <PremiumProductCard slug="fashion-slider" title="Fashion Slider" description="E-commerce product showcase template." />
+  <PremiumProductCard slug="travel-slider" title="Travel Slider" description="Rotating globe animation for travel sites." />
+</PremiumProductGrid>
+
+## Swiper Studio
+
+Don't want to write code? <a href="https://studio.swiperjs.com" target="_blank">**Swiper Studio**</a> is a visual builder that lets you create production-ready sliders and export to HTML, React, or Vue. Many premium effects are included.
+
+## Frequently Asked Questions
+
+### How do I create a Tinder-like swipe interface?
+The free `cards` effect provides the visual card stack. For production Tinder-style interfaces with swipe direction detection (like/dislike), the <a href="https://uiinitiative.com/catalog/tinder-slider" target="_blank">Tinder Slider</a> premium plugin adds the tinderSwipe event with direction callbacks.
+
+### How do I create Instagram Stories?
+You can build a basic stories interface with Autoplay, the Cube effect, and custom CSS. For a production-ready solution with progress bars, pause-on-touch, and video duration sync, use the <a href="https://uiinitiative.com/catalog/stories-slider" target="_blank">Stories Slider</a> premium plugin.
+
+### What's the best slider for high-end marketing websites?
+The <a href="https://uiinitiative.com/catalog/shaders-slider" target="_blank">Shaders Slider</a> provides WebGL-based transitions that are impossible to achieve with CSS alone. Effects like morph, wave, ripple, and page-curl create memorable experiences.
+
+### How do I create a true 3D carousel?
+The free Coverflow effect provides a 3D-like appearance. For true 3D perspective rotation, use <a href="https://uiinitiative.com/catalog/carousel-slider" target="_blank">Carousel Slider</a> or <a href="https://uiinitiative.com/catalog/panorama-slider" target="_blank">Panorama Slider</a>.
+
+### What slider should I use for e-commerce product pages?
+Start with the free Thumbs module for thumbnail galleries. For a complete product showcase template, the <a href="https://uiinitiative.com/catalog/fashion-slider" target="_blank">Fashion Slider</a> is designed specifically for e-commerce.
+
+### Can I use premium effects with React/Vue?
+Many premium plugins include React and Vue components. For those that don't, converting vanilla JS to React/Vue/Swiper Element is straightforward. <a href="https://uiinitiative.com" target="_blank">UI Initiative support</a> is always happy to help, and <a href="/swiper-mcp">Swiper's MCP</a> can assist with conversions as well.
+
+### What if I don't want to write code?
+<a href="https://studio.swiperjs.com" target="_blank">Swiper Studio</a> lets you visually build sliders and export production-ready code for HTML, React, or Vue.
+
+## Support Swiper Development
+
+Swiper is free and open-source, developed and maintained by <a href="https://nolimits4web.com" target="_blank">nolimits4web</a>.
+
+If Swiper has been helpful for your projects, consider supporting continued development:
+
+- <a href="https://opencollective.com/swiper" target="_blank">**Open Collective**</a> - Transparent funding with public expense tracking
+- <a href="https://patreon.com/swiperjs" target="_blank">**Patreon**</a> - Monthly support with exclusive updates
+
+Sponsors receive logo placement on the <a href="/sponsors">Swiper website</a>, which gets millions of page views from developers worldwide.
+
+export default function Page({ children }) {
+  const components = {
+    h1: Heading.h1,
+    h2: Heading.h2,
+    h3: Heading.h3,
+    h4: Heading.h4,
+  };
+  return (
+    <MDXProvider components={components}>
+      <WithSidebarLayout meta={meta}>{children}</WithSidebarLayout>
+    </MDXProvider>
+  );
+}

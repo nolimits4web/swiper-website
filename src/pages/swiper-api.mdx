@@ -92,6 +92,8 @@ import { ZoomOptions } from '@/components/api/ZoomOptions';
 import { ZoomEvents } from '@/components/api/ZoomEvents';
 import { ZoomMethods } from '@/components/api/ZoomMethods';
 
+import PremiumCallout from '@/components/PremiumCallout';
+
 {/* prettier-ignore */}
 <div className="important-note space-y-4">
   <div>If you are upgrading from Swiper 9 to Swiper 10, check out{' '} <a href="/migration-guide-v10">Migration Guide to Swiper 10</a></div>
@@ -362,6 +364,11 @@ Swiper comes with a bunch of useful events you can listen. Events can be assigne
 
 <AutoplayEvents />
 
+<PremiumCallout products={[
+  { title: 'Stories Slider', url: 'https://uiinitiative.com/catalog/stories-slider', description: 'Instagram-style stories with progress bars' },
+  { title: 'Super Flow', url: 'https://uiinitiative.com/catalog/super-flow', description: 'Dynamic triangle fragment effect' },
+]} />
+
 <ApiDivider />
 
 <ModuleTitle module="freemode" id="free-mode" title="Free Mode" />
@@ -444,6 +451,11 @@ To enable parallax effects you need to init Swiper with passed `parallax:true` p
 
 <ParallaxOptions />
 
+<PremiumCallout products={[
+  { title: 'Super Flow', url: 'https://uiinitiative.com/catalog/super-flow', description: 'Parallax triangle fragments' },
+  { title: 'Shutters Slider', url: 'https://uiinitiative.com/catalog/shutters-slider', description: 'Venetian blinds parallax effect' },
+]} />
+
 <ApiDivider />
 
 <ModuleTitle module="lazy" id="lazy-loading" title="Lazy Loading" />
@@ -512,6 +524,11 @@ Be sure to have the `effect` param set to `'coverflow'` in order for this to wor
 
 <CoverflowEffectOptions />
 
+<PremiumCallout products={[
+  { title: 'Carousel Slider', url: 'https://uiinitiative.com/catalog/carousel-slider', description: 'True 3D infinite carousel' },
+  { title: 'Super Flow', url: 'https://uiinitiative.com/catalog/super-flow', description: 'Dynamic triangle fragments' },
+]} />
+
 <ApiDivider />
 
 <ModuleTitle module="flip" id="flip-effect" title="Flip Effect" />
@@ -542,6 +559,11 @@ Be sure to have the `effect` param set to `'cards'` in order for this to work.
 
 <CardsEffectOptions />
 
+<PremiumCallout products={[
+  { title: 'Tinder Slider', url: 'https://uiinitiative.com/catalog/tinder-slider', description: 'Swipe direction detection + callbacks' },
+  { title: 'Cards Stack Slider', url: 'https://uiinitiative.com/catalog/cards-stack-slider', description: 'Front/back card sides' },
+]} />
+
 <ApiDivider />
 
 <ModuleTitle module="creative" id="creative-effect" title="Creative Effect" />
@@ -551,6 +573,12 @@ Be sure to have the `effect` param set to `'creative'` in order for this to work
 #### Creative Effect Parameters
 
 <CreativeEffectOptions />
+
+<PremiumCallout products={[
+  { title: 'Shaders Slider', url: 'https://uiinitiative.com/catalog/shaders-slider', description: '20+ WebGL shader transitions' },
+  { title: 'Super Flow', url: 'https://uiinitiative.com/catalog/super-flow', description: 'Dynamic triangle fragments' },
+  { title: 'Material You Slider', url: 'https://uiinitiative.com/catalog/material-you-slider', description: 'Google Material You design' },
+]} />
 
 <ApiDivider />
 

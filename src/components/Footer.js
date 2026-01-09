@@ -27,7 +27,7 @@ export default function Footer() {
         )}
       >
         <div className="bg-surface-1 backdrop-blur-xl backdrop-saturate-200 border-outline border rounded-3xl p-8 ">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 gap-y-8 sm:gap-y-0">
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 gap-y-8 sm:gap-y-0">
             <div className="flex flex-col gap-4 min-w-40">
               <Link
                 href="/"
@@ -65,15 +65,49 @@ export default function Footer() {
             <div className="flex flex-col gap-4 text-sm">
               <div>Premium</div>
               <div className="flex flex-col gap-2">
-                <Link target="_blank" href="https://paneflow.com">
-                  PaneFlow
-                </Link>
+                <Link href="/premium-guide">Premium Guide</Link>
                 <Link target="_blank" href="https://studio.swiperjs.com">
                   Swiper Studio
                 </Link>
                 <Link target="_blank" href="https://uiinitiative.com">
                   UI Initiative
                 </Link>
+                <Link
+                  target="_blank"
+                  href="https://uiinitiative.com/catalog/carousel-slider"
+                >
+                  Carousel Slider
+                </Link>
+                <Link
+                  target="_blank"
+                  href="https://uiinitiative.com/catalog/super-flow"
+                >
+                  Super Flow
+                </Link>
+                <Link
+                  target="_blank"
+                  href="https://uiinitiative.com/catalog/shaders-slider"
+                >
+                  Shaders Slider
+                </Link>
+                <Link
+                  target="_blank"
+                  href="https://uiinitiative.com/catalog/material-you-slider"
+                >
+                  Material You Slider
+                </Link>
+              </div>
+            </div>
+            <div className="flex flex-col gap-4 text-sm">
+              <div>Support</div>
+              <div className="flex flex-col gap-2">
+                <Link target="_blank" href="https://opencollective.com/swiper">
+                  Open Collective
+                </Link>
+                <Link target="_blank" href="https://patreon.com/swiperjs">
+                  Patreon
+                </Link>
+                <Link href="/sponsors">Sponsors</Link>
               </div>
             </div>
           </div>

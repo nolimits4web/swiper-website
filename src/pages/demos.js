@@ -6,6 +6,7 @@ import demos from '@/demos.json';
 import uiinitiativeDemos from '@/uiinitiative-demos.json';
 import { openCodeSandbox } from '@/shared/codesandbox';
 import { Button } from '@/components/Button';
+import PremiumUpsell from '@/components/PremiumUpsell';
 
 let tableOfContents;
 
@@ -163,6 +164,7 @@ export default function DemosPage() {
               className="block h-96 w-full overflow-hidden rounded-xl bg-surface-1"
             />
           </div>
+          <PremiumUpsell slug={slug} />
         </React.Fragment>
       ))}
     </WithSidebarLayout>
