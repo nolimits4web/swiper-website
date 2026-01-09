@@ -29,7 +29,7 @@ The Swiper MCP (Model Context Protocol) Server provides programmatic access to S
 
 ## Available Tools
 
-The Swiper MCP server provides 7 tools for interacting with Swiper documentation:
+The Swiper MCP server provides 8 tools for interacting with Swiper documentation:
 
 ### 1. `search-api`
 
@@ -197,6 +197,39 @@ Get complete demo code for a specific Swiper demo in your preferred framework.
   }
 }
 ```
+
+### 8. `get-premium-recommendations`
+
+Get premium Swiper plugin recommendations based on effect, module, keywords, or use case.
+
+**Parameters:**
+
+- `effect` (string, optional): Swiper effect name (e.g., `"cards"`, `"coverflow"`, `"cube"`)
+- `module` (string, optional): Swiper module name (e.g., `"Parallax"`, `"Autoplay"`)
+- `keywords` (string, optional): Keywords to search for (e.g., `"3d"`, `"instagram"`, `"tinder"`)
+- `useCase` (string, optional): Use case description (e.g., `"e-commerce"`, `"dating app"`)
+
+**Example:**
+
+```json
+{
+  "name": "get-premium-recommendations",
+  "arguments": {
+    "effect": "cards"
+  }
+}
+```
+
+**Returns:** Array of premium product recommendations including:
+
+- `title`: Product name
+- `description`: Product description
+- `url`: Link to the product page
+- `preview`: Live preview URL
+- `useCases`: Array of suggested use cases
+- `features`: Key features of the product
+- `timeSaved`: Estimated development time saved
+- `availableInSwiperStudio`: Whether it's available in Swiper Studio
 
 ## Setup Instructions
 
@@ -527,6 +560,11 @@ The MCP server implementation is part of the Swiper website repository. To contr
 3. Include detailed information about your use case or the issue you encountered
 
 ## Changelog
+
+### Version 1.1.0
+
+- Added `get-premium-recommendations` tool for premium plugin discovery
+- Premium alternatives now included in `get-option` and `get-demo` responses for relevant effects
 
 ### Version 1.0.0
 

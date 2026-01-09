@@ -7,6 +7,7 @@ import { getEvent } from '../tools/get-event';
 import { getDemo } from '../tools/get-demo';
 import { listDemos } from '../tools/list-demos';
 import { getModuleOptions } from '../tools/get-module-options';
+import { getPremiumRecommendations } from '../tools/get-premium-recommendations';
 
 export function handleToolsList(): Tool[] {
   return getTools();
@@ -52,6 +53,16 @@ export async function handleToolsCall(
 
     case 'get-module-options':
       return await getModuleOptions(args as { module: string });
+
+    case 'get-premium-recommendations':
+      return await getPremiumRecommendations(
+        args as {
+          effect?: string;
+          module?: string;
+          keywords?: string;
+          useCase?: string;
+        }
+      );
 
     default:
       return {

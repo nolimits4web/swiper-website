@@ -1,4 +1,5 @@
 import { getDemoFile, findDemoBySlug } from '../utils/data-loader';
+import { getPremiumProductsByDemo } from '../data/premium-products';
 
 interface GetDemoParams {
   slug: string;
@@ -80,13 +81,42 @@ export async function getDemo(
     }
 
     // Fetch the demo file
-    const demoFiles = await getDemoFile(demo.folder, framework, assets, baseUrl);
+    const demoFiles = await getDemoFile(
+      demo.folder,
+      framework,
+      assets,
+      baseUrl
+    );
+
+    // Get premium alternatives for this demo
+    const premiumAlternatives = getPremiumProductsByDemo(slug);
+    const premiumRecommendations =
+      premiumAlternatives.length > 0
+        ? premiumAlternatives.map((p) => ({
+            title: p.title,
+            description: p.description,
+            url: p.url,
+            preview: p.preview,
+            timeSaved: p.timeSaved,
+          }))
+        : null;
+
+    const result = {
+      ...demoFiles,
+      ...(premiumRecommendations && {
+        premium_alternatives: {
+          message:
+            'Looking for advanced features? Check out these premium alternatives:',
+          products: premiumRecommendations,
+        },
+      }),
+    };
 
     return {
       content: [
         {
           type: 'text',
-          text: JSON.stringify(demoFiles, null, 2),
+          text: JSON.stringify(result, null, 2),
         },
       ],
     };
