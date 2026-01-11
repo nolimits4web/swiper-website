@@ -1,6 +1,16 @@
 [
   {
     "createdAt": "2026-01-09T20:00:00.000Z",
+    "title": "Humanize AI",
+    "link": "https://www.humanizeai.io/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/humanize-ai",
+    "image": "humanize-ai.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2026-01-09T20:00:00.000Z",
     "title": "aviator game",
     "link": "https://aviator-game.com/",
     "plan": "Sponsor",
@@ -441,16 +451,6 @@
   },
   {
     "createdAt": "2025-11-15T20:00:00.000Z",
-    "title": "Casino Zonder Registratie",
-    "link": "https://nl.trustpilot.com/review/casinozonderregistratie.vip",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/casino-zonder-registratie-nl",
-    "image": "casino-zonder-registratie-nl.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2025-11-15T20:00:00.000Z",
     "title": "Buy Real YouTube Subscribers",
     "link": "https://durhampost.ca/buy-youtube-subscribers",
     "plan": "Sponsor",
@@ -581,11 +581,11 @@
   },
   {
     "createdAt": "2025-10-01T20:00:00.000Z",
-    "title": "SMM Panel",
-    "link": "https://www.reddit.com/r/InstagramEmpire/comments/1p2x390/whats_the_best_smm_panel_all_around/",
+    "title": "buy instagram followers",
+    "link": "https://www.reddit.com/r/InstagramEmpire/comments/1o8v7zx/whats_the_best_site_to_buy_instagram_followers/",
     "plan": "Sponsor",
-    "ref": "https://opencollective.com/smm-panel-20",
-    "image": "smm-panel19.png",
+    "ref": "https://opencollective.com/buy-instagram-followers4",
+    "image": "buy-instagram-followers4.png",
     "endDate": "",
     "active": true
   },
