@@ -88,8 +88,8 @@ export const Nav = ({ withSidebar = false }) => {
         )}
       >
         {/* <BlackFridayRibbon /> */}
-        <NewYearRibbon />
-        {/* <PaneFlowBanner /> */}
+        {/* <NewYearRibbon /> */}
+        <PaneFlowBanner />
         {/* <TogglesBanner /> */}
       </div>
 
