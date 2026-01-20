@@ -29,14 +29,14 @@ const PlanSection = (props) => {
               rel="noopener"
               target="_blank"
             >
-              {image && (
+              {image ? (
                 <img
                   className="h-auto max-h-full w-auto max-w-full "
                   src={`/images/sponsors/${image}`}
                   alt={title}
                   loading="lazy"
                 />
-              )}
+              ) : title.slice(0, 1)}
             </a>
           );
         })}
