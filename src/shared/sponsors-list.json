@@ -1,6 +1,16 @@
 [
   {
     "createdAt": "2026-01-29T20:00:00.000Z",
+    "title": "Mosaic VPN",
+    "link": "https://mosaicvpn.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/mosaic-vpn",
+    "image": "mosaic-vpn.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2026-01-29T20:00:00.000Z",
     "title": "Fun88 Vietnam",
     "link": "https://www.fun88vnu.com/vn/",
     "plan": "Sponsor",
