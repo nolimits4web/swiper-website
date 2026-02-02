@@ -1,5 +1,35 @@
 [
   {
+    "createdAt": "2026-02-02T20:00:00.000Z",
+    "title": "Evernomic",
+    "link": "https://evernomic.com/",
+    "plan": "Silver Sponsor",
+    "ref": "",
+    "image": "evernomic.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2026-02-02T20:00:00.000Z",
+    "title": "Casinos sans vérification",
+    "link": "https://casinosansverification.aroots.org/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/casinos-sans-verification",
+    "image": "casinos-sans-verification.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2026-02-02T20:00:00.000Z",
+    "title": "buy facebook followers",
+    "link": "https://www.reddit.com/r/FacebookBusiness/comments/1q2ulpg/whats_the_best_site_to_buy_facebook_followers_any/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/buy-facebook-followers1",
+    "image": "",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2026-01-29T20:00:00.000Z",
     "title": "Mosaic VPN For Chrome",
     "link": "https://mosaicvpn.com/vpn-apps/download-vpn-for-chrome",
@@ -742,10 +772,10 @@
   {
     "createdAt": "2025-11-30T20:00:00.000Z",
     "title": "Buy Google Reviews",
-    "link": "https://www.reddit.com/r/growmybusiness/comments/1pzohud/what_is_the_best_site_to_buy_google_reviews/",
+    "link": "https://www.reddit.com/r/Entrepreneurs/comments/1qhwt7y/whats_the_best_site_to_buy_google_reviews_in_2026/",
     "plan": "Sponsor",
     "ref": "https://opencollective.com/buy-real-google-reviews",
-    "image": "buy-real-google-reviews.png",
+    "image": "",
     "endDate": "",
     "active": true
   },
