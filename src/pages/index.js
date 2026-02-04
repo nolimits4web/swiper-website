@@ -52,6 +52,17 @@ const extraLibs = [
   'wix.svg',
   'wordpress.svg',
 ];
+const extraLibCorrectNames = [
+  'Angular',
+  'Ember',
+  'NextJS',
+  'Shopify',
+  'SolidJS',
+  'Svelte',
+  'TypeScript',
+  'Wix',
+  'Wordpress',
+];
 
 export default function Home(props) {
   const { posts = [] } = props;
@@ -197,17 +208,22 @@ export default function Home(props) {
           </Link>
         </div>
         <div className="flex items-center justify-center gap-8 my-12 flex-wrap">
-          {extraLibs.map((image) => (
-            <img
-              src={`/images/libs/${image}`}
-              width="140"
-              height="140"
-              alt={`${image.split('.')[0]} logo`}
-              title={image.split('.')[0]}
-              loading="lazy"
-              className="w-12 h-12 sm:w-16 sm:h-16 object-contain shrink-0"
-            />
-          ))}
+          {extraLibs.map((image) => {
+            const title = extraLibCorrectNames.find(
+              (lib) => lib.toLowerCase() === image.split('.')[0].toLowerCase()
+            );
+            return (
+              <img
+                src={`/images/libs/${image}`}
+                width="140"
+                height="140"
+                alt={`${image.split('.')[0]} logo`}
+                title={title}
+                loading="lazy"
+                className="w-12 h-12 sm:w-16 sm:h-16 object-contain shrink-0"
+              />
+            );
+          })}
         </div>
       </HomeContainer>
 
