@@ -191,7 +191,7 @@ export default function Footer() {
                 </a>
                 <a
                   title="Fisper - Local AI Voice Dictation for macOS"
-                  href="https://startpagehq.com"
+                  href="https://fisper.app"
                   target="_blank"
                 >
                   <img

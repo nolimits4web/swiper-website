@@ -30,7 +30,7 @@ export default function HomeProjects() {
           logo: 'uiinitiative.svg',
         },
         {
-          url: 'https://fisper.com',
+          url: 'https://fisper.app',
           title: 'Fisper',
           description: 'Local AI Voice Dictation for macOS',
           logo: 'fisper.png',
