@@ -111,20 +111,97 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="text-on-surface-dark text-sm mt-8">
+          <div className="text-on-surface-dark text-sm mt-8 flex flex-col gap-2">
             <div>
               All product names, logos and brands are property of their
               respective owners.
             </div>
-            <div className="mt-1">
-              Copyright © {new Date().getFullYear()} Swiper by{' '}
-              <a href="https://nolimits4web.com" target="_blank">
-                <img
-                  src="/images/n4w-logo.svg"
-                  alt="nolimits4web"
-                  className="inline-block h-6 w-6"
-                />
-              </a>
+            <div className="flex flex-col gap-2 sm:flex-row sm:justify-between sm:items-center">
+              <div>
+                Copyright © {new Date().getFullYear()} Swiper by{' '}
+                <a href="https://nolimits4web.com" target="_blank">
+                  <img
+                    loading="lazy"
+                    src="/images/n4w-logo.svg"
+                    alt="nolimits4web"
+                    className="inline-block size-6"
+                  />
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <a
+                  title="PaneFlow - Create Stunning Slideshows Visually. No Code Required"
+                  href="https://paneflow.com"
+                  target="_blank"
+                >
+                  <img
+                    loading="lazy"
+                    src="/images/projects/paneflow.svg"
+                    alt="PaneFlow - Create Stunning Slideshows Visually. No Code Required"
+                    className="inline-block size-6"
+                  />
+                </a>
+                <a
+                  title="t0ggles - Your ultimate multiple projects management tool"
+                  href="https://t0ggles.com"
+                  target="_blank"
+                >
+                  <img
+                    loading="lazy"
+                    src="/images/projects/t0ggles.svg"
+                    alt="t0ggles - Your ultimate multiple projects management tool"
+                    className="inline-block size-6"
+                  />
+                </a>
+                <a
+                  title="Swiper Studio - Create Beautiful And Responsive Sliders Without Writing Any Code"
+                  href="https://studio.swiperjs.com"
+                  target="_blank"
+                >
+                  <img
+                    loading="lazy"
+                    src="/images/projects/swiper-studio-logo.svg"
+                    alt="Swiper Studio - Create Beautiful And Responsive Sliders Without Writing Any Code"
+                    className="inline-block size-6"
+                  />
+                </a>
+                <a
+                  title="UI Initiative - Premium templates & plugins for Swiper and Framework7"
+                  href="https://uiinitiative.com"
+                  target="_blank"
+                >
+                  <img
+                    loading="lazy"
+                    src="/images/projects/uiinitiative.svg"
+                    alt="UI Initiative - Premium templates & plugins for Swiper and Framework7"
+                    className="inline-block size-6"
+                  />
+                </a>
+                <a
+                  title="Start Page HQ"
+                  href="https://startpagehq.com"
+                  target="_blank"
+                >
+                  <img
+                    loading="lazy"
+                    src="/images/projects/startpagehq.svg"
+                    alt="Start Page HQ"
+                    className="inline-block size-6"
+                  />
+                </a>
+                <a
+                  title="Fisper - Local AI Voice Dictation for macOS"
+                  href="https://startpagehq.com"
+                  target="_blank"
+                >
+                  <img
+                    loading="lazy"
+                    src="/images/projects/fisper.png"
+                    alt="Fisper - Local AI Voice Dictation for macOS"
+                    className="inline-block size-6"
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </div>

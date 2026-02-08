@@ -30,10 +30,10 @@ export default function HomeProjects() {
           logo: 'uiinitiative.svg',
         },
         {
-          url: 'https://startpagehq.com',
-          title: 'Start Page HQ',
-          description: 'Coming Soon',
-          logo: 'startpagehq.svg',
+          url: 'https://fisper.com',
+          title: 'Fisper',
+          description: 'Local AI Voice Dictation for macOS',
+          logo: 'fisper.png',
         },
         {
           url: 'https://framework7.io',
