@@ -1,5 +1,15 @@
 [
   {
+    "createdAt": "2026-02-08T20:00:00.000Z",
+    "title": "Comparyzon",
+    "link": "https://comparyzon.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/comparyzon",
+    "image": "comparyzon.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2026-02-07T20:00:00.000Z",
     "title": "rolex first copy",
     "link": "https://rolexfirstcopywatches.com/",
