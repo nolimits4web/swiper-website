@@ -1,5 +1,35 @@
 [
   {
+    "createdAt": "2026-02-13T20:00:00.000Z",
+    "title": "Super Humanizer",
+    "link": "https://superhumanizer.ai/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/super-humanizer",
+    "image": "super-humanizer.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2026-02-13T20:00:00.000Z",
+    "title": "Fun88 Vietnam EN",
+    "link": "https://www.fun88vnplay.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/fun88-vietnam-en",
+    "image": "fun88-vietnam-en.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2026-02-13T20:00:00.000Z",
+    "title": "FUN88 Thailand EN",
+    "link": "https://www.fun88asiath.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/fun88-thailand-en",
+    "image": "fun88-thailand-en.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2026-02-12T20:00:00.000Z",
     "title": "Star Van Lines Movers",
     "link": "https://starvanlinesmovers.com/",
