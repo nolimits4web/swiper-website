@@ -1,5 +1,25 @@
 [
   {
+    "createdAt": "2026-02-16T20:00:00.000Z",
+    "title": "Ok win",
+    "link": "https://okwingame.io/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/ok-win-login",
+    "image": "ok-win-login.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2026-02-16T20:00:00.000Z",
+    "title": "LorkaAI",
+    "link": "https://www.lorka.ai/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/lorkaai",
+    "image": "lorkaai.svg",
+    "endDate": "2027-02-16T20:00:00.000Z",
+    "active": true
+  },
+  {
     "createdAt": "2026-02-13T20:00:00.000Z",
     "title": "Super Humanizer",
     "link": "https://superhumanizer.ai/",
