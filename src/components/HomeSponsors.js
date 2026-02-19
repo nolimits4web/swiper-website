@@ -26,7 +26,7 @@ const PlanSection = (props) => {
               href={link}
               key={title + index}
               title={title}
-              rel="noopener"
+              rel="sponsored"
               target="_blank"
             >
               {image ? (
@@ -36,7 +36,9 @@ const PlanSection = (props) => {
                   alt={title}
                   loading="lazy"
                 />
-              ) : title.slice(0, 1)}
+              ) : (
+                title.slice(0, 1)
+              )}
             </a>
           );
         })}
@@ -46,7 +48,7 @@ const PlanSection = (props) => {
               props.plan === 'Sponsor' ? 'text-[6px] leading-none' : 'text-xs'
             }`}
             href="https://opencollective.com/swiper"
-            rel="noopener"
+            rel="sponsored"
             target="_blank"
           >
             Become {props.plan}
