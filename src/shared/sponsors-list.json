@@ -1,6 +1,16 @@
 [
   {
     "createdAt": "2026-02-20T20:00:00.000Z",
+    "title": "Beton",
+    "link": "https://beton.ua/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/beton",
+    "image": "beton.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2026-02-20T20:00:00.000Z",
     "title": "Write My Essay",
     "link": "https://www.reddit.com/r/CcnaBooks/comments/1lx2mxc/best_sites_to_pay_someone_to_write_my_essay_my/",
     "plan": "Sponsor",
