@@ -1,5 +1,35 @@
 [
   {
+    "createdAt": "2026-03-19T20:00:00.000Z",
+    "title": "Buy Fans",
+    "link": "https://buy.fans/",
+    "plan": "Sponsor",
+    "ref": "https://www.patreon.com/profile/creators?u=207027479",
+    "image": "buyfans-pp.png",
+    "endDate": "2027-03-19T20:00:00.000Z",
+    "active": true
+  },
+  {
+    "createdAt": "2026-03-19T20:00:00.000Z",
+    "title": "Mafia Casino",
+    "link": "https://mafia-casino.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/mafia-casino",
+    "image": "mafia-casino.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2026-03-19T20:00:00.000Z",
+    "title": "Casinos UK",
+    "link": "https://casinos-uk.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/onlinecasinos-ebb6bb41",
+    "image": "",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2026-03-03T20:00:00.000Z",
     "title": "No Deposit Bonus Codes",
     "link": "https://openkinect.org/",
