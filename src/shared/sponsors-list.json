@@ -1,6 +1,26 @@
 [
   {
     "createdAt": "2026-03-20T20:00:00.000Z",
+    "title": "casinos online fuera de España",
+    "link": "https://www.casino.escritoscientificos.es/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/casinos-online-fuera-de-espana",
+    "image": "casinos-online-fuera-de-espana.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2026-03-20T20:00:00.000Z",
+    "title": "WestAce",
+    "link": "https://westace.site/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/westace",
+    "image": "westace.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2026-03-20T20:00:00.000Z",
     "title": "WestAce",
     "link": "https://westace.site/",
     "plan": "Sponsor",
@@ -12,10 +32,10 @@
   {
     "createdAt": "2026-03-20T20:00:00.000Z",
     "title": "BETON",
-    "link": "https://buy.fans/",
+    "link": "https://beton.ua/casino",
     "plan": "Sponsor",
     "ref": "https://opencollective.com/beton-casino",
-    "image": "beton-casino.png",
+    "image": "beton.png",
     "endDate": "",
     "active": true
   },
@@ -106,16 +126,6 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/socialdawn",
     "image": "socialdawn.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2026-02-20T20:00:00.000Z",
-    "title": "Beton",
-    "link": "https://beton.ua/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/beton",
-    "image": "beton.png",
     "endDate": "",
     "active": true
   },
