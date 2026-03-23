@@ -1,6 +1,16 @@
 [
   {
-    "createdAt": "2026-03-20T20:00:00.000Z",
+    "createdAt": "2026-03-23T20:00:00.000Z",
+    "title": "French Casinos",
+    "link": "https://french-casinos.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/french-casinos",
+    "image": "french-casinos.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2026-03-30T20:00:00.000Z",
     "title": "casinos online fuera de España",
     "link": "https://www.casino.escritoscientificos.es/",
     "plan": "Sponsor",
