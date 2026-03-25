@@ -1,5 +1,35 @@
 [
   {
+    "createdAt": "2026-03-25T20:00:00.000Z",
+    "title": "Global Software Companies",
+    "link": "https://www.globalsoftwarecompanies.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/global-software-companies-gsc",
+    "image": "global-software-companies-gsc.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2026-03-25T20:00:00.000Z",
+    "title": "VanguardNGR Spain",
+    "link": "https://www.vanguardngr.com/casino/es/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/vanguardngr-spain",
+    "image": "vanguardngr-spain.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2026-03-25T20:00:00.000Z",
+    "title": "Buy Instagram Likes",
+    "link": "https://pressbanner.com/buy-instagram-likes/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/buy-instagram-likes-instant",
+    "image": "",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2026-03-23T20:00:00.000Z",
     "title": "French Casinos",
     "link": "https://french-casinos.com/",
@@ -41,7 +71,7 @@
   },
   {
     "createdAt": "2026-03-20T20:00:00.000Z",
-    "title": "BETON",
+    "title": "казино онлайн",
     "link": "https://beton.ua/casino",
     "plan": "Sponsor",
     "ref": "https://opencollective.com/beton-casino",
