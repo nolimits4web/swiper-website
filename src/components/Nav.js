@@ -2,12 +2,9 @@ import { DocSearch } from '@docsearch/react';
 import Link from 'next/link';
 import { useRef, useState, useEffect, useLayoutEffect } from 'react';
 import GithubStats from './GithubStats';
-import PaneFlowBanner from './PaneFlowBanner';
 import { useRouter } from 'next/router';
-import TogglesBanner from './TogglesBanner';
 import clsx from 'clsx';
-// import BlackFridayRibbon from './BlackFridayRibbon';
-import NewYearRibbon from './NewYearRibbon';
+import SwiperStudioBanner from './SwiperStudioBanner';
 
 const Dropdown = ({ children, opened }) => {
   return (
@@ -87,10 +84,7 @@ export const Nav = ({ withSidebar = false }) => {
             'lg:justify-start lg:pl-80 2xl:!pl-4 2xl:!justify-center'
         )}
       >
-        {/* <BlackFridayRibbon /> */}
-        {/* <NewYearRibbon /> */}
-        <PaneFlowBanner />
-        {/* <TogglesBanner /> */}
+        <SwiperStudioBanner />
       </div>
 
       <div

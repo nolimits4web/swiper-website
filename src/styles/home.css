@@ -11,17 +11,6 @@
   animation: reveal 2s forwards;
 }
 
-.home-premium {
-  .home-premium-link:first-child {
-    box-shadow: 16px -16px 16px rgba(0, 0, 0, 0.3);
-  }
-  .home-premium-link:last-child {
-    box-shadow: -16px -16px 16px rgba(0, 0, 0, 0.3);
-  }
-  .home-premium-link img:last-child {
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
-  }
-}
 .home-premium-bg {
   background-image: url('/images/home/premium-bg.jpg');
 }

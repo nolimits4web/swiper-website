@@ -178,7 +178,7 @@ export default function Footer() {
                   />
                 </a>
                 <a
-                  title="Start Page HQ"
+                  title="Start Page HQ - Your browser new tab as a personal dashboard with 50+ widgets"
                   href="https://startpagehq.com"
                   target="_blank"
                 >

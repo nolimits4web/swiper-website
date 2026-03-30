@@ -273,7 +273,7 @@ export default function Home(props) {
           <Link
             href="https://uiinitiative.com"
             target="_blank"
-            className="flex flex-col gap-4 sm:gap-8 p-4 xs:p-8 bg-black/50 border border-outline rounded-3xl items-center justify-center text-center !text-on-surface !no-underline backdrop-blur-lg text-pretty relative group home-premium-link"
+            className="flex flex-col gap-4 sm:gap-8 p-4 xs:p-8 bg-black/70 border border-outline/50 rounded-3xl items-center justify-center text-center !text-on-surface !no-underline backdrop-blur-2xl text-pretty relative group home-premium-link"
           >
             <div className="absolute inset-0 bg-white/5 rounded-3xl opacity-0 group-hover:opacity-100 duration-200 group-active:opacity-50 pointer-events-none" />
             <div className="flex items-center justify-center gap-4 xs:contents xs:text-center text-left ">
@@ -289,13 +289,13 @@ export default function Home(props) {
             <img
               src="/images/uiinitiative-banner.jpg"
               alt="UI Initiative"
-              className="rounded-xl border-2 border-outline"
+              className="rounded-lg "
             />
           </Link>
           <Link
             href="https://studio.swiperjs.com"
             target="_blank"
-            className="flex flex-col gap-4 sm:gap-8 p-4 xs:p-8 bg-black/50 border border-outline rounded-3xl items-center justify-center text-center !text-on-surface !no-underline backdrop-blur-lg text-pretty relative group home-premium-link"
+            className="flex flex-col gap-4 sm:gap-8 p-4 xs:p-8 bg-black/70 border border-outline/50 rounded-3xl items-center justify-center text-center !text-on-surface !no-underline backdrop-blur-2xl text-pretty relative group home-premium-link"
           >
             <div className="absolute inset-0 bg-white/5 rounded-3xl opacity-0 group-hover:opacity-100 duration-200 group-active:opacity-50 pointer-events-none" />
             <div className="flex items-center justify-center gap-4 xs:contents xs:text-center text-left ">
@@ -305,13 +305,13 @@ export default function Home(props) {
                 alt="Swiper Studio"
               />
               <div className="text-lg md:text-2xl leading-[1.75]">
-                Create Beautiful And Responsive Sliders Without Writing Any Code
+                Build stunning sliders and carousels — no code required
               </div>
             </div>
             <img
               src="/images/swiper-studio-banner.jpg"
               alt="Swiper Studio"
-              className="rounded-xl border-2 border-outline"
+              className="rounded-lg"
             />
           </Link>
         </div>
