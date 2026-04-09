@@ -207,6 +207,15 @@ export const Nav = ({ withSidebar = false }) => {
                 </DropdownLink>
                 <DropdownLink
                   onClick={() => setResourcesNavOpened(false)}
+                  href="/playground"
+                >
+                  Playground
+                  <span className="leading-[1] text-black font-bold bg-primary text-[11px] px-1.5 py-1 rounded-full pointer-events-none ml-auto">
+                    NEW
+                  </span>
+                </DropdownLink>
+                <DropdownLink
+                  onClick={() => setResourcesNavOpened(false)}
                   href="/plugins"
                 >
                   Plugins
@@ -225,6 +234,25 @@ export const Nav = ({ withSidebar = false }) => {
                   Sponsors
                 </DropdownLink>
               </Dropdown>
+            </li>
+            <li
+              className="group relative hidden xs:block"
+              ref={resourcesNavDropdownRef}
+            >
+              <Link
+                href="/playground"
+                className="cursor-pointer text-sm text-[inherit]! hover:text-primary! active:opacity-50 duration-200 no-underline!"
+                onPointerEnter={() => {
+                  setResourcesNavOpened(false);
+                  setDocsNavOpened(false);
+                  setPremiumNavOpened(false);
+                }}
+              >
+                Playground
+              </Link>
+              <span className="absolute -right-3 -top-3 leading-[1] text-black font-bold bg-primary text-[10px] px-1.25 py-0.75 rounded-full pointer-events-none">
+                NEW
+              </span>
             </li>
             <li className="group relative" ref={premiumNavDropdownRef}>
               <div

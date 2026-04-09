@@ -58,6 +58,7 @@ export default function Footer() {
               <div className="flex flex-col gap-2">
                 <Link href="/demos">Demos</Link>
                 <Link href="/plugins">Plugins</Link>
+                <Link href="/playground">Playground</Link>
                 <Link href="/blog">Blog</Link>
                 <Link href="/sponsors">Sponsors</Link>
               </div>
