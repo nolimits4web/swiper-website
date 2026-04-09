@@ -17,7 +17,7 @@ export default function Blog(props) {
       <Nav />
       <div className="px-4 sm:px-6 md:px-8 relative">
         <div className="mx-auto max-w-[940px] pb-24 pt-10  lg:pb-16">
-          <h1 className="mb-[0.5em] text-4xl leading-[1.125] sm:text-[42px] sm:leading-tight">
+          <h1 className="mt-0 mb-[0.5em] text-4xl leading-[1.2] font-medium tracking-tight text-balance text-white sm:text-5xl">
             Swiper Blog
           </h1>
           <div className="space-y-8 sm:grid sm:grid-cols-2 sm:gap-8 sm:space-y-0">

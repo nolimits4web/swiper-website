@@ -129,13 +129,13 @@ export default function PlaygroundPage() {
                 </a>
                 <a
                   className="px-2 h-7 hover:bg-pg-surface-2 active:bg-pg-surface-2/50 rounded-full flex items-center text-xs font-medium text-white/80! no-underline!"
-                  href="/swiper-api"
+                  href="/demos"
                 >
                   Demos
                 </a>
                 <a
                   className="px-2 h-7 hover:bg-pg-surface-2 active:bg-pg-surface-2/50 rounded-full flex items-center text-xs font-medium text-white/80! no-underline!"
-                  href="/swiper-api"
+                  href="/plugins"
                 >
                   Plugins
                 </a>
