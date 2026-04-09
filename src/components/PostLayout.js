@@ -36,16 +36,16 @@ export function PostLayout({ meta, children }) {
             title: `${meta.title} | Swiper Blog`,
           }}
           pageTitle={meta.title}
-          afterPageTitle={
+          beforePageTitle={
             <>
-              <div className="-mt-5 mb-[28px] text-sm text-secondary">
-                {formatDate(meta.date)}
-              </div>
               <div className="relative mb-12 overflow-hidden rounded-3xl pb-[50%]">
                 <img
                   src={meta.image}
                   className="absolute left-0 top-0 !m-0 !h-full !w-full object-cover object-center"
                 />
+              </div>
+              <div className="-mt-5 mb-[28px] text-sm text-secondary">
+                {formatDate(meta.date)}
               </div>
             </>
           }

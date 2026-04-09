@@ -209,7 +209,7 @@ export default function Footer() {
       </footer>
       <div
         key="page-bottom-bg"
-        className="page-bottom-bg absolute w-screen h-[218px] bg-center bg-no-repeat left-1/2 bottom-0 -translate-x-1/2 pointer-events-none"
+        className="page-bottom-bg absolute w-screen h-[218px] bg-center bg-no-repeat left-1/2 bottom-0 -translate-x-1/2 pointer-events-none opacity-50"
       />
     </>
   );

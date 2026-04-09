@@ -77,7 +77,7 @@ export default function Home(props) {
             Swiper
           </h1>
         </div>
-        <h2 className="text-3xl sm:text-5xl text-center text-primary-variant leading-tight text-pretty max-w-4xl relative">
+        <h2 className="text-4xl font-medium text-center text-primary-variant leading-tight text-pretty max-w-4xl relative sm:text-[56px] sm:leading-[1.1] sm:tracking-tight">
           Powering Millions of Sliders - Smooth, Fast, Everywhere
         </h2>
         <div className="text-center text-lg text-on-surface-darker relative">
@@ -155,7 +155,7 @@ export default function Home(props) {
             <Link
               key={title}
               href={link}
-              className="xs:w-40 w-full h-36 sm:h-40 bg-surface-2 !text-on-surface !no-underline rounded-3xl relative group text-sm sm:text-base"
+              className="xs:w-40 w-full h-36 sm:h-40 bg-surface-1 border border-outline !text-on-surface !no-underline rounded-3xl relative group text-sm sm:text-base"
             >
               <div className="absolute inset-0 bg-white/10 rounded-3xl opacity-0 group-hover:opacity-100 duration-200 group-active:opacity-50 pointer-events-none" />
               <div className="flex flex-col gap-4 p-4 items-center justify-center group-active:scale-90 group-active:opacity-75 duration-200 h-full">
@@ -174,7 +174,7 @@ export default function Home(props) {
           ))}
           <Link
             href="https://studio.swiperjs.com"
-            className="xs:w-40 w-full h-36 sm:h-40 bg-surface-2 !text-on-surface !no-underline rounded-3xl relative group text-sm sm:text-base"
+            className="xs:w-40 w-full h-36 sm:h-40 bg-surface-1 border border-outline !text-on-surface !no-underline rounded-3xl relative group text-sm sm:text-base"
           >
             <div className="absolute inset-0 bg-white/10 rounded-3xl opacity-0 group-hover:opacity-100 duration-200 group-active:opacity-50 pointer-events-none" />
             <div className="flex flex-col gap-4 md:gap-8 p-4 md:p-8 items-center justify-center group-active:scale-90 group-active:opacity-75 duration-200 h-full">
@@ -192,7 +192,7 @@ export default function Home(props) {
             <img
               src="/images/swiper-studio-logo.svg"
               alt="Swiper Studio"
-              className="absolute right-2 top-2 sm:right-4 sm:top-4 w-6 h-6 sm:w-8 sm:h-8 object-contain"
+              className="absolute right-2 top-2 w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full border border-outline "
             />
           </Link>
         </div>
@@ -212,7 +212,7 @@ export default function Home(props) {
       </HomeContainer>
 
       <HomeContainer className="my-32 sm:my-64 relative">
-        <div className="home-features-bg absolute w-screen h-[1403px] bg-center bg-no-repeat left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+        <div className="home-features-bg absolute w-screen h-[1403px] bg-center bg-no-repeat left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-50" />
         <HomeSectionTitle className="relative">
           Powered With Top Notch Features
         </HomeSectionTitle>
@@ -254,7 +254,7 @@ export default function Home(props) {
       </HomeContainer>
 
       <HomeContainer className="my-32 sm:my-64 relative home-premium">
-        <div className="home-premium-bg absolute w-screen h-[1448px] bg-center bg-no-repeat left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+        <div className="home-premium-bg absolute w-screen h-[1448px] bg-center bg-no-repeat left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30" />
         <HomeSectionTitle className="relative">
           Build More with Swiper Studio & UI Initiative
         </HomeSectionTitle>
@@ -273,45 +273,45 @@ export default function Home(props) {
           <Link
             href="https://uiinitiative.com"
             target="_blank"
-            className="flex flex-col gap-4 sm:gap-8 p-4 xs:p-8 bg-black/70 border border-outline/50 rounded-3xl items-center justify-center text-center !text-on-surface !no-underline backdrop-blur-2xl text-pretty relative group home-premium-link"
+            className="flex flex-col gap-4 sm:gap-8 p-4 md:p-8 bg-[#202020]/75 border border-outline rounded-3xl items-center justify-center text-center !text-on-surface !no-underline backdrop-blur-2xl text-pretty relative group home-premium-link"
           >
             <div className="absolute inset-0 bg-white/5 rounded-3xl opacity-0 group-hover:opacity-100 duration-200 group-active:opacity-50 pointer-events-none" />
             <div className="flex items-center justify-center gap-4 xs:contents xs:text-center text-left ">
               <img
-                className="w-16 md:w-32 h-16 md:h-32"
+                className="size-12 sm:size-16 md:size-24"
                 src="/images/projects/uiinitiative.svg"
                 alt="UI Initiative"
               />
-              <div className="text-lg md:text-2xl leading-[1.75]">
+              <div className="text-base sm:text-lg md:text-2xl leading-relaxed">
                 Premium Templates & Plugins for Swiper and Framework7
               </div>
             </div>
             <img
               src="/images/uiinitiative-banner.jpg"
               alt="UI Initiative"
-              className="rounded-lg "
+              className="rounded-2xl border border-outline"
             />
           </Link>
           <Link
             href="https://studio.swiperjs.com"
             target="_blank"
-            className="flex flex-col gap-4 sm:gap-8 p-4 xs:p-8 bg-black/70 border border-outline/50 rounded-3xl items-center justify-center text-center !text-on-surface !no-underline backdrop-blur-2xl text-pretty relative group home-premium-link"
+            className="flex flex-col gap-4 sm:gap-8 p-4 md:p-8 bg-[#202020]/75 border border-outline rounded-3xl items-center justify-center text-center !text-on-surface !no-underline backdrop-blur-2xl text-pretty relative group home-premium-link"
           >
             <div className="absolute inset-0 bg-white/5 rounded-3xl opacity-0 group-hover:opacity-100 duration-200 group-active:opacity-50 pointer-events-none" />
             <div className="flex items-center justify-center gap-4 xs:contents xs:text-center text-left ">
               <img
-                className="w-16 md:w-32 h-16 md:h-32"
+                className="size-12 sm:size-16 md:size-24"
                 src="/images/projects/swiper-studio-logo.svg"
                 alt="Swiper Studio"
               />
-              <div className="text-lg md:text-2xl leading-[1.75]">
+              <div className="text-base sm:text-lg md:text-2xl leading-relaxed">
                 Build stunning sliders and carousels — no code required
               </div>
             </div>
             <img
               src="/images/swiper-studio-banner.jpg"
               alt="Swiper Studio"
-              className="rounded-lg"
+              className="rounded-2xl border border-outline"
             />
           </Link>
         </div>

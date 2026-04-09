@@ -7,16 +7,16 @@
     @apply tracking-normal text-on-surface;
   }
   h1 {
-    @apply mt-0 mb-[0.5em] text-4xl leading-[1.125] sm:text-[42px] sm:leading-tight;
+    @apply mt-0 mb-[0.5em] text-4xl leading-[1.2] font-medium tracking-tight text-balance text-white sm:text-5xl;
   }
   h2 {
-    @apply mt-[1.8em] mb-[0.6em] text-2xl sm:text-3xl leading-[1.125];
+    @apply mt-[1.8em] mb-[0.6em] text-3xl leading-[1.125] font-medium sm:text-4xl;
   }
   h3 {
-    @apply mt-[1.4em] mb-[0.7em] text-xl sm:text-2xl leading-tight;
+    @apply mt-[1.4em] mb-[0.7em] text-2xl leading-tight font-medium sm:text-3xl;
   }
   h4 {
-    @apply mt-[1.6em] mb-[0.8em] text-lg sm:text-xl leading-tight;
+    @apply mt-[1.6em] mb-[0.8em] text-xl leading-tight font-medium sm:text-2xl;
   }
   em {
     font-variation-settings: 'slnt' -10;

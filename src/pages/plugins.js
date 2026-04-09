@@ -68,11 +68,14 @@ export default function DemosPage() {
             key={slug}
           >
             <div className="flex items-start">
-              <img src={icon} className="my-0 mr-4 h-16 w-16" />
+              <img
+                src={icon}
+                className="my-0 mr-4 size-12 md:size-16 rounded-none! border-0!"
+              />
               <div className="flex flex-col gap-2">
-                <h2 className="mt-0 !mb-0" id={slug} link={false}>
+                <h3 className="mt-0 !mb-0" id={slug} link={false}>
                   {title}{' '}
-                </h2>
+                </h3>
                 <div className="block text-on-surface-dark">{subtitle}</div>
                 <div className="mt-0 flex flex-wrap text-sm">
                   <DemoButton
@@ -91,6 +94,10 @@ export default function DemosPage() {
                     rel="noopener"
                     tonal
                   >
+                    <img
+                      src="/images/projects/uiinitiative.svg"
+                      className="size-5 -ml-2 -mr-1 rounded-none! border-0!"
+                    />
                     Store Page
                   </DemoButton>
                   {studioAvailable.includes(slug) && (
@@ -101,6 +108,10 @@ export default function DemosPage() {
                       tonal
                       title="This effect is available in Swiper Studio"
                     >
+                      <img
+                        src="/images/projects/swiper-studio-logo.svg"
+                        className="size-6 -ml-3 -mr-2 rounded-full border border-outline"
+                      />
                       Available in Studio
                     </DemoButton>
                   )}

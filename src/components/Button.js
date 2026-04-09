@@ -14,7 +14,7 @@ export const Button = ({
       href={href}
       className={clsx(
         'h-16 rounded-full text-lg flex items-center justify-center gap-4 !no-underline !text-on-surface px-8 cursor-pointer relative group/button',
-        !transparent && 'bg-brand',
+        !transparent && 'bg-brand text-black! font-semibold',
         transparent && 'border border-outline',
         className
       )}
