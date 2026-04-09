@@ -13,33 +13,33 @@
   >
     <swiper-slide
       ><img
-        src="https://swiperjs.com/demos/images/nature-1.jpg" /></swiper-slide
+        src="https://swiperjs.com/demos/images/abstract-1.jpg" /></swiper-slide
     ><swiper-slide
       ><img
-        src="https://swiperjs.com/demos/images/nature-2.jpg" /></swiper-slide
+        src="https://swiperjs.com/demos/images/abstract-2.jpg" /></swiper-slide
     ><swiper-slide
       ><img
-        src="https://swiperjs.com/demos/images/nature-3.jpg" /></swiper-slide
+        src="https://swiperjs.com/demos/images/abstract-3.jpg" /></swiper-slide
     ><swiper-slide
       ><img
-        src="https://swiperjs.com/demos/images/nature-4.jpg" /></swiper-slide
+        src="https://swiperjs.com/demos/images/abstract-4.jpg" /></swiper-slide
     ><swiper-slide
       ><img
-        src="https://swiperjs.com/demos/images/nature-5.jpg" /></swiper-slide
+        src="https://swiperjs.com/demos/images/abstract-5.jpg" /></swiper-slide
     ><swiper-slide
       ><img
-        src="https://swiperjs.com/demos/images/nature-6.jpg" /></swiper-slide
+        src="https://swiperjs.com/demos/images/abstract-6.jpg" /></swiper-slide
     ><swiper-slide
       ><img
-        src="https://swiperjs.com/demos/images/nature-7.jpg" /></swiper-slide
+        src="https://swiperjs.com/demos/images/abstract-7.jpg" /></swiper-slide
     ><swiper-slide
       ><img
-        src="https://swiperjs.com/demos/images/nature-8.jpg" /></swiper-slide
+        src="https://swiperjs.com/demos/images/abstract-8.jpg" /></swiper-slide
     ><swiper-slide
       ><img
-        src="https://swiperjs.com/demos/images/nature-9.jpg" /></swiper-slide
+        src="https://swiperjs.com/demos/images/abstract-9.jpg" /></swiper-slide
     ><swiper-slide
-      ><img src="https://swiperjs.com/demos/images/nature-10.jpg"
+      ><img src="https://swiperjs.com/demos/images/abstract-10.jpg"
     /></swiper-slide>
   </swiper>
   <swiper
@@ -54,33 +54,33 @@
   >
     <swiper-slide
       ><img
-        src="https://swiperjs.com/demos/images/nature-1.jpg" /></swiper-slide
+        src="https://swiperjs.com/demos/images/abstract-1.jpg" /></swiper-slide
     ><swiper-slide
       ><img
-        src="https://swiperjs.com/demos/images/nature-2.jpg" /></swiper-slide
+        src="https://swiperjs.com/demos/images/abstract-2.jpg" /></swiper-slide
     ><swiper-slide
       ><img
-        src="https://swiperjs.com/demos/images/nature-3.jpg" /></swiper-slide
+        src="https://swiperjs.com/demos/images/abstract-3.jpg" /></swiper-slide
     ><swiper-slide
       ><img
-        src="https://swiperjs.com/demos/images/nature-4.jpg" /></swiper-slide
+        src="https://swiperjs.com/demos/images/abstract-4.jpg" /></swiper-slide
     ><swiper-slide
       ><img
-        src="https://swiperjs.com/demos/images/nature-5.jpg" /></swiper-slide
+        src="https://swiperjs.com/demos/images/abstract-5.jpg" /></swiper-slide
     ><swiper-slide
       ><img
-        src="https://swiperjs.com/demos/images/nature-6.jpg" /></swiper-slide
+        src="https://swiperjs.com/demos/images/abstract-6.jpg" /></swiper-slide
     ><swiper-slide
       ><img
-        src="https://swiperjs.com/demos/images/nature-7.jpg" /></swiper-slide
+        src="https://swiperjs.com/demos/images/abstract-7.jpg" /></swiper-slide
     ><swiper-slide
       ><img
-        src="https://swiperjs.com/demos/images/nature-8.jpg" /></swiper-slide
+        src="https://swiperjs.com/demos/images/abstract-8.jpg" /></swiper-slide
     ><swiper-slide
       ><img
-        src="https://swiperjs.com/demos/images/nature-9.jpg" /></swiper-slide
+        src="https://swiperjs.com/demos/images/abstract-9.jpg" /></swiper-slide
     ><swiper-slide
-      ><img src="https://swiperjs.com/demos/images/nature-10.jpg"
+      ><img src="https://swiperjs.com/demos/images/abstract-10.jpg"
     /></swiper-slide>
   </swiper>
 </template>

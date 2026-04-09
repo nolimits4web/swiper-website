@@ -30,63 +30,63 @@ export default function App() {
       >
         <SwiperSlide>
           <img
-            src="https://swiperjs.com/demos/images/nature-1.jpg"
+            src="https://swiperjs.com/demos/images/abstract-1.jpg"
             loading="lazy"
           />
           <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="https://swiperjs.com/demos/images/nature-2.jpg"
+            src="https://swiperjs.com/demos/images/abstract-2.jpg"
             loading="lazy"
           />
           <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="https://swiperjs.com/demos/images/nature-3.jpg"
+            src="https://swiperjs.com/demos/images/abstract-3.jpg"
             loading="lazy"
           />
           <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="https://swiperjs.com/demos/images/nature-4.jpg"
+            src="https://swiperjs.com/demos/images/abstract-4.jpg"
             loading="lazy"
           />
           <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="https://swiperjs.com/demos/images/nature-5.jpg"
+            src="https://swiperjs.com/demos/images/abstract-5.jpg"
             loading="lazy"
           />
           <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="https://swiperjs.com/demos/images/nature-6.jpg"
+            src="https://swiperjs.com/demos/images/abstract-6.jpg"
             loading="lazy"
           />
           <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="https://swiperjs.com/demos/images/nature-7.jpg"
+            src="https://swiperjs.com/demos/images/abstract-7.jpg"
             loading="lazy"
           />
           <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="https://swiperjs.com/demos/images/nature-8.jpg"
+            src="https://swiperjs.com/demos/images/abstract-8.jpg"
             loading="lazy"
           />
           <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="https://swiperjs.com/demos/images/nature-9.jpg"
+            src="https://swiperjs.com/demos/images/abstract-9.jpg"
             loading="lazy"
           />
           <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>

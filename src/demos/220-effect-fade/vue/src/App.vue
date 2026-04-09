@@ -11,15 +11,15 @@
   >
     <swiper-slide
       ><img
-        src="https://swiperjs.com/demos/images/nature-1.jpg" /></swiper-slide
+        src="https://swiperjs.com/demos/images/abstract-1.jpg" /></swiper-slide
     ><swiper-slide
       ><img
-        src="https://swiperjs.com/demos/images/nature-2.jpg" /></swiper-slide
+        src="https://swiperjs.com/demos/images/abstract-2.jpg" /></swiper-slide
     ><swiper-slide
       ><img
-        src="https://swiperjs.com/demos/images/nature-3.jpg" /></swiper-slide
+        src="https://swiperjs.com/demos/images/abstract-3.jpg" /></swiper-slide
     ><swiper-slide
-      ><img src="https://swiperjs.com/demos/images/nature-4.jpg"
+      ><img src="https://swiperjs.com/demos/images/abstract-4.jpg"
     /></swiper-slide>
   </swiper>
 </template>

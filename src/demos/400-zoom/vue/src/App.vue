@@ -14,39 +14,39 @@
   >
     <swiper-slide>
       <div class="swiper-zoom-container">
-        <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        <img src="https://swiperjs.com/demos/images/abstract-1.jpg" />
       </div> </swiper-slide
     ><swiper-slide>
       <div class="swiper-zoom-container">
-        <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+        <img src="https://swiperjs.com/demos/images/abstract-2.jpg" />
       </div> </swiper-slide
     ><swiper-slide>
       <div class="swiper-zoom-container">
-        <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+        <img src="https://swiperjs.com/demos/images/abstract-3.jpg" />
       </div> </swiper-slide
     ><swiper-slide>
       <div class="swiper-zoom-container">
-        <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+        <img src="https://swiperjs.com/demos/images/abstract-4.jpg" />
       </div> </swiper-slide
     ><swiper-slide>
       <div class="swiper-zoom-container">
-        <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+        <img src="https://swiperjs.com/demos/images/abstract-5.jpg" />
       </div> </swiper-slide
     ><swiper-slide>
       <div class="swiper-zoom-container">
-        <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+        <img src="https://swiperjs.com/demos/images/abstract-6.jpg" />
       </div> </swiper-slide
     ><swiper-slide>
       <div class="swiper-zoom-container">
-        <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+        <img src="https://swiperjs.com/demos/images/abstract-7.jpg" />
       </div> </swiper-slide
     ><swiper-slide>
       <div class="swiper-zoom-container">
-        <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+        <img src="https://swiperjs.com/demos/images/abstract-8.jpg" />
       </div> </swiper-slide
     ><swiper-slide>
       <div class="swiper-zoom-container">
-        <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+        <img src="https://swiperjs.com/demos/images/abstract-9.jpg" />
       </div>
     </swiper-slide>
   </swiper>

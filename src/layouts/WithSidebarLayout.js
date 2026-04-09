@@ -96,7 +96,7 @@ export function WithSidebarLayout({
             sidebarOpened ? 'block' : 'hidden'
           }`}
         >
-          <div className="h-full overflow-y-auto overscroll-contain p-4 lg:sticky lg:top-4 lg:h-auto lg:max-h-[calc(100vh-32px)] bg-surface-1 border rounded-3xl border-outline  backdrop-blur-2xl flex flex-col">
+          <div className="h-full overflow-y-auto overscroll-contain p-4 lg:sticky lg:top-4 bg-surface-1 border rounded-3xl border-outline  backdrop-blur-2xl flex flex-col lg:h-[calc(100vh-32px)]">
             <SidebarSponsors />
             {toc.length > 0 && (
               <TableOfContents onClick={onListClick} tableOfContents={toc} />
