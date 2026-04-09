@@ -20,10 +20,12 @@ function App({ Component, pageProps, router }) {
         <title key="title">{title}</title>
         <meta property="og:title" content={title} />
         <meta
+          key="description"
           name="description"
           content="Swiper is the most modern free mobile touch slider with hardware accelerated transitions and amazing native behavior."
         />
         <meta
+          key="og:description"
           property="og:description"
           content="Swiper is the most modern free mobile touch slider with hardware accelerated transitions and amazing native behavior."
         />
@@ -37,6 +39,7 @@ function App({ Component, pageProps, router }) {
         <meta name="twitter:creator" content="@nolimits4web" />
         <meta name="twitter:title" content={title} />
         <meta
+          key="twitter:description"
           name="twitter:description"
           content="The Most Modern Mobile Touch Slider"
         />

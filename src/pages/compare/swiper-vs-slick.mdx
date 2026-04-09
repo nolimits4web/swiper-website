@@ -1,0 +1,298 @@
+import { MDXProvider } from '@mdx-js/react';
+import Heading from '@/components/Heading.js';
+import { WithSidebarLayout } from '@/layouts/WithSidebarLayout.js';
+
+export const meta = {
+  title: 'Swiper vs Slick - Modern Alternative to jQuery Slider',
+  description: 'Compare Swiper and Slick Slider across features, performance, and framework support. See why Swiper is the modern, dependency-free alternative.',
+  competitor: 'Slick',
+};
+
+Choosing the right slider library can make or break your project's user experience. Slick Slider was once the go-to carousel solution, powering millions of websites during the jQuery era. But the web has moved on - and so have the tools available to developers.
+
+In this comparison, we'll look at how Swiper and Slick stack up across the features and capabilities that matter most for modern web development.
+
+## Quick Comparison
+
+| Feature | Swiper | Slick |
+|---|---|---|
+| GitHub Stars | 40,000+ | ~28,000 |
+| Actively Maintained | Yes (latest: v12, 2026) | No (last update: ~2017) |
+| Dependencies | None | jQuery required |
+| License | MIT | MIT |
+| TypeScript Support | Full (built-in types) | No (community @types) |
+| Bundle Size (gzipped) | ~25-45KB (modular) | ~15KB + jQuery (~30KB) |
+| Framework Support | React, Vue, Angular, Svelte, Solid, Web Components | react-slick (3rd party) |
+| SSR Support | Yes | No |
+| Accessibility | Built-in ARIA, keyboard nav | Minimal, incorrect roles |
+| Mobile Touch | Excellent (mobile-first) | Basic |
+| CSS Scroll Snap | Yes | No |
+| Tree Shaking | Yes (ES modules) | No (UMD only) |
+| AI Integration (MCP) | Yes | No |
+
+## Maintenance & Community
+
+This is perhaps the most critical difference. **Slick has been unmaintained since approximately 2017.** The GitHub repository has hundreds of open issues and pull requests with no resolution. No bug fixes, no security patches, and no new features have been shipped in years.
+
+**Swiper** is actively developed with regular releases. Version 12 shipped in 2025 with new features, performance improvements, and continued framework support. The project has over 40,000 GitHub stars and is used by companies like Adobe, BMW, Nike, Samsung, Toyota, Disney, TikTok, and many more.
+
+For any production project, relying on an abandoned library means accepting unpatched bugs, potential security issues, and zero support for new browser features.
+
+## jQuery Dependency
+
+Slick requires jQuery as a dependency. This was perfectly reasonable in 2014, but in 2026 it presents serious problems:
+
+- **Bundle bloat** - jQuery adds ~30KB gzipped on top of Slick itself. If your project doesn't otherwise use jQuery, that's dead weight.
+- **Framework conflicts** - jQuery's direct DOM manipulation conflicts with the virtual DOM approach used by React, Vue, and other modern frameworks.
+- **No tree shaking** - jQuery is a monolithic bundle. You can't import just the parts you need.
+- **Declining ecosystem** - Fewer developers are learning jQuery, making maintenance harder over time.
+
+**Swiper has zero dependencies.** It works standalone or with any framework, and its modular ES module architecture means you only ship the code you actually use.
+
+## Framework Support
+
+Modern web development is built on component frameworks. Here's how the two compare:
+
+| Framework | Swiper | Slick |
+|---|---|---|
+| Vanilla JS | Yes | Yes (via jQuery) |
+| React | Official components + hooks | react-slick (3rd party) |
+| Vue | Official components + hooks | No |
+| Angular | Yes (via Swiper Element) | No |
+| Svelte | Yes (via Swiper Element) | No |
+| Solid | Yes (via Swiper Element) | No |
+| Web Components | Yes (Swiper Element) | No |
+
+Swiper provides first-class React and Vue components with hooks (`useSwiper`, `useSwiperSlide`). For other frameworks, Swiper Element - a true Web Component with Shadow DOM - works natively in Angular, Svelte, Solid, and any other framework that supports custom elements.
+
+Slick's only framework integration is `react-slick`, a third-party wrapper that itself has maintenance concerns and still depends on jQuery-style DOM manipulation under the hood.
+
+## Feature Comparison
+
+### Transition Effects
+
+| Effect | Swiper | Slick |
+|---|---|---|
+| Slide | Yes | Yes |
+| Fade | Yes (with crossfade) | Yes |
+| Cube (3D) | Yes | No |
+| Coverflow (3D) | Yes | No |
+| Flip (3D) | Yes | No |
+| Cards | Yes | No |
+| Creative (custom) | Yes | No |
+
+Swiper offers 7 built-in transition effects including 3D transforms and the Creative effect, which lets you define fully custom CSS transforms for unlimited visual possibilities. Slick supports only slide and fade transitions.
+
+### Core Slider Features
+
+| Feature | Swiper | Slick |
+|---|---|---|
+| Responsive Breakpoints | Yes | Yes |
+| Infinite Loop | Yes (no cloning issues) | Yes (clone-based, buggy) |
+| Autoplay | Yes | Yes |
+| Free Mode / Momentum | Yes | No |
+| Vertical Slider | Yes | Yes (buggy) |
+| Centered Slides | Yes | Yes |
+| Multiple Slides Per View | Yes | Yes |
+| Auto Height | Yes | Yes |
+| RTL Support | Yes | Yes |
+| CSS Scroll Snap Mode | Yes | No |
+| Rewind Mode | Yes | No |
+| Grid / Multi-row | Yes | Yes (buggy) |
+| Nested Sliders | Yes | Limited |
+
+A key difference is in how infinite loop works. Slick clones slide DOM elements to create the illusion of infinite scrolling. This causes well-documented problems: duplicate IDs, broken event handlers, videos playing in cloned slides, and React/Vue component lifecycle issues. Swiper's loop implementation avoids these clone-related bugs.
+
+### Advanced Features
+
+| Feature | Swiper | Slick |
+|---|---|---|
+| Virtual Slides | Yes (render 1000s efficiently) | No |
+| Parallax | Yes (built-in) | No |
+| Zoom (pinch + double-tap) | Yes | No |
+| Thumbs Gallery | Yes (purpose-built) | Manual sync only |
+| Lazy Loading | Yes | Yes |
+| Hash Navigation | Yes | No |
+| History Navigation | Yes | No |
+| Controller (2-way sync) | Yes | No |
+| Keyboard Control | Yes | Limited |
+| Mousewheel Control | Yes | No |
+| Scrollbar | Yes (draggable) | No |
+| Manipulation (add/remove) | Yes | Yes (buggy) |
+
+Swiper's Virtual Slides module is particularly notable - it renders only the slides visible in the viewport, making it possible to have thousands of slides without performance degradation. This is not possible with Slick.
+
+The built-in Parallax module lets you apply parallax effects to any element inside slides - images, text, backgrounds - with configurable speed and opacity. Slick has no parallax support.
+
+## Touch & Mobile Experience
+
+Swiper was built mobile-first from day one. Its name literally comes from the swipe gesture. The touch experience includes:
+
+- Hardware-accelerated CSS transitions
+- Configurable touch angle and threshold
+- Momentum/inertia scrolling in free mode
+- Pinch-to-zoom and double-tap zoom
+- Native touch events with proper edge detection
+- Passive event listeners for scroll performance
+- Grab cursor visual feedback
+
+Slick's touch support is basic and was added to a library originally designed for desktop. Common complaints include janky swipe behavior on Android, conflicts with vertical page scrolling, and no momentum-based interaction.
+
+## TypeScript Support
+
+Swiper ships with comprehensive built-in TypeScript definitions - 35 type definition files covering the core API, every module, React/Vue components, Swiper Element, and all events and options. It's full type safety out of the box.
+
+Slick has no official TypeScript support. Community-maintained types exist on DefinitelyTyped (`@types/slick-carousel`), but they can be incomplete or outdated since the underlying library is no longer developed.
+
+## Accessibility
+
+Swiper includes a built-in A11y module that provides:
+
+- ARIA labels and roles for slides, navigation, and pagination
+- `aria-live` regions for slide change announcements
+- Keyboard navigation (arrow keys)
+- Screen reader support
+- Configurable accessibility labels
+
+Slick's accessibility implementation is minimal and has known problems. It incorrectly uses `role="listbox"` and `role="option"` - semantic roles meant for form selection widgets, not carousels. Tab focus can land on hidden cloned slides, and there are no `aria-live` announcements for slide changes. These issues have been reported on GitHub but remain unfixed.
+
+## SSR & Modern Tooling
+
+**Swiper** works with server-side rendering frameworks like Next.js, Nuxt, and SvelteKit. Its React and Vue components handle hydration correctly, and the library includes SSR-safe DOM checks.
+
+**Slick** has no SSR support. It directly accesses `window` and `document` during initialization, causing crashes in Node.js environments. Using it with Next.js requires dynamic imports with SSR disabled and careful handling to avoid hydration mismatches.
+
+Swiper also provides:
+- **ES module exports** for proper tree shaking
+- **Modular CSS** - import only the styles you need per module
+- **CSS custom properties** for easy theming without a build step
+
+Slick ships only as a UMD bundle with no module system support, making it incompatible with modern build tool optimizations.
+
+## Bundle Size
+
+While Slick's JavaScript alone (~15KB gzipped) is smaller than Swiper's core, Slick requires jQuery (~30KB gzipped), bringing the real cost to ~45KB.
+
+Swiper's modular approach lets you import only what you need:
+- Core only: ~25KB gzipped
+- With navigation + pagination: ~28KB gzipped
+- Full bundle (all modules): ~45KB gzipped
+
+In practice, most projects use a subset of Swiper's modules, resulting in a similar or smaller total bundle than Slick + jQuery - while getting far more functionality.
+
+## AI Integration
+
+Swiper is the only slider library with a dedicated <a href="/swiper-mcp">MCP (Model Context Protocol) server</a>. This means AI coding assistants like Claude, Cursor, Windsurf, and others can access Swiper's latest API documentation, demos, and code examples programmatically - always up to date, no hallucinated or outdated APIs.
+
+Whether you're using AI to scaffold a new project or to help integrate a slider into an existing codebase, the Swiper MCP server ensures the generated code is correct and uses the latest API. No other slider library offers anything like this.
+
+## Migration from Slick to Swiper
+
+If you're currently using Slick and considering a switch, here's a quick comparison of equivalent code:
+
+**Slick (jQuery):**
+```html
+<link rel="stylesheet" href="slick.css" />
+<script src="jquery.min.js"></script>
+<script src="slick.min.js"></script>
+
+<div class="slider">
+  <div>Slide 1</div>
+  <div>Slide 2</div>
+  <div>Slide 3</div>
+</div>
+
+<script>
+  $('.slider').slick({
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    autoplay: true,
+  });
+</script>
+```
+
+**Swiper (modern JS):**
+```js
+import Swiper from 'swiper';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+const swiper = new Swiper('.swiper', {
+  modules: [Navigation, Pagination, Autoplay],
+  slidesPerView: 3,
+  loop: true,
+  autoplay: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+```
+
+**Swiper (React):**
+```jsx
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+export default function MySlider() {
+  return (
+    <Swiper
+      modules={[Pagination, Autoplay]}
+      slidesPerView={3}
+      loop
+      autoplay
+      pagination={{ clickable: true }}
+    >
+      <SwiperSlide>Slide 1</SwiperSlide>
+      <SwiperSlide>Slide 2</SwiperSlide>
+      <SwiperSlide>Slide 3</SwiperSlide>
+    </Swiper>
+  );
+}
+```
+
+Key differences to keep in mind:
+- Swiper uses `slidesPerView` instead of `slidesToShow`
+- Swiper uses `loop` instead of `infinite`
+- Navigation and pagination require explicit module imports and DOM elements
+- No jQuery needed - works with ES imports
+
+## Conclusion
+
+Slick was an excellent slider for the jQuery era and earned its popularity. But it has been abandoned for nearly a decade, depends on jQuery, lacks modern framework support, has poor accessibility, and carries unresolved bugs that will never be fixed.
+
+**Swiper** is actively maintained, dependency-free, supports every major framework, offers far more features (3D effects, virtual slides, parallax, zoom, CSS scroll snap), has built-in accessibility, works with SSR, and is trusted by some of the world's largest companies.
+
+If you're starting a new project, Swiper is the clear choice. Try the <a href="/playground">Swiper Playground</a> to visually configure your slider with 80+ parameters and export the code. For even more power, <a href="https://studio.swiperjs.com" target="_blank">Swiper Studio</a> is a full no-code slider builder with premium effects, element animations, video support, and export to HTML, React, Vue, Next.js, and more. And if you're looking for stunning visual effects beyond the built-in ones - like Panorama, Shutters, Slicer, or 20+ WebGL transitions - check out the premium collection from <a href="https://uiinitiative.com" target="_blank">UI Initiative</a>.
+
+If you're maintaining a project that still uses Slick, now is a good time to migrate - you'll get better performance, better mobile experience, and a library that will continue to evolve with the web platform.
+
+- <a href="/get-started">Get started with Swiper</a>
+- <a href="/demos">View demos</a>
+- <a href="/swiper-api">API Documentation</a>
+- <a href="/playground">Swiper Playground</a>
+- <a href="https://studio.swiperjs.com" target="_blank">Swiper Studio</a>
+- <a href="https://uiinitiative.com" target="_blank">Premium effects by UI Initiative</a>
+
+export default function Page({ children }) {
+  const components = {
+    h1: Heading.h1,
+    h2: Heading.h2,
+    h3: Heading.h3,
+    h4: Heading.h4,
+  };
+  return (
+    <MDXProvider components={components}>
+      <WithSidebarLayout meta={meta}>{children}</WithSidebarLayout>
+    </MDXProvider>
+  );
+}

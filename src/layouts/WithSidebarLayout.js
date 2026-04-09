@@ -66,6 +66,13 @@ export function WithSidebarLayout({
             <title key="title">{meta.title}</title>
             <meta property="og:title" content={meta.title} />
             <meta name="twitter:title" content={meta.title} />
+            {meta.description && (
+              <>
+                <meta key="description" name="description" content={meta.description} />
+                <meta key="og:description" property="og:description" content={meta.description} />
+                <meta key="twitter:description" name="twitter:description" content={meta.description} />
+              </>
+            )}
           </Head>
         )}
         {/* Left */}
