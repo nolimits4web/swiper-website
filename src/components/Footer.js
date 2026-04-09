@@ -27,8 +27,8 @@ export default function Footer() {
         )}
       >
         <div className="bg-surface-1 backdrop-blur-xl backdrop-saturate-200 border-outline border rounded-3xl p-8 ">
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 gap-y-8 sm:gap-y-0">
-            <div className="flex flex-col gap-4 min-w-40">
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-4 gap-y-8 sm:gap-x-4 sm:justify-between">
+            <div className="flex flex-col gap-4 min-w-24">
               <Link
                 href="/"
                 className="hover:opacity-75 active:opacity-50 duration-200 inline-flex self-start"
@@ -96,6 +96,28 @@ export default function Footer() {
                   href="https://uiinitiative.com/catalog/material-you-slider"
                 >
                   Material You Slider
+                </Link>
+              </div>
+            </div>
+            <div className="flex flex-col gap-4 text-sm">
+              <div>Compare</div>
+              <div className="flex flex-col gap-2">
+                <Link href="/compare/swiper-vs-slick">Swiper vs Slick</Link>
+                <Link href="/compare/swiper-vs-owl-carousel">
+                  Swiper vs Owl Carousel
+                </Link>
+                <Link href="/compare/swiper-vs-flickity">
+                  Swiper vs Flickity
+                </Link>
+                <Link href="/compare/swiper-vs-embla-carousel">
+                  Swiper vs Embla
+                </Link>
+                <Link href="/compare/swiper-vs-splide">Swiper vs Splide</Link>
+                <Link href="/compare/swiper-vs-glidejs">
+                  Swiper vs Glide.js
+                </Link>
+                <Link href="/compare/swiper-vs-keen-slider">
+                  Swiper vs Keen Slider
                 </Link>
               </div>
             </div>

@@ -1,0 +1,238 @@
+import { MDXProvider } from '@mdx-js/react';
+import Heading from '@/components/Heading.js';
+import { WithSidebarLayout } from '@/layouts/WithSidebarLayout.js';
+
+export const meta = {
+  title: 'Swiper vs Glide.js - Lightweight Slider Comparison',
+  description:
+    'Compare Swiper and Glide.js features, framework support, and maintenance. See why Swiper offers more for modern web projects.',
+  competitor: 'Glide.js',
+};
+
+Glide.js positions itself as a lightweight, dependency-free slider with a clean API and modular architecture. It's a simple library that does the basics well. However, its declining maintenance and limited feature set leave many modern requirements unmet.
+
+Here's how Glide.js compares to Swiper across the features and capabilities that matter for production web projects.
+
+## Quick Comparison
+
+| Feature               | Swiper                                             | Glide.js                         |
+| --------------------- | -------------------------------------------------- | -------------------------------- |
+| GitHub Stars          | 40,000+                                            | ~7,000                           |
+| Actively Maintained   | Yes (latest: v12, 2026)                            | No (low/no activity since ~2021) |
+| Dependencies          | None                                               | None                             |
+| License               | MIT                                                | MIT                              |
+| TypeScript Support    | Full (built-in types)                              | No (community @types)            |
+| Bundle Size (gzipped) | ~25-45KB (modular)                                 | ~7-8KB                           |
+| Framework Support     | React, Vue, Angular, Svelte, Solid, Web Components | None official                    |
+| SSR Support           | Yes                                                | No                               |
+| Accessibility         | Built-in ARIA, keyboard nav                        | Minimal                          |
+| Transition Effects    | 7 built-in (3D, creative)                          | Slide only                       |
+| AI Integration (MCP)  | Yes                                                | No                               |
+
+## Maintenance Status
+
+Glide.js has seen **little to no development activity since approximately 2021**. Issues and pull requests have accumulated without consistent responses. The project is not formally deprecated, but it is effectively in a semi-abandoned state.
+
+For any production project, this means:
+
+- Bugs will likely not be fixed
+- No security patches
+- No compatibility updates for newer browsers or frameworks
+- No new features
+
+Swiper is actively maintained with regular releases, over 40,000 GitHub stars, and enterprise adoption by companies like Adobe, BMW, Nike, Samsung, and Toyota.
+
+## Feature Comparison
+
+### Transition Effects
+
+| Effect            | Swiper               | Glide.js |
+| ----------------- | -------------------- | -------- |
+| Slide             | Yes                  | Yes      |
+| Fade              | Yes (with crossfade) | No       |
+| Cube (3D)         | Yes                  | No       |
+| Coverflow (3D)    | Yes                  | No       |
+| Flip (3D)         | Yes                  | No       |
+| Cards             | Yes                  | No       |
+| Creative (custom) | Yes                  | No       |
+
+Glide.js supports **only horizontal slide transitions**. No fade, no 3D effects, no custom transitions. Swiper offers 7 built-in effects including the Creative effect for fully custom CSS transforms.
+
+### Core Slider Features
+
+| Feature                  | Swiper                           | Glide.js                  |
+| ------------------------ | -------------------------------- | ------------------------- |
+| Responsive Breakpoints   | Yes (full config per breakpoint) | Yes (limited)             |
+| Infinite Loop            | Yes                              | Yes (clone-based)         |
+| Autoplay                 | Yes (with progress tracking)     | Yes                       |
+| Free Mode / Momentum     | Yes                              | No                        |
+| Vertical Slider          | Yes                              | No                        |
+| Centered Slides          | Yes                              | Yes (focusAt: 'center')   |
+| Multiple Slides Per View | Yes                              | Yes (perView)             |
+| Auto Height              | Yes                              | No (requires workarounds) |
+| Variable Width Slides    | Yes                              | No                        |
+| RTL Support              | Yes                              | Yes                       |
+| CSS Scroll Snap Mode     | Yes                              | No                        |
+| Rewind Mode              | Yes                              | Yes                       |
+| Grid / Multi-row         | Yes                              | No                        |
+| Nested Sliders           | Yes                              | No                        |
+| Peek (partial slide)     | Yes (slidesOffsetBefore/After)   | Yes                       |
+
+Notable gaps in Glide.js: **no vertical slider, no free mode, no auto height, no variable width slides, and no grid layout**. Its infinite loop uses DOM cloning, which can cause issues with event handlers and interactive content inside slides.
+
+### Advanced Features
+
+| Feature                   | Swiper                         | Glide.js                          |
+| ------------------------- | ------------------------------ | --------------------------------- |
+| Virtual Slides            | Yes (render 1000s efficiently) | No                                |
+| Parallax                  | Yes (built-in)                 | No                                |
+| Zoom (pinch + double-tap) | Yes                            | No                                |
+| Thumbs Gallery            | Yes (purpose-built)            | No                                |
+| Lazy Loading              | Yes                            | No                                |
+| Hash Navigation           | Yes                            | No                                |
+| History Navigation        | Yes                            | No                                |
+| Controller (2-way sync)   | Yes                            | No                                |
+| Keyboard Control          | Yes                            | Yes                               |
+| Mousewheel Control        | Yes                            | No                                |
+| Scrollbar                 | Yes (draggable)                | No                                |
+| Manipulation (add/remove) | Yes                            | Buggy (requires destroy/recreate) |
+
+Glide.js has **none of the advanced features** that modern slider use cases often require. No virtual slides, no lazy loading, no parallax, no zoom, no thumbs, no hash navigation. Adding or removing slides dynamically is buggy and typically requires destroying and recreating the instance.
+
+## Framework Support
+
+| Framework      | Swiper                      | Glide.js                 |
+| -------------- | --------------------------- | ------------------------ |
+| Vanilla JS     | Yes                         | Yes                      |
+| React          | Official components + hooks | No (manual integration)  |
+| Vue            | Official components + hooks | vue-glide-js (3rd party) |
+| Angular        | Yes (via Swiper Element)    | No                       |
+| Svelte         | Yes (via Swiper Element)    | No                       |
+| Solid          | Yes (via Swiper Element)    | No                       |
+| Web Components | Yes (Swiper Element)        | No                       |
+
+Glide.js has **no official framework components**. Integrating it with React, Vue, or any other framework requires manual setup with lifecycle hooks and cleanup. Swiper provides first-class components for React and Vue, plus Swiper Element for any framework.
+
+## Accessibility
+
+Glide.js has **minimal accessibility support**:
+
+- Basic keyboard navigation (arrow keys)
+- No ARIA roles or attributes
+- No screen reader announcements
+- No focus management
+- No reduced-motion media query handling
+
+Swiper's A11y module provides comprehensive accessibility:
+
+- ARIA labels and roles for slides, navigation, and pagination
+- `aria-live` regions for screen reader announcements
+- Keyboard navigation
+- Configurable accessibility labels
+
+## TypeScript & Developer Experience
+
+| Aspect                | Swiper                         | Glide.js                          |
+| --------------------- | ------------------------------ | --------------------------------- |
+| TypeScript            | Full built-in types (35 files) | No (community @types, incomplete) |
+| Module System         | ES modules (tree-shakeable)    | ES modules (modular)              |
+| Modular CSS           | Per-module CSS imports         | Single CSS file                   |
+| CSS Custom Properties | Yes (easy theming)             | No                                |
+| API Events            | Comprehensive event system     | Limited event/hook system         |
+| Documentation         | Extensive, maintained          | Clean but lacks advanced examples |
+
+Glide.js is not written in TypeScript. Community type definitions exist but can be incomplete or outdated. Swiper ships with 35 type definition files covering every module, component, and event.
+
+## SSR Support
+
+Glide.js directly accesses the DOM during initialization and has **no SSR support**. Using it with Next.js or Nuxt requires dynamic imports and client-only rendering workarounds.
+
+Swiper works with Next.js, Nuxt, and SvelteKit out of the box.
+
+## Bundle Size
+
+Glide.js at ~7-8KB gzipped is lighter than Swiper. Its modular architecture also lets you import only the components you need (Controls, Breakpoints, Autoplay, etc.).
+
+However, Glide.js's small size reflects its limited feature set. When you compare what you get per kilobyte - 7 transition effects, virtual slides, parallax, zoom, thumbs, accessibility, framework components, and more - Swiper provides dramatically more value at a modest size increase.
+
+For most web projects, the difference between 8KB and 28KB is negligible next to images, fonts, and JavaScript application code.
+
+## AI Integration
+
+Swiper offers a dedicated <a href="/swiper-mcp">MCP (Model Context Protocol) server</a> that gives AI coding assistants like Claude, Cursor, and Windsurf programmatic access to the latest API docs, demos, and code examples. AI agents can generate correct, up-to-date Swiper code without hallucinating outdated APIs.
+
+Glide.js has no AI integration.
+
+## Migration from Glide.js to Swiper
+
+**Glide.js:**
+
+```js
+import Glide from '@glidejs/glide';
+import '@glidejs/glide/dist/css/glide.core.min.css';
+
+new Glide('.glide', {
+  type: 'carousel',
+  perView: 3,
+  autoplay: 3000,
+  peek: 100,
+}).mount();
+```
+
+**Swiper:**
+
+```js
+import Swiper from 'swiper';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
+
+new Swiper('.swiper', {
+  modules: [Autoplay],
+  slidesPerView: 3,
+  loop: true,
+  autoplay: { delay: 3000 },
+  slidesOffsetBefore: 100,
+  slidesOffsetAfter: 100,
+});
+```
+
+Key differences from Glide.js:
+
+- `type: 'carousel'` (loop) becomes `loop: true`
+- `perView` becomes `slidesPerView`
+- `autoplay: 3000` becomes `autoplay: { delay: 3000 }`
+- `peek` maps to `slidesOffsetBefore` / `slidesOffsetAfter` or `centeredSlides`
+- Features are imported as explicit modules
+
+## Conclusion
+
+Glide.js is a clean, simple slider that does the basics well at a small size. But its declining maintenance, missing features (no vertical mode, no fade, no lazy loading, no parallax, no virtual slides), lack of framework support, and minimal accessibility make it insufficient for most modern web projects.
+
+**Swiper** offers everything Glide.js does and far more - 7 transition effects, advanced features, comprehensive accessibility, every major framework supported, SSR compatibility, full TypeScript support, and a large, active community. It's the more complete and future-proof choice.
+
+Try the <a href="/playground">Swiper Playground</a> to visually configure your slider with 80+ parameters and export ready-to-use code. For a full no-code slider builder with premium effects like Panorama, Shutters, and 20+ WebGL transitions, check out <a href="https://studio.swiperjs.com" target="_blank">Swiper Studio</a>. And for even more stunning visual effects, explore the premium collection from <a href="https://uiinitiative.com" target="_blank">UI Initiative</a>.
+
+- <a href="/get-started">Get started with Swiper</a>
+- <a href="/demos">View demos</a>
+- <a href="/swiper-api">API Documentation</a>
+- <a href="/playground">Swiper Playground</a>
+- <a href="https://studio.swiperjs.com" target="_blank">
+    Swiper Studio
+  </a>
+- <a href="https://uiinitiative.com" target="_blank">
+    Premium effects by UI Initiative
+  </a>
+
+export default function Page({ children }) {
+  const components = {
+    h1: Heading.h1,
+    h2: Heading.h2,
+    h3: Heading.h3,
+    h4: Heading.h4,
+  };
+  return (
+    <MDXProvider components={components}>
+      <WithSidebarLayout meta={meta}>{children}</WithSidebarLayout>
+    </MDXProvider>
+  );
+}

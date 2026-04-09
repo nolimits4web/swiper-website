@@ -1,0 +1,270 @@
+import { MDXProvider } from '@mdx-js/react';
+import Heading from '@/components/Heading.js';
+import { WithSidebarLayout } from '@/layouts/WithSidebarLayout.js';
+
+export const meta = {
+  title: 'Swiper vs Splide - Which Slider Has More to Offer?',
+  description:
+    'Compare Swiper and Splide.js across features, framework support, and maintenance. See which carousel library offers more for your project.',
+  competitor: 'Splide',
+};
+
+Splide.js is a lightweight, dependency-free slider that puts accessibility front and center. It's written in TypeScript, has a clean API, and was built with ARIA support as a core design goal. These are commendable qualities.
+
+However, when you compare the full picture - feature depth, framework support, community size, and long-term maintenance - the differences become clear. Let's take a detailed look.
+
+## Quick Comparison
+
+| Feature               | Swiper                                             | Splide                              |
+| --------------------- | -------------------------------------------------- | ----------------------------------- |
+| GitHub Stars          | 40,000+                                            | ~5,000                              |
+| Actively Maintained   | Yes (team + community)                             | Slowing (single maintainer)         |
+| Dependencies          | None                                               | None                                |
+| License               | MIT                                                | MIT                                 |
+| TypeScript Support    | Full (built-in types)                              | Full (written in TypeScript)        |
+| Bundle Size (gzipped) | ~25-45KB (modular)                                 | ~12KB                               |
+| Framework Support     | React, Vue, Angular, Svelte, Solid, Web Components | React, Vue                          |
+| SSR Support           | Yes                                                | Partial (hydration issues reported) |
+| Accessibility         | Built-in ARIA, keyboard nav                        | Built-in ARIA, keyboard nav         |
+| Transition Effects    | 7 built-in (3D, creative)                          | Slide, fade                         |
+| AI Integration (MCP)  | Yes                                                | No                                  |
+
+## Maintenance & Sustainability
+
+Splide is a **single-maintainer project** by Naotoshi Fujita. While the library is well-built, development activity has slowed significantly since mid-2023. Issues and pull requests have been accumulating without timely responses. This creates a real risk:
+
+- **Bus factor of 1** - if the maintainer steps away, the project stops
+- **Slowing releases** - long gaps between updates
+- **Unresolved issues** piling up in the backlog
+
+Swiper has a larger contributor base, over 40,000 GitHub stars, active development with regular releases, and is backed by enterprise adoption from companies like Adobe, BMW, Nike, Samsung, and Toyota. The project has been continuously maintained since 2013.
+
+## Feature Comparison
+
+### Transition Effects
+
+| Effect            | Swiper               | Splide |
+| ----------------- | -------------------- | ------ |
+| Slide             | Yes                  | Yes    |
+| Fade              | Yes (with crossfade) | Yes    |
+| Cube (3D)         | Yes                  | No     |
+| Coverflow (3D)    | Yes                  | No     |
+| Flip (3D)         | Yes                  | No     |
+| Cards             | Yes                  | No     |
+| Creative (custom) | Yes                  | No     |
+
+Swiper offers 7 built-in transition effects including 3D transforms and the Creative effect for fully custom transitions. Splide supports only slide and fade.
+
+### Core Slider Features
+
+| Feature                  | Swiper                       | Splide                          |
+| ------------------------ | ---------------------------- | ------------------------------- |
+| Responsive Breakpoints   | Yes                          | Yes                             |
+| Infinite Loop            | Yes                          | Yes                             |
+| Autoplay                 | Yes (with progress tracking) | Yes (with pause on hover/focus) |
+| Free Mode / Momentum     | Yes                          | Yes (drag free)                 |
+| Vertical Slider          | Yes                          | Yes                             |
+| Centered Slides          | Yes                          | Yes (focus: 'center')           |
+| Multiple Slides Per View | Yes                          | Yes                             |
+| Auto Height              | Yes                          | Yes                             |
+| RTL Support              | Yes                          | Yes                             |
+| CSS Scroll Snap Mode     | Yes                          | No                              |
+| Rewind Mode              | Yes                          | Yes                             |
+| Grid / Multi-row         | Yes                          | Via extension                   |
+| Nested Sliders           | Yes                          | Yes                             |
+| Ticker / Auto Scroll     | Yes (via free mode)          | Via extension                   |
+
+Both libraries cover the core slider fundamentals well. Splide requires separate extension packages for features like grid layout and auto scroll, while Swiper includes these as built-in modules.
+
+### Advanced Features
+
+| Feature                   | Swiper                         | Splide                      |
+| ------------------------- | ------------------------------ | --------------------------- |
+| Virtual Slides            | Yes (render 1000s efficiently) | No                          |
+| Parallax                  | Yes (built-in)                 | No                          |
+| Zoom (pinch + double-tap) | Yes                            | No                          |
+| Thumbs Gallery            | Yes (purpose-built)            | Manual (sync two instances) |
+| Lazy Loading              | Yes                            | Yes                         |
+| Hash Navigation           | Yes                            | Via extension               |
+| History Navigation        | Yes                            | No                          |
+| Controller (2-way sync)   | Yes                            | Yes (sync)                  |
+| Keyboard Control          | Yes                            | Yes                         |
+| Mousewheel Control        | Yes                            | No                          |
+| Scrollbar                 | Yes (draggable)                | No                          |
+| Video Support             | Via slides content             | Via extension               |
+| Manipulation (add/remove) | Yes                            | Limited                     |
+
+This is where Swiper pulls ahead significantly. Virtual slides, parallax, pinch-to-zoom, a purpose-built thumbs gallery, mousewheel control, and a draggable scrollbar are all features Splide doesn't offer. Splide's extension system also means some features require additional package installations and configuration.
+
+### Navigation & UI
+
+| Feature                  | Swiper          | Splide |
+| ------------------------ | --------------- | ------ |
+| Navigation Arrows        | Yes (SVG-based) | Yes    |
+| Pagination Bullets       | Yes             | Yes    |
+| Dynamic Bullets          | Yes             | No     |
+| Pagination Fraction      | Yes             | No     |
+| Progress Bar Pagination  | Yes             | No     |
+| Scrollbar                | Yes (draggable) | No     |
+| Custom Pagination Render | Yes             | Yes    |
+
+Swiper offers more pagination variants out of the box - fraction display, progress bar, and dynamic bullets that scale based on proximity to the active slide.
+
+## Framework Support
+
+| Framework      | Swiper                      | Splide                 |
+| -------------- | --------------------------- | ---------------------- |
+| Vanilla JS     | Yes                         | Yes                    |
+| React          | Official components + hooks | @splidejs/react-splide |
+| Vue            | Official components + hooks | @splidejs/vue-splide   |
+| Angular        | Yes (via Swiper Element)    | No                     |
+| Svelte         | Yes (via Swiper Element)    | No (community only)    |
+| Solid          | Yes (via Swiper Element)    | No                     |
+| Web Components | Yes (Swiper Element)        | No                     |
+
+Splide has official React and Vue wrappers, but they're maintained by the same single developer and sometimes lag behind the core library. There's no Angular, Svelte, or Solid support.
+
+Swiper covers all major frameworks. Swiper Element - a true Web Component with Shadow DOM - works natively in Angular, Svelte, Solid, and any framework that supports custom elements.
+
+## Accessibility
+
+This is Splide's standout feature. It was designed with accessibility as a core principle:
+
+- Built-in ARIA attributes (`aria-label`, `aria-roledescription`, `role="group"`, `aria-live`)
+- Keyboard navigation
+- Screen reader support with live regions
+- Focus management
+- Autoplay respects `prefers-reduced-motion`
+- Follows WAI-ARIA carousel pattern guidelines
+
+Swiper also provides solid accessibility through its A11y module:
+
+- ARIA labels and roles for slides, navigation, and pagination
+- `aria-live` regions for slide change announcements
+- Keyboard navigation (arrow keys)
+- Configurable accessibility labels
+- Screen reader support
+
+Both libraries take accessibility seriously. Splide has a slight edge in that accessibility was a founding design goal, while Swiper's A11y is an opt-in module. However, Swiper's accessibility features are comprehensive and actively maintained.
+
+## Bundle Size
+
+Splide at ~12KB gzipped is lighter than Swiper's modular range of ~25-45KB. However:
+
+- Splide's extensions (grid, video, auto-scroll, intersection observer, hash navigation) add to the total when used
+- Swiper's modular imports mean you only ship the modules you actually use
+- For most web projects, the difference between 12KB and 28KB is negligible compared to images, fonts, and other assets
+
+If raw bundle size is your top priority and you need only basic slider features, Splide's smaller footprint is a genuine advantage. For most projects, the richer feature set Swiper provides at a modest size increase is the better trade-off.
+
+## TypeScript & Developer Experience
+
+Both libraries are written in TypeScript and ship with built-in type definitions. Both have clean APIs and modern ES module exports.
+
+| Aspect                     | Swiper                          | Splide                              |
+| -------------------------- | ------------------------------- | ----------------------------------- |
+| TypeScript                 | Full built-in types (35 files)  | Full built-in types                 |
+| Module System              | ES modules                      | ES modules                          |
+| Documentation              | Extensive, maintained           | Good basics, gaps in advanced usage |
+| Community Size             | Very large (40k+ stars)         | Smaller (~5k stars)                 |
+| Stack Overflow Answers     | Thousands                       | Limited                             |
+| Enterprise Adoption        | Adobe, BMW, Nike, Samsung, etc. | Limited                             |
+| Extension/Plugin Ecosystem | Comprehensive built-in modules  | Separate extension packages         |
+
+Swiper's larger community means more examples, more Stack Overflow answers, more blog posts, and more developers who've solved the problem you're facing.
+
+## SSR Support
+
+Swiper works reliably with Next.js, Nuxt, and SvelteKit. Its React and Vue components handle hydration correctly.
+
+Splide can work in SSR environments but some developers have reported hydration mismatch warnings with Next.js. The library checks for `window`/`document` availability, but edge cases exist.
+
+## AI Integration
+
+Swiper offers a dedicated <a href="/swiper-mcp">MCP (Model Context Protocol) server</a> that gives AI coding assistants like Claude, Cursor, and Windsurf programmatic access to the latest API docs, demos, and code examples. This means AI agents can generate correct, up-to-date Swiper code without hallucinating outdated APIs.
+
+Splide has no AI integration.
+
+## Migration from Splide to Swiper
+
+**Splide:**
+
+```js
+import Splide from '@splidejs/splide';
+import '@splidejs/splide/css';
+
+new Splide('.splide', {
+  type: 'loop',
+  perPage: 3,
+  autoplay: true,
+  pagination: true,
+  arrows: true,
+}).mount();
+```
+
+**Swiper:**
+
+```js
+import Swiper from 'swiper';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+new Swiper('.swiper', {
+  modules: [Navigation, Pagination, Autoplay],
+  slidesPerView: 3,
+  loop: true,
+  autoplay: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+```
+
+Key differences from Splide:
+
+- `type: 'loop'` becomes `loop: true`
+- `perPage` becomes `slidesPerView`
+- Navigation and pagination are explicit modules with element selectors
+- Swiper uses modular CSS imports per feature
+
+## Conclusion
+
+Splide deserves credit for its accessibility-first approach and clean, lightweight design. If you need a simple slider with excellent built-in accessibility and minimal footprint, it's a reasonable choice.
+
+However, Swiper offers a significantly richer feature set - 7 transition effects, virtual slides, parallax, zoom, thumbs gallery, mousewheel control, and more. It supports more frameworks, has a much larger community, stronger enterprise adoption, and more sustainable long-term maintenance. Swiper's A11y module also provides comprehensive accessibility support.
+
+The single-maintainer risk with Splide is worth considering for any production project. Swiper's decade-plus track record and active development provide stronger confidence for long-term reliability.
+
+Try the <a href="/playground">Swiper Playground</a> to visually configure your slider with 80+ parameters and export ready-to-use code. For a full no-code slider builder with premium effects like Panorama, Shutters, and 20+ WebGL transitions, check out <a href="https://studio.swiperjs.com" target="_blank">Swiper Studio</a>. And for even more stunning visual effects, explore the premium collection from <a href="https://uiinitiative.com" target="_blank">UI Initiative</a>.
+
+- <a href="/get-started">Get started with Swiper</a>
+- <a href="/demos">View demos</a>
+- <a href="/swiper-api">API Documentation</a>
+- <a href="/playground">Swiper Playground</a>
+- <a href="https://studio.swiperjs.com" target="_blank">
+    Swiper Studio
+  </a>
+- <a href="https://uiinitiative.com" target="_blank">
+    Premium effects by UI Initiative
+  </a>
+
+export default function Page({ children }) {
+  const components = {
+    h1: Heading.h1,
+    h2: Heading.h2,
+    h3: Heading.h3,
+    h4: Heading.h4,
+  };
+  return (
+    <MDXProvider components={components}>
+      <WithSidebarLayout meta={meta}>{children}</WithSidebarLayout>
+    </MDXProvider>
+  );
+}

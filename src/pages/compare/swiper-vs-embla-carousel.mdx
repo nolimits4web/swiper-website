@@ -1,0 +1,321 @@
+import { MDXProvider } from '@mdx-js/react';
+import Heading from '@/components/Heading.js';
+import { WithSidebarLayout } from '@/layouts/WithSidebarLayout.js';
+
+export const meta = {
+  title: 'Swiper vs Embla Carousel - Full-Featured vs Headless Slider',
+  description:
+    'Compare Swiper and Embla Carousel. See how a batteries-included slider compares to a headless, lightweight carousel library.',
+  competitor: 'Embla Carousel',
+};
+
+Embla Carousel is one of the more compelling modern carousel libraries. It's actively maintained, lightweight, written in TypeScript, and takes a "headless" approach - providing the carousel engine while leaving all UI to you. It's a solid library that deserves a fair look.
+
+The core difference between Swiper and Embla comes down to philosophy: **batteries-included vs build-it-yourself**. Let's see how that plays out across the dimensions that matter.
+
+## Quick Comparison
+
+| Feature               | Swiper                                             | Embla Carousel               |
+| --------------------- | -------------------------------------------------- | ---------------------------- |
+| GitHub Stars          | 40,000+                                            | ~6,000                       |
+| Actively Maintained   | Yes                                                | Yes                          |
+| Dependencies          | None                                               | None                         |
+| License               | MIT                                                | MIT                          |
+| TypeScript Support    | Full (built-in types)                              | Full (written in TypeScript) |
+| Bundle Size (gzipped) | ~25-45KB (modular)                                 | ~3-5KB core                  |
+| Framework Support     | React, Vue, Angular, Svelte, Solid, Web Components | React, Vue, Svelte, Solid    |
+| SSR Support           | Yes                                                | Yes                          |
+| Accessibility         | Built-in ARIA, keyboard nav                        | None (manual implementation) |
+| Built-in UI           | Navigation, pagination, scrollbar                  | None (headless)              |
+| Transition Effects    | 7 built-in (3D, creative)                          | Slide, fade (via plugin)     |
+| AI Integration (MCP)  | Yes                                                | No                           |
+
+## Philosophy: Batteries-Included vs Headless
+
+This is the fundamental difference between the two libraries and it affects everything else.
+
+**Embla Carousel** is intentionally headless. It provides the carousel engine - the scroll physics, snap points, and slide management - but no UI components at all. No arrows, no dots, no progress bars, no scrollbar. You build everything from scratch. This gives you total design freedom but requires significantly more code for common patterns.
+
+**Swiper** ships with everything you need out of the box. Navigation arrows, pagination (bullets, fraction, progress bar), scrollbar, lazy loading, parallax - all as opt-in modules. You can use them as-is or customize their appearance. You write less code, ship faster, and still have full styling control.
+
+For a basic carousel with arrows and dots:
+
+**Embla - you build the UI yourself:**
+
+```jsx
+import useEmblaCarousel from 'embla-carousel-react';
+import { useCallback, useEffect, useState } from 'react';
+
+function Carousel() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState([]);
+
+  const scrollPrev = useCallback(
+    () => emblaApi && emblaApi.scrollPrev(),
+    [emblaApi]
+  );
+  const scrollNext = useCallback(
+    () => emblaApi && emblaApi.scrollNext(),
+    [emblaApi]
+  );
+  const scrollTo = useCallback(
+    (index) => emblaApi && emblaApi.scrollTo(index),
+    [emblaApi]
+  );
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    setScrollSnaps(emblaApi.scrollSnapList());
+    emblaApi.on('select', () => {
+      setSelectedIndex(emblaApi.selectedScrollSnap());
+    });
+  }, [emblaApi]);
+
+  return (
+    <div>
+      <div ref={emblaRef} style={{ overflow: 'hidden' }}>
+        <div style={{ display: 'flex' }}>
+          <div style={{ flex: '0 0 100%' }}>Slide 1</div>
+          <div style={{ flex: '0 0 100%' }}>Slide 2</div>
+          <div style={{ flex: '0 0 100%' }}>Slide 3</div>
+        </div>
+      </div>
+      <button onClick={scrollPrev}>Prev</button>
+      <button onClick={scrollNext}>Next</button>
+      <div>
+        {scrollSnaps.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => scrollTo(index)}
+            style={{ opacity: index === selectedIndex ? 1 : 0.5 }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+```
+
+**Swiper - UI included:**
+
+```jsx
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+function Carousel() {
+  return (
+    <Swiper
+      modules={[Navigation, Pagination]}
+      loop
+      navigation
+      pagination={{ clickable: true }}
+    >
+      <SwiperSlide>Slide 1</SwiperSlide>
+      <SwiperSlide>Slide 2</SwiperSlide>
+      <SwiperSlide>Slide 3</SwiperSlide>
+    </Swiper>
+  );
+}
+```
+
+The Swiper version is a fraction of the code. Multiply this difference across every carousel feature - autoplay controls, progress indicators, lazy loading states, accessibility attributes - and the development time gap becomes significant.
+
+## Feature Comparison
+
+### Transition Effects
+
+| Effect            | Swiper               | Embla Carousel   |
+| ----------------- | -------------------- | ---------------- |
+| Slide             | Yes                  | Yes              |
+| Fade              | Yes (with crossfade) | Yes (via plugin) |
+| Cube (3D)         | Yes                  | No               |
+| Coverflow (3D)    | Yes                  | No               |
+| Flip (3D)         | Yes                  | No               |
+| Cards             | Yes                  | No               |
+| Creative (custom) | Yes                  | No               |
+
+Swiper offers 7 built-in transition effects. The Creative effect is particularly powerful - it lets you define custom CSS transforms for previous, next, and active slides, enabling unlimited visual possibilities without writing plugins.
+
+Embla supports slide and fade (via plugin). For any other effect, you'd need to build it yourself using the scroll progress API.
+
+### Core Slider Features
+
+| Feature                  | Swiper                           | Embla Carousel           |
+| ------------------------ | -------------------------------- | ------------------------ |
+| Responsive Breakpoints   | Yes (full config per breakpoint) | Yes (re-initializes)     |
+| Infinite Loop            | Yes                              | Yes                      |
+| Autoplay                 | Yes (with progress tracking)     | Yes (via plugin)         |
+| Free Mode / Momentum     | Yes                              | Yes (dragFree)           |
+| Vertical Slider          | Yes                              | Yes                      |
+| Centered Slides          | Yes                              | Yes (align: 'center')    |
+| Multiple Slides Per View | Yes                              | Yes                      |
+| Auto Height              | Yes                              | Yes (via plugin)         |
+| Variable Width Slides    | Yes                              | Yes                      |
+| RTL Support              | Yes                              | Yes                      |
+| CSS Scroll Snap Mode     | Yes                              | No                       |
+| Rewind Mode              | Yes                              | No                       |
+| Grid / Multi-row         | Yes                              | No                       |
+| Nested Sliders           | Yes                              | Not officially supported |
+| Watch for new slides     | Yes                              | Yes (watchSlides)        |
+
+Both libraries cover the core basics well. The differences emerge in specifics - Swiper has grid layout, CSS scroll snap mode, and rewind mode that Embla lacks. Embla's breakpoint system re-initializes the carousel, while Swiper smoothly transitions between configurations.
+
+### Navigation & UI
+
+| Feature             | Swiper               | Embla Carousel |
+| ------------------- | -------------------- | -------------- |
+| Navigation Arrows   | Built-in module      | Build yourself |
+| Pagination Bullets  | Built-in module      | Build yourself |
+| Pagination Fraction | Built-in module      | Build yourself |
+| Progress Bar        | Built-in module      | Build yourself |
+| Scrollbar           | Built-in (draggable) | Build yourself |
+| Autoplay Controls   | Built-in             | Build yourself |
+
+This is where the headless vs batteries-included difference is most visible. Every UI element in Embla requires custom implementation. Swiper provides all of these as ready-to-use, customizable modules.
+
+### Advanced Features
+
+| Feature                   | Swiper                         | Embla Carousel               |
+| ------------------------- | ------------------------------ | ---------------------------- |
+| Virtual Slides            | Yes (render 1000s efficiently) | No                           |
+| Parallax                  | Yes (built-in)                 | Manual (via scroll progress) |
+| Zoom (pinch + double-tap) | Yes                            | No                           |
+| Thumbs Gallery            | Yes (purpose-built)            | Manual (two instances)       |
+| Lazy Loading              | Yes                            | Manual implementation        |
+| Hash Navigation           | Yes                            | No                           |
+| History Navigation        | Yes                            | No                           |
+| Controller (2-way sync)   | Yes                            | Manual implementation        |
+| Keyboard Control          | Yes                            | Manual implementation        |
+| Mousewheel Control        | Yes                            | Yes (via plugin)             |
+| Grab Cursor               | Yes                            | Manual CSS                   |
+
+Swiper's advanced features are where it pulls significantly ahead. Virtual slides for handling thousands of items, built-in parallax with per-element control, pinch-to-zoom, and a purpose-built thumbs gallery module are all ready to use. With Embla, each of these requires substantial custom implementation.
+
+## Framework Support
+
+| Framework      | Swiper                      | Embla Carousel      |
+| -------------- | --------------------------- | ------------------- |
+| Vanilla JS     | Yes                         | Yes                 |
+| React          | Official components + hooks | Official hook       |
+| Vue            | Official components + hooks | Official composable |
+| Angular        | Yes (via Swiper Element)    | Community only      |
+| Svelte         | Yes (via Swiper Element)    | Official package    |
+| Solid          | Yes (via Swiper Element)    | Official package    |
+| Web Components | Yes (Swiper Element)        | No                  |
+
+Both libraries have good framework support. Swiper has an edge with Angular support via Swiper Element and full Web Component support that works in any framework.
+
+## Bundle Size
+
+This is Embla's strongest advantage. At **~3-5KB gzipped** for the core, it's significantly smaller than Swiper's ~25-45KB range.
+
+However, context matters:
+
+- Embla's small core doesn't include any UI. Once you add your custom arrows, dots, progress bars, autoplay controls, keyboard handlers, and accessibility attributes, your application code grows substantially.
+- Swiper's modular imports mean you only ship what you use. A minimal setup with just navigation and pagination is ~20KB gzipped.
+- The development time saved by using Swiper's built-in modules often outweighs the bundle size difference.
+
+If your project has an extremely strict bundle budget and you need only a simple slider with no UI, Embla's size is a genuine advantage. For most projects, the difference is negligible compared to images, fonts, and other assets on the page.
+
+## Accessibility
+
+This is an important distinction. Embla's headless approach means **no built-in accessibility**:
+
+- No ARIA attributes added automatically
+- No keyboard navigation built in
+- No screen reader announcements
+- No focus management
+
+You're responsible for implementing all accessibility yourself. While Embla's docs provide some guidance, it's easy to ship an inaccessible carousel if you're not careful.
+
+Swiper's A11y module provides accessibility out of the box:
+
+- ARIA labels and roles for slides, navigation, and pagination
+- `aria-live` regions for screen reader announcements
+- Keyboard navigation (arrow keys)
+- Configurable accessibility labels
+- Focus management
+
+## Developer Experience
+
+| Aspect              | Swiper                          | Embla Carousel                         |
+| ------------------- | ------------------------------- | -------------------------------------- |
+| TypeScript          | Full built-in types             | Full built-in types                    |
+| Module System       | ES modules                      | ES modules                             |
+| Setup Complexity    | Low (import and configure)      | Medium (build UI yourself)             |
+| Learning Curve      | Moderate (many options)         | Low core, high for full implementation |
+| Documentation       | Extensive, with demos           | Good, improving                        |
+| Plugin System       | Module-based                    | Plugin-based                           |
+| Community Size      | Very large (40k+ stars)         | Growing (~6k stars)                    |
+| Enterprise Adoption | Adobe, BMW, Nike, Samsung, etc. | Smaller adoption                       |
+
+Both libraries have excellent TypeScript support and modern module systems. Swiper has a larger community, more examples, and broader enterprise adoption.
+
+## Touch & Mobile
+
+Both libraries offer good touch and drag interactions. Embla's scroll physics are smooth and natural. Swiper was built mobile-first and adds:
+
+- Pinch-to-zoom and double-tap zoom
+- Configurable touch angle for scroll conflict prevention
+- Edge detection for iOS/Android back gestures
+- Hardware-accelerated transitions
+- CSS scroll snap mode option
+
+## AI Integration
+
+Swiper offers a dedicated <a href="/swiper-mcp">MCP (Model Context Protocol) server</a> that gives AI coding assistants like Claude, Cursor, and Windsurf programmatic access to the latest API docs, demos, and code examples. AI agents can generate correct Swiper code with always up-to-date documentation - no outdated or hallucinated APIs.
+
+Embla Carousel has no AI integration.
+
+## When to Choose Which
+
+**Choose Embla if:**
+
+- Bundle size is your absolute top priority
+- You need only basic sliding functionality
+
+**Choose Swiper if:**
+
+- You want to ship faster with ready-to-use UI components - or build fully custom UI (Swiper supports custom navigation, pagination, and controls just as easily)
+- You need advanced features (3D effects, virtual slides, parallax, zoom)
+- You need built-in accessibility
+- You need Angular or Web Component support
+- You're building a production app used by a large audience
+- You want the backing of a large community and enterprise adoption
+
+## Conclusion
+
+Embla Carousel is a well-built library that excels at being lightweight and giving developers total control. It deserves respect for its clean architecture and active maintenance.
+
+However, for most projects, Swiper's batteries-included approach is the more practical choice. You get navigation, pagination, accessibility, 7 transition effects, virtual slides, parallax, zoom, thumbs gallery, and much more - all ready to use. The development time saved and the built-in accessibility alone make a strong case, before you even consider the larger community, broader framework support, and enterprise track record.
+
+Try the <a href="/playground">Swiper Playground</a> to visually configure your slider with 80+ parameters and export ready-to-use code. For a full no-code slider builder with premium effects like Panorama, Shutters, and 20+ WebGL transitions, check out <a href="https://studio.swiperjs.com" target="_blank">Swiper Studio</a>. And for even more stunning visual effects, explore the premium collection from <a href="https://uiinitiative.com" target="_blank">UI Initiative</a>.
+
+- <a href="/get-started">Get started with Swiper</a>
+- <a href="/demos">View demos</a>
+- <a href="/swiper-api">API Documentation</a>
+- <a href="/playground">Swiper Playground</a>
+- <a href="https://studio.swiperjs.com" target="_blank">
+    Swiper Studio
+  </a>
+- <a href="https://uiinitiative.com" target="_blank">
+    Premium effects by UI Initiative
+  </a>
+
+export default function Page({ children }) {
+  const components = {
+    h1: Heading.h1,
+    h2: Heading.h2,
+    h3: Heading.h3,
+    h4: Heading.h4,
+  };
+  return (
+    <MDXProvider components={components}>
+      <WithSidebarLayout meta={meta}>{children}</WithSidebarLayout>
+    </MDXProvider>
+  );
+}
