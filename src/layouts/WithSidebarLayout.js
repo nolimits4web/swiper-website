@@ -41,7 +41,13 @@ export function WithSidebarLayout({
       if (!parent) {
         t.push(obj);
       } else {
-        t[t.length - 1].children.push(obj);
+        const index = Math.max(t.length - 1, 0);
+        if (!t[index]) {
+          t[index] = {
+            children: [],
+          };
+        }
+        t[index].children.push(obj);
       }
     });
     setToc(t);
