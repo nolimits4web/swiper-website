@@ -1,8 +1,9 @@
 import sponsors from '../shared/sponsors-list.json';
 
 export default function SidebarSponsors() {
+  if (typeof window !== 'undefined' && window.__NO_SPONSORS__) return null;
   return (
-    <div className="mb-4">
+    <div className="mb-4" data-sponsors="">
       <div className="mb-2 flex items-center justify-between">
         <span>Sponsors</span>
         <a

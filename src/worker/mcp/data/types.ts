@@ -13,7 +13,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3649,
+          "id": 3658,
           "name": "SwiperClass",
           "variant": "signature",
           "kind": 16384,
@@ -37,7 +37,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3650,
+              "id": 3659,
               "name": "container",
               "variant": "param",
               "kind": 32768,
@@ -67,7 +67,7 @@ export const typesData = {
                   },
                   {
                     "type": "reference",
-                    "target": 504,
+                    "target": 508,
                     "name": "CSSSelector",
                     "package": "swiper"
                   }
@@ -75,7 +75,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3651,
+              "id": 3660,
               "name": "options",
               "variant": "param",
               "kind": 32768,
@@ -93,7 +93,7 @@ export const typesData = {
               },
               "type": {
                 "type": "reference",
-                "target": 1114,
+                "target": 1118,
                 "name": "SwiperOptions",
                 "package": "swiper"
               }
@@ -101,7 +101,7 @@ export const typesData = {
           ],
           "type": {
             "type": "reference",
-            "target": 3639,
+            "target": 3648,
             "name": "Swiper",
             "package": "swiper"
           },
@@ -623,7 +623,7 @@ export const typesData = {
         "type": "array",
         "elementType": {
           "type": "reference",
-          "target": 727,
+          "target": 731,
           "name": "SwiperModule",
           "package": "swiper"
         }
@@ -642,7 +642,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 223,
+        "target": 224,
         "name": "MousewheelMethods",
         "package": "swiper"
       }
@@ -652,7 +652,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 246,
+        "target": 247,
         "name": "NavigationMethods",
         "package": "swiper"
       }
@@ -662,7 +662,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 1114,
+        "target": 1118,
         "name": "SwiperOptions",
         "package": "swiper"
       },
@@ -680,7 +680,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 283,
+        "target": 284,
         "name": "PaginationMethods",
         "package": "swiper"
       }
@@ -690,7 +690,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 365,
+        "target": 366,
         "name": "ParallaxMethods",
         "package": "swiper"
       }
@@ -700,7 +700,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 1114,
+        "target": 1118,
         "name": "SwiperOptions",
         "package": "swiper"
       },
@@ -782,7 +782,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 371,
+        "target": 372,
         "name": "ScrollbarMethods",
         "package": "swiper"
       }
@@ -945,7 +945,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 411,
+        "target": 412,
         "name": "ThumbsMethods",
         "package": "swiper"
       }
@@ -956,7 +956,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 3675,
+          "id": 3684,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -965,7 +965,7 @@ export const typesData = {
           },
           "children": [
             {
-              "id": 3678,
+              "id": 3687,
               "name": "currentX",
               "variant": "declaration",
               "kind": 1024,
@@ -985,7 +985,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3679,
+              "id": 3688,
               "name": "currentY",
               "variant": "declaration",
               "kind": 1024,
@@ -1005,7 +1005,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3680,
+              "id": 3689,
               "name": "diff",
               "variant": "declaration",
               "kind": 1024,
@@ -1025,7 +1025,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3676,
+              "id": 3685,
               "name": "startX",
               "variant": "declaration",
               "kind": 1024,
@@ -1045,7 +1045,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3677,
+              "id": 3686,
               "name": "startY",
               "variant": "declaration",
               "kind": 1024,
@@ -1069,11 +1069,11 @@ export const typesData = {
             {
               "title": "Properties",
               "children": [
-                3678,
-                3679,
-                3680,
-                3676,
-                3677
+                3687,
+                3688,
+                3689,
+                3685,
+                3686
               ]
             }
           ],
@@ -1152,7 +1152,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 426,
+        "target": 430,
         "name": "VirtualMethods",
         "package": "swiper"
       }
@@ -1200,7 +1200,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 472,
+        "target": 476,
         "name": "ZoomMethods",
         "package": "swiper"
       }
@@ -1210,7 +1210,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 1114,
+        "target": 1118,
         "name": "SwiperOptions",
         "package": "swiper"
       },
@@ -1228,7 +1228,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 1114,
+        "target": 1118,
         "name": "SwiperOptions",
         "package": "swiper"
       },
@@ -1246,7 +1246,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3859,
+          "id": 3868,
           "name": "addSlide",
           "variant": "signature",
           "kind": 4096,
@@ -1281,7 +1281,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3860,
+              "id": 3869,
               "name": "index",
               "variant": "param",
               "kind": 32768,
@@ -1294,7 +1294,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3861,
+              "id": 3870,
               "name": "slides",
               "variant": "param",
               "kind": 32768,
@@ -1354,7 +1354,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3853,
+          "id": 3862,
           "name": "appendSlide",
           "variant": "signature",
           "kind": 4096,
@@ -1389,7 +1389,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3854,
+              "id": 3863,
               "name": "slides",
               "variant": "param",
               "kind": 32768,
@@ -1449,7 +1449,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3748,
+          "id": 3757,
           "name": "attachEvents",
           "variant": "signature",
           "kind": 4096,
@@ -1483,7 +1483,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3739,
+          "id": 3748,
           "name": "changeDirection",
           "variant": "signature",
           "kind": 4096,
@@ -1507,7 +1507,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3740,
+              "id": 3749,
               "name": "direction",
               "variant": "param",
               "kind": 32768,
@@ -1538,7 +1538,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3741,
+              "id": 3750,
               "name": "needUpdate",
               "variant": "param",
               "kind": 32768,
@@ -1572,7 +1572,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3743,
+          "id": 3752,
           "name": "changeLanguageDirection",
           "variant": "signature",
           "kind": 4096,
@@ -1596,7 +1596,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3744,
+              "id": 3753,
               "name": "direction",
               "variant": "param",
               "kind": 32768,
@@ -1650,7 +1650,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3757,
+          "id": 3766,
           "name": "destroy",
           "variant": "signature",
           "kind": 4096,
@@ -1674,7 +1674,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3758,
+              "id": 3767,
               "name": "deleteInstance",
               "variant": "param",
               "kind": 32768,
@@ -1696,7 +1696,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3759,
+              "id": 3768,
               "name": "cleanStyles",
               "variant": "param",
               "kind": 32768,
@@ -1730,7 +1730,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3746,
+          "id": 3755,
           "name": "detachEvents",
           "variant": "signature",
           "kind": 4096,
@@ -1764,7 +1764,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3690,
+          "id": 3699,
           "name": "disable",
           "variant": "signature",
           "kind": 4096,
@@ -1798,7 +1798,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3848,
+          "id": 3857,
           "name": "emit",
           "variant": "signature",
           "kind": 4096,
@@ -1823,7 +1823,7 @@ export const typesData = {
           ],
           "typeParameters": [
             {
-              "id": 3849,
+              "id": 3858,
               "name": "E",
               "variant": "typeParam",
               "kind": 131072,
@@ -1835,7 +1835,7 @@ export const typesData = {
                 "operator": "keyof",
                 "target": {
                   "type": "reference",
-                  "target": 747,
+                  "target": 751,
                   "name": "SwiperEvents",
                   "package": "swiper"
                 }
@@ -1844,7 +1844,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3850,
+              "id": 3859,
               "name": "event",
               "variant": "param",
               "kind": 32768,
@@ -1853,14 +1853,14 @@ export const typesData = {
               },
               "type": {
                 "type": "reference",
-                "target": 3849,
+                "target": 3858,
                 "name": "E",
                 "package": "swiper",
                 "refersToTypeParameter": true
               }
             },
             {
-              "id": 3851,
+              "id": 3860,
               "name": "args",
               "variant": "param",
               "kind": 32768,
@@ -1899,7 +1899,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3692,
+          "id": 3701,
           "name": "enable",
           "variant": "signature",
           "kind": 4096,
@@ -1933,7 +1933,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3796,
+          "id": 3805,
           "name": "getBreakpoint",
           "variant": "signature",
           "kind": 4096,
@@ -1957,7 +1957,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3797,
+              "id": 3806,
               "name": "breakpoints",
               "variant": "param",
               "kind": 32768,
@@ -1970,7 +1970,7 @@ export const typesData = {
                   {
                     "type": "reflection",
                     "declaration": {
-                      "id": 3798,
+                      "id": 3807,
                       "name": "__type",
                       "variant": "declaration",
                       "kind": 65536,
@@ -1980,13 +1980,13 @@ export const typesData = {
                       "sources": [
                         {
                           "fileName": "swiper/types/swiper-options.d.ts",
-                          "line": 734,
+                          "line": 743,
                           "character": 16
                         }
                       ],
                       "indexSignatures": [
                         {
-                          "id": 3799,
+                          "id": 3808,
                           "name": "__index",
                           "variant": "signature",
                           "kind": 8192,
@@ -1996,13 +1996,13 @@ export const typesData = {
                           "sources": [
                             {
                               "fileName": "swiper/types/swiper-options.d.ts",
-                              "line": 735,
+                              "line": 744,
                               "character": 4
                             }
                           ],
                           "parameters": [
                             {
-                              "id": 3800,
+                              "id": 3809,
                               "name": "width",
                               "variant": "param",
                               "kind": 32768,
@@ -2017,13 +2017,13 @@ export const typesData = {
                           ],
                           "type": {
                             "type": "reference",
-                            "target": 1114,
+                            "target": 1118,
                             "name": "SwiperOptions",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 3801,
+                          "id": 3810,
                           "name": "__index",
                           "variant": "signature",
                           "kind": 8192,
@@ -2033,13 +2033,13 @@ export const typesData = {
                           "sources": [
                             {
                               "fileName": "swiper/types/swiper-options.d.ts",
-                              "line": 736,
+                              "line": 745,
                               "character": 4
                             }
                           ],
                           "parameters": [
                             {
-                              "id": 3802,
+                              "id": 3811,
                               "name": "ratio",
                               "variant": "param",
                               "kind": 32768,
@@ -2054,7 +2054,7 @@ export const typesData = {
                           ],
                           "type": {
                             "type": "reference",
-                            "target": 1114,
+                            "target": 1118,
                             "name": "SwiperOptions",
                             "package": "swiper"
                           }
@@ -2082,7 +2082,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3764,
+          "id": 3773,
           "name": "getTranslate",
           "variant": "signature",
           "kind": 4096,
@@ -2116,7 +2116,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3754,
+          "id": 3763,
           "name": "init",
           "variant": "signature",
           "kind": 4096,
@@ -2140,7 +2140,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3755,
+              "id": 3764,
               "name": "el",
               "variant": "param",
               "kind": 32768,
@@ -2162,7 +2162,7 @@ export const typesData = {
           ],
           "type": {
             "type": "reference",
-            "target": 3639,
+            "target": 3648,
             "name": "Swiper",
             "package": "swiper"
           }
@@ -2174,7 +2174,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3794,
+          "id": 3803,
           "name": "isHorizontal",
           "variant": "signature",
           "kind": 4096,
@@ -2208,7 +2208,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3750,
+          "id": 3759,
           "name": "loopCreate",
           "variant": "signature",
           "kind": 4096,
@@ -2242,7 +2242,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3752,
+          "id": 3761,
           "name": "loopDestroy",
           "variant": "signature",
           "kind": 4096,
@@ -2276,7 +2276,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3774,
+          "id": 3783,
           "name": "maxTranslate",
           "variant": "signature",
           "kind": 4096,
@@ -2310,7 +2310,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3772,
+          "id": 3781,
           "name": "minTranslate",
           "variant": "signature",
           "kind": 4096,
@@ -2344,7 +2344,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3840,
+          "id": 3849,
           "name": "off",
           "variant": "signature",
           "kind": 4096,
@@ -2369,7 +2369,7 @@ export const typesData = {
           ],
           "typeParameters": [
             {
-              "id": 3841,
+              "id": 3850,
               "name": "E",
               "variant": "typeParam",
               "kind": 131072,
@@ -2381,7 +2381,7 @@ export const typesData = {
                 "operator": "keyof",
                 "target": {
                   "type": "reference",
-                  "target": 747,
+                  "target": 751,
                   "name": "SwiperEvents",
                   "package": "swiper"
                 }
@@ -2390,7 +2390,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3842,
+              "id": 3851,
               "name": "event",
               "variant": "param",
               "kind": 32768,
@@ -2399,14 +2399,14 @@ export const typesData = {
               },
               "type": {
                 "type": "reference",
-                "target": 3841,
+                "target": 3850,
                 "name": "E",
                 "package": "swiper",
                 "refersToTypeParameter": true
               }
             },
             {
-              "id": 3843,
+              "id": 3852,
               "name": "handler",
               "variant": "param",
               "kind": 32768,
@@ -2417,14 +2417,14 @@ export const typesData = {
                 "type": "indexedAccess",
                 "indexType": {
                   "type": "reference",
-                  "target": 3841,
+                  "target": 3850,
                   "name": "E",
                   "package": "swiper",
                   "refersToTypeParameter": true
                 },
                 "objectType": {
                   "type": "reference",
-                  "target": 747,
+                  "target": 751,
                   "name": "SwiperEvents",
                   "package": "swiper"
                 }
@@ -2447,7 +2447,7 @@ export const typesData = {
           }
         },
         {
-          "id": 3844,
+          "id": 3853,
           "name": "off",
           "variant": "signature",
           "kind": 4096,
@@ -2472,7 +2472,7 @@ export const typesData = {
           ],
           "typeParameters": [
             {
-              "id": 3845,
+              "id": 3854,
               "name": "E",
               "variant": "typeParam",
               "kind": 131072,
@@ -2484,7 +2484,7 @@ export const typesData = {
                 "operator": "keyof",
                 "target": {
                   "type": "reference",
-                  "target": 747,
+                  "target": 751,
                   "name": "SwiperEvents",
                   "package": "swiper"
                 }
@@ -2493,7 +2493,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3846,
+              "id": 3855,
               "name": "event",
               "variant": "param",
               "kind": 32768,
@@ -2502,7 +2502,7 @@ export const typesData = {
               },
               "type": {
                 "type": "reference",
-                "target": 3845,
+                "target": 3854,
                 "name": "E",
                 "package": "swiper",
                 "refersToTypeParameter": true
@@ -2531,7 +2531,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3787,
+          "id": 3796,
           "name": "offAny",
           "variant": "signature",
           "kind": 4096,
@@ -2555,7 +2555,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3788,
+              "id": 3797,
               "name": "handler",
               "variant": "param",
               "kind": 32768,
@@ -2565,7 +2565,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 3789,
+                  "id": 3798,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -2581,7 +2581,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 3790,
+                      "id": 3799,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -2597,7 +2597,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 3791,
+                          "id": 3800,
                           "name": "eventName",
                           "variant": "param",
                           "kind": 32768,
@@ -2610,7 +2610,7 @@ export const typesData = {
                           }
                         },
                         {
-                          "id": 3792,
+                          "id": 3801,
                           "name": "args",
                           "variant": "param",
                           "kind": 32768,
@@ -2649,7 +2649,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3830,
+          "id": 3839,
           "name": "on",
           "variant": "signature",
           "kind": 4096,
@@ -2674,7 +2674,7 @@ export const typesData = {
           ],
           "typeParameters": [
             {
-              "id": 3831,
+              "id": 3840,
               "name": "E",
               "variant": "typeParam",
               "kind": 131072,
@@ -2686,7 +2686,7 @@ export const typesData = {
                 "operator": "keyof",
                 "target": {
                   "type": "reference",
-                  "target": 747,
+                  "target": 751,
                   "name": "SwiperEvents",
                   "package": "swiper"
                 }
@@ -2695,7 +2695,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3832,
+              "id": 3841,
               "name": "event",
               "variant": "param",
               "kind": 32768,
@@ -2704,14 +2704,14 @@ export const typesData = {
               },
               "type": {
                 "type": "reference",
-                "target": 3831,
+                "target": 3840,
                 "name": "E",
                 "package": "swiper",
                 "refersToTypeParameter": true
               }
             },
             {
-              "id": 3833,
+              "id": 3842,
               "name": "handler",
               "variant": "param",
               "kind": 32768,
@@ -2722,14 +2722,14 @@ export const typesData = {
                 "type": "indexedAccess",
                 "indexType": {
                   "type": "reference",
-                  "target": 3831,
+                  "target": 3840,
                   "name": "E",
                   "package": "swiper",
                   "refersToTypeParameter": true
                 },
                 "objectType": {
                   "type": "reference",
-                  "target": 747,
+                  "target": 751,
                   "name": "SwiperEvents",
                   "package": "swiper"
                 }
@@ -2758,7 +2758,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3780,
+          "id": 3789,
           "name": "onAny",
           "variant": "signature",
           "kind": 4096,
@@ -2782,7 +2782,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3781,
+              "id": 3790,
               "name": "handler",
               "variant": "param",
               "kind": 32768,
@@ -2792,7 +2792,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 3782,
+                  "id": 3791,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -2808,7 +2808,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 3783,
+                      "id": 3792,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -2824,7 +2824,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 3784,
+                          "id": 3793,
                           "name": "eventName",
                           "variant": "param",
                           "kind": 32768,
@@ -2837,7 +2837,7 @@ export const typesData = {
                           }
                         },
                         {
-                          "id": 3785,
+                          "id": 3794,
                           "name": "args",
                           "variant": "param",
                           "kind": 32768,
@@ -2876,7 +2876,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3835,
+          "id": 3844,
           "name": "once",
           "variant": "signature",
           "kind": 4096,
@@ -2901,7 +2901,7 @@ export const typesData = {
           ],
           "typeParameters": [
             {
-              "id": 3836,
+              "id": 3845,
               "name": "E",
               "variant": "typeParam",
               "kind": 131072,
@@ -2913,7 +2913,7 @@ export const typesData = {
                 "operator": "keyof",
                 "target": {
                   "type": "reference",
-                  "target": 747,
+                  "target": 751,
                   "name": "SwiperEvents",
                   "package": "swiper"
                 }
@@ -2922,7 +2922,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3837,
+              "id": 3846,
               "name": "event",
               "variant": "param",
               "kind": 32768,
@@ -2931,14 +2931,14 @@ export const typesData = {
               },
               "type": {
                 "type": "reference",
-                "target": 3836,
+                "target": 3845,
                 "name": "E",
                 "package": "swiper",
                 "refersToTypeParameter": true
               }
             },
             {
-              "id": 3838,
+              "id": 3847,
               "name": "handler",
               "variant": "param",
               "kind": 32768,
@@ -2949,14 +2949,14 @@ export const typesData = {
                 "type": "indexedAccess",
                 "indexType": {
                   "type": "reference",
-                  "target": 3836,
+                  "target": 3845,
                   "name": "E",
                   "package": "swiper",
                   "refersToTypeParameter": true
                 },
                 "objectType": {
                   "type": "reference",
-                  "target": 747,
+                  "target": 751,
                   "name": "SwiperEvents",
                   "package": "swiper"
                 }
@@ -2985,7 +2985,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3856,
+          "id": 3865,
           "name": "prependSlide",
           "variant": "signature",
           "kind": 4096,
@@ -3020,7 +3020,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3857,
+              "id": 3866,
               "name": "slides",
               "variant": "param",
               "kind": 32768,
@@ -3080,7 +3080,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3866,
+          "id": 3875,
           "name": "removeAllSlides",
           "variant": "signature",
           "kind": 4096,
@@ -3114,7 +3114,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3863,
+          "id": 3872,
           "name": "removeSlide",
           "variant": "signature",
           "kind": 4096,
@@ -3149,7 +3149,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3864,
+              "id": 3873,
               "name": "slideIndex",
               "variant": "param",
               "kind": 32768,
@@ -3186,7 +3186,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3804,
+          "id": 3813,
           "name": "setBreakpoint",
           "variant": "signature",
           "kind": 4096,
@@ -3220,7 +3220,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3778,
+          "id": 3787,
           "name": "setGrabCursor",
           "variant": "signature",
           "kind": 4096,
@@ -3254,7 +3254,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3694,
+          "id": 3703,
           "name": "setProgress",
           "variant": "signature",
           "kind": 4096,
@@ -3278,7 +3278,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3695,
+              "id": 3704,
               "name": "progress",
               "variant": "param",
               "kind": 32768,
@@ -3299,7 +3299,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3696,
+              "id": 3705,
               "name": "speed",
               "variant": "param",
               "kind": 32768,
@@ -3333,7 +3333,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3761,
+          "id": 3770,
           "name": "setTranslate",
           "variant": "signature",
           "kind": 4096,
@@ -3357,7 +3357,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3762,
+              "id": 3771,
               "name": "translate",
               "variant": "param",
               "kind": 32768,
@@ -3382,7 +3382,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3698,
+          "id": 3707,
           "name": "slideNext",
           "variant": "signature",
           "kind": 4096,
@@ -3405,305 +3405,6 @@ export const typesData = {
             }
           ],
           "parameters": [
-            {
-              "id": 3699,
-              "name": "speed",
-              "variant": "param",
-              "kind": 32768,
-              "flags": {
-                "isExternal": true,
-                "isOptional": true
-              },
-              "comment": {
-                "summary": [
-                  {
-                    "kind": "text",
-                    "text": "Transition duration (in ms)."
-                  }
-                ]
-              },
-              "type": {
-                "type": "intrinsic",
-                "name": "number"
-              }
-            },
-            {
-              "id": 3700,
-              "name": "runCallbacks",
-              "variant": "param",
-              "kind": 32768,
-              "flags": {
-                "isExternal": true,
-                "isOptional": true
-              },
-              "comment": {
-                "summary": [
-                  {
-                    "kind": "text",
-                    "text": "Set it to false (by default it is true) and transition will\n not produce transition events."
-                  }
-                ]
-              },
-              "type": {
-                "type": "intrinsic",
-                "name": "boolean"
-              }
-            }
-          ],
-          "type": {
-            "type": "intrinsic",
-            "name": "boolean"
-          }
-        }
-      ]
-    },
-    {
-      "name": "slidePrev",
-      "default_value": null,
-      "signatures": [
-        {
-          "id": 3702,
-          "name": "slidePrev",
-          "variant": "signature",
-          "kind": 4096,
-          "flags": {
-            "isExternal": true
-          },
-          "comment": {
-            "summary": [
-              {
-                "kind": "text",
-                "text": "Run transition to previous slide."
-              }
-            ]
-          },
-          "sources": [
-            {
-              "fileName": "swiper/types/swiper-class.d.ts",
-              "line": 247,
-              "character": 2
-            }
-          ],
-          "parameters": [
-            {
-              "id": 3703,
-              "name": "speed",
-              "variant": "param",
-              "kind": 32768,
-              "flags": {
-                "isExternal": true,
-                "isOptional": true
-              },
-              "comment": {
-                "summary": [
-                  {
-                    "kind": "text",
-                    "text": "Transition duration (in ms)."
-                  }
-                ]
-              },
-              "type": {
-                "type": "intrinsic",
-                "name": "number"
-              }
-            },
-            {
-              "id": 3704,
-              "name": "runCallbacks",
-              "variant": "param",
-              "kind": 32768,
-              "flags": {
-                "isExternal": true,
-                "isOptional": true
-              },
-              "comment": {
-                "summary": [
-                  {
-                    "kind": "text",
-                    "text": "Set it to false (by default it is true) and transition will\n not produce transition events."
-                  }
-                ]
-              },
-              "type": {
-                "type": "intrinsic",
-                "name": "boolean"
-              }
-            }
-          ],
-          "type": {
-            "type": "intrinsic",
-            "name": "boolean"
-          }
-        }
-      ]
-    },
-    {
-      "name": "slideReset",
-      "default_value": null,
-      "signatures": [
-        {
-          "id": 3716,
-          "name": "slideReset",
-          "variant": "signature",
-          "kind": 4096,
-          "flags": {
-            "isExternal": true
-          },
-          "comment": {
-            "summary": [
-              {
-                "kind": "text",
-                "text": "Reset swiper position to currently active slide for the duration equal to 'speed'\nparameter."
-              }
-            ]
-          },
-          "sources": [
-            {
-              "fileName": "swiper/types/swiper-class.d.ts",
-              "line": 279,
-              "character": 2
-            }
-          ],
-          "parameters": [
-            {
-              "id": 3717,
-              "name": "speed",
-              "variant": "param",
-              "kind": 32768,
-              "flags": {
-                "isExternal": true,
-                "isOptional": true
-              },
-              "comment": {
-                "summary": [
-                  {
-                    "kind": "text",
-                    "text": "Transition duration (in ms)."
-                  }
-                ]
-              },
-              "type": {
-                "type": "intrinsic",
-                "name": "number"
-              }
-            },
-            {
-              "id": 3718,
-              "name": "runCallbacks",
-              "variant": "param",
-              "kind": 32768,
-              "flags": {
-                "isExternal": true,
-                "isOptional": true
-              },
-              "comment": {
-                "summary": [
-                  {
-                    "kind": "text",
-                    "text": "Set it to false (by default it is true) and transition will\n not produce transition events."
-                  }
-                ]
-              },
-              "type": {
-                "type": "intrinsic",
-                "name": "boolean"
-              }
-            }
-          ],
-          "type": {
-            "type": "intrinsic",
-            "name": "boolean"
-          }
-        }
-      ]
-    },
-    {
-      "name": "slidesPerViewDynamic",
-      "default_value": null,
-      "signatures": [
-        {
-          "id": 3724,
-          "name": "slidesPerViewDynamic",
-          "variant": "signature",
-          "kind": 4096,
-          "flags": {
-            "isExternal": true
-          },
-          "comment": {
-            "summary": [
-              {
-                "kind": "text",
-                "text": "Get dynamically calculated amount of slides per view, useful only when slidesPerView set to "
-              },
-              {
-                "kind": "code",
-                "text": "`auto`"
-              }
-            ]
-          },
-          "sources": [
-            {
-              "fileName": "swiper/types/swiper-class.d.ts",
-              "line": 294,
-              "character": 2
-            }
-          ],
-          "type": {
-            "type": "intrinsic",
-            "name": "number"
-          }
-        }
-      ]
-    },
-    {
-      "name": "slideTo",
-      "default_value": null,
-      "signatures": [
-        {
-          "id": 3706,
-          "name": "slideTo",
-          "variant": "signature",
-          "kind": 4096,
-          "flags": {
-            "isExternal": true
-          },
-          "comment": {
-            "summary": [
-              {
-                "kind": "text",
-                "text": "Run transition to the slide with index number equal to 'index' parameter for the\n duration equal to 'speed' parameter."
-              }
-            ]
-          },
-          "sources": [
-            {
-              "fileName": "swiper/types/swiper-class.d.ts",
-              "line": 258,
-              "character": 2
-            }
-          ],
-          "parameters": [
-            {
-              "id": 3707,
-              "name": "index",
-              "variant": "param",
-              "kind": 32768,
-              "flags": {
-                "isExternal": true
-              },
-              "comment": {
-                "summary": [
-                  {
-                    "kind": "text",
-                    "text": "Index number of slide."
-                  }
-                ]
-              },
-              "type": {
-                "type": "intrinsic",
-                "name": "number"
-              }
-            },
             {
               "id": 3708,
               "name": "speed",
@@ -3757,11 +3458,310 @@ export const typesData = {
       ]
     },
     {
+      "name": "slidePrev",
+      "default_value": null,
+      "signatures": [
+        {
+          "id": 3711,
+          "name": "slidePrev",
+          "variant": "signature",
+          "kind": 4096,
+          "flags": {
+            "isExternal": true
+          },
+          "comment": {
+            "summary": [
+              {
+                "kind": "text",
+                "text": "Run transition to previous slide."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "fileName": "swiper/types/swiper-class.d.ts",
+              "line": 247,
+              "character": 2
+            }
+          ],
+          "parameters": [
+            {
+              "id": 3712,
+              "name": "speed",
+              "variant": "param",
+              "kind": 32768,
+              "flags": {
+                "isExternal": true,
+                "isOptional": true
+              },
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "Transition duration (in ms)."
+                  }
+                ]
+              },
+              "type": {
+                "type": "intrinsic",
+                "name": "number"
+              }
+            },
+            {
+              "id": 3713,
+              "name": "runCallbacks",
+              "variant": "param",
+              "kind": 32768,
+              "flags": {
+                "isExternal": true,
+                "isOptional": true
+              },
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "Set it to false (by default it is true) and transition will\n not produce transition events."
+                  }
+                ]
+              },
+              "type": {
+                "type": "intrinsic",
+                "name": "boolean"
+              }
+            }
+          ],
+          "type": {
+            "type": "intrinsic",
+            "name": "boolean"
+          }
+        }
+      ]
+    },
+    {
+      "name": "slideReset",
+      "default_value": null,
+      "signatures": [
+        {
+          "id": 3725,
+          "name": "slideReset",
+          "variant": "signature",
+          "kind": 4096,
+          "flags": {
+            "isExternal": true
+          },
+          "comment": {
+            "summary": [
+              {
+                "kind": "text",
+                "text": "Reset swiper position to currently active slide for the duration equal to 'speed'\nparameter."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "fileName": "swiper/types/swiper-class.d.ts",
+              "line": 279,
+              "character": 2
+            }
+          ],
+          "parameters": [
+            {
+              "id": 3726,
+              "name": "speed",
+              "variant": "param",
+              "kind": 32768,
+              "flags": {
+                "isExternal": true,
+                "isOptional": true
+              },
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "Transition duration (in ms)."
+                  }
+                ]
+              },
+              "type": {
+                "type": "intrinsic",
+                "name": "number"
+              }
+            },
+            {
+              "id": 3727,
+              "name": "runCallbacks",
+              "variant": "param",
+              "kind": 32768,
+              "flags": {
+                "isExternal": true,
+                "isOptional": true
+              },
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "Set it to false (by default it is true) and transition will\n not produce transition events."
+                  }
+                ]
+              },
+              "type": {
+                "type": "intrinsic",
+                "name": "boolean"
+              }
+            }
+          ],
+          "type": {
+            "type": "intrinsic",
+            "name": "boolean"
+          }
+        }
+      ]
+    },
+    {
+      "name": "slidesPerViewDynamic",
+      "default_value": null,
+      "signatures": [
+        {
+          "id": 3733,
+          "name": "slidesPerViewDynamic",
+          "variant": "signature",
+          "kind": 4096,
+          "flags": {
+            "isExternal": true
+          },
+          "comment": {
+            "summary": [
+              {
+                "kind": "text",
+                "text": "Get dynamically calculated amount of slides per view, useful only when slidesPerView set to "
+              },
+              {
+                "kind": "code",
+                "text": "`auto`"
+              }
+            ]
+          },
+          "sources": [
+            {
+              "fileName": "swiper/types/swiper-class.d.ts",
+              "line": 294,
+              "character": 2
+            }
+          ],
+          "type": {
+            "type": "intrinsic",
+            "name": "number"
+          }
+        }
+      ]
+    },
+    {
+      "name": "slideTo",
+      "default_value": null,
+      "signatures": [
+        {
+          "id": 3715,
+          "name": "slideTo",
+          "variant": "signature",
+          "kind": 4096,
+          "flags": {
+            "isExternal": true
+          },
+          "comment": {
+            "summary": [
+              {
+                "kind": "text",
+                "text": "Run transition to the slide with index number equal to 'index' parameter for the\n duration equal to 'speed' parameter."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "fileName": "swiper/types/swiper-class.d.ts",
+              "line": 258,
+              "character": 2
+            }
+          ],
+          "parameters": [
+            {
+              "id": 3716,
+              "name": "index",
+              "variant": "param",
+              "kind": 32768,
+              "flags": {
+                "isExternal": true
+              },
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "Index number of slide."
+                  }
+                ]
+              },
+              "type": {
+                "type": "intrinsic",
+                "name": "number"
+              }
+            },
+            {
+              "id": 3717,
+              "name": "speed",
+              "variant": "param",
+              "kind": 32768,
+              "flags": {
+                "isExternal": true,
+                "isOptional": true
+              },
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "Transition duration (in ms)."
+                  }
+                ]
+              },
+              "type": {
+                "type": "intrinsic",
+                "name": "number"
+              }
+            },
+            {
+              "id": 3718,
+              "name": "runCallbacks",
+              "variant": "param",
+              "kind": 32768,
+              "flags": {
+                "isExternal": true,
+                "isOptional": true
+              },
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "Set it to false (by default it is true) and transition will\n not produce transition events."
+                  }
+                ]
+              },
+              "type": {
+                "type": "intrinsic",
+                "name": "boolean"
+              }
+            }
+          ],
+          "type": {
+            "type": "intrinsic",
+            "name": "boolean"
+          }
+        }
+      ]
+    },
+    {
       "name": "slideToClosest",
       "default_value": null,
       "signatures": [
         {
-          "id": 3720,
+          "id": 3729,
           "name": "slideToClosest",
           "variant": "signature",
           "kind": 4096,
@@ -3785,7 +3785,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3721,
+              "id": 3730,
               "name": "speed",
               "variant": "param",
               "kind": 32768,
@@ -3807,7 +3807,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3722,
+              "id": 3731,
               "name": "runCallbacks",
               "variant": "param",
               "kind": 32768,
@@ -3841,7 +3841,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3711,
+          "id": 3720,
           "name": "slideToLoop",
           "variant": "signature",
           "kind": 4096,
@@ -3865,7 +3865,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3712,
+              "id": 3721,
               "name": "index",
               "variant": "param",
               "kind": 32768,
@@ -3886,7 +3886,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3713,
+              "id": 3722,
               "name": "speed",
               "variant": "param",
               "kind": 32768,
@@ -3908,7 +3908,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3714,
+              "id": 3723,
               "name": "runCallbacks",
               "variant": "param",
               "kind": 32768,
@@ -3932,7 +3932,7 @@ export const typesData = {
           ],
           "type": {
             "type": "reference",
-            "target": 3639,
+            "target": 3648,
             "name": "Swiper",
             "package": "swiper"
           }
@@ -3944,7 +3944,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3766,
+          "id": 3775,
           "name": "translateTo",
           "variant": "signature",
           "kind": 4096,
@@ -3968,7 +3968,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3767,
+              "id": 3776,
               "name": "translate",
               "variant": "param",
               "kind": 32768,
@@ -3989,7 +3989,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3768,
+              "id": 3777,
               "name": "speed",
               "variant": "param",
               "kind": 32768,
@@ -4010,7 +4010,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3769,
+              "id": 3778,
               "name": "runCallbacks",
               "variant": "param",
               "kind": 32768,
@@ -4032,7 +4032,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3770,
+              "id": 3779,
               "name": "translateBounds",
               "variant": "param",
               "kind": 32768,
@@ -4066,7 +4066,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3776,
+          "id": 3785,
           "name": "unsetGrabCursor",
           "variant": "signature",
           "kind": 4096,
@@ -4100,7 +4100,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3729,
+          "id": 3738,
           "name": "update",
           "variant": "signature",
           "kind": 4096,
@@ -4134,7 +4134,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3726,
+          "id": 3735,
           "name": "updateAutoHeight",
           "variant": "signature",
           "kind": 4096,
@@ -4158,7 +4158,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3727,
+              "id": 3736,
               "name": "speed",
               "variant": "param",
               "kind": 32768,
@@ -4192,7 +4192,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3735,
+          "id": 3744,
           "name": "updateProgress",
           "variant": "signature",
           "kind": 4096,
@@ -4226,7 +4226,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3731,
+          "id": 3740,
           "name": "updateSize",
           "variant": "signature",
           "kind": 4096,
@@ -4260,7 +4260,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3733,
+          "id": 3742,
           "name": "updateSlides",
           "variant": "signature",
           "kind": 4096,
@@ -4294,7 +4294,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3737,
+          "id": 3746,
           "name": "updateSlidesClasses",
           "variant": "signature",
           "kind": 4096,
@@ -4328,7 +4328,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3645,
+          "id": 3654,
           "name": "extendDefaults",
           "variant": "signature",
           "kind": 4096,
@@ -4352,7 +4352,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3646,
+              "id": 3655,
               "name": "options",
               "variant": "param",
               "kind": 32768,
@@ -4361,7 +4361,7 @@ export const typesData = {
               },
               "type": {
                 "type": "reference",
-                "target": 1114,
+                "target": 1118,
                 "name": "SwiperOptions",
                 "package": "swiper"
               }
@@ -4379,7 +4379,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3641,
+          "id": 3650,
           "name": "use",
           "variant": "signature",
           "kind": 4096,
@@ -4403,7 +4403,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3642,
+              "id": 3651,
               "name": "modules",
               "variant": "param",
               "kind": 32768,
@@ -4414,7 +4414,7 @@ export const typesData = {
                 "type": "array",
                 "elementType": {
                   "type": "reference",
-                  "target": 727,
+                  "target": 731,
                   "name": "SwiperModule",
                   "package": "swiper"
                 }
@@ -6146,7 +6146,7 @@ export const typesData = {
               {
                 "type": "reflection",
                 "declaration": {
-                  "id": 2165,
+                  "id": 2170,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -6280,7 +6280,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 2270,
+          "id": 2275,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -6289,7 +6289,7 @@ export const typesData = {
           },
           "children": [
             {
-              "id": 2271,
+              "id": 2276,
               "name": "__html",
               "variant": "declaration",
               "kind": 1024,
@@ -6328,7 +6328,7 @@ export const typesData = {
             {
               "title": "Properties",
               "children": [
-                2271
+                2276
               ]
             }
           ],
@@ -11473,7 +11473,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 3639,
+        "target": 3648,
         "name": "Swiper",
         "package": "swiper"
       }
@@ -11553,7 +11553,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3649,
+          "id": 3658,
           "name": "SwiperClass",
           "variant": "signature",
           "kind": 16384,
@@ -11577,7 +11577,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3650,
+              "id": 3659,
               "name": "container",
               "variant": "param",
               "kind": 32768,
@@ -11607,7 +11607,7 @@ export const typesData = {
                   },
                   {
                     "type": "reference",
-                    "target": 504,
+                    "target": 508,
                     "name": "CSSSelector",
                     "package": "swiper"
                   }
@@ -11615,7 +11615,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3651,
+              "id": 3660,
               "name": "options",
               "variant": "param",
               "kind": 32768,
@@ -11633,7 +11633,7 @@ export const typesData = {
               },
               "type": {
                 "type": "reference",
-                "target": 1114,
+                "target": 1118,
                 "name": "SwiperOptions",
                 "package": "swiper"
               }
@@ -11641,7 +11641,7 @@ export const typesData = {
           ],
           "type": {
             "type": "reference",
-            "target": 3639,
+            "target": 3648,
             "name": "Swiper",
             "package": "swiper"
           },
@@ -12163,7 +12163,7 @@ export const typesData = {
         "type": "array",
         "elementType": {
           "type": "reference",
-          "target": 727,
+          "target": 731,
           "name": "SwiperModule",
           "package": "swiper"
         }
@@ -12182,7 +12182,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 223,
+        "target": 224,
         "name": "MousewheelMethods",
         "package": "swiper"
       }
@@ -12192,7 +12192,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 246,
+        "target": 247,
         "name": "NavigationMethods",
         "package": "swiper"
       }
@@ -12202,7 +12202,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 1114,
+        "target": 1118,
         "name": "SwiperOptions",
         "package": "swiper"
       },
@@ -12220,7 +12220,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 283,
+        "target": 284,
         "name": "PaginationMethods",
         "package": "swiper"
       }
@@ -12230,7 +12230,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 365,
+        "target": 366,
         "name": "ParallaxMethods",
         "package": "swiper"
       }
@@ -12240,7 +12240,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 1114,
+        "target": 1118,
         "name": "SwiperOptions",
         "package": "swiper"
       },
@@ -12322,7 +12322,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 371,
+        "target": 372,
         "name": "ScrollbarMethods",
         "package": "swiper"
       }
@@ -12485,7 +12485,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 411,
+        "target": 412,
         "name": "ThumbsMethods",
         "package": "swiper"
       }
@@ -12496,7 +12496,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 3675,
+          "id": 3684,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -12505,7 +12505,7 @@ export const typesData = {
           },
           "children": [
             {
-              "id": 3678,
+              "id": 3687,
               "name": "currentX",
               "variant": "declaration",
               "kind": 1024,
@@ -12525,7 +12525,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3679,
+              "id": 3688,
               "name": "currentY",
               "variant": "declaration",
               "kind": 1024,
@@ -12545,7 +12545,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3680,
+              "id": 3689,
               "name": "diff",
               "variant": "declaration",
               "kind": 1024,
@@ -12565,7 +12565,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3676,
+              "id": 3685,
               "name": "startX",
               "variant": "declaration",
               "kind": 1024,
@@ -12585,7 +12585,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3677,
+              "id": 3686,
               "name": "startY",
               "variant": "declaration",
               "kind": 1024,
@@ -12609,11 +12609,11 @@ export const typesData = {
             {
               "title": "Properties",
               "children": [
-                3678,
-                3679,
-                3680,
-                3676,
-                3677
+                3687,
+                3688,
+                3689,
+                3685,
+                3686
               ]
             }
           ],
@@ -12692,7 +12692,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 426,
+        "target": 430,
         "name": "VirtualMethods",
         "package": "swiper"
       }
@@ -12740,7 +12740,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 472,
+        "target": 476,
         "name": "ZoomMethods",
         "package": "swiper"
       }
@@ -12750,7 +12750,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 1114,
+        "target": 1118,
         "name": "SwiperOptions",
         "package": "swiper"
       },
@@ -12768,7 +12768,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 1114,
+        "target": 1118,
         "name": "SwiperOptions",
         "package": "swiper"
       },
@@ -12786,7 +12786,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3859,
+          "id": 3868,
           "name": "addSlide",
           "variant": "signature",
           "kind": 4096,
@@ -12821,7 +12821,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3860,
+              "id": 3869,
               "name": "index",
               "variant": "param",
               "kind": 32768,
@@ -12834,7 +12834,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3861,
+              "id": 3870,
               "name": "slides",
               "variant": "param",
               "kind": 32768,
@@ -12894,7 +12894,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3853,
+          "id": 3862,
           "name": "appendSlide",
           "variant": "signature",
           "kind": 4096,
@@ -12929,7 +12929,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3854,
+              "id": 3863,
               "name": "slides",
               "variant": "param",
               "kind": 32768,
@@ -12989,7 +12989,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3748,
+          "id": 3757,
           "name": "attachEvents",
           "variant": "signature",
           "kind": 4096,
@@ -13023,7 +13023,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3739,
+          "id": 3748,
           "name": "changeDirection",
           "variant": "signature",
           "kind": 4096,
@@ -13047,7 +13047,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3740,
+              "id": 3749,
               "name": "direction",
               "variant": "param",
               "kind": 32768,
@@ -13078,7 +13078,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3741,
+              "id": 3750,
               "name": "needUpdate",
               "variant": "param",
               "kind": 32768,
@@ -13112,7 +13112,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3743,
+          "id": 3752,
           "name": "changeLanguageDirection",
           "variant": "signature",
           "kind": 4096,
@@ -13136,7 +13136,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3744,
+              "id": 3753,
               "name": "direction",
               "variant": "param",
               "kind": 32768,
@@ -13190,7 +13190,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3757,
+          "id": 3766,
           "name": "destroy",
           "variant": "signature",
           "kind": 4096,
@@ -13214,7 +13214,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3758,
+              "id": 3767,
               "name": "deleteInstance",
               "variant": "param",
               "kind": 32768,
@@ -13236,7 +13236,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3759,
+              "id": 3768,
               "name": "cleanStyles",
               "variant": "param",
               "kind": 32768,
@@ -13270,7 +13270,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3746,
+          "id": 3755,
           "name": "detachEvents",
           "variant": "signature",
           "kind": 4096,
@@ -13304,7 +13304,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3690,
+          "id": 3699,
           "name": "disable",
           "variant": "signature",
           "kind": 4096,
@@ -13338,7 +13338,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3848,
+          "id": 3857,
           "name": "emit",
           "variant": "signature",
           "kind": 4096,
@@ -13363,7 +13363,7 @@ export const typesData = {
           ],
           "typeParameters": [
             {
-              "id": 3849,
+              "id": 3858,
               "name": "E",
               "variant": "typeParam",
               "kind": 131072,
@@ -13375,7 +13375,7 @@ export const typesData = {
                 "operator": "keyof",
                 "target": {
                   "type": "reference",
-                  "target": 747,
+                  "target": 751,
                   "name": "SwiperEvents",
                   "package": "swiper"
                 }
@@ -13384,7 +13384,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3850,
+              "id": 3859,
               "name": "event",
               "variant": "param",
               "kind": 32768,
@@ -13393,14 +13393,14 @@ export const typesData = {
               },
               "type": {
                 "type": "reference",
-                "target": 3849,
+                "target": 3858,
                 "name": "E",
                 "package": "swiper",
                 "refersToTypeParameter": true
               }
             },
             {
-              "id": 3851,
+              "id": 3860,
               "name": "args",
               "variant": "param",
               "kind": 32768,
@@ -13439,7 +13439,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3692,
+          "id": 3701,
           "name": "enable",
           "variant": "signature",
           "kind": 4096,
@@ -13473,7 +13473,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3796,
+          "id": 3805,
           "name": "getBreakpoint",
           "variant": "signature",
           "kind": 4096,
@@ -13497,7 +13497,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3797,
+              "id": 3806,
               "name": "breakpoints",
               "variant": "param",
               "kind": 32768,
@@ -13510,7 +13510,7 @@ export const typesData = {
                   {
                     "type": "reflection",
                     "declaration": {
-                      "id": 3798,
+                      "id": 3807,
                       "name": "__type",
                       "variant": "declaration",
                       "kind": 65536,
@@ -13520,13 +13520,13 @@ export const typesData = {
                       "sources": [
                         {
                           "fileName": "swiper/types/swiper-options.d.ts",
-                          "line": 734,
+                          "line": 743,
                           "character": 16
                         }
                       ],
                       "indexSignatures": [
                         {
-                          "id": 3799,
+                          "id": 3808,
                           "name": "__index",
                           "variant": "signature",
                           "kind": 8192,
@@ -13536,13 +13536,13 @@ export const typesData = {
                           "sources": [
                             {
                               "fileName": "swiper/types/swiper-options.d.ts",
-                              "line": 735,
+                              "line": 744,
                               "character": 4
                             }
                           ],
                           "parameters": [
                             {
-                              "id": 3800,
+                              "id": 3809,
                               "name": "width",
                               "variant": "param",
                               "kind": 32768,
@@ -13557,13 +13557,13 @@ export const typesData = {
                           ],
                           "type": {
                             "type": "reference",
-                            "target": 1114,
+                            "target": 1118,
                             "name": "SwiperOptions",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 3801,
+                          "id": 3810,
                           "name": "__index",
                           "variant": "signature",
                           "kind": 8192,
@@ -13573,13 +13573,13 @@ export const typesData = {
                           "sources": [
                             {
                               "fileName": "swiper/types/swiper-options.d.ts",
-                              "line": 736,
+                              "line": 745,
                               "character": 4
                             }
                           ],
                           "parameters": [
                             {
-                              "id": 3802,
+                              "id": 3811,
                               "name": "ratio",
                               "variant": "param",
                               "kind": 32768,
@@ -13594,7 +13594,7 @@ export const typesData = {
                           ],
                           "type": {
                             "type": "reference",
-                            "target": 1114,
+                            "target": 1118,
                             "name": "SwiperOptions",
                             "package": "swiper"
                           }
@@ -13622,7 +13622,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3764,
+          "id": 3773,
           "name": "getTranslate",
           "variant": "signature",
           "kind": 4096,
@@ -13656,7 +13656,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3754,
+          "id": 3763,
           "name": "init",
           "variant": "signature",
           "kind": 4096,
@@ -13680,7 +13680,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3755,
+              "id": 3764,
               "name": "el",
               "variant": "param",
               "kind": 32768,
@@ -13702,7 +13702,7 @@ export const typesData = {
           ],
           "type": {
             "type": "reference",
-            "target": 3639,
+            "target": 3648,
             "name": "Swiper",
             "package": "swiper"
           }
@@ -13714,7 +13714,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3794,
+          "id": 3803,
           "name": "isHorizontal",
           "variant": "signature",
           "kind": 4096,
@@ -13748,7 +13748,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3750,
+          "id": 3759,
           "name": "loopCreate",
           "variant": "signature",
           "kind": 4096,
@@ -13782,7 +13782,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3752,
+          "id": 3761,
           "name": "loopDestroy",
           "variant": "signature",
           "kind": 4096,
@@ -13816,7 +13816,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3774,
+          "id": 3783,
           "name": "maxTranslate",
           "variant": "signature",
           "kind": 4096,
@@ -13850,7 +13850,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3772,
+          "id": 3781,
           "name": "minTranslate",
           "variant": "signature",
           "kind": 4096,
@@ -13884,7 +13884,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3840,
+          "id": 3849,
           "name": "off",
           "variant": "signature",
           "kind": 4096,
@@ -13909,7 +13909,7 @@ export const typesData = {
           ],
           "typeParameters": [
             {
-              "id": 3841,
+              "id": 3850,
               "name": "E",
               "variant": "typeParam",
               "kind": 131072,
@@ -13921,7 +13921,7 @@ export const typesData = {
                 "operator": "keyof",
                 "target": {
                   "type": "reference",
-                  "target": 747,
+                  "target": 751,
                   "name": "SwiperEvents",
                   "package": "swiper"
                 }
@@ -13930,7 +13930,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3842,
+              "id": 3851,
               "name": "event",
               "variant": "param",
               "kind": 32768,
@@ -13939,14 +13939,14 @@ export const typesData = {
               },
               "type": {
                 "type": "reference",
-                "target": 3841,
+                "target": 3850,
                 "name": "E",
                 "package": "swiper",
                 "refersToTypeParameter": true
               }
             },
             {
-              "id": 3843,
+              "id": 3852,
               "name": "handler",
               "variant": "param",
               "kind": 32768,
@@ -13957,14 +13957,14 @@ export const typesData = {
                 "type": "indexedAccess",
                 "indexType": {
                   "type": "reference",
-                  "target": 3841,
+                  "target": 3850,
                   "name": "E",
                   "package": "swiper",
                   "refersToTypeParameter": true
                 },
                 "objectType": {
                   "type": "reference",
-                  "target": 747,
+                  "target": 751,
                   "name": "SwiperEvents",
                   "package": "swiper"
                 }
@@ -13987,7 +13987,7 @@ export const typesData = {
           }
         },
         {
-          "id": 3844,
+          "id": 3853,
           "name": "off",
           "variant": "signature",
           "kind": 4096,
@@ -14012,7 +14012,7 @@ export const typesData = {
           ],
           "typeParameters": [
             {
-              "id": 3845,
+              "id": 3854,
               "name": "E",
               "variant": "typeParam",
               "kind": 131072,
@@ -14024,7 +14024,7 @@ export const typesData = {
                 "operator": "keyof",
                 "target": {
                   "type": "reference",
-                  "target": 747,
+                  "target": 751,
                   "name": "SwiperEvents",
                   "package": "swiper"
                 }
@@ -14033,7 +14033,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3846,
+              "id": 3855,
               "name": "event",
               "variant": "param",
               "kind": 32768,
@@ -14042,7 +14042,7 @@ export const typesData = {
               },
               "type": {
                 "type": "reference",
-                "target": 3845,
+                "target": 3854,
                 "name": "E",
                 "package": "swiper",
                 "refersToTypeParameter": true
@@ -14071,7 +14071,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3787,
+          "id": 3796,
           "name": "offAny",
           "variant": "signature",
           "kind": 4096,
@@ -14095,7 +14095,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3788,
+              "id": 3797,
               "name": "handler",
               "variant": "param",
               "kind": 32768,
@@ -14105,7 +14105,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 3789,
+                  "id": 3798,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -14121,7 +14121,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 3790,
+                      "id": 3799,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -14137,7 +14137,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 3791,
+                          "id": 3800,
                           "name": "eventName",
                           "variant": "param",
                           "kind": 32768,
@@ -14150,7 +14150,7 @@ export const typesData = {
                           }
                         },
                         {
-                          "id": 3792,
+                          "id": 3801,
                           "name": "args",
                           "variant": "param",
                           "kind": 32768,
@@ -14189,7 +14189,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3830,
+          "id": 3839,
           "name": "on",
           "variant": "signature",
           "kind": 4096,
@@ -14214,7 +14214,7 @@ export const typesData = {
           ],
           "typeParameters": [
             {
-              "id": 3831,
+              "id": 3840,
               "name": "E",
               "variant": "typeParam",
               "kind": 131072,
@@ -14226,7 +14226,7 @@ export const typesData = {
                 "operator": "keyof",
                 "target": {
                   "type": "reference",
-                  "target": 747,
+                  "target": 751,
                   "name": "SwiperEvents",
                   "package": "swiper"
                 }
@@ -14235,7 +14235,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3832,
+              "id": 3841,
               "name": "event",
               "variant": "param",
               "kind": 32768,
@@ -14244,14 +14244,14 @@ export const typesData = {
               },
               "type": {
                 "type": "reference",
-                "target": 3831,
+                "target": 3840,
                 "name": "E",
                 "package": "swiper",
                 "refersToTypeParameter": true
               }
             },
             {
-              "id": 3833,
+              "id": 3842,
               "name": "handler",
               "variant": "param",
               "kind": 32768,
@@ -14262,14 +14262,14 @@ export const typesData = {
                 "type": "indexedAccess",
                 "indexType": {
                   "type": "reference",
-                  "target": 3831,
+                  "target": 3840,
                   "name": "E",
                   "package": "swiper",
                   "refersToTypeParameter": true
                 },
                 "objectType": {
                   "type": "reference",
-                  "target": 747,
+                  "target": 751,
                   "name": "SwiperEvents",
                   "package": "swiper"
                 }
@@ -14298,7 +14298,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3780,
+          "id": 3789,
           "name": "onAny",
           "variant": "signature",
           "kind": 4096,
@@ -14322,7 +14322,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3781,
+              "id": 3790,
               "name": "handler",
               "variant": "param",
               "kind": 32768,
@@ -14332,7 +14332,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 3782,
+                  "id": 3791,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -14348,7 +14348,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 3783,
+                      "id": 3792,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -14364,7 +14364,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 3784,
+                          "id": 3793,
                           "name": "eventName",
                           "variant": "param",
                           "kind": 32768,
@@ -14377,7 +14377,7 @@ export const typesData = {
                           }
                         },
                         {
-                          "id": 3785,
+                          "id": 3794,
                           "name": "args",
                           "variant": "param",
                           "kind": 32768,
@@ -14416,7 +14416,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3835,
+          "id": 3844,
           "name": "once",
           "variant": "signature",
           "kind": 4096,
@@ -14441,7 +14441,7 @@ export const typesData = {
           ],
           "typeParameters": [
             {
-              "id": 3836,
+              "id": 3845,
               "name": "E",
               "variant": "typeParam",
               "kind": 131072,
@@ -14453,7 +14453,7 @@ export const typesData = {
                 "operator": "keyof",
                 "target": {
                   "type": "reference",
-                  "target": 747,
+                  "target": 751,
                   "name": "SwiperEvents",
                   "package": "swiper"
                 }
@@ -14462,7 +14462,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3837,
+              "id": 3846,
               "name": "event",
               "variant": "param",
               "kind": 32768,
@@ -14471,14 +14471,14 @@ export const typesData = {
               },
               "type": {
                 "type": "reference",
-                "target": 3836,
+                "target": 3845,
                 "name": "E",
                 "package": "swiper",
                 "refersToTypeParameter": true
               }
             },
             {
-              "id": 3838,
+              "id": 3847,
               "name": "handler",
               "variant": "param",
               "kind": 32768,
@@ -14489,14 +14489,14 @@ export const typesData = {
                 "type": "indexedAccess",
                 "indexType": {
                   "type": "reference",
-                  "target": 3836,
+                  "target": 3845,
                   "name": "E",
                   "package": "swiper",
                   "refersToTypeParameter": true
                 },
                 "objectType": {
                   "type": "reference",
-                  "target": 747,
+                  "target": 751,
                   "name": "SwiperEvents",
                   "package": "swiper"
                 }
@@ -14525,7 +14525,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3856,
+          "id": 3865,
           "name": "prependSlide",
           "variant": "signature",
           "kind": 4096,
@@ -14560,7 +14560,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3857,
+              "id": 3866,
               "name": "slides",
               "variant": "param",
               "kind": 32768,
@@ -14620,7 +14620,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3866,
+          "id": 3875,
           "name": "removeAllSlides",
           "variant": "signature",
           "kind": 4096,
@@ -14654,7 +14654,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3863,
+          "id": 3872,
           "name": "removeSlide",
           "variant": "signature",
           "kind": 4096,
@@ -14689,7 +14689,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3864,
+              "id": 3873,
               "name": "slideIndex",
               "variant": "param",
               "kind": 32768,
@@ -14726,7 +14726,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3804,
+          "id": 3813,
           "name": "setBreakpoint",
           "variant": "signature",
           "kind": 4096,
@@ -14760,7 +14760,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3778,
+          "id": 3787,
           "name": "setGrabCursor",
           "variant": "signature",
           "kind": 4096,
@@ -14794,7 +14794,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3694,
+          "id": 3703,
           "name": "setProgress",
           "variant": "signature",
           "kind": 4096,
@@ -14818,7 +14818,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3695,
+              "id": 3704,
               "name": "progress",
               "variant": "param",
               "kind": 32768,
@@ -14839,7 +14839,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3696,
+              "id": 3705,
               "name": "speed",
               "variant": "param",
               "kind": 32768,
@@ -14873,7 +14873,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3761,
+          "id": 3770,
           "name": "setTranslate",
           "variant": "signature",
           "kind": 4096,
@@ -14897,7 +14897,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3762,
+              "id": 3771,
               "name": "translate",
               "variant": "param",
               "kind": 32768,
@@ -14922,7 +14922,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3698,
+          "id": 3707,
           "name": "slideNext",
           "variant": "signature",
           "kind": 4096,
@@ -14945,305 +14945,6 @@ export const typesData = {
             }
           ],
           "parameters": [
-            {
-              "id": 3699,
-              "name": "speed",
-              "variant": "param",
-              "kind": 32768,
-              "flags": {
-                "isExternal": true,
-                "isOptional": true
-              },
-              "comment": {
-                "summary": [
-                  {
-                    "kind": "text",
-                    "text": "Transition duration (in ms)."
-                  }
-                ]
-              },
-              "type": {
-                "type": "intrinsic",
-                "name": "number"
-              }
-            },
-            {
-              "id": 3700,
-              "name": "runCallbacks",
-              "variant": "param",
-              "kind": 32768,
-              "flags": {
-                "isExternal": true,
-                "isOptional": true
-              },
-              "comment": {
-                "summary": [
-                  {
-                    "kind": "text",
-                    "text": "Set it to false (by default it is true) and transition will\n not produce transition events."
-                  }
-                ]
-              },
-              "type": {
-                "type": "intrinsic",
-                "name": "boolean"
-              }
-            }
-          ],
-          "type": {
-            "type": "intrinsic",
-            "name": "boolean"
-          }
-        }
-      ]
-    },
-    {
-      "name": "slidePrev",
-      "default_value": null,
-      "signatures": [
-        {
-          "id": 3702,
-          "name": "slidePrev",
-          "variant": "signature",
-          "kind": 4096,
-          "flags": {
-            "isExternal": true
-          },
-          "comment": {
-            "summary": [
-              {
-                "kind": "text",
-                "text": "Run transition to previous slide."
-              }
-            ]
-          },
-          "sources": [
-            {
-              "fileName": "swiper/types/swiper-class.d.ts",
-              "line": 247,
-              "character": 2
-            }
-          ],
-          "parameters": [
-            {
-              "id": 3703,
-              "name": "speed",
-              "variant": "param",
-              "kind": 32768,
-              "flags": {
-                "isExternal": true,
-                "isOptional": true
-              },
-              "comment": {
-                "summary": [
-                  {
-                    "kind": "text",
-                    "text": "Transition duration (in ms)."
-                  }
-                ]
-              },
-              "type": {
-                "type": "intrinsic",
-                "name": "number"
-              }
-            },
-            {
-              "id": 3704,
-              "name": "runCallbacks",
-              "variant": "param",
-              "kind": 32768,
-              "flags": {
-                "isExternal": true,
-                "isOptional": true
-              },
-              "comment": {
-                "summary": [
-                  {
-                    "kind": "text",
-                    "text": "Set it to false (by default it is true) and transition will\n not produce transition events."
-                  }
-                ]
-              },
-              "type": {
-                "type": "intrinsic",
-                "name": "boolean"
-              }
-            }
-          ],
-          "type": {
-            "type": "intrinsic",
-            "name": "boolean"
-          }
-        }
-      ]
-    },
-    {
-      "name": "slideReset",
-      "default_value": null,
-      "signatures": [
-        {
-          "id": 3716,
-          "name": "slideReset",
-          "variant": "signature",
-          "kind": 4096,
-          "flags": {
-            "isExternal": true
-          },
-          "comment": {
-            "summary": [
-              {
-                "kind": "text",
-                "text": "Reset swiper position to currently active slide for the duration equal to 'speed'\nparameter."
-              }
-            ]
-          },
-          "sources": [
-            {
-              "fileName": "swiper/types/swiper-class.d.ts",
-              "line": 279,
-              "character": 2
-            }
-          ],
-          "parameters": [
-            {
-              "id": 3717,
-              "name": "speed",
-              "variant": "param",
-              "kind": 32768,
-              "flags": {
-                "isExternal": true,
-                "isOptional": true
-              },
-              "comment": {
-                "summary": [
-                  {
-                    "kind": "text",
-                    "text": "Transition duration (in ms)."
-                  }
-                ]
-              },
-              "type": {
-                "type": "intrinsic",
-                "name": "number"
-              }
-            },
-            {
-              "id": 3718,
-              "name": "runCallbacks",
-              "variant": "param",
-              "kind": 32768,
-              "flags": {
-                "isExternal": true,
-                "isOptional": true
-              },
-              "comment": {
-                "summary": [
-                  {
-                    "kind": "text",
-                    "text": "Set it to false (by default it is true) and transition will\n not produce transition events."
-                  }
-                ]
-              },
-              "type": {
-                "type": "intrinsic",
-                "name": "boolean"
-              }
-            }
-          ],
-          "type": {
-            "type": "intrinsic",
-            "name": "boolean"
-          }
-        }
-      ]
-    },
-    {
-      "name": "slidesPerViewDynamic",
-      "default_value": null,
-      "signatures": [
-        {
-          "id": 3724,
-          "name": "slidesPerViewDynamic",
-          "variant": "signature",
-          "kind": 4096,
-          "flags": {
-            "isExternal": true
-          },
-          "comment": {
-            "summary": [
-              {
-                "kind": "text",
-                "text": "Get dynamically calculated amount of slides per view, useful only when slidesPerView set to "
-              },
-              {
-                "kind": "code",
-                "text": "`auto`"
-              }
-            ]
-          },
-          "sources": [
-            {
-              "fileName": "swiper/types/swiper-class.d.ts",
-              "line": 294,
-              "character": 2
-            }
-          ],
-          "type": {
-            "type": "intrinsic",
-            "name": "number"
-          }
-        }
-      ]
-    },
-    {
-      "name": "slideTo",
-      "default_value": null,
-      "signatures": [
-        {
-          "id": 3706,
-          "name": "slideTo",
-          "variant": "signature",
-          "kind": 4096,
-          "flags": {
-            "isExternal": true
-          },
-          "comment": {
-            "summary": [
-              {
-                "kind": "text",
-                "text": "Run transition to the slide with index number equal to 'index' parameter for the\n duration equal to 'speed' parameter."
-              }
-            ]
-          },
-          "sources": [
-            {
-              "fileName": "swiper/types/swiper-class.d.ts",
-              "line": 258,
-              "character": 2
-            }
-          ],
-          "parameters": [
-            {
-              "id": 3707,
-              "name": "index",
-              "variant": "param",
-              "kind": 32768,
-              "flags": {
-                "isExternal": true
-              },
-              "comment": {
-                "summary": [
-                  {
-                    "kind": "text",
-                    "text": "Index number of slide."
-                  }
-                ]
-              },
-              "type": {
-                "type": "intrinsic",
-                "name": "number"
-              }
-            },
             {
               "id": 3708,
               "name": "speed",
@@ -15297,11 +14998,310 @@ export const typesData = {
       ]
     },
     {
+      "name": "slidePrev",
+      "default_value": null,
+      "signatures": [
+        {
+          "id": 3711,
+          "name": "slidePrev",
+          "variant": "signature",
+          "kind": 4096,
+          "flags": {
+            "isExternal": true
+          },
+          "comment": {
+            "summary": [
+              {
+                "kind": "text",
+                "text": "Run transition to previous slide."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "fileName": "swiper/types/swiper-class.d.ts",
+              "line": 247,
+              "character": 2
+            }
+          ],
+          "parameters": [
+            {
+              "id": 3712,
+              "name": "speed",
+              "variant": "param",
+              "kind": 32768,
+              "flags": {
+                "isExternal": true,
+                "isOptional": true
+              },
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "Transition duration (in ms)."
+                  }
+                ]
+              },
+              "type": {
+                "type": "intrinsic",
+                "name": "number"
+              }
+            },
+            {
+              "id": 3713,
+              "name": "runCallbacks",
+              "variant": "param",
+              "kind": 32768,
+              "flags": {
+                "isExternal": true,
+                "isOptional": true
+              },
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "Set it to false (by default it is true) and transition will\n not produce transition events."
+                  }
+                ]
+              },
+              "type": {
+                "type": "intrinsic",
+                "name": "boolean"
+              }
+            }
+          ],
+          "type": {
+            "type": "intrinsic",
+            "name": "boolean"
+          }
+        }
+      ]
+    },
+    {
+      "name": "slideReset",
+      "default_value": null,
+      "signatures": [
+        {
+          "id": 3725,
+          "name": "slideReset",
+          "variant": "signature",
+          "kind": 4096,
+          "flags": {
+            "isExternal": true
+          },
+          "comment": {
+            "summary": [
+              {
+                "kind": "text",
+                "text": "Reset swiper position to currently active slide for the duration equal to 'speed'\nparameter."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "fileName": "swiper/types/swiper-class.d.ts",
+              "line": 279,
+              "character": 2
+            }
+          ],
+          "parameters": [
+            {
+              "id": 3726,
+              "name": "speed",
+              "variant": "param",
+              "kind": 32768,
+              "flags": {
+                "isExternal": true,
+                "isOptional": true
+              },
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "Transition duration (in ms)."
+                  }
+                ]
+              },
+              "type": {
+                "type": "intrinsic",
+                "name": "number"
+              }
+            },
+            {
+              "id": 3727,
+              "name": "runCallbacks",
+              "variant": "param",
+              "kind": 32768,
+              "flags": {
+                "isExternal": true,
+                "isOptional": true
+              },
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "Set it to false (by default it is true) and transition will\n not produce transition events."
+                  }
+                ]
+              },
+              "type": {
+                "type": "intrinsic",
+                "name": "boolean"
+              }
+            }
+          ],
+          "type": {
+            "type": "intrinsic",
+            "name": "boolean"
+          }
+        }
+      ]
+    },
+    {
+      "name": "slidesPerViewDynamic",
+      "default_value": null,
+      "signatures": [
+        {
+          "id": 3733,
+          "name": "slidesPerViewDynamic",
+          "variant": "signature",
+          "kind": 4096,
+          "flags": {
+            "isExternal": true
+          },
+          "comment": {
+            "summary": [
+              {
+                "kind": "text",
+                "text": "Get dynamically calculated amount of slides per view, useful only when slidesPerView set to "
+              },
+              {
+                "kind": "code",
+                "text": "`auto`"
+              }
+            ]
+          },
+          "sources": [
+            {
+              "fileName": "swiper/types/swiper-class.d.ts",
+              "line": 294,
+              "character": 2
+            }
+          ],
+          "type": {
+            "type": "intrinsic",
+            "name": "number"
+          }
+        }
+      ]
+    },
+    {
+      "name": "slideTo",
+      "default_value": null,
+      "signatures": [
+        {
+          "id": 3715,
+          "name": "slideTo",
+          "variant": "signature",
+          "kind": 4096,
+          "flags": {
+            "isExternal": true
+          },
+          "comment": {
+            "summary": [
+              {
+                "kind": "text",
+                "text": "Run transition to the slide with index number equal to 'index' parameter for the\n duration equal to 'speed' parameter."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "fileName": "swiper/types/swiper-class.d.ts",
+              "line": 258,
+              "character": 2
+            }
+          ],
+          "parameters": [
+            {
+              "id": 3716,
+              "name": "index",
+              "variant": "param",
+              "kind": 32768,
+              "flags": {
+                "isExternal": true
+              },
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "Index number of slide."
+                  }
+                ]
+              },
+              "type": {
+                "type": "intrinsic",
+                "name": "number"
+              }
+            },
+            {
+              "id": 3717,
+              "name": "speed",
+              "variant": "param",
+              "kind": 32768,
+              "flags": {
+                "isExternal": true,
+                "isOptional": true
+              },
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "Transition duration (in ms)."
+                  }
+                ]
+              },
+              "type": {
+                "type": "intrinsic",
+                "name": "number"
+              }
+            },
+            {
+              "id": 3718,
+              "name": "runCallbacks",
+              "variant": "param",
+              "kind": 32768,
+              "flags": {
+                "isExternal": true,
+                "isOptional": true
+              },
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "Set it to false (by default it is true) and transition will\n not produce transition events."
+                  }
+                ]
+              },
+              "type": {
+                "type": "intrinsic",
+                "name": "boolean"
+              }
+            }
+          ],
+          "type": {
+            "type": "intrinsic",
+            "name": "boolean"
+          }
+        }
+      ]
+    },
+    {
       "name": "slideToClosest",
       "default_value": null,
       "signatures": [
         {
-          "id": 3720,
+          "id": 3729,
           "name": "slideToClosest",
           "variant": "signature",
           "kind": 4096,
@@ -15325,7 +15325,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3721,
+              "id": 3730,
               "name": "speed",
               "variant": "param",
               "kind": 32768,
@@ -15347,7 +15347,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3722,
+              "id": 3731,
               "name": "runCallbacks",
               "variant": "param",
               "kind": 32768,
@@ -15381,7 +15381,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3711,
+          "id": 3720,
           "name": "slideToLoop",
           "variant": "signature",
           "kind": 4096,
@@ -15405,7 +15405,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3712,
+              "id": 3721,
               "name": "index",
               "variant": "param",
               "kind": 32768,
@@ -15426,7 +15426,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3713,
+              "id": 3722,
               "name": "speed",
               "variant": "param",
               "kind": 32768,
@@ -15448,7 +15448,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3714,
+              "id": 3723,
               "name": "runCallbacks",
               "variant": "param",
               "kind": 32768,
@@ -15472,7 +15472,7 @@ export const typesData = {
           ],
           "type": {
             "type": "reference",
-            "target": 3639,
+            "target": 3648,
             "name": "Swiper",
             "package": "swiper"
           }
@@ -15484,7 +15484,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3766,
+          "id": 3775,
           "name": "translateTo",
           "variant": "signature",
           "kind": 4096,
@@ -15508,7 +15508,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3767,
+              "id": 3776,
               "name": "translate",
               "variant": "param",
               "kind": 32768,
@@ -15529,7 +15529,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3768,
+              "id": 3777,
               "name": "speed",
               "variant": "param",
               "kind": 32768,
@@ -15550,7 +15550,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3769,
+              "id": 3778,
               "name": "runCallbacks",
               "variant": "param",
               "kind": 32768,
@@ -15572,7 +15572,7 @@ export const typesData = {
               }
             },
             {
-              "id": 3770,
+              "id": 3779,
               "name": "translateBounds",
               "variant": "param",
               "kind": 32768,
@@ -15606,7 +15606,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3776,
+          "id": 3785,
           "name": "unsetGrabCursor",
           "variant": "signature",
           "kind": 4096,
@@ -15640,7 +15640,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3729,
+          "id": 3738,
           "name": "update",
           "variant": "signature",
           "kind": 4096,
@@ -15674,7 +15674,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3726,
+          "id": 3735,
           "name": "updateAutoHeight",
           "variant": "signature",
           "kind": 4096,
@@ -15698,7 +15698,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3727,
+              "id": 3736,
               "name": "speed",
               "variant": "param",
               "kind": 32768,
@@ -15732,7 +15732,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3735,
+          "id": 3744,
           "name": "updateProgress",
           "variant": "signature",
           "kind": 4096,
@@ -15766,7 +15766,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3731,
+          "id": 3740,
           "name": "updateSize",
           "variant": "signature",
           "kind": 4096,
@@ -15800,7 +15800,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3733,
+          "id": 3742,
           "name": "updateSlides",
           "variant": "signature",
           "kind": 4096,
@@ -15834,7 +15834,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3737,
+          "id": 3746,
           "name": "updateSlidesClasses",
           "variant": "signature",
           "kind": 4096,
@@ -15868,7 +15868,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3645,
+          "id": 3654,
           "name": "extendDefaults",
           "variant": "signature",
           "kind": 4096,
@@ -15892,7 +15892,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3646,
+              "id": 3655,
               "name": "options",
               "variant": "param",
               "kind": 32768,
@@ -15901,7 +15901,7 @@ export const typesData = {
               },
               "type": {
                 "type": "reference",
-                "target": 1114,
+                "target": 1118,
                 "name": "SwiperOptions",
                 "package": "swiper"
               }
@@ -15919,7 +15919,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 3641,
+          "id": 3650,
           "name": "use",
           "variant": "signature",
           "kind": 4096,
@@ -15943,7 +15943,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 3642,
+              "id": 3651,
               "name": "modules",
               "variant": "param",
               "kind": 32768,
@@ -15954,7 +15954,7 @@ export const typesData = {
                 "type": "array",
                 "elementType": {
                   "type": "reference",
-                  "target": 727,
+                  "target": 731,
                   "name": "SwiperModule",
                   "package": "swiper"
                 }
@@ -16547,7 +16547,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -16617,7 +16617,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -16687,7 +16687,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -16757,7 +16757,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -16827,7 +16827,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -16897,7 +16897,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -17441,7 +17441,7 @@ export const typesData = {
         "types": [
           {
             "type": "reference",
-            "target": 3639,
+            "target": 3648,
             "name": "Swiper",
             "package": "swiper"
           },
@@ -17449,7 +17449,7 @@ export const typesData = {
             "type": "array",
             "elementType": {
               "type": "reference",
-              "target": 3639,
+              "target": 3648,
               "name": "Swiper",
               "package": "swiper"
             }
@@ -17515,7 +17515,7 @@ export const typesData = {
           },
           {
             "type": "reference",
-            "target": 3639,
+            "target": 3648,
             "name": "Swiper",
             "package": "swiper"
           },
@@ -17523,7 +17523,7 @@ export const typesData = {
             "type": "array",
             "elementType": {
               "type": "reference",
-              "target": 3639,
+              "target": 3648,
               "name": "Swiper",
               "package": "swiper"
             }
@@ -18130,7 +18130,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 724,
+          "id": 728,
           "name": "[iterator]",
           "variant": "signature",
           "kind": 4096,
@@ -18182,7 +18182,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 655,
+          "id": 659,
           "name": "anchor",
           "variant": "signature",
           "kind": 4096,
@@ -18226,7 +18226,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 656,
+              "id": 660,
               "name": "name",
               "variant": "param",
               "kind": 32768,
@@ -18256,7 +18256,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 717,
+          "id": 721,
           "name": "at",
           "variant": "signature",
           "kind": 4096,
@@ -18281,7 +18281,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 718,
+              "id": 722,
               "name": "index",
               "variant": "param",
               "kind": 32768,
@@ -18328,7 +18328,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 658,
+          "id": 662,
           "name": "big",
           "variant": "signature",
           "kind": 4096,
@@ -18387,7 +18387,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 660,
+          "id": 664,
           "name": "blink",
           "variant": "signature",
           "kind": 4096,
@@ -18446,7 +18446,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 662,
+          "id": 666,
           "name": "bold",
           "variant": "signature",
           "kind": 4096,
@@ -18505,7 +18505,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 508,
+          "id": 512,
           "name": "charAt",
           "variant": "signature",
           "kind": 4096,
@@ -18530,7 +18530,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 509,
+              "id": 513,
               "name": "pos",
               "variant": "param",
               "kind": 32768,
@@ -18568,7 +18568,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 511,
+          "id": 515,
           "name": "charCodeAt",
           "variant": "signature",
           "kind": 4096,
@@ -18593,7 +18593,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 512,
+              "id": 516,
               "name": "index",
               "variant": "param",
               "kind": 32768,
@@ -18631,7 +18631,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 632,
+          "id": 636,
           "name": "codePointAt",
           "variant": "signature",
           "kind": 4096,
@@ -18656,7 +18656,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 633,
+              "id": 637,
               "name": "pos",
               "variant": "param",
               "kind": 32768,
@@ -18695,7 +18695,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 514,
+          "id": 518,
           "name": "concat",
           "variant": "signature",
           "kind": 4096,
@@ -18720,7 +18720,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 515,
+              "id": 519,
               "name": "strings",
               "variant": "param",
               "kind": 32768,
@@ -18762,7 +18762,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 639,
+          "id": 643,
           "name": "endsWith",
           "variant": "signature",
           "kind": 4096,
@@ -18787,7 +18787,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 640,
+              "id": 644,
               "name": "searchString",
               "variant": "param",
               "kind": 32768,
@@ -18800,7 +18800,7 @@ export const typesData = {
               }
             },
             {
-              "id": 641,
+              "id": 645,
               "name": "endPosition",
               "variant": "param",
               "kind": 32768,
@@ -18831,7 +18831,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 664,
+          "id": 668,
           "name": "fixed",
           "variant": "signature",
           "kind": 4096,
@@ -18890,7 +18890,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 666,
+          "id": 670,
           "name": "fontcolor",
           "variant": "signature",
           "kind": 4096,
@@ -18934,7 +18934,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 667,
+              "id": 671,
               "name": "color",
               "variant": "param",
               "kind": 32768,
@@ -18964,7 +18964,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 669,
+          "id": 673,
           "name": "fontsize",
           "variant": "signature",
           "kind": 4096,
@@ -19008,7 +19008,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 670,
+              "id": 674,
               "name": "size",
               "variant": "param",
               "kind": 32768,
@@ -19032,7 +19032,7 @@ export const typesData = {
           }
         },
         {
-          "id": 671,
+          "id": 675,
           "name": "fontsize",
           "variant": "signature",
           "kind": 4096,
@@ -19076,7 +19076,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 672,
+              "id": 676,
               "name": "size",
               "variant": "param",
               "kind": 32768,
@@ -19106,7 +19106,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 635,
+          "id": 639,
           "name": "includes",
           "variant": "signature",
           "kind": 4096,
@@ -19131,7 +19131,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 636,
+              "id": 640,
               "name": "searchString",
               "variant": "param",
               "kind": 32768,
@@ -19152,7 +19152,7 @@ export const typesData = {
               }
             },
             {
-              "id": 637,
+              "id": 641,
               "name": "position",
               "variant": "param",
               "kind": 32768,
@@ -19191,7 +19191,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 517,
+          "id": 521,
           "name": "indexOf",
           "variant": "signature",
           "kind": 4096,
@@ -19216,7 +19216,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 518,
+              "id": 522,
               "name": "searchString",
               "variant": "param",
               "kind": 32768,
@@ -19237,7 +19237,7 @@ export const typesData = {
               }
             },
             {
-              "id": 519,
+              "id": 523,
               "name": "position",
               "variant": "param",
               "kind": 32768,
@@ -19276,7 +19276,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 720,
+          "id": 724,
           "name": "isWellFormed",
           "variant": "signature",
           "kind": 4096,
@@ -19316,7 +19316,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 674,
+          "id": 678,
           "name": "italics",
           "variant": "signature",
           "kind": 4096,
@@ -19375,7 +19375,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 521,
+          "id": 525,
           "name": "lastIndexOf",
           "variant": "signature",
           "kind": 4096,
@@ -19400,7 +19400,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 522,
+              "id": 526,
               "name": "searchString",
               "variant": "param",
               "kind": 32768,
@@ -19421,7 +19421,7 @@ export const typesData = {
               }
             },
             {
-              "id": 523,
+              "id": 527,
               "name": "position",
               "variant": "param",
               "kind": 32768,
@@ -19460,7 +19460,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 676,
+          "id": 680,
           "name": "link",
           "variant": "signature",
           "kind": 4096,
@@ -19504,7 +19504,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 677,
+              "id": 681,
               "name": "url",
               "variant": "param",
               "kind": 32768,
@@ -19534,7 +19534,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 525,
+          "id": 529,
           "name": "localeCompare",
           "variant": "signature",
           "kind": 4096,
@@ -19559,144 +19559,24 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 526,
-              "name": "that",
-              "variant": "param",
-              "kind": 32768,
-              "flags": {
-                "isExternal": true
-              },
-              "comment": {
-                "summary": [
-                  {
-                    "kind": "text",
-                    "text": "String to compare to target string"
-                  }
-                ]
-              },
-              "type": {
-                "type": "intrinsic",
-                "name": "string"
-              }
-            }
-          ],
-          "type": {
-            "type": "intrinsic",
-            "name": "number"
-          },
-          "inheritedFrom": {
-            "type": "reference",
-            "target": -1,
-            "name": "String.localeCompare"
-          }
-        },
-        {
-          "id": 527,
-          "name": "localeCompare",
-          "variant": "signature",
-          "kind": 4096,
-          "flags": {
-            "isExternal": true,
-            "isInherited": true
-          },
-          "comment": {
-            "summary": [
-              {
-                "kind": "text",
-                "text": "Determines whether two strings are equivalent in the current or specified locale."
-              }
-            ]
-          },
-          "sources": [
-            {
-              "fileName": "typescript/lib/lib.es5.d.ts",
-              "line": 4569,
-              "character": 4
-            }
-          ],
-          "parameters": [
-            {
-              "id": 528,
-              "name": "that",
-              "variant": "param",
-              "kind": 32768,
-              "flags": {
-                "isExternal": true
-              },
-              "comment": {
-                "summary": [
-                  {
-                    "kind": "text",
-                    "text": "String to compare to target string"
-                  }
-                ]
-              },
-              "type": {
-                "type": "intrinsic",
-                "name": "string"
-              }
-            },
-            {
-              "id": 529,
-              "name": "locales",
-              "variant": "param",
-              "kind": 32768,
-              "flags": {
-                "isExternal": true,
-                "isOptional": true
-              },
-              "comment": {
-                "summary": [
-                  {
-                    "kind": "text",
-                    "text": "A locale string or array of locale strings that contain one or more language or locale tags. If you include more than one locale string, list them in descending order of priority so that the first entry is the preferred locale. If you omit this parameter, the default locale of the JavaScript runtime is used. This parameter must conform to BCP 47 standards; see the Intl.Collator object for details."
-                  }
-                ]
-              },
-              "type": {
-                "type": "union",
-                "types": [
-                  {
-                    "type": "intrinsic",
-                    "name": "string"
-                  },
-                  {
-                    "type": "array",
-                    "elementType": {
-                      "type": "intrinsic",
-                      "name": "string"
-                    }
-                  }
-                ]
-              }
-            },
-            {
               "id": 530,
-              "name": "options",
+              "name": "that",
               "variant": "param",
               "kind": 32768,
               "flags": {
-                "isExternal": true,
-                "isOptional": true
+                "isExternal": true
               },
               "comment": {
                 "summary": [
                   {
                     "kind": "text",
-                    "text": "An object that contains one or more properties that specify comparison options. see the Intl.Collator object for details."
+                    "text": "String to compare to target string"
                   }
                 ]
               },
               "type": {
-                "type": "reference",
-                "target": {
-                  "packageName": "typescript",
-                  "packagePath": "lib/lib.es5.d.ts",
-                  "qualifiedName": "Intl.CollatorOptions"
-                },
-                "name": "CollatorOptions",
-                "package": "typescript",
-                "qualifiedName": "Intl.CollatorOptions"
+                "type": "intrinsic",
+                "name": "string"
               }
             }
           ],
@@ -19729,8 +19609,8 @@ export const typesData = {
           },
           "sources": [
             {
-              "fileName": "typescript/lib/lib.es2020.string.d.ts",
-              "line": 43,
+              "fileName": "typescript/lib/lib.es5.d.ts",
+              "line": 4569,
               "character": 4
             }
           ],
@@ -19774,6 +19654,126 @@ export const typesData = {
                 ]
               },
               "type": {
+                "type": "union",
+                "types": [
+                  {
+                    "type": "intrinsic",
+                    "name": "string"
+                  },
+                  {
+                    "type": "array",
+                    "elementType": {
+                      "type": "intrinsic",
+                      "name": "string"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "id": 534,
+              "name": "options",
+              "variant": "param",
+              "kind": 32768,
+              "flags": {
+                "isExternal": true,
+                "isOptional": true
+              },
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "An object that contains one or more properties that specify comparison options. see the Intl.Collator object for details."
+                  }
+                ]
+              },
+              "type": {
+                "type": "reference",
+                "target": {
+                  "packageName": "typescript",
+                  "packagePath": "lib/lib.es5.d.ts",
+                  "qualifiedName": "Intl.CollatorOptions"
+                },
+                "name": "CollatorOptions",
+                "package": "typescript",
+                "qualifiedName": "Intl.CollatorOptions"
+              }
+            }
+          ],
+          "type": {
+            "type": "intrinsic",
+            "name": "number"
+          },
+          "inheritedFrom": {
+            "type": "reference",
+            "target": -1,
+            "name": "String.localeCompare"
+          }
+        },
+        {
+          "id": 535,
+          "name": "localeCompare",
+          "variant": "signature",
+          "kind": 4096,
+          "flags": {
+            "isExternal": true,
+            "isInherited": true
+          },
+          "comment": {
+            "summary": [
+              {
+                "kind": "text",
+                "text": "Determines whether two strings are equivalent in the current or specified locale."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "fileName": "typescript/lib/lib.es2020.string.d.ts",
+              "line": 43,
+              "character": 4
+            }
+          ],
+          "parameters": [
+            {
+              "id": 536,
+              "name": "that",
+              "variant": "param",
+              "kind": 32768,
+              "flags": {
+                "isExternal": true
+              },
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "String to compare to target string"
+                  }
+                ]
+              },
+              "type": {
+                "type": "intrinsic",
+                "name": "string"
+              }
+            },
+            {
+              "id": 537,
+              "name": "locales",
+              "variant": "param",
+              "kind": 32768,
+              "flags": {
+                "isExternal": true,
+                "isOptional": true
+              },
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "A locale string or array of locale strings that contain one or more language or locale tags. If you include more than one locale string, list them in descending order of priority so that the first entry is the preferred locale. If you omit this parameter, the default locale of the JavaScript runtime is used. This parameter must conform to BCP 47 standards; see the Intl.Collator object for details."
+                  }
+                ]
+              },
+              "type": {
                 "type": "reference",
                 "target": {
                   "packageName": "typescript",
@@ -19786,7 +19786,7 @@ export const typesData = {
               }
             },
             {
-              "id": 534,
+              "id": 538,
               "name": "options",
               "variant": "param",
               "kind": 32768,
@@ -19832,7 +19832,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 536,
+          "id": 540,
           "name": "match",
           "variant": "signature",
           "kind": 4096,
@@ -19857,7 +19857,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 537,
+              "id": 541,
               "name": "regexp",
               "variant": "param",
               "kind": 32768,
@@ -19919,7 +19919,7 @@ export const typesData = {
           }
         },
         {
-          "id": 538,
+          "id": 542,
           "name": "match",
           "variant": "signature",
           "kind": 4096,
@@ -19944,7 +19944,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 539,
+              "id": 543,
               "name": "matcher",
               "variant": "param",
               "kind": 32768,
@@ -19962,7 +19962,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 540,
+                  "id": 544,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -19971,7 +19971,7 @@ export const typesData = {
                   },
                   "children": [
                     {
-                      "id": 541,
+                      "id": 545,
                       "name": "[match]",
                       "variant": "declaration",
                       "kind": 2048,
@@ -19987,7 +19987,7 @@ export const typesData = {
                       ],
                       "signatures": [
                         {
-                          "id": 542,
+                          "id": 546,
                           "name": "[match]",
                           "variant": "signature",
                           "kind": 4096,
@@ -20003,7 +20003,7 @@ export const typesData = {
                           ],
                           "parameters": [
                             {
-                              "id": 543,
+                              "id": 547,
                               "name": "string",
                               "variant": "param",
                               "kind": 32768,
@@ -20043,7 +20043,7 @@ export const typesData = {
                     {
                       "title": "Methods",
                       "children": [
-                        541
+                        545
                       ]
                     }
                   ],
@@ -20090,7 +20090,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 703,
+          "id": 707,
           "name": "matchAll",
           "variant": "signature",
           "kind": 4096,
@@ -20115,7 +20115,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 704,
+              "id": 708,
               "name": "regexp",
               "variant": "param",
               "kind": 32768,
@@ -20177,7 +20177,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 643,
+          "id": 647,
           "name": "normalize",
           "variant": "signature",
           "kind": 4096,
@@ -20202,7 +20202,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 644,
+              "id": 648,
               "name": "form",
               "variant": "param",
               "kind": 32768,
@@ -20251,7 +20251,7 @@ export const typesData = {
           }
         },
         {
-          "id": 645,
+          "id": 649,
           "name": "normalize",
           "variant": "signature",
           "kind": 4096,
@@ -20276,7 +20276,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 646,
+              "id": 650,
               "name": "form",
               "variant": "param",
               "kind": 32768,
@@ -20315,7 +20315,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 691,
+          "id": 695,
           "name": "padEnd",
           "variant": "signature",
           "kind": 4096,
@@ -20335,6 +20335,91 @@ export const typesData = {
             {
               "fileName": "typescript/lib/lib.es2017.string.d.ts",
               "line": 44,
+              "character": 4
+            }
+          ],
+          "parameters": [
+            {
+              "id": 696,
+              "name": "maxLength",
+              "variant": "param",
+              "kind": 32768,
+              "flags": {
+                "isExternal": true
+              },
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "The length of the resulting string once the current string has been padded.\n       If this parameter is smaller than the current string's length, the current string will be returned as it is."
+                  }
+                ]
+              },
+              "type": {
+                "type": "intrinsic",
+                "name": "number"
+              }
+            },
+            {
+              "id": 697,
+              "name": "fillString",
+              "variant": "param",
+              "kind": 32768,
+              "flags": {
+                "isExternal": true,
+                "isOptional": true
+              },
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "The string to pad the current string with.\n       If this string is too long, it will be truncated and the left-most part will be applied.\n       The default value for this parameter is \" \" (U+0020)."
+                  }
+                ]
+              },
+              "type": {
+                "type": "intrinsic",
+                "name": "string"
+              }
+            }
+          ],
+          "type": {
+            "type": "intrinsic",
+            "name": "string"
+          },
+          "inheritedFrom": {
+            "type": "reference",
+            "target": -1,
+            "name": "String.padEnd"
+          }
+        }
+      ]
+    },
+    {
+      "name": "padStart",
+      "default_value": null,
+      "signatures": [
+        {
+          "id": 691,
+          "name": "padStart",
+          "variant": "signature",
+          "kind": 4096,
+          "flags": {
+            "isExternal": true,
+            "isInherited": true
+          },
+          "comment": {
+            "summary": [
+              {
+                "kind": "text",
+                "text": "Pads the current string with a given string (possibly repeated) so that the resulting string reaches a given length.\nThe padding is applied from the start (left) of the current string."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "fileName": "typescript/lib/lib.es2017.string.d.ts",
+              "line": 31,
               "character": 4
             }
           ],
@@ -20390,91 +20475,6 @@ export const typesData = {
           "inheritedFrom": {
             "type": "reference",
             "target": -1,
-            "name": "String.padEnd"
-          }
-        }
-      ]
-    },
-    {
-      "name": "padStart",
-      "default_value": null,
-      "signatures": [
-        {
-          "id": 687,
-          "name": "padStart",
-          "variant": "signature",
-          "kind": 4096,
-          "flags": {
-            "isExternal": true,
-            "isInherited": true
-          },
-          "comment": {
-            "summary": [
-              {
-                "kind": "text",
-                "text": "Pads the current string with a given string (possibly repeated) so that the resulting string reaches a given length.\nThe padding is applied from the start (left) of the current string."
-              }
-            ]
-          },
-          "sources": [
-            {
-              "fileName": "typescript/lib/lib.es2017.string.d.ts",
-              "line": 31,
-              "character": 4
-            }
-          ],
-          "parameters": [
-            {
-              "id": 688,
-              "name": "maxLength",
-              "variant": "param",
-              "kind": 32768,
-              "flags": {
-                "isExternal": true
-              },
-              "comment": {
-                "summary": [
-                  {
-                    "kind": "text",
-                    "text": "The length of the resulting string once the current string has been padded.\n       If this parameter is smaller than the current string's length, the current string will be returned as it is."
-                  }
-                ]
-              },
-              "type": {
-                "type": "intrinsic",
-                "name": "number"
-              }
-            },
-            {
-              "id": 689,
-              "name": "fillString",
-              "variant": "param",
-              "kind": 32768,
-              "flags": {
-                "isExternal": true,
-                "isOptional": true
-              },
-              "comment": {
-                "summary": [
-                  {
-                    "kind": "text",
-                    "text": "The string to pad the current string with.\n       If this string is too long, it will be truncated and the left-most part will be applied.\n       The default value for this parameter is \" \" (U+0020)."
-                  }
-                ]
-              },
-              "type": {
-                "type": "intrinsic",
-                "name": "string"
-              }
-            }
-          ],
-          "type": {
-            "type": "intrinsic",
-            "name": "string"
-          },
-          "inheritedFrom": {
-            "type": "reference",
-            "target": -1,
             "name": "String.padStart"
           }
         }
@@ -20485,7 +20485,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 648,
+          "id": 652,
           "name": "repeat",
           "variant": "signature",
           "kind": 4096,
@@ -20510,7 +20510,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 649,
+              "id": 653,
               "name": "count",
               "variant": "param",
               "kind": 32768,
@@ -20548,7 +20548,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 545,
+          "id": 549,
           "name": "replace",
           "variant": "signature",
           "kind": 4096,
@@ -20573,7 +20573,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 546,
+              "id": 550,
               "name": "searchValue",
               "variant": "param",
               "kind": 32768,
@@ -20609,7 +20609,7 @@ export const typesData = {
               }
             },
             {
-              "id": 547,
+              "id": 551,
               "name": "replaceValue",
               "variant": "param",
               "kind": 32768,
@@ -20626,7 +20626,7 @@ export const typesData = {
                     "kind": "inline-tag",
                     "tag": "@linkcode",
                     "text": "searchValue",
-                    "target": 546
+                    "target": 550
                   },
                   {
                     "kind": "text",
@@ -20660,7 +20660,7 @@ export const typesData = {
                     "kind": "inline-tag",
                     "tag": "@linkcode",
                     "text": "searchValue",
-                    "target": 546
+                    "target": 550
                   },
                   {
                     "kind": "text",
@@ -20685,7 +20685,7 @@ export const typesData = {
           }
         },
         {
-          "id": 548,
+          "id": 552,
           "name": "replace",
           "variant": "signature",
           "kind": 4096,
@@ -20710,7 +20710,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 549,
+              "id": 553,
               "name": "searchValue",
               "variant": "param",
               "kind": 32768,
@@ -20746,7 +20746,7 @@ export const typesData = {
               }
             },
             {
-              "id": 550,
+              "id": 554,
               "name": "replacer",
               "variant": "param",
               "kind": 32768,
@@ -20764,7 +20764,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 551,
+                  "id": 555,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -20780,7 +20780,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 552,
+                      "id": 556,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -20796,7 +20796,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 553,
+                          "id": 557,
                           "name": "substring",
                           "variant": "param",
                           "kind": 32768,
@@ -20809,7 +20809,7 @@ export const typesData = {
                           }
                         },
                         {
-                          "id": 554,
+                          "id": 558,
                           "name": "args",
                           "variant": "param",
                           "kind": 32768,
@@ -20847,7 +20847,7 @@ export const typesData = {
           }
         },
         {
-          "id": 555,
+          "id": 559,
           "name": "replace",
           "variant": "signature",
           "kind": 4096,
@@ -20865,7 +20865,7 @@ export const typesData = {
                 "kind": "inline-tag",
                 "tag": "@linkcode",
                 "text": "replaceValue",
-                "target": 562
+                "target": 566
               },
               {
                 "kind": "text",
@@ -20883,7 +20883,7 @@ export const typesData = {
                 "kind": "inline-tag",
                 "tag": "@linkcode",
                 "text": "searchValue",
-                "target": 556
+                "target": 560
               },
               {
                 "kind": "text",
@@ -20900,7 +20900,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 556,
+              "id": 560,
               "name": "searchValue",
               "variant": "param",
               "kind": 32768,
@@ -20918,7 +20918,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 557,
+                  "id": 561,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -20927,7 +20927,7 @@ export const typesData = {
                   },
                   "children": [
                     {
-                      "id": 558,
+                      "id": 562,
                       "name": "[replace]",
                       "variant": "declaration",
                       "kind": 2048,
@@ -20943,7 +20943,7 @@ export const typesData = {
                       ],
                       "signatures": [
                         {
-                          "id": 559,
+                          "id": 563,
                           "name": "[replace]",
                           "variant": "signature",
                           "kind": 4096,
@@ -20959,7 +20959,7 @@ export const typesData = {
                           ],
                           "parameters": [
                             {
-                              "id": 560,
+                              "id": 564,
                               "name": "string",
                               "variant": "param",
                               "kind": 32768,
@@ -20972,7 +20972,7 @@ export const typesData = {
                               }
                             },
                             {
-                              "id": 561,
+                              "id": 565,
                               "name": "replaceValue",
                               "variant": "param",
                               "kind": 32768,
@@ -20997,7 +20997,7 @@ export const typesData = {
                     {
                       "title": "Methods",
                       "children": [
-                        558
+                        562
                       ]
                     }
                   ],
@@ -21012,7 +21012,7 @@ export const typesData = {
               }
             },
             {
-              "id": 562,
+              "id": 566,
               "name": "replaceValue",
               "variant": "param",
               "kind": 32768,
@@ -21044,7 +21044,7 @@ export const typesData = {
           }
         },
         {
-          "id": 563,
+          "id": 567,
           "name": "replace",
           "variant": "signature",
           "kind": 4096,
@@ -21069,7 +21069,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 564,
+              "id": 568,
               "name": "searchValue",
               "variant": "param",
               "kind": 32768,
@@ -21087,7 +21087,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 565,
+                  "id": 569,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -21096,7 +21096,7 @@ export const typesData = {
                   },
                   "children": [
                     {
-                      "id": 566,
+                      "id": 570,
                       "name": "[replace]",
                       "variant": "declaration",
                       "kind": 2048,
@@ -21112,7 +21112,7 @@ export const typesData = {
                       ],
                       "signatures": [
                         {
-                          "id": 567,
+                          "id": 571,
                           "name": "[replace]",
                           "variant": "signature",
                           "kind": 4096,
@@ -21128,7 +21128,7 @@ export const typesData = {
                           ],
                           "parameters": [
                             {
-                              "id": 568,
+                              "id": 572,
                               "name": "string",
                               "variant": "param",
                               "kind": 32768,
@@ -21141,7 +21141,7 @@ export const typesData = {
                               }
                             },
                             {
-                              "id": 569,
+                              "id": 573,
                               "name": "replacer",
                               "variant": "param",
                               "kind": 32768,
@@ -21151,7 +21151,7 @@ export const typesData = {
                               "type": {
                                 "type": "reflection",
                                 "declaration": {
-                                  "id": 570,
+                                  "id": 574,
                                   "name": "__type",
                                   "variant": "declaration",
                                   "kind": 65536,
@@ -21167,7 +21167,7 @@ export const typesData = {
                                   ],
                                   "signatures": [
                                     {
-                                      "id": 571,
+                                      "id": 575,
                                       "name": "__type",
                                       "variant": "signature",
                                       "kind": 4096,
@@ -21183,7 +21183,7 @@ export const typesData = {
                                       ],
                                       "parameters": [
                                         {
-                                          "id": 572,
+                                          "id": 576,
                                           "name": "substring",
                                           "variant": "param",
                                           "kind": 32768,
@@ -21196,7 +21196,7 @@ export const typesData = {
                                           }
                                         },
                                         {
-                                          "id": 573,
+                                          "id": 577,
                                           "name": "args",
                                           "variant": "param",
                                           "kind": 32768,
@@ -21235,7 +21235,7 @@ export const typesData = {
                     {
                       "title": "Methods",
                       "children": [
-                        566
+                        570
                       ]
                     }
                   ],
@@ -21250,7 +21250,7 @@ export const typesData = {
               }
             },
             {
-              "id": 574,
+              "id": 578,
               "name": "replacer",
               "variant": "param",
               "kind": 32768,
@@ -21268,7 +21268,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 575,
+                  "id": 579,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -21284,7 +21284,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 576,
+                      "id": 580,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -21300,7 +21300,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 577,
+                          "id": 581,
                           "name": "substring",
                           "variant": "param",
                           "kind": 32768,
@@ -21313,7 +21313,7 @@ export const typesData = {
                           }
                         },
                         {
-                          "id": 578,
+                          "id": 582,
                           "name": "args",
                           "variant": "param",
                           "kind": 32768,
@@ -21357,7 +21357,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 706,
+          "id": 710,
           "name": "replaceAll",
           "variant": "signature",
           "kind": 4096,
@@ -21382,7 +21382,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 707,
+              "id": 711,
               "name": "searchValue",
               "variant": "param",
               "kind": 32768,
@@ -21418,7 +21418,7 @@ export const typesData = {
               }
             },
             {
-              "id": 708,
+              "id": 712,
               "name": "replaceValue",
               "variant": "param",
               "kind": 32768,
@@ -21450,7 +21450,7 @@ export const typesData = {
           }
         },
         {
-          "id": 709,
+          "id": 713,
           "name": "replaceAll",
           "variant": "signature",
           "kind": 4096,
@@ -21475,7 +21475,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 710,
+              "id": 714,
               "name": "searchValue",
               "variant": "param",
               "kind": 32768,
@@ -21511,7 +21511,7 @@ export const typesData = {
               }
             },
             {
-              "id": 711,
+              "id": 715,
               "name": "replacer",
               "variant": "param",
               "kind": 32768,
@@ -21529,7 +21529,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 712,
+                  "id": 716,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -21545,7 +21545,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 713,
+                      "id": 717,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -21561,7 +21561,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 714,
+                          "id": 718,
                           "name": "substring",
                           "variant": "param",
                           "kind": 32768,
@@ -21574,7 +21574,7 @@ export const typesData = {
                           }
                         },
                         {
-                          "id": 715,
+                          "id": 719,
                           "name": "args",
                           "variant": "param",
                           "kind": 32768,
@@ -21618,7 +21618,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 580,
+          "id": 584,
           "name": "search",
           "variant": "signature",
           "kind": 4096,
@@ -21643,7 +21643,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 581,
+              "id": 585,
               "name": "regexp",
               "variant": "param",
               "kind": 32768,
@@ -21690,7 +21690,7 @@ export const typesData = {
           }
         },
         {
-          "id": 582,
+          "id": 586,
           "name": "search",
           "variant": "signature",
           "kind": 4096,
@@ -21715,7 +21715,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 583,
+              "id": 587,
               "name": "searcher",
               "variant": "param",
               "kind": 32768,
@@ -21733,7 +21733,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 584,
+                  "id": 588,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -21742,7 +21742,7 @@ export const typesData = {
                   },
                   "children": [
                     {
-                      "id": 585,
+                      "id": 589,
                       "name": "[search]",
                       "variant": "declaration",
                       "kind": 2048,
@@ -21758,7 +21758,7 @@ export const typesData = {
                       ],
                       "signatures": [
                         {
-                          "id": 586,
+                          "id": 590,
                           "name": "[search]",
                           "variant": "signature",
                           "kind": 4096,
@@ -21774,7 +21774,7 @@ export const typesData = {
                           ],
                           "parameters": [
                             {
-                              "id": 587,
+                              "id": 591,
                               "name": "string",
                               "variant": "param",
                               "kind": 32768,
@@ -21799,7 +21799,7 @@ export const typesData = {
                     {
                       "title": "Methods",
                       "children": [
-                        585
+                        589
                       ]
                     }
                   ],
@@ -21831,7 +21831,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 589,
+          "id": 593,
           "name": "slice",
           "variant": "signature",
           "kind": 4096,
@@ -21856,7 +21856,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 590,
+              "id": 594,
               "name": "start",
               "variant": "param",
               "kind": 32768,
@@ -21878,7 +21878,7 @@ export const typesData = {
               }
             },
             {
-              "id": 591,
+              "id": 595,
               "name": "end",
               "variant": "param",
               "kind": 32768,
@@ -21917,7 +21917,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 679,
+          "id": 683,
           "name": "small",
           "variant": "signature",
           "kind": 4096,
@@ -21976,7 +21976,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 593,
+          "id": 597,
           "name": "split",
           "variant": "signature",
           "kind": 4096,
@@ -22001,7 +22001,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 594,
+              "id": 598,
               "name": "separator",
               "variant": "param",
               "kind": 32768,
@@ -22037,7 +22037,7 @@ export const typesData = {
               }
             },
             {
-              "id": 595,
+              "id": 599,
               "name": "limit",
               "variant": "param",
               "kind": 32768,
@@ -22073,7 +22073,7 @@ export const typesData = {
           }
         },
         {
-          "id": 596,
+          "id": 600,
           "name": "split",
           "variant": "signature",
           "kind": 4096,
@@ -22098,7 +22098,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 597,
+              "id": 601,
               "name": "splitter",
               "variant": "param",
               "kind": 32768,
@@ -22116,7 +22116,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 598,
+                  "id": 602,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -22125,7 +22125,7 @@ export const typesData = {
                   },
                   "children": [
                     {
-                      "id": 599,
+                      "id": 603,
                       "name": "[split]",
                       "variant": "declaration",
                       "kind": 2048,
@@ -22141,7 +22141,7 @@ export const typesData = {
                       ],
                       "signatures": [
                         {
-                          "id": 600,
+                          "id": 604,
                           "name": "[split]",
                           "variant": "signature",
                           "kind": 4096,
@@ -22157,7 +22157,7 @@ export const typesData = {
                           ],
                           "parameters": [
                             {
-                              "id": 601,
+                              "id": 605,
                               "name": "string",
                               "variant": "param",
                               "kind": 32768,
@@ -22170,7 +22170,7 @@ export const typesData = {
                               }
                             },
                             {
-                              "id": 602,
+                              "id": 606,
                               "name": "limit",
                               "variant": "param",
                               "kind": 32768,
@@ -22199,7 +22199,7 @@ export const typesData = {
                     {
                       "title": "Methods",
                       "children": [
-                        599
+                        603
                       ]
                     }
                   ],
@@ -22214,7 +22214,7 @@ export const typesData = {
               }
             },
             {
-              "id": 603,
+              "id": 607,
               "name": "limit",
               "variant": "param",
               "kind": 32768,
@@ -22256,7 +22256,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 651,
+          "id": 655,
           "name": "startsWith",
           "variant": "signature",
           "kind": 4096,
@@ -22281,7 +22281,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 652,
+              "id": 656,
               "name": "searchString",
               "variant": "param",
               "kind": 32768,
@@ -22294,7 +22294,7 @@ export const typesData = {
               }
             },
             {
-              "id": 653,
+              "id": 657,
               "name": "position",
               "variant": "param",
               "kind": 32768,
@@ -22325,7 +22325,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 681,
+          "id": 685,
           "name": "strike",
           "variant": "signature",
           "kind": 4096,
@@ -22384,7 +22384,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 683,
+          "id": 687,
           "name": "sub",
           "variant": "signature",
           "kind": 4096,
@@ -22443,7 +22443,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 626,
+          "id": 630,
           "name": "substr",
           "variant": "signature",
           "kind": 4096,
@@ -22479,7 +22479,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 627,
+              "id": 631,
               "name": "from",
               "variant": "param",
               "kind": 32768,
@@ -22500,7 +22500,7 @@ export const typesData = {
               }
             },
             {
-              "id": 628,
+              "id": 632,
               "name": "length",
               "variant": "param",
               "kind": 32768,
@@ -22539,7 +22539,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 605,
+          "id": 609,
           "name": "substring",
           "variant": "signature",
           "kind": 4096,
@@ -22564,7 +22564,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 606,
+              "id": 610,
               "name": "start",
               "variant": "param",
               "kind": 32768,
@@ -22585,7 +22585,7 @@ export const typesData = {
               }
             },
             {
-              "id": 607,
+              "id": 611,
               "name": "end",
               "variant": "param",
               "kind": 32768,
@@ -22624,7 +22624,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 685,
+          "id": 689,
           "name": "sup",
           "variant": "signature",
           "kind": 4096,
@@ -22683,7 +22683,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 611,
+          "id": 615,
           "name": "toLocaleLowerCase",
           "variant": "signature",
           "kind": 4096,
@@ -22708,7 +22708,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 612,
+              "id": 616,
               "name": "locales",
               "variant": "param",
               "kind": 32768,
@@ -22745,7 +22745,7 @@ export const typesData = {
           }
         },
         {
-          "id": 613,
+          "id": 617,
           "name": "toLocaleLowerCase",
           "variant": "signature",
           "kind": 4096,
@@ -22770,7 +22770,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 614,
+              "id": 618,
               "name": "locales",
               "variant": "param",
               "kind": 32768,
@@ -22808,7 +22808,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 618,
+          "id": 622,
           "name": "toLocaleUpperCase",
           "variant": "signature",
           "kind": 4096,
@@ -22833,7 +22833,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 619,
+              "id": 623,
               "name": "locales",
               "variant": "param",
               "kind": 32768,
@@ -22870,7 +22870,7 @@ export const typesData = {
           }
         },
         {
-          "id": 620,
+          "id": 624,
           "name": "toLocaleUpperCase",
           "variant": "signature",
           "kind": 4096,
@@ -22895,7 +22895,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 621,
+              "id": 625,
               "name": "locales",
               "variant": "param",
               "kind": 32768,
@@ -22933,7 +22933,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 609,
+          "id": 613,
           "name": "toLowerCase",
           "variant": "signature",
           "kind": 4096,
@@ -22973,7 +22973,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 506,
+          "id": 510,
           "name": "toString",
           "variant": "signature",
           "kind": 4096,
@@ -23013,7 +23013,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 616,
+          "id": 620,
           "name": "toUpperCase",
           "variant": "signature",
           "kind": 4096,
@@ -23053,7 +23053,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 722,
+          "id": 726,
           "name": "toWellFormed",
           "variant": "signature",
           "kind": 4096,
@@ -23093,7 +23093,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 623,
+          "id": 627,
           "name": "trim",
           "variant": "signature",
           "kind": 4096,
@@ -23133,7 +23133,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 695,
+          "id": 699,
           "name": "trimEnd",
           "variant": "signature",
           "kind": 4096,
@@ -23173,7 +23173,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 699,
+          "id": 703,
           "name": "trimLeft",
           "variant": "signature",
           "kind": 4096,
@@ -23232,7 +23232,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 701,
+          "id": 705,
           "name": "trimRight",
           "variant": "signature",
           "kind": 4096,
@@ -23291,7 +23291,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 697,
+          "id": 701,
           "name": "trimStart",
           "variant": "signature",
           "kind": 4096,
@@ -23331,7 +23331,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 630,
+          "id": 634,
           "name": "valueOf",
           "variant": "signature",
           "kind": 4096,
@@ -23988,7 +23988,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -24058,7 +24058,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -24130,7 +24130,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -24434,7 +24434,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -24646,6 +24646,33 @@ export const typesData = {
           }
         ]
       }
+    },
+    {
+      "name": "speed",
+      "default_value": "undefined",
+      "type": {
+        "type": "intrinsic",
+        "name": "number"
+      },
+      "comment": {
+        "summary": [
+          {
+            "kind": "text",
+            "text": "Set the speed of keyboard navigation transitions (in ms)"
+          }
+        ],
+        "blockTags": [
+          {
+            "tag": "@default",
+            "content": [
+              {
+                "kind": "code",
+                "text": "```ts\nundefined\n```"
+              }
+            ]
+          }
+        ]
+      }
     }
   ],
   "ManipulationMethods": [
@@ -24654,7 +24681,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 212,
+          "id": 213,
           "name": "addSlide",
           "variant": "signature",
           "kind": 4096,
@@ -24689,7 +24716,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 213,
+              "id": 214,
               "name": "index",
               "variant": "param",
               "kind": 32768,
@@ -24702,7 +24729,7 @@ export const typesData = {
               }
             },
             {
-              "id": 214,
+              "id": 215,
               "name": "slides",
               "variant": "param",
               "kind": 32768,
@@ -24762,7 +24789,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 206,
+          "id": 207,
           "name": "appendSlide",
           "variant": "signature",
           "kind": 4096,
@@ -24797,7 +24824,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 207,
+              "id": 208,
               "name": "slides",
               "variant": "param",
               "kind": 32768,
@@ -24857,7 +24884,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 209,
+          "id": 210,
           "name": "prependSlide",
           "variant": "signature",
           "kind": 4096,
@@ -24892,7 +24919,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 210,
+              "id": 211,
               "name": "slides",
               "variant": "param",
               "kind": 32768,
@@ -24952,7 +24979,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 219,
+          "id": 220,
           "name": "removeAllSlides",
           "variant": "signature",
           "kind": 4096,
@@ -24986,7 +25013,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 216,
+          "id": 217,
           "name": "removeSlide",
           "variant": "signature",
           "kind": 4096,
@@ -25021,7 +25048,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 217,
+              "id": 218,
               "name": "slideIndex",
               "variant": "param",
               "kind": 32768,
@@ -25061,7 +25088,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 231,
+          "id": 232,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -25077,7 +25104,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 232,
+              "id": 233,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -25093,7 +25120,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 233,
+                  "id": 234,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -25102,13 +25129,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 234,
+                  "id": 235,
                   "name": "event",
                   "variant": "param",
                   "kind": 32768,
@@ -25167,7 +25194,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 228,
+          "id": 229,
           "name": "disable",
           "variant": "signature",
           "kind": 4096,
@@ -25201,7 +25228,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 226,
+          "id": 227,
           "name": "enable",
           "variant": "signature",
           "kind": 4096,
@@ -25293,7 +25320,7 @@ export const typesData = {
           },
           {
             "type": "reference",
-            "target": 504,
+            "target": 508,
             "name": "CSSSelector",
             "package": "swiper"
           }
@@ -25558,7 +25585,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 257,
+          "id": 258,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -25574,7 +25601,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 258,
+              "id": 259,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -25590,7 +25617,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 259,
+                  "id": 260,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -25599,7 +25626,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -25628,7 +25655,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 269,
+          "id": 270,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -25644,7 +25671,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 270,
+              "id": 271,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -25660,7 +25687,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 271,
+                  "id": 272,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -25669,7 +25696,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -25698,7 +25725,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 265,
+          "id": 266,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -25714,7 +25741,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 266,
+              "id": 267,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -25730,7 +25757,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 267,
+                  "id": 268,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -25739,7 +25766,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -25768,7 +25795,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 261,
+          "id": 262,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -25784,7 +25811,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 262,
+              "id": 263,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -25800,7 +25827,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 263,
+                  "id": 264,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -25809,7 +25836,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -25883,7 +25910,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 254,
+          "id": 255,
           "name": "destroy",
           "variant": "signature",
           "kind": 4096,
@@ -25917,7 +25944,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 252,
+          "id": 253,
           "name": "init",
           "variant": "signature",
           "kind": 4096,
@@ -25951,7 +25978,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 250,
+          "id": 251,
           "name": "update",
           "variant": "signature",
           "kind": 4096,
@@ -26178,7 +26205,7 @@ export const typesData = {
           },
           {
             "type": "reference",
-            "target": 504,
+            "target": 508,
             "name": "CSSSelector",
             "package": "swiper"
           },
@@ -26226,7 +26253,7 @@ export const typesData = {
           },
           {
             "type": "reference",
-            "target": 504,
+            "target": 508,
             "name": "CSSSelector",
             "package": "swiper"
           },
@@ -26264,7 +26291,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 306,
+          "id": 307,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -26280,7 +26307,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 307,
+              "id": 308,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -26296,7 +26323,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 308,
+                  "id": 309,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -26305,7 +26332,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -26334,7 +26361,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 296,
+          "id": 297,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -26350,7 +26377,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 297,
+              "id": 298,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -26366,7 +26393,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 298,
+                  "id": 299,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -26375,13 +26402,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 299,
+                  "id": 300,
                   "name": "paginationEl",
                   "variant": "param",
                   "kind": 32768,
@@ -26423,7 +26450,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 310,
+          "id": 311,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -26439,7 +26466,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 311,
+              "id": 312,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -26455,7 +26482,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 312,
+                  "id": 313,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -26464,7 +26491,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -26493,7 +26520,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 301,
+          "id": 302,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -26509,7 +26536,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 302,
+              "id": 303,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -26525,7 +26552,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 303,
+                  "id": 304,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -26534,13 +26561,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 304,
+                  "id": 305,
                   "name": "paginationEl",
                   "variant": "param",
                   "kind": 32768,
@@ -26638,7 +26665,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 293,
+          "id": 294,
           "name": "destroy",
           "variant": "signature",
           "kind": 4096,
@@ -26672,7 +26699,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 291,
+          "id": 292,
           "name": "init",
           "variant": "signature",
           "kind": 4096,
@@ -26706,7 +26733,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 287,
+          "id": 288,
           "name": "render",
           "variant": "signature",
           "kind": 4096,
@@ -26740,7 +26767,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 289,
+          "id": 290,
           "name": "update",
           "variant": "signature",
           "kind": 4096,
@@ -27029,7 +27056,7 @@ export const typesData = {
           },
           {
             "type": "reference",
-            "target": 504,
+            "target": 508,
             "name": "CSSSelector",
             "package": "swiper"
           },
@@ -27081,7 +27108,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 324,
+          "id": 325,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -27097,7 +27124,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 325,
+              "id": 326,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -27113,7 +27140,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 326,
+                  "id": 327,
                   "name": "number",
                   "variant": "param",
                   "kind": 32768,
@@ -27158,7 +27185,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 328,
+          "id": 329,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -27174,7 +27201,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 329,
+              "id": 330,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -27190,7 +27217,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 330,
+                  "id": 331,
                   "name": "number",
                   "variant": "param",
                   "kind": 32768,
@@ -27486,7 +27513,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 332,
+          "id": 333,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -27502,7 +27529,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 333,
+              "id": 334,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -27518,7 +27545,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 334,
+                  "id": 335,
                   "name": "index",
                   "variant": "param",
                   "kind": 32768,
@@ -27531,7 +27558,7 @@ export const typesData = {
                   }
                 },
                 {
-                  "id": 335,
+                  "id": 336,
                   "name": "className",
                   "variant": "param",
                   "kind": 32768,
@@ -27611,7 +27638,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 346,
+          "id": 347,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -27627,7 +27654,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 347,
+              "id": 348,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -27643,7 +27670,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 348,
+                  "id": 349,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -27652,13 +27679,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 349,
+                  "id": 350,
                   "name": "current",
                   "variant": "param",
                   "kind": 32768,
@@ -27671,7 +27698,7 @@ export const typesData = {
                   }
                 },
                 {
-                  "id": 350,
+                  "id": 351,
                   "name": "total",
                   "variant": "param",
                   "kind": 32768,
@@ -27735,7 +27762,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 337,
+          "id": 338,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -27751,7 +27778,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 338,
+              "id": 339,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -27767,7 +27794,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 339,
+                  "id": 340,
                   "name": "currentClass",
                   "variant": "param",
                   "kind": 32768,
@@ -27780,7 +27807,7 @@ export const typesData = {
                   }
                 },
                 {
-                  "id": 340,
+                  "id": 341,
                   "name": "totalClass",
                   "variant": "param",
                   "kind": 32768,
@@ -27844,7 +27871,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 342,
+          "id": 343,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -27860,7 +27887,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 343,
+              "id": 344,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -27876,7 +27903,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 344,
+                  "id": 345,
                   "name": "progressbarFillClass",
                   "variant": "param",
                   "kind": 32768,
@@ -28097,7 +28124,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 394,
+          "id": 395,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -28113,7 +28140,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 395,
+              "id": 396,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -28129,7 +28156,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 396,
+                  "id": 397,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -28138,13 +28165,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 397,
+                  "id": 398,
                   "name": "event",
                   "variant": "param",
                   "kind": 32768,
@@ -28211,7 +28238,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 389,
+          "id": 390,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -28227,7 +28254,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 390,
+              "id": 391,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -28243,7 +28270,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 391,
+                  "id": 392,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -28252,13 +28279,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 392,
+                  "id": 393,
                   "name": "event",
                   "variant": "param",
                   "kind": 32768,
@@ -28325,7 +28352,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 384,
+          "id": 385,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -28341,7 +28368,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 385,
+              "id": 386,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -28357,7 +28384,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 386,
+                  "id": 387,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -28366,13 +28393,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 387,
+                  "id": 388,
                   "name": "event",
                   "variant": "param",
                   "kind": 32768,
@@ -28484,7 +28511,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 381,
+          "id": 382,
           "name": "destroy",
           "variant": "signature",
           "kind": 4096,
@@ -28518,7 +28545,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 379,
+          "id": 380,
           "name": "init",
           "variant": "signature",
           "kind": 4096,
@@ -28552,7 +28579,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 377,
+          "id": 378,
           "name": "setTranslate",
           "variant": "signature",
           "kind": 4096,
@@ -28586,7 +28613,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 375,
+          "id": 376,
           "name": "updateSize",
           "variant": "signature",
           "kind": 4096,
@@ -28733,7 +28760,7 @@ export const typesData = {
           },
           {
             "type": "reference",
-            "target": 504,
+            "target": 508,
             "name": "CSSSelector",
             "package": "swiper"
           },
@@ -28957,7 +28984,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 889,
+          "id": 893,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -28973,7 +29000,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 890,
+              "id": 894,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -28989,7 +29016,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 891,
+                  "id": 895,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -28998,13 +29025,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 892,
+                  "id": 896,
                   "name": "breakpointParams",
                   "variant": "param",
                   "kind": 32768,
@@ -29013,7 +29040,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 1114,
+                    "target": 1118,
                     "name": "SwiperOptions",
                     "package": "swiper"
                   }
@@ -29042,7 +29069,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 894,
+          "id": 898,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -29058,7 +29085,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 895,
+              "id": 899,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -29074,7 +29101,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 896,
+                  "id": 900,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -29083,13 +29110,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 897,
+                  "id": 901,
                   "name": "classNames",
                   "variant": "param",
                   "kind": 32768,
@@ -29125,7 +29152,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 918,
+          "id": 922,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -29141,7 +29168,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 919,
+              "id": 923,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -29157,7 +29184,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 920,
+                  "id": 924,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -29166,7 +29193,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -29195,7 +29222,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 899,
+          "id": 903,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -29211,7 +29238,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 900,
+              "id": 904,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -29227,7 +29254,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 901,
+                  "id": 905,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -29236,13 +29263,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 902,
+                  "id": 906,
                   "name": "slideEl",
                   "variant": "param",
                   "kind": 32768,
@@ -29261,7 +29288,7 @@ export const typesData = {
                   }
                 },
                 {
-                  "id": 903,
+                  "id": 907,
                   "name": "classNames",
                   "variant": "param",
                   "kind": 32768,
@@ -29297,7 +29324,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 905,
+          "id": 909,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -29313,7 +29340,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 906,
+              "id": 910,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -29329,7 +29356,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 907,
+                  "id": 911,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -29338,13 +29365,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 908,
+                  "id": 912,
                   "name": "slides",
                   "variant": "param",
                   "kind": 32768,
@@ -29356,7 +29383,7 @@ export const typesData = {
                     "elementType": {
                       "type": "reflection",
                       "declaration": {
-                        "id": 909,
+                        "id": 913,
                         "name": "__type",
                         "variant": "declaration",
                         "kind": 65536,
@@ -29365,7 +29392,7 @@ export const typesData = {
                         },
                         "children": [
                           {
-                            "id": 911,
+                            "id": 915,
                             "name": "classNames",
                             "variant": "declaration",
                             "kind": 1024,
@@ -29385,7 +29412,7 @@ export const typesData = {
                             }
                           },
                           {
-                            "id": 912,
+                            "id": 916,
                             "name": "index",
                             "variant": "declaration",
                             "kind": 1024,
@@ -29405,7 +29432,7 @@ export const typesData = {
                             }
                           },
                           {
-                            "id": 910,
+                            "id": 914,
                             "name": "slideEl",
                             "variant": "declaration",
                             "kind": 1024,
@@ -29435,9 +29462,9 @@ export const typesData = {
                           {
                             "title": "Properties",
                             "children": [
-                              911,
-                              912,
-                              910
+                              915,
+                              916,
+                              914
                             ]
                           }
                         ],
@@ -29476,7 +29503,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 914,
+          "id": 918,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -29492,7 +29519,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 915,
+              "id": 919,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -29508,7 +29535,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 916,
+                  "id": 920,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -29517,7 +29544,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -29546,7 +29573,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 922,
+          "id": 926,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -29562,7 +29589,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 923,
+              "id": 927,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -29578,7 +29605,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 924,
+                  "id": 928,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -29587,7 +29614,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -29616,7 +29643,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 934,
+          "id": 938,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -29632,7 +29659,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 935,
+              "id": 939,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -29648,7 +29675,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 936,
+                  "id": 940,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -29657,7 +29684,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -29686,7 +29713,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1036,
+          "id": 1040,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -29702,7 +29729,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 1037,
+              "id": 1041,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -29718,7 +29745,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 1038,
+                  "id": 1042,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -29727,7 +29754,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -29756,7 +29783,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1022,
+          "id": 1026,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -29772,7 +29799,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 1023,
+              "id": 1027,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -29788,7 +29815,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 1024,
+                  "id": 1028,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -29797,7 +29824,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -29826,7 +29853,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1026,
+          "id": 1030,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -29842,7 +29869,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 1027,
+              "id": 1031,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -29858,7 +29885,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 1028,
+                  "id": 1032,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -29867,7 +29894,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -29896,7 +29923,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1014,
+          "id": 1018,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -29912,7 +29939,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 1015,
+              "id": 1019,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -29928,7 +29955,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 1016,
+                  "id": 1020,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -29937,7 +29964,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -29966,7 +29993,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1018,
+          "id": 1022,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -29982,7 +30009,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 1019,
+              "id": 1023,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -29998,7 +30025,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 1020,
+                  "id": 1024,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -30007,7 +30034,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -30036,7 +30063,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1030,
+          "id": 1034,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -30052,7 +30079,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 1031,
+              "id": 1035,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -30068,7 +30095,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 1032,
+                  "id": 1036,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -30077,13 +30104,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 1033,
+                  "id": 1037,
                   "name": "timeLeft",
                   "variant": "param",
                   "kind": 32768,
@@ -30096,7 +30123,7 @@ export const typesData = {
                   }
                 },
                 {
-                  "id": 1034,
+                  "id": 1038,
                   "name": "percentage",
                   "variant": "param",
                   "kind": 32768,
@@ -30132,7 +30159,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 753,
+          "id": 757,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -30148,7 +30175,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 754,
+              "id": 758,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -30164,7 +30191,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 755,
+                  "id": 759,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -30173,7 +30200,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -30202,7 +30229,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 938,
+          "id": 942,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -30218,7 +30245,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 939,
+              "id": 943,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -30234,7 +30261,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 940,
+                  "id": 944,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -30243,7 +30270,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -30272,7 +30299,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 876,
+          "id": 880,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -30288,7 +30315,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 877,
+              "id": 881,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -30304,7 +30331,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 878,
+                  "id": 882,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -30313,7 +30340,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -30342,7 +30369,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 942,
+          "id": 946,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -30358,7 +30385,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 943,
+              "id": 947,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -30374,7 +30401,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 944,
+                  "id": 948,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -30383,7 +30410,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -30412,7 +30439,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 946,
+          "id": 950,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -30428,7 +30455,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 947,
+              "id": 951,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -30444,7 +30471,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 948,
+                  "id": 952,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -30453,7 +30480,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -30482,7 +30509,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 950,
+          "id": 954,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -30498,7 +30525,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 951,
+              "id": 955,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -30514,7 +30541,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 952,
+                  "id": 956,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -30523,13 +30550,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 953,
+                  "id": 957,
                   "name": "speed",
                   "variant": "param",
                   "kind": 32768,
@@ -30542,7 +30569,7 @@ export const typesData = {
                   }
                 },
                 {
-                  "id": 954,
+                  "id": 958,
                   "name": "internal",
                   "variant": "param",
                   "kind": 32768,
@@ -30578,7 +30605,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 884,
+          "id": 888,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -30594,7 +30621,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 885,
+              "id": 889,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -30610,7 +30637,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 886,
+                  "id": 890,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -30619,13 +30646,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 887,
+                  "id": 891,
                   "name": "breakpointParams",
                   "variant": "param",
                   "kind": 32768,
@@ -30634,7 +30661,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 1114,
+                    "target": 1118,
                     "name": "SwiperOptions",
                     "package": "swiper"
                   }
@@ -30663,7 +30690,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 956,
+          "id": 960,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -30679,7 +30706,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 957,
+              "id": 961,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -30695,7 +30722,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 958,
+                  "id": 962,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -30704,7 +30731,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -30733,7 +30760,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 822,
+          "id": 826,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -30749,7 +30776,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 823,
+              "id": 827,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -30765,7 +30792,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 824,
+                  "id": 828,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -30774,13 +30801,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 825,
+                  "id": 829,
                   "name": "event",
                   "variant": "param",
                   "kind": 32768,
@@ -30855,7 +30882,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 965,
+          "id": 969,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -30871,7 +30898,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 966,
+              "id": 970,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -30887,7 +30914,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 967,
+                  "id": 971,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -30896,7 +30923,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -30925,7 +30952,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 960,
+          "id": 964,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -30941,7 +30968,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 961,
+              "id": 965,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -30957,7 +30984,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 962,
+                  "id": 966,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -30966,13 +30993,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 963,
+                  "id": 967,
                   "name": "event",
                   "variant": "param",
                   "kind": 32768,
@@ -31039,7 +31066,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 832,
+          "id": 836,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -31055,7 +31082,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 833,
+              "id": 837,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -31071,7 +31098,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 834,
+                  "id": 838,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -31080,13 +31107,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 835,
+                  "id": 839,
                   "name": "event",
                   "variant": "param",
                   "kind": 32768,
@@ -31161,7 +31188,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 854,
+          "id": 858,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -31177,7 +31204,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 855,
+              "id": 859,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -31193,7 +31220,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 856,
+                  "id": 860,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -31202,7 +31229,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -31231,7 +31258,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1040,
+          "id": 1044,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -31247,7 +31274,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 1041,
+              "id": 1045,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -31263,7 +31290,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 1042,
+                  "id": 1046,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -31272,7 +31299,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -31301,7 +31328,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1044,
+          "id": 1048,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -31317,7 +31344,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 1045,
+              "id": 1049,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -31333,7 +31360,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 1046,
+                  "id": 1050,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -31342,7 +31369,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -31371,7 +31398,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 749,
+          "id": 753,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -31387,7 +31414,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 750,
+              "id": 754,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -31403,7 +31430,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 751,
+                  "id": 755,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -31412,7 +31439,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -31486,7 +31513,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1048,
+          "id": 1052,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -31502,7 +31529,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 1049,
+              "id": 1053,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -31518,7 +31545,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 1050,
+                  "id": 1054,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -31527,13 +31554,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 1051,
+                  "id": 1055,
                   "name": "keyCode",
                   "variant": "param",
                   "kind": 32768,
@@ -31569,7 +31596,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1006,
+          "id": 1010,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -31585,7 +31612,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 1007,
+              "id": 1011,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -31601,7 +31628,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 1008,
+                  "id": 1012,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -31610,7 +31637,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -31647,7 +31674,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 880,
+          "id": 884,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -31663,7 +31690,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 881,
+              "id": 885,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -31679,7 +31706,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 882,
+                  "id": 886,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -31688,7 +31715,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -31717,7 +31744,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 969,
+          "id": 973,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -31733,7 +31760,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 970,
+              "id": 974,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -31749,7 +31776,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 971,
+                  "id": 975,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -31758,7 +31785,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -31787,7 +31814,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1058,
+          "id": 1062,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -31803,7 +31830,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 1059,
+              "id": 1063,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -31819,7 +31846,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 1060,
+                  "id": 1064,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -31828,7 +31855,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -31857,7 +31884,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1070,
+          "id": 1074,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -31873,7 +31900,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 1071,
+              "id": 1075,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -31889,7 +31916,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 1072,
+                  "id": 1076,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -31898,7 +31925,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -31927,7 +31954,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1066,
+          "id": 1070,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -31943,7 +31970,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 1067,
+              "id": 1071,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -31959,7 +31986,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 1068,
+                  "id": 1072,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -31968,7 +31995,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -31997,7 +32024,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1062,
+          "id": 1066,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -32013,7 +32040,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 1063,
+              "id": 1067,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -32029,7 +32056,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 1064,
+                  "id": 1068,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -32038,7 +32065,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -32067,7 +32094,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 872,
+          "id": 876,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -32083,7 +32110,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 873,
+              "id": 877,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -32099,7 +32126,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 874,
+                  "id": 878,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -32108,7 +32135,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -32137,7 +32164,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 973,
+          "id": 977,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -32153,7 +32180,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 974,
+              "id": 978,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -32169,7 +32196,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 975,
+                  "id": 979,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -32178,7 +32205,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -32207,7 +32234,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1084,
+          "id": 1088,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -32223,7 +32250,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 1085,
+              "id": 1089,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -32239,7 +32266,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 1086,
+                  "id": 1090,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -32248,7 +32275,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -32277,7 +32304,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1074,
+          "id": 1078,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -32293,7 +32320,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 1075,
+              "id": 1079,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -32309,7 +32336,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 1076,
+                  "id": 1080,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -32318,13 +32345,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 1077,
+                  "id": 1081,
                   "name": "paginationEl",
                   "variant": "param",
                   "kind": 32768,
@@ -32366,7 +32393,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1088,
+          "id": 1092,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -32382,7 +32409,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 1089,
+              "id": 1093,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -32398,7 +32425,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 1090,
+                  "id": 1094,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -32407,7 +32434,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -32436,7 +32463,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1079,
+          "id": 1083,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -32452,7 +32479,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 1080,
+              "id": 1084,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -32468,7 +32495,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 1081,
+                  "id": 1085,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -32477,13 +32504,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 1082,
+                  "id": 1086,
                   "name": "paginationEl",
                   "variant": "param",
                   "kind": 32768,
@@ -32525,7 +32552,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 837,
+          "id": 841,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -32541,7 +32568,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 838,
+              "id": 842,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -32557,7 +32584,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 839,
+                  "id": 843,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -32566,13 +32593,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 840,
+                  "id": 844,
                   "name": "progress",
                   "variant": "param",
                   "kind": 32768,
@@ -32608,7 +32635,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 842,
+          "id": 846,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -32624,7 +32651,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 843,
+              "id": 847,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -32640,7 +32667,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 844,
+                  "id": 848,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -32649,7 +32676,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -32678,7 +32705,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 846,
+          "id": 850,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -32694,7 +32721,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 847,
+              "id": 851,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -32710,7 +32737,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 848,
+                  "id": 852,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -32719,7 +32746,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -32748,7 +32775,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 930,
+          "id": 934,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -32764,7 +32791,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 931,
+              "id": 935,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -32780,7 +32807,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 932,
+                  "id": 936,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -32789,7 +32816,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -32818,7 +32845,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 868,
+          "id": 872,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -32834,7 +32861,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 869,
+              "id": 873,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -32850,7 +32877,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 870,
+                  "id": 874,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -32859,7 +32886,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -32888,7 +32915,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1053,
+          "id": 1057,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -32904,7 +32931,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 1054,
+              "id": 1058,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -32920,7 +32947,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 1055,
+                  "id": 1059,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -32929,13 +32956,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 1056,
+                  "id": 1060,
                   "name": "event",
                   "variant": "param",
                   "kind": 32768,
@@ -32977,7 +33004,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1102,
+          "id": 1106,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -32993,7 +33020,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 1103,
+              "id": 1107,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -33009,7 +33036,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 1104,
+                  "id": 1108,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -33018,13 +33045,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 1105,
+                  "id": 1109,
                   "name": "event",
                   "variant": "param",
                   "kind": 32768,
@@ -33091,7 +33118,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1097,
+          "id": 1101,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -33107,7 +33134,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 1098,
+              "id": 1102,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -33123,7 +33150,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 1099,
+                  "id": 1103,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -33132,13 +33159,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 1100,
+                  "id": 1104,
                   "name": "event",
                   "variant": "param",
                   "kind": 32768,
@@ -33205,7 +33232,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1092,
+          "id": 1096,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -33221,7 +33248,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 1093,
+              "id": 1097,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -33237,7 +33264,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 1094,
+                  "id": 1098,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -33246,13 +33273,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 1095,
+                  "id": 1099,
                   "name": "event",
                   "variant": "param",
                   "kind": 32768,
@@ -33319,7 +33346,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 863,
+          "id": 867,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -33335,7 +33362,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 864,
+              "id": 868,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -33351,7 +33378,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 865,
+                  "id": 869,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -33360,13 +33387,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 866,
+                  "id": 870,
                   "name": "transition",
                   "variant": "param",
                   "kind": 32768,
@@ -33402,7 +33429,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 858,
+          "id": 862,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -33418,7 +33445,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 859,
+              "id": 863,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -33434,7 +33461,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 860,
+                  "id": 864,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -33443,13 +33470,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 861,
+                  "id": 865,
                   "name": "translate",
                   "variant": "param",
                   "kind": 32768,
@@ -33485,7 +33512,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 761,
+          "id": 765,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -33501,7 +33528,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 762,
+              "id": 766,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -33517,7 +33544,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 763,
+                  "id": 767,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -33526,7 +33553,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -33555,7 +33582,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 769,
+          "id": 773,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -33571,7 +33598,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 770,
+              "id": 774,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -33587,7 +33614,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 771,
+                  "id": 775,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -33596,7 +33623,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -33625,7 +33652,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 765,
+          "id": 769,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -33641,7 +33668,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 766,
+              "id": 770,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -33657,7 +33684,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 767,
+                  "id": 771,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -33666,7 +33693,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -33695,7 +33722,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 777,
+          "id": 781,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -33711,7 +33738,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 778,
+              "id": 782,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -33727,7 +33754,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 779,
+                  "id": 783,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -33736,7 +33763,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -33765,7 +33792,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 773,
+          "id": 777,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -33781,7 +33808,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 774,
+              "id": 778,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -33797,7 +33824,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 775,
+                  "id": 779,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -33806,7 +33833,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -33835,7 +33862,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 785,
+          "id": 789,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -33851,7 +33878,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 786,
+              "id": 790,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -33867,7 +33894,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 787,
+                  "id": 791,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -33876,7 +33903,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -33905,7 +33932,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 781,
+          "id": 785,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -33921,7 +33948,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 782,
+              "id": 786,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -33937,7 +33964,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 783,
+                  "id": 787,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -33946,7 +33973,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -33975,7 +34002,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 981,
+          "id": 985,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -33991,7 +34018,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 982,
+              "id": 986,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -34007,7 +34034,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 983,
+                  "id": 987,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -34016,7 +34043,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -34045,7 +34072,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 977,
+          "id": 981,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -34061,7 +34088,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 978,
+              "id": 982,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -34077,7 +34104,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 979,
+                  "id": 983,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -34086,7 +34113,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -34115,7 +34142,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 985,
+          "id": 989,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -34131,7 +34158,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 986,
+              "id": 990,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -34147,7 +34174,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 987,
+                  "id": 991,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -34156,13 +34183,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 988,
+                  "id": 992,
                   "name": "event",
                   "variant": "param",
                   "kind": 32768,
@@ -34204,7 +34231,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 812,
+          "id": 816,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -34220,7 +34247,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 813,
+              "id": 817,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -34236,7 +34263,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 814,
+                  "id": 818,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -34245,13 +34272,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 815,
+                  "id": 819,
                   "name": "event",
                   "variant": "param",
                   "kind": 32768,
@@ -34326,7 +34353,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 994,
+          "id": 998,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -34342,7 +34369,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 995,
+              "id": 999,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -34358,7 +34385,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 996,
+                  "id": 1000,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -34367,7 +34394,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -34396,7 +34423,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 990,
+          "id": 994,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -34412,7 +34439,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 991,
+              "id": 995,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -34428,7 +34455,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 992,
+                  "id": 996,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -34437,7 +34464,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -34466,7 +34493,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 757,
+          "id": 761,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -34482,7 +34509,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 758,
+              "id": 762,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -34498,7 +34525,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 759,
+                  "id": 763,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -34507,7 +34534,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -34536,7 +34563,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 998,
+          "id": 1002,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -34552,7 +34579,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 999,
+              "id": 1003,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -34568,7 +34595,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 1000,
+                  "id": 1004,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -34577,7 +34604,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -34606,7 +34633,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 926,
+          "id": 930,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -34622,7 +34649,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 927,
+              "id": 931,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -34638,7 +34665,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 928,
+                  "id": 932,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -34647,7 +34674,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -34676,7 +34703,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 827,
+          "id": 831,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -34692,7 +34719,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 828,
+              "id": 832,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -34708,7 +34735,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 829,
+                  "id": 833,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -34717,13 +34744,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 830,
+                  "id": 834,
                   "name": "event",
                   "variant": "param",
                   "kind": 32768,
@@ -34798,7 +34825,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 850,
+          "id": 854,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -34814,7 +34841,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 851,
+              "id": 855,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -34830,7 +34857,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 852,
+                  "id": 856,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -34839,7 +34866,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -34868,7 +34895,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 817,
+          "id": 821,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -34884,7 +34911,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 818,
+              "id": 822,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -34900,7 +34927,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 819,
+                  "id": 823,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -34909,13 +34936,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 820,
+                  "id": 824,
                   "name": "event",
                   "variant": "param",
                   "kind": 32768,
@@ -34990,7 +35017,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 802,
+          "id": 806,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -35006,7 +35033,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 803,
+              "id": 807,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -35022,7 +35049,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 804,
+                  "id": 808,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -35031,13 +35058,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 805,
+                  "id": 809,
                   "name": "event",
                   "variant": "param",
                   "kind": 32768,
@@ -35112,7 +35139,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 807,
+          "id": 811,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -35128,7 +35155,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 808,
+              "id": 812,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -35144,7 +35171,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 809,
+                  "id": 813,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -35153,13 +35180,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 810,
+                  "id": 814,
                   "name": "event",
                   "variant": "param",
                   "kind": 32768,
@@ -35234,7 +35261,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 797,
+          "id": 801,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -35250,7 +35277,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 798,
+              "id": 802,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -35266,7 +35293,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 799,
+                  "id": 803,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -35275,13 +35302,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 800,
+                  "id": 804,
                   "name": "event",
                   "variant": "param",
                   "kind": 32768,
@@ -35356,7 +35383,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 793,
+          "id": 797,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -35372,7 +35399,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 794,
+              "id": 798,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -35388,7 +35415,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 795,
+                  "id": 799,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -35397,7 +35424,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -35426,7 +35453,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 789,
+          "id": 793,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -35442,7 +35469,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 790,
+              "id": 794,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -35458,7 +35485,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 791,
+                  "id": 795,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -35467,7 +35494,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -35496,7 +35523,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1010,
+          "id": 1014,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -35512,7 +35539,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 1011,
+              "id": 1015,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -35528,7 +35555,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 1012,
+                  "id": 1016,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -35537,7 +35564,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -35574,7 +35601,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1002,
+          "id": 1006,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -35590,7 +35617,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 1003,
+              "id": 1007,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -35606,7 +35633,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 1004,
+                  "id": 1008,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -35615,7 +35642,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
@@ -35644,7 +35671,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1107,
+          "id": 1111,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -35660,7 +35687,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 1108,
+              "id": 1112,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -35676,7 +35703,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 1109,
+                  "id": 1113,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -35685,13 +35712,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 1110,
+                  "id": 1114,
                   "name": "scale",
                   "variant": "param",
                   "kind": 32768,
@@ -35704,7 +35731,7 @@ export const typesData = {
                   }
                 },
                 {
-                  "id": 1111,
+                  "id": 1115,
                   "name": "imageEl",
                   "variant": "param",
                   "kind": 32768,
@@ -35723,7 +35750,7 @@ export const typesData = {
                   }
                 },
                 {
-                  "id": 1112,
+                  "id": 1116,
                   "name": "slideEl",
                   "variant": "param",
                   "kind": 32768,
@@ -35781,10 +35808,19 @@ export const typesData = {
       "name": "a11y",
       "default_value": null,
       "type": {
-        "type": "reference",
-        "target": 9,
-        "name": "A11yOptions",
-        "package": "swiper"
+        "type": "union",
+        "types": [
+          {
+            "type": "intrinsic",
+            "name": "boolean"
+          },
+          {
+            "type": "reference",
+            "target": 9,
+            "name": "A11yOptions",
+            "package": "swiper"
+          }
+        ]
       },
       "comment": {
         "summary": [
@@ -36006,7 +36042,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1569,
+          "id": 1574,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -36016,13 +36052,13 @@ export const typesData = {
           "sources": [
             {
               "fileName": "swiper/types/swiper-options.d.ts",
-              "line": 734,
+              "line": 743,
               "character": 16
             }
           ],
           "indexSignatures": [
             {
-              "id": 1570,
+              "id": 1575,
               "name": "__index",
               "variant": "signature",
               "kind": 8192,
@@ -36032,13 +36068,13 @@ export const typesData = {
               "sources": [
                 {
                   "fileName": "swiper/types/swiper-options.d.ts",
-                  "line": 735,
+                  "line": 744,
                   "character": 4
                 }
               ],
               "parameters": [
                 {
-                  "id": 1571,
+                  "id": 1576,
                   "name": "width",
                   "variant": "param",
                   "kind": 32768,
@@ -36053,13 +36089,13 @@ export const typesData = {
               ],
               "type": {
                 "type": "reference",
-                "target": 1114,
+                "target": 1118,
                 "name": "SwiperOptions",
                 "package": "swiper"
               }
             },
             {
-              "id": 1572,
+              "id": 1577,
               "name": "__index",
               "variant": "signature",
               "kind": 8192,
@@ -36069,13 +36105,13 @@ export const typesData = {
               "sources": [
                 {
                   "fileName": "swiper/types/swiper-options.d.ts",
-                  "line": 736,
+                  "line": 745,
                   "character": 4
                 }
               ],
               "parameters": [
                 {
-                  "id": 1573,
+                  "id": 1578,
                   "name": "ratio",
                   "variant": "param",
                   "kind": 32768,
@@ -36090,7 +36126,7 @@ export const typesData = {
               ],
               "type": {
                 "type": "reference",
-                "target": 1114,
+                "target": 1118,
                 "name": "SwiperOptions",
                 "package": "swiper"
               }
@@ -36187,7 +36223,7 @@ export const typesData = {
           },
           {
             "type": "reference",
-            "target": 504,
+            "target": 508,
             "name": "CSSSelector",
             "package": "swiper"
           },
@@ -36876,7 +36912,7 @@ export const typesData = {
               {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1139,
+                  "id": 1143,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -37727,7 +37763,23 @@ export const typesData = {
           },
           {
             "kind": "text",
-            "text": "\n- even to "
+            "text": " (and "
+          },
+          {
+            "kind": "code",
+            "text": "`+ 1`"
+          },
+          {
+            "kind": "text",
+            "text": " in case of "
+          },
+          {
+            "kind": "code",
+            "text": "`centeredSlides`"
+          },
+          {
+            "kind": "text",
+            "text": ")\n- even to "
           },
           {
             "kind": "code",
@@ -37927,7 +37979,7 @@ export const typesData = {
         "type": "array",
         "elementType": {
           "type": "reference",
-          "target": 727,
+          "target": 731,
           "name": "SwiperModule",
           "package": "swiper"
         }
@@ -37964,7 +38016,7 @@ export const typesData = {
           },
           {
             "type": "reference",
-            "target": 235,
+            "target": 236,
             "name": "MousewheelOptions",
             "package": "swiper"
           }
@@ -38010,7 +38062,7 @@ export const typesData = {
           },
           {
             "type": "reference",
-            "target": 272,
+            "target": 273,
             "name": "NavigationOptions",
             "package": "swiper"
           }
@@ -38326,7 +38378,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 1145,
+          "id": 1149,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -38335,7 +38387,7 @@ export const typesData = {
           },
           "children": [
             {
-              "id": 1286,
+              "id": 1290,
               "name": "_beforeBreakpoint",
               "variant": "declaration",
               "kind": 1024,
@@ -38361,7 +38413,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1287,
+                  "id": 1291,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -38377,7 +38429,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1288,
+                      "id": 1292,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -38393,7 +38445,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1289,
+                          "id": 1293,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -38402,13 +38454,13 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1290,
+                          "id": 1294,
                           "name": "breakpointParams",
                           "variant": "param",
                           "kind": 32768,
@@ -38417,7 +38469,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 1114,
+                            "target": 1118,
                             "name": "SwiperOptions",
                             "package": "swiper"
                           }
@@ -38433,7 +38485,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1291,
+              "id": 1295,
               "name": "_containerClasses",
               "variant": "declaration",
               "kind": 1024,
@@ -38459,7 +38511,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1292,
+                  "id": 1296,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -38475,7 +38527,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1293,
+                      "id": 1297,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -38491,7 +38543,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1294,
+                          "id": 1298,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -38500,13 +38552,13 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1295,
+                          "id": 1299,
                           "name": "classNames",
                           "variant": "param",
                           "kind": 32768,
@@ -38529,7 +38581,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1315,
+              "id": 1319,
               "name": "_freeModeNoMomentumRelease",
               "variant": "declaration",
               "kind": 1024,
@@ -38555,7 +38607,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1316,
+                  "id": 1320,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -38571,7 +38623,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1317,
+                      "id": 1321,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -38587,7 +38639,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1318,
+                          "id": 1322,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -38596,7 +38648,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -38612,7 +38664,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1296,
+              "id": 1300,
               "name": "_slideClass",
               "variant": "declaration",
               "kind": 1024,
@@ -38638,7 +38690,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1297,
+                  "id": 1301,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -38654,7 +38706,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1298,
+                      "id": 1302,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -38670,7 +38722,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1299,
+                          "id": 1303,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -38679,13 +38731,13 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1300,
+                          "id": 1304,
                           "name": "slideEl",
                           "variant": "param",
                           "kind": 32768,
@@ -38704,7 +38756,7 @@ export const typesData = {
                           }
                         },
                         {
-                          "id": 1301,
+                          "id": 1305,
                           "name": "classNames",
                           "variant": "param",
                           "kind": 32768,
@@ -38727,7 +38779,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1302,
+              "id": 1306,
               "name": "_slideClasses",
               "variant": "declaration",
               "kind": 1024,
@@ -38753,7 +38805,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1303,
+                  "id": 1307,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -38769,7 +38821,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1304,
+                      "id": 1308,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -38785,7 +38837,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1305,
+                          "id": 1309,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -38794,13 +38846,13 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1306,
+                          "id": 1310,
                           "name": "slides",
                           "variant": "param",
                           "kind": 32768,
@@ -38812,7 +38864,7 @@ export const typesData = {
                             "elementType": {
                               "type": "reflection",
                               "declaration": {
-                                "id": 1307,
+                                "id": 1311,
                                 "name": "__type",
                                 "variant": "declaration",
                                 "kind": 65536,
@@ -38821,7 +38873,7 @@ export const typesData = {
                                 },
                                 "children": [
                                   {
-                                    "id": 1309,
+                                    "id": 1313,
                                     "name": "classNames",
                                     "variant": "declaration",
                                     "kind": 1024,
@@ -38841,7 +38893,7 @@ export const typesData = {
                                     }
                                   },
                                   {
-                                    "id": 1310,
+                                    "id": 1314,
                                     "name": "index",
                                     "variant": "declaration",
                                     "kind": 1024,
@@ -38861,7 +38913,7 @@ export const typesData = {
                                     }
                                   },
                                   {
-                                    "id": 1308,
+                                    "id": 1312,
                                     "name": "slideEl",
                                     "variant": "declaration",
                                     "kind": 1024,
@@ -38891,9 +38943,9 @@ export const typesData = {
                                   {
                                     "title": "Properties",
                                     "children": [
-                                      1309,
-                                      1310,
-                                      1308
+                                      1313,
+                                      1314,
+                                      1312
                                     ]
                                   }
                                 ],
@@ -38919,7 +38971,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1311,
+              "id": 1315,
               "name": "_swiper",
               "variant": "declaration",
               "kind": 1024,
@@ -38945,7 +38997,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1312,
+                  "id": 1316,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -38961,7 +39013,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1313,
+                      "id": 1317,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -38977,7 +39029,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1314,
+                          "id": 1318,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -38986,7 +39038,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -39002,7 +39054,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1319,
+              "id": 1323,
               "name": "activeIndexChange",
               "variant": "declaration",
               "kind": 1024,
@@ -39028,7 +39080,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1320,
+                  "id": 1324,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -39044,7 +39096,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1321,
+                      "id": 1325,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -39060,7 +39112,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1322,
+                          "id": 1326,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -39069,7 +39121,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -39085,7 +39137,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1331,
+              "id": 1335,
               "name": "afterInit",
               "variant": "declaration",
               "kind": 1024,
@@ -39111,7 +39163,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1332,
+                  "id": 1336,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -39127,7 +39179,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1333,
+                      "id": 1337,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -39143,7 +39195,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1334,
+                          "id": 1338,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -39152,7 +39204,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -39168,7 +39220,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1433,
+              "id": 1437,
               "name": "autoplay",
               "variant": "declaration",
               "kind": 1024,
@@ -39194,7 +39246,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1434,
+                  "id": 1438,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -39210,7 +39262,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1435,
+                      "id": 1439,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -39226,7 +39278,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1436,
+                          "id": 1440,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -39235,7 +39287,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -39251,7 +39303,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1419,
+              "id": 1423,
               "name": "autoplayPause",
               "variant": "declaration",
               "kind": 1024,
@@ -39277,7 +39329,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1420,
+                  "id": 1424,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -39293,7 +39345,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1421,
+                      "id": 1425,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -39309,7 +39361,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1422,
+                          "id": 1426,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -39318,7 +39370,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -39334,7 +39386,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1423,
+              "id": 1427,
               "name": "autoplayResume",
               "variant": "declaration",
               "kind": 1024,
@@ -39360,7 +39412,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1424,
+                  "id": 1428,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -39376,7 +39428,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1425,
+                      "id": 1429,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -39392,7 +39444,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1426,
+                          "id": 1430,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -39401,7 +39453,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -39417,7 +39469,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1411,
+              "id": 1415,
               "name": "autoplayStart",
               "variant": "declaration",
               "kind": 1024,
@@ -39443,7 +39495,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1412,
+                  "id": 1416,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -39459,7 +39511,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1413,
+                      "id": 1417,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -39475,7 +39527,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1414,
+                          "id": 1418,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -39484,7 +39536,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -39500,7 +39552,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1415,
+              "id": 1419,
               "name": "autoplayStop",
               "variant": "declaration",
               "kind": 1024,
@@ -39526,7 +39578,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1416,
+                  "id": 1420,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -39542,7 +39594,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1417,
+                      "id": 1421,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -39558,7 +39610,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1418,
+                          "id": 1422,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -39567,7 +39619,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -39583,7 +39635,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1427,
+              "id": 1431,
               "name": "autoplayTimeLeft",
               "variant": "declaration",
               "kind": 1024,
@@ -39609,7 +39661,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1428,
+                  "id": 1432,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -39625,7 +39677,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1429,
+                      "id": 1433,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -39641,7 +39693,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1430,
+                          "id": 1434,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -39650,13 +39702,13 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1431,
+                          "id": 1435,
                           "name": "timeLeft",
                           "variant": "param",
                           "kind": 32768,
@@ -39669,7 +39721,7 @@ export const typesData = {
                           }
                         },
                         {
-                          "id": 1432,
+                          "id": 1436,
                           "name": "percentage",
                           "variant": "param",
                           "kind": 32768,
@@ -39692,7 +39744,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1150,
+              "id": 1154,
               "name": "beforeDestroy",
               "variant": "declaration",
               "kind": 1024,
@@ -39718,7 +39770,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1151,
+                  "id": 1155,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -39734,7 +39786,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1152,
+                      "id": 1156,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -39750,7 +39802,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1153,
+                          "id": 1157,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -39759,7 +39811,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -39775,7 +39827,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1335,
+              "id": 1339,
               "name": "beforeInit",
               "variant": "declaration",
               "kind": 1024,
@@ -39801,7 +39853,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1336,
+                  "id": 1340,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -39817,7 +39869,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1337,
+                      "id": 1341,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -39833,7 +39885,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1338,
+                          "id": 1342,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -39842,7 +39894,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -39858,7 +39910,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1273,
+              "id": 1277,
               "name": "beforeLoopFix",
               "variant": "declaration",
               "kind": 1024,
@@ -39884,7 +39936,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1274,
+                  "id": 1278,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -39900,7 +39952,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1275,
+                      "id": 1279,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -39916,7 +39968,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1276,
+                          "id": 1280,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -39925,7 +39977,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -39941,7 +39993,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1339,
+              "id": 1343,
               "name": "beforeResize",
               "variant": "declaration",
               "kind": 1024,
@@ -39967,7 +40019,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1340,
+                  "id": 1344,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -39983,7 +40035,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1341,
+                      "id": 1345,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -39999,7 +40051,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1342,
+                          "id": 1346,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -40008,7 +40060,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -40024,7 +40076,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1343,
+              "id": 1347,
               "name": "beforeSlideChangeStart",
               "variant": "declaration",
               "kind": 1024,
@@ -40050,7 +40102,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1344,
+                  "id": 1348,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -40066,7 +40118,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1345,
+                      "id": 1349,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -40082,7 +40134,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1346,
+                          "id": 1350,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -40091,7 +40143,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -40107,7 +40159,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1347,
+              "id": 1351,
               "name": "beforeTransitionStart",
               "variant": "declaration",
               "kind": 1024,
@@ -40133,7 +40185,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1348,
+                  "id": 1352,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -40149,7 +40201,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1349,
+                      "id": 1353,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -40165,7 +40217,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1350,
+                          "id": 1354,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -40174,13 +40226,13 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1351,
+                          "id": 1355,
                           "name": "speed",
                           "variant": "param",
                           "kind": 32768,
@@ -40193,7 +40245,7 @@ export const typesData = {
                           }
                         },
                         {
-                          "id": 1352,
+                          "id": 1356,
                           "name": "internal",
                           "variant": "param",
                           "kind": 32768,
@@ -40216,7 +40268,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1281,
+              "id": 1285,
               "name": "breakpoint",
               "variant": "declaration",
               "kind": 1024,
@@ -40242,7 +40294,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1282,
+                  "id": 1286,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -40258,7 +40310,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1283,
+                      "id": 1287,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -40274,7 +40326,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1284,
+                          "id": 1288,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -40283,13 +40335,13 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1285,
+                          "id": 1289,
                           "name": "breakpointParams",
                           "variant": "param",
                           "kind": 32768,
@@ -40298,7 +40350,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 1114,
+                            "target": 1118,
                             "name": "SwiperOptions",
                             "package": "swiper"
                           }
@@ -40314,7 +40366,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1353,
+              "id": 1357,
               "name": "changeDirection",
               "variant": "declaration",
               "kind": 1024,
@@ -40340,7 +40392,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1354,
+                  "id": 1358,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -40356,7 +40408,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1355,
+                      "id": 1359,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -40372,7 +40424,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1356,
+                          "id": 1360,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -40381,7 +40433,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -40397,7 +40449,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1219,
+              "id": 1223,
               "name": "click",
               "variant": "declaration",
               "kind": 1024,
@@ -40431,7 +40483,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1220,
+                  "id": 1224,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -40447,7 +40499,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1221,
+                      "id": 1225,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -40463,7 +40515,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1222,
+                          "id": 1226,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -40472,13 +40524,13 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1223,
+                          "id": 1227,
                           "name": "event",
                           "variant": "param",
                           "kind": 32768,
@@ -40532,7 +40584,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1362,
+              "id": 1366,
               "name": "destroy",
               "variant": "declaration",
               "kind": 1024,
@@ -40558,7 +40610,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1363,
+                  "id": 1367,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -40574,7 +40626,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1364,
+                      "id": 1368,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -40590,7 +40642,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1365,
+                          "id": 1369,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -40599,7 +40651,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -40615,7 +40667,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1357,
+              "id": 1361,
               "name": "doubleClick",
               "variant": "declaration",
               "kind": 1024,
@@ -40641,7 +40693,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1358,
+                  "id": 1362,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -40657,7 +40709,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1359,
+                      "id": 1363,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -40673,7 +40725,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1360,
+                          "id": 1364,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -40682,13 +40734,13 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1361,
+                          "id": 1365,
                           "name": "event",
                           "variant": "param",
                           "kind": 32768,
@@ -40742,7 +40794,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1229,
+              "id": 1233,
               "name": "doubleTap",
               "variant": "declaration",
               "kind": 1024,
@@ -40776,7 +40828,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1230,
+                  "id": 1234,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -40792,7 +40844,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1231,
+                      "id": 1235,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -40808,7 +40860,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1232,
+                          "id": 1236,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -40817,13 +40869,13 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1233,
+                          "id": 1237,
                           "name": "event",
                           "variant": "param",
                           "kind": 32768,
@@ -40877,7 +40929,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1251,
+              "id": 1255,
               "name": "fromEdge",
               "variant": "declaration",
               "kind": 1024,
@@ -40903,7 +40955,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1252,
+                  "id": 1256,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -40919,7 +40971,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1253,
+                      "id": 1257,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -40935,7 +40987,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1254,
+                          "id": 1258,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -40944,7 +40996,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -40960,7 +41012,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1437,
+              "id": 1441,
               "name": "hashChange",
               "variant": "declaration",
               "kind": 1024,
@@ -40986,7 +41038,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1438,
+                  "id": 1442,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -41002,7 +41054,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1439,
+                      "id": 1443,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -41018,7 +41070,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1440,
+                          "id": 1444,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -41027,7 +41079,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -41043,7 +41095,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1441,
+              "id": 1445,
               "name": "hashSet",
               "variant": "declaration",
               "kind": 1024,
@@ -41069,7 +41121,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1442,
+                  "id": 1446,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -41085,7 +41137,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1443,
+                      "id": 1447,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -41101,7 +41153,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1444,
+                          "id": 1448,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -41110,7 +41162,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -41126,7 +41178,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1146,
+              "id": 1150,
               "name": "init",
               "variant": "declaration",
               "kind": 1024,
@@ -41197,7 +41249,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1147,
+                  "id": 1151,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -41213,7 +41265,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1148,
+                      "id": 1152,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -41229,7 +41281,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1149,
+                          "id": 1153,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -41238,7 +41290,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -41254,7 +41306,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1445,
+              "id": 1449,
               "name": "keyPress",
               "variant": "declaration",
               "kind": 1024,
@@ -41280,7 +41332,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1446,
+                  "id": 1450,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -41296,7 +41348,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1447,
+                      "id": 1451,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -41312,7 +41364,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1448,
+                          "id": 1452,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -41321,13 +41373,13 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1449,
+                          "id": 1453,
                           "name": "keyCode",
                           "variant": "param",
                           "kind": 32768,
@@ -41350,7 +41402,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1403,
+              "id": 1407,
               "name": "lock",
               "variant": "declaration",
               "kind": 1024,
@@ -41384,7 +41436,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1404,
+                  "id": 1408,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -41400,7 +41452,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1405,
+                      "id": 1409,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -41416,7 +41468,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1406,
+                          "id": 1410,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -41425,7 +41477,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -41441,7 +41493,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1277,
+              "id": 1281,
               "name": "loopFix",
               "variant": "declaration",
               "kind": 1024,
@@ -41467,7 +41519,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1278,
+                  "id": 1282,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -41483,7 +41535,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1279,
+                      "id": 1283,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -41499,7 +41551,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1280,
+                          "id": 1284,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -41508,7 +41560,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -41524,7 +41576,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1366,
+              "id": 1370,
               "name": "momentumBounce",
               "variant": "declaration",
               "kind": 1024,
@@ -41550,7 +41602,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1367,
+                  "id": 1371,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -41566,7 +41618,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1368,
+                      "id": 1372,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -41582,7 +41634,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1369,
+                          "id": 1373,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -41591,7 +41643,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -41607,7 +41659,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1455,
+              "id": 1459,
               "name": "navigationHide",
               "variant": "declaration",
               "kind": 1024,
@@ -41633,7 +41685,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1456,
+                  "id": 1460,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -41649,7 +41701,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1457,
+                      "id": 1461,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -41665,7 +41717,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1458,
+                          "id": 1462,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -41674,7 +41726,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -41690,7 +41742,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1467,
+              "id": 1471,
               "name": "navigationNext",
               "variant": "declaration",
               "kind": 1024,
@@ -41716,7 +41768,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1468,
+                  "id": 1472,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -41732,7 +41784,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1469,
+                      "id": 1473,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -41748,7 +41800,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1470,
+                          "id": 1474,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -41757,7 +41809,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -41773,7 +41825,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1463,
+              "id": 1467,
               "name": "navigationPrev",
               "variant": "declaration",
               "kind": 1024,
@@ -41799,7 +41851,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1464,
+                  "id": 1468,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -41815,7 +41867,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1465,
+                      "id": 1469,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -41831,7 +41883,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1466,
+                          "id": 1470,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -41840,7 +41892,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -41856,7 +41908,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1459,
+              "id": 1463,
               "name": "navigationShow",
               "variant": "declaration",
               "kind": 1024,
@@ -41882,7 +41934,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1460,
+                  "id": 1464,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -41898,7 +41950,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1461,
+                      "id": 1465,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -41914,7 +41966,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1462,
+                          "id": 1466,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -41923,7 +41975,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -41939,7 +41991,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1269,
+              "id": 1273,
               "name": "observerUpdate",
               "variant": "declaration",
               "kind": 1024,
@@ -41965,7 +42017,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1270,
+                  "id": 1274,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -41981,7 +42033,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1271,
+                      "id": 1275,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -41997,7 +42049,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1272,
+                          "id": 1276,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -42006,7 +42058,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -42022,7 +42074,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1370,
+              "id": 1374,
               "name": "orientationchange",
               "variant": "declaration",
               "kind": 1024,
@@ -42048,7 +42100,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1371,
+                  "id": 1375,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -42064,7 +42116,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1372,
+                      "id": 1376,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -42080,7 +42132,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1373,
+                          "id": 1377,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -42089,7 +42141,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -42105,7 +42157,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1481,
+              "id": 1485,
               "name": "paginationHide",
               "variant": "declaration",
               "kind": 1024,
@@ -42131,7 +42183,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1482,
+                  "id": 1486,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -42147,7 +42199,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1483,
+                      "id": 1487,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -42163,7 +42215,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1484,
+                          "id": 1488,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -42172,7 +42224,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -42188,7 +42240,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1471,
+              "id": 1475,
               "name": "paginationRender",
               "variant": "declaration",
               "kind": 1024,
@@ -42214,7 +42266,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1472,
+                  "id": 1476,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -42230,7 +42282,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1473,
+                      "id": 1477,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -42246,7 +42298,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1474,
+                          "id": 1478,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -42255,13 +42307,13 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1475,
+                          "id": 1479,
                           "name": "paginationEl",
                           "variant": "param",
                           "kind": 32768,
@@ -42290,7 +42342,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1485,
+              "id": 1489,
               "name": "paginationShow",
               "variant": "declaration",
               "kind": 1024,
@@ -42316,7 +42368,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1486,
+                  "id": 1490,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -42332,7 +42384,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1487,
+                      "id": 1491,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -42348,7 +42400,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1488,
+                          "id": 1492,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -42357,7 +42409,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -42373,7 +42425,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1476,
+              "id": 1480,
               "name": "paginationUpdate",
               "variant": "declaration",
               "kind": 1024,
@@ -42399,7 +42451,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1477,
+                  "id": 1481,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -42415,7 +42467,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1478,
+                      "id": 1482,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -42431,7 +42483,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1479,
+                          "id": 1483,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -42440,13 +42492,13 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1480,
+                          "id": 1484,
                           "name": "paginationEl",
                           "variant": "param",
                           "kind": 32768,
@@ -42475,7 +42527,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1234,
+              "id": 1238,
               "name": "progress",
               "variant": "declaration",
               "kind": 1024,
@@ -42501,7 +42553,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1235,
+                  "id": 1239,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -42517,7 +42569,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1236,
+                      "id": 1240,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -42533,7 +42585,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1237,
+                          "id": 1241,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -42542,13 +42594,13 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1238,
+                          "id": 1242,
                           "name": "progress",
                           "variant": "param",
                           "kind": 32768,
@@ -42571,7 +42623,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1239,
+              "id": 1243,
               "name": "reachBeginning",
               "variant": "declaration",
               "kind": 1024,
@@ -42597,7 +42649,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1240,
+                  "id": 1244,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -42613,7 +42665,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1241,
+                      "id": 1245,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -42629,7 +42681,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1242,
+                          "id": 1246,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -42638,7 +42690,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -42654,7 +42706,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1243,
+              "id": 1247,
               "name": "reachEnd",
               "variant": "declaration",
               "kind": 1024,
@@ -42680,7 +42732,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1244,
+                  "id": 1248,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -42696,7 +42748,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1245,
+                      "id": 1249,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -42712,7 +42764,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1246,
+                          "id": 1250,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -42721,7 +42773,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -42737,7 +42789,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1327,
+              "id": 1331,
               "name": "realIndexChange",
               "variant": "declaration",
               "kind": 1024,
@@ -42763,7 +42815,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1328,
+                  "id": 1332,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -42779,7 +42831,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1329,
+                      "id": 1333,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -42795,7 +42847,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1330,
+                          "id": 1334,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -42804,7 +42856,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -42820,7 +42872,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1265,
+              "id": 1269,
               "name": "resize",
               "variant": "declaration",
               "kind": 1024,
@@ -42846,7 +42898,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1266,
+                  "id": 1270,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -42862,7 +42914,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1267,
+                      "id": 1271,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -42878,7 +42930,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1268,
+                          "id": 1272,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -42887,7 +42939,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -42903,7 +42955,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1450,
+              "id": 1454,
               "name": "scroll",
               "variant": "declaration",
               "kind": 1024,
@@ -42929,7 +42981,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1451,
+                  "id": 1455,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -42945,7 +42997,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1452,
+                      "id": 1456,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -42961,7 +43013,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1453,
+                          "id": 1457,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -42970,13 +43022,13 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1454,
+                          "id": 1458,
                           "name": "event",
                           "variant": "param",
                           "kind": 32768,
@@ -43005,7 +43057,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1499,
+              "id": 1503,
               "name": "scrollbarDragEnd",
               "variant": "declaration",
               "kind": 1024,
@@ -43031,7 +43083,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1500,
+                  "id": 1504,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -43047,7 +43099,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1501,
+                      "id": 1505,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -43063,7 +43115,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1502,
+                          "id": 1506,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -43072,13 +43124,13 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1503,
+                          "id": 1507,
                           "name": "event",
                           "variant": "param",
                           "kind": 32768,
@@ -43132,7 +43184,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1494,
+              "id": 1498,
               "name": "scrollbarDragMove",
               "variant": "declaration",
               "kind": 1024,
@@ -43158,7 +43210,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1495,
+                  "id": 1499,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -43174,7 +43226,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1496,
+                      "id": 1500,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -43190,7 +43242,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1497,
+                          "id": 1501,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -43199,13 +43251,13 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1498,
+                          "id": 1502,
                           "name": "event",
                           "variant": "param",
                           "kind": 32768,
@@ -43259,7 +43311,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1489,
+              "id": 1493,
               "name": "scrollbarDragStart",
               "variant": "declaration",
               "kind": 1024,
@@ -43285,7 +43337,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1490,
+                  "id": 1494,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -43301,7 +43353,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1491,
+                      "id": 1495,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -43317,7 +43369,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1492,
+                          "id": 1496,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -43326,13 +43378,13 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1493,
+                          "id": 1497,
                           "name": "event",
                           "variant": "param",
                           "kind": 32768,
@@ -43386,7 +43438,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1260,
+              "id": 1264,
               "name": "setTransition",
               "variant": "declaration",
               "kind": 1024,
@@ -43412,7 +43464,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1261,
+                  "id": 1265,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -43428,7 +43480,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1262,
+                      "id": 1266,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -43444,7 +43496,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1263,
+                          "id": 1267,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -43453,13 +43505,13 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1264,
+                          "id": 1268,
                           "name": "transition",
                           "variant": "param",
                           "kind": 32768,
@@ -43482,7 +43534,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1255,
+              "id": 1259,
               "name": "setTranslate",
               "variant": "declaration",
               "kind": 1024,
@@ -43508,7 +43560,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1256,
+                  "id": 1260,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -43524,7 +43576,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1257,
+                      "id": 1261,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -43540,7 +43592,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1258,
+                          "id": 1262,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -43549,13 +43601,13 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1259,
+                          "id": 1263,
                           "name": "translate",
                           "variant": "param",
                           "kind": 32768,
@@ -43578,7 +43630,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1158,
+              "id": 1162,
               "name": "slideChange",
               "variant": "declaration",
               "kind": 1024,
@@ -43604,7 +43656,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1159,
+                  "id": 1163,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -43620,7 +43672,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1160,
+                      "id": 1164,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -43636,7 +43688,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1161,
+                          "id": 1165,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -43645,7 +43697,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -43661,7 +43713,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1166,
+              "id": 1170,
               "name": "slideChangeTransitionEnd",
               "variant": "declaration",
               "kind": 1024,
@@ -43687,7 +43739,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1167,
+                  "id": 1171,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -43703,7 +43755,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1168,
+                      "id": 1172,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -43719,7 +43771,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1169,
+                          "id": 1173,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -43728,7 +43780,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -43744,7 +43796,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1162,
+              "id": 1166,
               "name": "slideChangeTransitionStart",
               "variant": "declaration",
               "kind": 1024,
@@ -43770,7 +43822,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1163,
+                  "id": 1167,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -43786,7 +43838,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1164,
+                      "id": 1168,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -43802,7 +43854,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1165,
+                          "id": 1169,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -43811,7 +43863,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -43827,7 +43879,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1174,
+              "id": 1178,
               "name": "slideNextTransitionEnd",
               "variant": "declaration",
               "kind": 1024,
@@ -43853,7 +43905,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1175,
+                  "id": 1179,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -43869,7 +43921,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1176,
+                      "id": 1180,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -43885,7 +43937,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1177,
+                          "id": 1181,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -43894,7 +43946,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -43910,7 +43962,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1170,
+              "id": 1174,
               "name": "slideNextTransitionStart",
               "variant": "declaration",
               "kind": 1024,
@@ -43936,7 +43988,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1171,
+                  "id": 1175,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -43952,7 +44004,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1172,
+                      "id": 1176,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -43968,7 +44020,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1173,
+                          "id": 1177,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -43977,7 +44029,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -43993,7 +44045,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1182,
+              "id": 1186,
               "name": "slidePrevTransitionEnd",
               "variant": "declaration",
               "kind": 1024,
@@ -44019,7 +44071,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1183,
+                  "id": 1187,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -44035,7 +44087,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1184,
+                      "id": 1188,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -44051,7 +44103,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1185,
+                          "id": 1189,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -44060,7 +44112,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -44076,7 +44128,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1178,
+              "id": 1182,
               "name": "slidePrevTransitionStart",
               "variant": "declaration",
               "kind": 1024,
@@ -44102,7 +44154,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1179,
+                  "id": 1183,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -44118,7 +44170,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1180,
+                      "id": 1184,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -44134,7 +44186,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1181,
+                          "id": 1185,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -44143,7 +44195,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -44159,7 +44211,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1378,
+              "id": 1382,
               "name": "slideResetTransitionEnd",
               "variant": "declaration",
               "kind": 1024,
@@ -44185,7 +44237,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1379,
+                  "id": 1383,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -44201,7 +44253,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1380,
+                      "id": 1384,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -44217,7 +44269,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1381,
+                          "id": 1385,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -44226,7 +44278,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -44242,7 +44294,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1374,
+              "id": 1378,
               "name": "slideResetTransitionStart",
               "variant": "declaration",
               "kind": 1024,
@@ -44268,7 +44320,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1375,
+                  "id": 1379,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -44284,7 +44336,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1376,
+                      "id": 1380,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -44300,7 +44352,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1377,
+                          "id": 1381,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -44309,7 +44361,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -44325,7 +44377,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1382,
+              "id": 1386,
               "name": "sliderFirstMove",
               "variant": "declaration",
               "kind": 1024,
@@ -44351,7 +44403,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1383,
+                  "id": 1387,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -44367,7 +44419,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1384,
+                      "id": 1388,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -44383,7 +44435,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1385,
+                          "id": 1389,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -44392,13 +44444,13 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1386,
+                          "id": 1390,
                           "name": "event",
                           "variant": "param",
                           "kind": 32768,
@@ -44427,7 +44479,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1209,
+              "id": 1213,
               "name": "sliderMove",
               "variant": "declaration",
               "kind": 1024,
@@ -44461,7 +44513,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1210,
+                  "id": 1214,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -44477,7 +44529,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1211,
+                      "id": 1215,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -44493,7 +44545,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1212,
+                          "id": 1216,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -44502,13 +44554,13 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1213,
+                          "id": 1217,
                           "name": "event",
                           "variant": "param",
                           "kind": 32768,
@@ -44562,7 +44614,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1391,
+              "id": 1395,
               "name": "slidesGridLengthChange",
               "variant": "declaration",
               "kind": 1024,
@@ -44588,7 +44640,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1392,
+                  "id": 1396,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -44604,7 +44656,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1393,
+                      "id": 1397,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -44620,7 +44672,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1394,
+                          "id": 1398,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -44629,7 +44681,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -44645,7 +44697,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1387,
+              "id": 1391,
               "name": "slidesLengthChange",
               "variant": "declaration",
               "kind": 1024,
@@ -44671,7 +44723,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1388,
+                  "id": 1392,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -44687,7 +44739,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1389,
+                      "id": 1393,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -44703,7 +44755,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1390,
+                          "id": 1394,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -44712,7 +44764,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -44728,7 +44780,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1154,
+              "id": 1158,
               "name": "slidesUpdated",
               "variant": "declaration",
               "kind": 1024,
@@ -44754,7 +44806,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1155,
+                  "id": 1159,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -44770,7 +44822,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1156,
+                      "id": 1160,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -44786,7 +44838,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1157,
+                          "id": 1161,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -44795,7 +44847,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -44811,7 +44863,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1395,
+              "id": 1399,
               "name": "snapGridLengthChange",
               "variant": "declaration",
               "kind": 1024,
@@ -44837,7 +44889,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1396,
+                  "id": 1400,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -44853,7 +44905,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1397,
+                      "id": 1401,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -44869,7 +44921,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1398,
+                          "id": 1402,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -44878,7 +44930,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -44894,7 +44946,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1323,
+              "id": 1327,
               "name": "snapIndexChange",
               "variant": "declaration",
               "kind": 1024,
@@ -44920,7 +44972,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1324,
+                  "id": 1328,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -44936,7 +44988,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1325,
+                      "id": 1329,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -44952,7 +45004,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1326,
+                          "id": 1330,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -44961,7 +45013,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -44977,7 +45029,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1224,
+              "id": 1228,
               "name": "tap",
               "variant": "declaration",
               "kind": 1024,
@@ -45011,7 +45063,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1225,
+                  "id": 1229,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -45027,7 +45079,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1226,
+                      "id": 1230,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -45043,7 +45095,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1227,
+                          "id": 1231,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -45052,13 +45104,13 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1228,
+                          "id": 1232,
                           "name": "event",
                           "variant": "param",
                           "kind": 32768,
@@ -45112,7 +45164,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1247,
+              "id": 1251,
               "name": "toEdge",
               "variant": "declaration",
               "kind": 1024,
@@ -45138,7 +45190,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1248,
+                  "id": 1252,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -45154,7 +45206,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1249,
+                      "id": 1253,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -45170,7 +45222,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1250,
+                          "id": 1254,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -45179,7 +45231,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -45195,7 +45247,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1214,
+              "id": 1218,
               "name": "touchEnd",
               "variant": "declaration",
               "kind": 1024,
@@ -45229,7 +45281,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1215,
+                  "id": 1219,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -45245,7 +45297,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1216,
+                      "id": 1220,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -45261,7 +45313,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1217,
+                          "id": 1221,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -45270,13 +45322,13 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1218,
+                          "id": 1222,
                           "name": "event",
                           "variant": "param",
                           "kind": 32768,
@@ -45330,7 +45382,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1199,
+              "id": 1203,
               "name": "touchMove",
               "variant": "declaration",
               "kind": 1024,
@@ -45364,7 +45416,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1200,
+                  "id": 1204,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -45380,7 +45432,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1201,
+                      "id": 1205,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -45396,7 +45448,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1202,
+                          "id": 1206,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -45405,13 +45457,13 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1203,
+                          "id": 1207,
                           "name": "event",
                           "variant": "param",
                           "kind": 32768,
@@ -45465,7 +45517,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1204,
+              "id": 1208,
               "name": "touchMoveOpposite",
               "variant": "declaration",
               "kind": 1024,
@@ -45499,7 +45551,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1205,
+                  "id": 1209,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -45515,7 +45567,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1206,
+                      "id": 1210,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -45531,7 +45583,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1207,
+                          "id": 1211,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -45540,13 +45592,148 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1208,
+                          "id": 1212,
+                          "name": "event",
+                          "variant": "param",
+                          "kind": 32768,
+                          "flags": {
+                            "isExternal": true
+                          },
+                          "type": {
+                            "type": "union",
+                            "types": [
+                              {
+                                "type": "reference",
+                                "target": {
+                                  "packageName": "typescript",
+                                  "packagePath": "lib/lib.dom.d.ts",
+                                  "qualifiedName": "MouseEvent"
+                                },
+                                "name": "MouseEvent",
+                                "package": "typescript"
+                              },
+                              {
+                                "type": "reference",
+                                "target": {
+                                  "packageName": "typescript",
+                                  "packagePath": "lib/lib.dom.d.ts",
+                                  "qualifiedName": "TouchEvent"
+                                },
+                                "name": "TouchEvent",
+                                "package": "typescript"
+                              },
+                              {
+                                "type": "reference",
+                                "target": {
+                                  "packageName": "typescript",
+                                  "packagePath": "lib/lib.dom.d.ts",
+                                  "qualifiedName": "PointerEvent"
+                                },
+                                "name": "PointerEvent",
+                                "package": "typescript"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "type": {
+                        "type": "intrinsic",
+                        "name": "void"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": 1198,
+              "name": "touchStart",
+              "variant": "declaration",
+              "kind": 1024,
+              "flags": {
+                "isExternal": true,
+                "isOptional": true
+              },
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "Event will be fired when user touch Swiper. Receives "
+                  },
+                  {
+                    "kind": "code",
+                    "text": "`pointerdown`"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " event as an arguments."
+                  }
+                ]
+              },
+              "sources": [
+                {
+                  "fileName": "swiper/types/swiper-events.d.ts",
+                  "line": 118,
+                  "character": 2
+                }
+              ],
+              "type": {
+                "type": "reflection",
+                "declaration": {
+                  "id": 1199,
+                  "name": "__type",
+                  "variant": "declaration",
+                  "kind": 65536,
+                  "flags": {
+                    "isExternal": true
+                  },
+                  "sources": [
+                    {
+                      "fileName": "swiper/types/swiper-events.d.ts",
+                      "line": 118,
+                      "character": 14
+                    }
+                  ],
+                  "signatures": [
+                    {
+                      "id": 1200,
+                      "name": "__type",
+                      "variant": "signature",
+                      "kind": 4096,
+                      "flags": {
+                        "isExternal": true
+                      },
+                      "sources": [
+                        {
+                          "fileName": "swiper/types/swiper-events.d.ts",
+                          "line": 118,
+                          "character": 14
+                        }
+                      ],
+                      "parameters": [
+                        {
+                          "id": 1201,
+                          "name": "swiper",
+                          "variant": "param",
+                          "kind": 32768,
+                          "flags": {
+                            "isExternal": true
+                          },
+                          "type": {
+                            "type": "reference",
+                            "target": 3648,
+                            "name": "Swiper",
+                            "package": "swiper"
+                          }
+                        },
+                        {
+                          "id": 1202,
                           "name": "event",
                           "variant": "param",
                           "kind": 32768,
@@ -45601,141 +45788,6 @@ export const typesData = {
             },
             {
               "id": 1194,
-              "name": "touchStart",
-              "variant": "declaration",
-              "kind": 1024,
-              "flags": {
-                "isExternal": true,
-                "isOptional": true
-              },
-              "comment": {
-                "summary": [
-                  {
-                    "kind": "text",
-                    "text": "Event will be fired when user touch Swiper. Receives "
-                  },
-                  {
-                    "kind": "code",
-                    "text": "`pointerdown`"
-                  },
-                  {
-                    "kind": "text",
-                    "text": " event as an arguments."
-                  }
-                ]
-              },
-              "sources": [
-                {
-                  "fileName": "swiper/types/swiper-events.d.ts",
-                  "line": 118,
-                  "character": 2
-                }
-              ],
-              "type": {
-                "type": "reflection",
-                "declaration": {
-                  "id": 1195,
-                  "name": "__type",
-                  "variant": "declaration",
-                  "kind": 65536,
-                  "flags": {
-                    "isExternal": true
-                  },
-                  "sources": [
-                    {
-                      "fileName": "swiper/types/swiper-events.d.ts",
-                      "line": 118,
-                      "character": 14
-                    }
-                  ],
-                  "signatures": [
-                    {
-                      "id": 1196,
-                      "name": "__type",
-                      "variant": "signature",
-                      "kind": 4096,
-                      "flags": {
-                        "isExternal": true
-                      },
-                      "sources": [
-                        {
-                          "fileName": "swiper/types/swiper-events.d.ts",
-                          "line": 118,
-                          "character": 14
-                        }
-                      ],
-                      "parameters": [
-                        {
-                          "id": 1197,
-                          "name": "swiper",
-                          "variant": "param",
-                          "kind": 32768,
-                          "flags": {
-                            "isExternal": true
-                          },
-                          "type": {
-                            "type": "reference",
-                            "target": 3639,
-                            "name": "Swiper",
-                            "package": "swiper"
-                          }
-                        },
-                        {
-                          "id": 1198,
-                          "name": "event",
-                          "variant": "param",
-                          "kind": 32768,
-                          "flags": {
-                            "isExternal": true
-                          },
-                          "type": {
-                            "type": "union",
-                            "types": [
-                              {
-                                "type": "reference",
-                                "target": {
-                                  "packageName": "typescript",
-                                  "packagePath": "lib/lib.dom.d.ts",
-                                  "qualifiedName": "MouseEvent"
-                                },
-                                "name": "MouseEvent",
-                                "package": "typescript"
-                              },
-                              {
-                                "type": "reference",
-                                "target": {
-                                  "packageName": "typescript",
-                                  "packagePath": "lib/lib.dom.d.ts",
-                                  "qualifiedName": "TouchEvent"
-                                },
-                                "name": "TouchEvent",
-                                "package": "typescript"
-                              },
-                              {
-                                "type": "reference",
-                                "target": {
-                                  "packageName": "typescript",
-                                  "packagePath": "lib/lib.dom.d.ts",
-                                  "qualifiedName": "PointerEvent"
-                                },
-                                "name": "PointerEvent",
-                                "package": "typescript"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "type": {
-                        "type": "intrinsic",
-                        "name": "void"
-                      }
-                    }
-                  ]
-                }
-              }
-            },
-            {
-              "id": 1190,
               "name": "transitionEnd",
               "variant": "declaration",
               "kind": 1024,
@@ -45761,7 +45813,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1191,
+                  "id": 1195,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -45777,7 +45829,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1192,
+                      "id": 1196,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -45793,7 +45845,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1193,
+                          "id": 1197,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -45802,7 +45854,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -45818,7 +45870,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1186,
+              "id": 1190,
               "name": "transitionStart",
               "variant": "declaration",
               "kind": 1024,
@@ -45844,7 +45896,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1187,
+                  "id": 1191,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -45860,7 +45912,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1188,
+                      "id": 1192,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -45876,7 +45928,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1189,
+                          "id": 1193,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -45885,7 +45937,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -45901,7 +45953,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1407,
+              "id": 1411,
               "name": "unlock",
               "variant": "declaration",
               "kind": 1024,
@@ -45935,7 +45987,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1408,
+                  "id": 1412,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -45951,7 +46003,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1409,
+                      "id": 1413,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -45967,7 +46019,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1410,
+                          "id": 1414,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -45976,7 +46028,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -45992,7 +46044,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1399,
+              "id": 1403,
               "name": "update",
               "variant": "declaration",
               "kind": 1024,
@@ -46018,7 +46070,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1400,
+                  "id": 1404,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -46034,7 +46086,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1401,
+                      "id": 1405,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -46050,7 +46102,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1402,
+                          "id": 1406,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -46059,7 +46111,7 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
@@ -46075,7 +46127,7 @@ export const typesData = {
               }
             },
             {
-              "id": 1504,
+              "id": 1508,
               "name": "zoomChange",
               "variant": "declaration",
               "kind": 1024,
@@ -46101,7 +46153,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1505,
+                  "id": 1509,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -46117,7 +46169,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1506,
+                      "id": 1510,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -46133,7 +46185,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1507,
+                          "id": 1511,
                           "name": "swiper",
                           "variant": "param",
                           "kind": 32768,
@@ -46142,13 +46194,13 @@ export const typesData = {
                           },
                           "type": {
                             "type": "reference",
-                            "target": 3639,
+                            "target": 3648,
                             "name": "Swiper",
                             "package": "swiper"
                           }
                         },
                         {
-                          "id": 1508,
+                          "id": 1512,
                           "name": "scale",
                           "variant": "param",
                           "kind": 32768,
@@ -46161,7 +46213,7 @@ export const typesData = {
                           }
                         },
                         {
-                          "id": 1509,
+                          "id": 1513,
                           "name": "imageEl",
                           "variant": "param",
                           "kind": 32768,
@@ -46180,7 +46232,7 @@ export const typesData = {
                           }
                         },
                         {
-                          "id": 1510,
+                          "id": 1514,
                           "name": "slideEl",
                           "variant": "param",
                           "kind": 32768,
@@ -46213,88 +46265,88 @@ export const typesData = {
             {
               "title": "Properties",
               "children": [
-                1286,
-                1291,
-                1315,
-                1296,
-                1302,
-                1311,
+                1290,
+                1295,
                 1319,
-                1331,
-                1433,
-                1419,
-                1423,
-                1411,
-                1415,
-                1427,
-                1150,
+                1300,
+                1306,
+                1315,
+                1323,
                 1335,
-                1273,
+                1437,
+                1423,
+                1427,
+                1415,
+                1419,
+                1431,
+                1154,
                 1339,
+                1277,
                 1343,
                 1347,
-                1281,
-                1353,
-                1219,
-                1362,
+                1351,
+                1285,
                 1357,
-                1229,
-                1251,
-                1437,
-                1441,
-                1146,
-                1445,
-                1403,
-                1277,
+                1223,
                 1366,
-                1455,
+                1361,
+                1233,
+                1255,
+                1441,
+                1445,
+                1150,
+                1449,
+                1407,
+                1281,
+                1370,
+                1459,
+                1471,
                 1467,
                 1463,
-                1459,
-                1269,
-                1370,
-                1481,
-                1471,
-                1485,
-                1476,
-                1234,
-                1239,
-                1243,
-                1327,
-                1265,
-                1450,
-                1499,
-                1494,
-                1489,
-                1260,
-                1255,
-                1158,
-                1166,
-                1162,
-                1174,
-                1170,
-                1182,
-                1178,
-                1378,
+                1273,
                 1374,
-                1382,
-                1209,
-                1391,
-                1387,
-                1154,
-                1395,
-                1323,
-                1224,
+                1485,
+                1475,
+                1489,
+                1480,
+                1238,
+                1243,
                 1247,
-                1214,
-                1199,
-                1204,
+                1331,
+                1269,
+                1454,
+                1503,
+                1498,
+                1493,
+                1264,
+                1259,
+                1162,
+                1170,
+                1166,
+                1178,
+                1174,
+                1186,
+                1182,
+                1382,
+                1378,
+                1386,
+                1213,
+                1395,
+                1391,
+                1158,
+                1399,
+                1327,
+                1228,
+                1251,
+                1218,
+                1203,
+                1208,
+                1198,
                 1194,
                 1190,
-                1186,
-                1407,
-                1399,
-                1504
+                1411,
+                1403,
+                1508
               ]
             }
           ],
@@ -46355,7 +46407,7 @@ export const typesData = {
           },
           {
             "type": "reference",
-            "target": 313,
+            "target": 314,
             "name": "PaginationOptions",
             "package": "swiper"
           }
@@ -46401,7 +46453,7 @@ export const typesData = {
           },
           {
             "type": "reference",
-            "target": 367,
+            "target": 368,
             "name": "ParallaxOptions",
             "package": "swiper"
           }
@@ -46798,7 +46850,7 @@ export const typesData = {
           },
           {
             "type": "reference",
-            "target": 398,
+            "target": 399,
             "name": "ScrollbarOptions",
             "package": "swiper"
           }
@@ -47534,6 +47586,65 @@ export const typesData = {
       }
     },
     {
+      "name": "snapToSlideEdge",
+      "default_value": "false",
+      "type": {
+        "type": "intrinsic",
+        "name": "boolean"
+      },
+      "comment": {
+        "summary": [
+          {
+            "kind": "text",
+            "text": "When enabled, the swiper will always snap to slide edges rather than arbitrary positions.\nThis prevents partial slides from appearing misaligned at the end of the swiper.\nOnly applies when "
+          },
+          {
+            "kind": "code",
+            "text": "`slidesPerView`"
+          },
+          {
+            "kind": "text",
+            "text": " is fractional or "
+          },
+          {
+            "kind": "code",
+            "text": "`'auto'`"
+          },
+          {
+            "kind": "text",
+            "text": ", and is ignored in "
+          },
+          {
+            "kind": "code",
+            "text": "`loop`"
+          },
+          {
+            "kind": "text",
+            "text": " and "
+          },
+          {
+            "kind": "code",
+            "text": "`centeredSlides`"
+          },
+          {
+            "kind": "text",
+            "text": " modes."
+          }
+        ],
+        "blockTags": [
+          {
+            "tag": "@default",
+            "content": [
+              {
+                "kind": "code",
+                "text": "```ts\nfalse\n```"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
       "name": "spaceBetween",
       "default_value": "0",
       "type": {
@@ -47623,7 +47734,7 @@ export const typesData = {
           },
           {
             "type": "reference",
-            "target": 504,
+            "target": 508,
             "name": "CSSSelector",
             "package": "swiper"
           },
@@ -47712,7 +47823,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 419,
+        "target": 423,
         "name": "ThumbsOptions",
         "package": "swiper"
       },
@@ -48132,7 +48243,7 @@ export const typesData = {
           },
           {
             "type": "reference",
-            "target": 453,
+            "target": 457,
             "typeArguments": [
               {
                 "type": "intrinsic",
@@ -48355,7 +48466,7 @@ export const typesData = {
           },
           {
             "type": "reference",
-            "target": 495,
+            "target": 499,
             "name": "ZoomOptions",
             "package": "swiper"
           }
@@ -48394,7 +48505,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 1512,
+          "id": 1516,
           "name": "onAny",
           "variant": "signature",
           "kind": 4096,
@@ -48429,7 +48540,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 1513,
+              "id": 1517,
               "name": "handler",
               "variant": "param",
               "kind": 32768,
@@ -48439,7 +48550,7 @@ export const typesData = {
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 1514,
+                  "id": 1518,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -48455,7 +48566,7 @@ export const typesData = {
                   ],
                   "signatures": [
                     {
-                      "id": 1515,
+                      "id": 1519,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -48471,7 +48582,7 @@ export const typesData = {
                       ],
                       "parameters": [
                         {
-                          "id": 1516,
+                          "id": 1520,
                           "name": "eventName",
                           "variant": "param",
                           "kind": 32768,
@@ -48484,7 +48595,7 @@ export const typesData = {
                           }
                         },
                         {
-                          "id": 1517,
+                          "id": 1521,
                           "name": "args",
                           "variant": "param",
                           "kind": 32768,
@@ -48525,7 +48636,7 @@ export const typesData = {
       "default_value": null,
       "type": {
         "type": "reference",
-        "target": 3639,
+        "target": 3648,
         "name": "Swiper",
         "package": "swiper"
       },
@@ -48543,7 +48654,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 417,
+          "id": 421,
           "name": "init",
           "variant": "signature",
           "kind": 4096,
@@ -48577,7 +48688,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 414,
+          "id": 415,
           "name": "update",
           "variant": "signature",
           "kind": 4096,
@@ -48601,7 +48712,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 415,
+              "id": 416,
               "name": "initial",
               "variant": "param",
               "kind": 32768,
@@ -48611,6 +48722,66 @@ export const typesData = {
               "type": {
                 "type": "intrinsic",
                 "name": "boolean"
+              }
+            },
+            {
+              "id": 417,
+              "name": "p",
+              "variant": "param",
+              "kind": 32768,
+              "flags": {
+                "isExternal": true,
+                "isOptional": true
+              },
+              "type": {
+                "type": "reflection",
+                "declaration": {
+                  "id": 418,
+                  "name": "__type",
+                  "variant": "declaration",
+                  "kind": 65536,
+                  "flags": {
+                    "isExternal": true
+                  },
+                  "children": [
+                    {
+                      "id": 419,
+                      "name": "autoScroll",
+                      "variant": "declaration",
+                      "kind": 1024,
+                      "flags": {
+                        "isExternal": true,
+                        "isOptional": true
+                      },
+                      "sources": [
+                        {
+                          "fileName": "swiper/types/modules/thumbs.d.ts",
+                          "line": 12,
+                          "character": 33
+                        }
+                      ],
+                      "type": {
+                        "type": "intrinsic",
+                        "name": "boolean"
+                      }
+                    }
+                  ],
+                  "groups": [
+                    {
+                      "title": "Properties",
+                      "children": [
+                        419
+                      ]
+                    }
+                  ],
+                  "sources": [
+                    {
+                      "fileName": "swiper/types/modules/thumbs.d.ts",
+                      "line": 12,
+                      "character": 31
+                    }
+                  ]
+                }
               }
             }
           ],
@@ -48716,7 +48887,7 @@ export const typesData = {
           },
           {
             "type": "reference",
-            "target": 3639,
+            "target": 3648,
             "name": "Swiper",
             "package": "swiper"
           },
@@ -48814,7 +48985,7 @@ export const typesData = {
         "type": "array",
         "elementType": {
           "type": "reference",
-          "target": 448,
+          "target": 452,
           "name": "T",
           "package": "swiper",
           "qualifiedName": "VirtualData.T",
@@ -48887,7 +49058,7 @@ export const typesData = {
         "type": "array",
         "elementType": {
           "type": "reference",
-          "target": 427,
+          "target": 431,
           "name": "T",
           "package": "swiper",
           "qualifiedName": "VirtualMethods.T",
@@ -48932,7 +49103,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 433,
+          "id": 437,
           "name": "appendSlide",
           "variant": "signature",
           "kind": 4096,
@@ -48975,7 +49146,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 434,
+              "id": 438,
               "name": "slide",
               "variant": "param",
               "kind": 32768,
@@ -49035,7 +49206,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 436,
+          "id": 440,
           "name": "prependSlide",
           "variant": "signature",
           "kind": 4096,
@@ -49078,7 +49249,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 437,
+              "id": 441,
               "name": "slide",
               "variant": "param",
               "kind": 32768,
@@ -49138,7 +49309,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 442,
+          "id": 446,
           "name": "removeAllSlides",
           "variant": "signature",
           "kind": 4096,
@@ -49183,7 +49354,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 439,
+          "id": 443,
           "name": "removeSlide",
           "variant": "signature",
           "kind": 4096,
@@ -49226,7 +49397,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 440,
+              "id": 444,
               "name": "slideIndexes",
               "variant": "param",
               "kind": 32768,
@@ -49254,7 +49425,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 444,
+          "id": 448,
           "name": "update",
           "variant": "signature",
           "kind": 4096,
@@ -49278,7 +49449,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 445,
+              "id": 449,
               "name": "force",
               "variant": "param",
               "kind": 32768,
@@ -49414,7 +49585,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 467,
+          "id": 471,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -49430,7 +49601,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 468,
+              "id": 472,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -49446,7 +49617,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 469,
+                  "id": 473,
                   "name": "data",
                   "variant": "param",
                   "kind": 32768,
@@ -49455,11 +49626,11 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 447,
+                    "target": 451,
                     "typeArguments": [
                       {
                         "type": "reference",
-                        "target": 454,
+                        "target": 458,
                         "name": "T",
                         "package": "swiper",
                         "qualifiedName": "VirtualOptions.T",
@@ -49572,7 +49743,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 462,
+          "id": 466,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -49588,7 +49759,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 463,
+              "id": 467,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -49604,7 +49775,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 464,
+                  "id": 468,
                   "name": "slide",
                   "variant": "param",
                   "kind": 32768,
@@ -49613,7 +49784,7 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 454,
+                    "target": 458,
                     "name": "T",
                     "package": "swiper",
                     "qualifiedName": "VirtualOptions.T",
@@ -49621,7 +49792,7 @@ export const typesData = {
                   }
                 },
                 {
-                  "id": 465,
+                  "id": 469,
                   "name": "index",
                   "variant": "param",
                   "kind": 32768,
@@ -49677,7 +49848,7 @@ export const typesData = {
         "type": "array",
         "elementType": {
           "type": "reference",
-          "target": 454,
+          "target": 458,
           "name": "T",
           "package": "swiper",
           "qualifiedName": "VirtualOptions.T",
@@ -49747,7 +49918,7 @@ export const typesData = {
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 489,
+          "id": 493,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -49763,7 +49934,7 @@ export const typesData = {
           ],
           "signatures": [
             {
-              "id": 490,
+              "id": 494,
               "name": "__type",
               "variant": "signature",
               "kind": 4096,
@@ -49779,7 +49950,7 @@ export const typesData = {
               ],
               "parameters": [
                 {
-                  "id": 491,
+                  "id": 495,
                   "name": "swiper",
                   "variant": "param",
                   "kind": 32768,
@@ -49788,13 +49959,13 @@ export const typesData = {
                   },
                   "type": {
                     "type": "reference",
-                    "target": 3639,
+                    "target": 3648,
                     "name": "Swiper",
                     "package": "swiper"
                   }
                 },
                 {
-                  "id": 492,
+                  "id": 496,
                   "name": "scale",
                   "variant": "param",
                   "kind": 32768,
@@ -49807,7 +49978,7 @@ export const typesData = {
                   }
                 },
                 {
-                  "id": 493,
+                  "id": 497,
                   "name": "imageEl",
                   "variant": "param",
                   "kind": 32768,
@@ -49826,7 +49997,7 @@ export const typesData = {
                   }
                 },
                 {
-                  "id": 494,
+                  "id": 498,
                   "name": "slideEl",
                   "variant": "param",
                   "kind": 32768,
@@ -49901,7 +50072,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 478,
+          "id": 482,
           "name": "disable",
           "variant": "signature",
           "kind": 4096,
@@ -49935,7 +50106,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 476,
+          "id": 480,
           "name": "enable",
           "variant": "signature",
           "kind": 4096,
@@ -49969,7 +50140,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 480,
+          "id": 484,
           "name": "in",
           "variant": "signature",
           "kind": 4096,
@@ -49993,7 +50164,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 481,
+              "id": 485,
               "name": "ratio",
               "variant": "param",
               "kind": 32768,
@@ -50019,7 +50190,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 483,
+          "id": 487,
           "name": "out",
           "variant": "signature",
           "kind": 4096,
@@ -50053,7 +50224,7 @@ export const typesData = {
       "default_value": null,
       "signatures": [
         {
-          "id": 485,
+          "id": 489,
           "name": "toggle",
           "variant": "signature",
           "kind": 4096,
@@ -50077,7 +50248,7 @@ export const typesData = {
           ],
           "parameters": [
             {
-              "id": 486,
+              "id": 490,
               "name": "event",
               "variant": "param",
               "kind": 32768,

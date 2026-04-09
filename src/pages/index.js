@@ -328,28 +328,31 @@ export default function Home(props) {
         <HomeProjects />
       </HomeContainer>
 
-      <HomeContainer className="my-32 sm:my-64 relative z-10">
-        <HomeSectionTitle>Sponsors</HomeSectionTitle>
-        <HomeSectionText>
-          <div>
-            Support Swiper on{' '}
-            <a href="https://opencollective.com/swiper" target="_blank">
-              Open Collective
-            </a>{' '}
-            or{' '}
-            <a href="https://patreon.com/swiperjs" target="_blank">
-              Patreon
-            </a>{' '}
-            and help us to make it even better! Your support means a lot for us!
-          </div>
-          <div className="mt-6 flex justify-center">
-            <Button href="https://opencollective.com/swiper" target="_blank">
-              Become a Sponsor
-            </Button>
-          </div>
-        </HomeSectionText>
-        <HomeSponsors spacing={false} />
-      </HomeContainer>
+      <div data-sponsors="">
+        <HomeContainer className="my-32 sm:my-64 relative z-10">
+          <HomeSectionTitle>Sponsors</HomeSectionTitle>
+          <HomeSectionText>
+            <div>
+              Support Swiper on{' '}
+              <a href="https://opencollective.com/swiper" target="_blank">
+                Open Collective
+              </a>{' '}
+              or{' '}
+              <a href="https://patreon.com/swiperjs" target="_blank">
+                Patreon
+              </a>{' '}
+              and help us to make it even better! Your support means a lot for
+              us!
+            </div>
+            <div className="mt-6 flex justify-center">
+              <Button href="https://opencollective.com/swiper" target="_blank">
+                Become a Sponsor
+              </Button>
+            </div>
+          </HomeSectionText>
+          <HomeSponsors spacing={false} />
+        </HomeContainer>
+      </div>
       <Footer />
     </>
   );

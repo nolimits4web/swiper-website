@@ -64,8 +64,9 @@ export default function HomeSponsors({
   showTitles,
   spacing = true,
 }) {
+  if (typeof window !== 'undefined' && window.__NO_SPONSORS__) return null;
   return (
-    <>
+    <div data-sponsors="">
       <PlanSection
         showPlaceholder={showPlaceholders}
         showTitle={showTitles}
@@ -90,6 +91,6 @@ export default function HomeSponsors({
         spacing={spacing}
         plan="Sponsor"
       />
-    </>
+    </div>
   );
 }
