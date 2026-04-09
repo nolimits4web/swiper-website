@@ -4,7 +4,8 @@ import { WithSidebarLayout } from '@/layouts/WithSidebarLayout.js';
 
 export const meta = {
   title: "Swiper vs Owl Carousel - Why It's Time to Switch",
-  description: 'Compare Swiper and Owl Carousel 2. Owl Carousel is abandoned and jQuery-dependent - see why Swiper is the best modern replacement.',
+  description:
+    'Compare Swiper and Owl Carousel 2. Owl Carousel is abandoned and jQuery-dependent - see why Swiper is the best modern replacement.',
   competitor: 'Owl Carousel',
 };
 
@@ -14,20 +15,20 @@ If you're still using Owl Carousel or evaluating it for a new project, here's ho
 
 ## Quick Comparison
 
-| Feature | Swiper | Owl Carousel 2 |
-|---|---|---|
-| GitHub Stars | 40,000+ | ~8,000 |
-| Actively Maintained | Yes (latest: v12, 2026) | No (abandoned since ~2016) |
-| Dependencies | None | jQuery required |
-| License | MIT | MIT |
-| TypeScript Support | Full (built-in types) | No |
-| Bundle Size (gzipped) | ~25-45KB (modular) | ~18KB + jQuery (~30KB) |
-| Framework Support | React, Vue, Angular, Svelte, Solid, Web Components | None official |
-| SSR Support | Yes | No |
-| Accessibility | Built-in ARIA, keyboard nav | None |
-| Mobile Touch | Excellent (mobile-first) | Basic, dated |
-| Transition Effects | 7 built-in (3D, creative) | CSS animate.css only |
-| AI Integration (MCP) | Yes | No |
+| Feature               | Swiper                                             | Owl Carousel 2             |
+| --------------------- | -------------------------------------------------- | -------------------------- |
+| GitHub Stars          | 40,000+                                            | ~8,000                     |
+| Actively Maintained   | Yes (latest: v12, 2026)                            | No (abandoned since ~2016) |
+| Dependencies          | None                                               | jQuery required            |
+| License               | MIT                                                | MIT                        |
+| TypeScript Support    | Full (built-in types)                              | No                         |
+| Bundle Size (gzipped) | ~25-45KB (modular)                                 | ~18KB + jQuery (~30KB)     |
+| Framework Support     | React, Vue, Angular, Svelte, Solid, Web Components | None official              |
+| SSR Support           | Yes                                                | No                         |
+| Accessibility         | Built-in ARIA, keyboard nav                        | None                       |
+| Mobile Touch          | Excellent (mobile-first)                           | Basic, dated               |
+| Transition Effects    | 7 built-in (3D, creative)                          | CSS animate.css only       |
+| AI Integration (MCP)  | Yes                                                | No                         |
 
 ## The Elephant in the Room: Owl Carousel Is Abandoned
 
@@ -53,15 +54,15 @@ Swiper is completely dependency-free and works natively with modern JavaScript, 
 
 ## Framework Support
 
-| Framework | Swiper | Owl Carousel 2 |
-|---|---|---|
-| Vanilla JS | Yes | Yes (via jQuery) |
-| React | Official components + hooks | No |
-| Vue | Official components + hooks | vue-owl-carousel (3rd party, unmaintained) |
-| Angular | Yes (via Swiper Element) | ngx-owl-carousel-o (3rd party rewrite) |
-| Svelte | Yes (via Swiper Element) | No |
-| Solid | Yes (via Swiper Element) | No |
-| Web Components | Yes (Swiper Element) | No |
+| Framework      | Swiper                      | Owl Carousel 2                             |
+| -------------- | --------------------------- | ------------------------------------------ |
+| Vanilla JS     | Yes                         | Yes (via jQuery)                           |
+| React          | Official components + hooks | No                                         |
+| Vue            | Official components + hooks | vue-owl-carousel (3rd party, unmaintained) |
+| Angular        | Yes (via Swiper Element)    | ngx-owl-carousel-o (3rd party rewrite)     |
+| Svelte         | Yes (via Swiper Element)    | No                                         |
+| Solid          | Yes (via Swiper Element)    | No                                         |
+| Web Components | Yes (Swiper Element)        | No                                         |
 
 Owl Carousel has no official framework support. The few community wrappers that exist are themselves poorly maintained and often conflict with framework rendering patterns due to jQuery's DOM manipulation.
 
@@ -71,36 +72,36 @@ Swiper provides first-class React and Vue components, plus Swiper Element - a tr
 
 ### Transition Effects
 
-| Effect | Swiper | Owl Carousel 2 |
-|---|---|---|
-| Slide | Yes | Yes |
-| Fade | Yes (with crossfade) | Via animate.css |
-| Cube (3D) | Yes | No |
-| Coverflow (3D) | Yes | No |
-| Flip (3D) | Yes | No |
-| Cards | Yes | No |
-| Creative (custom) | Yes | No |
+| Effect            | Swiper               | Owl Carousel 2  |
+| ----------------- | -------------------- | --------------- |
+| Slide             | Yes                  | Yes             |
+| Fade              | Yes (with crossfade) | Via animate.css |
+| Cube (3D)         | Yes                  | No              |
+| Coverflow (3D)    | Yes                  | No              |
+| Flip (3D)         | Yes                  | No              |
+| Cards             | Yes                  | No              |
+| Creative (custom) | Yes                  | No              |
 
 Owl Carousel relies on external CSS animations via animate.css for transitions. Swiper has 7 built-in effects including 3D transforms and the Creative effect for fully custom transitions - no external dependencies needed.
 
 ### Core Slider Features
 
-| Feature | Swiper | Owl Carousel 2 |
-|---|---|---|
-| Responsive Breakpoints | Yes | Yes |
-| Infinite Loop | Yes (clean implementation) | Yes (clone-based, buggy) |
-| Autoplay | Yes (with progress tracking) | Yes (unreliable resume) |
-| Free Mode / Momentum | Yes | No |
-| Vertical Slider | Yes | No |
-| Centered Slides | Yes | Yes |
-| Multiple Slides Per View | Yes | Yes |
-| Auto Height | Yes | Yes |
-| Auto Width | Yes | Yes |
-| RTL Support | Yes | Yes |
-| CSS Scroll Snap Mode | Yes | No |
-| Rewind Mode | Yes | No |
-| Grid / Multi-row | Yes | No |
-| Nested Sliders | Yes | No |
+| Feature                  | Swiper                       | Owl Carousel 2           |
+| ------------------------ | ---------------------------- | ------------------------ |
+| Responsive Breakpoints   | Yes                          | Yes                      |
+| Infinite Loop            | Yes (clean implementation)   | Yes (clone-based, buggy) |
+| Autoplay                 | Yes (with progress tracking) | Yes (unreliable resume)  |
+| Free Mode / Momentum     | Yes                          | No                       |
+| Vertical Slider          | Yes                          | No                       |
+| Centered Slides          | Yes                          | Yes                      |
+| Multiple Slides Per View | Yes                          | Yes                      |
+| Auto Height              | Yes                          | Yes                      |
+| Auto Width               | Yes                          | Yes                      |
+| RTL Support              | Yes                          | Yes                      |
+| CSS Scroll Snap Mode     | Yes                          | No                       |
+| Rewind Mode              | Yes                          | No                       |
+| Grid / Multi-row         | Yes                          | No                       |
+| Nested Sliders           | Yes                          | No                       |
 
 Owl Carousel lacks several features that modern projects commonly need - vertical sliding, free mode scrolling, grid layouts, and CSS scroll snap support are all missing.
 
@@ -108,20 +109,20 @@ Its infinite loop uses DOM cloning, which causes problems with event handlers, d
 
 ### Advanced Features
 
-| Feature | Swiper | Owl Carousel 2 |
-|---|---|---|
-| Virtual Slides | Yes | No |
-| Parallax | Yes (built-in) | No |
-| Zoom (pinch + double-tap) | Yes | No |
-| Thumbs Gallery | Yes (purpose-built) | No |
-| Lazy Loading | Yes | Yes |
-| Hash Navigation | Yes | Yes (fragile) |
-| History Navigation | Yes | No |
-| Controller (2-way sync) | Yes | No |
-| Keyboard Control | Yes | No |
-| Mousewheel Control | Yes | No |
-| Scrollbar | Yes (draggable) | No |
-| Video Support | Via slides content | Yes (buggy plugin) |
+| Feature                   | Swiper              | Owl Carousel 2     |
+| ------------------------- | ------------------- | ------------------ |
+| Virtual Slides            | Yes                 | No                 |
+| Parallax                  | Yes (built-in)      | No                 |
+| Zoom (pinch + double-tap) | Yes                 | No                 |
+| Thumbs Gallery            | Yes (purpose-built) | No                 |
+| Lazy Loading              | Yes                 | Yes                |
+| Hash Navigation           | Yes                 | Yes (fragile)      |
+| History Navigation        | Yes                 | No                 |
+| Controller (2-way sync)   | Yes                 | No                 |
+| Keyboard Control          | Yes                 | No                 |
+| Mousewheel Control        | Yes                 | No                 |
+| Scrollbar                 | Yes (draggable)     | No                 |
+| Video Support             | Via slides content  | Yes (buggy plugin) |
 
 Swiper offers a dramatically richer feature set. Virtual slides for handling thousands of items, built-in parallax, pinch-to-zoom, a purpose-built thumbs gallery, and two-way controller sync are all features Owl Carousel simply doesn't have.
 
@@ -158,14 +159,14 @@ Swiper includes a dedicated A11y module with ARIA labels, roles, live regions, k
 
 ## TypeScript & Developer Experience
 
-| Aspect | Swiper | Owl Carousel 2 |
-|---|---|---|
-| TypeScript | Full built-in types (35 files) | No (community @types, outdated) |
-| Module System | ES modules (tree-shakeable) | UMD only |
-| Modular CSS | Per-module CSS imports | Single CSS file |
-| CSS Custom Properties | Yes (easy theming) | No |
-| API Events | Comprehensive event system | Basic callbacks |
-| Documentation | Extensive, maintained | Incomplete, unmaintained |
+| Aspect                | Swiper                         | Owl Carousel 2                  |
+| --------------------- | ------------------------------ | ------------------------------- |
+| TypeScript            | Full built-in types (35 files) | No (community @types, outdated) |
+| Module System         | ES modules (tree-shakeable)    | UMD only                        |
+| Modular CSS           | Per-module CSS imports         | Single CSS file                 |
+| CSS Custom Properties | Yes (easy theming)             | No                              |
+| API Events            | Comprehensive event system     | Basic callbacks                 |
+| Documentation         | Extensive, maintained          | Incomplete, unmaintained        |
 
 ## SSR Support
 
@@ -182,6 +183,7 @@ No other slider library - including Owl Carousel - offers any AI integration.
 ## Migration from Owl Carousel to Swiper
 
 **Owl Carousel (jQuery):**
+
 ```html
 <link rel="stylesheet" href="owl.carousel.min.css" />
 <script src="jquery.min.js"></script>
@@ -204,6 +206,7 @@ No other slider library - including Owl Carousel - offers any AI integration.
 ```
 
 **Swiper (modern JS):**
+
 ```js
 import Swiper from 'swiper';
 import { Pagination, Autoplay } from 'swiper/modules';
@@ -223,6 +226,7 @@ const swiper = new Swiper('.swiper', {
 ```
 
 **Swiper (React):**
+
 ```jsx
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
@@ -247,6 +251,7 @@ export default function MySlider() {
 ```
 
 Key differences from Owl Carousel:
+
 - `items` becomes `slidesPerView`
 - `dots` becomes `pagination` with a dedicated module
 - `nav` becomes `navigation` with a dedicated module
@@ -264,8 +269,12 @@ Try the <a href="/playground">Swiper Playground</a> to visually build your slide
 - <a href="/demos">View demos</a>
 - <a href="/swiper-api">API Documentation</a>
 - <a href="/playground">Swiper Playground</a>
-- <a href="https://studio.swiperjs.com" target="_blank">Swiper Studio</a>
-- <a href="https://uiinitiative.com" target="_blank">Premium effects by UI Initiative</a>
+- <a href="https://studio.swiperjs.com" target="_blank">
+    Swiper Studio
+  </a>
+- <a href="https://uiinitiative.com" target="_blank">
+    Premium effects by UI Initiative
+  </a>
 
 export default function Page({ children }) {
   const components = {

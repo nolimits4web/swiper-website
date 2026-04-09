@@ -1,0 +1,301 @@
+import { MDXProvider } from '@mdx-js/react';
+import Heading from '@/components/Heading.js';
+import { WithSidebarLayout } from '@/layouts/WithSidebarLayout.js';
+
+export const meta = {
+  title: 'Swiper vs Keen Slider - Touch Slider Comparison',
+  description:
+    'Compare Swiper and Keen Slider across touch quality, features, and framework support. See which carousel library is the better choice.',
+  competitor: 'Keen Slider',
+};
+
+Keen Slider made a name for itself with exceptional touch physics - the momentum and rubber-band feel when swiping through slides is genuinely impressive. It's lightweight, written in TypeScript, and has a clean React hook API.
+
+However, being a headless, React-focused library with declining maintenance activity limits its appeal for many projects. Let's see how it compares to Swiper across the full picture.
+
+## Quick Comparison
+
+| Feature               | Swiper                                             | Keen Slider                                   |
+| --------------------- | -------------------------------------------------- | --------------------------------------------- |
+| GitHub Stars          | 40,000+                                            | ~4,500                                        |
+| Actively Maintained   | Yes (latest: v12, 2026)                            | Slowing (solo maintainer)                     |
+| Dependencies          | None                                               | None                                          |
+| License               | MIT                                                | MIT                                           |
+| TypeScript Support    | Full (built-in types)                              | Full (written in TypeScript)                  |
+| Bundle Size (gzipped) | ~25-45KB (modular)                                 | ~5-8KB                                        |
+| Framework Support     | React, Vue, Angular, Svelte, Solid, Web Components | React (1st class), Vue/Angular/Svelte (basic) |
+| SSR Support           | Yes                                                | Partial (hydration issues)                    |
+| Accessibility         | Built-in ARIA, keyboard nav                        | None                                          |
+| Built-in UI           | Navigation, pagination, scrollbar                  | None (headless)                               |
+| Transition Effects    | 7 built-in (3D, creative)                          | Slide only                                    |
+| AI Integration (MCP)  | Yes                                                | No                                            |
+
+## Maintenance Concerns
+
+Keen Slider is a **solo maintainer project** by Eric Lewandowski. Development was active during the v6 rewrite (2021-2022), but activity has slowed considerably since then. Issues and pull requests have been accumulating without timely responses.
+
+This creates risks for production projects:
+
+- **Bus factor of 1** - the project depends entirely on one person
+- **Slowing release cadence** - long gaps between updates
+- **Open bugs** going unaddressed
+
+Swiper has been actively maintained since 2013 with regular releases, a larger contributor base, and proven long-term sustainability backed by enterprise adoption from companies like Adobe, BMW, Nike, Samsung, and Toyota.
+
+## Touch & Mobile Experience
+
+This is where Keen Slider shines. Its touch physics are excellent:
+
+- Natural momentum-based swiping
+- Rubber-band overscroll effect
+- Smooth deceleration
+- Good gesture detection (horizontal vs vertical scroll)
+
+Swiper was also built mobile-first and delivers a comparable touch experience:
+
+- Hardware-accelerated CSS transitions
+- Momentum scrolling in free mode
+- Configurable touch angle and threshold
+- Native touch events with edge detection for iOS/Android back gestures
+- Passive event listeners for scroll performance
+- **Pinch-to-zoom and double-tap zoom** (Keen Slider lacks this)
+- CSS scroll snap mode for native-feeling scrolling
+
+Both libraries offer great touch interactions. Swiper adds zoom capabilities and CSS scroll snap mode that Keen Slider doesn't have.
+
+## Feature Comparison
+
+### Transition Effects
+
+| Effect            | Swiper               | Keen Slider |
+| ----------------- | -------------------- | ----------- |
+| Slide             | Yes                  | Yes         |
+| Fade              | Yes (with crossfade) | No          |
+| Cube (3D)         | Yes                  | No          |
+| Coverflow (3D)    | Yes                  | No          |
+| Flip (3D)         | Yes                  | No          |
+| Cards             | Yes                  | No          |
+| Creative (custom) | Yes                  | No          |
+
+Keen Slider supports **only the default slide transition**. No fade, no 3D effects, no custom transitions. Swiper offers 7 built-in effects including the Creative effect for unlimited custom CSS transforms.
+
+### Core Slider Features
+
+| Feature                  | Swiper                           | Keen Slider                |
+| ------------------------ | -------------------------------- | -------------------------- |
+| Responsive Breakpoints   | Yes (full config per breakpoint) | Yes                        |
+| Infinite Loop            | Yes                              | Yes                        |
+| Autoplay                 | Yes (with progress tracking)     | Via plugin                 |
+| Free Mode / Momentum     | Yes                              | Yes                        |
+| Vertical Slider          | Yes                              | Yes                        |
+| Centered Slides          | Yes                              | Yes (centered mode)        |
+| Multiple Slides Per View | Yes                              | Yes                        |
+| Auto Height              | Yes                              | No (manual implementation) |
+| Variable Width Slides    | Yes                              | Yes                        |
+| RTL Support              | Yes                              | Yes                        |
+| CSS Scroll Snap Mode     | Yes                              | No                         |
+| Rewind Mode              | Yes                              | No                         |
+| Grid / Multi-row         | Yes                              | No                         |
+| Nested Sliders           | Yes                              | No                         |
+| Slide Spacing            | Yes (spaceBetween)               | Yes (spacing)              |
+
+Both cover the basics, but Swiper has auto height, CSS scroll snap mode, grid layout, and nested slider support that Keen Slider lacks.
+
+### Navigation & UI
+
+| Feature             | Swiper               | Keen Slider    |
+| ------------------- | -------------------- | -------------- |
+| Navigation Arrows   | Built-in module      | Build yourself |
+| Pagination Bullets  | Built-in module      | Build yourself |
+| Pagination Fraction | Built-in module      | Build yourself |
+| Progress Bar        | Built-in module      | Build yourself |
+| Scrollbar           | Built-in (draggable) | Build yourself |
+| Autoplay Controls   | Built-in             | Build yourself |
+
+Like Embla, Keen Slider is headless - it provides no UI components. Every arrow, dot, progress bar, and control must be built from scratch. Swiper provides all of these as ready-to-use, customizable modules while also supporting fully custom UI when you need it.
+
+### Advanced Features
+
+| Feature                   | Swiper                         | Keen Slider                |
+| ------------------------- | ------------------------------ | -------------------------- |
+| Virtual Slides            | Yes (render 1000s efficiently) | No                         |
+| Parallax                  | Yes (built-in)                 | No                         |
+| Zoom (pinch + double-tap) | Yes                            | No                         |
+| Thumbs Gallery            | Yes (purpose-built)            | Manual implementation      |
+| Lazy Loading              | Yes                            | No                         |
+| Hash Navigation           | Yes                            | No                         |
+| History Navigation        | Yes                            | No                         |
+| Controller (2-way sync)   | Yes                            | No                         |
+| Keyboard Control          | Yes                            | No (manual implementation) |
+| Mousewheel Control        | Yes                            | Via plugin                 |
+| Scrollbar                 | Yes (draggable)                | No                         |
+
+Swiper's advanced feature set is dramatically larger. Virtual slides, parallax, zoom, thumbs gallery, hash/history navigation, keyboard control, and a draggable scrollbar are all built in. With Keen Slider, most of these would need to be built from scratch or aren't feasible at all.
+
+## Framework Support
+
+| Framework      | Swiper                      | Keen Slider                    |
+| -------------- | --------------------------- | ------------------------------ |
+| Vanilla JS     | Yes                         | Yes                            |
+| React          | Official components + hooks | useKeenSlider hook (1st class) |
+| Vue            | Official components + hooks | Basic support                  |
+| Angular        | Yes (via Swiper Element)    | Basic support                  |
+| Svelte         | Yes (via Swiper Element)    | Basic support                  |
+| Solid          | Yes (via Swiper Element)    | No                             |
+| Web Components | Yes (Swiper Element)        | No                             |
+
+Keen Slider's React integration via `useKeenSlider` is clean and well-designed. However, Vue, Angular, and Svelte support is significantly less polished - they lack dedicated adapters comparable to the React hook.
+
+Swiper provides first-class support for React and Vue with dedicated components and hooks, plus Swiper Element (Web Component) for Angular, Svelte, Solid, and any other framework.
+
+## Accessibility
+
+Keen Slider has **no built-in accessibility features**:
+
+- No ARIA attributes
+- No keyboard navigation
+- No screen reader announcements
+- No focus management
+- Everything must be implemented manually
+
+This is a significant concern. Most Keen Slider implementations in the wild are likely not accessible.
+
+Swiper's A11y module provides comprehensive accessibility out of the box:
+
+- ARIA labels and roles for slides, navigation, and pagination
+- `aria-live` regions for screen reader announcements
+- Keyboard navigation (arrow keys)
+- Configurable accessibility labels
+
+## Bundle Size
+
+Keen Slider at ~5-8KB gzipped is very lightweight. This is a genuine advantage for projects with strict bundle budgets.
+
+However, Keen Slider's small core doesn't include any UI. Once you add your own arrows, dots, progress indicators, keyboard handlers, autoplay controls, and accessibility attributes, your application code grows substantially.
+
+Swiper's modular imports let you ship only what you use:
+
+- Core with navigation + pagination: ~28KB gzipped
+- You get built-in UI, accessibility, and far more features included
+
+For most projects, the development time saved by using Swiper's built-in modules and the built-in accessibility outweigh the bundle size difference.
+
+## SSR Support
+
+Keen Slider can work in SSR environments but requires DOM access for initialization. Some developers have reported layout shift and hydration issues with Next.js - the slider dimensions are calculated client-side, causing a flash of unstyled content.
+
+Swiper works reliably with Next.js, Nuxt, and SvelteKit, handling hydration correctly.
+
+## TypeScript & Developer Experience
+
+Both libraries are written in TypeScript and provide excellent type safety. Keen Slider's `useKeenSlider` hook is particularly clean for React developers.
+
+| Aspect                 | Swiper                          | Keen Slider                     |
+| ---------------------- | ------------------------------- | ------------------------------- |
+| TypeScript             | Full built-in types (35 files)  | Full built-in types             |
+| Module System          | ES modules                      | ES modules                      |
+| Plugin System          | Module-based                    | Plugin-based                    |
+| Documentation          | Extensive, maintained           | Limited, gaps in advanced usage |
+| Community Size         | Very large (40k+ stars)         | Small (~4.5k stars)             |
+| Stack Overflow Answers | Thousands                       | Very limited                    |
+| Enterprise Adoption    | Adobe, BMW, Nike, Samsung, etc. | Limited                         |
+
+Swiper's larger community means more examples, tutorials, and answered questions available when you run into problems.
+
+## AI Integration
+
+Swiper offers a dedicated <a href="/swiper-mcp">MCP (Model Context Protocol) server</a> that gives AI coding assistants like Claude, Cursor, and Windsurf programmatic access to the latest API docs, demos, and code examples. AI agents can generate correct, up-to-date Swiper code without hallucinating outdated APIs.
+
+Keen Slider has no AI integration.
+
+## Migration from Keen Slider to Swiper
+
+**Keen Slider (React):**
+
+```jsx
+import { useKeenSlider } from 'keen-slider/react';
+import 'keen-slider/keen-slider.min.css';
+
+function Carousel() {
+  const [sliderRef] = useKeenSlider({
+    loop: true,
+    slides: { perView: 3, spacing: 16 },
+  });
+
+  return (
+    <div ref={sliderRef} className="keen-slider">
+      <div className="keen-slider__slide">Slide 1</div>
+      <div className="keen-slider__slide">Slide 2</div>
+      <div className="keen-slider__slide">Slide 3</div>
+    </div>
+  );
+}
+```
+
+**Swiper (React):**
+
+```jsx
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+function Carousel() {
+  return (
+    <Swiper
+      modules={[Navigation, Pagination]}
+      slidesPerView={3}
+      spaceBetween={16}
+      loop
+      navigation
+      pagination={{ clickable: true }}
+    >
+      <SwiperSlide>Slide 1</SwiperSlide>
+      <SwiperSlide>Slide 2</SwiperSlide>
+      <SwiperSlide>Slide 3</SwiperSlide>
+    </Swiper>
+  );
+}
+```
+
+Key differences from Keen Slider:
+
+- Component-based API instead of ref-based hook
+- `slides.perView` becomes `slidesPerView`
+- `slides.spacing` becomes `spaceBetween`
+- Navigation and pagination are included out of the box - no need to build custom UI
+- `useSwiper` and `useSwiperSlide` hooks available for programmatic control
+
+## Conclusion
+
+Keen Slider deserves credit for its excellent touch physics and clean React hook API. If you're building a React-only project with minimal slider needs and strict bundle size requirements, it can work.
+
+But for most projects, Swiper is the stronger choice. It matches the touch quality, adds 7 transition effects, virtual slides, parallax, zoom, built-in navigation and pagination, comprehensive accessibility, and support for every major framework - not just React. The larger community, stronger maintenance track record, and enterprise adoption provide long-term confidence that a solo-maintainer project cannot match.
+
+Try the <a href="/playground">Swiper Playground</a> to visually configure your slider with 80+ parameters and export ready-to-use code. For a full no-code slider builder with premium effects like Panorama, Shutters, and 20+ WebGL transitions, check out <a href="https://studio.swiperjs.com" target="_blank">Swiper Studio</a>. And for even more stunning visual effects, explore the premium collection from <a href="https://uiinitiative.com" target="_blank">UI Initiative</a>.
+
+- <a href="/get-started">Get started with Swiper</a>
+- <a href="/demos">View demos</a>
+- <a href="/swiper-api">API Documentation</a>
+- <a href="/playground">Swiper Playground</a>
+- <a href="https://studio.swiperjs.com" target="_blank">
+    Swiper Studio
+  </a>
+- <a href="https://uiinitiative.com" target="_blank">
+    Premium effects by UI Initiative
+  </a>
+
+export default function Page({ children }) {
+  const components = {
+    h1: Heading.h1,
+    h2: Heading.h2,
+    h3: Heading.h3,
+    h4: Heading.h4,
+  };
+  return (
+    <MDXProvider components={components}>
+      <WithSidebarLayout meta={meta}>{children}</WithSidebarLayout>
+    </MDXProvider>
+  );
+}

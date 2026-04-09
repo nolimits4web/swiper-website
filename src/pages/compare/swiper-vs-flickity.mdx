@@ -4,7 +4,8 @@ import { WithSidebarLayout } from '@/layouts/WithSidebarLayout.js';
 
 export const meta = {
   title: 'Swiper vs Flickity - Free Open Source Carousel Comparison',
-  description: 'Compare Swiper (MIT) and Flickity (GPL/commercial). Swiper offers more features, framework support, and a fully free license.',
+  description:
+    'Compare Swiper (MIT) and Flickity (GPL/commercial). Swiper offers more features, framework support, and a fully free license.',
   competitor: 'Flickity',
 };
 
@@ -14,21 +15,21 @@ Here's how Flickity compares to Swiper across the features and capabilities that
 
 ## Quick Comparison
 
-| Feature | Swiper | Flickity |
-|---|---|---|
-| GitHub Stars | 40,000+ | ~8,000 |
-| Actively Maintained | Yes (latest: v12, 2026) | No (stalled, v3 never shipped) |
-| Dependencies | None | None |
-| License | MIT (free for everything) | GPLv3 / Commercial ($25-$110) |
-| TypeScript Support | Full (built-in types) | No (community @types) |
-| Bundle Size (gzipped) | ~25-45KB (modular) | ~10KB |
-| Framework Support | React, Vue, Angular, Svelte, Solid, Web Components | None official |
-| SSR Support | Yes | No |
-| Accessibility | Built-in ARIA, keyboard nav | Basic, incomplete |
-| Mobile Touch | Excellent (mobile-first) | Good physics, some edge cases |
-| Transition Effects | 7 built-in (3D, creative) | Slide only (fade via plugin) |
-| Responsive Breakpoints | Yes | No (watchCSS only) |
-| AI Integration (MCP) | Yes | No |
+| Feature                | Swiper                                             | Flickity                       |
+| ---------------------- | -------------------------------------------------- | ------------------------------ |
+| GitHub Stars           | 40,000+                                            | ~8,000                         |
+| Actively Maintained    | Yes (latest: v12, 2026)                            | No (stalled, v3 never shipped) |
+| Dependencies           | None                                               | None                           |
+| License                | MIT (free for everything)                          | GPLv3 / Commercial ($25-$110)  |
+| TypeScript Support     | Full (built-in types)                              | No (community @types)          |
+| Bundle Size (gzipped)  | ~25-45KB (modular)                                 | ~10KB                          |
+| Framework Support      | React, Vue, Angular, Svelte, Solid, Web Components | None official                  |
+| SSR Support            | Yes                                                | No                             |
+| Accessibility          | Built-in ARIA, keyboard nav                        | Basic, incomplete              |
+| Mobile Touch           | Excellent (mobile-first)                           | Good physics, some edge cases  |
+| Transition Effects     | 7 built-in (3D, creative)                          | Slide only (fade via plugin)   |
+| Responsive Breakpoints | Yes                                                | No (watchCSS only)             |
+| AI Integration (MCP)   | Yes                                                | No                             |
 
 ## License: MIT vs GPL/Commercial
 
@@ -49,15 +50,15 @@ Swiper is actively developed with regular releases, continuous framework support
 
 ## Framework Support
 
-| Framework | Swiper | Flickity |
-|---|---|---|
-| Vanilla JS | Yes | Yes |
-| React | Official components + hooks | react-flickity-component (3rd party) |
-| Vue | Official components + hooks | vue-flickity (3rd party) |
-| Angular | Yes (via Swiper Element) | No |
-| Svelte | Yes (via Swiper Element) | No |
-| Solid | Yes (via Swiper Element) | No |
-| Web Components | Yes (Swiper Element) | No |
+| Framework      | Swiper                      | Flickity                             |
+| -------------- | --------------------------- | ------------------------------------ |
+| Vanilla JS     | Yes                         | Yes                                  |
+| React          | Official components + hooks | react-flickity-component (3rd party) |
+| Vue            | Official components + hooks | vue-flickity (3rd party)             |
+| Angular        | Yes (via Swiper Element)    | No                                   |
+| Svelte         | Yes (via Swiper Element)    | No                                   |
+| Solid          | Yes (via Swiper Element)    | No                                   |
+| Web Components | Yes (Swiper Element)        | No                                   |
 
 Flickity was designed for vanilla JavaScript with optional jQuery integration. Its community React wrapper exists but has its own maintenance issues, particularly around React lifecycle management and re-renders.
 
@@ -67,36 +68,36 @@ Swiper provides first-class React and Vue components with hooks, plus Swiper Ele
 
 ### Transition Effects
 
-| Effect | Swiper | Flickity |
-|---|---|---|
-| Slide | Yes | Yes |
-| Fade | Yes (with crossfade) | Via plugin (flickity-fade) |
-| Cube (3D) | Yes | No |
-| Coverflow (3D) | Yes | No |
-| Flip (3D) | Yes | No |
-| Cards | Yes | No |
-| Creative (custom) | Yes | No |
+| Effect            | Swiper               | Flickity                   |
+| ----------------- | -------------------- | -------------------------- |
+| Slide             | Yes                  | Yes                        |
+| Fade              | Yes (with crossfade) | Via plugin (flickity-fade) |
+| Cube (3D)         | Yes                  | No                         |
+| Coverflow (3D)    | Yes                  | No                         |
+| Flip (3D)         | Yes                  | No                         |
+| Cards             | Yes                  | No                         |
+| Creative (custom) | Yes                  | No                         |
 
 Swiper offers 7 built-in effects including 3D transforms. Flickity has only the default slide transition, with fade available as a separate plugin. No 3D effects are available.
 
 ### Core Slider Features
 
-| Feature | Swiper | Flickity |
-|---|---|---|
-| Responsive Breakpoints | Yes (per-breakpoint config) | No (watchCSS only) |
-| Infinite Loop | Yes | Yes (wrapAround) |
-| Autoplay | Yes (with progress tracking) | Yes |
-| Free Mode / Momentum | Yes | Yes (freeScroll) |
-| Vertical Slider | Yes | No |
-| Centered Slides | Yes | Yes (cellAlign: 'center') |
-| Multiple Slides Per View | Yes | Yes (via cell sizing) |
-| Auto Height | Yes | Yes (adaptiveHeight) |
-| Variable Width Slides | Yes | Yes (signature feature) |
-| RTL Support | Yes | No |
-| CSS Scroll Snap Mode | Yes | No |
-| Grid / Multi-row | Yes | No |
-| Nested Sliders | Yes | No |
-| Group Slides | Yes (slidesPerGroup) | Yes (groupCells) |
+| Feature                  | Swiper                       | Flickity                  |
+| ------------------------ | ---------------------------- | ------------------------- |
+| Responsive Breakpoints   | Yes (per-breakpoint config)  | No (watchCSS only)        |
+| Infinite Loop            | Yes                          | Yes (wrapAround)          |
+| Autoplay                 | Yes (with progress tracking) | Yes                       |
+| Free Mode / Momentum     | Yes                          | Yes (freeScroll)          |
+| Vertical Slider          | Yes                          | No                        |
+| Centered Slides          | Yes                          | Yes (cellAlign: 'center') |
+| Multiple Slides Per View | Yes                          | Yes (via cell sizing)     |
+| Auto Height              | Yes                          | Yes (adaptiveHeight)      |
+| Variable Width Slides    | Yes                          | Yes (signature feature)   |
+| RTL Support              | Yes                          | No                        |
+| CSS Scroll Snap Mode     | Yes                          | No                        |
+| Grid / Multi-row         | Yes                          | No                        |
+| Nested Sliders           | Yes                          | No                        |
+| Group Slides             | Yes (slidesPerGroup)         | Yes (groupCells)          |
 
 A major gap is **responsive breakpoints**. Swiper lets you define completely different configurations per viewport width - different slides per view, spacing, effects, and more. Flickity's only responsive option is `watchCSS`, which can enable/disable the carousel based on CSS media queries but doesn't allow configuration changes.
 
@@ -104,20 +105,20 @@ Flickity also lacks vertical sliding, RTL support, and grid layouts.
 
 ### Advanced Features
 
-| Feature | Swiper | Flickity |
-|---|---|---|
-| Virtual Slides | Yes (render 1000s efficiently) | No |
-| Parallax | Yes (built-in) | No |
-| Zoom (pinch + double-tap) | Yes | No |
-| Thumbs Gallery | Yes (purpose-built) | Yes (asNavFor) |
-| Lazy Loading | Yes | Yes |
-| Hash Navigation | Yes | Via plugin (flickity-hash) |
-| History Navigation | Yes | No |
-| Controller (2-way sync) | Yes | No |
-| Keyboard Control | Yes | Yes |
-| Mousewheel Control | Yes | No |
-| Scrollbar | Yes (draggable) | No |
-| Fullscreen | Via CSS/custom | Via plugin (flickity-fullscreen) |
+| Feature                   | Swiper                         | Flickity                         |
+| ------------------------- | ------------------------------ | -------------------------------- |
+| Virtual Slides            | Yes (render 1000s efficiently) | No                               |
+| Parallax                  | Yes (built-in)                 | No                               |
+| Zoom (pinch + double-tap) | Yes                            | No                               |
+| Thumbs Gallery            | Yes (purpose-built)            | Yes (asNavFor)                   |
+| Lazy Loading              | Yes                            | Yes                              |
+| Hash Navigation           | Yes                            | Via plugin (flickity-hash)       |
+| History Navigation        | Yes                            | No                               |
+| Controller (2-way sync)   | Yes                            | No                               |
+| Keyboard Control          | Yes                            | Yes                              |
+| Mousewheel Control        | Yes                            | No                               |
+| Scrollbar                 | Yes (draggable)                | No                               |
+| Fullscreen                | Via CSS/custom                 | Via plugin (flickity-fullscreen) |
 
 Swiper's advanced features like virtual slides, parallax, and zoom have no equivalent in Flickity. The virtual slides module is particularly important for performance-critical applications with large datasets.
 
@@ -126,12 +127,14 @@ Swiper's advanced features like virtual slides, parallax, and zoom have no equiv
 Flickity's physics-based dragging is genuinely excellent - it was one of the library's defining features. The momentum, deceleration, and configurable friction create a natural-feeling interaction.
 
 However, Flickity has known touch issues:
+
 - Click event conflicts on draggable elements containing links or buttons
 - Conflicts with browser back/forward swipe gestures on mobile
 - Some edge cases on iOS Safari
 - No pinch-to-zoom support
 
 Swiper was built mobile-first and matches that touch quality while adding:
+
 - Pinch-to-zoom and double-tap zoom
 - Configurable touch angle and threshold for scroll conflict prevention
 - Native touch events with edge detection for iOS/Android back gestures
@@ -141,19 +144,20 @@ Swiper was built mobile-first and matches that touch quality while adding:
 
 ## TypeScript & Modern Tooling
 
-| Aspect | Swiper | Flickity |
-|---|---|---|
-| TypeScript | Full built-in types (35 files) | No (community @types) |
-| Module System | ES modules (tree-shakeable) | UMD only |
-| Modular CSS | Per-module CSS imports | Single CSS file |
-| CSS Custom Properties | Yes (easy theming) | No |
-| Tree Shaking | Yes | No |
+| Aspect                | Swiper                         | Flickity              |
+| --------------------- | ------------------------------ | --------------------- |
+| TypeScript            | Full built-in types (35 files) | No (community @types) |
+| Module System         | ES modules (tree-shakeable)    | UMD only              |
+| Modular CSS           | Per-module CSS imports         | Single CSS file       |
+| CSS Custom Properties | Yes (easy theming)             | No                    |
+| Tree Shaking          | Yes                            | No                    |
 
 Flickity predates the ES module era and ships only as a UMD bundle. There's no tree shaking support and no official TypeScript definitions. Swiper provides full ES module exports, modular CSS imports, and comprehensive built-in types.
 
 ## Accessibility
 
 Flickity has basic but limited accessibility:
+
 - `aria-selected` on the current cell
 - Basic ARIA attributes on navigation buttons
 - Keyboard arrow key navigation
@@ -161,6 +165,7 @@ Flickity has basic but limited accessibility:
 - Does not follow the WAI-ARIA carousel pattern
 
 Swiper's A11y module provides:
+
 - ARIA labels and roles for slides, navigation, and pagination
 - `aria-live` regions for screen reader announcements
 - Full keyboard navigation
@@ -178,6 +183,7 @@ Swiper works with Next.js, Nuxt, and SvelteKit out of the box, handling hydratio
 Flickity is lightweight at ~10KB gzipped for the core. However, adding plugins (fade, fullscreen, hash) increases this, and the lack of tree shaking means you ship the entire library even if you use a fraction of it.
 
 Swiper's modular architecture lets you import only what you need:
+
 - Core only: ~25KB gzipped
 - With specific modules: import just navigation, pagination, or any combination
 - Full bundle: ~45KB gzipped with all modules
@@ -193,6 +199,7 @@ Flickity has no AI integration of any kind.
 ## Migration from Flickity to Swiper
 
 **Flickity:**
+
 ```js
 import Flickity from 'flickity';
 import 'flickity/css/flickity.css';
@@ -209,6 +216,7 @@ const carousel = new Flickity('.carousel', {
 ```
 
 **Swiper:**
+
 ```js
 import Swiper from 'swiper';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -233,6 +241,7 @@ const swiper = new Swiper('.swiper', {
 ```
 
 Key differences from Flickity:
+
 - `wrapAround` becomes `loop`
 - `autoPlay` becomes `autoplay` with a `delay` option
 - `pageDots` becomes `pagination` module
@@ -253,8 +262,12 @@ Try the <a href="/playground">Swiper Playground</a> to visually configure your s
 - <a href="/demos">View demos</a>
 - <a href="/swiper-api">API Documentation</a>
 - <a href="/playground">Swiper Playground</a>
-- <a href="https://studio.swiperjs.com" target="_blank">Swiper Studio</a>
-- <a href="https://uiinitiative.com" target="_blank">Premium effects by UI Initiative</a>
+- <a href="https://studio.swiperjs.com" target="_blank">
+    Swiper Studio
+  </a>
+- <a href="https://uiinitiative.com" target="_blank">
+    Premium effects by UI Initiative
+  </a>
 
 export default function Page({ children }) {
   const components = {
