@@ -85,6 +85,9 @@ export function buildSwiperOptions(s) {
     o.maxBackfaceHiddenSlides = s.maxBackfaceHiddenSlides;
   if (s.lazyPreloadPrevNext > 0) o.lazyPreloadPrevNext = s.lazyPreloadPrevNext;
 
+  // --- Parallax ---
+  if (s.parallax) o.parallax = true;
+
   // --- Effect ---
   if (s.effect !== 'slide') {
     o.effect = s.effect;
@@ -245,11 +248,24 @@ export function generateSwiperHTML(state) {
   const opts = buildSwiperOptions(state);
 
   // Slides
-  const slides = Array.from(
-    { length: state.totalSlides },
-    (_, i) =>
-      `      <div class="swiper-slide" style="background:#444">${i + 1}</div>`
-  ).join('\n');
+  const slideContent = state.slideContent || 'text';
+  const parallax = state.parallax;
+  const slides = Array.from({ length: state.totalSlides }, (_, i) => {
+    const imgIndex = (i % 10) + 1;
+    const imgSrc = `/demos/images/abstract-${imgIndex}.jpg`;
+    const parallaxTextAttr = parallax ? ' data-swiper-parallax="-100%"' : '';
+    const parallaxImageAttr = parallax ? ' data-swiper-parallax="30%"' : '';
+    if (slideContent === 'images') {
+      return `      <div class="swiper-slide"><img src="${imgSrc}"${parallaxImageAttr} /></div>`;
+    }
+    if (slideContent === 'text-images') {
+      return `      <div class="swiper-slide"><img src="${imgSrc}"${parallaxImageAttr} /><span${parallaxTextAttr}>Slide ${i + 1}</span></div>`;
+    }
+    if (parallax) {
+      return `      <div class="swiper-slide" style="background:#444"><span${parallaxTextAttr}>Slide ${i + 1}</span></div>`;
+    }
+    return `      <div class="swiper-slide" style="background:#444">Slide ${i + 1}</div>`;
+  }).join('\n');
 
   // Optional DOM elements
   const navHTML = state.navigation
@@ -290,8 +306,10 @@ export function generateSwiperHTML(state) {
     font-size:48px;font-weight:700;
     color:rgba(255,255,255,.85);
     font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
-    user-select:none;
-  }${autoSlideCSS}${gridCSS}${autoHeightCSS}
+    user-select:none;position:relative;overflow:hidden;
+  }
+  .swiper-slide img{width:100%;height:100%;object-fit:cover;display:block}
+  .swiper-slide span{position:absolute;z-index:1}${autoSlideCSS}${gridCSS}${autoHeightCSS}
 </style>
 </head>
 <body>

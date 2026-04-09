@@ -16,6 +16,17 @@ export const PARAMS_CONFIG = [
         step: 1,
       },
       {
+        name: 'slideContent',
+        label: 'Slide content',
+        type: 'select',
+        default: 'text',
+        options: [
+          { value: 'text', label: 'Text' },
+          { value: 'images', label: 'Images' },
+          { value: 'text-images', label: 'Text + Images' },
+        ],
+      },
+      {
         name: 'direction',
         label: 'Direction',
         type: 'select',
@@ -787,6 +798,15 @@ export const PARAMS_CONFIG = [
   },
 
   // -----------------------------------------------------------------------
+  // Parallax
+  // -----------------------------------------------------------------------
+  {
+    title: 'Parallax',
+    moduleToggle: 'parallax',
+    params: [],
+  },
+
+  // -----------------------------------------------------------------------
   // Autoplay
   // -----------------------------------------------------------------------
   {
@@ -986,6 +1006,7 @@ export const PARAMS_CONFIG = [
 /** Module toggle defaults (not in params arrays). */
 export const MODULE_DEFAULTS = {
   freeMode: false,
+  parallax: false,
   navigation: true,
   pagination: false,
   scrollbar: false,
