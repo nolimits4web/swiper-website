@@ -47,7 +47,7 @@ const PlanSection = (props) => {
             className={`flex items-center justify-center -md bg-surface-1 p-1 text-center font-semibold duration-300 hover:bg-surface-2 hover:no-underline ${sizes} ${
               props.plan === 'Sponsor' ? 'text-[6px] leading-none' : 'text-xs'
             }`}
-            href="https://opencollective.com/swiper"
+            href="https://sponsors.nolimits4web.com"
             rel="sponsored"
             target="_blank"
           >
@@ -67,18 +67,6 @@ export default function HomeSponsors({
   if (typeof window !== 'undefined' && window.__NO_SPONSORS__) return null;
   return (
     <div data-sponsors="">
-      <PlanSection
-        showPlaceholder={showPlaceholders}
-        showTitle={showTitles}
-        spacing={spacing}
-        plan="Platinum Sponsor"
-      />
-      <PlanSection
-        showPlaceholder={showPlaceholders}
-        showTitle={showTitles}
-        spacing={spacing}
-        plan="Gold Sponsor"
-      />
       <PlanSection
         showPlaceholder={showPlaceholders}
         showTitle={showTitles}

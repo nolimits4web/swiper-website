@@ -124,11 +124,14 @@ export default function Footer() {
             <div className="flex flex-col gap-4 text-sm">
               <div>Support</div>
               <div className="flex flex-col gap-2">
-                <Link target="_blank" href="https://opencollective.com/swiper">
-                  Open Collective
+                <Link target="_blank" href="https://sponsors.nolimits4web.com">
+                  Become a Sponsor
                 </Link>
-                <Link target="_blank" href="https://patreon.com/swiperjs">
-                  Patreon
+                <Link
+                  target="_blank"
+                  href="https://github.com/sponsors/nolimits4web"
+                >
+                  Support Developer
                 </Link>
                 <Link href="/sponsors">Sponsors</Link>
               </div>
