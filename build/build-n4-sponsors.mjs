@@ -7,6 +7,11 @@ const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const API_URL = 'https://sponsors.nolimits4web.com/api/sponsors/swiper';
 const OUTPUT_PATH = path.resolve(__dirname, '../src/shared/n4-sponsors.json');
 
+const planMap = {
+  'Gold Sponsor': 'Silver Sponsor',
+  Sponsor: 'Sponsor',
+};
+
 (async () => {
   const { default: chalk } = await import('chalk');
 
@@ -23,7 +28,7 @@ const OUTPUT_PATH = path.resolve(__dirname, '../src/shared/n4-sponsors.json');
       createdAt: item.createdAt,
       title: item.title ?? '',
       link: item.link ?? '',
-      plan: item.plan ?? 'Sponsor',
+      plan: planMap[item.plan] ?? 'Sponsor',
       ref: '',
       image: item.image ?? '',
       endDate: '',
