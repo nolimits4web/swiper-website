@@ -1,4 +1,10 @@
 import sponsors from '../shared/sponsors-list.json';
+import n4Sponsors from '../shared/n4-sponsors.json';
+
+const allSponsors = [...n4Sponsors, ...sponsors];
+
+const getImageSrc = (image) =>
+  image.startsWith('http') ? image : `/images/sponsors/${image}`;
 
 export default function SidebarSponsors() {
   if (typeof window !== 'undefined' && window.__NO_SPONSORS__) return null;
@@ -15,7 +21,7 @@ export default function SidebarSponsors() {
         </a>
       </div>
       <div className="flex flex-wrap gap-1">
-        {sponsors
+        {allSponsors
           .filter(({ plan, active }) => plan !== 'Sponsor' && active)
           .map(({ link, title, image }, index) => (
             <a
@@ -31,7 +37,7 @@ export default function SidebarSponsors() {
                   className="h-7 w-7 object-contain lg:h-8 lg:w-8"
                   alt={title}
                   loading="lazy"
-                  src={`/images/sponsors/${image}`}
+                  src={getImageSrc(image)}
                 />
               )}
             </a>

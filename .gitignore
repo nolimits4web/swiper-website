@@ -45,5 +45,6 @@ public/demos/**/*.html
 !public/demos/images
 
 public/sponsors-list.json
+src/shared/n4-sponsors.json
 .wrangler/
 .tsbuildinfo

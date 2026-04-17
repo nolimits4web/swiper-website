@@ -1,9 +1,15 @@
 import sponsors from '../shared/sponsors-list.json';
+import n4Sponsors from '../shared/n4-sponsors.json';
 import { HomeSectionTitle } from './HomeSectionTitle';
+
+const allSponsors = [...n4Sponsors, ...sponsors];
+
+const getImageSrc = (image) =>
+  image.startsWith('http') ? image : `/images/sponsors/${image}`;
 
 const PlanSection = (props) => {
   const { showPlaceholder, showTitle, spacing } = props;
-  const items = sponsors.filter(
+  const items = allSponsors.filter(
     ({ plan, active }) => props.plan === plan && active
   );
   const sizes = {
@@ -32,7 +38,7 @@ const PlanSection = (props) => {
               {image ? (
                 <img
                   className="h-auto max-h-full w-auto max-w-full "
-                  src={`/images/sponsors/${image}`}
+                  src={getImageSrc(image)}
                   alt={title}
                   loading="lazy"
                 />
