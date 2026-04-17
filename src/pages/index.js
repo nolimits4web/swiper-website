@@ -322,8 +322,8 @@ export default function Home(props) {
           The Tools Powering Modern Front-End Development
         </HomeSectionTitle>
         <HomeSectionText>
-          Discover our full suite of UI tools, frameworks, and no-code solutions
-          built to elevate your development workflow.
+          Discover our full suite of UI tools, frameworks, no-code solutions and
+          productivity apps built to elevate your development workflow.
         </HomeSectionText>
         <HomeProjects />
       </HomeContainer>
@@ -336,8 +336,8 @@ export default function Home(props) {
               <a href="https://sponsors.nolimits4web.com" target="_blank">
                 Sponsor Swiper
               </a>{' '}
-              and get your logo and link featured on the website,
-              or support the developer on{' '}
+              and get your logo and link featured on the website, or support the
+              developer on{' '}
               <a
                 href="https://github.com/sponsors/nolimits4web"
                 target="_blank"

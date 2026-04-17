@@ -2,19 +2,13 @@ import Link from 'next/link';
 
 export default function HomeProjects() {
   return (
-    <div className="mx-auto grid grid-cols-2 items-stretch gap-4 sm:grid-cols-3 md:gap-8 text-center lg:grid-cols-4">
+    <div className="mx-auto grid grid-cols-2 items-stretch gap-4 sm:grid-cols-3 text-center lg:text-left">
       {[
         {
           url: 'https://paneflow.com',
           title: 'Paneflow',
           description: 'Build Stunning Slideshows Visually. No Code Required',
           logo: 'paneflow.svg',
-        },
-        {
-          url: 'https://t0ggles.com',
-          title: 't0ggles',
-          description: 'Your ultimate multiple projects management tool',
-          logo: 't0ggles.svg',
         },
         {
           url: 'https://studio.swiperjs.com',
@@ -30,11 +24,19 @@ export default function HomeProjects() {
           logo: 'uiinitiative.svg',
         },
         {
-          url: 'https://fisper.app',
-          title: 'Fisper',
-          description: 'Local AI Voice Dictation for macOS',
-          logo: 'fisper.png',
+          url: 'https://t0ggles.com',
+          title: 't0ggles',
+          description: 'Your ultimate multiple projects management tool',
+          logo: 't0ggles.svg',
         },
+        {
+          url: 'https://startpagehq.com',
+          title: 'Start Page HQ',
+          description:
+            'Your browser new tab as a personal dashboard with 50+ widgets, synced across all devices',
+          logo: 'startpagehq.svg',
+        },
+
         {
           url: 'https://framework7.io',
           title: 'Framework7',
@@ -43,17 +45,23 @@ export default function HomeProjects() {
           logo: 'framework7.svg',
         },
         {
+          url: 'https://konstaui.com',
+          title: 'Konsta UI',
+          description:
+            'Pixel perfect mobile UI components built with Tailwind CSS',
+          logo: 'konsta.svg',
+        },
+        {
           url: 'https://atroposjs.com',
           title: 'Atropos',
           description: 'Stunning touch-friendly 3D parallax hover effects',
           logo: 'atropos.svg',
         },
         {
-          url: 'https://konstaui.com',
-          title: 'Konsta UI',
-          description:
-            'Pixel perfect mobile UI components built with Tailwind CSS',
-          logo: 'konsta.svg',
+          url: 'https://fisper.app',
+          title: 'Fisper',
+          description: 'Local AI Voice Dictation for macOS',
+          logo: 'fisper.png',
         },
       ].map((item) => (
         <Link
@@ -63,13 +71,13 @@ export default function HomeProjects() {
           key={item.title}
         >
           <div className="absolute inset-0 bg-white/10 rounded-3xl opacity-0 group-hover:opacity-100 duration-200 group-active:opacity-50 pointer-events-none" />
-          <div className="flex flex-col gap-4 md:gap-8 p-4 md:p-8 items-center justify-center group-active:scale-90 group-active:opacity-75 duration-200">
+          <div className="flex flex-col lg:flex-row lg:items-start lg:gap-4 gap-4 md:gap-8 p-4 md:p-8 items-center justify-center group-active:scale-90 group-active:opacity-75 duration-200">
             <img
-              className="w-16 h-16 lg:w-24 lg:h-24"
+              className="size-16"
               src={`/images/projects/${item.logo}`}
               alt={item.title}
             />
-            <div className="flex flex-col gap-2 md:gap-4">
+            <div className="flex flex-col gap-2 md:gap-4 lg:items-start">
               <div className="">{item.title}</div>
               <div className="text-on-surface-darker">{item.description}</div>
             </div>
