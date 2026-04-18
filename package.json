@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "npm-run-all --parallel worker-dev next-dev",
-    "next-dev": "npm run build-uiinitiative-demos && npm run build-n4-sponsors && npm run build-sponsors && npm run build-demos && npm run build-api && npm run build-mcp-data && npm run build-types && next dev",
+    "next-dev": "npm run build-uiinitiative-demos && npm run build-n4-sponsors && npm run build-sponsors && npm run build-demos && npm run build-api && npm run build-mcp-data && npm run build-types && npm run build-sitemap && next dev",
     "next": "next dev",
     "worker-dev": "wrangler dev --port 8080",
-    "build": "npm run build-uiinitiative-demos && npm run build-demos && npm run build-api && npm run build-mcp-data && npm run build-types && npm run build-n4-sponsors && npm run build-sponsors && next build",
+    "build": "npm run build-uiinitiative-demos && npm run build-demos && npm run build-api && npm run build-mcp-data && npm run build-types && npm run build-n4-sponsors && npm run build-sponsors && npm run build-sitemap && next build",
     "start": "next start",
     "build-uiinitiative-demos": "node build/build-uiinitiative-demos.cjs",
     "build-n4-sponsors": "node build/build-n4-sponsors.mjs",
@@ -17,6 +17,7 @@
     "build-api": "node build/build-api.mjs",
     "build-mcp-data": "node build/build-mcp-data.mjs",
     "build-types": "node build/build-types.cjs",
+    "build-sitemap": "node build/build-sitemap.mjs",
     "copy-changelog": "node build/copy-changelog.mjs",
     "check-types": "tsc --noEmit",
     "cf-typegen": "wrangler types  --env-interface CloudflareBindings"

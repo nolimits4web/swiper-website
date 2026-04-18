@@ -2,6 +2,13 @@ import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 import { mcpApp } from './mcp/index';
 
+const AGENT_DISCOVERY_LINKS = [
+  '</sitemap.xml>; rel="sitemap"; type="application/xml"',
+  '</llms.txt>; rel="llms-txt"; type="text/plain"',
+  '</.well-known/mcp/server-card.json>; rel="mcp-server-card"; type="application/json"',
+  '</swiper-api>; rel="service-doc"; type="text/html"',
+].join(', ');
+
 const app = new Hono<{ Bindings: CloudflareBindings }>()
   .use(
     '/mcp/*',
@@ -18,8 +25,11 @@ const app = new Hono<{ Bindings: CloudflareBindings }>()
     const country = (c.req.raw.cf as IncomingRequestCfProperties | undefined)
       ?.country;
     const contentType = response.headers.get('content-type') || '';
-    if (country === 'CN' && contentType.includes('text/html')) {
-      return new HTMLRewriter()
+    const isHtml = contentType.includes('text/html');
+
+    let out = response;
+    if (country === 'CN' && isHtml) {
+      out = new HTMLRewriter()
         .on('head', {
           element(element) {
             element.prepend(
@@ -36,7 +46,12 @@ const app = new Hono<{ Bindings: CloudflareBindings }>()
         .transform(response);
     }
 
-    return response;
+    if (isHtml) {
+      out = new Response(out.body, out);
+      out.headers.append('Link', AGENT_DISCOVERY_LINKS);
+    }
+
+    return out;
   });
 
 export default app;

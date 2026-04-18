@@ -1,0 +1,64 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schemas/draft/2025/server-card.json",
+  "serverInfo": {
+    "name": "swiper-mcp-server",
+    "version": "1.0.0",
+    "title": "Swiper MCP Server",
+    "description": "Model Context Protocol server for Swiper API documentation, demos, and code examples. Provides programmatic access to Swiper options, methods, events, modules, and framework-specific demo code.",
+    "websiteUrl": "https://swiperjs.com/swiper-mcp",
+    "documentationUrl": "https://swiperjs.com/swiper-mcp"
+  },
+  "protocolVersion": "2024-11-05",
+  "transport": {
+    "type": "http",
+    "endpoint": "https://swiperjs.com/mcp",
+    "methods": ["POST"]
+  },
+  "capabilities": {
+    "tools": {
+      "listChanged": false
+    }
+  },
+  "authentication": {
+    "required": false
+  },
+  "tools": [
+    {
+      "name": "search-api",
+      "description": "Search Swiper API documentation for options, methods, or events."
+    },
+    {
+      "name": "get-option",
+      "description": "Get detailed information about a specific Swiper option by name."
+    },
+    {
+      "name": "get-method",
+      "description": "Get detailed information about a specific Swiper method by name."
+    },
+    {
+      "name": "get-event",
+      "description": "Get detailed information about a specific Swiper event by name."
+    },
+    {
+      "name": "get-demo",
+      "description": "Get demo code for a specific Swiper demo in a chosen framework (core, element, react, vue, etc.)."
+    },
+    {
+      "name": "list-demos",
+      "description": "List all available Swiper demos with slugs, titles, folders, and supported frameworks."
+    },
+    {
+      "name": "get-module-options",
+      "description": "Get all options, methods, and events for a specific Swiper module."
+    },
+    {
+      "name": "get-premium-recommendations",
+      "description": "Get premium Swiper plugin recommendations based on effect, module, keywords, or use case."
+    }
+  ],
+  "contact": {
+    "homepage": "https://swiperjs.com",
+    "repository": "https://github.com/nolimits4web/swiper"
+  },
+  "license": "MIT"
+}
