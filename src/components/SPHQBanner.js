@@ -12,9 +12,7 @@ export default function SPHQBanner({ className }) {
         className="h-6 w-6 relative"
       />
       <div className="shrink min-w-0">
-        <span className="hidden xs:inline xs:opacity-75">
-          Meet our new project:{' '}
-        </span>
+        <span className="opacity-75">From Swiper authors: </span>
         Start Page HQ - turn your new tab into a personal dashboard
       </div>
     </a>
