@@ -1,5 +1,25 @@
-import { useState, useRef, useEffect } from 'react';
 import clsx from 'clsx';
+import {
+  NumberScrubber,
+  Switch,
+  Select,
+  Popover,
+  PopoverRoot,
+  PopoverTrigger,
+  Button,
+  Chip,
+  List,
+  ListButton,
+  ListSeparator,
+  ListTitle,
+  DropdownIcon,
+  Toolbar,
+  Segmented,
+  SegmentedButton,
+  Tooltip,
+  PopoverClose,
+} from '@cladd-ui/react';
+import { TextIcon, ImageIcon } from './PlaygroundSidebar';
 
 const SUBPARAM_PREFIXES = [
   'navigation',
@@ -34,8 +54,8 @@ function ParamRow({ label, apiAnchor, children, indent }) {
   return (
     <div
       className={clsx(
-        'flex items-center justify-between py-1',
-        indent && 'pl-4'
+        'flex items-center justify-between gap-2 py-1',
+        indent && 'pl-3'
       )}
     >
       {apiAnchor ? (
@@ -43,14 +63,16 @@ function ParamRow({ label, apiAnchor, children, indent }) {
           href={`/swiper-api#param-${apiAnchor}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="mr-2 text-xs text-white/60! no-underline! transition-colors hover:underline!"
+          className="min-w-0  truncate text-xs text-cladd-fg-soft! no-underline! transition-colors hover:text-cladd-fg! hover:underline!"
         >
           {label}
         </a>
       ) : (
-        <span className="mr-2 text-xs text-white/60">{label}</span>
+        <span className="min-w-0 flex-1 truncate text-xs text-cladd-fg-soft">
+          {label}
+        </span>
       )}
-      {children}
+      <div className="shrink-0">{children}</div>
     </div>
   );
 }
@@ -62,55 +84,21 @@ function BooleanInput({ param, value, onChange }) {
       apiAnchor={getApiAnchor(param.name)}
       indent={param.indent}
     >
-      <button
-        type="button"
-        onClick={() => onChange(!value)}
-        className={clsx(
-          'relative h-[22px] w-[40px] shrink-0 rounded-full transition-colors duration-200',
-          value ? 'bg-primary' : 'bg-white/15'
-        )}
-      >
-        <span
-          className={clsx(
-            'absolute top-[3px] h-4 w-4 rounded-full bg-white shadow transition-all duration-200',
-            value ? 'left-[20px]' : 'left-[3px]'
-          )}
-        />
-      </button>
+      <Switch size="sm" checked={value} onChange={onChange} />
     </ParamRow>
   );
 }
 
 function NumberInputControl({ param, value, onChange }) {
   const step = param.step ?? 1;
-  const min = param.min ?? -Infinity;
-  const max = param.max ?? Infinity;
-  const round = (v) => Math.round(v * 10000) / 10000;
-  const clamp = (v) => round(Math.min(max, Math.max(min, v)));
-  const snap = (v) => {
-    if (step >= 1) return clamp(Math.round(v / step) * step);
-    return clamp(round(Math.round(v / step) * step));
-  };
-  const display = Number.isInteger(value)
-    ? value
-    : parseFloat(value.toFixed(4));
-
-  const [editing, setEditing] = useState(false);
-  const [draft, setDraft] = useState('');
-  const inputRef = useRef(null);
-
-  useEffect(() => {
-    if (editing && inputRef.current) {
-      inputRef.current.focus();
-      inputRef.current.select();
-    }
-  }, [editing]);
-
-  const commit = () => {
-    setEditing(false);
-    const n = Number(draft);
-    if (!Number.isNaN(n)) onChange(snap(n));
-  };
+  const min = param.min ?? 0;
+  const max = param.max ?? 1_000_000;
+  const isFractional = step < 1;
+  const unit = param.unit ?? '';
+  const formatNumber = isFractional
+    ? (v) => (Number.isInteger(v) ? String(v) : v.toFixed(2))
+    : (v) => String(v);
+  const displayValue = (v) => `${formatNumber(v)}${unit}`;
 
   return (
     <ParamRow
@@ -118,88 +106,110 @@ function NumberInputControl({ param, value, onChange }) {
       apiAnchor={getApiAnchor(param.name)}
       indent={param.indent}
     >
-      <div className="flex items-center overflow-hidden rounded-full h-7 w-20 border border-outline bg-pg-surface-2">
-        <button
-          type="button"
-          onClick={() => onChange(clamp(value - step))}
-          className="flex h-full w-6 items-center justify-center text-sm leading-[1]! text-white/40 hover:text-white/80 hover:bg-pg-surface-3 active:bg-pg-surface-3/50 shrink-0"
-        >
-          -
-        </button>
-        {editing ? (
-          <input
-            ref={inputRef}
-            type="text"
-            inputMode="decimal"
-            value={draft}
-            onChange={(e) => setDraft(e.target.value)}
-            onBlur={commit}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') commit();
-              if (e.key === 'Escape') setEditing(false);
-            }}
-            className="w-full shrink bg-transparent text-center text-xs tabular-nums text-white/80 outline-none min-w-0"
-          />
-        ) : (
-          <span
-            className="w-full min-w-0 shrink cursor-text text-center text-xs tabular-nums text-white/80 hover:bg-pg-surface-3 active:bg-pg-surface-3 h-full flex items-center justify-center"
-            onClick={() => {
-              setDraft(String(display));
-              setEditing(true);
-            }}
-          >
-            {display}
-          </span>
-        )}
-        <button
-          type="button"
-          onClick={() => onChange(clamp(value + step))}
-          className="flex h-full w-6 items-center justify-center text-sm leading-[1]! text-white/40 hover:text-white/80 hover:bg-pg-surface-3 active:bg-pg-surface-3/50 shrink-0"
-        >
-          +
-        </button>
-      </div>
+      <NumberScrubber
+        size="md"
+        rounded
+        value={value}
+        onChange={onChange}
+        min={min}
+        max={max}
+        step={step}
+        displayValue={displayValue}
+        className="min-w-20"
+        onPointerDown={() =>
+          window.dispatchEvent(new Event('playground:scrub-start'))
+        }
+      />
+    </ParamRow>
+  );
+}
+
+function renderSegmentIcon(iconKey) {
+  if (iconKey === 'text-image') {
+    return (
+      <span className="flex items-center gap-0.5">
+        <TextIcon className="-mr-1!" />
+        <ImageIcon />
+      </span>
+    );
+  }
+  if (iconKey === 'text') return <TextIcon />;
+  if (iconKey === 'image') return <ImageIcon />;
+  return null;
+}
+
+function SegmentedInputControl({ param, value, onChange }) {
+  const hasIcons = param.options.every((o) => o.iconKey);
+  return (
+    <ParamRow
+      label={param.label}
+      apiAnchor={getApiAnchor(param.name)}
+      indent={param.indent}
+    >
+      <Toolbar size="sm">
+        <Segmented>
+          {param.options.map((o) => {
+            const button = (
+              <SegmentedButton
+                key={hasIcons ? undefined : o.value}
+                active={o.value === value}
+                onClick={() => onChange(o.value)}
+                aria-label={o.label}
+              >
+                {hasIcons ? renderSegmentIcon(o.iconKey) : o.label}
+              </SegmentedButton>
+            );
+            if (hasIcons) {
+              return (
+                <Tooltip key={o.value} tooltip={o.label}>
+                  {button}
+                </Tooltip>
+              );
+            }
+            return button;
+          })}
+        </Segmented>
+      </Toolbar>
     </ParamRow>
   );
 }
 
 function SelectInputControl({ param, value, onChange }) {
+  const options = param.options.map((o) => o.value);
+  const labelByValue = Object.fromEntries(
+    param.options.map((o) => [o.value, o.label])
+  );
+
   return (
     <ParamRow
       label={param.label}
       apiAnchor={getApiAnchor(param.name)}
       indent={param.indent}
     >
-      <select
+      <Select
+        size="md"
+        rounded
+        keyboardHints={false}
+        title={param.label}
+        options={options}
         value={value}
-        onChange={(e) => onChange(e.target.value)}
-        className="rounded-full border border-outline bg-pg-surface-2 px-2 py-1 h-7 text-xs text-white/80 outline-none min-w-20 hover:bg-pg-surface-3 active:bg-pg-surface-3"
+        onChange={onChange}
+        renderOption={({ value: v }) => labelByValue[v]}
+        className="w-24"
+        popoverClassName="min-w-[140px]"
       >
-        {param.options.map((opt) => (
-          <option key={opt.value} value={opt.value}>
-            {opt.label}
-          </option>
-        ))}
-      </select>
+        {labelByValue[value] ?? value}
+      </Select>
     </ParamRow>
   );
 }
 
-function PopoverSelectControl({ param, value, onChange }) {
-  const [open, setOpen] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    if (!open) return;
-    const onClickOutside = (e) => {
-      if (ref.current && !ref.current.contains(e.target)) setOpen(false);
-    };
-    document.addEventListener('pointerdown', onClickOutside);
-    return () => document.removeEventListener('pointerdown', onClickOutside);
-  }, [open]);
-
-  const currentLabel =
-    param.options.find((o) => o.value === value)?.label ?? value;
+function EffectSelectControl({ param, value, onChange }) {
+  const freeOptions = param.options.filter((o) => !o.pro);
+  const proOptions = param.options.filter((o) => o.pro);
+  const labelByValue = Object.fromEntries(
+    param.options.map((o) => [o.value, o.label])
+  );
 
   return (
     <ParamRow
@@ -207,73 +217,65 @@ function PopoverSelectControl({ param, value, onChange }) {
       apiAnchor={getApiAnchor(param.name)}
       indent={param.indent}
     >
-      <div className="relative" ref={ref}>
-        <button
-          type="button"
-          onClick={() => setOpen(!open)}
-          className="flex items-center gap-1.5 rounded-full border border-outline bg-pg-surface-2 px-2 py-1 text-xs text-white/80 hover:bg-pg-surface-3 active:bg-pg-surface-3/50 h-7 w-20"
-        >
-          {currentLabel}
-          <svg
-            className={clsx(
-              'h-3 w-3 text-white/40 transition-transform duration-200 ml-auto',
-              open && 'rotate-180'
-            )}
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
+      <PopoverRoot>
+        <PopoverTrigger>
+          <Button
+            size="md"
+            rounded
+            className="w-24"
+            contentClassName="gap-1 pr-1.5"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
-        </button>
-
-        {open && (
-          <div className="absolute right-0 top-full z-50 mt-1 min-w-[180px] overflow-hidden rounded-xl border border-outline bg-pg-surface-2 py-1 shadow-xl">
-            {param.options.map((opt) =>
-              opt.pro ? (
-                <a
-                  key={opt.value}
+            <span className="flex-1 truncate text-left">
+              {labelByValue[value] ?? value}
+            </span>
+            <DropdownIcon className="shrink-0 text-cladd-fg-softer" />
+          </Button>
+        </PopoverTrigger>
+        <Popover className="w-56" offset={4} position="bottom-end">
+          <List>
+            {freeOptions.map((o) => (
+              <PopoverClose key={o.value}>
+                <ListButton
+                  size="md"
+                  selected={o.value === value}
+                  color={o.value === value ? 'brand' : undefined}
+                  onClick={() => onChange(o.value)}
+                >
+                  {o.label}
+                </ListButton>
+              </PopoverClose>
+            ))}
+            <ListSeparator />
+            <ListTitle>Swiper Studio</ListTitle>
+            {proOptions.map((o) => (
+              <PopoverClose key={o.value}>
+                <ListButton
+                  as="a"
                   href="https://studio.swiperjs.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex w-full items-center gap-4 px-3 py-1.5 text-left text-xs text-white/70! transition-colors hover:bg-white/5 hover:text-white! !no-underline whitespace-nowrap"
+                  size="md"
+                  className="text-cladd-fg! no-underline!"
+                  icon={
+                    <img
+                      src="/images/projects/swiper-studio-logo.svg"
+                      className="size-4 rounded border border-white/10"
+                      alt=""
+                    />
+                  }
+                  after={
+                    <Chip size="md" color="brand">
+                      PRO
+                    </Chip>
+                  }
                 >
-                  <img
-                    src="/images/projects/swiper-studio-logo.svg"
-                    className="size-4.5 border border-white/10 rounded"
-                  />
-                  {opt.label}
-                  <span className="rounded bg-primary/20 px-1.5 py-1 text-[10px] font-semibold leading-none text-primary ml-auto">
-                    PRO
-                  </span>
-                </a>
-              ) : (
-                <button
-                  key={opt.value}
-                  type="button"
-                  onClick={() => {
-                    onChange(opt.value);
-                    setOpen(false);
-                  }}
-                  className={clsx(
-                    'flex w-full items-center px-3 py-1.5 text-left text-xs transition-colors',
-                    opt.value === value
-                      ? 'bg-primary/15 text-primary'
-                      : 'text-white/70 hover:bg-white/5 hover:text-white'
-                  )}
-                >
-                  {opt.label}
-                </button>
-              )
-            )}
-          </div>
-        )}
-      </div>
+                  {o.label}
+                </ListButton>
+              </PopoverClose>
+            ))}
+          </List>
+        </Popover>
+      </PopoverRoot>
     </ParamRow>
   );
 }
@@ -289,7 +291,16 @@ export default function ParamInput({ param, value, onChange }) {
     case 'select':
       if (param.popover) {
         return (
-          <PopoverSelectControl
+          <EffectSelectControl
+            param={param}
+            value={value}
+            onChange={onChange}
+          />
+        );
+      }
+      if (param.segmented) {
+        return (
+          <SegmentedInputControl
             param={param}
             value={value}
             onChange={onChange}

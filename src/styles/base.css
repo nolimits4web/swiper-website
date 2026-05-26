@@ -23,6 +23,10 @@ footer a {
   content: '#';
 }
 
+.cladd-color-brand {
+  --cladd-theme: #5caeff;
+}
+
 a[id],
 h2[id],
 h3[id],
