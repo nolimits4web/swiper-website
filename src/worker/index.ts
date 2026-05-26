@@ -1,7 +1,6 @@
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 import { mcpApp } from './mcp/index';
-import { subscribeApp } from './subscribe';
 
 const AGENT_DISCOVERY_LINKS = [
   '</sitemap.xml>; rel="sitemap"; type="application/xml"',
@@ -21,7 +20,6 @@ const app = new Hono<{ Bindings: CloudflareBindings }>()
     })
   )
   .route('/mcp', mcpApp)
-  .route('/api', subscribeApp)
   .get('*', async (c) => {
     const response = await c.env.ASSETS.fetch(c.req.url);
     const country = (c.req.raw.cf as IncomingRequestCfProperties | undefined)
@@ -34,10 +32,9 @@ const app = new Hono<{ Bindings: CloudflareBindings }>()
       out = new HTMLRewriter()
         .on('head', {
           element(element) {
-            element.prepend(
-              '<script>window.__NO_SPONSORS__=true</script>',
-              { html: true }
-            );
+            element.prepend('<script>window.__NO_SPONSORS__=true</script>', {
+              html: true,
+            });
           },
         })
         .on('[data-sponsors]', {
