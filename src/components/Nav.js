@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import clsx from 'clsx';
 import SPHQBanner from './SPHQBanner';
 import UserExperiencedModal from './UserExperiencedModal';
+import UserExperiencedPopover from './UserExperiencedPopover';
 
 const Dropdown = ({ children, opened }) => {
   return (
@@ -344,7 +345,7 @@ export const Nav = ({ withSidebar = false }) => {
                 className="flex items-center justify-center size-7 rounded-md overflow-hidden border border-outline hover:border-white/40 hover:opacity-90 active:opacity-50 duration-200 cursor-pointer"
               >
                 <img
-                  src="/images/projects/uxd.svg"
+                  src="/images/projects/uxd-logo-black.png"
                   alt="User Experienced"
                   className="size-full"
                 />
@@ -374,6 +375,7 @@ export const Nav = ({ withSidebar = false }) => {
         </nav>
       </div>
       <UserExperiencedModal open={uxdOpen} onClose={() => setUxdOpen(false)} />
+      <UserExperiencedPopover />
     </>
   );
 };

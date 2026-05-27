@@ -34,7 +34,7 @@ export default function UserExperiencedModal({ open, onClose }) {
         onClick={onClose}
       >
         <div
-          className="relative w-full max-w-6xl bg-black border border-outline rounded-3xl overflow-hidden flex flex-col animate-[fadeInUp_280ms_cubic-bezier(0.2,0.8,0.2,1)]"
+          className="relative w-full max-w-2xl bg-black border border-outline rounded-3xl overflow-hidden flex flex-col animate-[fadeInUp_280ms_cubic-bezier(0.2,0.8,0.2,1)]"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="px-2 py-2 flex justify-end">
@@ -66,27 +66,25 @@ export default function UserExperiencedModal({ open, onClose }) {
               src="https://uxed.substack.com/embed"
               frameborder="0"
               scrolling="no"
-              className="bg-white w-full h-80"
+              className="bg-white w-full h-90"
             ></iframe>
           </div>
 
           {/* Footer strip */}
           <div className=" p-4 flex items-center justify-between gap-4 text-xs sm:text-sm">
             <a
-              href="https://www.userexperienced.com/"
+              href="https://uxed.substack.com"
               target="_blank"
               rel="noopener"
               className="group inline-flex items-center gap-2.5 !text-on-surface !no-underline hover:!text-primary duration-200 min-w-0"
             >
               <img
-                src="/images/projects/uxd.svg"
+                src="/images/projects/uxd-logo-red.png"
                 alt=""
-                className="size-9 -my-2 rounded shrink-0"
+                className="size-6 -my-2 rounded shrink-0"
               />
               <span className="font-medium">User Experienced</span>
-              <span className="hidden sm:inline text-on-surface-darker truncate group-hover:text-primary duration-200">
-                userexperienced.com
-              </span>
+
               <span className="text-on-surface-darker group-hover:text-primary duration-200">
                 ↗
               </span>
