@@ -71,7 +71,7 @@ All premium plugins from UI Initiative: https://uiinitiative.com
 #### Tinder Slider
 Tinder card-style swipe interactions with left/right detection.
 - **URL**: https://uiinitiative.com/catalog/tinder-slider
-- **Preview**: https://tinder-slider.uiinitiative.com
+- **Preview**: https://swipe-cards.uiinitiative.com
 - **Effect Parameter**: `effect: 'tinder'`
 - **Use Cases**: Dating apps, product discovery, decision UIs, card-based voting
 - **Keywords**: tinder, swipe left, swipe right, card stack, match, like/dislike

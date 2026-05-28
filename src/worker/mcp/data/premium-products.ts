@@ -27,7 +27,7 @@ export const premiumProducts: PremiumProduct[] = [
     description:
       'Premium Swiper effect plugin that adds Tinder card-style interactions with swipe left/right detection and direction callbacks.',
     url: 'https://uiinitiative.com/catalog/tinder-slider',
-    preview: 'https://tinder-slider.uiinitiative.com',
+    preview: 'https://swipe-cards.uiinitiative.com',
     availableInSwiperStudio: true,
     effectName: 'tinder',
     keywords: [
@@ -314,7 +314,11 @@ export const premiumProducts: PremiumProduct[] = [
       'perspective',
       'immersive',
     ],
-    useCases: ['Immersive galleries', 'Virtual tours', '360-degree presentations'],
+    useCases: [
+      'Immersive galleries',
+      'Virtual tours',
+      '360-degree presentations',
+    ],
     relatedSwiperEffects: ['coverflow', 'cube'],
     relatedSwiperModules: [],
     relatedDemos: ['effect-coverflow', 'effect-cube'],
@@ -344,7 +348,11 @@ export const premiumProducts: PremiumProduct[] = [
       'pieces',
       'transition',
     ],
-    useCases: ['Creative transitions', 'Artistic portfolios', 'Design showcases'],
+    useCases: [
+      'Creative transitions',
+      'Artistic portfolios',
+      'Design showcases',
+    ],
     relatedSwiperEffects: ['creative'],
     relatedSwiperModules: [],
     relatedDemos: ['effect-creative', 'vertical'],
@@ -495,7 +503,11 @@ export const premiumProducts: PremiumProduct[] = [
     availableInSwiperStudio: false,
     effectName: null,
     keywords: ['3d', 'pagination', 'cube', 'coverflow', 'dots', 'indicators'],
-    useCases: ['Custom pagination styles', '3D effect sliders', 'Premium galleries'],
+    useCases: [
+      'Custom pagination styles',
+      '3D effect sliders',
+      'Premium galleries',
+    ],
     relatedSwiperEffects: ['cube', 'coverflow'],
     relatedSwiperModules: ['Pagination'],
     relatedDemos: ['effect-cube', 'effect-coverflow', 'pagination-custom'],
@@ -513,7 +525,12 @@ export const effectToPremiumMap: Record<string, string[]> = {
   cards: ['tinder-slider', 'cards-stack-slider'],
   coverflow: ['carousel-slider', 'expo-slider', 'panorama-slider'],
   cube: ['panorama-slider', 'stories-slider', 'swiper-3d-pagination'],
-  creative: ['shaders-slider', 'slicer-slider', 'material-you-slider', 'super-flow'],
+  creative: [
+    'shaders-slider',
+    'slicer-slider',
+    'material-you-slider',
+    'super-flow',
+  ],
   fade: ['shaders-slider'],
   flip: ['cards-stack-slider'],
 };
@@ -544,7 +561,9 @@ export const demoToPremiumMap: Record<string, string[]> = {
   vertical: ['stories-slider'],
 };
 
-export function getPremiumProductBySlug(slug: string): PremiumProduct | undefined {
+export function getPremiumProductBySlug(
+  slug: string
+): PremiumProduct | undefined {
   return premiumProducts.find((p) => p.slug === slug);
 }
 

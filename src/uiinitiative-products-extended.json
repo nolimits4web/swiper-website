@@ -5,7 +5,7 @@
     "subtitle": "Tinder card-style interactions and effects",
     "description": "Premium Swiper effect plugin that adds Tinder card-style interactions with swipe left/right detection and direction callbacks.",
     "url": "https://uiinitiative.com/catalog/tinder-slider",
-    "preview": "https://tinder-slider.uiinitiative.com",
+    "preview": "https://swipe-cards.uiinitiative.com",
     "previewImage": "https://uiinitiative.com/items/tinder-slider/cover_s.jpg",
     "availableInSwiperStudio": true,
     "effectName": "tinder",
@@ -117,7 +117,12 @@
     ],
     "relatedSwiperEffects": ["cube"],
     "relatedSwiperModules": ["Autoplay", "EffectCube", "Virtual"],
-    "relatedDemos": ["autoplay", "autoplay-progress", "effect-cube", "vertical"],
+    "relatedDemos": [
+      "autoplay",
+      "autoplay-progress",
+      "effect-cube",
+      "vertical"
+    ],
     "features": [
       "Progress bar indicators",
       "Pause on touch/tap-hold",
@@ -172,10 +177,26 @@
       "GPU-accelerated transitions"
     ],
     "shaderEffects": [
-      "random", "dots", "dots-circle", "flyeye", "morph-x", "morph-y",
-      "page-curl", "peel-x", "peel-y", "polygons-fall", "polygons-morph",
-      "polygons-wind", "pixelize", "ripple", "shutters", "slices",
-      "squares", "stretch", "wave-x", "wind"
+      "random",
+      "dots",
+      "dots-circle",
+      "flyeye",
+      "morph-x",
+      "morph-y",
+      "page-curl",
+      "peel-x",
+      "peel-y",
+      "polygons-fall",
+      "polygons-morph",
+      "polygons-wind",
+      "pixelize",
+      "ripple",
+      "shutters",
+      "slices",
+      "squares",
+      "stretch",
+      "wave-x",
+      "wind"
     ],
     "timeSaved": "40-60 hours"
   },
@@ -271,11 +292,7 @@
       "expo",
       "exhibition"
     ],
-    "useCases": [
-      "Exhibition showcases",
-      "Photo galleries",
-      "Product displays"
-    ],
+    "useCases": ["Exhibition showcases", "Photo galleries", "Product displays"],
     "relatedSwiperEffects": ["coverflow"],
     "relatedSwiperModules": ["Parallax"],
     "relatedDemos": ["parallax", "effect-coverflow", "centered"],
@@ -382,11 +399,7 @@
       "modern",
       "clean"
     ],
-    "useCases": [
-      "Android apps",
-      "Material Design projects",
-      "Modern web apps"
-    ],
+    "useCases": ["Android apps", "Material Design projects", "Modern web apps"],
     "relatedSwiperEffects": ["creative"],
     "relatedSwiperModules": [],
     "relatedDemos": ["effect-creative", "centered"],
@@ -469,10 +482,7 @@
     "relatedSwiperEffects": ["creative"],
     "relatedSwiperModules": [],
     "relatedDemos": ["effect-creative"],
-    "features": [
-      "Spring physics animation",
-      "Based on Creative effect"
-    ],
+    "features": ["Spring physics animation", "Based on Creative effect"],
     "timeSaved": "8-12 hours"
   },
   {
@@ -562,18 +572,11 @@
       "map",
       "tourism"
     ],
-    "useCases": [
-      "Travel websites",
-      "Tourism apps",
-      "Destination showcases"
-    ],
+    "useCases": ["Travel websites", "Tourism apps", "Destination showcases"],
     "relatedSwiperEffects": [],
     "relatedSwiperModules": [],
     "relatedDemos": [],
-    "features": [
-      "Rotating planet animation",
-      "Supports up to 8 slides"
-    ],
+    "features": ["Rotating planet animation", "Supports up to 8 slides"],
     "timeSaved": "8-12 hours"
   },
   {
@@ -620,14 +623,7 @@
     "previewImage": "https://uiinitiative.com/items/posters-slider/cover_s.jpg",
     "availableInSwiperStudio": false,
     "effectName": null,
-    "keywords": [
-      "poster",
-      "movie",
-      "film",
-      "card",
-      "gallery",
-      "ramotion"
-    ],
+    "keywords": ["poster", "movie", "film", "card", "gallery", "ramotion"],
     "useCases": [
       "Movie/film galleries",
       "Poster collections",
@@ -636,10 +632,7 @@
     "relatedSwiperEffects": ["cards"],
     "relatedSwiperModules": [],
     "relatedDemos": ["effect-cards"],
-    "features": [
-      "Fancy card transitions",
-      "Inspired by Ramotion Cardslider"
-    ],
+    "features": ["Fancy card transitions", "Inspired by Ramotion Cardslider"],
     "timeSaved": "8-12 hours"
   },
   {
@@ -722,14 +715,7 @@
     "previewImage": "https://uiinitiative.com/items/swiper-3d-pagination/cover_s.jpg",
     "availableInSwiperStudio": false,
     "effectName": null,
-    "keywords": [
-      "3d",
-      "pagination",
-      "cube",
-      "coverflow",
-      "dots",
-      "indicators"
-    ],
+    "keywords": ["3d", "pagination", "cube", "coverflow", "dots", "indicators"],
     "useCases": [
       "Custom pagination styles",
       "3D effect sliders",
