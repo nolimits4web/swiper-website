@@ -5,8 +5,12 @@ import GithubStats from './GithubStats';
 import { useRouter } from 'next/router';
 import clsx from 'clsx';
 import SPHQBanner from './SPHQBanner';
+import CladdBanner from './CladdBanner';
+import SwiperStudioBanner from './SwiperStudioBanner';
+
 import UserExperiencedModal from './UserExperiencedModal';
 import UserExperiencedPopover from './UserExperiencedPopover';
+let bannerCached;
 
 const Dropdown = ({ children, opened }) => {
   return (
@@ -48,7 +52,7 @@ export const Nav = ({ withSidebar = false }) => {
   const docsNavDropdownRef = useRef(null);
   const resourcesNavDropdownRef = useRef(null);
   const premiumNavDropdownRef = useRef(null);
-  const [banner, setBanner] = useState('paneflow');
+  const [banner, setBanner] = useState(bannerCached || 'swiperstudio');
   const [bannerSet, setBannerSet] = useState(false);
   const [uxdOpen, setUxdOpen] = useState(false);
   const onClick = (e) => {
@@ -63,7 +67,13 @@ export const Nav = ({ withSidebar = false }) => {
     }
   };
   useLayoutEffect(() => {
-    setBanner(Math.random() > 0.5 ? 'paneflow' : 'toggles');
+    const rand = Math.random();
+    if (!bannerCached) {
+      const b = rand > 0.66 ? 'swiperstudio' : rand > 0.33 ? 'sphq' : 'cladd';
+      setBanner(b);
+      bannerCached = b;
+    }
+
     setBannerSet(true);
   }, []);
   useEffect(() => {
@@ -82,12 +92,18 @@ export const Nav = ({ withSidebar = false }) => {
       )}
       <div
         className={clsx(
-          'flex items-center justify-center relative z-[1] pt-2 gap-1 -mb-2 max-w-full px-4',
+          'flex items-center justify-center relative z-[1] pt-2 gap-1 -mb-2 max-w-full px-4 min-h-16',
           withSidebar &&
             'lg:justify-start lg:pl-80 2xl:!pl-4 2xl:!justify-center'
         )}
       >
-        <SPHQBanner />
+        {bannerSet && (
+          <>
+            {banner === 'swiperstudio' && <SwiperStudioBanner />}
+            {banner === 'sphq' && <SPHQBanner />}
+            {banner === 'cladd' && <CladdBanner />}
+          </>
+        )}
       </div>
 
       <div
