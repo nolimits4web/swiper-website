@@ -10,6 +10,7 @@ import SwiperStudioBanner from './SwiperStudioBanner';
 
 import UserExperiencedModal from './UserExperiencedModal';
 import UserExperiencedPopover from './UserExperiencedPopover';
+import PaneFlowBanner from './PaneFlowBanner';
 let bannerCached;
 
 const Dropdown = ({ children, opened }) => {
@@ -97,13 +98,14 @@ export const Nav = ({ withSidebar = false }) => {
             'lg:justify-start lg:pl-80 2xl:!pl-4 2xl:!justify-center'
         )}
       >
-        {bannerSet && (
+        <PaneFlowBanner />
+        {/* {bannerSet && (
           <>
             {banner === 'swiperstudio' && <SwiperStudioBanner />}
             {banner === 'sphq' && <SPHQBanner />}
             {banner === 'cladd' && <CladdBanner />}
           </>
-        )}
+        )}*/}
       </div>
 
       <div
