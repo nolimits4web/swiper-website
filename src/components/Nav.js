@@ -116,7 +116,7 @@ export const Nav = ({ withSidebar = false }) => {
         )}
       >
         <nav
-          className="mx-auto flex gap-2 xs:gap-4 h-16 rounded-full max-w-screen-sm items-center justify-between px-4 relative pointer-events-auto lg:mx-0 2xl:!mx-auto"
+          className="mx-auto flex gap-2 xs:gap-4 h-16 rounded-full max-w-full  items-center justify-between px-4 relative pointer-events-auto lg:mx-0 2xl:!mx-auto"
           onPointerLeave={(e) => {
             if (e.pointerType === 'mouse') {
               setDocsNavOpened(false);
@@ -256,10 +256,7 @@ export const Nav = ({ withSidebar = false }) => {
                 </DropdownLink>
               </Dropdown>
             </li>
-            <li
-              className="group relative hidden xs:block"
-              ref={resourcesNavDropdownRef}
-            >
+            <li className="group relative hidden xs:block">
               <Link
                 href="/playground"
                 className="cursor-pointer text-sm text-[inherit]! hover:text-primary! active:opacity-50 duration-200 no-underline!"
@@ -275,7 +272,21 @@ export const Nav = ({ withSidebar = false }) => {
                 NEW
               </span>
             </li>
-            <li className="group relative" ref={premiumNavDropdownRef}>
+            <li className="group relative hidden xs:block">
+              <Link
+                href="https://studio.swiperjs.com"
+                target="_blank"
+                className="cursor-pointer text-sm text-[inherit]! hover:text-primary! active:opacity-50 duration-200 no-underline!"
+                onPointerEnter={() => {
+                  setResourcesNavOpened(false);
+                  setDocsNavOpened(false);
+                  setPremiumNavOpened(false);
+                }}
+              >
+                Studio
+              </Link>
+            </li>
+            <li className="group relative">
               <div
                 className="cursor-pointer text-sm hover:text-primary active:opacity-50 duration-200"
                 onPointerEnter={() => {
@@ -330,14 +341,7 @@ export const Nav = ({ withSidebar = false }) => {
                 </DropdownLink>
               </Dropdown>
             </li>
-            {/* <li className="group relative border-b border-outline px-3 py-4 md:border-none md:p-0">
-              <Link
-                href="/blog"
-                className="flex h-7 cursor-pointer items-center rounded-md px-3 text-sm font-medium text-primary hover:bg-primary hover:text-on-primary hover:no-underline"
-              >
-                Blog
-              </Link>
-            </li> */}
+
             <li className="group relative">
               <button
                 type="button"
@@ -368,9 +372,6 @@ export const Nav = ({ withSidebar = false }) => {
                   className="size-full"
                 />
               </button>
-              <span className="absolute -right-3 -top-2 leading-[1] text-black font-bold bg-primary text-[9px] px-1 py-0.5 rounded-full pointer-events-none">
-                NEW
-              </span>
             </li>
             <li className="group relative ">
               <Link
