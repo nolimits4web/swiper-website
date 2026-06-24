@@ -1,5 +1,75 @@
 [
   {
+    "createdAt": "2026-06-24T20:00:00.000Z",
+    "title": "JBO",
+    "link": "https://global.jbo.com/",
+    "plan": "Silver Sponsor",
+    "ref": "https://opencollective.com/jbo-official",
+    "image": "jbo-official.png",
+    "endDate": "2027-06-24T20:00:00.000Z",
+    "active": true
+  },
+  {
+    "createdAt": "2026-06-24T20:00:00.000Z",
+    "title": "JBO",
+    "link": "https://www.jbo88b.com/vn/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/jbo-vietnam",
+    "image": "jbo-vietnam.png",
+    "endDate": "2027-06-24T20:00:00.000Z",
+    "active": true
+  },
+  {
+    "createdAt": "2026-06-24T20:00:00.000Z",
+    "title": "Buy Instagram Likes",
+    "link": "https://buffalonews.com/exclusive/article_7e87c825-35d1-541e-96c7-1afa1c207454.html",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/buy-instagram-likes-safe",
+    "image": "",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2026-06-24T20:00:00.000Z",
+    "title": "Echte Instagram-Follower kaufen",
+    "link": "https://www.leipziginfo.de/ratgeber/internet/instagram-follower-kaufen/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/echte-instagram-follower-kaufe",
+    "image": "",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2026-06-24T20:00:00.000Z",
+    "title": "Seguidores TikTok Activos",
+    "link": "https://www.elprogreso.es/articulo/comunicados/comprar-seguidores-tiktok/202606091336331976820.html",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/seguidores-tiktok-activos",
+    "image": "",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2026-06-24T20:00:00.000Z",
+    "title": "Buy Real Youtube Subscriber",
+    "link": "https://aijourn.com/buy-real-youtube-subscribers/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/buy-real-youtube-subscriber",
+    "image": "",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2026-06-24T20:00:00.000Z",
+    "title": "Purchasing Real TikTok Likes",
+    "link": "https://pressbanner.com/best-sites-to-buy-real-tiktok-likes/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/purchasing-real-tiktok-likes",
+    "image": "",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2026-06-22T20:00:00.000Z",
     "title": "Gry365",
     "link": "https://www.grykasynoonline.pl/",
@@ -1141,7 +1211,7 @@
   },
   {
     "createdAt": "2025-11-30T20:00:00.000Z",
-    "title": "สล็อต",
+    "title": "สล็อตเว็บตรง",
     "link": "https://birthinfocus.com/",
     "plan": "Silver Sponsor",
     "ref": "https://opencollective.com/thslot",
