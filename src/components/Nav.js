@@ -63,7 +63,7 @@ export const Nav = ({ withSidebar = false }) => {
     if (!resourcesNavDropdownRef.current.contains(e.target)) {
       setResourcesNavOpened(false);
     }
-    if (!premiumNavDropdownRef.current.contains(e.target)) {
+    if (!premiumNavDropdownRef.current?.contains?.(e.target)) {
       setPremiumNavOpened(false);
     }
   };
