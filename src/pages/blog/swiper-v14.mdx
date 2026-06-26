@@ -1,0 +1,134 @@
+import { PostLayout } from '@/components/PostLayout.js';
+
+export const meta = {
+  title: 'Swiper v14',
+  date: '2026-06-26T10:00:00.000Z',
+  image: '/images/blog/swiper-v14/cover.jpg',
+  published: true,
+};
+
+Swiper v14 is here, and it is a big one under the hood: a ground-up **TypeScript rewrite** of the entire library, focused on smaller bundles, more accurate types, and a modern browser baseline. (Yes, we skipped v13.)
+
+Here is the most important part up front: **upgrading from v12 requires no code changes.** Every option, default, event, payload, method signature, and module import (`swiper/modules`, `swiper/react`, `swiper/vue`, `swiper/element`, ...) behaves exactly as before. The only things you may notice are tighter TypeScript types and a narrower set of supported browsers - more on both below.
+
+## A single TypeScript source of truth
+
+For years Swiper shipped as `.mjs` runtime files with a separate, hand-maintained `.d.ts` type tree living alongside it. That worked, but it had a structural weakness: the types and the implementation could drift apart. A signature could be fixed in the runtime and forgotten in the declarations, or vice versa.
+
+In v14, `src/` is now entirely `.ts`/`.tsx`. The hand-maintained `.d.ts` tree is gone - declarations are emitted directly from the runtime source with `tsc`. The types can no longer drift from the code, because they _are_ the code.
+
+A nice side effect: several signatures that used to be loosely typed as `any` are now correct. For example, `getTranslate()` now properly returns `number`.
+
+## Better, more reliable types
+
+The rewrite let us fix a whole category of subtle typing issues.
+
+### Per-module type augmentation
+
+Each module now augments the central `Swiper`, `SwiperOptions`, and `SwiperEvents` interfaces. Importing a module brings its option, method, and event types along with it - mirroring exactly how the runtime already requires you to register modules:
+
+```js
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+
+// Importing Navigation/Pagination also brings their
+// options, methods and events into the type system
+const swiper = new Swiper('.swiper', {
+  modules: [Navigation, Pagination],
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: { clickable: true },
+});
+```
+
+### Resolution that just works
+
+Types now resolve correctly under classic `node`, `node16`/`nodenext`, and `bundler` module resolution. If you have ever hit a project where Swiper's option types mysteriously collapsed to `any` depending on your `moduleResolution` setting, that class of problem is gone. We verify it with a consumer-simulation test suite that imports the built package by its real public names under every resolution mode.
+
+### `swiper/bundle` exposes every module
+
+The bundle build registers every module at runtime, and now its types reflect that out of the box. `new Swiper('.swiper', { navigation, pagination, ... })` type-checks against `swiper/bundle` without any extra imports.
+
+## Zero runtime dependencies
+
+The `ssr-window` dependency has been removed and replaced with inline environment guards. Swiper now installs with **no transitive runtime dependencies** at all.
+
+## Smaller minified bundles
+
+With the modern baseline (see below), we removed a lot of legacy DOM-compat helpers and below-baseline feature detection. The shared DOM utilities shrank by roughly 28%, and the main builds are about 2-4% smaller minified:
+
+- `swiper.min.js` - 4.1% smaller
+- `swiper-element.min.js` - 2.9% smaller
+- `swiper-bundle.min.js` - 2.3% smaller
+
+## Babel removed from the build
+
+TypeScript now handles the JSX transform for the React wrapper, and `@babel/preset-env` was a no-op at the v14 baseline anyway. So Babel is gone from the build pipeline entirely. Runtime output is byte-identical (the React output is actually marginally smaller, since TS emits native object spread instead of a helper).
+
+## Breaking changes
+
+There are no runtime behavior changes, but there are a couple of things to be aware of when upgrading.
+
+### Browser baseline
+
+Swiper v14 targets the last ~2 years of evergreen browsers:
+
+- **Chrome / Edge 110+**
+- **Safari 16.4+ (iOS 16.4+)**
+- **Firefox 110+**
+
+Code paths and feature detection for older browsers were removed - for example the `smoothScroll` support flag, the Safari < 16.2 perspective workaround, and the legacy `DocumentTouch` touch check. iOS/Android-specific quirk handling is kept but simplified. **If you need to support older browsers, stay on v12.**
+
+### Node.js for development
+
+Building and developing against the package now requires **Node.js >= 20.19.0** (the `engines` field was previously `>= 4.7.0`). This does not affect the browser runtime in any way - only your local toolchain.
+
+### Type-level changes
+
+Stricter types may surface latent issues in code that previously relied on `any`-typed access to Swiper internals. These are all compile-time only - **there are no runtime behavior changes.**
+
+## A note on SSR
+
+Replacing `ssr-window`'s mock `window`/`document` with inline `typeof` guards needed care. The good news:
+
+- Server rendering with the React / Vue / Element wrappers is unaffected - they only instantiate Swiper inside client-side mount effects, which never run on the server.
+- Imperatively calling `new Swiper(...)` in a pure Node (non-DOM) environment once again no-ops gracefully, matching v12 behavior.
+
+This is now locked down by a dedicated SSR runtime test so it cannot regress.
+
+## Upgrade checklist
+
+- Bump `swiper` to v14.
+- Confirm your target browsers are within the new baseline (Chrome/Edge 110+, Safari 16.4+, Firefox 110+). If not, stay on v12.
+- Make sure your local Node is >= 20.19.0.
+- Run a type-check. If you accessed Swiper internals through `any`, you may need to tidy a few spots - these are compile-time only.
+- That's it. No option, event, method, or import changes are required.
+
+## Final thoughts
+
+Swiper v14 is intentionally a "boring" release for your application code and an exciting one for the codebase. By making TypeScript the single source of truth, dropping the last runtime dependency, and trimming legacy code paths, we get types that can't drift, smaller bundles, and a much healthier foundation to build the next features on. If you hit an edge case while upgrading, share a minimal repro - we iterate quickly.
+
+## What's Next?
+
+For the complete list of changes, see the [full v14 changelog](/changelog).
+
+And as always, if you love Swiper, please, support the project:
+
+- [Sponsor Swiper](https://sponsors.nolimits4web.com) - get your logo and link featured on the website
+- [GitHub Sponsors](https://github.com/sponsors/nolimits4web) - support the developer directly
+
+And checking our premium projects:
+
+- [Start Page HQ](https://startpagehq.com)
+- [UI Initiative](https://uiinitiative.com)
+- [Swiper Studio](https://studio.swiperjs.com)
+- [PaneFlow](https://paneflow.com)
+- [t0ggles](https://t0ggles.com)
+
+Your support means a lot for us!
+
+export default ({ children }) => (
+  <PostLayout meta={meta}>{children}</PostLayout>
+);
