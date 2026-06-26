@@ -70,7 +70,7 @@ export const Nav = ({ withSidebar = false }) => {
   useLayoutEffect(() => {
     const rand = Math.random();
     if (!bannerCached) {
-      const b = rand > 0.66 ? 'swiperstudio' : rand > 0.33 ? 'sphq' : 'cladd';
+      const b = rand > 0.5 ? 'swiperstudio' : 'paneflow';
       setBanner(b);
       bannerCached = b;
     }
@@ -98,14 +98,14 @@ export const Nav = ({ withSidebar = false }) => {
             'lg:justify-start lg:pl-80 2xl:!pl-4 2xl:!justify-center'
         )}
       >
-        <PaneFlowBanner />
-        {/* {bannerSet && (
+        {bannerSet && (
           <>
+            {banner === 'paneflow' && <PaneFlowBanner />}
             {banner === 'swiperstudio' && <SwiperStudioBanner />}
             {banner === 'sphq' && <SPHQBanner />}
             {banner === 'cladd' && <CladdBanner />}
           </>
-        )}*/}
+        )}
       </div>
 
       <div
