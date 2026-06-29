@@ -1,121 +1,159 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.css"
+    />
 
-<head>
-  <meta charset="utf-8" />
-  <title>Swiper demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <!-- Demo styles -->
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
 
-  <!-- Demo styles -->
-  <style>
-    html,
-    body {
-      position: relative;
-      height: 100%;
-    }
+      body {
+        background: #000;
+        font-family:
+          Helvetica Neue,
+          Helvetica,
+          Arial,
+          sans-serif;
+        font-size: 14px;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+      }
 
-    body {
-      background: #000;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-    }
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
 
-    .swiper {
-      width: 100%;
-      height: 100%;
-    }
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #000;
+      }
 
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #000;
-    }
+      .swiper-slide img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        -ms-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+      }
+    </style>
+  </head>
 
-    .swiper-slide img {
-      width: auto;
-      height: auto;
-      max-width: 100%;
-      max-height: 100%;
-      -ms-transform: translate(-50%, -50%);
-      -webkit-transform: translate(-50%, -50%);
-      -moz-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      position: absolute;
-      left: 50%;
-      top: 50%;
-    }
-  </style>
-</head>
+  <body>
+    <!-- Swiper -->
 
-<body>
-  <!-- Swiper -->
-
-  <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/abstract-1.jpg" loading="lazy" />
-        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+    <div
+      style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+      class="swiper mySwiper"
+    >
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img
+            src="https://swiperjs.com/demos/images/abstract-1.jpg"
+            loading="lazy"
+          />
+          <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://swiperjs.com/demos/images/abstract-2.jpg"
+            loading="lazy"
+          />
+          <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://swiperjs.com/demos/images/abstract-3.jpg"
+            loading="lazy"
+          />
+          <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://swiperjs.com/demos/images/abstract-4.jpg"
+            loading="lazy"
+          />
+          <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://swiperjs.com/demos/images/abstract-5.jpg"
+            loading="lazy"
+          />
+          <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://swiperjs.com/demos/images/abstract-6.jpg"
+            loading="lazy"
+          />
+          <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://swiperjs.com/demos/images/abstract-7.jpg"
+            loading="lazy"
+          />
+          <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://swiperjs.com/demos/images/abstract-8.jpg"
+            loading="lazy"
+          />
+          <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://swiperjs.com/demos/images/abstract-9.jpg"
+            loading="lazy"
+          />
+          <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+        </div>
       </div>
-      <div class="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/abstract-2.jpg" loading="lazy" />
-        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-      </div>
-      <div class="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/abstract-3.jpg" loading="lazy" />
-        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-      </div>
-      <div class="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/abstract-4.jpg" loading="lazy" />
-        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-      </div>
-      <div class="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/abstract-5.jpg" loading="lazy" />
-        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-      </div>
-      <div class="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/abstract-6.jpg" loading="lazy" />
-        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-      </div>
-      <div class="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/abstract-7.jpg" loading="lazy" />
-        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-      </div>
-      <div class="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/abstract-8.jpg" loading="lazy" />
-        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-      </div>
-      <div class="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/abstract-9.jpg" loading="lazy" />
-        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
     </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
-  </div>
 
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.js"></script>
 
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      lazy: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-  </script>
-</body>
-
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper('.mySwiper', {
+        lazy: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    </script>
+  </body>
 </html>
