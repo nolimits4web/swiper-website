@@ -30,7 +30,7 @@ function reactProject(title, contentJSON) {
       dependencies: {
         react: '^18.3.1',
         'react-dom': '^18.3.1',
-        swiper: '^14.0.0',
+        swiper: '^14.0.1',
       },
       devDependencies: {
         '@vitejs/plugin-react': '^4.3.4',
@@ -86,7 +86,7 @@ function vueProject(title, contentJSON) {
         build: 'vite build',
       },
       dependencies: {
-        swiper: '^14.0.0',
+        swiper: '^14.0.1',
         vue: '^3.5.13',
       },
       devDependencies: {
