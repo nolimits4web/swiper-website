@@ -45,7 +45,6 @@ const extraLibs = [
   'angular.svg',
   'ember.svg',
   'nextjs.svg',
-  'shopify.svg',
   'solidjs.svg',
   'svelte.svg',
   'typescript.svg',
@@ -150,7 +149,7 @@ export default function Home(props) {
           easily integrates with frameworks like Svelte, Angular, Next.js,
           Ember, and more.
         </HomeSectionText>
-        <div className="grid grid-cols-3 xs:flex flex-wrap items-center justify-center gap-4 md:gap-8 my-12">
+        <div className="grid grid-cols-3 xs:flex flex-wrap items-center justify-center gap-4 md:gap-8 my-12 xs:max-w-screen-lg xs:mx-auto">
           {libs.map(({ title, image, link }) => (
             <Link
               key={title}
@@ -192,7 +191,30 @@ export default function Home(props) {
             <img
               src="/images/swiper-studio-logo.svg"
               alt="Swiper Studio"
-              className="absolute right-2 top-2 w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full border border-outline "
+              className="absolute right-2 top-2 w-6 h-6 sm:w-8 sm:h-8 object-contain"
+            />
+          </Link>
+          <Link
+            href="https://studio.swiperjs.com"
+            className="xs:w-40 w-full h-36 sm:h-40 bg-surface-1 border border-outline !text-on-surface !no-underline rounded-3xl relative group text-sm sm:text-base"
+          >
+            <div className="absolute inset-0 bg-white/10 rounded-3xl opacity-0 group-hover:opacity-100 duration-200 group-active:opacity-50 pointer-events-none" />
+            <div className="flex flex-col gap-4 md:gap-8 p-4 md:p-8 items-center justify-center group-active:scale-90 group-active:opacity-75 duration-200 h-full">
+              <img
+                src={`/images/libs/shopify.svg`}
+                width="140"
+                height="140"
+                alt="Shopify"
+                title="Shopify"
+                loading="lazy"
+                className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
+              />
+              Shopify
+            </div>
+            <img
+              src="/images/swiper-studio-logo.svg"
+              alt="Swiper Studio"
+              className="absolute right-2 top-2 w-6 h-6 sm:w-8 sm:h-8 object-contain"
             />
           </Link>
         </div>
