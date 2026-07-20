@@ -1,0 +1,80 @@
+import { PostLayout } from '@/components/PostLayout.js';
+
+export const meta = {
+  title: 'Swiper Studio For Shopify: Native Swiper Sliders In Your Store',
+  date: '2026-07-20T10:00:00.000Z',
+  image: '/images/blog/swiper-studio-for-shopify/cover.jpg',
+  published: true,
+};
+
+Bringing Swiper into a Shopify store has always been possible, but never convenient - custom theme code, Liquid templates, manual script tags, and every catalog change meant touching the code again. That changes now: [Swiper Studio](https://studio.swiperjs.com) has released an official [Shopify app](https://apps.shopify.com/swiper-studio), and it is by far the easiest and most "native" way to get Swiper sliders into a Shopify store.
+
+## Why It Is Different
+
+Most Shopify slider apps embed widgets or iframes that hurt performance and never quite feel like part of the theme. The Swiper Studio app takes a different approach: sliders you design in Swiper Studio are rendered server-side as native Liquid theme blocks. Your store serves plain HTML - the only external assets are the slider's stylesheet and the Swiper.js runtime itself. That means real Swiper, real performance, and sliders that live in the theme editor like any other theme section.
+
+And you get the full power of Swiper Studio: 100+ templates, 10 premium effects (Panorama, Cards Stack, Slicer, Super Flow, and more), element animations, and responsive breakpoints - all without writing a line of code.
+
+## Connected To Your Store Data
+
+The best part is that sliders are not static. The app connects directly to your Shopify data, with four data sources available:
+
+- **Products from Collections** - design one slide as a template, pick a collection, and the slider renders one slide per product. Add or remove products, change prices - the slider stays in sync automatically, no republishing needed.
+- **Product Images** - turn any product's image gallery into a slider automatically.
+- **Metaobjects** - pull content from metaobjects you manage in the Shopify admin, like testimonials or press quotes.
+- **Product Metafields** - render list-based product data as slides.
+
+## How It Works
+
+The whole setup takes just a few minutes:
+
+1. Install the app from the [Shopify App Store](https://apps.shopify.com/swiper-studio)
+2. Connect your store to your Swiper Studio account
+3. Pick a slider and map slide elements to your store's fields in the Shopify admin
+
+<img
+  src="/images/blog/swiper-studio-for-shopify/slider-map-fields.jpg"
+  loading="lazy"
+/>
+
+4. In the theme editor, add the "Swiper Studio Slider" app block wherever you want it
+
+<img
+  src="/images/blog/swiper-studio-for-shopify/slider-insert.jpg"
+  loading="lazy"
+/>
+
+5. Configure the block settings - the Project ID is set automatically, just pick a collection if needed
+
+<img
+  src="/images/blog/swiper-studio-for-shopify/slider-id.jpg"
+  loading="lazy"
+/>
+
+That's it - a fully dynamic, catalog-driven Swiper slider, live in your store.
+
+## Pricing
+
+Shopify support is included in existing Swiper Studio plans - there is no separate subscription. Solo and Team plans are available with annual or lifetime pricing.
+
+## Try It Out
+
+Install the app from the [Shopify App Store](https://apps.shopify.com/swiper-studio), check out the [Swiper Studio for Shopify](https://studio.swiperjs.com/for/shopify) guide, and read the full announcement on the [Swiper Studio blog](https://studio.swiperjs.com/blog/introducing-swiper-studio-for-shopify).
+
+And as always, if you love Swiper, please, support the project:
+
+- [Sponsor Swiper](https://sponsors.nolimits4web.com) - get your logo and link featured on the website
+- [GitHub Sponsors](https://github.com/sponsors/nolimits4web) - support the developer directly
+
+And checking our premium projects:
+
+- [UI Initiative](https://uiinitiative.com)
+- [Swiper Studio](https://studio.swiperjs.com)
+- [PaneFlow](https://paneflow.com)
+- [t0ggles](https://t0ggles.com)
+
+Your support means a lot for us!
+
+export default ({ children }) => (
+  <PostLayout meta={meta}>{children}</PostLayout>
+);
