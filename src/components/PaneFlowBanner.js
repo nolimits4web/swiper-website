@@ -12,7 +12,7 @@ export default function PaneFlowBanner({ className }) {
         className="h-6 w-6 relative"
       />
       <div className="shrink min-w-0  flex items-center w-50 xs:w-auto">
-        All-new PaneFlow v2 is here with a 50%-off launch offer
+        All-new PaneFlow v2 is here
       </div>
     </a>
   );
