@@ -13,10 +13,8 @@ export default function TogglesBanner({ className }) {
         className="h-6 w-6 relative"
       />
       <div className="shrink min-w-0 relative text-ellipsis overflow-hidden flex items-center">
-        Meet <span className="hidden sm:inline ml-1">our new project </span>
-        <span className="ml-1 border-b border-white/30 shrink min-w-0 truncate">
-          t0ggles: Next-Gen Project Management
-        </span>
+
+          t0ggles - now with a free plan!
       </div>
     </a>
   );

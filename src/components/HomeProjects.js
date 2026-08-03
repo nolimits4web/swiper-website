@@ -7,14 +7,14 @@ export default function HomeProjects() {
         {
           url: 'https://paneflow.com',
           title: 'Paneflow',
-          description: 'Build Stunning Slideshows Visually. No Code Required',
+          description: 'Design animated pitch decks, product launches, and hero sections',
           logo: 'paneflow.svg',
         },
         {
           url: 'https://studio.swiperjs.com',
           title: 'Swiper Studio',
           description:
-            'Create Beautiful And Responsive Swipers Without Writing Any Code',
+            'Build stunning Swiper sliders and carousels — no code required',
           logo: 'swiper-studio-logo.svg',
         },
         {
@@ -26,14 +26,14 @@ export default function HomeProjects() {
         {
           url: 'https://t0ggles.com',
           title: 't0ggles',
-          description: 'Your ultimate multiple projects management tool',
+          description: 'Project management for teams and AI agents',
           logo: 't0ggles.svg',
         },
         {
           url: 'https://startpagehq.com',
           title: 'Start Page HQ',
           description:
-            'Your browser new tab as a personal dashboard with 50+ widgets, synced across all devices',
+            'Custom browser new tab extension with 60+ widgets',
           logo: 'startpagehq.svg',
         },
         {

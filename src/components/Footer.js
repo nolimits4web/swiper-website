@@ -156,50 +156,50 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <a
-                  title="Start Page HQ - Your browser new tab as a personal dashboard with 50+ widgets"
+                  title="Start Page HQ - Custom browser new tab extension with 60+ widgets"
                   href="https://startpagehq.com"
                   target="_blank"
                 >
                   <img
                     loading="lazy"
                     src="/images/projects/startpagehq.svg"
-                    alt="Start Page HQ"
+                    alt="Start Page HQ - Custom browser new tab extension with 60+ widgets"
                     className="inline-block size-6"
                   />
                 </a>
                 <a
-                  title="PaneFlow - Create Stunning Slideshows Visually. No Code Required"
+                  title="PaneFlow - Design animated pitch decks, product launches, and hero sections"
                   href="https://paneflow.com"
                   target="_blank"
                 >
                   <img
                     loading="lazy"
                     src="/images/projects/paneflow.svg"
-                    alt="PaneFlow - Create Stunning Slideshows Visually. No Code Required"
+                    alt="PaneFlow - Design animated pitch decks, product launches, and hero sections"
                     className="inline-block size-6"
                   />
                 </a>
                 <a
-                  title="t0ggles - Your ultimate multiple projects management tool"
+                  title="t0ggles - Project management for teams and AI agents"
                   href="https://t0ggles.com"
                   target="_blank"
                 >
                   <img
                     loading="lazy"
                     src="/images/projects/t0ggles.svg"
-                    alt="t0ggles - Your ultimate multiple projects management tool"
+                    alt="t0ggles - Project management for teams and AI agents"
                     className="inline-block size-6"
                   />
                 </a>
                 <a
-                  title="Swiper Studio - Create Beautiful And Responsive Sliders Without Writing Any Code"
+                  title="Swiper Studio - Build stunning Swiper sliders and carousels — no code required"
                   href="https://studio.swiperjs.com"
                   target="_blank"
                 >
                   <img
                     loading="lazy"
                     src="/images/projects/swiper-studio-logo.svg"
-                    alt="Swiper Studio - Create Beautiful And Responsive Sliders Without Writing Any Code"
+                    alt="Swiper Studio - Build stunning Swiper sliders and carousels — no code required"
                     className="inline-block size-6"
                   />
                 </a>

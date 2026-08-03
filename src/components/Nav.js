@@ -7,6 +7,7 @@ import clsx from 'clsx';
 import SPHQBanner from './SPHQBanner';
 import CladdBanner from './CladdBanner';
 import SwiperStudioBanner from './SwiperStudioBanner';
+import TogglesBanner from './TogglesBanner';
 
 import UserExperiencedModal from './UserExperiencedModal';
 import UserExperiencedPopover from './UserExperiencedPopover';
@@ -70,7 +71,7 @@ export const Nav = ({ withSidebar = false }) => {
   useLayoutEffect(() => {
     const rand = Math.random();
     if (!bannerCached) {
-      const b = rand > 0.5 ? 'swiperstudio' : 'paneflow';
+      const b = ['swiperstudio', 'paneflow', 'toggles', 'sphq'][Math.floor(rand * 4)] || 'swiperstudio';
       setBanner(b);
       bannerCached = b;
     }
@@ -104,6 +105,7 @@ export const Nav = ({ withSidebar = false }) => {
             {banner === 'swiperstudio' && <SwiperStudioBanner />}
             {banner === 'sphq' && <SPHQBanner />}
             {banner === 'cladd' && <CladdBanner />}
+            {banner === 'toggles' && <TogglesBanner />}
           </>
         )}
       </div>
