@@ -1,5 +1,15 @@
 [
   {
+    "createdAt": "2026-08-06T20:00:00.000Z",
+    "title": "Small Business Web Hosting",
+    "link": "https://www.reddit.com/r/HostingReport/comments/1u0awbk/whats_the_most_affordable_web_host_for_small/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/smbr-hosting",
+    "image": "smbr-hosting.png",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2026-08-03T20:00:00.000Z",
     "title": "Small Business Web Hosting",
     "link": "https://www.reddit.com/r/HostingReport/comments/1u0awbk/whats_the_most_affordable_web_host_for_small/",
@@ -951,8 +961,8 @@
   },
   {
     "createdAt": "2026-01-06T20:00:00.000Z",
-    "title": "สล็อต",
-    "link": "https://www.littleupsidedowncake.com/",
+    "title": "สล็อตเว็บตรง",
+    "link": "https://koten.app/",
     "plan": "Sponsor",
     "ref": "https://opencollective.com/davemorris",
     "image": "davemorris.png",

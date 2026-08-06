@@ -9,8 +9,6 @@ import CladdBanner from './CladdBanner';
 import SwiperStudioBanner from './SwiperStudioBanner';
 import TogglesBanner from './TogglesBanner';
 
-import UserExperiencedModal from './UserExperiencedModal';
-import UserExperiencedPopover from './UserExperiencedPopover';
 import PaneFlowBanner from './PaneFlowBanner';
 let bannerCached;
 
@@ -56,7 +54,6 @@ export const Nav = ({ withSidebar = false }) => {
   const premiumNavDropdownRef = useRef(null);
   const [banner, setBanner] = useState(bannerCached || 'swiperstudio');
   const [bannerSet, setBannerSet] = useState(false);
-  const [uxdOpen, setUxdOpen] = useState(false);
   const onClick = (e) => {
     if (!docsNavDropdownRef.current.contains(e.target)) {
       setDocsNavOpened(false);
@@ -344,37 +341,7 @@ export const Nav = ({ withSidebar = false }) => {
               </Dropdown>
             </li>
 
-            <li className="group relative">
-              <button
-                type="button"
-                onPointerEnter={() => {
-                  setDocsNavOpened(false);
-                  setResourcesNavOpened(false);
-                  setPremiumNavOpened(false);
-                }}
-                onClick={() => {
-                  setUxdOpen(true);
-                  setDocsNavOpened(false);
-                  setResourcesNavOpened(false);
-                  setPremiumNavOpened(false);
-                  if (typeof window !== 'undefined' && window.gtag) {
-                    window.gtag('event', 'uxd_modal_open', {
-                      event_category: 'newsletter',
-                      event_label: 'nav_button',
-                    });
-                  }
-                }}
-                aria-label="Open User Experienced newsletter"
-                title="User Experienced - weekly design picks"
-                className="flex items-center justify-center size-7 rounded-md overflow-hidden border border-outline hover:border-white/40 hover:opacity-90 active:opacity-50 duration-200 cursor-pointer"
-              >
-                <img
-                  src="/images/projects/uxd-logo-black.png"
-                  alt="User Experienced"
-                  className="size-full"
-                />
-              </button>
-            </li>
+
             <li className="group relative ">
               <Link
                 href="https://github.com/nolimits4web/swiper"
@@ -395,8 +362,6 @@ export const Nav = ({ withSidebar = false }) => {
           </div>
         </nav>
       </div>
-      <UserExperiencedModal open={uxdOpen} onClose={() => setUxdOpen(false)} />
-      <UserExperiencedPopover />
     </>
   );
 };
