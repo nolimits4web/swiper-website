@@ -1,6 +1,26 @@
 [
   {
     "createdAt": "2026-08-06T20:00:00.000Z",
+    "title": "software-development-companies",
+    "link": "https://www.globalsoftwarecompanies.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/global-software-companies-gsc",
+    "image": "global-software-companies-gsc.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2026-08-06T20:00:00.000Z",
+    "title": "Buy Twitter Followers from SocialWick",
+    "link": "https://www.socialwick.com/twitter/followers",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/socialwick-twitter-followers",
+    "image": "socialwick-twitter-followers.png",
+    "endDate": "2027-01-01T20:00:00.000Z",
+    "active": true
+  },
+  {
+    "createdAt": "2026-08-06T20:00:00.000Z",
     "title": "Small Business Web Hosting",
     "link": "https://www.reddit.com/r/HostingReport/comments/1u0awbk/whats_the_most_affordable_web_host_for_small/",
     "plan": "Sponsor",
