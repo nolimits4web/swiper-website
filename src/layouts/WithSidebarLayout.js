@@ -114,10 +114,6 @@ export function WithSidebarLayout({
             {toc.length > 0 && (
               <TableOfContents onClick={onListClick} tableOfContents={toc} />
             )}
-            <div
-              ta-ad-container=""
-              className="-mx-4 -mb-4 mt-auto shrink-0 !w-auto"
-            />
           </div>
         </div>
         {/* Center */}

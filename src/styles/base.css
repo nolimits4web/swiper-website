@@ -78,9 +78,3 @@ h4[id] {
     transform: translateY(0) scale(1);
   }
 }
-
-[ta-ad-container],
-#TA_AD_CONTAINER {
-  position: sticky;
-  bottom: -16px;
-}
