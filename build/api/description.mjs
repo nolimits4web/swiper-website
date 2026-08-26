@@ -86,7 +86,7 @@ export default (typesItem, isEvent = false) => {
       // Extract tag name and remove @ symbol
       const rawTag = tag.tag || tag.tagName || '';
       const tagName = rawTag.replace(/^@/, '');
-      return tagName === 'note' || tagName === 'example';
+      return tagName === 'note' || tagName === 'example' || tagName === 'deprecated';
     })
     .map((tag) => {
       // Extract tag name and remove @ symbol
@@ -105,6 +105,10 @@ export default (typesItem, isEvent = false) => {
 
       if (tagName === 'note') {
         return `> ${content}`;
+      }
+
+      if (tagName === 'deprecated') {
+        return `> **Deprecated.**${content ? ` ${content}` : ''}`;
       }
 
       if (tagName === 'example') return content;

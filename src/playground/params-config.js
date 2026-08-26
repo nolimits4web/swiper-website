@@ -264,10 +264,15 @@ export const PARAMS_CONFIG = [
       },
       // -- Fade --
       {
-        name: 'fadeEffectCrossFade',
-        label: 'Cross fade',
-        type: 'boolean',
-        default: false,
+        name: 'fadeEffectMode',
+        label: 'Mode',
+        type: 'select',
+        default: 'default',
+        options: [
+          { value: 'default', label: 'default' },
+          { value: 'cross-fade', label: 'cross-fade' },
+          { value: 'out-in', label: 'out-in' },
+        ],
         showWhen: (s) => s.effect === 'fade',
         indent: true,
       },

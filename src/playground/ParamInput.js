@@ -196,7 +196,8 @@ function SelectInputControl({ param, value, onChange }) {
         onChange={onChange}
         renderOption={({ value: v }) => labelByValue[v]}
         className="w-24"
-        popoverClassName="min-w-[140px]"
+        popoverClassName="min-w-[140px] fixed"
+        valueClassName='whitespace-nowrap'
       >
         {labelByValue[value] ?? value}
       </Select>
@@ -231,7 +232,7 @@ function EffectSelectControl({ param, value, onChange }) {
             <DropdownIcon className="shrink-0 text-cladd-fg-softer" />
           </Button>
         </PopoverTrigger>
-        <Popover className="w-56" offset={4} position="bottom-end">
+        <Popover className="w-56 fixed" offset={4} position="bottom-end">
           <List>
             {freeOptions.map((o) => (
               <PopoverClose key={o.value}>

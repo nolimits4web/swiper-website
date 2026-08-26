@@ -25,6 +25,8 @@ export function decodeState(hash) {
 
   try {
     const diff = JSON.parse(atob(hash.replace(/^#/, '')));
+    // Legacy key from before fadeEffect.mode replaced fadeEffect.crossFade
+    if (diff.fadeEffectCrossFade) diff.fadeEffectMode = 'cross-fade';
     for (const key of Object.keys(diff)) {
       if (key in defaults) {
         state[key] = diff[key];

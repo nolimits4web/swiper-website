@@ -94,7 +94,8 @@ export function buildSwiperOptions(s) {
 
     switch (s.effect) {
       case 'fade':
-        if (s.fadeEffectCrossFade) o.fadeEffect = { crossFade: true };
+        if (s.fadeEffectMode !== 'default')
+          o.fadeEffect = { mode: s.fadeEffectMode };
         break;
 
       case 'cube': {
