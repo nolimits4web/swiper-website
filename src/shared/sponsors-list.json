@@ -1,5 +1,25 @@
 [
   {
+    "createdAt": "2026-08-27T20:00:00.000Z",
+    "title": "Zafame - Buy TikTok Likes, Followers & Views",
+    "link": "https://zafame.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/zafame",
+    "image": "zafame.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2026-08-27T20:00:00.000Z",
+    "title": "Snapchat Story Viewer",
+    "link": "https://viewsnapstories.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/viewsnapstories",
+    "image": "",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2026-08-24T20:00:00.000Z",
     "title": "View TikTok Stories",
     "link": "https://viewtikstories.com/",
