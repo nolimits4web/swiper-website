@@ -119,6 +119,58 @@ function createClient(opts) {
   };
 }
 
+// src/track.ts
+var CUSTOM_EVENT_LIMITS = {
+  perRequest: 20,
+  name: 64,
+  value: 256,
+  query: 512,
+  propsKeys: 20
+};
+var buffers = /* @__PURE__ */ new WeakMap();
+function openBuffer(req) {
+  buffers.set(req, []);
+}
+function closeBuffer(req) {
+  const events = buffers.get(req) ?? [];
+  buffers.delete(req);
+  return events;
+}
+function requestOf(target) {
+  if (target instanceof Request) return target;
+  const raw = target.req?.raw;
+  return raw instanceof Request ? raw : void 0;
+}
+function clip2(s, max) {
+  return s.length > max ? s.slice(0, max) : s;
+}
+function track(target, name, data = {}) {
+  try {
+    const req = requestOf(target);
+    if (!req) return;
+    const buffer = buffers.get(req);
+    if (!buffer || buffer.length >= CUSTOM_EVENT_LIMITS.perRequest) return;
+    if (typeof name !== "string" || !name) return;
+    const event = { name: clip2(name, CUSTOM_EVENT_LIMITS.name), ts: Date.now() };
+    if (typeof data.value === "string" && data.value) event.value = clip2(data.value, CUSTOM_EVENT_LIMITS.value);
+    if (typeof data.query === "string" && data.query) event.query = clip2(data.query, CUSTOM_EVENT_LIMITS.query);
+    if (data.props && typeof data.props === "object") {
+      const props = {};
+      let n = 0;
+      for (const [k, v] of Object.entries(data.props)) {
+        if (n >= CUSTOM_EVENT_LIMITS.propsKeys) break;
+        if (typeof v === "boolean" || typeof v === "number" && Number.isFinite(v)) props[k] = v;
+        else if (typeof v === "string") props[k] = clip2(v, CUSTOM_EVENT_LIMITS.value);
+        else continue;
+        n++;
+      }
+      if (n > 0) event.props = props;
+    }
+    buffer.push(event);
+  } catch {
+  }
+}
+
 // src/index.ts
 function background(ctx, job) {
   try {
@@ -131,7 +183,9 @@ function agentAnalytics(opts) {
   const client = createClient(opts);
   return async (c, next) => {
     const startedAt = Date.now();
+    openBuffer(c.req.raw);
     await next();
+    const events = closeBuffer(c.req.raw);
     let ctx;
     try {
       ctx = c.executionCtx;
@@ -140,6 +194,7 @@ function agentAnalytics(opts) {
     }
     background(ctx, async () => {
       const event = captureEvent(c.req.raw, c.res, startedAt, opts);
+      if (events.length) event.events = events;
       if (opts.ignore?.(c.req.raw, event)) return;
       await client.send([event]);
     });
@@ -149,9 +204,18 @@ function withAgentAnalytics(handler, opts) {
   const client = createClient(opts);
   return async (request, env, ctx) => {
     const startedAt = Date.now();
-    const response = await handler(request, env, ctx);
+    openBuffer(request);
+    let response;
+    try {
+      response = await handler(request, env, ctx);
+    } catch (err) {
+      closeBuffer(request);
+      throw err;
+    }
+    const events = closeBuffer(request);
     background(ctx, async () => {
       const event = captureEvent(request, response, startedAt, opts);
+      if (events.length) event.events = events;
       if (opts.ignore?.(request, event)) return;
       await client.send([event]);
     });
@@ -165,5 +229,6 @@ export {
   agentAnalytics,
   captureEvent,
   createClient,
+  track,
   withAgentAnalytics
 };

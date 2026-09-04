@@ -31,6 +31,25 @@ interface RawEvent {
      * user-agent hints.
      */
     headers?: Record<string, string>;
+    /**
+     * Custom events recorded during this request via the SDK's `track()`,
+     * e.g. an MCP tool call with its arguments. They are stored as separate
+     * data points that inherit the request's agent classification and path.
+     */
+    events?: CustomEvent[];
+}
+/** Something the site chose to record about a request: what was asked for. */
+interface CustomEvent {
+    /** Dotted name, e.g. "mcp.tool", "mcp.call", "search" */
+    name: string;
+    /** Primary dimension, e.g. the tool or method name */
+    value?: string;
+    /** Free-text intent, e.g. a search query or tool argument */
+    query?: string;
+    /** Extra flat properties, stored as JSON */
+    props?: Record<string, string | number | boolean>;
+    /** Unix ms, defaults to the request timestamp */
+    ts?: number;
 }
 /**
  * Signals from Cloudflare when the site is behind Cloudflare.
@@ -95,6 +114,33 @@ interface Client {
 }
 declare function createClient(opts: ClientOptions): Client;
 
+interface TrackData {
+    /** Primary dimension, e.g. the tool or method name */
+    value?: string;
+    /** Free-text intent, e.g. a search query or the main tool argument */
+    query?: string;
+    /** Extra flat properties. Non-primitive values are dropped. */
+    props?: Record<string, unknown>;
+}
+/** Anything that carries the request: a Request, or a Hono-style context. */
+type TrackTarget = Request | {
+    req: {
+        raw: Request;
+    };
+};
+/**
+ * Record what a request asked for, e.g. an MCP tool call or a search query.
+ *
+ * ```ts
+ * track(c, 'mcp.tool', { value: 'search-api', query: args.query });
+ * ```
+ *
+ * The event ships together with the request event when the response is
+ * done, and is stored with the request's agent classification and path.
+ * A no-op when the analytics middleware is not installed. Never throws.
+ */
+declare function track(target: TrackTarget, name: string, data?: TrackData): void;
+
 interface AgentAnalyticsOptions extends ClientOptions, CaptureOptions {
     /**
      * Return true to drop an event. Runs after the response is produced, so
@@ -126,4 +172,4 @@ type FetchHandler<Env> = (request: Request, env: Env, ctx: WaitUntilContext) => 
  */
 declare function withAgentAnalytics<Env>(handler: FetchHandler<Env>, opts: AgentAnalyticsOptions): FetchHandler<Env>;
 
-export { type AgentAnalyticsOptions, type CaptureOptions, type Client, type ClientOptions, DEFAULT_CAPTURE_HEADERS, DEFAULT_CF_HEADERS, MAX_BATCH, type RawCfSignals, type RawEvent, agentAnalytics, captureEvent, createClient, withAgentAnalytics };
+export { type AgentAnalyticsOptions, type CaptureOptions, type Client, type ClientOptions, type CustomEvent, DEFAULT_CAPTURE_HEADERS, DEFAULT_CF_HEADERS, MAX_BATCH, type RawCfSignals, type RawEvent, type TrackData, type TrackTarget, agentAnalytics, captureEvent, createClient, track, withAgentAnalytics };
