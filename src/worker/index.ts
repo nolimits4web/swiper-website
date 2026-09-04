@@ -10,6 +10,20 @@ const AGENT_DISCOVERY_LINKS = [
   '</swiper-api>; rel="service-doc"; type="text/html"',
 ].join(', ');
 
+const JSDELIVR_PACKAGE_BASE = 'https://cdn.jsdelivr.net/npm/swiper';
+const JSDELIVR_PACKAGE_PAGE = 'https://www.jsdelivr.com/package/npm/swiper';
+
+// Files that existed in older Swiper releases but were renamed since.
+// Everything else keeps its path and resolves on jsDelivr as-is.
+const LEGACY_PACKAGE_FILES: Record<string, string> = {
+  'css/swiper.css': 'swiper-bundle.css',
+  'css/swiper.min.css': 'swiper-bundle.min.css',
+  'js/swiper.js': 'swiper-bundle.js',
+  'js/swiper.min.js': 'swiper-bundle.min.js',
+  'js/swiper.esm.bundle.js': 'swiper-bundle.mjs',
+  'js/swiper.esm.js': 'swiper.mjs',
+};
+
 const app = new Hono<{ Bindings: CloudflareBindings }>()
   // Records what every request got (status, content type, agent UA) and
   // ships it to the agent analytics collector after the response is sent.
@@ -29,6 +43,15 @@ const app = new Hono<{ Bindings: CloudflareBindings }>()
     })
   )
   .route('/mcp', mcpApp)
+  // Legacy /package/* paths used to mirror the npm package. Send them to
+  // jsDelivr, which serves the same files for the latest release.
+  .get('/package', (c) => c.redirect(JSDELIVR_PACKAGE_PAGE, 301))
+  .get('/package/*', (c) => {
+    const file = c.req.path.replace(/^\/package\/?/, '');
+    if (!file) return c.redirect(JSDELIVR_PACKAGE_PAGE, 301);
+    const target = LEGACY_PACKAGE_FILES[file] ?? file;
+    return c.redirect(`${JSDELIVR_PACKAGE_BASE}/${target}`, 301);
+  })
   .get('*', async (c) => {
     const response = await c.env.ASSETS.fetch(c.req.url);
     const country = (c.req.raw.cf as IncomingRequestCfProperties | undefined)

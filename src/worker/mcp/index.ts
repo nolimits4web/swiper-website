@@ -169,10 +169,10 @@ mcpApp.post('/', async (c) => {
       }
 
       default:
-        return c.json(
-          createMethodNotFoundError(id, method),
-          404
-        );
+        // JSON-RPC errors travel in the body with HTTP 200. Clients probe
+        // methods we do not implement (resources/list, prompts/list, ...)
+        // and a 404 makes them treat the whole server as unreachable.
+        return c.json(createMethodNotFoundError(id, method), 200);
     }
 
     return c.json(createResponse(id, result));
