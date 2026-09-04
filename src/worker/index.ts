@@ -1,6 +1,7 @@
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 import { mcpApp } from './mcp/index';
+import { agentAnalytics } from './agent-analytics/index.js';
 
 const AGENT_DISCOVERY_LINKS = [
   '</sitemap.xml>; rel="sitemap"; type="application/xml"',
@@ -10,6 +11,14 @@ const AGENT_DISCOVERY_LINKS = [
 ].join(', ');
 
 const app = new Hono<{ Bindings: CloudflareBindings }>()
+  // Records what every request got (status, content type, agent UA) and
+  // ships it to the agent analytics collector after the response is sent.
+  .use('*', (c, next) =>
+    agentAnalytics({
+      siteKey: c.env.AA_SITE_KEY ?? '',
+      endpoint: 'https://aa.nolimits4web.com/v1/events',
+    })(c, next)
+  )
   .use(
     '/mcp/*',
     cors({
