@@ -57,24 +57,6 @@ export default function DemosPage() {
       <h1>Swiper Demos</h1>
       <h2 className="flex items-center">
         <img
-          src="/images/projects/paneflow.svg"
-          className="my-0 mr-2 h-8 w-8"
-          alt="PaneFlow - Build Stunning Slideshows Visually. No Code Required"
-        />
-        PaneFlow
-      </h2>
-      <a
-        href="https://paneflow.com"
-        target="_blank"
-        className="-mt-4 block duration-300 hover:opacity-75"
-      >
-        <img
-          src="/images/paneflow-banner.jpg"
-          className="rounded-xl border border-white/10"
-        />
-      </a>
-      <h2 className="flex items-center">
-        <img
           src="/images/uiinitiative-logo.svg"
           className="my-0 mr-2 h-8 w-8 !rounded-none !border-0"
         />
