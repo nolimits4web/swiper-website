@@ -6,6 +6,7 @@ const https = require('https');
 // Config (override via env) ------------------------------------------------
 const OC_SLUG = process.env.OC_SLUG || 'swiper';
 const OC_TOKEN = process.env.OC_TOKEN || '';
+
 // A payment is considered "current" if it happened within this many days.
 const SAFE_DAYS = Number(process.env.SAFE_DAYS || 45);
 // Yearly plans get a full year plus the same grace window.
@@ -52,11 +53,10 @@ async function gql(query) {
     } catch (e) {
       json = null;
     }
-    if (json && json.data) return json.data;
+    const errors = (json && json.errors) || [];
+    if (json && json.data && errors.length === 0) return json.data;
     const rateLimited =
-      status === 429 ||
-      !json ||
-      (json.errors && /rate/i.test(JSON.stringify(json.errors)));
+      status === 429 || !json || /rate/i.test(JSON.stringify(errors));
     if (rateLimited) {
       const wait = 2000 * 2 ** attempt;
       process.stderr.write(`  rate-limited (status ${status}), waiting ${wait}ms...\n`);
@@ -64,7 +64,10 @@ async function gql(query) {
       await sleep(wait);
       continue;
     }
-    throw new Error(`GraphQL error: ${body.slice(0, 300)}`);
+    // Any other GraphQL error (e.g. a token missing the "orders" scope) is
+    // fatal: OC still returns `data` but with null fields, so surface it.
+    const messages = [...new Set(errors.map((e) => e.message))].join('; ');
+    throw new Error(`GraphQL error: ${messages || body.slice(0, 300)}`);
   }
   throw new Error('Exhausted retries talking to the Open Collective API');
 }
