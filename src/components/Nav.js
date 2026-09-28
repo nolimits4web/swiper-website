@@ -10,7 +10,6 @@ import SwiperStudioBanner from './SwiperStudioBanner';
 import TogglesBanner from './TogglesBanner';
 
 import PaneFlowBanner from './PaneFlowBanner';
-import UserExperiencedPopover from './UserExperiencedPopover';
 let bannerCached;
 
 const Dropdown = ({ children, opened }) => {
@@ -363,7 +362,6 @@ export const Nav = ({ withSidebar = false }) => {
           </div>
         </nav>
       </div>
-      <UserExperiencedPopover />
     </>
   );
 };
