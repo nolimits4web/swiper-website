@@ -13,7 +13,7 @@ export default function SidebarSponsors() {
       <div className="mb-2 flex items-center justify-between">
         <span>Sponsors</span>
         <a
-          href="https://sponsors.nolimits4web.com"
+          href="https://opencollective.com/swiper"
           target="_blank"
           className="text-xs text-primary no-underline"
         >

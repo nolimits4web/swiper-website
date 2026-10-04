@@ -355,8 +355,13 @@ export default function Home(props) {
           <HomeSectionTitle>Sponsors</HomeSectionTitle>
           <HomeSectionText>
             <div>
+              Sponsor Swiper on{' '}
+              <a href="https://opencollective.com/swiper" target="_blank">
+                Open Collective
+              </a>{' '}
+              or{' '}
               <a href="https://sponsors.nolimits4web.com" target="_blank">
-                Sponsor Swiper
+                directly
               </a>{' '}
               and get your logo and link featured on the website, or support the
               developer on{' '}
@@ -369,7 +374,7 @@ export default function Home(props) {
               . Your support helps keep Swiper growing!
             </div>
             <div className="mt-6 flex justify-center">
-              <Button href="https://sponsors.nolimits4web.com" target="_blank">
+              <Button href="https://opencollective.com/swiper" target="_blank">
                 Become a Sponsor
               </Button>
             </div>

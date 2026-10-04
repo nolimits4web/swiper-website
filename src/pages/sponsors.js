@@ -16,11 +16,16 @@ export default function SponsorsPage() {
         <HomeSectionTitle>Swiper Sponsors</HomeSectionTitle>
         <HomeSectionText>
           <div>
-            <a href="https://sponsors.nolimits4web.com" target="_blank">
-              Sponsor Swiper
+            Sponsor Swiper on{' '}
+            <a href="https://opencollective.com/swiper" target="_blank">
+              Open Collective
             </a>{' '}
-            and get your logo and link featured on the website,
-            or support the developer on{' '}
+            or{' '}
+            <a href="https://sponsors.nolimits4web.com" target="_blank">
+              directly
+            </a>{' '}
+            and get your logo and link featured on the website, or support the
+            developer on{' '}
             <a
               href="https://github.com/sponsors/nolimits4web"
               target="_blank"
@@ -30,7 +35,7 @@ export default function SponsorsPage() {
             . Your support helps keep Swiper growing!
           </div>
           <div className="mt-6 flex justify-center">
-            <Button href="https://sponsors.nolimits4web.com" target="_blank">
+            <Button href="https://opencollective.com/swiper" target="_blank">
               Become a Sponsor
             </Button>
           </div>
