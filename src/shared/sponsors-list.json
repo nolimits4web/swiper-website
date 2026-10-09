@@ -1,5 +1,14 @@
 [
-
+  {
+    "createdAt": "2026-10-09T20:00:00.000Z",
+    "title": "Buy YouTube Views and likes",
+    "link": "https://richmond.com/exclusive/article_69d3e2f5-85fa-5e1d-a124-1e1a2a710a92.html",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/buy-youtube-views-and-likes",
+    "image": "",
+    "endDate": "",
+    "active": true
+  },
   {
     "createdAt": "2026-10-04T20:00:00.000Z",
     "title": "TikTok Story Viewer & Downloader",
@@ -217,16 +226,6 @@
     "plan": "Sponsor",
     "ref": "https://opencollective.com/viewsnapstories",
     "image": "",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2026-08-24T20:00:00.000Z",
-    "title": "View TikTok Stories",
-    "link": "https://viewtikstories.com/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/view-tiktok-stories",
-    "image": "view-tiktok-stories.png",
     "endDate": "",
     "active": true
   },
