@@ -1,5 +1,15 @@
 [
   {
+    "createdAt": "2026-10-14T20:00:00.000Z",
+    "title": "Vlad vs Golf",
+    "link": "https://vladvsgolf.com/",
+    "plan": "Sponsor",
+    "ref": "",
+    "image": "vladvsgolf.svg",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2026-10-13T20:00:00.000Z",
     "title": "AI girlfriend",
     "link": "https://www.reddit.com/r/AIHotspot/comments/1wguzej/what_is_the_best_ai_girlfriend_site_or_app/",
