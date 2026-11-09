@@ -8,6 +8,7 @@ import SPHQBanner from './SPHQBanner';
 import CladdBanner from './CladdBanner';
 import SwiperStudioBanner from './SwiperStudioBanner';
 import TogglesBanner from './TogglesBanner';
+import BlackFridayRibbon from './BlackFridayRibbon';
 
 import PaneFlowBanner from './PaneFlowBanner';
 let bannerCached;
@@ -52,7 +53,7 @@ export const Nav = ({ withSidebar = false }) => {
   const docsNavDropdownRef = useRef(null);
   const resourcesNavDropdownRef = useRef(null);
   const premiumNavDropdownRef = useRef(null);
-  const [banner, setBanner] = useState(bannerCached || 'swiperstudio');
+  const [banner, setBanner] = useState(bannerCached || 'blackfriday');
   const [bannerSet, setBannerSet] = useState(false);
   const onClick = (e) => {
     if (!docsNavDropdownRef.current.contains(e.target)) {
@@ -66,9 +67,10 @@ export const Nav = ({ withSidebar = false }) => {
     }
   };
   useLayoutEffect(() => {
-    const rand = Math.random();
     if (!bannerCached) {
-      const b = ['swiperstudio', 'paneflow', 'toggles', 'sphq'][Math.floor(rand * 4)] || 'swiperstudio';
+      // Black Friday (until November 30): always show the sale ribbon
+      const b = 'blackfriday';
+      // const b = ['swiperstudio', 'paneflow', 'toggles', 'sphq'][Math.floor(Math.random() * 4)] || 'swiperstudio';
       setBanner(b);
       bannerCached = b;
     }
@@ -98,6 +100,7 @@ export const Nav = ({ withSidebar = false }) => {
       >
         {bannerSet && (
           <>
+            {banner === 'blackfriday' && <BlackFridayRibbon />}
             {banner === 'paneflow' && <PaneFlowBanner />}
             {banner === 'swiperstudio' && <SwiperStudioBanner />}
             {banner === 'sphq' && <SPHQBanner />}
